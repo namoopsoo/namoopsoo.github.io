@@ -61,6 +61,9 @@ collections:
   authors:
     output: true
 
+  portfolio:
+    output: true
+
 defaults:
   - scope:
       path: ""
@@ -70,6 +73,11 @@ defaults:
   - scope:
       path: ""
       type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "portfolio"
     values:
       layout: "post"
   - scope:

@@ -4,7 +4,11 @@ title:  "Citibike Learn Project"
 date:   2016-12-18 18:33:28 2016 -0400
 ---
 
+
+<img src="https://my-blog-content.s3.amazonaws.com/2020/CartShare.jpeg" width="400"/>
+
 ### Citibike Project: Can your Destination be Predicted
+
 
 #### Motivation
 I think sometimes the most interesting projects live behind ideas that sound impractical or even crazy. That's why I thought

@@ -1,4 +1,3 @@
-
 ---
 title: "Steak Puzzle"
 date: 2020-05-31 10:39 -0400

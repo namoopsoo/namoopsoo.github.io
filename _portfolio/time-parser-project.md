@@ -5,9 +5,11 @@ date:   2018-02-11 19:39:35 -0400
 ---
 
 
-<img src="/assets/images/time-parser_images/example-stacked-2018-02-11.png" width="200"/>
+<img src="https://my-blog-content.s3.amazonaws.com/2020/02/2020-02-27+10.38.52-timeparse.jpg" width="400"/>
 
-### Table of Concents
+
+
+### Table of Contents
 1. [What](#what)
 2. [Input data](#input-data)
 3. [Output example](#output-example)

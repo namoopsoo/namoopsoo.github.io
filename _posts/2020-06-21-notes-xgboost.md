@@ -62,3 +62,13 @@ def batch_train(X, y)
 ```
 
 With about half a million rows, training was doable in one go and it took maybe `7 minutes`. But when I tried to "batch" this into  `10k` sections, this lasted for `8 hours` . Luckily I was sleeping and kept my laptop on with Amphetamine, but indeed that was crazy.
+
+[This answer](https://stackoverflow.com/a/44922590)  around pickling/unpickling seems to even say incremental learning with the sklearn API is not possible. So indeed I feel like I want to try it with the functional API.
+
+I am thinking the lesson is the data caching approach mentioned [here](https://stackoverflow.com/questions/43972009/how-to-load-a-big-train-csv-for-xgboost) for example, is the way to go, but I have not been able to find how to use it with the sklearn api.
+
+I tried that in my [notebook here](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-06-12.md#i-ended-up-trying-out-the-external-memory-approach) but my results were very different. I think this was something to do with a very different set of default parameters.
+
+Or something tells me using  `num_rounds=2` could have been the culprit. I would like to retry this with more rounds!
+
+Somehow the caching feature is not mentioned in [this blogpost](https://towardsdatascience.com/build-xgboost-lightgbm-models-on-large-datasets-what-are-the-possible-solutions-bf882da2c27d) .

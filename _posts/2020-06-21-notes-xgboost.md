@@ -72,3 +72,7 @@ I tried that in my [notebook here](https://github.com/namoopsoo/learn-citibike/b
 Or something tells me using  `num_rounds=2` could have been the culprit. I would like to retry this with more rounds!
 
 Somehow the caching feature is not mentioned in [this blogpost](https://towardsdatascience.com/build-xgboost-lightgbm-models-on-large-datasets-what-are-the-possible-solutions-bf882da2c27d) .
+
+
+##### update
+I did try the functional xgboost api w/ `num_rounds=100` in [this notebook](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-06-21.md) , although it feels like something's wrong. The verbose xgboost output looks like no learning is happening. Going to have to try to pick that apart.

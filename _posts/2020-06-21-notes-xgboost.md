@@ -69,10 +69,12 @@ I am thinking the lesson is the data caching approach mentioned [here](https://s
 
 I tried that in my [notebook here](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-06-12.md#i-ended-up-trying-out-the-external-memory-approach) but my results were very different. I think this was something to do with a very different set of default parameters.
 
-Or something tells me using  `num_rounds=2` could have been the culprit. I would like to retry this with more rounds!
+Or something tells me using  `num_rounds=2` could have been the culprit. I would like to retry this with more rounds! (In next [section](#using-the-functional-xgboost-api-with-caching-seems-to-be-hit-or-miss)   I did try `num_rounds=100` but that did not help )
 
 Somehow the caching feature is not mentioned in [this blogpost](https://towardsdatascience.com/build-xgboost-lightgbm-models-on-large-datasets-what-are-the-possible-solutions-bf882da2c27d) .
 
 
-##### update
-I did try the functional xgboost api w/ `num_rounds=100` in [this notebook](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-06-21.md) , although it feels like something's wrong. The verbose xgboost output looks like no learning is happening. Going to have to try to pick that apart.
+##### Using the functional Xgboost api with caching seems to be hit or miss
+I did try the functional xgboost api w/ `num_rounds=100` in [this notebook](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-06-21.md) , although it feels like something's wrong. The verbose xgboost output looks like no learning is happening. Going to have to try to pick that apart. According to the [parameters documentation](https://xgboost.readthedocs.io/en/latest/parameter.html)  , as far as the _"tree construction algorithm"_ goes, _"Experimental support for external memory is available for approx and gpu_hist."_ for the `tree_method` parameters.
+
+Later on [here](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-07-03-aws.md) I can see learning does happen as long as that "cache" feature is not used. Indeed very odd.

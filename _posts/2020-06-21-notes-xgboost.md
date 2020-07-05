@@ -78,3 +78,27 @@ Somehow the caching feature is not mentioned in [this blogpost](https://towardsd
 I did try the functional xgboost api w/ `num_rounds=100` in [this notebook](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-06-21.md) , although it feels like something's wrong. The verbose xgboost output looks like no learning is happening. Going to have to try to pick that apart. According to the [parameters documentation](https://xgboost.readthedocs.io/en/latest/parameter.html)  , as far as the _"tree construction algorithm"_ goes, _"Experimental support for external memory is available for approx and gpu_hist."_ for the `tree_method` parameters.
 
 Later on [here](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-07-03-aws.md) I can see learning does happen as long as that "cache" feature is not used. Indeed very odd.
+
+
+#### Parallelism
+One anecdote around parallelism. In these two notebooks, [2020-07-03-aws](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-07-03-aws.md) and [2020-07-04-aws](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-07-04-aws.md), I used the same data and same xgboost parameters except in the first go I used the functional API and in the second go I used the sklearn API.
+
+Amazingly, the accuracy and logloss on the test set was exactly the same to several decimal places in the two cases (I passed `seed=42` in both cases as a parameter but I didn't expect such a high level of determinism!).
+
+The walltime difference was `4min 18s` vs `49min 6s` ! (What a difference multithreading makes!)
+
+The first case used `2 threads`. I didn't actually set the `nthread` parameter, but I read in [the docs](https://xgboost.readthedocs.io/en/latest/parameter.html) it defaults to the max. The [sklearn doc](https://xgboost.readthedocs.io/en/latest/python/python_api.html#xgboost.XGBClassifier) seems to show `n_jobs` is the equivalent parameter here, but it does not appear to describe the default.
+
+Nicely, the magic func `%%time` shows the parallelization as
+
+```
+CPU times: user 8min 24s, sys: 1.24 s, total: 8min 26s
+Wall time: 4min 18s
+```
+
+vs
+
+```
+CPU times: user 49min 10s, sys: 1.15 s, total: 49min 11s
+Wall time: 49min 6s
+```

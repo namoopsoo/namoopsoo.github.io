@@ -102,3 +102,6 @@ vs
 CPU times: user 49min 10s, sys: 1.15 s, total: 49min 11s
 Wall time: 49min 6s
 ```
+
+#### Side note
+* In the multiclass problem I have here, this is really making me think of the difference between [winner take all political elections](https://ballotpedia.org/Winner-take-all) vs [proportional representation](https://ballotpedia.org/Proportional_representation) elections, as binary vs multi-label problems.

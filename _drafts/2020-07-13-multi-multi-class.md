@@ -2,7 +2,7 @@
 
 ### quick outline
 - Does the "k area" metric help?
-- In an earlier notebook I calculated logloss w/ random data and got
+- In an earlier notebook I calculated logloss w/ random data and got `4.29` , discussing  `random_logloss`  and `uniform_logloss` [here](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-07-04-aws.md) . In general, logloss maybe it has a theoretical worst case basically . 
 
 
 #### the k area metric

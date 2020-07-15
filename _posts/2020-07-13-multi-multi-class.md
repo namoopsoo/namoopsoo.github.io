@@ -1,3 +1,7 @@
+---
+date: 2020-07-13
+title: Notes on multi-multi-class classifiers
+---
 
 ### Summary
 Here is an early draft of a post, trying to extract some of the insights from the project [here](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/).

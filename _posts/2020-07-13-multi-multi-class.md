@@ -13,6 +13,8 @@ There is a lot to write about and I want to just start getting it out.
 - training balancing
 - Is it possible to calculate the Bayesian error rate here?
 - And logloss seems to be very sensitive.   (can look at correlations , not super high)
+- So what metric should be used ?
+- And re-calc that train error so I can compare against test error to understand level of bias/variance
 
 #### The logloss upper bound
 Training set accuracy and test set accuracy have intuitive boundaries, between `0` and `1`, but logloss does not feel intuitive.
@@ -73,6 +75,24 @@ I think visualizing the confusion is pretty interesting too in multiclass proble
 
 And as a proof of concept my confusion visualization from [2020-07-05-aws-two](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-07-05-aws-two.md) ,
 
-is showing the evidence of no balancing at all !
+is showing the evidence of no balancing at all, because we see the classifier is focused on predicting basically one class, what looks like class `8` or `9`.
 
 <img src="https://github.com/namoopsoo/learn-citibike/raw/2020-revisit/notes/2020-07-05-aws-two_files/2020-07-05-aws-two_11_0.png?raw=true">
+
+
+And the corresponding metrics for that classifier are
+```
+logloss 3.282076793024198
+acc 0.15964601098390355
+balanced acc 0.08281646671786597
+```
+which helps to show that when `acc` and `balanced acc` are far from each other, then the `acc` probably cannot be trusted.
+
+#### Ultimately what is a good metric
+
+
+Because balanced acc and acc correlate so highly, the choice between those does not matter so much, as long as the input training data is somewhat balanced, since as we see in the above result, if `acc` is considerably higher than `balanced acc` then we probably even cannot trust the `logloss`. So perhaps checking that `acc` and `balanced acc` are close is a good _"meta metric"_ at first.
+
+Logloss vs acc, that is an interesting choice.
+
+With hyper parameter tuning, we can look at a lot of results and see how these all compare

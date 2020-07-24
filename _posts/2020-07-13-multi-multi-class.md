@@ -58,17 +58,22 @@ In previous projects, training set balancing has been an important aspect of goo
 
 In the note book "2020-06-29.md" notebook, I worked on a balancing/shrinking concept . Hopefully I can take these concepts and use them in the future as well. I tried to write this balancing code in a somewhat re-usable way.
 
-In the "2020-07-03-aws.md" notebook, I also added some "shrinkage" because of my Jupyter kernel crashing. The other useful concept is how much data do we really need? Obviously if there is too much data and it crashes the notebook (as [here]("2020-06-28-take2.ipynb") for example ) , but I think this "balanced shrinkage" concept is interesting to explore just to be more efficient in for example use of hyper parameter tuning time. If you can perhaps "boil down" your data reducing its size by `50%` and if the dev/test set error does not change much then in principle that can save a lot of hyper parameter tuning time, where you may be training/predicting hundreds of models.
+In the ["2020-07-03-aws.md"](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-07-03-aws.md) notebook, I also added some "shrinkage" because of my Jupyter kernel crashing. The other useful concept is how much data do we really need? Obviously if there is too much data and it crashes the notebook (as [here](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-06-28-take2.md) for example ) , but I think this "balanced shrinkage" concept is interesting to explore just to be more efficient in for example use of hyper parameter tuning time. If you can perhaps "boil down" your data reducing its size by `50%` and if the dev/test set error does not change much then in principle that can save a lot of hyper parameter tuning time, where you may be training/predicting hundreds of models.
 
-And here "2020-07-08-aws.md" I have another version of balancing that is less aggressive. The first iteration of balancing I was using sort of flipped the proportions. It dramatically (proportionally) weighed down the majority class (too much). This second iteration tries to just bring the plurality classes down closer to the "equal share" each class should get .
+And here ["2020-07-08-aws.md"](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-07-08-aws.md) I have another version of balancing that is less aggressive. The first iteration of balancing I was using sort of flipped the proportions. It dramatically (proportionally) weighed down the majority class (too much). This second iteration tries to just bring the plurality classes down closer to the "equal share" each class should get .
 
 
-But surprisingly, in "2020-07-08-aws.md" the "balanced test accuracy" did not improve much.
+But surprisingly, in ["2020-07-08-aws.md"](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-07-08-aws.md) the "balanced test accuracy" did not improve much.
+```
+test acc 0.12198962315156459
+test balanced acc 0.1044572104146026
+logloss 3.4794945441534866
+```
 
 
 Also in past projects I had balanced out a "groomed" test set myself but this time I just tried using `balanced_accuracy_score` from sklearn.
 
-I think visualizing the confusion is pretty interesting too in multiclass problems like this one from "2020-07-03-aws.md", where I had noted the last class (bright yellow!) is sort of taking over the color spectrum of this data, because it is in the `1000` range but all the other data appears to be below `200`.
+I think visualizing the confusion is pretty interesting too in multiclass problems like this one from ["2020-07-03-aws.md"](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-07-03-aws.md), where I had noted the last class (bright yellow!) is sort of taking over the color spectrum of this data, because it is in the `1000` range but all the other data appears to be below `200`.
 
 <img src="https://github.com/namoopsoo/learn-citibike/raw/2020-revisit/notes/2020-07-03-aws_files/2020-07-03-aws_32_0.png?raw=true" >
 
@@ -96,3 +101,9 @@ Because balanced acc and acc correlate so highly, the choice between those does 
 Logloss vs acc, that is an interesting choice.
 
 With hyper parameter tuning, we can look at a lot of results and see how these all compare
+
+
+
+#### NEXT ...
+- I should pull model joblibs from the hyper parameter tuning jobs, and run predict on train data so i can compare train acc, with test acc...
+- and in general i should put a bunch of the plots from the hyper parameter tunings into here.

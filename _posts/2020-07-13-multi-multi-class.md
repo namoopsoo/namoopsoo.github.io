@@ -102,4 +102,4 @@ Logloss vs acc, that is an interesting choice.
 
 With hyper parameter tuning, we can look at a lot of results and see how these all compare.
 
-I write about some hyper parameter tuning result [here](2020/07/24/understanding-tuning-results.html)
+I write about some hyper parameter tuning result [here](/2020/07/24/understanding-tuning-results.html)

@@ -35,7 +35,16 @@ For example, here are some of the more interesting plots,
 
 <img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_37_0.png">
 
-The point here is that I had one hot encoded all of the starting neighborhoods. I am hoping of course that if a particular starting location looks important, then that should mean it is important in discriminating where you go next. Meaning it narrows down where you go. On the otherhand, if your starting location is boring then that should mean it is more like a hub and there are too many destinations for the start along to be a helpful feature. 
+<img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_37_1.png">
+<img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_37_2.png">
+<img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_37_3.png">
+<img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_37_4.png">
+<img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_37_5.png">
+<img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_37_6.png">
+
+
+
+The point here is that I had one hot encoded all of the starting neighborhoods. I am hoping of course that if a particular starting location looks important, then that should mean it is important in discriminating where you go next. Meaning it narrows down where you go. On the otherhand, if your starting location is boring then that should mean it is more like a hub and there are too many destinations for the start along to be a helpful feature.
 
 
 #### Glue notes

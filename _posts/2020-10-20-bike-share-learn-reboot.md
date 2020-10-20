@@ -73,6 +73,20 @@ https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-07-local-d
 
 I also described my build process in the earlier mentioned [glue notes](https://github.com/namoopsoo/learn-citibike/blob/2020-oct/notes/2020-08-25-glue.md) too. With so many tweaks to the python side, the model and the javascript side, being able to build and deploy with quick `make` style commands made everything faster. I document some of these [here](https://github.com/namoopsoo/learn-citibike/blob/master/docs/common_tasks.md) too.
 
+#### quick pearson's chi squared independence test
+quick pearson's chi squared independence test
+https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-05.md
+
+#### Looking at hyperparameter tuning results
+https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md
+https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#learning-rate-and-walltime
+
+https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.md
+
+#### Initial time of day look
+https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-05-woe.md
+
+Not super 
 
 ### Follow On
 

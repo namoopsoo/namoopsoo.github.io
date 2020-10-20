@@ -4,7 +4,7 @@ title: Some xgboost notes so far
 ---
 
 #### Let's summarize
-I want to just summarize some learnings [from](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-06-07-quick-mvp-xgboost--snapshot-2020-06-10T0239Z.md) [some](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-06-10-again.md) [of](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-06-12--snapshot-2020-06-14T2258Z.md) [my](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-06-14.md) [recent](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-06-16.md) [notebooks](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-06-19.md) [yea](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-06-20.md).
+I want to just summarize some learnings [from](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-07-quick-mvp-xgboost--snapshot-2020-06-10T0239Z.md) [some](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-10-again.md) [of](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-12--snapshot-2020-06-14T2258Z.md) [my](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-14.md) [recent](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-16.md) [notebooks](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-19.md) [yea](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-20.md).
 
 I have picked up my bike share data learning project from earlier, to try to redo it after having gathered more experience. I want to just jot down some ad hoc thoughts here.
 
@@ -67,7 +67,7 @@ With about half a million rows, training was doable in one go and it took maybe 
 
 I am thinking the lesson is the data caching approach mentioned [here](https://stackoverflow.com/questions/43972009/how-to-load-a-big-train-csv-for-xgboost) for example, is the way to go, but I have not been able to find how to use it with the sklearn api.
 
-I tried that in my [notebook here](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-06-12.md#i-ended-up-trying-out-the-external-memory-approach) but my results were very different. I think this was something to do with a very different set of default parameters.
+I tried that in my [notebook here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-12.md#i-ended-up-trying-out-the-external-memory-approach) but my results were very different. I think this was something to do with a very different set of default parameters.
 
 Or something tells me using  `num_rounds=2` could have been the culprit. I would like to retry this with more rounds! (In next [section](#using-the-functional-xgboost-api-with-caching-seems-to-be-hit-or-miss)   I did try `num_rounds=100` but that did not help )
 
@@ -75,13 +75,13 @@ Somehow the caching feature is not mentioned in [this blogpost](https://towardsd
 
 
 ##### Using the functional Xgboost api with caching seems to be hit or miss
-I did try the functional xgboost api w/ `num_rounds=100` in [this notebook](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-06-21.md) , although it feels like something's wrong. The verbose xgboost output looks like no learning is happening. Going to have to try to pick that apart. According to the [parameters documentation](https://xgboost.readthedocs.io/en/latest/parameter.html)  , as far as the _"tree construction algorithm"_ goes, _"Experimental support for external memory is available for approx and gpu_hist."_ for the `tree_method` parameters.
+I did try the functional xgboost api w/ `num_rounds=100` in [this notebook](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-21.md) , although it feels like something's wrong. The verbose xgboost output looks like no learning is happening. Going to have to try to pick that apart. According to the [parameters documentation](https://xgboost.readthedocs.io/en/latest/parameter.html)  , as far as the _"tree construction algorithm"_ goes, _"Experimental support for external memory is available for approx and gpu_hist."_ for the `tree_method` parameters.
 
-Later on [here](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-07-03-aws.md) I can see learning does happen as long as that "cache" feature is not used. Indeed very odd.
+Later on [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-03-aws.md) I can see learning does happen as long as that "cache" feature is not used. Indeed very odd.
 
 
 #### Parallelism
-One anecdote around parallelism. In these two notebooks, [2020-07-03-aws](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-07-03-aws.md) and [2020-07-04-aws](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-07-04-aws.md), I used the same data and same xgboost parameters except in the first go I used the functional API and in the second go I used the sklearn API.
+One anecdote around parallelism. In these two notebooks, [2020-07-03-aws](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-03-aws.md) and [2020-07-04-aws](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-04-aws.md), I used the same data and same xgboost parameters except in the first go I used the functional API and in the second go I used the sklearn API.
 
 Amazingly, the accuracy and logloss on the test set was exactly the same to several decimal places in the two cases (I passed `seed=42` in both cases as a parameter but I didn't expect such a high level of determinism!).
 

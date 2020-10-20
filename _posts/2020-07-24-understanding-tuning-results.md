@@ -1,6 +1,6 @@
 
 
-To explore some of the hyperparameter boundaries with this model, I ran some tests in these notebooks, [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-09-aws.md) and [here](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-07-10-aws.md).
+To explore some of the hyperparameter boundaries with this model, I ran some tests in these notebooks, [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-09-aws.md) and [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-10-aws.md).
 
 And to get a better understanding of the overfitting-ness / underfitting-ness of models , [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.md#2020-07-18) , I took the model artifacts and recalculated metrics on the training set, to generate some stats comparing training and testing performance.
 

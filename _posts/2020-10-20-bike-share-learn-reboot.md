@@ -26,6 +26,14 @@ The top features are like so.
 #### xgb notes
 [xgboost notes](https://michal.piekarczyk.xyz/2020/06/21/notes-xgboost.html )
 
+#### Feature importances
+[notes](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-26-feature-importances.md)
+
+From the many hyper parameter tuning jobs I had run, I used the xgboost feature importance functionality to dump the perceived feature importances for all of the models. And in the [notes](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-26-feature-importances.md#2020-08-02) I plotted feature importances against accuracy for all of them.
+
+For example,
+
+<img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_37_0.png">
 
 
 #### Glue notes
@@ -35,3 +43,12 @@ Here I face the challenges of taking the model from model bundle to demo site. T
 Admittedly, the most time consuming part was figuring out the API Gateway Cognito "Unauthenticated Authentication". AWS has this Cognito service which manages user/password based authentication for you but it also lets you use Anonymous authentication. But there must be a lot of degrees of freedom in how this is used, because I could not find good documentation on how to set this up properly for my usecase at all.
 
 I had used API Gateway for authentication through CORS in the past and I recalled a bit of nuance that for example you may have setup CORS properly for `200` status codes, but if your program crashes with a `500` then your browser will scream about a CORS error, because the response is not returning the expected `allow-origin-blah` header. In the past this had taken me a while to figure out, but now I luckily had that knowledge in my back pocket. In any case, it is worth it for the serverless approach.
+
+
+#### Automation made the process very convenient
+https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-07-local-docker-notes.md
+
+I also described my build process in the earlier mentioned [glue notes](https://github.com/namoopsoo/learn-citibike/blob/2020-oct/notes/2020-08-25-glue.md) too. With so many tweaks to the python side, the model and the javascript side, being able to build and deploy with quick `make` style commands made everything faster. I document some of these [here](https://github.com/namoopsoo/learn-citibike/blob/master/docs/common_tasks.md) too.
+
+
+####

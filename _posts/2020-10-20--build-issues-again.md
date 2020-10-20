@@ -261,4 +261,35 @@ $ docker ps --last 5
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                     PORTS                                            NAMES
 9ac4abb74269        jekyll/jekyll:3.8   "/usr/jekyll/bin/ent…"   7 minutes ago       Exited (0) 2 minutes ago                                                    compassionate_mccarthy
 ```
+* Anyway trying with `jekyll build` did work but of course it exited again, so this is not really useful if it takes `5 minutes` for stuff to happen and I can't keep the container around. 
+* I do see in the `Dockerfile` [here](https://github.com/envygeeks/jekyll-docker/blob/master/repos/jekyll/Dockerfile) that `4000` is permanently exposed so I dont even have to specify that with the `docker run` command so that's cool.
+
+* Hmm in the README it is written to use `gem "jekyll", "~> 3.8"` in your `Gemfile`. 
+My `Gemfile`  has `"jekyll", "~> 4.0.0"` actually. I wonder if ...
+* Aha and in the output it does actually show
+```
+Fetching jekyll 4.0.0
+Installing jekyll 4.0.0
+```
+* So it is almost like this mismatch may have caused this to be taking extra time.
+* So probably the `Gemfile` should be consistent with this docker image and then it will not take `5 bonus minutes` ?
+* Maybe this phenomenon is described [here](https://github.com/envygeeks/jekyll-docker#my-gems-arent-caching) "my gems arent caching".... Ok so I'm diverging indeed ok.
+
+* Ok trying again w/ `gem "jekyll", "~> 3.8"` in my Gemfile this time.
+```
+$ docker run    --volume="$PWD:/srv/jekyll"   -i -t jekyll/jekyll:$JEKYLL_VERSION jekyll build
+
+Fetching gem metadata from https://rubygems.org/..........
+Fetching gem metadata from https://rubygems.org/.
+You have requested:
+  jekyll ~> 3.8
+
+The bundle currently has jekyll locked at 4.0.0.
+Try running `bundle update jekyll`
+
+If you are updating multiple gems in your Gemfile at once,
+try passing them all to `bundle update`
+```
+* Hmm but where is this state maintained?
+
 

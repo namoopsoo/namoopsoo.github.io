@@ -23,6 +23,8 @@ What are some theoretical bad logloss outcomes? How do I know model candidates a
 
 In an earlier notebook I calculated logloss w/ random data and got `4.29` , discussing  `random_logloss`  and `uniform_logloss` [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-04-aws.md) . In general, logloss maybe it has a theoretical worst case basically . Filling equal likelihoods for all output probabilities gave a logloss of `3.98`.
 
+Making contrived probability vectors off by 1 class from the correct answers [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-04-aws.md#best-and-worst-possible-logloss) yielded logloss of `34.538` regardless of which the wrong class was. So indeed logloss does not care about the order. 
+
 Also, in a different approach for a baseline logloss, in one of the earlier notebooks [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-04-pure-prior-probability-model.md#train-this-super-dumb-baseline-model) , I created a model which just returned the softmax output of the destination tallies for all of the source neighborhoods. With a `5 fold` cross validation, this produced validation logloss values of `array([29.03426394, 25.61716199, 29.19083979, 28.312853  , 22.04601817])` which is somehow way worse than random! I think this shows that in general perhaps the usefulness of logloss is not great as an evaluation metric for a super large number of classes (in this case `54`). This finding feels erratic.
 
 #### The k area metric

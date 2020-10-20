@@ -112,3 +112,153 @@ Configuration file: /xxxx/repo/namoopsoo.github.io/_config.yml
 $ 
 ```
 * Now it doesnt like some pngs. Maybe it worked though. Will try. 
+* Also I forgot that as long as I don't want to care what this looks like locally, I can just push commits to github and then everything just builds there and nothing needs to be done locally.
+* Anyway but for local preview, I wonder if I can just find a jekyll docker to make this easier so as not to worry about these weird ruby configurations.
+
+#### Oh wow docker
+* Turns out per reading [here](https://jekyllrb.com/docs/continuous-integration/buddyworks/) , there is indeed a [jekyll Docker image](https://hub.docker.com/r/jekyll/jekyll/) already. 
+* Let me just test run that wow.
+
+
+```
+docker pull jekyll/jekyll
+...
+Digest: sha256:bb45414c3fefa80a75c5001f30baf1dff48ae31dc961b8b51003b93b60675334
+Status: Downloaded newer image for jekyll/jekyll:latest
+```
+* But then when running from the [github](https://github.com/envygeeks/jekyll-docker/blob/master/README.md) , 
+```
+export JEKYLL_VERSION=3.8
+docker run --rm \
+  --volume="$PWD:/srv/jekyll" \
+  -it jekyll/jekyll:$JEKYLL_VERSION 
+
+# jekyll build <= left out this part so I can look inside... 
+```
+* But I got this 
+```
+Unable to find image 'jekyll/jekyll:3.8' locally
+3.8: Pulling from jekyll/jekyll
+...
+Digest: sha256:9521c8aae4739fcbc7137ead19f91841b833d671542f13e91ca40280e88d6e34
+Status: Downloaded newer image for jekyll/jekyll:3.8
+```
+* So I suppose latesst was not `3.8`. 
+* Anyway wow, a few minutes later this run command is still well, _running_
+```
+Fetching gem metadata from https://rubygems.org/.........
+Fetching public_suffix 4.0.1
+Installing public_suffix 4.0.1
+Fetching addressable 2.7.0
+Installing addressable 2.7.0
+Using bundler 2.0.2
+Fetching colorator 1.1.0
+Installing colorator 1.1.0
+Fetching concurrent-ruby 1.1.5
+Installing concurrent-ruby 1.1.5
+Fetching eventmachine 1.2.7
+Installing eventmachine 1.2.7 with native extensions
+Fetching http_parser.rb 0.6.0
+Installing http_parser.rb 0.6.0 with native extensions
+Fetching em-websocket 0.5.1
+Installing em-websocket 0.5.1
+Fetching ffi 1.11.1
+Installing ffi 1.11.1 with native extensions
+Fetching forwardable-extended 2.6.0
+Installing forwardable-extended 2.6.0
+Fetching i18n 1.7.0
+Installing i18n 1.7.0
+Fetching sassc 2.2.1
+Installing sassc 2.2.1 with native extensions
+```
+* ok continued.. that last part took a while, but the later stuff was quick.
+```
+Fetching jekyll-sass-converter 2.0.1
+Installing jekyll-sass-converter 2.0.1
+Fetching rb-fsevent 0.10.3
+Installing rb-fsevent 0.10.3
+Fetching rb-inotify 0.10.0
+Installing rb-inotify 0.10.0
+Fetching listen 3.2.0
+Installing listen 3.2.0
+Fetching jekyll-watch 2.2.1
+Installing jekyll-watch 2.2.1
+Fetching kramdown 2.1.0
+Installing kramdown 2.1.0
+Fetching kramdown-parser-gfm 1.1.0
+Installing kramdown-parser-gfm 1.1.0
+Fetching liquid 4.0.3
+Installing liquid 4.0.3
+Fetching mercenary 0.3.6
+Installing mercenary 0.3.6
+Fetching pathutil 0.16.2
+Installing pathutil 0.16.2
+Fetching rouge 3.12.0
+Installing rouge 3.12.0
+Fetching safe_yaml 1.0.5
+Installing safe_yaml 1.0.5
+Fetching unicode-display_width 1.6.0
+Installing unicode-display_width 1.6.0
+Fetching terminal-table 1.8.0
+Installing terminal-table 1.8.0
+Fetching jekyll 4.0.0
+Installing jekyll 4.0.0
+Fetching jekyll-feed 0.12.1
+Installing jekyll-feed 0.12.1
+Fetching jekyll-seo-tag 2.6.1
+Installing jekyll-seo-tag 2.6.1
+Fetching jekyll-sitemap 1.3.1
+Installing jekyll-sitemap 1.3.1
+Fetching minima 2.5.1
+Installing minima 2.5.1
+Bundle complete! 8 Gemfile dependencies, 31 gems now installed.
+Bundled gems are installed into `/usr/local/bundle`
+ruby 2.6.3p62 (2019-04-16 revision 67580) [x86_64-linux-musl]
+jekyll 4.0.0 -- Jekyll is a blog-aware, static site generator in Ruby
+
+Usage:
+
+  jekyll <subcommand> [options]
+
+Options:
+        -s, --source [DIR]  Source directory (defaults to ./)
+        -d, --destination [DIR]  Destination directory (defaults to ./_site)
+            --safe         Safe mode (defaults to false)
+        -p, --plugins PLUGINS_DIR1[,PLUGINS_DIR2[,...]]  Plugins directory (defaults to ./_plugins)
+            --layouts DIR  Layouts directory (defaults to ./_layouts)
+            --profile      Generate a Liquid rendering profile
+        -h, --help         Show this message
+        -v, --version      Print the name and version
+        -t, --trace        Show the full backtrace when an error occurs
+
+Subcommands:
+  compose               
+  docs                  
+  import                
+  build, b              Build your site
+  clean                 Clean the site (removes site output and metadata file) without building.
+  doctor, hyde          Search site and print specific deprecation warnings
+  help                  Show the help message, optionally for a given subcommand.
+  new                   Creates a new Jekyll site scaffold in PATH
+  new-theme             Creates a new Jekyll theme scaffold
+  serve, server, s      Serve your site locally
+```
+* Oops, guess I ran this poorly... wait hmm I have the interactive flags, not sure why it quit. weird.
+* Going to try again ... and w/o the `--rm` so I dont have to redo it...
+```
+export JEKYLL_VERSION=3.8
+docker run  \
+  --volume="$PWD:/srv/jekyll" \
+  -i -t jekyll/jekyll:$JEKYLL_VERSION 
+
+```
+* Start `16:18 UTC .. 16:23 UTC` ... but still not playing nice. not sure why quitting.
+* But the container should at least be running now hopefully..
+* So let me at least try build. Hmm but `docker ps` shows nothing weird.
+* COnfused why it's exiting...
+```
+$ docker ps --last 5
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                     PORTS                                            NAMES
+9ac4abb74269        jekyll/jekyll:3.8   "/usr/jekyll/bin/ent…"   7 minutes ago       Exited (0) 2 minutes ago                                                    compassionate_mccarthy
+```
+

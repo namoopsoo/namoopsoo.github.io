@@ -1,28 +1,28 @@
 
 
-To explore some of the hyperparameter boundaries with this model, I ran some tests in these notebooks, [here](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-07-09-aws.md) and [here](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-07-10-aws.md).
+To explore some of the hyperparameter boundaries with this model, I ran some tests in these notebooks, [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-09-aws.md) and [here](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-07-10-aws.md).
 
-And to get a better understanding of the overfitting-ness / underfitting-ness of models , [here](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-07-16-local.md#2020-07-18) , I took the model artifacts and recalculated metrics on the training set, to generate some stats comparing training and testing performance.
+And to get a better understanding of the overfitting-ness / underfitting-ness of models , [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.md#2020-07-18) , I took the model artifacts and recalculated metrics on the training set, to generate some stats comparing training and testing performance.
 
 
 ### Hyperparameter testing
 (Going to describe this later)
 
-<img src="https://github.com/namoopsoo/learn-citibike/raw/2020-revisit/notes/2020-07-09-aws_files/2020-07-09-aws_10_1.png">
+<img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-09-aws_files/2020-07-09-aws_10_1.png">
 
-<img src="https://github.com/namoopsoo/learn-citibike/raw/2020-revisit/notes/2020-07-09-aws_files/2020-07-09-aws_13_0.png">
+<img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-09-aws_files/2020-07-09-aws_13_0.png">
 
-<img src="https://github.com/namoopsoo/learn-citibike/raw/2020-revisit/notes/2020-07-09-aws_files/2020-07-09-aws_14_0.png">
+<img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-09-aws_files/2020-07-09-aws_14_0.png">
 
-The tuning took several days to complete, but I started plotting early results in [this notebook](https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-07-11-local.md)
+The tuning took several days to complete, but I started plotting early results in [this notebook](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md)
 
 Learning rate had some drastic effects for sure!
 
-<img src="https://github.com/namoopsoo/learn-citibike/raw/2020-revisit/notes/2020-07-11-local_files/2020-07-11-local_17_0.png">
+<img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_17_0.png">
 
 Maybe this one below did not have enough data points yet, but slightly surprising perhaps. I had expected the smaller learning rate to take longer. 
 
-<img src="https://github.com/namoopsoo/learn-citibike/raw/2020-revisit/notes/2020-07-11-local_files/2020-07-11-local_33_0.png">
+<img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_33_0.png">
 
 
 
@@ -47,7 +47,7 @@ fp.compare_train_test(alldf, feature_col='num_round',
                       keep_fixed=keep_fixed)
 ```
 
-<img src="https://github.com/namoopsoo/learn-citibike/raw/2020-revisit/notes/2020-07-16-local_files/2020-07-16-local_28_0.png" >
+<img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-16-local_files/2020-07-16-local_28_0.png" >
 
 And sorting the metrics dataframe by test accuracy, I also plotted that,
 
@@ -104,6 +104,6 @@ fp.compare_train_test(alldf, feature_col='num_round',
 ```
 
 
-<img src="https://github.com/namoopsoo/learn-citibike/raw/2020-revisit/notes/2020-07-16-local_files/2020-07-16-local_31_0.png">
+<img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-16-local_files/2020-07-16-local_31_0.png">
 
 The difference between train accuracy and test accuracy does not look crazy so I think it is safe to say this model is not overfitting .

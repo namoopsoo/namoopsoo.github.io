@@ -46,7 +46,7 @@ Out[7]:
 
 
 ```
-* To explain karea... 
+* More on the "k-area" metric is [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-20-karea-worst.md)
 
 
 ### Annotating my earlier posts

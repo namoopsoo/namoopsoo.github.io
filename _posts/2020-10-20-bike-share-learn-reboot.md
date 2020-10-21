@@ -1,19 +1,45 @@
 
 
 ### What
-This project is a reboot of [my earlier project](/portfolio/citibike-project-readme.html)
+This project is a reboot of [my earlier project](/portfolio/citibike-project-readme.html) of predicting bicycle ride share riders destinations.
 
 This time around I used XGboost, newer features, hyper parameter tuning and I have a <a href="https://bike-hop-predict.s3.amazonaws.com/index.html" target="_blank"> demo site </a> as well.   ._
 
+Again, the data looks like this
+
+```
+"tripduration","starttime","stoptime","start station id","start station name","start station latitude","start station longitude","end station id","end station name","end station latitude","end station longitude","bikeid","usertype","birth year","gender"
+"171","10/1/2015 00:00:02","10/1/2015 00:02:54","388","W 26 St & 10 Ave","40.749717753","-74.002950346","494","W 26 St & 8 Ave","40.74734825","-73.99723551","24302","Subscriber","1973","1"
+"593","10/1/2015 00:00:02","10/1/2015 00:09:55","518","E 39 St & 2 Ave","40.74780373","-73.9734419","438","St Marks Pl & 1 Ave","40.72779126","-73.98564945","19904","Subscriber","1990","1"
+"233","10/1/2015 00:00:11","10/1/2015 00:04:05","447","8 Ave & W 52 St","40.76370739","-73.9851615","447","8 Ave & W 52 St","40.76370739","-73.9851615","17797","Subscriber","1984","1"
+"250","10/1/2015 00:00:15","10/1/2015 00:04:25","336","Sullivan St & Washington Sq","40.73047747","-73.99906065","223","W 13 St & 7 Ave","40.73781509","-73.99994661","23966","Subscriber","1984","1"
+"528","10/1/2015 00:00:17","10/1/2015 00:09:05","3107","Bedford Ave & Nassau Ave","40.72311651","-73.95212324","539","Metropolitan Ave & Bedford Ave","40.71534825","-73.96024116","16246","Customer","","0"
+"440","10/1/2015 00:00:17","10/1/2015 00:07:37","3107","Bedford Ave & Nassau Ave","40.72311651","-73.95212324","539","Metropolitan Ave & Bedford Ave","40.71534825","-73.96024116","23698","Customer","","0"
+```
+
 ### TOC (wip)
+* Previously
 * model highlights
 * data used
 
 ### Earlier posts
 * [xgboost notes](https://michal.piekarczyk.xyz/2020/06/21/notes-xgboost.html )
 
+### Previously vs This time
+* Last time around, I segmented the starting data into `24` hour-long segments. This time, I segmented time into only `5` bins to make the model slightly more generalizable.
 
+```python
+# time_of_day
+0: 6-9,
+1: 10-13,
+2: 14-16,
+3: 17-21,
+4: 22-0, 0-5
+```
 
+* One other new feature this time is the binary `weekday` feature, specifying weekday vs weekend.
+* The starting neighborhood one hot encoded was kept as an input.
+* Also last time around, the main model was a Random Forest classifier, but using XGBoost this time.
 
 ### Model Highlights
 
@@ -47,6 +73,224 @@ Out[7]:
 
 ```
 * More on the "k-area" metric is [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-20-karea-worst.md)
+
+
+#### Top Model's Top Fscore features
+
+Extracting from [this notebook](https://github.com/namoopsoo/learn-citibike/edit/master/notes/2020-10-21-look-at-model-plot.md) ,
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>f</th>
+      <th>fscore</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>9</th>
+      <td>weekday</td>
+      <td>f84</td>
+      <td>12812</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>gender=1</td>
+      <td>f76</td>
+      <td>8973</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>time_of_day=3</td>
+      <td>f81</td>
+      <td>8377</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>gender=0</td>
+      <td>f75</td>
+      <td>7969</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>time_of_day=1</td>
+      <td>f79</td>
+      <td>7064</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>time_of_day=2</td>
+      <td>f80</td>
+      <td>6594</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>time_of_day=0</td>
+      <td>f78</td>
+      <td>6302</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>gender=2</td>
+      <td>f77</td>
+      <td>5509</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>time_of_day=4</td>
+      <td>f82</td>
+      <td>4854</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>start_neighborhood=Chelsea</td>
+      <td>f12</td>
+      <td>1199</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>start_neighborhood=Midtown East</td>
+      <td>f46</td>
+      <td>1058</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>start_neighborhood=Midtown West</td>
+      <td>f47</td>
+      <td>947</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>start_neighborhood=Downtown Brooklyn</td>
+      <td>f18</td>
+      <td>910</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>start_neighborhood=Hell's Kitchen</td>
+      <td>f33</td>
+      <td>877</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>start_neighborhood=Fort Greene</td>
+      <td>f25</td>
+      <td>865</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>start_neighborhood=Financial District</td>
+      <td>f23</td>
+      <td>860</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>start_neighborhood=Brooklyn Heights</td>
+      <td>f7</td>
+      <td>834</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>start_neighborhood=Kips Bay</td>
+      <td>f36</td>
+      <td>821</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>start_neighborhood=Tribeca</td>
+      <td>f64</td>
+      <td>813</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>start_neighborhood=Lower East Side</td>
+      <td>f42</td>
+      <td>786</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>start_neighborhood=Theater District</td>
+      <td>f63</td>
+      <td>745</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>start_neighborhood=Midtown</td>
+      <td>f45</td>
+      <td>736</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>start_neighborhood=Greenwich Village</td>
+      <td>f32</td>
+      <td>733</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>start_neighborhood=Clinton Hill</td>
+      <td>f15</td>
+      <td>703</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>start_neighborhood=Chinatown</td>
+      <td>f13</td>
+      <td>695</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>start_neighborhood=Williamsburg</td>
+      <td>f73</td>
+      <td>683</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>start_neighborhood=Murray Hill</td>
+      <td>f48</td>
+      <td>681</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>start_neighborhood=Dumbo</td>
+      <td>f19</td>
+      <td>680</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>start_neighborhood=Civic Center</td>
+      <td>f14</td>
+      <td>660</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>start_neighborhood=Battery Park City</td>
+      <td>f1</td>
+      <td>649</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+And it can be interesting to look at a random tree from xgboost too sometimes, again extracting from the above mentioned notebook.
+
+<img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-10-21-look-at-model-plot_files/2020-10-21-look-at-model-plot_5_0.png">
+
 
 
 ### Annotating my earlier posts

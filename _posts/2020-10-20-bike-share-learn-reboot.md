@@ -17,8 +17,36 @@ This time around I used XGboost, newer features, hyper parameter tuning and I ha
 
 ### Model Highlights
 
-The top features are like so.
+The top model has these stats...
+```
+(pandars3) $ docker run -p 8889:8889 -p 8080:8080 -i -t -v $(pwd):/opt/program \
+             -v ${MY_LOCAL_DATA_DIRECTORY}:/opt/data \
+             -v   ~/Downloads:/opt/downloads \
+             -v  $(pwd)/artifacts/2020-08-19T144654Z:/opt/ml \
+             citibike-learn:latest \
+```
+```python
+import fresh.predict_utils as fpu
+bundle = fpu.load_bundle_in_docker()
 
+In [7]: bundle['model_bundle']['bundle']['validation_metrics']                                                                 
+Out[7]:
+{'accuracy': 0.12171455130090014,
+ 'balanced_accuracy': 0.10451301995291779,
+ 'confusion': array([[415,  64,   4, ...,   0, 103,  69],
+        [ 56, 541,   4, ...,   0, 130,  27],
+        [ 23,  10, 136, ...,   0,  16, 130],
+        ...,
+        [  2,   0,   2, ...,   1,   3,  36],
+        [151, 222,   3, ...,   0, 260,  35],
+        [ 84,  25,  46, ...,   0,  29, 861]]),
+ 'logloss': 3.4335361255637977,
+ 'test': '/home/ec2-user/SageMaker/learn-citibike/artifacts/2020-07-08T143732Z/test.libsvm',
+ 'karea': 0.760827309330065}
+
+
+```
+* To explain karea... 
 
 
 ### Annotating my earlier posts
@@ -86,7 +114,7 @@ https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.m
 #### Initial time of day look
 https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-05-woe.md
 
-Not super 
+Not super
 
 ### Follow On
 

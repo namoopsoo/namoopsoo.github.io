@@ -37,6 +37,8 @@ Again, the data looks like this
 4: 22-0, 0-5
 ```
 
+* Actually after picking these bins arbitrarily, I ended up also looking at the time of day histograms [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-22-features-v3.md) and the peaks look close to what I had as a mental model in my mind. It might be interesting try some other bins at some point later.
+
 * One other new feature this time is the binary `weekday` feature, specifying weekday vs weekend.
 * The starting neighborhood one hot encoded was kept as an input.
 * Also last time around, the main model was a Random Forest classifier, but using XGBoost this time.
@@ -358,7 +360,10 @@ https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.m
 #### Initial time of day look
 https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-05-woe.md
 
-Not super
+ super
+
+#### discuss
+https://github.com/namoopsoo/learn-citibike/blob/2020-oct/notes/2020-08-25-glue.md
 
 ### Follow On
 

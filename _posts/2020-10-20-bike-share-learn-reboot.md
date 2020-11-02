@@ -3,7 +3,7 @@
 ### What
 This project is a reboot of [my earlier project](/portfolio/citibike-project-readme.html) of predicting bicycle ride share riders destinations.
 
-This time around I used XGboost, newer features, hyper parameter tuning and I have a <a href="https://bike-hop-predict.s3.amazonaws.com/index.html" target="_blank"> demo site </a> as well.   ._
+This time around I used XGboost, newer features, hyper parameter tuning and I have a <a href="http://bike.michal.piekarczyk.xyz/index.html" target="_blank"> demo site </a> as well.   ._
 
 Again, the data looks like this
 

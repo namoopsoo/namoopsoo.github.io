@@ -22,3 +22,8 @@ I felt aligned with the book from the start so perhaps reading it was a bit of c
 
 
 * "Shia had an evil brilliance. But ideas are cheap; plenty of armchair generals have proposals for winning wars, some of them quite clever, but only those who can actually shape and manage a force capable of doing the job ultimately succeed."  ("Location 472")
+
+#### Taylor and Scientific Management
+I am in the middle of reading "The Meritocracy Trap" right now, and I see a new connection as I am re-reading this quote, about how Taylor apparently said to workers, "I have you for your strength and mechanical ability. We have other men paid for thinking." ("Location 819"). One of the questions I was trying to answer while reading "The Meritocracy Trap" was how it came to be that there is so much so called "unskilled" labor today. And putting two and two together here, Taylorism and management theory feel like part of the answer. That book underlined how the influx of the baby boomers forced colleges to more quickly be able to review the new onslaught of applicants and so they introduced Standardized entrace exams. And then it was only a natural follow on that people would stratify in getting better at those entrance exams. But what if the introduction of management was the original stratification sin here, pushing people apart into the skilled and unskilled classes.
+
+And the second element introduced in the "Meritocracy Trap" was technology/automation as a means of how for example a ride-share driver (e.g. Uber) no longer needs to figure out how to take a passenger from point A to B, but an algorithm does this work. There are countless other examples of this of course. 

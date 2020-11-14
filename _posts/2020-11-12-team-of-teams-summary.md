@@ -1,4 +1,11 @@
-
+---
+layout: post
+title: Team of Teams Summary
+category: summary
+tags: management
+author: Michal Piekarczyk
+date:   2020-11-12 09:30:01 -0500
+---
 
 I was reading Team of Teams sometime around September 2019. I at least remember reading it in a really cold Starbucks in a mall in Tokyo haha. First, the standard template:
 
@@ -28,4 +35,4 @@ I am in the middle of reading "The Meritocracy Trap" right now, and I see a new 
 
 And the second element introduced in the "Meritocracy Trap" was technology/automation as a means of how for example a ride-share driver (e.g. Uber) no longer needs to figure out how to take a passenger from point A to B, but an algorithm does this work. (Not to mention the future of self driving cars). There are countless other examples of this of course. Today you can take a photo of a suspicious mole on your skin with your phone and a melanoma algorithm will assign a likelihood of malignancy to your photograph. We need doctors to build those labeled datasets of course, but maybe that ends up being a research specialty and perhaps some of the cheapness diagnostics displaces some jobs here.
 
-To connect this back to the topic of this summary, teams are great of course, but the unskilled laborforce does now look like a mob of elephants in the room asking us whether those teams can outperform the algorithms in the combat of the future. And that goes for "military" combat or for entrepreneurial combat or say in the league of medical care. Will teams of nurses be replaced by teams of nurses plus algorithms. 
+To connect this back to the topic of this summary, teams are great of course, but the unskilled laborforce does now look like a mob of elephants in the room asking us whether those teams can outperform the algorithms in the combat of the future. And that goes for "military" combat or for entrepreneurial combat or say in the league of medical care. Will teams of nurses be replaced by teams of nurses plus algorithms.

@@ -7,6 +7,9 @@ author: Michal Piekarczyk
 date:   2020-11-14 11:06:01 -0500
 ---
 
+#### The material source
+"Rabbit Rever" by Susan Orlean
+published in "New Yorker" in the "July 6 2020" edition
 
 #### The article in 3 sentences
 The author writes about how the rabbit, apparently domesticated for hundreds of years now, has been all of livestock, fur source and since mid century a third most popular choice of pet in the US. But a highly contagious and highly lethal "Rabbit Hemorrhagic Disease" ( RHD the "rabbit Ebola") caused by a lagovirus from the Caliciviridae family, has been wiping out populations of rabbits outside the US since 1984, but in mid 2019, dead rabbits fitting the RHD signs were showing up in the islands near Seattle and in Texas, Arizona and New Mexico not long after. A protective vaccine was developed within five years of the initial 1984 emergence, but because the production of a "live genetically modified vaccine" is not yet allowed in the US, the vaccine (and another vaccine for a subsequent "RHDV2" variant ) cannot be used here except by rare limited emergency requests allowed by the USDA.

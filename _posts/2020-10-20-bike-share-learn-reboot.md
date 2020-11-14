@@ -17,12 +17,16 @@ Again, the data looks like this
 "440","10/1/2015 00:00:17","10/1/2015 00:07:37","3107","Bedford Ave & Nassau Ave","40.72311651","-73.95212324","539","Metropolitan Ave & Bedford Ave","40.71534825","-73.96024116","23698","Customer","","0"
 ```
 
-### TOC (wip)
-* Previously
-* model highlights
+### TOC
+* [Xgboost notes](#earlier-xgboost-notes)
+* [Previously](#previously-vs-this-time)
+* [model highlights](#model-highlights)
 * data used
+* [Glue notes](#glue-notes)
+* [Looking at hyperparameter tuning results](#looking-at-hyperparameter-tuning-results)
+* [Follow on](#follow-on)
 
-### Earlier posts
+### Earlier Xgboost notes
 * [xgboost notes](https://michal.piekarczyk.xyz/2020/06/21/notes-xgboost.html )
 
 ### Previously vs This time

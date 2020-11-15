@@ -42,7 +42,7 @@ And after that I did a Lavazza pull and it looked pretty normal..
 
 <img src="https://s3.amazonaws.com/my-blog-content/2020/2020-11-15-blue-bottle-espresso-troubleshooting/2020-11-15 13.40.09.jpg" width="50%" style="transform:rotate(90deg);">
 
-<img src="https://s3.amazonaws.com/my-blog-content/2020/2020-11-15-blue-bottle-espresso-troubleshooting/2020-11-15 13.41.47.jpg" width="50%" style="transform:rotate(90deg);" >
+<img src="https://s3.amazonaws.com/my-blog-content/2020/2020-11-15-blue-bottle-espresso-troubleshooting/2020-11-15 13.41.47.jpg" width="50%"   >
 
 
 #### Also tried grind level 3...

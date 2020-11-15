@@ -1,6 +1,8 @@
 import argparse
 import datetime
 import os
+import sys
+
 import s3utils as fs3
 
 
@@ -13,7 +15,9 @@ def bake_options():
             [['--dry-run', '-D'],
                 {'action': 'store_true',
                     'help': 'Dry run. Just print the command.  '},],
-
+            [['--append'],
+                {'action': 'store_true',
+                    'help': 'Append instead of creating a new file'},],
             [['--images'],
                 {'action': 'store',
                     'help': 'List of images to include'},],
@@ -50,10 +54,17 @@ date: {date}  12:00 -0500
 
     '''
 
-def write_post_file(loc, content):
+def write_post_file(loc, content, append):
     path = f'_posts/{loc}'
-    with open(path, 'w') as fd:
-        fd.write(content)
+    if append:
+        with open(path, 'a') as fd:
+            fd.write(content)
+    else:
+        if os.path.exists(path):
+            sys.exist(path, 'already exists. Please use --append')
+
+        with open(path, 'w') as fd:
+            fd.write(content)
 
     print('wrote to ', path)
 
@@ -86,7 +97,12 @@ def upload_images_s3(images, prefix, dry_run=False):
 def make_prefix(date, title):
     year = parse_date(date).year
     return f"{year}/{date}-{title.replace(' ', '-')}"
-        
+
+
+def check_env_vars():
+    deploy_bucket = os.getenv('S3_DEPLOY_BUCKET')
+    assert deploy_bucket
+
 
 def do():
     parser = argparse.ArgumentParser()
@@ -106,13 +122,22 @@ def do():
     prefix = make_prefix(date=args.get('date'),
                          title=title)
     print('prefix', prefix)
+    check_env_vars()
     s3fn_vec = upload_images_s3(images, prefix, dry_run=dry_run)
 
     image_html = make_image_html(s3fn_vec)
+
     header_html = header_template(date, title)
 
     print('image_html', image_html)
+    append = args.get('append')
+    if append:
+        content = f'\n{image_html}'
+    else:
+        content = f'{header_html} \n{image_html}'
     
-    write_post_file(loc=f'{date}-{title}.md', content=f'{header_html} \n{image_html}')
+    write_post_file(loc=f"{date}-{title.replace(' ', '-')}.md",
+                    content=content,
+                    append=append)
     
 do()

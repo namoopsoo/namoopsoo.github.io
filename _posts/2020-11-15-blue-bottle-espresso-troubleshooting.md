@@ -51,7 +51,7 @@ And after that I did a Lavazza pull and it looked pretty normal..
 
 This time basically no pull. And slightly watery filter afterwards also.
 
-<img src="https://s3.amazonaws.com/my-blog-content/2020/2020-11-15-blue-bottle-espresso-troubleshooting/2020-11-15 13.56.20.jpg" width="50%" style="transform:rotate(90deg);"  >
+<img src="https://s3.amazonaws.com/my-blog-content/2020/2020-11-15-blue-bottle-espresso-troubleshooting/2020-11-15 13.56.20.jpg" width="50%"   >
 
 #### Next?
-Not sure what's next. Maybe going to try to fix the pressure on the Kamira. 
+Not sure what's next. Maybe going to try to fix the pressure on the Kamira.

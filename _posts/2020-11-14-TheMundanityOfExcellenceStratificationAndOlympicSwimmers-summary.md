@@ -1,0 +1,26 @@
+---
+layout: post
+title: Summary of Mundanity of Excellence
+date: 2020-11-21
+tags: productivity, improvement
+
+---
+
+This is a summary of "The Mundanity of Excellence: An Ethnographic Report on Stratification and Olympic Swimmers" by Daniel F. Chambliss.
+
+#### In three sentences
+The author has spent a lot of time reporting on all levels of swimming competition and writes about observations about the differences between them.
+
+The differences in abilities of different levels of competition are not because of quantitative differences like "more training" but qualitative differences like using a flip turn instead of just touching the wall and turning around. Qualitative differences narrow to "technique", "discipline" and "attitude".
+
+
+#### Impressions
+The notion that success is boring or that there are no "quick tricks" to success is quite like the Jim Collins' lessons in "Good to Great" that there were no "turning points" in companies distinguished as more successful. Instead, per those companies' exit interviews, their internal experience was just a long slog of improvement and so it was only the external observer's view that looked like someone had some amazing insight that turned everything around and saved the day.
+
+#### Qutoes list
+
+> "Simply doing more of the same will not lead to moving up a level in the sport."
+
+> "The very features of the sport which the C swimmer finds unpleasant, the top level swimmer enjoys. What others see as boring--swimming back and forth over a black line for two hours, say--they find peaceful, even meditative, often challenging or therapeutic."
+
+Yea this also reminds me of this concept around that I think is described in the book the "Motivation Myth" (have not read this yet but I heard a description), that waiting to become motivated to do something you will never get around to it. And that discipline is kind of like short circuiting the gap between idea and action. And most importantly, that you end up liking what you do once you start doing it and getting good. I feel like there is another quote around the similar vein of "love what you do not do what you love."

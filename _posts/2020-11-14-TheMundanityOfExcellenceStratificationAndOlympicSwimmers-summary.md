@@ -21,6 +21,8 @@ The idea of "being stuck", "certainly swimmers typically remain within a certain
 
 Probably the biggest take-away from this article is that one must learn from failure faster. You practice in your weak areas and not what you are already good at. You keep on trying things outside of your area of comfort and you seek out feedback. Rinse and repeat.
 
+
+
 #### Qutoes list
 
 > "Simply doing more of the same will not lead to moving up a level in the sport."

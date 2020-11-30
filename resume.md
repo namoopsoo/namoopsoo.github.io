@@ -37,7 +37,7 @@ _https://github.com/namoopsoo/aviation-pilot-physiology-hmm_
 * Used *matplotlib* to plot validation learning curves for a better understanding of progress in model iteration.
 
 #### Bike share destination prediction
-_https://github.com/namoopsoo/learn-citibike_
+<a src="https://github.com/namoopsoo/learn-citibike">https://github.com/namoopsoo/learn-citibike</a>
 
 * Iterated a *scikit learn* classification problem over many data normalization, feature engineering and model evaluation steps.
 * Feature engineered additional geolocation data with *Google's Geocoding API*.
@@ -45,7 +45,7 @@ _https://github.com/namoopsoo/learn-citibike_
 * Dockerized and deployed the model with AWS SageMaker, Lambda and API Gateway, Docker, XGBoost and Python.
 
 #### Clojure 168 hours time parser
-_https://github.com/namoopsoo/time-parser_
+<a src="https://github.com/namoopsoo/time-parser">https://github.com/namoopsoo/time-parser</a>
 
 * Built an AWS Lambda API Gateway and DynamoDB backed micro service to log and summarize time data.
 

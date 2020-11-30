@@ -1,7 +1,7 @@
 ---
 layout: post
 title: make some xero shoes
-
+image: .
 author: Michal
 date: 2020-11-07  12:00 -0500
 ---

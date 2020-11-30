@@ -9,3 +9,5 @@ Hi my name is Michal Piekarczyk and I am a builder. Especially with data! [Here]
 In my day job, I data science at [Katapult.com](https://katapult.com), solving problems with data all day and improving our machine learnings.
 
 And I also like to [tell jokes](http://dadjests.com). Sometimes I [build chair](https://my-blog-content.s3.amazonaws.com/2018/chair/2017-06-01+22.15.02-chair.jpg) (singular). In high school, my teammates and I built robots for [FIRST Robotics](https://en.wikipedia.org/wiki/FIRST_Robotics_Competition)
+
+[..](resume.html)

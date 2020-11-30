@@ -144,3 +144,6 @@ Running inference.
 so then listened and even interesting it interesting idea for talking about the habitation main point is a paradise his crimes and the periostracum basically like ours person wrote his book or started this is to other thinking harrison article or are frontiersman like a loathing at the summer sententiam first creation antoinette to mitigate they had had been important role spoke for catering people is catching people attention and then destournier take nineteen and working on the antithetic aeternitate which takes a attakapas
 Inference took 65.434s for 114.816s audio file.
 ```
+
+### Other notes
+Maybe strategies like [this one ](https://medium.com/cod3/convert-speech-from-an-audio-file-to-text-using-google-speech-api-b951f4032a64)  

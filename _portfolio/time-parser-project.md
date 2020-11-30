@@ -7,7 +7,7 @@ date:   2018-02-11 19:39:35 -0400
 
 <img src="https://my-blog-content.s3.amazonaws.com/2020/02/2020-02-27+10.38.52-timeparse.jpg" width="400"/>
 
-_( https://github.com/namoopsoo/time-parser )_
+_( <a href="https://github.com/namoopsoo/time-parser">https://github.com/namoopsoo/time-parser</a> )_
 
 ### Table of Contents
 1. [What](#what)

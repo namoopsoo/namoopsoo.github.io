@@ -31,15 +31,16 @@ _Lead system and software engineer responsible for taking initial search engine 
 ### Projects
 
 #### A look into physiological time series data
-<a href="https://github.com/namoopsoo/aviation-pilot-physiology-hmm">
-https://github.com/namoopsoo/aviation-pilot-physiology-hmm
+<a href="https://michal.piekarczyk.xyz/portfolio/2020-04-05-aviation-kaggle-low-level.html">
+https://michal.piekarczyk.xyz/portfolio/2020-04-05-aviation-kaggle-low-level.html
 </a>
 * Iterated *Tensor Flow* *LSTM* based models to predict physiological states.
 * Built datasets in chunks with *numpy* and *h5py* for online learning, reliable memory consumption and parallel prediction
 * Used *matplotlib* to plot validation learning curves for a better understanding of progress in model iteration.
 
 #### Bike share destination prediction
-<a href="https://github.com/namoopsoo/learn-citibike">https://github.com/namoopsoo/learn-citibike</a>
+<a href="https://michal.piekarczyk.xyz/portfolio/citibike-project-readme.html">https://michal.piekarczyk.xyz/portfolio/citibike-project-readme.html</a>
+
 
 * Iterated a *scikit learn* classification problem over many data normalization, feature engineering and model evaluation steps.
 * Feature engineered additional geolocation data with *Google's Geocoding API*.
@@ -47,7 +48,7 @@ https://github.com/namoopsoo/aviation-pilot-physiology-hmm
 * Dockerized and deployed the model with AWS SageMaker, Lambda and API Gateway, Docker, XGBoost and Python.
 
 #### Clojure 168 hours time parser
-<a href="https://github.com/namoopsoo/time-parser">https://github.com/namoopsoo/time-parser</a>
+<a href="/portfolio/time-parser-project.html">https://michal.piekarczyk.xyz/portfolio/time-parser-project.html</a>
 
 * Built an AWS Lambda API Gateway and DynamoDB backed micro service to log and summarize time data.
 

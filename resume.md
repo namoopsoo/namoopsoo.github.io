@@ -30,29 +30,21 @@ _Lead system and software engineer responsible for taking initial search engine 
 
 ### Projects
 
-#### A look into physiological time series data (Kaggle)
-<a href="https://michal.piekarczyk.xyz/portfolio/2020-04-05-aviation-kaggle-low-level.html">
-Portfolio </a>/<a href="https://github.com/namoopsoo/aviation-pilot-physiology-hmm">Github</a>
+#### A look into physiological time series data (Kaggle) (<a href="https://michal.piekarczyk.xyz/portfolio/2020-04-05-aviation-kaggle-low-level.html">Portfolio</a>/<a href="https://github.com/namoopsoo/aviation-pilot-physiology-hmm">Github</a>)
 * Iterated **Tensor Flow** **LSTM** based models to predict physiological states.
 * Built datasets in chunks with **numpy** and **h5py** for online learning, reliable memory consumption and parallel prediction
 * Used **matplotlib** to plot validation learning curves for a better understanding of progress in model iteration.
 
-#### Bike share destination prediction
-<a href="https://michal.piekarczyk.xyz/portfolio/citibike-project-readme.html">Portfolio</a>/<a href="https://github.com/namoopsoo/learn-citibike">Github</a>
-
-
+#### Bike share destination prediction (<a href="https://michal.piekarczyk.xyz/portfolio/citibike-project-readme.html">Portfolio</a>/<a href="https://github.com/namoopsoo/learn-citibike">Github</a>)
 * Iterated a **scikit learn** classification problem over many data normalization, feature engineering and model evaluation steps.
 * Feature engineered additional geolocation data with **Google's Geocoding API**.
 * Built a **redis** backend to track the performance of different models and hyper parameters for easier ranking.
 * Dockerized and deployed the model with AWS SageMaker, Lambda and API Gateway, Docker, XGBoost and Python.
 
-#### Clojure 168 hours time parser
-<a href="/portfolio/time-parser-project.html">Portfolio</a>/<a href="https://github.com/namoopsoo/time-parser">Github</a>
-
+#### Clojure 168 hours time parser (<a href="/portfolio/time-parser-project.html">Portfolio</a>/<a href="https://github.com/namoopsoo/time-parser">Github</a>)
 * Built an AWS Lambda API Gateway and **DynamoDB** backed micro service to log and summarize time data.
 
 ### Skills
-
 * Python (pandas, numpy, matplotlib, scikitlearn, jupyter)
 * Machine Learning (XGboost, TensorFlow)
 * PostgreSQL, Docker

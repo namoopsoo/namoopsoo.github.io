@@ -7,7 +7,7 @@ title: Michal Piekarczyk
 
 ### Professional Experience
 
-#### Data Scientist at Katapult (Sep 2014 - Present)
+#### Data Scientist at Katapult, New York, NY (Sep 2014 - Present)
 _Data Scientist since 2017 and 2nd software engineering hire since 2014_
 * Collaborating with a colleague, rebuilt, feature engineered, iterated, tuned and productionized our underwriting model with **XGboost + ScikitLearn + SageMaker** to help our main business function when on short notice our main data provider deprecated their data products.
 * Created a **Data Drift Monitor** to more quickly catch the need to refit our model.
@@ -21,7 +21,7 @@ _Data Scientist since 2017 and 2nd software engineering hire since 2014_
 * Introduced velocity checks to save thousands of dollars in redundant data costs.
 * Removed our data blind spots by logging to **AWS Athena** in critical areas, helping us with countless data investigations and business questions.
 
-#### VP and Software Lead at Cortix Systems Inc (Feb 2011 - Jul 2014)
+#### VP and Software Lead at Cortix Systems Inc, Alexandria, VA (Feb 2011 - Jul 2014)
 _Lead system and software engineer responsible for taking initial search engine for data company concept into a Python code base (with a demo helping us secure a \$720,000 contract) and iterating it through several subsequent stages of customer validation._
 * Architected the API for how our system consumes new data sources.
 * Led the design, implementation, parallelization, and testing of **NLP** processing algorithms weighing aspects about data and user decisions, to make predictions about new data introduced into the system.
@@ -32,14 +32,13 @@ _Lead system and software engineer responsible for taking initial search engine 
 
 #### A look into physiological time series data (Kaggle)
 <a href="https://michal.piekarczyk.xyz/portfolio/2020-04-05-aviation-kaggle-low-level.html">
-Github
-</a>
+Portfolio </a>/<a href="https://github.com/namoopsoo/aviation-pilot-physiology-hmm">Github</a>
 * Iterated **Tensor Flow** **LSTM** based models to predict physiological states.
 * Built datasets in chunks with **numpy** and **h5py** for online learning, reliable memory consumption and parallel prediction
 * Used **matplotlib** to plot validation learning curves for a better understanding of progress in model iteration.
 
 #### Bike share destination prediction
-<a href="https://michal.piekarczyk.xyz/portfolio/citibike-project-readme.html">Github</a>
+<a href="https://michal.piekarczyk.xyz/portfolio/citibike-project-readme.html">Portfolio</a>/<a href="https://github.com/namoopsoo/learn-citibike">Github</a>
 
 
 * Iterated a **scikit learn** classification problem over many data normalization, feature engineering and model evaluation steps.
@@ -48,9 +47,16 @@ Github
 * Dockerized and deployed the model with AWS SageMaker, Lambda and API Gateway, Docker, XGBoost and Python.
 
 #### Clojure 168 hours time parser
-<a href="/portfolio/time-parser-project.html">Github</a>
+<a href="/portfolio/time-parser-project.html">Portfolio</a>/<a href="https://github.com/namoopsoo/time-parser">Github</a>
 
 * Built an AWS Lambda API Gateway and **DynamoDB** backed micro service to log and summarize time data.
+
+### Skills
+
+* Python (pandas, numpy, matplotlib, scikitlearn, jupyter)
+* Machine Learning (XGboost, TensorFlow)
+* PostgreSQL, Docker
+* Clojure, JavaScript
 
 
 ### Education

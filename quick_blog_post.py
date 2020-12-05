@@ -28,7 +28,12 @@ def bake_options():
             [['--date'],
                 {'action': 'store',
                     'help': 'date'},],
+
+            [['--stdout'],
+                {'action': 'store_true',
+                    'help': 'Send the html to stdout instead.'},],
                 ]
+
     ##
     #             help='',
     #             default='',
@@ -61,7 +66,7 @@ def write_post_file(loc, content, append):
             fd.write(content)
     else:
         if os.path.exists(path):
-            sys.exist(path, 'already exists. Please use --append')
+            sys.exit(path, 'already exists. Please use --append')
 
         with open(path, 'w') as fd:
             fd.write(content)
@@ -135,9 +140,14 @@ def do():
         content = f'\n{image_html}'
     else:
         content = f'{header_html} \n{image_html}'
+
+    if args.get('stdout'):
+        print(content)
+    else:
+        loc = f"{date}-{title.replace(' ', '-')}.md"
+        write_post_file(loc=loc,
+                        content=content,
+                        append=append)
     
-    write_post_file(loc=f"{date}-{title.replace(' ', '-')}.md",
-                    content=content,
-                    append=append)
     
 do()

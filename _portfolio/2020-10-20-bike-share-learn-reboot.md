@@ -1,9 +1,18 @@
+---
+layout: post
+title:  "Bike Share Learn Reboot"
+date:   2020-10-20 10:00:05 -0400
+---
+
+<img src="https://s3.amazonaws.com/my-blog-content/2020/2020-10-20-bike-share-learn-reboot/IMG_8499.jpg" width="50%">
 
 
 ### What
 This project is a reboot of [my earlier project](/portfolio/citibike-project-readme.html) of predicting bicycle ride share riders destinations.
+https://bike-hop-predict.s3.amazonaws.com/index.html
 
-This time around I used XGboost, newer features, hyper parameter tuning and I have a <a href="http://bike.michal.piekarczyk.xyz/index.html" target="_blank"> demo site </a> as well.   ._
+This time around I used XGBoost, newer features, hyper parameter tuning and I have a <a href="https://bike-hop-predict.s3.amazonaws.com/index.html" target="_blank"> demo site </a> as well.   ._
+<!-- http://bike.michal.piekarczyk.xyz/index.html -->
 
 Again, the data looks like this
 

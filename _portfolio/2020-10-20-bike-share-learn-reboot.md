@@ -35,8 +35,11 @@ Again, the data looks like this
 * [Looking at hyperparameter tuning results](#looking-at-hyperparameter-tuning-results)
 * [Follow on](#follow-on)
 
-### Earlier Xgboost notes
+### Earlier Xgboost notes / blog posts
 * [xgboost notes](https://michal.piekarczyk.xyz/2020/06/21/notes-xgboost.html )
+* https://michal.piekarczyk.xyz/2020/07/13/multi-multi-class.html
+* [hyper parameter tuning and train/test acc](https://michal.piekarczyk.xyz/2020/07/24/understanding-tuning-results.html)
+
 
 ### Previously vs This time
 * Last time around, I segmented the starting data into `24` hour-long segments. This time, I segmented time into only `5` bins to make the model slightly more generalizable.
@@ -344,6 +347,9 @@ The time of day features look like this, below, but again, this is not to say th
 <img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_40_84.png">
 <img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_40_85.png">
 
+Thinking about this abit more in retrospect, these particular representations are probably not very meaningful to look at because if there are trends they need to be looked at "localizing" or "fixing" some of the parameters. Because these representations are all over the place but the relationship may still be hidden inside.
+
+
 I think one of the top [follow ons](#follow-on) has to be to find better time of day splits. I chose my time of day splits based on a model in my head, and so there is definitely some room for  exploration here.
 
 #### Glue notes
@@ -365,10 +371,11 @@ quick pearson's chi squared independence test
 https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-05.md
 
 #### Looking at hyperparameter tuning results
+* ( EDIT: After writing the below section, I realized I had already [here earlier, on 2020-07-24 ](https://michal.piekarczyk.xyz/2020/07/24/understanding-tuning-results.html) , described some of these results already haha. Doing the work twice, forgetting what I had done.  )  
 
-I spent a bit of time on hyper parameter tuning, looking at the results, fixing some parameters two focus on two others at a time.
+* I spent a bit of time on hyper parameter tuning, looking at the results, fixing some parameters two focus on two others at a time.
 
-So per [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#looking-at-num_round-fundamentally) ,
+* So per [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#looking-at-num_round-fundamentally) ,
 the `num_round` as expected improves logloss,
 
 ```python

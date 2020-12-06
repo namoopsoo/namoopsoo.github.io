@@ -418,6 +418,7 @@ And per [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/202
 #### Train and test accuracy comparison
 * [Here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.md) , I took all of my `1000+` models from earlier, (which were on S3 so I had to copy them locally for convenience) and calculated accuracy, logloss and karea metrics for the training data, in order to be able to get learning curves to understand underfitting/overfitting.
 * Just showing ihere an example run for one model...
+
 ```python
 
 # As per https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-07-10-aws.md
@@ -456,6 +457,7 @@ correct_kth, karea = fm.kth_area(y_train, y_prob_vec,
         num_classes=54)
 
 ```
+
 ```
 CPU times: user 31.3 s, sys: 110 ms, total: 31.4 s
 Wall time: 21.4 s
@@ -475,7 +477,7 @@ acc, balanced_acc, karea
 The whole thing, took about `10 hours` as measured by the final line from `tqdm`,
 
 ```
-100%|█████████▉| 1052/1054 [10:00:57<01:08, 34.27s/it] 
+100%|█████████▉| 1052/1054 [10:00:57<01:08, 34.27s/it]
 ```
 
 

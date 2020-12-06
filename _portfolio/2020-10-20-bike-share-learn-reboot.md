@@ -487,8 +487,8 @@ training and test accuracy are pretty consistently close, with training accuracy
 
 The first thing I just looked at the parameters fixed by just what happened to be the first model built, so pretty arbitrary and comparing over the number of rounds. The results not unexpected not showing much learning happening.
 
-<img src="https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.md#2020-07-23">
 
+<img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-16-local_files/2020-07-16-local_28_0.png">
 
 Then I took the model with the best test accuracy results,
 

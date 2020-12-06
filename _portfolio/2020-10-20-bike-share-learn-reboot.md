@@ -95,7 +95,7 @@ Out[7]:
 
 #### Top Model's Top Fscore features
 
-Extracting from [this notebook](https://github.com/namoopsoo/learn-citibike/edit/master/notes/2020-10-21-look-at-model-plot.md) ,
+Extracting from [this notebook](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-21-look-at-model-plot.md) ,
 
 <div>
 <style scoped>
@@ -609,20 +609,24 @@ Training and hyperparameter tuning takes a long time. Dumping artifacts along th
 #### Notebooks
 I like the concept of keeping a daily notebook, because keeping several experiments in one notebook can risk running out of memory and sometimes it is difficult to load large notebooks on github, even if they are turned into markdown, if there are a lot of images.
 
+#### Write sooner rather than later
+* Although it is tempting to just keep trying more and more experiments and to keep iterating the frontier forward, I think a difficult lesson to learn is that putting together the results of the day or the week takes much more time when done weeks or months later. I think summarizing and discussing your results as you go along is way more useful.
+* But if you do wait, another idae is to just create a notebook table of concents as I am doing below, as a way of having quick chronological reference about the work that was done.
+
 ### Notebooks TOC
 
 
 * [2020-07-10](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-10-aws.md) , like "2020-07-09-aws" , another hyperparameter tuning round here. `max_depth` , `subsample` , `colsample_bytree` .
 * [2020-07-11](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md) , here I plot a bunch of results (on my laptop) , from the  _2020-07-10_ notebook running on aws.
 * [2020-07-16-local.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.md)  , recalculataing train metrics for the ~1250 or so models from the hyper parameter tuning session
-* [2020-07-26-feature-importances.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-26-feature-importances.md)
+* [2020-07-26-feature-importances.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-26-feature-importances.md) , looking at feature importances , reverse engineering my `proc_bundle` , to get back my list of feature names, which I had not done originally. Initially trying `model.get_score()`  , dumping from each model. This actually took `3.5 hours`. I plotted features and accuracy in a few ways to try to gauge features being more oftan associated with high accuracy models. Plotting the correlation of feature importance and acuracy. I think this was not a super useful method. Ultimately, [the fscore approach was better](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-21-look-at-model-plot.md)
 * [2020-08-05-woe.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-05-woe.md)
 * [2020-08-17-bundle-glue.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-17-bundle-glue.md)
 * [2020-08-18-glue.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-18-glue.md)
 * [2020-08-22-static-map-api.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-22-static-map-api.md)
 * [2020-08-25-glue.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-25-glue.md)
 * [2020-10-20-karea-worst.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-20-karea-worst.md)
-* [2020-10-21-look-at-model-plot.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-21-look-at-model-plot.md)
+* [2020-10-21-look-at-model-plot.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-21-look-at-model-plot.md) looking at Fscore and as well as plotting individual trees with graphviz . Also some interesting issues with versions of xgboost in docker and lack of backward compatibility.
 * [2020-10-21-uncertainty-xgboost.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-21-uncertainty-xgboost.md)
 * [2020-10-22-features-v3.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-22-features-v3.md)
 * [2020-10-23-quick-new-v3-proc-bundle.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-23-quick-new-v3-proc-bundle.md)

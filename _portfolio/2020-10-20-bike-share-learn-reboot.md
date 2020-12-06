@@ -397,7 +397,7 @@ And maybe this is good as a sanity check, but more rounds take more time, ( [per
 
 And from [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#look-at-walltime-and-learning-rate-again) it was interesting to see that walltime is stable mostly when it comes to learning rate except sometimes...
 
-<!-- <img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_15_0.png"> --> 
+<!-- <img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_15_0.png"> -->
 
 <img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_33_0.png">
 
@@ -417,9 +417,10 @@ And per [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/202
 
 
 
-
-https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#learning-rate-and-walltime
-
+Also review...
+ ~~https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#learning-rate-and-walltime~~
+ hmm
+ ~~ffoo~~
 https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.md
 
 #### Initial time of day look

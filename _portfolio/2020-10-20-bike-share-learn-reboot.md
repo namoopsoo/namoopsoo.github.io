@@ -629,5 +629,5 @@ I like the concept of keeping a daily notebook, because keeping several experime
 * [2020-10-21-look-at-model-plot.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-21-look-at-model-plot.md) looking at Fscore and as well as plotting individual trees with graphviz . Also some interesting issues with versions of xgboost in docker and lack of backward compatibility.
 * [2020-10-21-uncertainty-xgboost.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-21-uncertainty-xgboost.md) this is mainly just a footnote about the idea around measuring uncertainty in xgboost. But this is likely not super reliable.
 * [2020-10-22-features-v3.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-22-features-v3.md)  Take a quick look at time of day distribution
-* [2020-10-23-quick-new-v3-proc-bundle.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-23-quick-new-v3-proc-bundle.md)
-* [2020-10-25.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-25.md)
+* [2020-10-23-quick-new-v3-proc-bundle.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-23-quick-new-v3-proc-bundle.md) one more model iteration using new features.
+* [2020-10-25.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-25.md)  evaluate new v3. But although not yet done any tuning, so far this does not seem significantly better, with karea `0.761` versus earlier best `0.760` karea.

@@ -480,6 +480,100 @@ The whole thing, took about `10 hours` as measured by the final line from `tqdm`
 100%|█████████▉| 1052/1054 [10:00:57<01:08, 34.27s/it]
 ```
 
+##### Putting that together,
+[Here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.md#2020-07-23) putting that together ..
+
+training and test accuracy are pretty consistently close, with training accuracy being slightly better as expected. So there is no evidence overall of overfitting. But perhaps some evidence of underfitting .
+
+The first thing I just looked at the parameters fixed by just what happened to be the first model built, so pretty arbitrary and comparing over the number of rounds. The results not unexpected not showing much learning happening.
+
+<img src="https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.md#2020-07-23">
+
+
+Then I took the model with the best test accuracy results,
+
+```python
+best_params = dict(alldf.sort_values(by='acc').iloc[-1])
+best_params
+{'train_acc': 0.12693459297270465,
+ 'train_balanced_acc': 0.11012147901980039,
+ 'i': 755,
+ 'train_logloss': 3.4301962566050057,
+ 'train_karea': 0.76345208497788,
+ 'max_depth': 4,
+ 'learning_rate': 0.1,
+ 'objective': 'multi:softprob',
+ 'num_class': 54,
+ 'base_score': 0.5,
+ 'booster': 'gbtree',
+ 'colsample_bylevel': 1.0,
+ 'colsample_bynode': 1,
+ 'colsample_bytree': 1.0,
+ 'gamma': 0,
+ 'max_delta_step': 0,
+ 'min_child_weight': 1,
+ 'random_state': 0,
+ 'reg_alpha': 0,
+ 'reg_lambda': 1,
+ 'scale_pos_weight': 1,
+ 'seed': 42,
+ 'subsample': 0.4,
+ 'verbosity': 0,
+ 'acc': 0.12304248437307332,
+ 'balanced_acc': 0.10551953202851949,
+ 'logloss': 3.4480742986458592,
+ 'walltime': 1918.593945,
+ 'karea': 0.75845582462009,
+ 'num_round': 100}
+ ```
+
+ And plotted all the train/test metrics across rounds, and this figure definitely shows learning happening . Very exciting!
+
+ <img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-16-local_files/2020-07-16-local_31_0.png">
+
+
+##### Also looked for the biggest gap between train/test accuracy
+* And per the below,  interestingly, it's seeming like the biggest train/test gap is very small..
+
+```python
+alldf['train_test_acc_delta'] = alldf.apply(lambda x: abs(x['acc'] - x['train_acc']), axis=1)
+alldf.sort_values(by='train_test_acc_delta').iloc[-1]
+```
+
+```python
+train_acc                     0.128123
+train_balanced_acc            0.111239
+i                                 1241
+train_logloss                  3.40954
+train_karea                   0.767823
+max_depth                            5
+learning_rate                      0.1
+objective               multi:softprob
+num_class                           54
+base_score                         0.5
+booster                         gbtree
+colsample_bylevel                    1
+colsample_bynode                     1
+colsample_bytree                     1
+gamma                                0
+max_delta_step                       0
+min_child_weight                     1
+random_state                         0
+reg_alpha                            0
+reg_lambda                           1
+scale_pos_weight                     1
+seed                                42
+subsample                          0.4
+verbosity                            0
+acc                            0.12253
+balanced_acc                  0.104698
+logloss                        3.43584
+walltime                       2327.88
+karea                         0.760578
+num_round                          100
+train_test_acc_delta        0.00559313
+Name: 1242, dtype: object
+```
 
 
 #### Initial time of day look

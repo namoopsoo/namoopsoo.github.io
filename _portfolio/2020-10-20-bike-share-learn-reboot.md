@@ -392,11 +392,11 @@ fp.compare_tuning(df, feature_col_1=col1,
 <img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_11_0.png">
 
 And maybe this is good as a sanity check, but more rounds take more time, ( [per here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#walltime) )
-<img src"https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_13_0.png>
+<img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_13_0.png">
 
 And from [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#learning-rate-and-walltime) it was interesting to see that walltime is stable mostly when it comes to learning rate except sometimes...
 
-<img src="https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local_files/2020-07-11-local_15_0.png">
+<img src="https://github.com/namoopsoo/learn-citibike/master/notes/2020-07-11-local_files/2020-07-11-local_15_0.png">
 
 https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md
 https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#learning-rate-and-walltime

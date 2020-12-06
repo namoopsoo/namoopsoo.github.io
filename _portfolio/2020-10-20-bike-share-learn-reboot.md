@@ -395,11 +395,29 @@ And maybe this is good as a sanity check, but more rounds take more time, ( [per
 
 <img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_13_0.png">
 
-And from [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#learning-rate-and-walltime) it was interesting to see that walltime is stable mostly when it comes to learning rate except sometimes...
+And from [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#look-at-walltime-and-learning-rate-again) it was interesting to see that walltime is stable mostly when it comes to learning rate except sometimes...
 
-<img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_15_0.png">
+<!-- <img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_15_0.png"> --> 
 
-https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md
+<img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_33_0.png">
+
+
+And per [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#also-learning-rate-vs-acc) at least per the fixed parameters, the `0.1` learning rate is better than the `0.01` learning rate.
+
+<img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_17_0.png">
+
+And per  [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#look-at-subsample-w-different-rounds)  , `subsample` is just not appearing to be influencing accuracy.
+
+<img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_20_0.png">
+
+And per [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#hmm-colsample_bylevel)  , the rando column sampling may have just removed the good columns
+
+<img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_22_0.png">
+
+
+
+
+
 https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#learning-rate-and-walltime
 
 https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.md

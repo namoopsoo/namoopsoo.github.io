@@ -472,6 +472,11 @@ acc, balanced_acc, karea
  0.6435250908504123)
 ```
 
+The whole thing, took about `10 hours` as measured by the final line from `tqdm`,
+
+```
+100%|█████████▉| 1052/1054 [10:00:57<01:08, 34.27s/it] 
+```
 
 
 

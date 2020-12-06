@@ -365,6 +365,39 @@ quick pearson's chi squared independence test
 https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-05.md
 
 #### Looking at hyperparameter tuning results
+
+I spent a bit of time on hyper parameter tuning, looking at the results, fixing some parameters two focus on two others at a time.
+
+So per [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#looking-at-num_round-fundamentally) ,
+the `num_round` as expected improves logloss,
+
+```python
+keep_fixed = {
+ 'max_depth': 3,
+ 'learning_rate': 0.01,
+ 'colsample_bylevel': 0.1,
+ 'colsample_bynode': 1,
+ 'colsample_bytree': 0.1,
+ 'subsample': 0.1,
+ 'num_round': 10,
+        }
+col1, col2, metric_col = 'max_depth', 'num_round', 'logloss'
+fp.compare_tuning(df, feature_col_1=col1,
+             feature_col_2=col2,
+             metric_col=metric_col,
+             keep_fixed=fvu.without(
+                 keep_fixed, keys=[col1, col2]))
+```
+
+<img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_11_0.png">
+
+And maybe this is good as a sanity check, but more rounds take more time, ( [per here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#walltime) )
+<img src"https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_13_0.png>
+
+And from [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#learning-rate-and-walltime) it was interesting to see that walltime is stable mostly when it comes to learning rate except sometimes...
+
+<img src="https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local_files/2020-07-11-local_15_0.png">
+
 https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md
 https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#learning-rate-and-walltime
 

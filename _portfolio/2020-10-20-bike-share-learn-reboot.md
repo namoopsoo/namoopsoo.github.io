@@ -415,13 +415,65 @@ And per [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/202
 <img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_22_0.png">
 
 
+#### Train and test accuracy comparison
+* [Here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.md) , I took all of my `1000+` models from earlier, (which were on S3 so I had to copy them locally for convenience) and calculated accuracy, logloss and karea metrics for the training data, in order to be able to get learning curves to understand underfitting/overfitting.
+* Just showing ihere an example run for one model...
+```python
+
+# As per https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-07-10-aws.md
+# the data dir was artifacts/2020-07-08T143732Z  ... going to re-create that locally too
+#
+datadir = '/opt/program/artifacts/2020-07-08T143732Z'
+artifactsdir = '/opt/program/artifacts/2020-07-10T135910Z'
+train_results = []
+
+train_loc = f'{datadir}/train.libsvm'
+dtrain = xgb.DMatrix(f'{train_loc}?format=libsvm')
+actuals = dtrain.get_label()
+print('evaluate using ', train_loc)
 
 
-Also review...
- ~~https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#learning-rate-and-walltime~~
- hmm
- ~~ffoo~~
-https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.md
+train_data = load_svmlight_file(train_loc)
+X_train = train_data[0].toarray()
+y_train = train_data[1]
+
+%%time
+########
+# Try one
+i = 0
+bundle = joblib.load(f'{artifactsdir}/{i}_bundle_with_metrics.joblib')
+model = bundle['xgb_model']
+
+y_prob_vec = model.predict(dtrain)
+predictions = np.argmax(y_prob_vec, axis=1)
+
+logloss = fu.big_logloss(actuals, y_prob=y_prob_vec,
+                         labels= list(range(54)))
+acc = accuracy_score(actuals, predictions)
+balanced_acc = balanced_accuracy_score(actuals, predictions)
+
+correct_kth, karea = fm.kth_area(y_train, y_prob_vec,
+        num_classes=54)
+
+```
+```
+CPU times: user 31.3 s, sys: 110 ms, total: 31.4 s
+Wall time: 21.4 s
+```
+
+```
+acc, balanced_acc, karea
+
+```
+
+```
+(0.05276320740101365,
+ 0.03727538888502701,
+ 0.6435250908504123)
+```
+
+
+
 
 #### Initial time of day look
 https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-05-woe.md
@@ -439,3 +491,31 @@ Find some more interesting techniques to try out different segmentation of the t
 #### Better understanding of model uncertainty
 * As discussed in the [feature importances section](#feature-importances), it would be really interesting to take the test dataset and for the output probability vectors of all of the examples, to calculate the multi-class entropy, to see if indeed high uncertainty is associated with worse correctness rank (`kth accuracy` and `karea` in other terminology I have been using).
 * Of course this is really tricky from an _Active Learning_ point of view, because I can see a scenario where adding more training examples around the cases which have a higher uncertainty may improve the accuracy for the related test examples , but that feels like there is a risk of overfitting to the test set. In any case, however, if the live data is not reflective of the training/test data  distributions ( covariate shift ), then refreshing the model is important.
+
+
+### Some lessons for the future
+
+#### Approach to training and artifacts
+Training and hyperparameter tuning takes a long time. Dumping artifacts along the way, including models and results (for example using json), is helpful to allow another notebook to actively monitor the results as they are running. And doing this is also helpful because notebooks that run long experiments can sometimes crash. So it is nice to save intermediary results.
+
+#### Notebooks
+I like the concept of keeping a daily notebook, because keeping several experiments in one notebook can risk running out of memory and sometimes it is difficult to load large notebooks on github, even if they are turned into markdown, if there are a lot of images.
+
+### Notebooks TOC
+
+
+* [2020-07-10](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-10-aws.md) , like "2020-07-09-aws" , another hyperparameter tuning round here. `max_depth` , `subsample` , `colsample_bytree` .
+* [2020-07-11](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md) , here I plot a bunch of results (on my laptop) , from the  _2020-07-10_ notebook running on aws.
+* [2020-07-16-local.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.md)  , recalculataing train metrics for the ~1250 or so models from the hyper parameter tuning session
+* [2020-07-26-feature-importances.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-26-feature-importances.md)
+* [2020-08-05-woe.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-05-woe.md)
+* [2020-08-17-bundle-glue.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-17-bundle-glue.md)
+* [2020-08-18-glue.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-18-glue.md)
+* [2020-08-22-static-map-api.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-22-static-map-api.md)
+* [2020-08-25-glue.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-25-glue.md)
+* [2020-10-20-karea-worst.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-20-karea-worst.md)
+* [2020-10-21-look-at-model-plot.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-21-look-at-model-plot.md)
+* [2020-10-21-uncertainty-xgboost.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-21-uncertainty-xgboost.md)
+* [2020-10-22-features-v3.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-22-features-v3.md)
+* [2020-10-23-quick-new-v3-proc-bundle.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-23-quick-new-v3-proc-bundle.md)
+* [2020-10-25.md](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-25.md)

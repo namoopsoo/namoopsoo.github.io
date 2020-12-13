@@ -1,4 +1,8 @@
-
+---
+date: 2020-12-09
+title: Easy Blog Posting ("My Noting Book")
+category: notes
+---
 
 
 ### For my EasyBlogPosting project..
@@ -48,11 +52,13 @@ BadInputError: BadInputError('xxxxxxxxxxx', 'Error in call to API function "file
 ```python
 AuthError: AuthError('xxxxxxxxxxx', AuthError('missing_scope', TokenScopeError(required_scope='files.metadata.read')))
 ```
+
 * Ah according to [stackoverflow](https://stackoverflow.com/a/64201654) , the scope cannot be retroactively granted to a token created before the scope was granted.
 * Ok ... trying to re-create a new token...
 * Ok recreated. Retried. Worked!
 * How to read?
 * What's the difference between the two `files/download` , `files/export`  ( `files/get_preview` )
+
 ```python
 print("Initializing Dropbox API...")
 dbx = dropbox.Dropbox(os.getenv('DBX_ACCESS_TOKEN'))

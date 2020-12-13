@@ -83,6 +83,67 @@ post /repos/{owner}/{repo}/git/commits
 * But not seeing how to include the actual diffs in there. Maybe a [blob?](https://docs.github.com/en/free-pro-team@latest/rest/reference/git#blobs)
 * Ok according to [this nice article](http://www.levibotelho.com/development/commit-a-file-with-the-github-api/)  , indeed the blob endpoint is for files! hmm
 
+##### step 1, get a reference.. like [here](https://developer.github.com/v3/git/refs/#get-a-reference)
+
+```
+curl -v -H "Authorization: token ${GITHUB_TOKEN}"   https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/ref/heads/master
+```
+Nice excellent, ...
+```
+...
+...
+{
+  "ref": "refs/heads/master",
+  "node_id": "MDM6UmVmMTAwMTg1NjcwOnJlZnMvaGVhZHMvbWFzdGVy",
+  "url": "https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/refs/heads/master",
+  "object": {
+    "sha": "482d52f53a146dd688eff4ed8093cf2980580662",
+    "type": "commit",
+    "url": "https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/commits/482d52f53a146dd688eff4ed8093cf2980580662"
+  }
+}
+```
+
+##### step 2 , Grab the commit that HEAD points to
+
+```
+curl -H "Authorization: token ${GITHUB_TOKEN}" https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/commits/482d52f53a146dd688eff4ed8093cf2980580662
 ```
 
 ```
+{
+  "sha": "482d52f53a146dd688eff4ed8093cf2980580662",
+  "node_id": "MDY6Q29tbWl0MTAwMTg1NjcwOjQ4MmQ1MmY1M2ExNDZkZDY4OGVmZjRlZDgwOTNjZjI5ODA1ODA2NjI=",
+  "url": "https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/commits/482d52f53a146dd688eff4ed8093cf2980580662",
+  "html_url": "https://github.com/namoopsoo/namoopsoo.github.io/commit/482d52f53a146dd688eff4ed8093cf2980580662",
+  "author": {
+    "name": "Michal Piekarczyk",
+    "email": "namoopsoo",
+    "date": "2020-12-13T21:39:11Z"
+  },
+  "committer": {
+    "name": "Michal Piekarczyk",
+    "email": "namoopsoo",
+    "date": "2020-12-13T21:39:11Z"
+  },
+  "tree": {
+    "sha": "e5a9ee9506a040a7cc8c608614db7531f8f32e70",
+    "url": "https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/trees/e5a9ee9506a040a7cc8c608614db7531f8f32e70"
+  },
+  "message": "moar",
+  "parents": [
+    {
+      "sha": "13db6ee453ea2b05d09ed8da1b7baa87fbbdcebc",
+      "url": "https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/commits/13db6ee453ea2b05d09ed8da1b7baa87fbbdcebc",
+      "html_url": "https://github.com/namoopsoo/namoopsoo.github.io/commit/13db6ee453ea2b05d09ed8da1b7baa87fbbdcebc"
+    }
+  ],
+  "verification": {
+    "verified": false,
+    "reason": "unsigned",
+    "signature": null,
+    "payload": null
+  }
+}
+```
+* Ok and the tree sha is important. Reading up on this [here](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects)

@@ -261,5 +261,253 @@ curl \
 ]
 ```
 
+* Also noticed the paths dont seem to be absolute paths ..
+* I looked up the tree representing the directory `_sass` and got a relative path there inside..
+
+```
+[
+  {
+    "path": "main.scss",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "bc25e9ec345e7f25206a42139085669d4ad800b9",
+    "size": 29,
+    "url": "https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/blobs/bc25e9ec345e7f25206a42139085669d4ad800b9"
+  }
+]
+(pandars3) $ ls _s
+_sass/ _site/
+(pandars3) $ ls _sass/
+main.scss
+(pandars3) $
+```
+
 #### 5. Create a tree containing your new file
 * Ok So I must create a new tree containing the newly created blob.
+* I had actually committed a few commits in the meantime, so I just have to fetch the last trees commit again ...
+
+
+```
+# using the last commit ... bc74103c6c376a267f6f480e185fcb0c816d2f5b
+
+(pandars3) $ curl -H "Authorization: token ${GITHUB_TOKEN}" https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/commits/bc74103c6c376a267f6f480e185fcb0c816d2f5b
+{
+  "sha": "bc74103c6c376a267f6f480e185fcb0c816d2f5b",
+  "node_id": "MDY6Q29tbWl0MTAwMTg1NjcwOmJjNzQxMDNjNmMzNzZhMjY3ZjZmNDgwZTE4NWZjYjBjODE2ZDJmNWI=",
+  "url": "https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/commits/bc74103c6c376a267f6f480e185fcb0c816d2f5b",
+  "html_url": "https://github.com/namoopsoo/namoopsoo.github.io/commit/bc74103c6c376a267f6f480e185fcb0c816d2f5b",
+  "author": {
+    "name": "Michal Piekarczyk",
+    "email": "namoopsoo",
+    "date": "2020-12-14T00:47:00Z"
+  },
+  "committer": {
+    "name": "Michal Piekarczyk",
+    "email": "namoopsoo",
+    "date": "2020-12-14T00:47:00Z"
+  },
+  "tree": {
+    "sha": "e25ed95e0655cc209c8a3f9c61d18a182abd60d0",
+    "url": "https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/trees/e25ed95e0655cc209c8a3f9c61d18a182abd60d0"
+  },
+  "message": "moar",
+  "parents": [
+    {
+      "sha": "c96842008683f25454793eccc3938cce1f605eb6",
+      "url": "https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/commits/c96842008683f25454793eccc3938cce1f605eb6",
+      "html_url": "https://github.com/namoopsoo/namoopsoo.github.io/commit/c96842008683f25454793eccc3938cce1f605eb6"
+    }
+  ],
+  "verification": {
+    "verified": false,
+    "reason": "unsigned",
+    "signature": null,
+    "payload": null
+  }
+}
+```
+
+* ok now to create a new tree using `e25ed95e0655cc209c8a3f9c61d18a182abd60d0` from above, as the base tree
+* And the new blob I had created earlier... is `6b2d785ecc7db8b71ee933a5b22961a52f40592c`
+```
+post /repos/{owner}/{repo}/git/trees
+
+curl \
+  -X POST \
+  -H "Accept: application/vnd.github.v3+json" \
+  -H "Authorization: token ${GITHUB_TOKEN}" https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/trees \
+  -d '{"base_tree": "e25ed95e0655cc209c8a3f9c61d18a182abd60d0", \
+    "tree": [ \
+      { \
+        "path": "new_blob.txt", \
+        "mode": "100644", \
+        "type": "blob", \
+        "sha": "6b2d785ecc7db8b71ee933a5b22961a52f40592c" \
+      } \
+    ] \
+    }'
+
+
+```
+
+* ok first try I got
+
+```
+{
+  "message": "Problems parsing JSON",
+  "documentation_url": "https://docs.github.com/rest/reference/git#create-a-tree"
+}
+```
+
+* Ok tried  without trying to break it up on multiple lines and this time somehow worked..
+
+```
+curl \
+  -X POST \
+  -H "Accept: application/vnd.github.v3+json" \
+  -H "Authorization: token ${GITHUB_TOKEN}" https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/trees \
+  -d '{"base_tree": "e25ed95e0655cc209c8a3f9c61d18a182abd60d0", "tree": [ { "path": "new_blob.txt", "mode": "100644", "type": "blob", "sha": "6b2d785ecc7db8b71ee933a5b22961a52f40592c" } ] }'
+
+```
+
+```
+{
+  "sha": "477075b08cae14b22534e7071b066d383696222c",
+  "url": "https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/trees/477075b08cae14b22534e7071b066d383696222c",
+  "tree": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f40fbd8ba564ea28e0a2501e2921909467b39887",
+      "size": 56,
+      "url": "https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/blobs/f40fbd8ba564ea28e0a2501e2921909467b39887"
+    },
+...
+...
+{
+  "path": "new_blob.txt",
+  "mode": "100644",
+  "type": "blob",
+  "sha": "6b2d785ecc7db8b71ee933a5b22961a52f40592c",
+  "size": 19,
+  "url": "https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/blobs/6b2d785ecc7db8b71ee933a5b22961a52f40592c"
+},
+...
+]
+```
+
+#### 6. Create a new commit
+* The parent commit in this case... `bc74103c6c376a267f6f480e185fcb0c816d2f5b`
+* And the `477075b08cae14b22534e7071b066d383696222c`  new tree created in last step...
+```
+curl \
+  -X POST \
+  -H "Accept: application/vnd.github.v3+json" \
+  -H "Authorization: token ${GITHUB_TOKEN}" https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/commits \
+  -d  ' { "message": "my first commit using github api!", "parents": ["bc74103c6c376a267f6f480e185fcb0c816d2f5b"], "tree": "477075b08cae14b22534e7071b066d383696222c" } '
+
+
+
+```
+
+As far as I can tell that created a commit ..  `526dea236deed39d9a996187a6eb31c55137f675`
+
+```
+{
+  "sha": "526dea236deed39d9a996187a6eb31c55137f675",
+  "node_id": "MDY6Q29tbWl0MTAwMTg1NjcwOjUyNmRlYTIzNmRlZWQzOWQ5YTk5NjE4N2E2ZWIzMWM1NTEzN2Y2NzU=",
+  "url": "https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/commits/526dea236deed39d9a996187a6eb31c55137f675",
+  "html_url": "https://github.com/namoopsoo/namoopsoo.github.io/commit/526dea236deed39d9a996187a6eb31c55137f675",
+  "author": {
+    "name": "namoopsoo",
+    "email": "namoopsoo@users.noreply.github.com",
+    "date": "2020-12-14T01:28:09Z"
+  },
+  "committer": {
+    "name": "namoopsoo",
+    "email": "namoopsoo@users.noreply.github.com",
+    "date": "2020-12-14T01:28:09Z"
+  },
+  "tree": {
+    "sha": "477075b08cae14b22534e7071b066d383696222c",
+    "url": "https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/trees/477075b08cae14b22534e7071b066d383696222c"
+  },
+  "message": "my first commit using github api!",
+  "parents": [
+    {
+      "sha": "bc74103c6c376a267f6f480e185fcb0c816d2f5b",
+      "url": "https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/commits/bc74103c6c376a267f6f480e185fcb0c816d2f5b",
+      "html_url": "https://github.com/namoopsoo/namoopsoo.github.io/commit/bc74103c6c376a267f6f480e185fcb0c816d2f5b"
+    }
+  ],
+  "verification": {
+    "verified": false,
+    "reason": "unsigned",
+    "signature": null,
+    "payload": null
+  }
+}
+
+```
+
+
+#### 7. Update HEAD
+
+```
+patch /repos/{owner}/{repo}/git/refs/{ref}
+curl \
+  -X PATCH \
+  -H "Accept: application/vnd.github.v3+json" \
+  -H "Authorization: token ${GITHUB_TOKEN}" https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/refs/master/HEAD \
+  -d  '{"sha": "526dea236deed39d9a996187a6eb31c55137f675"} '
+```
+
+First stab I'm seeing
+
+```
+{
+  "message": "Reference does not exist",
+  "documentation_url": "https://docs.github.com/rest/reference/git#update-a-reference"
+}
+```
+
+* (Incidentally at this point I tried `git fetch` and didnt work. Also didnt see the new commit on the github.com through a browser either. )
+* Ok using a slightly different syntax..
+
+```
+curl \
+  -X PATCH \
+  -H "Accept: application/vnd.github.v3+json" \
+  -H "Authorization: token ${GITHUB_TOKEN}" https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/refs/heads/master \
+  -d  '{"sha": "526dea236deed39d9a996187a6eb31c55137f675"} '
+
+```
+
+```
+{
+  "ref": "refs/heads/master",
+  "node_id": "MDM6UmVmMTAwMTg1NjcwOnJlZnMvaGVhZHMvbWFzdGVy",
+  "url": "https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/refs/heads/master",
+  "object": {
+    "sha": "526dea236deed39d9a996187a6eb31c55137f675",
+    "type": "commit",
+    "url": "https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/commits/526dea236deed39d9a996187a6eb31c55137f675"
+  }
+}
+```
+
+Nice and success..
+
+```
+(pandars3) $ git log  --graph --pretty=oneline --abbrev-commit --decorate  --all
+* 526dea2 (origin/master) my first commit using github api!
+* bc74103 (HEAD -> master) moar
+* c968420 moar
+```
+
+I also checked that `git log -p ` indeed showed only one change in that commit, a new file `new_blob.txt` with `content of the blob`
+
+#### Next
+* That was pretty cool. Next I should like to combine the Dropbox + github Api parts to make a proof of concept,
+* A Proof of concept that reads a new yaml file in that special dropbox application folder, runs something like the `quick_post.py` and publishes a new file through the github api.

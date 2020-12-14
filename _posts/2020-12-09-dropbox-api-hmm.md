@@ -153,3 +153,82 @@ curl -H "Authorization: token ${GITHUB_TOKEN}" https://api.github.com/repos/namo
 }
 ```
 * Ok and the tree sha is important. Reading up on this [here](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects)
+* Okay after taking a [mini detour](/2020/12/13/Article-GitInternalsGitObjects-notes.html) to understand what a _Tree Object_ is, I think I can keep going now .
+* So a _Tree Object_ is a group of other objects ( blob and or tree objects).
+* So continuing with [this article](http://www.levibotelho.com/development/commit-a-file-with-the-github-api/) , going to post a blob next
+
+#### 3. Post your new file to the server
+
+```
+curl \
+  -X POST \
+  -H "Accept: application/vnd.github.v3+json" \
+  -H "Authorization: token ${GITHUB_TOKEN}" https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/blobs \
+  -d '{"content": "content of the blob", "encoding": "utf-8"}'
+```
+
+Getting
+
+```
+{
+  "message": "Not Found",
+  "documentation_url": "https://docs.github.com/rest/reference/git#create-a-blob"
+}
+```
+
+Well Not Found is better than permission denied I guess.
+
+
+* Ah actually, .. I took a random guess and looking at https://github.com/settings/tokens indeed found I needed to just add some extra permissions.
+* Tried that same `curl -X POST` again and now got back
+
+```
+{
+  "sha": "6b2d785ecc7db8b71ee933a5b22961a52f40592c",
+  "url": "https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/blobs/6b2d785ecc7db8b71ee933a5b22961a52f40592c"
+}
+```
+
+So all good.
+
+#### 4. Get a hold of the tree that the commit points to
+*  Ok so grabbing that `e5a9ee9506a040a7cc8c608614db7531f8f32e70` tree of my target branch's current `HEAD` commit now...
+* ( and incidentally that `jq` json querying parsing utility is kind of nice here.. )
+```
+get /repos/{owner}/{repo}/git/trees/e5a9ee9506a040a7cc8c608614db7531f8f32e70
+curl \
+  -H "Accept: application/vnd.github.v3+json" \
+  -H "Authorization: token ${GITHUB_TOKEN}" https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/trees/e5a9ee9506a040a7cc8c608614db7531f8f32e70  \
+  | jq --color-output '.tree | .[0:3]'
+  [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f40fbd8ba564ea28e0a2501e2921909467b39887",
+      "size": 56,
+      "url": "https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/blobs/f40fbd8ba564ea28e0a2501e2921909467b39887"
+    },
+    {
+      "path": "404.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "086a5c9ea988c5a4d37acc5f8ea089e37cb19371",
+      "size": 419,
+      "url": "https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/blobs/086a5c9ea988c5a4d37acc5f8ea089e37cb19371"
+    },
+    {
+      "path": "CNAME",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "922c44a4850e7421585c9030ecd82face732adc6",
+      "size": 21,
+      "url": "https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/blobs/922c44a4850e7421585c9030ecd82face732adc6"
+    }
+  ]
+
+
+```
+
+#### 5. Create a tree containing your new file
+* Ok So I must create a new tree containing the newly created blob.

@@ -79,5 +79,36 @@ version 1
 
 ```
 
+```
+(pandars3) $ for sha in  20fe6a1800a210848ce33e3ec41fc1077feeee 56ffc9856515711c4114654acb0f36c1ee8ddb 70460b4b4aece5915caf5c68d12f560a9fe3e4 953fd15e1fa200b94fd6124f661adf1528165a ; do echo d5${sha} ; git cat-file -t d6${sha} ; done
+d520fe6a1800a210848ce33e3ec41fc1077feeee
+commit
+d556ffc9856515711c4114654acb0f36c1ee8ddb
+commit
+d570460b4b4aece5915caf5c68d12f560a9fe3e4
+blob
+d5953fd15e1fa200b94fd6124f661adf1528165a
+blob
+(pandars3) $
+```
+
+
 #### Tree objects
 * Ahhh, reading more now so a _Tree Object_ is what solves the problem of how to store file names and group multiple files together.
+* Ok wow when I use that special syntax in my repo...
+
+```
+(pandars3) $ git cat-file -p master^{tree}
+100644 blob f40fbd8ba564ea28e0a2501e2921909467b39887	.gitignore
+100644 blob 086a5c9ea988c5a4d37acc5f8ea089e37cb19371	404.html
+100644 blob 922c44a4850e7421585c9030ecd82face732adc6	CNAME
+100644 blob 5d0fe01a3ad78b366d4e74186c976895611f27ab	Gemfile
+100644 blob ee589190061ef5e3e6b6d932edfaf342711878c4	Gemfile.lock
+040000 tree ce45afa627dd9bbe9632f33877e8b165409564a4	_authors
+100644 blob efa5e9ef216ff9ed5d06a2bf02475b72caa9a55f	_config.yml
+040000 tree b9e5321c96b32cf9cb1872e8750752344353af37	_data
+...
+...
+```
+
+I see the _"tree"_ of my latest commit includes all of the files whether they've changed or not. I guess I had expected to only see the ones that have changed.

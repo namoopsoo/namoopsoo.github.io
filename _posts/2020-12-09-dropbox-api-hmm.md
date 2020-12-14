@@ -230,5 +230,36 @@ curl \
 
 ```
 
+```
+(pandars3) $ curl   -H "Accept: application/vnd.github.v3+json"   -H "Authorization: token ${GITHUB_TOKEN}" https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/trees/e5a9ee9506a040a7cc8c608614db7531f8f32e70 |jq --color-output '.tree | map(.type)'
+[
+  "blob",
+  "blob",
+  "blob",
+  "blob",
+  "blob",
+  "tree",
+  "blob",
+  "tree",
+  "tree",
+  "tree",
+  "tree",
+  "tree",
+  "tree",
+  "tree",
+  "tree",
+  "blob",
+  "tree",
+  "blob",
+  "blob",
+  "blob",
+  "blob",
+  "blob",
+  "blob",
+  "blob",
+  "blob"
+]
+```
+
 #### 5. Create a tree containing your new file
 * Ok So I must create a new tree containing the newly created blob.

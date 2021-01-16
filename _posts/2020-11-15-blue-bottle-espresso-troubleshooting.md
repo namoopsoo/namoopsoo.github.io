@@ -1,7 +1,7 @@
 ---
 layout: post
 title: blue bottle espresso troubleshooting
-
+img: <img src="https://s3.amazonaws.com/my-blog-content/2020/2020-11-15-blue-bottle-espresso-troubleshooting/2020-11-15 10.37.52.jpg" width="50%" style="transform:rotate(90deg);">
 author: Michal
 date: 2020-11-15  12:00 -0500
 ---

@@ -2,7 +2,7 @@
 title: "Steak Puzzle"
 date: 2020-05-31 10:39 -0400
 layout: post
-img: <img src="https://my-blog-content.s3.amazonaws.com/2020/2020-05-steak/2020-05-30+22.22.41-temp110.jpg" width="50%" style="transform:rotate(90deg);">
+img: <img src="https://my-blog-content.s3.amazonaws.com/2020/2020-05-steak/2020-05-30+22.22.41-temp110.jpg" width="25%" style="transform:rotate(90deg);">
 ---
 
 I have been trying to solve the steak puzzle for several attempts now. That is, how do you cook a good cast iron to oven transfer? The problem so far has been that the recommended time for the oven for a 450 finish, in [this article](https://www.therisingspoon.com/2013/04/how-to-cook-perfect-steak-in-cast-iron.html?m=1) , 4-5 minutes is the recommendation for a medium steak and 2-4 minutes for a rare.

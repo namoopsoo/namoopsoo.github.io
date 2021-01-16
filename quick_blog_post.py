@@ -21,7 +21,12 @@ def bake_options():
             [['--images'],
                 {'action': 'store',
                     'help': 'List of images to include'},],
-
+            [['--out-dir'],
+                {'action': 'store',
+                    'help': 'Target directory'},],
+            [['--existing-file'],
+                {'action': 'store',
+                    'help': 'Update an existing file.'},],
             [['--title'],
                 {'action': 'store',
                     'help': 'title'},],
@@ -59,8 +64,7 @@ date: {date}  12:00 -0500
 
     '''
 
-def write_post_file(loc, content, append):
-    path = f'_posts/{loc}'
+def write_post_file(path, content, append):
     if append:
         with open(path, 'a') as fd:
             fd.write(content)
@@ -122,10 +126,17 @@ def do():
     dry_run = args.get('dry_run')
     title = args.get('title')
     date = args.get('date')
+    existing_file = args.get('existing_file')
+    out_dir = args.get('out_dir')
+    assert existing_file or out_dir
 
     print(args)
-    prefix = make_prefix(date=args.get('date'),
-                         title=title)
+    if existing_file:
+        prefix = os.path.basename(existing_file)
+        if prefix.endswith('.md'):
+            prefix = prefix[:-3]
+    else:
+        prefix = make_prefix(date=date, title=title)
     print('prefix', prefix)
     check_env_vars()
     s3fn_vec = upload_images_s3(images, prefix, dry_run=dry_run)
@@ -144,8 +155,11 @@ def do():
     if args.get('stdout'):
         print(content)
     else:
-        loc = f"{date}-{title.replace(' ', '-')}.md"
-        write_post_file(loc=loc,
+        if existing_file:
+            path = existing_file
+        else:
+            path = f"{out_dir}/{date}-{title.replace(' ', '-')}.md"
+        write_post_file(path=path,
                         content=content,
                         append=append)
     

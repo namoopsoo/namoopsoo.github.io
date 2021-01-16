@@ -1,7 +1,7 @@
 ---
 layout: post
 title: blue bottle espresso troubleshooting
-img: <img src="https://s3.amazonaws.com/my-blog-content/2020/2020-11-15-blue-bottle-espresso-troubleshooting/2020-11-15 10.37.52.jpg" width="50%" style="transform:rotate(90deg);">
+img: <img src="https://s3.amazonaws.com/my-blog-content/2020-11-15-blue-bottle-espresso-troubleshooting/Screen Shot 2021-01-16 at 5.49.06 PM.png" width="30%">
 author: Michal
 date: 2020-11-15  12:00 -0500
 ---
@@ -55,3 +55,5 @@ This time basically no pull. And slightly watery filter afterwards also.
 
 #### Next?
 Not sure what's next. Maybe going to try to fix the pressure on the Kamira.
+
+<img src="https://s3.amazonaws.com/my-blog-content/2020-11-15-blue-bottle-espresso-troubleshooting/Screen Shot 2021-01-16 at 5.49.06 PM.png" width="50%">

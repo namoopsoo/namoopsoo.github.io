@@ -6,14 +6,19 @@ title: Blog
 
 <ul>
   {% for post in site.posts %}
+    {% if post.hidden %}
+    <!-- {{ post.url }} hidden -->
+    {% else %}
+
     <li>
       <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-	  {% if post.img %}
+    {% if post.img %}
       <p>{{ post.img }}</p>
-	  {% else %}
+    {% else %}
       <p>{{ post.excerpt }}</p>
-	  {% endif %}
+    {% endif %}
 
     </li>
+    {% endif %}
   {% endfor %}
 </ul>

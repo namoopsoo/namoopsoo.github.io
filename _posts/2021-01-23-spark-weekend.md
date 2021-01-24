@@ -1,6 +1,7 @@
 ---
 title: Spark Weekend
 date: 2021-01-23
+tags: notebook
 ---
 
 #### Following this post to get kubernetes running in Docker for mac
@@ -202,7 +203,7 @@ local:///opt/spark/examples/jars/spark-examples_2.12-3.0.1.jar
 ##### Insufficient Memory!
 * Ok so when I looked around in the Dashboard, I see oddly ... the first attempt could not succeed because of memory
 
-<img src="Screen Shot 2021-01-24 at 4.15.17 PM-insufficient-memory.png">
+<img src="https://s3.amazonaws.com/my-blog-content/2021-01-23-spark-weekend/Screen Shot 2021-01-24 at 4.15.17 PM-insufficient-memory.png" width="50%">
 
 * Oh and it is hanging around still blocking resources.
 ```

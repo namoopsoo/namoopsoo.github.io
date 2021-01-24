@@ -597,7 +597,7 @@ I think one of the top [follow ons](#follow-on) has to be to find better time of
 ### Follow On
 
 #### Time of day more splitting exploration
-Find some more interesting techniques to try out different segmentation of the time of day.
+Find some more interesting techniques to try out different segmentation of the time of day. ( I'm thinking "adaptive binning " as described [here](https://towardsdatascience.com/understanding-feature-engineering-part-1-continuous-numeric-data-da4e47099a7b)  )
 
 #### Better understanding of model uncertainty
 * As discussed in the [feature importances section](#feature-importances), it would be really interesting to take the test dataset and for the output probability vectors of all of the examples, to calculate the multi-class entropy, to see if indeed high uncertainty is associated with worse correctness rank (`kth accuracy` and `karea` in other terminology I have been using).

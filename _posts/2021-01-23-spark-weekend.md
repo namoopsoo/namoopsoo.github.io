@@ -3,6 +3,8 @@ title: Spark Weekend
 date: 2021-01-23
 tags: notebook
 ---
+### Trying out Spark this weekend
+_These are just my casual notes from doing that, updating them as I go along._
 
 #### Following this post to get kubernetes running in Docker for mac
 - Per [this post](https://medium.com/faun/apache-spark-on-kubernetes-docker-for-mac-2501cc72e659) , I just ticked the  "Enable Kubernetes" option in the docker settings.

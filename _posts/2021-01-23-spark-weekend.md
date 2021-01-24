@@ -16,19 +16,19 @@ tags: notebook
 #### ok backup my docker images
 * Per [notes](https://corgibytes.com/blog/2019/05/13/docker-for-mac-safely-reset-from-factory-defaults/) , I backed up local docker images,
 * Like this...
+
 ```
 docker save citibike-learn:0.9
 # image:citibike-learn, tag:latest, image-id:1ff5cd891f00
 # image:citibike-learn, tag:0.9, imageid:c8d430e84654
-
 ```
+
 * Then I did the factory reset.
 * And Enabled Kubernetes and wow! Nice finally got the green light.
 * And restoring with `docker load` like this
+
 ```
-
 docker load -i  citibike-learn-0.9.tar
-
 ```
 
 #### Ok now I can continue trying to get spark setup..
@@ -46,8 +46,8 @@ kubectl create serviceaccount spark
 
 kubectl create clusterrolebinding spark-role --clusterrole=edit  --serviceaccount=default:spark --namespace=default
 # clusterrolebinding.rbac.authorization.k8s.io/spark-role created
-
 ```
+
 * And submitting an example job
 
 ```

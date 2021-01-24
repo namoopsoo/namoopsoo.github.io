@@ -268,6 +268,7 @@ from pyspark.context import SparkContext
 sc = SparkContext('local', 'test')
 ```
 Oops
+
 ```python
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -285,6 +286,7 @@ ValueError: Cannot run multiple SparkContexts at once; existing SparkContext(app
 <SparkContext master=local[*] appName=PySparkShell>
 ```
 * Will try something basic..
+
 ```python
 rdd = sc.parallelize([1, 2, 3, 4])
 rdd

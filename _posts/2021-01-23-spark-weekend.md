@@ -313,3 +313,36 @@ rdd.collect()
 
 #### Next
 * I would like to try some more basic transformations and actions.
+
+### 2021-01-31
+
+#### try some things on this covid19 dataset
+* from [here](https://data.cdc.gov/Case-Surveillance/COVID-19-Case-Surveillance-Public-Use-Data/vbim-akqf)
+* This is a `1.59GiB` file , so perfect, how do I use Spark to split this up and perform some basic statistics
+* `COVID-19_Case_Surveillance_Public_Use_Data.csv`
+* Specifically, I think a good idea to test if random sampling this data, the `onset_dt` or onset date of symptoms, what is the onset rate by age bin, which is already binned as `age_group`.
+* Ah and looks like you need to be explicit with specifying a header is present.
+```python
+workdir = '/Users/michal/Downloads/'
+loc = f'{workdir}/COVID-19_Case_Surveillance_Public_Use_Data.head.csv'
+
+df = spark.read.option("header",True).csv(loc)
+
+df.printSchema()
+```
+```python
+root
+ |-- cdc_case_earliest_dt : string (nullable = true)
+ |-- cdc_report_dt: string (nullable = true)
+ |-- pos_spec_dt: string (nullable = true)
+ |-- onset_dt: string (nullable = true)
+ |-- current_status: string (nullable = true)
+ |-- sex: string (nullable = true)
+ |-- age_group: string (nullable = true)
+ |-- race_ethnicity_combined: string (nullable = true)
+ |-- hosp_yn: string (nullable = true)
+ |-- icu_yn: string (nullable = true)
+ |-- death_yn: string (nullable = true)
+ |-- medcond_yn: string (nullable = true)
+
+```

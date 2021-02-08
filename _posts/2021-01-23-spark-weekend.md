@@ -346,3 +346,165 @@ root
  |-- medcond_yn: string (nullable = true)
 
 ```
+
+### 2021-02-07
+
+#### Symptomatic by age group.
+* Hmm interesting that [in docs](https://spark.apache.org/docs/latest/api/python/pyspark.sql.html#pyspark.sql.DataFrameReader.jdbc) is says that so does that mean that all the partitions are running in parallel? How do you only run based on the number of workers you can run simultaneously?
+
+> Note: Don’t create too many partitions in parallel on a large cluster; otherwise Spark might crash your external database systems.
+
+```python
+df.groupBy('age_group').count().collect()
+
+[Row(age_group='0 - 9 Years', count=9)]                                         
+
+```
+* Try w/ a column that has more variation.. and `1000` rows instead.
+
+```python
+loc = f'{workdir}/COVID-19_Case_Surveillance_Public_Use_Data.head1000.csv'
+df = spark.read.option("header",True).csv(loc)
+df.groupBy('sex').count().collect()
+
+# [Row(sex='Female', count=446), Row(sex='Unknown', count=30), Row(sex='Missing', count=3), Row(sex='Male', count=520)]
+
+```
+* And how do I apply a custom `apply` function with my group by
+
+```python
+def foo(dfx):
+    return dfx.count()
+
+
+df.groupBy('sex').apply(foo)
+```
+
+```python
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/pyspark/sql/pandas/group_ops.py", line 70, in apply
+    raise ValueError("Invalid udf: the udf argument must be a pandas_udf of type "
+ValueError: Invalid udf: the udf argument must be a pandas_udf of type GROUPED_MAP.
+```
+* hmm oops
+
+```python
+from pyspark.sql.functions import pandas_udf, PandasUDFType
+from pyspark.sql.types import StructType, StringType, LongType, DoubleType, StructField
+
+schema = StructType([StructField('sex', StringType(), True),
+                     StructField('onset_dt', StringType(), True)])
+
+@pandas_udf(schema, PandasUDFType.GROUPED_MAP)
+def foo(dfx):
+    return dfx.count()
+```
+
+```python
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/pyspark/sql/pandas/functions.py", line 325, in pandas_udf
+    require_minimum_pyarrow_version()
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/pyspark/sql/pandas/utils.py", line 54, in require_minimum_pyarrow_version
+    "it was not found." % minimum_pyarrow_version)
+ImportError: PyArrow >= 0.15.1 must be installed; however, it was not found.
+```
+
+* hmm
+
+```python
+(pandars3) $ pip install  PyArrow
+Collecting PyArrow
+  Downloading https://files.pythonhosted.org/packages/68/5f/1fb0c604636d46257af3c3075955e860161e8c41386405467f073df73f91/pyarrow-3.0.0-cp37-cp37m-macosx_10_13_x86_64.whl (14.1MB)
+    100% |████████████████████████████████| 14.1MB 1.6MB/s
+Collecting numpy>=1.16.6 (from PyArrow)
+  Downloading https://files.pythonhosted.org/packages/68/30/a8ce4cb0c084cc1442408807dde60f9796356ea056ca6ef81c865a3d4e62/numpy-1.20.1-cp37-cp37m-macosx_10_9_x86_64.whl (16.0MB)
+    100% |████████████████████████████████| 16.0MB 1.3MB/s
+tensorboard 1.14.0 has requirement setuptools>=41.0.0, but you'll have setuptools 40.6.3 which is incompatible.
+Installing collected packages: numpy, PyArrow
+  Found existing installation: numpy 1.16.0
+    Uninstalling numpy-1.16.0:
+      Successfully uninstalled numpy-1.16.0
+Successfully installed PyArrow-3.0.0 numpy-1.20.1
+```
+
+* Ok cool now this worked ..
+
+```python
+
+from pyspark.sql.functions import pandas_udf, PandasUDFType
+from pyspark.sql.types import StructType, StringType, LongType, DoubleType, StructField
+
+schema = StructType([StructField('sex', StringType(), True),
+                     StructField('onset_dt', StringType(), True)])
+
+@pandas_udf(schema, PandasUDFType.GROUPED_MAP)
+def foo(dfx):
+    return dfx.count()
+
+
+workdir = '/Users/michal/Downloads/'
+
+loc = f'{workdir}/COVID-19_Case_Surveillance_Public_Use_Data.head1000.csv'
+df = spark.read.option("header",True).csv(loc)
+df.groupBy('sex').count().collect()
+
+#
+out = df.groupBy('sex').apply(foo)
+```
+* Really weird error though haha... 
+```python
+>>> out.collect()
+21/02/07 23:33:31 ERROR Executor: Exception in task 60.0 in stage 6.0 (TID 205)]
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/worker.py", line 605, in main
+    process()
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/worker.py", line 597, in process
+    serializer.dump_stream(out_iter, outfile)
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/sql/pandas/serializers.py", line 255, in dump_stream
+    return ArrowStreamSerializer.dump_stream(self, init_stream_yield_batches(), stream)
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/sql/pandas/serializers.py", line 88, in dump_stream
+    for batch in iterator:
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/sql/pandas/serializers.py", line 248, in init_stream_yield_batches
+    for series in iterator:
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/sql/pandas/serializers.py", line 210, in load_stream
+    yield [self.arrow_to_pandas(c) for c in pa.Table.from_batches([batch]).itercolumns()]
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/sql/pandas/serializers.py", line 210, in <listcomp>
+    yield [self.arrow_to_pandas(c) for c in pa.Table.from_batches([batch]).itercolumns()]
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/sql/pandas/serializers.py", line 236, in arrow_to_pandas
+    s = super(ArrowStreamPandasUDFSerializer, self).arrow_to_pandas(arrow_column)
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/sql/pandas/serializers.py", line 128, in arrow_to_pandas
+    s = arrow_column.to_pandas(date_as_object=True)
+  File "pyarrow/array.pxi", line 751, in pyarrow.lib._PandasConvertible.to_pandas
+  File "pyarrow/table.pxi", line 224, in pyarrow.lib.ChunkedArray._to_pandas
+  File "pyarrow/array.pxi", line 1310, in pyarrow.lib._array_like_to_pandas
+  File "pyarrow/error.pxi", line 116, in pyarrow.lib.check_status
+pyarrow.lib.ArrowException: Unknown error: Wrapping 2020/03/�9 failed
+
+	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.handlePythonException(PythonRunner.scala:503)
+	at org.apache.spark.sql.execution.python.PythonArrowOutput$$anon$1.read(PythonArrowOutput.scala:99)
+	at org.apache.spark.sql.execution.python.PythonArrowOutput$$anon$1.read(PythonArrowOutput.scala:49)
+	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.hasNext(PythonRunner.scala:456)
+	at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:37)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:489)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at org.apache.spark.sql.execution.SparkPlan.$anonfun$getByteArrayRdd$1(SparkPlan.scala:340)
+	at org.apache.spark.sql.execution.SparkPlan$$Lambda$2055/64856516.apply(Unknown Source)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:872)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2$adapted(RDD.scala:872)
+	at org.apache.spark.rdd.RDD$$Lambda$2051/1858155754.apply(Unknown Source)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:349)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:313)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)
+	at org.apache.spark.scheduler.Task.run(Task.scala:127)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:446)
+	at org.apache.spark.executor.Executor$TaskRunner$$Lambda$2018/1084937392.apply(Unknown Source)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1377)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:449)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+```

@@ -322,6 +322,7 @@ rdd.collect()
 * `COVID-19_Case_Surveillance_Public_Use_Data.csv`
 * Specifically, I think a good idea to test if random sampling this data, the `onset_dt` or onset date of symptoms, what is the onset rate by age bin, which is already binned as `age_group`.
 * Ah and looks like you need to be explicit with specifying a header is present.
+
 ```python
 workdir = '/Users/michal/Downloads/'
 loc = f'{workdir}/COVID-19_Case_Surveillance_Public_Use_Data.head.csv'
@@ -453,7 +454,8 @@ df.groupBy('sex').count().collect()
 #
 out = df.groupBy('sex').apply(foo)
 ```
-* Really weird error though haha... 
+* Really weird error though haha...
+
 ```python
 >>> out.collect()
 21/02/07 23:33:31 ERROR Executor: Exception in task 60.0 in stage 6.0 (TID 205)]
@@ -508,3 +510,311 @@ pyarrow.lib.ArrowException: Unknown error: Wrapping 2020/03/�9 failed
 	at java.lang.Thread.run(Thread.java:745)
 
 ```
+
+### 2021-02-20
+
+#### Going to attempt to use ipython w/ pyspark
+* According to [stackoverflow](https://stackoverflow.com/questions/31862293/how-to-load-ipython-shell-with-pyspark#31863595)
+
+```python
+PYSPARK_DRIVER_PYTHON=ipython ./bin/pyspark
+```
+* Ok nice worked. Just had to make sure to `source activate pandars3` my conda environment which actually has `ipython` ..
+
+#### Hmm maybe since i had errors w/ group by , I can try   `reduceByKey` intead?
+* oh actually, when looking at the doc for the group by with `help(df.groupBy('sex'))` , I read in the `apply` description that it is depracated and  `applyInPandas` is recommended instead.
+* And in the [apache spark doc here](https://spark.apache.org/docs/latest/sql-pyspark-pandas-with-arrow.html#pandas-function-apis)  , I'm reading that " Using PandasUDFType will be deprecated in the future."  so then the complicated decorator looking code I was trying above, maybe that is getting phased out anyway.
+* The only thing new here is that I need to pass the schema of the dataframe to `applyInPandas`
+* My particualr dataset is actually all categorical data and dates.
+
+```python
+def foo(dfx):
+    return dfx.count()
+
+#
+workdir = '/Users/michal/Downloads/'
+loc = f'{workdir}/COVID-19_Case_Surveillance_Public_Use_Data.head.csv'
+
+
+df = spark.read.option("header",True).csv(loc)     
+
+from pyspark.sql.types import StructType, StringType, LongType, DoubleType, StructField
+
+# Let me try to treat them all as nullable strings for now...
+schema = StructType([StructField(x, StringType(), True)
+                     for x in df.columns
+                     ])
+
+
+df.groupBy('sex').applyInPandas(foo, schema).collect()
+
+```
+
+* => ok now error I got is actually more clear...
+
+```python
+PythonException:
+  An exception was thrown from the Python worker. Please see the stack trace below.
+Traceback (most recent call last):
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/worker.py", line 605, in main
+    process()
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/worker.py", line 597, in process
+    serializer.dump_stream(out_iter, outfile)
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/sql/pandas/serializers.py", line 255, in dump_stream
+    return ArrowStreamSerializer.dump_stream(self, init_stream_yield_batches(), stream)
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/sql/pandas/serializers.py", line 88, in dump_stream
+    for batch in iterator:
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/sql/pandas/serializers.py", line 248, in init_stream_yield_batches
+    for series in iterator:
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/worker.py", line 429, in mapper
+    return f(keys, vals)
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/worker.py", line 175, in <lambda>
+    return lambda k, v: [(wrapped(k, v), to_arrow_type(return_type))]
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/worker.py", line 167, in wrapped
+    "pandas.DataFrame, but is {}".format(type(result)))
+TypeError: Return type of the user-defined function should be pandas.DataFrame, but is <class 'pandas.core.series.Series'>
+```
+
+* So  let me make sure to return a dataframe in my `foo` func
+
+```python
+import pandas as pd
+
+def foo(dfx):
+    # This group by key
+    key = dfx.limit(1)[0].sex
+    return pd.DataFrame({'sex': key, 'count': dfx.count()})
+#
+
+
+schema = StructType([StructField(x, StringType(), True)
+                     for x in df.columns
+                     ])
+#
+df.groupBy('sex').applyInPandas(foo, schema).collect()
+
+
+```
+* Now getting the error..
+
+```
+PythonException:
+  An exception was thrown from the Python worker. Please see the stack trace below.
+  ...
+AttributeError: 'DataFrame' object has no attribute 'limit'
+
+```
+* Hmm so literally the input is a vanilla pandas dataframe I think oh that's why!
+
+
+```python
+def foo(dfx):
+    # This group by key
+    key = dfx.iloc[0].sex
+    return pd.DataFrame({'sex': key, 'count': dfx.count()})
+
+#
+schema = StructType([StructField(x, StringType(), True)
+                     for x in df.columns
+                     ])
+
+df.groupBy('sex').applyInPandas(foo, schema).collect()
+
+
+```
+
+* hmm..
+
+```python
+
+
+PythonException:
+  An exception was thrown from the Python worker. Please see the stack trace below.
+Traceback (most recent call last):
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/worker.py", line 605, in main
+    process()
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/worker.py", line 597, in process
+    serializer.dump_stream(out_iter, outfile)
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/sql/pandas/serializers.py", line 255, in dump_stream
+    return ArrowStreamSerializer.dump_stream(self, init_stream_yield_batches(), stream)
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/sql/pandas/serializers.py", line 88, in dump_stream
+    for batch in iterator:
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/sql/pandas/serializers.py", line 248, in init_stream_yield_batches
+    for series in iterator:
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/worker.py", line 429, in mapper
+    return f(keys, vals)
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/worker.py", line 175, in <lambda>
+    return lambda k, v: [(wrapped(k, v), to_arrow_type(return_type))]
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/worker.py", line 160, in wrapped
+    result = f(pd.concat(value_series, axis=1))
+  File "/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/util.py", line 107, in wrapper
+    return f(*args, **kwargs)
+  File "<ipython-input-54-736ec161f4f7>", line 4, in foo
+  File "/usr/local/miniconda3/envs/pandars3/lib/python3.7/site-packages/pandas/core/frame.py", line 392, in __init__
+    mgr = init_dict(data, index, columns, dtype=dtype)
+  File "/usr/local/miniconda3/envs/pandars3/lib/python3.7/site-packages/pandas/core/internals/construction.py", line 212, in init_dict
+    return arrays_to_mgr(arrays, data_names, index, columns, dtype=dtype)
+  File "/usr/local/miniconda3/envs/pandars3/lib/python3.7/site-packages/pandas/core/internals/construction.py", line 56, in arrays_to_mgr
+    arrays = _homogenize(arrays, index, dtype)
+  File "/usr/local/miniconda3/envs/pandars3/lib/python3.7/site-packages/pandas/core/internals/construction.py", line 277, in _homogenize
+    raise_cast_failure=False)
+  File "/usr/local/miniconda3/envs/pandars3/lib/python3.7/site-packages/pandas/core/internals/construction.py", line 642, in sanitize_array
+    value, len(index), dtype)
+  File "/usr/local/miniconda3/envs/pandars3/lib/python3.7/site-packages/pandas/core/dtypes/cast.py", line 1187, in construct_1d_arraylike_from_scalar
+    subarr = np.empty(length, dtype=dtype)
+TypeError: Cannot interpret '<attribute 'dtype' of 'numpy.generic' objects>' as a data type
+
+```
+
+```python
+schema = StructType([StructField('sex', StringType(), True),
+                     StructField('count', LongType(), True)
+                     ])
+df.groupBy('sex').applyInPandas(foo, schema).collect()
+```
+
+* group to try the string schema usage instead
+
+```python
+schema = ', '.join([f'{x} string' for x in df.columns]); schema                                                               
+# 'cdc_case_earliest_dt string, cdc_report_dt string, pos_spec_dt string, onset_dt string, current_status string, sex string, age_group string, race_ethnicity_combined string, hosp_yn string, icu_yn string, death_yn string, medcond_yn string'
+
+
+df.groupBy('sex').applyInPandas(foo, schema).collect()
+
+```
+* Dang same error. Maybe doesnt like string type group bys?
+
+* Randomly reading this may be something to do w/ old pandas version?
+
+```
+
+In [68]: pd.__version__                                                                                                                
+Out[68]: '0.24.2'
+
+```
+* I upgraded to `1.0.5`
+
+
+```python
+import pandas as pd
+
+workdir = '/Users/michal/Downloads/'
+
+loc = f'{workdir}/COVID-19_Case_Surveillance_Public_Use_Data.head1000.csv'
+df = spark.read.option("header",True).csv(loc)
+
+def foo(dfx):
+    # This group by key
+    key = dfx.iloc[0].sex
+    return pd.DataFrame({'sex': key, 'count': dfx.count()})
+
+#
+
+schema = 'sex string, count int'
+#
+df.groupBy('sex').applyInPandas(foo, schema).collect()
+
+
+
+
+```
+
+* now a different error..
+
+```
+pyarrow.lib.ArrowException: Unknown error: Wrapping 2020/03/�6 failed
+
+```
+* Makes me think I have some garbage data
+* Trying the 10 line datafile i have instead
+
+```python
+
+loc = f'{workdir}/COVID-19_Case_Surveillance_Public_Use_Data.head1000.csv'
+df = spark.read.option("header",True).csv(loc)
+
+# everything else is the same ..
+```
+* WOw now a scala/java error..
+
+```
+21/02/20 22:19:32 ERROR Executor: Exception in task 60.0 in stage 8.0 (TID 406)]
+org.apache.spark.SparkException: Python worker exited unexpectedly (crashed)
+...
+at org.apache.spark.api.python.BasePythonRunner$ReaderIterator$$anonfun$1.applyOrElse(PythonRunner.scala:536)
+at org.apache.spark.api.python.BasePythonRunner$ReaderIterator$$anonfun$1.applyOrElse(PythonRunner.scala:525)
+at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+at org.apache.spark.sql.execution.python.PythonArrowOutput$$anon$1.read(PythonArrowOutput.scala:105)
+at org.apache.spark.sql.execution.python.PythonArrowOutput$$anon$1.read(PythonArrowOutput.scala:49)
+at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.hasNext(PythonRunner.scala:456)
+at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:37)
+at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:489)
+at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+at org.apache.spark.sql.execution.SparkPlan.$anonfun$getByteArrayRdd$1(SparkPlan.scala:340)
+at org.apache.spark.sql.execution.SparkPlan$$Lambda$2055/1769623532.apply(Unknown Source)
+at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:872)
+at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2$adapted(RDD.scala:872)
+at org.apache.spark.rdd.RDD$$Lambda$2051/917090051.apply(Unknown Source)
+at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:349)
+at org.apache.spark.rdd.RDD.iterator(RDD.scala:313)
+at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)
+at org.apache.spark.scheduler.Task.run(Task.scala:127)
+at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:446)
+at org.apache.spark.executor.Executor$TaskRunner$$Lambda$2018/644307005.apply(Unknown Source)
+at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1377)
+at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:449)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+at java.lang.Thread.run(Thread.java:745)
+Caused by: java.io.EOFException
+at java.io.DataInputStream.readInt(DataInputStream.java:392)
+at org.apache.spark.sql.execution.python.PythonArrowOutput$$anon$1.read(PythonArrowOutput.scala:86)
+... 22 more
+
+
+
+21/02/20 22:19:32 ERROR TaskSetManager: Task 159 in stage 8.0 failed 1 times; aborting job
+---------------------------------------------------------------------------
+Py4JJavaError                             Traceback (most recent call last)
+<ipython-input-3-e6065af68166> in <module>
+     15 schema = 'sex string, count int'
+     16 #
+---> 17 df.groupBy('sex').applyInPandas(foo, schema).collect()
+     18
+
+~/Downloads/spark-3.0.1-bin-hadoop3.2/python/pyspark/sql/dataframe.py in collect(self)
+    594         """
+    595         with SCCallSiteSync(self._sc) as css:
+--> 596             sock_info = self._jdf.collectToPython()
+    597         return list(_load_from_socket(sock_info, BatchedSerializer(PickleSerializer())))
+    598
+
+~/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py in __call__(self, *args)
+   1303         answer = self.gateway_client.send_command(command)
+   1304         return_value = get_return_value(
+-> 1305             answer, self.gateway_client, self.target_id, self.name)
+   1306
+   1307         for temp_arg in temp_args:
+
+~/Downloads/spark-3.0.1-bin-hadoop3.2/python/pyspark/sql/utils.py in deco(*a, **kw)
+    126     def deco(*a, **kw):
+    127         try:
+--> 128             return f(*a, **kw)
+    129         except py4j.protocol.Py4JJavaError as e:
+    130             converted = convert_exception(e.java_exception)
+
+~/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/py4j-0.10.9-src.zip/py4j/protocol.py in get_return_value(answer, gateway_client, target_id, name)
+    326                 raise Py4JJavaError(
+    327                     "An error occurred while calling {0}{1}{2}.\n".
+--> 328                     format(target_id, ".", name), value)
+    329             else:
+    330                 raise Py4JError(
+
+Py4JJavaError: An error occurred while calling o148.collectToPython.
+: org.apache.spark.SparkException: Job aborted due to stage failure: Task 159 in stage 8.0 failed 1 times, most recent failure: Lost task 159.0 in stage 8.0 (TID 409, 192.168.16.173, executor driver): org.apache.spark.SparkException: Python worker exited unexpectedly (crashed)
+
+
+```
+* hahaha that is great.

@@ -818,3 +818,146 @@ Py4JJavaError: An error occurred while calling o148.collectToPython.
 
 ```
 * hahaha that is great.
+
+#### The toy example does work though
+* from the [docs](https://spark.apache.org/docs/latest/sql-pyspark-pandas-with-arrow.html#grouped-map)
+
+```python
+
+df = spark.createDataFrame(
+    [(1, 1.0), (1, 2.0), (2, 3.0), (2, 5.0), (2, 10.0)],
+    ("id", "v"))
+
+def subtract_mean(pdf):
+    # pdf is a pandas.DataFrame
+    v = pdf.v
+    return pdf.assign(v=v - v.mean())
+
+df.groupby("id").applyInPandas(subtract_mean, schema="id long, v double").show()
+
+
++----+----+                                                                     
+|  id|   v|
++----+----+
+|   1| 0.0|
+|null|null|
+|   2| 0.0|
+|null|null|
+|null|null|
++----+----+
+
+```
+* Hmm so my guess is the string group by is not appreciated..?
+
+
+##### uummm tried again w/ the small file and this time worked... well didnt crash at least..
+
+```python
+import pandas as pd
+
+workdir = '/Users/michal/Downloads/'
+
+loc = f'{workdir}/COVID-19_Case_Surveillance_Public_Use_Data.head.csv'
+df = spark.read.option("header",True).csv(loc)
+
+def foo(dfx):
+    # This group by key
+    key = dfx.iloc[0].sex
+    return pd.DataFrame({'sex': key, 'count': dfx.count()})
+
+#
+
+schema = 'sex string, count int'
+#
+df.groupBy('sex').applyInPandas(foo, schema).collect()
+```
+
+```
+[Row(sex='Female', count=7),
+ Row(sex='Female', count=7),
+ Row(sex='Female', count=7),
+ Row(sex='Female', count=3),
+ Row(sex='Female', count=7),
+ Row(sex='Female', count=7),
+ Row(sex='Female', count=7),
+ Row(sex='Female', count=7),
+ Row(sex='Female', count=7),
+ Row(sex='Female', count=7),
+ Row(sex='Female', count=7),
+ Row(sex='Female', count=7),
+ Row(sex='Male', count=2),
+ Row(sex='Male', count=2),
+ Row(sex='Male', count=2),
+ Row(sex='Male', count=1),
+ Row(sex='Male', count=2),
+ Row(sex='Male', count=2),
+ Row(sex='Male', count=2),
+ Row(sex='Male', count=2),
+ Row(sex='Male', count=2),
+ Row(sex='Male', count=2),
+ Row(sex='Male', count=2),
+ Row(sex='Male', count=2)]
+```
+
+* But now this output looks like well not what I would expect.
+* I expect two rows since you know, this is a group by. So hmm
+* But in any case, at least it is not crashing! so major improvement.
+* Hmm unless this is a partitioned group by... hmm that would be exciting. So the group by has to be combined?
+* So could it be I have `12` partitions here?  But the file only has `9` rows. Weird.
+
+#### oh the apply func can take the key as an arg ?
+
+```python
+import pandas as pd
+
+workdir = '/Users/michal/Downloads/'
+
+loc = f'{workdir}/COVID-19_Case_Surveillance_Public_Use_Data.head.csv'
+df = spark.read.option("header",True).csv(loc)
+
+def foo(key, dfx):
+    """
+    Args:
+        key: tuple of the group by keys.
+        dfx: pandas df for the given group by key.
+    """
+    return pd.DataFrame({'sex': key[0], 'count': dfx.count()})
+
+#
+schema = 'sex string, count int'
+#
+df.groupBy('sex').applyInPandas(foo, schema).show()
+```
+
+* result is same, but since using `show()` instead of `collect()` this time, the output looks slightly different
+* Still don't know why more than two rows though .. 
+```python
+
++------+-----+
+|   sex|count|
++------+-----+
+|Female|    7|
+|Female|    7|
+|Female|    7|
+|Female|    3|
+|Female|    7|
+|Female|    7|
+|Female|    7|
+|Female|    7|
+|Female|    7|
+|Female|    7|
+|Female|    7|
+|Female|    7|
+|  Male|    2|
+|  null| null|
+|  Male|    2|
+|  null| null|
+|  Male| null|
+|  null| null|
+|  null| null|
+|  null| null|
++------+-----+
+only showing top 20 rows
+
+
+```

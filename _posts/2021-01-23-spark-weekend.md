@@ -930,7 +930,8 @@ df.groupBy('sex').applyInPandas(foo, schema).show()
 ```
 
 * result is same, but since using `show()` instead of `collect()` this time, the output looks slightly different
-* Still don't know why more than two rows though .. 
+* Still don't know why more than two rows though ..
+
 ```python
 
 +------+-----+

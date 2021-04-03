@@ -101,3 +101,88 @@ display(dbutils.fs.ls("/mnt/%s" % mount_name))
 * Trying to use these [docs](http://hadoop.apache.org/docs/r2.8.0/hadoop-aws/tools/hadoop-aws/index.html#Troubleshooting_S3A) to troubleshoot s3a
 
 * Ok going to just try the upload instead  because cannot figure out the permissions. But I feel it is possibly because of the missing IAM Role on the ec2 workers.
+
+#### Wait oops!
+* At the very top of this sample notebook I completely ignored the link , https://docs.databricks.com/administration-guide/cloud-configurations/aws/instance-profiles.html  , which has super detailed IAM role instructions #$%*#$$#!! haha
+* Ok going to try the upload route anyway just so I can possibly get started ..
+
+#### upload
+* ok I stepped away from my upload of this 1.5 gig file, and when I came back there was no evidence of success or error hehe,
+* I looked around the file system w/ the notebook and stumbled upon this interesting dir, which looks like it has my file
+
+```python
+
+import os
+print(os.listdir("/dbfs/FileStore/tables"))
+# ['COVID_19_Case_Surveillance_Public_Use_Data.csv']
+
+```
+* So going to try making a table from it...
+
+```python
+# File location and type
+file_location = "/dbfs/FileStore/tables/COVID_19_Case_Surveillance_Public_Use_Data.csv"
+file_type = "csv"
+
+# CSV options
+infer_schema = "true"
+first_row_is_header = "true"
+delimiter = ","
+
+# The applied options are for CSV files. For other file types, these will be ignored.
+df = spark.read.format(file_type) \
+  .option("inferSchema", infer_schema) \
+  .option("header", first_row_is_header) \
+  .option("sep", delimiter) \
+  .load(file_location)
+
+display(df)
+```
+* Got ...
+
+```
+AnalysisException: Path does not exist: dbfs:/dbfs/FileStore/tables/COVID_19_Case_Surveillance_Public_Use_Data.csv;
+```
+
+* Maybe without the leading `/dbfs/` ?
+* Ah bingo.. so it's not an absolute path but like a relative path..
+
+```python
+# File location and type
+file_location = "/FileStore/tables/COVID_19_Case_Surveillance_Public_Use_Data.csv"
+file_type = "csv"
+
+# CSV options
+infer_schema = "true"
+first_row_is_header = "true"
+delimiter = ","
+
+# The applied options are for CSV files. For other file types, these will be ignored.
+df = spark.read.format(file_type) \
+  .option("inferSchema", infer_schema) \
+  .option("header", first_row_is_header) \
+  .option("sep", delimiter) \
+  .load(file_location)
+
+display(df)
+```
+* Ok that was pretty fast..
+
+* And create that table..
+
+```python
+# Since this table is registered as a temp view, it will only be available to this notebook. If you'd like other users to be able to query this table, you can also create a table from the DataFrame.
+# Once saved, this table will persist across cluster restarts as well as allow various users across different notebooks to query this data.
+# To do so, choose your table name and uncomment the bottom line.
+
+permanent_table_name = "covid"
+# table_import_type?
+df.write.format("json").saveAsTable(permanent_table_name)
+```
+* Took 50 seconds
+* try read ..
+
+```sql
+select * from covid limit 10
+```
+* wow ok actually worked ... I am now seeing first ten rows ..

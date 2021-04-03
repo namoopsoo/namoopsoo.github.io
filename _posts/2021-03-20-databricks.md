@@ -186,3 +186,17 @@ df.write.format("json").saveAsTable(permanent_table_name)
 select * from covid limit 10
 ```
 * wow ok actually worked ... I am now seeing first ten rows ..
+
+#### ok try that group by from last time..
+
+```sql
+select   age_group, sum(case when onset_dt is null then 0 else 1 end)/count(1) as asymptomatic_rate
+from covid
+
+group by age_group
+order by age_group
+```
+
+<img src="https://s3.amazonaws.com/my-blog-content/2021-03-20-databricks/2021-04-01T2027Z-symptomatic-rates-age.png" width="50%">
+
+* And side notes, in the databricks browser notebook , I generated this above plot by clicking "bar chart" option and generating a  "Bokeh" looking graphic, then downloading it. But I had tried to export the notebook as `ipynb` and the images did not get saved . Instead it looked like only the tabular data was saved. 

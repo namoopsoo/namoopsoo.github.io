@@ -213,3 +213,65 @@ order by age_group
 <img src="https://s3.amazonaws.com/my-blog-content/2021-03-20-databricks/2021-04-01T2027Z-symptomatic-rates-age.png" width="50%">
 
 * And side notes, in the databricks browser notebook , I generated this above plot by clicking "bar chart" option and generating a  "Bokeh" looking graphic, then downloading it. But I had tried to export the notebook as `ipynb` and the images did not get saved . Instead it looked like only the tabular data was saved.
+
+#### And although this data is pretty sparse, look at the comorbidity data too
+
+```
+hosp_yn	|Hospitalization status|Plain Text
+icu_yn	|ICU admission status|Plain Text
+death_yn	|Death status|Plain Text
+medcond_yn	|Presence of underlying comorbidity or disease|Plain Text
+```
+```sql
+select medcond_yn, count(1)
+from covid
+group by medcond_yn
+
+```
+
+```
+medcond_yn|count(1)
+--|--
+Unknown|1290951
+No|938017
+Yes|944195
+Missing|10242673
+```
+
+<img src="https://s3.amazonaws.com/my-blog-content/2021-03-20-databricks/2021-04-01T2048Z-comorbodities.png" width="50%">
+
+
+```sql
+select sum(case when hosp_yn)
+from covid
+group by medcond_yn
+
+```
+
+hosp_yn|count(1)
+--|--
+Unknown|2139571
+No|4830822
+Yes|703734
+Missing|5741709
+
+```sql
+%sql
+select medcond_yn,
+sum(case when hosp_yn = 'Yes' then 1 else 0 end)/count(1) as hospYes_rate,
+sum(case when hosp_yn = 'No' then 1 else 0 end)/count(1) as hospNo_rate,
+sum(case when hosp_yn = 'Unknown' then 1 else 0 end)/count(1) as hospUnknown_rate,
+sum(case when hosp_yn = 'Missing' then 1 else 0 end)/count(1) as hospMissing_rate
+from covid
+group by medcond_yn
+
+```
+
+medcond_yn|hospMissing_rate|hospYes_rate|hospUnknown_rate|hospNo_rate
+--|--|--|--|--
+Unknown|0.12071333458822217|0.06108210148952207|0.6504840230186894|0.16772054090356645
+No|0.22393943819781517|0.03035552660559457|0.021185117114082153|0.7245199180825082
+Yes|0.10189102886585928|0.21121802170102574|0.04902694888238129|0.6378640005507337
+Missing|0.5154523628744176|0.03875697291127033|0.12044365762726195|0.32534700658705007
+
+<img src="https://s3.amazonaws.com/my-blog-content/2021-03-20-databricks/Capture d’écran 2021-04-03 à 17.13.27.png" width="50%">

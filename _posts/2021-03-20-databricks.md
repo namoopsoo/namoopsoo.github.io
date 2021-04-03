@@ -187,6 +187,19 @@ select * from covid limit 10
 ```
 * wow ok actually worked ... I am now seeing first ten rows ..
 
+#### quick stat
+
+```sql
+%sql
+select age_group, count(1)
+from covid
+group by age_group
+order by age_group asc
+```
+
+<img src="https://s3.amazonaws.com/my-blog-content/2021-03-20-databricks/2021-04-01T2017Z-age-ranges.png" width="50%">
+
+
 #### ok try that group by from last time..
 
 ```sql
@@ -199,4 +212,4 @@ order by age_group
 
 <img src="https://s3.amazonaws.com/my-blog-content/2021-03-20-databricks/2021-04-01T2027Z-symptomatic-rates-age.png" width="50%">
 
-* And side notes, in the databricks browser notebook , I generated this above plot by clicking "bar chart" option and generating a  "Bokeh" looking graphic, then downloading it. But I had tried to export the notebook as `ipynb` and the images did not get saved . Instead it looked like only the tabular data was saved. 
+* And side notes, in the databricks browser notebook , I generated this above plot by clicking "bar chart" option and generating a  "Bokeh" looking graphic, then downloading it. But I had tried to export the notebook as `ipynb` and the images did not get saved . Instead it looked like only the tabular data was saved.

@@ -38,6 +38,6 @@ The cable management rear mounted with holes [here](https://www.homedit.com/stan
 
 ##### This motorized standing desk though
 
-Pretty expensive I think $600 bug elegant. But is it an assumption that the monitor height you use whilst seated is the monitor height you need standing? Are your elbows doing something else when you are standing?  ( Originally a [kickstarter](https://www.kickstarter.com/projects/movi/movi-the-standing-desks-that-elevate-your-workspac) but now I see you can [buy it](https://www.kickstarter.com/projects/movi/movi-the-standing-desks-that-elevate-your-workspac) )
+Pretty expensive I think $600 bug elegant. But is it an assumption that the monitor height you use whilst seated is the monitor height you need standing? Are your elbows doing something else when you are standing?  ( Originally a [kickstarter](https://www.kickstarter.com/projects/movi/movi-the-standing-desks-that-elevate-your-workspac) but now I see you can [buy it](https://www.kickstarter.com/projects/movi/movi-the-standing-desks-that-elevate-your-workspac) ) . 
 
 <iframe src="https://player.vimeo.com/video/535277105" width="640" height="1138" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>

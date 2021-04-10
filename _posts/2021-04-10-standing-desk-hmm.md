@@ -1,3 +1,8 @@
+---
+title: Some Better Desk Research
+date: 2021-04-10
+tags: ergonomics, desks
+---
 
 
 ### 2021-04-10

@@ -25,6 +25,19 @@ tags: ergonomics, desks
 <img src="https://s3.amazonaws.com/my-blog-content/2021-04-10-standing-desk-hmm/at-work-standing-desk.jpg" width="50%">
 
 ##### Wall mounted
-Also from [home edit](https://www.homedit.com/ikea-standing-desk/) wow, he hiding your wires part and the slim design. And again you just need to find a good stool.
+Also from [home edit](https://www.homedit.com/ikea-standing-desk/) wow, he hiding your wires part and the slim design. And again you just need to find a good stool. Less space for a treadmill under that if it is against the wall I suppose.
+
+Also this wall desk saves so much space I imagine you can just have a sit down desk as well. Just need to move your laptop around.
 
 <img src="https://s3.amazonaws.com/my-blog-content/2021-04-10-standing-desk-hmm/IKEA-Lagan-countertop.jpg" width="50%">
+
+##### Side note or back note
+The cable management rear mounted with holes [here](https://www.homedit.com/standing-desk-designs-and-extensions/)  from [Artifox](https://theartifox.com/) looks nice but I could not find this sold separately on the site.
+
+<img src="https://s3.amazonaws.com/my-blog-content/2021-04-10-standing-desk-hmm/Minimalist-Standing-Desk-Artifox-Cable-Management.jpg" width="50%">
+
+##### This motorized standing desk though
+
+Pretty expensive I think $600 bug elegant. But is it an assumption that the monitor height you use whilst seated is the monitor height you need standing? Are your elbows doing something else when you are standing?  ( Originally a [kickstarter](https://www.kickstarter.com/projects/movi/movi-the-standing-desks-that-elevate-your-workspac) but now I see you can [buy it](https://www.kickstarter.com/projects/movi/movi-the-standing-desks-that-elevate-your-workspac) )
+
+<img src="https://s3.amazonaws.com/my-blog-content/2021-04-10-standing-desk-hmm/a294c83b720f8d69c716311caee700a9_original.webp" width="50%">

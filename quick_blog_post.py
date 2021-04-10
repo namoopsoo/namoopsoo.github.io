@@ -121,7 +121,7 @@ def do():
 
     # Collect args from user.
     args = vars(parser.parse_args())
-    images = [x.replace('\\', '') for x in args.get('images').split(',')]
+    images = [x.replace('\\', '').strip() for x in args.get('images').split(',')]
     print('images', images)
     dry_run = args.get('dry_run')
     title = args.get('title')

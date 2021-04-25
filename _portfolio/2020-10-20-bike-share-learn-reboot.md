@@ -110,6 +110,10 @@ for i, part in enumerate(tqdm(parts)):
 ```
 to see if the scikit learn API can allow saving and restoring previously trained models and continuing, with the `fit(X, xgb_model=prev_model)` syntax, but the output performance data was basically random indicating to me that the `fit` was starting from scratch each time.
 
+Here, below, is a plot of accuracy after multiple epochs, just to visually show the lack of any progression.
+
+<img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-06-16_files/2020-06-16_10_1.png">
+
 So basically I gave up on this approach for using xgboost.
 
 ### Multi class classification notes

@@ -76,6 +76,12 @@ As I mentioned [here](https://github.com/namoopsoo/learn-citibike/blob/master/no
 
 Compared to the initial baseline logloss from earlier of around `29`, here I [noted](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-12--snapshot-2020-06-14T2258Z.md#averaging-log-losses) a result of `3.9934347` with the initial xgboost approach.
 
+On [2020-06-14](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-14.md), I tried using the xgboost caching with the scikitlearn api approach. In the meantime I also ran into a fun issue where an xgboost model was trained on data without a particular output class , with only `53` classes in fact and would produce predict probability vectors of length `53` instead of `54`, so I ended up having to make sure to better shuffle the data to make sure when trying to use less data (when using cross validation for instance) that all of the output classes are accounted for, without having a more direct way of telling Xgboost what the output classes should be.
+
+Also another fun Tensorflow comparison was I got `XGBoostError: need to call fit or load_model beforehand` when trying to call predict on a bare model that had not undergone training. Whereas with Tensorflow, I experienced in a previous project that this is absolutely fine, because you simply have a fully formed neural network with some randomly (or otherwise) initialized weights. But with xgboost, or at least the particular implementation I was using, this is not possible, because there is no notion of a base model.
+
+
+
 
 ### Multi class classification notes
 

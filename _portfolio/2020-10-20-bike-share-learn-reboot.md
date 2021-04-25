@@ -30,7 +30,7 @@ Again, the data looks like this
 * [Prior probability baseline](#prior-probability-baseline)
 * [Xgboost detour](#xgboost-detour)
 * [Multi class classification notes](#multi-class-classification-notes)
-* []()
+* [2020-06-19](#2020-06-19)
 * [Previously](#previously-vs-this-time)
 * [model highlights](#model-highlights)
 * data used
@@ -110,11 +110,64 @@ for i, part in enumerate(tqdm(parts)):
 ```
 to see if the scikit learn API can allow saving and restoring previously trained models and continuing, with the `fit(X, xgb_model=prev_model)` syntax, but the output performance data was basically random indicating to me that the `fit` was starting from scratch each time.
 
-Here, below, is a plot of accuracy after multiple epochs, just to visually show the lack of any progression.
+Here, below, is a plot of accuracy after multiple epochs, just to visually show the lack of any progression. (This plot is from a similar experiment in my [2020-06-16 notebook](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-16.md) ).
 
 <img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-06-16_files/2020-06-16_10_1.png">
 
 So basically I gave up on this approach for using xgboost.
+
+Also in that notebook, I found I was oddly getting `0` logloss during some experimentation because I had like in this toy example below, been specifying labels to the `log_loss` func, not matching the actual `y_true` data (which is the first arg).
+
+```python
+a, b = np.array([0, 0, 0]), np.array([[0, 0., 0],
+                                      [0., 0, 0],
+                                      [0., 0, 0]])
+print(log_loss(a, b, labels=['a', 'b', 'c']))
+
+# => 0.0
+```
+
+#### 2020-06-19
+[Here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-19.md) , because a lot of the test set prediction for model evaluation takes time I ended up creating a mini parallelization func. I verified that it was producing roughly the same validation and the time to execute was less.
+
+<img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-06-19_files/2020-06-19_18_1.png">
+
+I also wrote about how I had needed to use less data to avoid crashing, using the pandas `sample()` func like,
+
+```python
+tripsdf = pd.read_csv(f'{datadir}/2013-07 - Citi Bike trip data.csv'
+                     ).sample(frac=0.017, random_state=42)
+```
+
+but that it would be better to build a more balanced dataset instead of just random sampling.
+
+#### TODO describe additional experiments
+
+* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-21.md , another cache train data one more time with functional api .
+( especially https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-21.md#log-dump-w-num_round100 ), max_depth not changing so no learning happening
+* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-23.md , Adding new features here for a 'v2' dataset. `weekday`. and `time_of_day`. Added this in a new module, `fresh/preproc/v2.py`
+* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-24.md  , more memory struggles (since I added more data I think )
+* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-26.md , describing that after lots of crashing, I describe starting to use numpy append mode, [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-26.md#2020-06-27)  , to allow for doing preprocessing in chunks. And starting to look at target class distribution.
+* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-27.md , discovering # Quite possible that this caching is only allowed w/ the "libsvm" format ..
+* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-28.md , Hmm kind of weird, that with cache, without... producing different feature_names ?   more kernel dying.  
+* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-28-take2.md  , bigger box?
+* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-29.md  , class distribution for size reduction.  https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-29.md#2020-07-01  , dataset rebalancing.
+* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-03-aws.md  , Ok take the result from the balancing/shrinking concept from the "2020-06-29.ipynb" notebook and try to use less data see if we can avoid a kernel crash that happened in "2020-06-28-take2.ipynb"
+* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-04-aws.md , Want to do a quick recalc of yesterday's model using the sklearn API Again..
+* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-05-aws-two.md , more rebalancing
+* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-05.md
+* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-08-aws.md , end result: compared with "2020-07-03-aws.md" , I am not really seeing much of a difference. the balanced test accuracy perhaps looks every so slightly better but probably not significantly.
+* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-09-aws.md , change up 'subsample' and 'max_depth', measuring logloss, accuracy and balanced_accuracy ,  there are some noticable changes in logloss, but overall the changes are probably not significant  ,
+* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-10-aws.md
+* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md
+* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.md
+* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-26-feature-importances.md
+
+
+
+
+
+
 
 ### Multi class classification notes
 

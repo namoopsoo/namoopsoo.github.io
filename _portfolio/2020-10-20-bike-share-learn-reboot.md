@@ -11,7 +11,7 @@ date:   2020-10-20 10:00:05 -0400
 This project is a reboot of [my earlier project](/portfolio/citibike-project-readme.html) of predicting bicycle ride share riders destinations.
 https://bike-hop-predict.s3.amazonaws.com/index.html
 
-This time around I used XGBoost, newer features, hyper parameter tuning and I have a <a href="https://bike-hop-predict.s3.amazonaws.com/index.html" target="_blank"> demo site </a> as well.   ._
+This time around I used XGBoost, newer features, hyper parameter tuning and I have a <a href="https://bike-hop-predict.s3.amazonaws.com/index.html" target="_blank"> demo site </a> as well.   
 <!-- http://bike.michal.piekarczyk.xyz/index.html -->
 
 Again, the data looks like this
@@ -27,7 +27,10 @@ Again, the data looks like this
 ```
 
 ### TOC
-* [Xgboost notes](#earlier-xgboost-notes)
+* [Prior probability baseline](#prior-probability-baseline)
+* [Xgboost detour](#xgboost-detour)
+* [Multi class classification notes](#multi-class-classification-notes)
+* []()
 * [Previously](#previously-vs-this-time)
 * [model highlights](#model-highlights)
 * data used
@@ -35,10 +38,41 @@ Again, the data looks like this
 * [Looking at hyperparameter tuning results](#looking-at-hyperparameter-tuning-results)
 * [Follow on](#follow-on)
 
-### Earlier Xgboost notes / blog posts
-* [xgboost notes](https://michal.piekarczyk.xyz/2020/06/21/notes-xgboost.html )
+### Prior probability baseline
+[Here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-04-pure-prior-probability-model.md), I first wanted to get a metric baseline using a simple model which only uses the highest prior probability destination as the prediction for a source bike share station. Anything even slightly more sophisticated should perform better. I also used this opportunity to apply multi class logloss as an evaluation metric for this problem, which I had not tried last time. So for an output probability vector of `54` possible destination stations, log loss can more granularly assess the prediction probabilities against a vector of the correct station, `[0, 1, 0, 0, 0,...]` compared to just `accuracy`.
+
+For example 
+
+```python
+from sklearn.metrics import log_loss
+# and some noisy predictions
+noisy_pred = np.array([[.05, .05, .9],
+                   [.95, 0.05, 0],
+                   [.9, 0.1, 0],
+                   [0.05, .05, .9],
+                   [0, 1, 0]])
+log_loss([3, 1, 1, 3, 2],
+         noisy_pred)
+```
+
+the output here is `0.07347496827220674`, which is just slightly worse than the perfect `0.`, showing that log loss can be handy for comparing models.
+
+The detail is in the [notes](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-04-pure-prior-probability-model.md), but basically the cross validation log loss using this method ended up being 
+
+```
+array([29.03426394, 25.61716199, 29.19083979, 28.312853  , 22.04601817])
+```
+
+### Xgboost detour
+To start, I wanted to better understand how to use Xgboost abilities with respect to training a model, putting it down, saving it to disk, loading it again and continuing to train on new data. I had used this capability in Tensorflow land earlier and I read it might be possible with Xgboost, but even after trial and error with both the main Xgboost API and its scikit learn API, I could not get this to work properly.
+My notes on this are  [here in an earlier post](https://michal.piekarczyk.xyz/2020/06/21/notes-xgboost.html ).
+
+### Multi class classification notes
+
 * [Notes on multi class classification](https://michal.piekarczyk.xyz/2020/07/13/multi-multi-class.html)
-* [hyper parameter tuning and train/test acc](https://michal.piekarczyk.xyz/2020/07/24/understanding-tuning-results.html)
+
+### Understanding tuning results
+ [hyper parameter tuning and train/test acc](https://michal.piekarczyk.xyz/2020/07/24/understanding-tuning-results.html)
 
 
 ### Previously vs This time

@@ -41,7 +41,7 @@ Again, the data looks like this
 ### Prior probability baseline
 [Here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-04-pure-prior-probability-model.md), I first wanted to get a metric baseline using a simple model which only uses the highest prior probability destination as the prediction for a source bike share station. Anything even slightly more sophisticated should perform better. I also used this opportunity to apply multi class logloss as an evaluation metric for this problem, which I had not tried last time. So for an output probability vector of `54` possible destination stations, log loss can more granularly assess the prediction probabilities against a vector of the correct station, `[0, 1, 0, 0, 0,...]` compared to just `accuracy`.
 
-For example 
+For example
 
 ```python
 from sklearn.metrics import log_loss
@@ -57,15 +57,25 @@ log_loss([3, 1, 1, 3, 2],
 
 the output here is `0.07347496827220674`, which is just slightly worse than the perfect `0.`, showing that log loss can be handy for comparing models.
 
-The detail is in the [notes](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-04-pure-prior-probability-model.md), but basically the cross validation log loss using this method ended up being 
+The detail is in the [notes](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-04-pure-prior-probability-model.md), but basically the cross validation log loss using this method ended up being
 
 ```
 array([29.03426394, 25.61716199, 29.19083979, 28.312853  , 22.04601817])
 ```
 
+#### Dockerization
+Next, for repeatability and portability, [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-07-local-docker-notes.md) I re-adapted some earlier Dockerization I had setup before to wrap xgboost, along with jupyter notebook for experimentation.
+
 ### Xgboost detour
 To start, I wanted to better understand how to use Xgboost abilities with respect to training a model, putting it down, saving it to disk, loading it again and continuing to train on new data. I had used this capability in Tensorflow land earlier and I read it might be possible with Xgboost, but even after trial and error with both the main Xgboost API and its scikit learn API, I could not get this to work properly.
 My notes on this are  [here in an earlier post](https://michal.piekarczyk.xyz/2020/06/21/notes-xgboost.html ).
+
+One cool thing I did [learn](https://michal.piekarczyk.xyz/2020/06/21/notes-xgboost.html#parallelism) however was that when repeating a model train and evaluation experiment with both the functional API and the scikit learn API, the functional API took advantage of multithreading, and produced a particular result in `4min 18s` vs `49min 6s`, with both models using the same `seed=42` and ending up with the same accuracy and log loss on some held out data.
+
+As I mentioned [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-12--snapshot-2020-06-14T2258Z.md#2020-06-13)  , I experienced some early problems running out of memory and crashing, for instance computing log los son `843416 rows`. And that is why I was seeking out approaches of online learning. But because of the limitations, my workout ended up being the use of at least carefully deleting objects in memory with `del` to free up space for, between preprocessing, training and validation. And I also played around with the approach of initializing a `xgb.DMatrix` using the `xgb.DMatrix('/my/blah/path#dtrain.cache')` syntax where you specify `#` a cache file to allow for file access to reduce the in-memory burden, also requiring to dump your pre-processed training data to file first. (And doing that is good anyway because it allows you to free up that precious memory).
+
+Compared to the initial baseline logloss from earlier of around `29`, here I [noted](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-12--snapshot-2020-06-14T2258Z.md#averaging-log-losses) a result of `3.9934347` with the initial xgboost approach.
+
 
 ### Multi class classification notes
 

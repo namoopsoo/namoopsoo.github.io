@@ -80,8 +80,37 @@ On [2020-06-14](https://github.com/namoopsoo/learn-citibike/blob/master/notes/20
 
 Also another fun Tensorflow comparison was I got `XGBoostError: need to call fit or load_model beforehand` when trying to call predict on a bare model that had not undergone training. Whereas with Tensorflow, I experienced in a previous project that this is absolutely fine, because you simply have a fully formed neural network with some randomly (or otherwise) initialized weights. But with xgboost, or at least the particular implementation I was using, this is not possible, because there is no notion of a base model.
 
+[Here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-14.md#trying-out-that-model-save), I tried cutting up the training data like
 
+```python
+clf = xgb.XGBClassifier()
 
+workdir = fu.make_work_dir(); print(workdir)
+fu.log(workdir, 'Starting')
+prev_model = None
+loss_vec = []; acc_vec = []
+for i, part in enumerate(tqdm(parts)):
+    clf.fit(X_transformed[part], y_enc[part], xgb_model=prev_model)
+    fu.log(workdir, f'[{i}] Done fit')
+
+    prev_model = f'{workdir}/model.xg'
+    clf.save_model(prev_model)
+
+    y_prob_vec = clf.predict_proba(X_test_transformed)
+    fu.log(workdir, f'[{i}] Done predict_proba')
+
+    loss = fu.big_logloss(y_test_enc, y_prob_vec, labels)
+    fu.log(workdir, f'[{i}] Done big_logloss, loss={loss}.')
+
+    loss_vec.append(loss)
+
+    acc = accuracy_score(y_test_enc, np.argmax(y_prob_vec, axis=1))
+    acc_vec.append(acc)
+    fu.log(workdir, f'[{i}] Done accuracy, acc={acc}.')
+```
+to see if the scikit learn API can allow saving and restoring previously trained models and continuing, with the `fit(X, xgb_model=prev_model)` syntax, but the output performance data was basically random indicating to me that the `fit` was starting from scratch each time.
+
+So basically I gave up on this approach for using xgboost.
 
 ### Multi class classification notes
 

@@ -1,0 +1,3 @@
+[submodule "content/handy"]
+	path = content/handy
+	url = https://github.com/namoopsoo/handy.git

@@ -17,7 +17,7 @@ def bake_options():
                     'help': 'Dry run. Just print the command.  '},],
             [['--append'],
                 {'action': 'store_true',
-                    'help': 'Append instead of creating a new file'},],
+                    'help': 'Append instead of creating a new file. (If the file already exists, you will get an error.)'},],
             [['--images'],
                 {'action': 'store',
                     'help': 'List of images to include'},],

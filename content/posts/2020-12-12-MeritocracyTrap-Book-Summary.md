@@ -1,7 +1,7 @@
 ---
 title: Meritocracy Trap Book Summary
 date: 2020-12-12 13:24
-category: summary
+categories: summary
 layout: post
 author: Michal Piekarczyk
 ---

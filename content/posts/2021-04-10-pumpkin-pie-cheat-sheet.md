@@ -1,6 +1,6 @@
 ---
 title: Pumpkin Pie Note
-category: recipe
+categories: recipe
 tags: keto
 ---
 

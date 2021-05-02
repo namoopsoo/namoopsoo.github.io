@@ -1,7 +1,7 @@
 ---
 date: 2020-12-09
 title: Easy Blog Posting ("My Noting Book")
-category: notes
+categories: notes
 ---
 
 

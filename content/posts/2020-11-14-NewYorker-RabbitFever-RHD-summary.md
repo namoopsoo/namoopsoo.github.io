@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Rabbit Fever Summary
-category: summary
+categories: summary
 tags: vaccines
 author: Michal Piekarczyk
 date:   2020-11-14 11:06:01 -0500

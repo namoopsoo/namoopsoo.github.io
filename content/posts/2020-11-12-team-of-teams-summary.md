@@ -1,8 +1,10 @@
 ---
 layout: post
 title: Team of Teams Summary
-category: summary
-tags: management
+categories:
+  - booksummary
+tags:
+  - management
 author: Michal Piekarczyk
 date:   2020-11-12 09:30:01 -0500
 ---

@@ -1,10 +1,11 @@
 ---
-layout: post
-title:
-category: video
-tags: plants
+title: Some plant time lapse
+categories:
+  - video
+tags: 
+  - plants
 author: Michal Piekarczyk
-date:   2018-01-07 12:00:01 -0500
+date: 2018-01-07 12:00:01 -0500
 ---
 
 Some time lapse photography.

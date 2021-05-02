@@ -1,7 +1,9 @@
 ---
 title: Using ffmpeg to Merge Videos
 date: 2019-03-16
-tags: mpeg xargs
+tags: 
+  - mpeg 
+  - xargs
 ---
 
 #### Put together our hyperlapse puzzle videos...

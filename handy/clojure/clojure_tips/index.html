@@ -1,0 +1,266 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>michal.piekarczyk.xyz</title><meta name=viewport content="width=device-width,minimum-scale=1"><meta name=description content="(Porting over my notes from gists .. here ),..
+quick note on imports  i originally inferred this  (ns blah-namespace (:use clojure.core.blah ) ; this would take all the terms in blah and put them into the current namespace (:refer-clojure :exclude [blarg flarg]) ; but this is supposed to be a way to avoid term clash ; so blarg and flarg will not be used. (not that they are in clojure."><meta name=generator content="Hugo 0.83.0"><meta name=ROBOTS content="NOINDEX, NOFOLLOW"><link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css><meta property="og:title" content><meta property="og:description" content="(Porting over my notes from gists .. here ),..
+quick note on imports  i originally inferred this  (ns blah-namespace (:use clojure.core.blah ) ; this would take all the terms in blah and put them into the current namespace (:refer-clojure :exclude [blarg flarg]) ; but this is supposed to be a way to avoid term clash ; so blarg and flarg will not be used. (not that they are in clojure."><meta property="og:type" content="article"><meta property="og:url" content="https://michal.piekarczyk.xyz/handy/clojure/clojure_tips/"><meta property="article:section" content="handy"><meta itemprop=name content><meta itemprop=description content="(Porting over my notes from gists .. here ),..
+quick note on imports  i originally inferred this  (ns blah-namespace (:use clojure.core.blah ) ; this would take all the terms in blah and put them into the current namespace (:refer-clojure :exclude [blarg flarg]) ; but this is supposed to be a way to avoid term clash ; so blarg and flarg will not be used. (not that they are in clojure."><meta itemprop=wordCount content="1908"><meta itemprop=keywords content><meta name=twitter:card content="summary"><meta name=twitter:title content><meta name=twitter:description content="(Porting over my notes from gists .. here ),..
+quick note on imports  i originally inferred this  (ns blah-namespace (:use clojure.core.blah ) ; this would take all the terms in blah and put them into the current namespace (:refer-clojure :exclude [blarg flarg]) ; but this is supposed to be a way to avoid term clash ; so blarg and flarg will not be used. (not that they are in clojure."></head><body class="ma0 avenir bg-near-white"><header><div class=bg-black><nav class="pv3 ph3 ph4-ns" role=navigation><div class="flex-l justify-between items-center center"><a href=/ class="f3 fw2 hover-white no-underline white-90 dib">michal.piekarczyk.xyz</a><div class="flex-l items-center"></div></div></nav></div></header><main class=pb7 role=main><article class="flex-l flex-wrap justify-between mw8 center ph3"><header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked">HANDIES</aside><div id=sharing class=mt3><a href="https://www.facebook.com/sharer.php?u=https://michal.piekarczyk.xyz/handy/clojure/clojure_tips/" class="facebook no-underline" aria-label="share on Facebook"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765 50.32h6.744V33.998h4.499l.596-5.624h-5.095l.007-2.816c0-1.466.14-2.253 2.244-2.253h2.812V17.68h-4.5c-5.405.0-7.307 2.729-7.307 7.317v3.377h-3.369v5.625h3.369V50.32zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg></a><a href="https://twitter.com/share?url=https://michal.piekarczyk.xyz/handy/clojure/clojure_tips/&text=" class="twitter no-underline" aria-label="share on Twitter"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https://michal.piekarczyk.xyz/handy/clojure/clojure_tips/&title=" class="linkedin no-underline" aria-label="share on LinkedIn"><svg height="32" style="enable-background:new 0 0 65 65" viewBox="0 0 65 65" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M50.837 48.137V36.425c0-6.275-3.35-9.195-7.816-9.195-3.604.0-5.219 1.983-6.119 3.374V27.71h-6.79c.09 1.917.0 20.427.0 20.427h6.79V36.729c0-.609.044-1.219.224-1.655.49-1.22 1.607-2.483 3.482-2.483 2.458.0 3.44 1.873 3.44 4.618v10.929H50.837zM22.959 24.922c2.367.0 3.842-1.57 3.842-3.531-.044-2.003-1.475-3.528-3.797-3.528s-3.841 1.524-3.841 3.528c0 1.961 1.474 3.531 3.753 3.531H22.959zM34 64C17.432 64 4 50.568 4 34 4 17.431 17.432 4 34 4s30 13.431 30 30c0 16.568-13.432 30-30 30zM26.354 48.137V27.71h-6.789v20.427h6.789z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></a></div><h1 class="f1 athelas mt3 mb1"></h1><time class="f6 mv4 dib tracked" datetime=0001-01-01T00:00:00Z>January 1, 0001</time></header><div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>(Porting over my notes from gists .. <a href=https://gist.github.com/namoopsoo/607f29e923ceaba890588e69293413cf>here</a> ),..</p><h3 id=quick-note-on-imports>quick note on imports</h3><ul><li>i originally inferred this</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure>(<span style=color:#66d9ef>ns </span>blah-namespace
+  (<span style=color:#e6db74>:use</span> clojure.core.blah )  <span style=color:#75715e>; this would take all the terms in blah and put them into the current namespace</span>
+
+  (<span style=color:#e6db74>:refer-clojure</span> <span style=color:#e6db74>:exclude</span> [blarg flarg]) <span style=color:#75715e>; but this is supposed to be a way to avoid term clash</span>
+                                          <span style=color:#75715e>; so blarg and flarg will not be used. (not that they are in clojure.core however)</span>
+  )
+</code></pre></div><ul><li>Then I read <a href=https://www.braveclojure.com/organization/#Anchor-3>https://www.braveclojure.com/organization/#Anchor-3</a> , and read <code>use</code> is a shortcut
+for <code>require</code> followed by a <code>refer</code>.</li></ul><h3 id=hash-maps>hash-maps</h3><ul><li><p>Many ways to make a hash-map,</p><pre><code>; These are both fine
+boot.user=&gt; {:name &quot;Steve&quot; :age 24 :salary 7886 :company &quot;Acme&quot;}
+{:name &quot;Steve&quot;, :age 24, :salary 7886, :company &quot;Acme&quot;}
+boot.user=&gt; {:name &quot;Steve&quot;, :age 24, :salary 7886, :company &quot;Acme&quot;}
+{:name &quot;Steve&quot;, :age 24, :salary 7886, :company &quot;Acme&quot;}
+</code></pre></li><li><p>how to get a value from the hash-map&mldr;</p><pre><code>boot.user=&gt; (steve &quot;age&quot;)  ; no
+nil
+boot.user=&gt; (steve 24) ; no. not even sure what this is trying to do
+nil
+boot.user=&gt; (steve :company) ; yes
+&quot;Acme&quot;
+boot.user=&gt; (steve :name) ; yes
+&quot;Steve&quot;
+</code></pre></li><li><p>what is insane is that this is also legal&mldr; and I see this one used more often:</p><pre><code>boot.user=&gt; (:name steve)
+&quot;Steve&quot;
+</code></pre></li><li><p>and <code>get</code> too..</p><pre><code>boot.user=&gt; (get steve :company)
+&quot;Acme&quot;
+</code></pre></li><li><p>accessing nested hashes&mldr;</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure>app.core=&gt; (<span style=color:#a6e22e>get-in</span> {<span style=color:#e6db74>:foo</span> {<span style=color:#e6db74>:and</span> <span style=color:#e6db74>&#34;yes&#34;</span> <span style=color:#e6db74>:here</span> <span style=color:#e6db74>&#34;no&#34;</span>}} [<span style=color:#e6db74>:foo</span> <span style=color:#e6db74>:here</span>])
+<span style=color:#e6db74>&#34;no&#34;</span>
+</code></pre></div></li></ul><h3 id=array-things>Array things</h3><ul><li><p>similarly can index arrays like hash-maps&mldr;</p><pre><code>  boot.user=&gt; (def a1 [1 2 3 4])
+  #'boot.user/a1
+  boot.user=&gt; a1
+  [1 2 3 4]
+  boot.user=&gt; (first a1)
+  1
+</code></pre></li></ul><h3 id=boot-repl>Boot-repl</h3><ul><li><p>According to <a href=https://github.com/boot-clj/boot>https://github.com/boot-clj/boot</a> , you can set environmental variables &mldr;</p><pre><code>boot.user=&gt; (set-env! 
+     #_=&gt;   :resource-paths #{&quot;src&quot;}
+     #_=&gt;   :dependencies '[[me.raynes/conch &quot;0.8.0&quot;]])
+</code></pre></li><li><p>but this is not working for me or at least not for the REPL i&rsquo;m in,</p><pre><code>boot.user=&gt; (:development env)
+nil
+boot.user=&gt; (set-env!
+       #_=&gt; :development true)
+nil
+boot.user=&gt; 
+
+boot.user=&gt; (:development env)
+nil
+</code></pre></li><li><p>And to look at one or more of what is in <code>env</code></p><pre><code>boot.user=&gt; (use '[environ.core :as env])
+nil
+
+; now you can look at anything with 
+boot.user=&gt; (env :term)
+&quot;xterm-256color&quot;
+</code></pre><ul><li>and clojure re-writes envrironmental variables, changing <code>CAPITAL_LETTERS</code> into <code>capital-letters</code>,</li><li>so if on shell one did <code>export CAPITAL_LETTERS=bingo</code></li><li>Then <code>environ.core</code> could get this with <code>(env :capital-letters)</code></li></ul></li></ul><h3 id=lambda-functions-in-clojure--aka-anonymous-functions>lambda functions in clojure ( aka anonymous functions)</h3><ul><li><p>the <code>#(...)</code></p><pre><code>boot.user=&gt; (#(+ %1 5) 2)
+7
+boot.user=&gt; (#(+ %1 5) 2 3)
+
+clojure.lang.ArityException: Wrong number of args (2) passed to: user/eval5691/fn--5692
+boot.user=&gt; (#(+ %1 5 %2) 2 3)
+10
+</code></pre></li><li><p>actually, another nicer looking lambda form. I like this more..</p><pre><code>boot.user=&gt; (map (fn [x] (x :name)) [{:name &quot;Jo&quot;},{:name &quot;Jane&quot;},{:hmm &quot;Yea&quot;}])
+(&quot;Jo&quot; &quot;Jane&quot; nil)
+boot.user=&gt; 
+</code></pre></li><li><p>anonymous func approach to collecting keys from hash&mldr;</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure>app.core=&gt; ((<span style=color:#66d9ef>fn </span>[{<span style=color:#e6db74>:keys</span> [status error]}] (println status error)) {<span style=color:#e6db74>:status</span> <span style=color:#ae81ff>400</span> <span style=color:#e6db74>:error</span> false})
+<span style=color:#ae81ff>400</span> false
+nil
+</code></pre></div></li></ul><h3 id=another-note-on-conj-and-hashes>Another note on <code>conj</code> and hashes&mldr;</h3><ul><li>conj hashes,</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure>app.core=&gt; (<span style=color:#66d9ef>def </span>blah {<span style=color:#e6db74>&#34;acc&#34;</span> <span style=color:#e6db74>&#34;123&#34;</span>})
+<span style=color:#f92672>#</span><span style=color:#e6db74>&#39;app.core/blah</span>
+app.core=&gt; blah
+{<span style=color:#e6db74>&#34;acc&#34;</span> <span style=color:#e6db74>&#34;123&#34;</span>}
+
+app.core=&gt; (conj blah {<span style=color:#e6db74>&#34;secret&#34;</span> <span style=color:#e6db74>&#34;455&#34;</span>})
+{<span style=color:#e6db74>&#34;acc&#34;</span> <span style=color:#e6db74>&#34;123&#34;</span>, <span style=color:#e6db74>&#34;secret&#34;</span> <span style=color:#e6db74>&#34;455&#34;</span>}
+app.core=&gt; (conj blah {<span style=color:#e6db74>&#34;secret&#34;</span> <span style=color:#e6db74>&#34;455&#34;</span> <span style=color:#e6db74>&#34;client_id&#34;</span> <span style=color:#e6db74>&#34;5667&#34;</span>})
+{<span style=color:#e6db74>&#34;acc&#34;</span> <span style=color:#e6db74>&#34;123&#34;</span>, <span style=color:#e6db74>&#34;secret&#34;</span> <span style=color:#e6db74>&#34;455&#34;</span>, <span style=color:#e6db74>&#34;client_id&#34;</span> <span style=color:#e6db74>&#34;5667&#34;</span>}
+</code></pre></div><h3 id=a-weird-way-of-calling-a-func-using-apply-and-some-strange-dereferencing-thing->a weird way of calling a func using <code>apply</code>, and some strange dereferencing thing ,</h3><ul><li><p>Best quote about <code>apply</code> i read is &mldr;</p><blockquote><p>apply is used to apply an operator to its operands.</p></blockquote></li><li><p>so <code>apply</code> takes a <code>func</code> as its first arg and then throws whatever is next , 1 or more args, to <code>func</code>.</p></li><li><p>I Guess that&rsquo;s a lie, because the thing is though, you want to give <code>func</code> a list thing.</p><pre><code>boot.user=&gt; (max 1 2 3 4 )
+4
+boot.user=&gt; (apply #(+  %1 %3) '[4 5 6 ])
+10
+</code></pre></li><li><p>but all of these forms seem to work which is weird</p><pre><code>boot.user=&gt; (apply #(+  %1 %3) [4 5 6] )
+10
+boot.user=&gt; (apply #(+  %1 %3) `[4 5 6] )
+10
+boot.user=&gt; (apply #(+  %1 %3) '[4 5 6] )
+10
+
+
+</code></pre></li></ul><h3 id=importing-from-other-files>importing from other files&mldr;</h3><ul><li><p>for a file <code>"src/lesson_two/dynamo.clj"</code> , <code>use</code> will let the namespace in it referred to as <code>db</code></p><pre><code>boot.user=&gt; (load-file &quot;src/lesson_two/dynamo.clj&quot;)
+#'lesson-two.dynamo/get-prime
+boot.user=&gt; (use '[lesson-two.dynamo :as db])
+nil
+</code></pre></li></ul><h3 id=reload-mechanism>Reload mechanism&mldr;</h3><ul><li><p>reload after making changes if using <code>use</code></p><ul><li>from <a href=http://stackoverflow.com/questions/7658981/how-to-reload-a-clojure-file-in-repl#20337925>http://stackoverflow.com/questions/7658981/how-to-reload-a-clojure-file-in-repl#20337925</a></li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure>(<span style=color:#a6e22e>use</span> <span style=color:#e6db74>&#39;your.namespace</span> <span style=color:#e6db74>:reload</span>)
+</code></pre></div></li><li><p>When using a <code>lein repl</code>, the above was not working for some reason, but this pattern worked for me&mldr;</p><ul><li><p>pull up a REPL..</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure>app.core=&gt; (<span style=color:#a6e22e>require</span> <span style=color:#f92672>&#39;</span>[app.core <span style=color:#e6db74>:as</span> mycore])
+
+app.core=&gt; (<span style=color:#a6e22e>mycore/blah</span> <span style=color:#e6db74>&#34;hi&#34;</span>)
+</code></pre></div></li><li><p>edit code &mldr;</p></li><li><p>then in the REPL&mldr;</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure>app.core=&gt; (<span style=color:#a6e22e>require</span> <span style=color:#f92672>&#39;</span>[app.core] <span style=color:#e6db74>:reload</span>)
+nil
+
+app.core=&gt; (<span style=color:#a6e22e>mycore/blah</span> <span style=color:#e6db74>&#34;hi&#34;</span>)
+</code></pre></div></li><li><p>and <code>mycore/blah</code> is available after the <em>reload</em> with any changes taking effect.</p></li><li><p>but also this was also good , <code>reload-all</code> &mldr; not sure about the difference definitively</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure>(<span style=color:#a6e22e>require</span> <span style=color:#e6db74>&#39;app.core</span> <span style=color:#e6db74>:reload-all</span>)
+</code></pre></div></li></ul></li><li><p>Also, for the namespace the <em>repl</em> itself is in, this worked to reload that..</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure>(<span style=color:#a6e22e>use</span> <span style=color:#e6db74>&#39;app.core</span> <span style=color:#e6db74>:reload-all</span>)
+</code></pre></div></li></ul><h3 id=interesting-way-of-checking-types-in-a-hash-map>interesting way of checking types in a hash map</h3><ul><li><p>throw error if wrong type</p><pre><code>boot.user=&gt; (def steve {:name &quot;Steve&quot;, :age 24, :salary 7886, :company &quot;Acme&quot;})
+#'boot.user/steve
+boot.user=&gt; 
+
+boot.user=&gt; steve
+{:name &quot;Steve&quot;, :age 24, :salary 7886, :company &quot;Acme&quot;}
+boot.user=&gt; 
+
+boot.user=&gt; (-&gt; steve :age num)
+24
+boot.user=&gt; (-&gt; steve :company num)
+
+java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Number
+
+boot.user=&gt; (-&gt; steve :company str)
+&quot;Acme&quot;
+
+</code></pre></li></ul><h3 id=string-splitting>string splitting</h3><ul><li><p>requires an import</p><pre><code>boot.user=&gt; (use '[clojure.string :only (split triml)])
+nil
+boot.user=&gt; (split &quot;blarmey ; klarg ; jlarf ; mlarg&quot; #&quot;;&quot;)
+[&quot;blarmey &quot; &quot; klarg &quot; &quot; jlarf &quot; &quot; mlarg&quot;]
+</code></pre></li><li><p>and trimming white space and beginning, end of a string,</p><pre><code>boot.user=&gt; (clojure.string/trim &quot; a sdfd &quot;)
+&quot;a sdfd&quot;
+</code></pre></li></ul><h3 id=exception-handling>Exception handling</h3><ul><li><p>casting exception</p><pre><code>boot.user=&gt; steve
+{:name &quot;Steve&quot;, :age 24, :salary 7886, :company &quot;Acme&quot;}
+boot.user=&gt; (try (-&gt; steve :company num) (catch java.lang.ClassCastException ex &quot;nope&quot;))
+&quot;nope&quot;
+</code></pre></li><li><p>useful technique for capturing problems with the <code>NullPointerException</code>. Sometimes I will get one without explanation&mldr;</p></li><li><p>from, <a href=https://stackoverflow.com/questions/10529063/getting-clojure-stacktrace>https://stackoverflow.com/questions/10529063/getting-clojure-stacktrace</a></p></li><li><p>using &mldr; clojure.repl.pst</p></li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure>user=&gt; (<span style=color:#a6e22e>try</span> (/ <span style=color:#ae81ff>1</span> <span style=color:#ae81ff>0</span>) (<span style=color:#a6e22e>catch</span> Exception e (<span style=color:#a6e22e>pst</span> e)))
+ArithmeticException Divide by zero
+    clojure.lang.Numbers.divide (<span style=color:#a6e22e>Numbers.java</span><span style=color:#e6db74>:156</span>)
+    clojure.lang.Numbers.divide (<span style=color:#a6e22e>Numbers.java</span><span style=color:#e6db74>:3691</span>)
+    user/eval28 (<span style=color:#a6e22e>NO_SOURCE_FILE</span><span style=color:#e6db74>:8</span>)
+    clojure.lang.Compiler.eval (<span style=color:#a6e22e>Compiler.java</span><span style=color:#e6db74>:6511</span>)
+    clojure.lang.Compiler.eval (<span style=color:#a6e22e>Compiler.java</span><span style=color:#e6db74>:6477</span>)
+    clojure.core/eval (<span style=color:#a6e22e>core.clj</span><span style=color:#e6db74>:2797</span>)
+    clojure.main/repl/read-eval-print--6569 (<span style=color:#a6e22e>main.clj</span><span style=color:#e6db74>:245</span>)
+    clojure.main/repl/fn--6574 (<span style=color:#a6e22e>main.clj</span><span style=color:#e6db74>:266</span>)
+    clojure.main/repl (<span style=color:#a6e22e>main.clj</span><span style=color:#e6db74>:266</span>)
+    clojure.main/repl-opt (<span style=color:#a6e22e>main.clj</span><span style=color:#e6db74>:332</span>)
+    clojure.main/main (<span style=color:#a6e22e>main.clj</span><span style=color:#e6db74>:427</span>)
+    clojure.lang.Var.invoke (<span style=color:#a6e22e>Var.java</span><span style=color:#e6db74>:423</span>)
+</code></pre></div><h3 id=another-exception-handling-and-or-tracing-technique>Another Exception handling and or tracing technique,</h3><ul><li>using <code>org.clojure/tools.trace</code></li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure>user=&gt; (<span style=color:#a6e22e>dotrace</span> [list?]
+  <span style=color:#f92672>#</span>_=&gt; (<span style=color:#a6e22e>do</span>
+  <span style=color:#f92672>#</span>_=&gt;  (<span style=color:#a6e22e>list?</span> [])
+  <span style=color:#f92672>#</span>_=&gt;  (<span style=color:#a6e22e>list?</span> <span style=color:#f92672>&#39;</span>(<span style=color:#ae81ff>1</span> <span style=color:#ae81ff>2</span> <span style=color:#ae81ff>3</span>))
+  <span style=color:#f92672>#</span>_=&gt;  (<span style=color:#a6e22e>list?</span>)
+  <span style=color:#f92672>#</span>_=&gt;  (<span style=color:#a6e22e>list?</span> (<span style=color:#66d9ef>defn </span>f [] (<span style=color:#66d9ef>do </span>())))
+  <span style=color:#f92672>#</span>_=&gt;  (<span style=color:#a6e22e>list?</span> <span style=color:#e6db74>&#34;a&#34;</span>))
+  <span style=color:#f92672>#</span>_=&gt; )
+IllegalStateException Can<span style=color:#e6db74>&#39;t</span> dynamically bind non-dynamic var<span style=color:#960050;background-color:#1e0010>:</span> clojure.core/list?
+  clojure.lang.Var.pushThreadBindings (<span style=color:#a6e22e>Var.java</span><span style=color:#e6db74>:353</span>)
+</code></pre></div><ul><li>,</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure>user=&gt; (<span style=color:#a6e22e>dotrace</span> [list?]
+  <span style=color:#f92672>#</span>_=&gt;   (<span style=color:#a6e22e>do</span>
+  <span style=color:#f92672>#</span>_=&gt;   (<span style=color:#a6e22e>list?</span> [])
+  <span style=color:#f92672>#</span>_=&gt;   (<span style=color:#a6e22e>list?</span> <span style=color:#f92672>&#39;</span>(<span style=color:#ae81ff>1</span> <span style=color:#ae81ff>2</span> <span style=color:#ae81ff>3</span>))
+  <span style=color:#f92672>#</span>_=&gt;   (<span style=color:#a6e22e>list?</span>)
+  <span style=color:#f92672>#</span>_=&gt;   (<span style=color:#a6e22e>list?</span> (<span style=color:#66d9ef>defn </span>f [] (<span style=color:#66d9ef>do </span>())))
+  <span style=color:#f92672>#</span>_=&gt;   (<span style=color:#a6e22e>list?</span> <span style=color:#e6db74>&#34;a&#34;</span>)))
+TRACE t1216<span style=color:#960050;background-color:#1e0010>:</span> (<span style=color:#a6e22e>list?</span> [])
+TRACE t1216<span style=color:#960050;background-color:#1e0010>:</span> =&gt; false
+TRACE t1217<span style=color:#960050;background-color:#1e0010>:</span> (<span style=color:#a6e22e>list?</span> (<span style=color:#ae81ff>1</span> <span style=color:#ae81ff>2</span> <span style=color:#ae81ff>3</span>))
+TRACE t1217<span style=color:#960050;background-color:#1e0010>:</span> =&gt; true
+TRACE t1218<span style=color:#960050;background-color:#1e0010>:</span> (<span style=color:#a6e22e>list?</span>)
+ArityException Wrong number of args (<span style=color:#ae81ff>0</span>) passed to<span style=color:#960050;background-color:#1e0010>:</span> core$list-QMARK-  
+  clojure.lang.AFn.throwArity (<span style=color:#a6e22e>AFn.java</span><span style=color:#e6db74>:437</span>)
+</code></pre></div><h3 id=the-arrow-->The arrow <code>-></code></h3><ul><li><p>this example says it all.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure>
+(<span style=color:#66d9ef>def </span>c <span style=color:#ae81ff>5</span>)
+<span style=color:#75715e>;; =&gt; #&#39;user/c</span>
+
+(-&gt; c (+ <span style=color:#ae81ff>3</span>) (/ <span style=color:#ae81ff>2</span>) (- <span style=color:#ae81ff>1</span>))                          
+<span style=color:#75715e>;; =&gt; 3</span>
+
+<span style=color:#75715e>;; and if you are curious why</span>
+(<span style=color:#a6e22e>use</span> <span style=color:#e6db74>&#39;clojure.walk</span>)
+<span style=color:#75715e>;; =&gt; nil</span>
+
+(<span style=color:#a6e22e>macroexpand-all</span> <span style=color:#f92672>&#39;</span>(-&gt; c (+ <span style=color:#ae81ff>3</span>) (/ <span style=color:#ae81ff>2</span>) (- <span style=color:#ae81ff>1</span>)))
+<span style=color:#75715e>;; =&gt; (- (/ (+ c 3) 2) 1)</span>
+</code></pre></div></li><li><p>The <code>->></code> is also used. Have not yet differentiated between the two.</p></li></ul><h3 id=vectors-and-lists>vectors and lists</h3><ul><li><p>with a vector, like <code>["a" "b" "c"]</code>, you can index, like</p><pre><code>boot.user=&gt; ([&quot;a&quot; &quot;b&quot; &quot;c&quot;] 1)
+&quot;b&quot;
+</code></pre></li><li><p>but apparently, vectors are difficult to modify.</p></li><li><p>Whereas , a list <code>'(1 2 3)</code> can have easier appending, but it is harder to index. <code>nth</code> on a list will be a <code>O(n)</code> operation as opposed to <code>O(1)</code> on a vector.</p><pre><code>(nth (list 1 2 3 4 5) 3)
+</code></pre></li><li><p>reference: <a href=http://stackoverflow.com/a/11505188/472876>http://stackoverflow.com/a/11505188/472876</a></p></li><li><p>Also..</p><blockquote><p>&ldquo;Lists logically grow at the head, while vectors logically grow on the tail. You can see this in action when using the conj function. It will grow the collection according to the type of collection given to it. While you can grow collections on either side, it is performant to do so in this way.&rdquo;</p></blockquote></li></ul><h3 id=group-by--wow-this-is-cool>group by , wow this is cool</h3><ul><li><p>just like what you expect from a standard <code>group-by</code>, and works out of the box, <a href=http://stackoverflow.com/a/9089403/472876>http://stackoverflow.com/a/9089403/472876</a></p><pre><code>(group-by #(select-keys % [:a :b]) vector-of-hashes)
+</code></pre></li><li><p>and a group-by followed by an aggregate, good example, <a href=http://stackoverflow.com/questions/36139680/clojure-aggregate-and-count-in-maps>http://stackoverflow.com/questions/36139680/clojure-aggregate-and-count-in-maps</a>
+<a href=http://stackoverflow.com/a/36140333/472876>http://stackoverflow.com/a/36140333/472876</a></p><ul><li>this particular example has a hash map in <code>DATA</code> like</li></ul><pre><code>[
+  {
+    &quot;a&quot;: &quot;X&quot;,
+    &quot;b&quot;: &quot;M&quot;,
+    &quot;c&quot;: 188
+  },
+  {
+    &quot;a&quot;: &quot;Y&quot;,
+    &quot;b&quot;: &quot;M&quot;,
+    &quot;c&quot;: 165
+  },
+  {
+    &quot;a&quot;: &quot;Y&quot;,
+    &quot;b&quot;: &quot;M&quot;,
+    &quot;c&quot;: 313
+  },
+  {
+    &quot;a&quot;: &quot;Y&quot;,
+    &quot;b&quot;: &quot;P&quot;,
+    &quot;c&quot;: 188
+  }
+]
+</code></pre><ul><li>and uses a basic <code>count</code>, but any kind of <code>reduce</code> style func can be applied.</li></ul><pre><code>(into {}
+  (map       
+
+    ; f       
+    (fn [ [k vs] ] ;[k `unique count`]
+      [k (count (into #{} (map #(get % &quot;b&quot;) vs)))]) 
+
+    ; coll
+    (group-by #(get % &quot;a&quot;) DATA)))
+</code></pre></li></ul><h3 id=frequencies-is-like-the-pythonic-collectionscounter><code>frequencies</code> is like the pythonic <code>collections.Counter</code></h3><ul><li>Get counts nicely.</li></ul><h3 id=nice-way-to-extract-partial-hash-map--based-on-keys>nice way to extract partial hash map , based on keys</h3><ul><li><p>using something that reminds me of perl for some reason,</p><pre><code>boot.user=&gt; (def h {:time-length 15N, :core-category &quot;work&quot;, :project-identifier &quot;proj-1&quot;, :sub-category &quot;code&quot;} ) 
+boot.user=&gt; ( #(select-keys % [:core-category :project-identifier]) h)
+{:core-category &quot;work&quot;, :project-identifier &quot;proj-1&quot;}
+
+</code></pre></li></ul><h3 id=was-missing-this->was missing this &mldr;</h3><ul><li>take a few items at a time with <code>partition</code>,</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure>
+</code></pre></div><h3 id=strange-detail-about-clojure-repl--namespaces-and-filenames>Strange detail about clojure repl , namespaces and filenames,</h3><ul><li>looks like namespaces with hypens, expect clojure files with underscores,</li><li>My file is <code>one/date-utils.clj</code> and I tried to use it like so, but I got this message.</li></ul><pre><code>boot.user=&gt; (use '[one.date-utils :as mydateutils])
+
+java.io.FileNotFoundException: Could not locate one/date_utils__init.class or one/date_utils.clj on classpath. Please check that namespaces with dashes use underscores in the Clojure file name.
+boot.user=&gt; 
+</code></pre><ul><li>Then i changed the file to <code>one/date_utils.clj</code> and problem solved.</li></ul><pre><code>boot.user=&gt; (use '[one.date-utils :as mydateutils])
+nil
+</code></pre><h3 id=concat-vs-using-concat-with-apply><code>concat</code> vs using <code>concat</code> with <code>apply</code></h3><ul><li>As the docs <a href=https://www.conj.io/store/v1/org.clojure/clojure/1.8.0/clj/clojure.core/concat>https://www.conj.io/store/v1/org.clojure/clojure/1.8.0/clj/clojure.core/concat</a> make note of, using just <code>concat</code> does not always have the intuitive behavior,</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure>boot.user=&gt; (concat [[<span style=color:#ae81ff>5</span> <span style=color:#ae81ff>6</span> <span style=color:#ae81ff>7</span>] [<span style=color:#ae81ff>2</span> <span style=color:#ae81ff>1</span> <span style=color:#ae81ff>2</span>]])
+([<span style=color:#ae81ff>5</span> <span style=color:#ae81ff>6</span> <span style=color:#ae81ff>7</span>] [<span style=color:#ae81ff>2</span> <span style=color:#ae81ff>1</span> <span style=color:#ae81ff>2</span>])
+boot.user=&gt; (apply concat [[<span style=color:#ae81ff>5</span> <span style=color:#ae81ff>6</span> <span style=color:#ae81ff>7</span>] [<span style=color:#ae81ff>2</span> <span style=color:#ae81ff>1</span> <span style=color:#ae81ff>2</span>]])
+(<span style=color:#ae81ff>5</span> <span style=color:#ae81ff>6</span> <span style=color:#ae81ff>7</span> <span style=color:#ae81ff>2</span> <span style=color:#ae81ff>1</span> <span style=color:#ae81ff>2</span>)
+boot.user=&gt;
+</code></pre></div><ul><li>Basically <code>concat</code> takes sequences, and not a sequence of sequences</li><li>And <code>(apply f args)</code> has the power to take a sequence <code>args</code> and hand its individual components
+to <code>f</code> as bare parameters.</li><li>The first example was initially unintuitive, because I was trying to <code>concat</code> the output of a <code>map</code>,</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure>(<span style=color:#66d9ef>def </span>full-list (<span style=color:#a6e22e>concat</span>
+                (map (<span style=color:#66d9ef>fn </span>[x] (<span style=color:#a6e22e>blah</span> x))
+                 input-vector)))
+</code></pre></div><ul><li>that was not working, and so i needed to update w/ an apply,</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure>(<span style=color:#66d9ef>def </span>full-list (apply concat
+                (map (<span style=color:#66d9ef>fn </span>[x] (<span style=color:#a6e22e>blah</span> x))
+                 input-vector)))
+</code></pre></div><ul><li>Similarly to <code>concat</code>, <code>conj</code> can be used with <code>apply</code> in the same way&mldr;</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure>app.core=&gt; (<span style=color:#66d9ef>def </span>vec [<span style=color:#ae81ff>0</span> <span style=color:#ae81ff>1</span> <span style=color:#ae81ff>2</span> <span style=color:#ae81ff>3</span> <span style=color:#ae81ff>4</span>])
+<span style=color:#f92672>#</span><span style=color:#e6db74>&#39;app.core/vec</span>
+app.core=&gt; (apply conj vec [<span style=color:#ae81ff>99</span> <span style=color:#ae81ff>88</span>])
+[<span style=color:#ae81ff>0</span> <span style=color:#ae81ff>1</span> <span style=color:#ae81ff>2</span> <span style=color:#ae81ff>3</span> <span style=color:#ae81ff>4</span> <span style=color:#ae81ff>99</span> <span style=color:#ae81ff>88</span>]
+</code></pre></div><ul><li>So to explain the above, the normal form for <code>conj</code> is actually <code>(conj vec 99 88)</code>,
+but if we have those args as a vector <code>[99 88]</code> then we can use <code>apply</code> to make the args vector
+be presented to <code>conj</code> as args.</li></ul><h3 id=doseq-and-for><code>doseq</code> and <code>for</code></h3><ul><li>from &mldr; <a href=https://stackoverflow.com/a/4725502/472876>https://stackoverflow.com/a/4725502/472876</a>
+<em>The difference is that for builds a lazy sequence and returns it while doseq is for executing side-effects and returns nil.</em></li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure>user=&gt; (for [x [<span style=color:#ae81ff>1</span> <span style=color:#ae81ff>2</span> <span style=color:#ae81ff>3</span>]] (+ x <span style=color:#ae81ff>5</span>))
+(<span style=color:#ae81ff>6</span> <span style=color:#ae81ff>7</span> <span style=color:#ae81ff>8</span>)
+user=&gt; (doseq [x [<span style=color:#ae81ff>1</span> <span style=color:#ae81ff>2</span> <span style=color:#ae81ff>3</span>]] (+ x <span style=color:#ae81ff>5</span>))
+nil
+user=&gt; (doseq [x [<span style=color:#ae81ff>1</span> <span style=color:#ae81ff>2</span> <span style=color:#ae81ff>3</span>]] (println x))
+<span style=color:#ae81ff>1</span>
+<span style=color:#ae81ff>2</span>
+<span style=color:#ae81ff>3</span>
+nil
+</code></pre></div><ul><li><em>If you want to build a new sequence based on other sequences, use for. If you want to do side-effects (printing, writing to a database, launching a nuclear warhead, etc) based on elements from some sequences, use doseq.</em></li></ul><h3 id=feels-like-comp-is-one-of-the-identities-of-clojure-in-that-it-helps-keep-you-using-simple-functions>Feels like <code>comp</code> is one of the identities of clojure in that it helps keep you using simple functions</h3><ul><li>The order of operations is just like in <em>maths</em> &mldr; <code>(fºgºh)(x) := f(g(h(x)))</code></li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure>play.core=&gt; ((comp <span style=color:#f92672>#</span>(- <span style=color:#ae81ff>4</span> %) <span style=color:#f92672>#</span>(* % <span style=color:#ae81ff>9</span>) <span style=color:#f92672>#</span>(+ % <span style=color:#ae81ff>95</span>)) <span style=color:#ae81ff>5</span>)  
+<span style=color:#ae81ff>-896</span>
+</code></pre></div><h3 id=another-way-to-combine--merge-maps>Another way to combine , merge maps..</h3><ul><li>This feels like a very particular solution</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure>playsync.core=&gt; (<span style=color:#66d9ef>def </span>m1 {<span style=color:#e6db74>:foo</span> <span style=color:#ae81ff>1</span> <span style=color:#e6db74>:boo</span> <span style=color:#ae81ff>0</span>})
+<span style=color:#f92672>#</span><span style=color:#e6db74>&#39;playsync.core/m1</span>
+playsync.core=&gt; (<span style=color:#66d9ef>def </span>m2 {<span style=color:#e6db74>:foo</span> <span style=color:#ae81ff>2</span> <span style=color:#e6db74>:yoo</span> <span style=color:#ae81ff>0</span>})
+<span style=color:#f92672>#</span><span style=color:#e6db74>&#39;playsync.core/m2</span>
+playsync.core=&gt; 
+
+playsync.core=&gt; (merge-with + m1 m2)
+{<span style=color:#e6db74>:foo</span> <span style=color:#ae81ff>3</span>, <span style=color:#e6db74>:boo</span> <span style=color:#ae81ff>0</span>, <span style=color:#e6db74>:yoo</span> <span style=color:#ae81ff>0</span>}
+</code></pre></div><ul class=pa0></ul><div class="mt6 instapaper_ignoref"></div></div><aside class="w-30-l mt6-l"></aside></article></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo><div class="flex justify-between"><a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://michal.piekarczyk.xyz/>&copy; michal.piekarczyk.xyz 2021</a><div></div></div></footer></body></html>

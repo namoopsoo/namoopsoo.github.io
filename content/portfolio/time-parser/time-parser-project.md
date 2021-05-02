@@ -41,7 +41,7 @@ This is a simple time tracker [lambda](https://aws.amazon.com/lambda/) and [Dyna
 * Here is an example of an output stacked area chart of a `core-category:work` query, which is using the author's data from December of 2017. This uses the d3js so called _stacked_ layout. The _y-axis_ represents minutes.
 * This chart is not labeled, but it is possible to see that some days in the week of _December 4th_ had multiple competing interests, while the week of _Dec 11th_ there was a bit more focus on the _Purple project_.
 
-<img src="/assets/images/time-parser_images/example-stacked-2018-02-11.png" width="600"/>
+<img src="images/example-stacked-2018-02-11.png" width="600"/>
 
 * This particular layout only allows for a max of `20` layers before colors are re-used for other categories.
 * [a lot can be said](http://leebyron.com/streamgraph/stackedgraphs_byron_wattenberg.pdf) about stacked area chart aesthetics.
@@ -49,7 +49,7 @@ This is a simple time tracker [lambda](https://aws.amazon.com/lambda/) and [Dyna
 ### Architecture overview
 Here's a super simple overview. There are several lambdas at play here, but the general picture looks like this.
 
-![image](/assets/images/time-parser_images/architecture.png)
+![image](images/architecture.png)
 
 * Here, `crontab -l` shows how an upload script runs every 20 minutes
 

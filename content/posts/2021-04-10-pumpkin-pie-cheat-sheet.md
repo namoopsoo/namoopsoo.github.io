@@ -1,7 +1,9 @@
 ---
 title: Pumpkin Pie Note
-categories: recipe
-tags: keto
+categories:
+  - recipe
+tags:
+  - keto
 ---
 
 #### Quick reference for that keto pie

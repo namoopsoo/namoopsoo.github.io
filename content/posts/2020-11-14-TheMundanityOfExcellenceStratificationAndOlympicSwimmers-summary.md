@@ -1,8 +1,11 @@
 ---
-layout: post
 title: Summary of Mundanity of Excellence
 date: 2020-11-21
-tags: productivity, improvement
+tags: 
+  - productivity 
+  - improvement
+categories:
+  - summary
 
 ---
 

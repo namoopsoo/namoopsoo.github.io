@@ -1,7 +1,8 @@
 ---
 title: Spark Weekend
 date: 2021-01-23
-tags: notebook
+tags:
+  - spark
 ---
 ### Trying out Spark this weekend
 _These are just my casual notes from doing that, updating them as I go along._

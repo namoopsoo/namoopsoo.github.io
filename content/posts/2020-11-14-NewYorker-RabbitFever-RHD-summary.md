@@ -1,8 +1,9 @@
 ---
-layout: post
 title: Rabbit Fever Summary
-categories: summary
-tags: vaccines
+categories: 
+  - booksummary
+tags:
+  - vaccines
 author: Michal Piekarczyk
 date:   2020-11-14 11:06:01 -0500
 ---

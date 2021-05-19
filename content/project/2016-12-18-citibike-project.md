@@ -1,11 +1,10 @@
 ---
-layout: post
 title:  "Citibike Learn Project"
 date:   2016-12-18 18:33:28 2016 -0400
+featured_image: "https://my-blog-content.s3.amazonaws.com/2020/CartShare.jpeg"
 ---
 
 
-<img src="https://my-blog-content.s3.amazonaws.com/2020/CartShare.jpeg" width="400"/>
 
 ### Citibike Project: Can your Destination be Predicted
 _( <a href="https://github.com/namoopsoo/learn-citibike"> https://github.com/namoopsoo/learn-citibike</a> )_

@@ -1,10 +1,9 @@
 ---
-layout: post
 title:  "Bike Share Learn Reboot"
 date:   2020-10-20 10:00:05 -0400
+featured_image: "https://s3.amazonaws.com/my-blog-content/2020/2020-10-20-bike-share-learn-reboot/IMG_8499.jpg"
 ---
 
-<img src="https://s3.amazonaws.com/my-blog-content/2020/2020-10-20-bike-share-learn-reboot/IMG_8499.jpg" width="40%">
 
 
 ### What

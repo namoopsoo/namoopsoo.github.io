@@ -3,5 +3,11 @@ languageCode = "en-us"
 title = "michal.piekarczyk.xyz"
 theme = "ananke"
 
+SectionPagesMenu = "main"
+# Paginate = 3 # this is set low for demonstrating with dummy content. Set to a higher number
+
 [markup.goldmark.renderer]
 unsafe = true
+
+# [Params]
+#  mainSections = ["post", "project", "handy"]

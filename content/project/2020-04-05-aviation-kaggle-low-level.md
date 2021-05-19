@@ -1,11 +1,10 @@
 ---
-layout: post
 title:  "Physiological deep learnings"
 date:   2020-04-05 10:00:00 -0400
+featured_image: "https://my-blog-content.s3.amazonaws.com/2019/2019-07-28+14.27.08-airplane.jpg" 
+description: learning from time series data
 ---
 
-<img src="https://my-blog-content.s3.amazonaws.com/2019/2019-07-28+14.27.08-airplane.jpg" 
-	width="400"/>
 
 
 _([High levelrecap: what is this?](https://github.com/namoopsoo/aviation-pilot-physiology-hmm#my-high-level-recap))_

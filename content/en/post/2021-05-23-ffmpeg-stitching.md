@@ -72,3 +72,53 @@ ffmpeg -framerate 4/3 -pattern_type glob -i '*R360.jpg' -c:v libx264 -r 30 -pix_
 ```
 * Hmm dang the output `out.slower.three_quarters.mini4.mp4` is still rotated.
 * Maybe image magick is doing some pure math rotation, but perhaps using the "Preview" app to do the rotation resets some kind of EXIF rotation setting.
+
+* So I tried looking at one of the original images and I'm getting
+
+```
+identify -format '%[EXIF:*]' "2021-05-19 09.02.40.jpg" | grep Orientation
+exif:Orientation=6
+```
+* Which according to [this](https://www.media.mit.edu/pia/Research/deepview/exif.html)  , `6` means "upper right"
+
+> The orientation of the camera relative to the scene, when the image was captured. The start point of stored data is, '1' means upper left, '3' lower right, '6' upper right, '8' lower left, '9' undefined.
+
+* Not really sure what that means but one of the images which I rotated manually with "Preview" ...
+
+```
+identify -format '%[EXIF:*]'  "2021-05-19 09.01.12R.jpg"|grep Orientation
+exif:Orientation=1
+
+```
+* Bingo. So if I can modify this tag on these images from `6` to `1` that might work.
+* Oh wow a stack overflow search on simply "modifying exif data with image magick" brought up [this answer](https://stackoverflow.com/questions/40606464/setting-image-orientation-exif-data-using-imagemagick#40804379) which is specifically about the orientation . Haha
+* So the suggestion is to use `mogrify`
+* And this other use of `identify` gives the human readable value instead
+```
+identify -verbose "2021-05-19 09.01.12R.jpg"|grep Orientation
+  Orientation: TopLeft
+```
+* Ok going to just try to use the glob approach
+```
+file="2021-05-19 09.02.40.jpg"
+echo "before" $(identify -verbose $file|grep Orientation)
+mogrify -orient "left-top"  "2021-05-19 09.02.40.jpg"
+echo "after" $(identify -verbose $file|grep Orientation)
+
+# output..
+before   Orientation: RightTop
+after   Orientation: LeftTop
+```
+* Ok cool..
+
+```
+mogrify -orient "left-top"  *.jpg
+
+```
+
+#### Ok try ffmpeg again ...
+
+```
+ffmpeg -framerate 4/3 -pattern_type glob -i '*.jpg' -c:v libx264 -r 30 -pix_fmt yuv420p out.slower.three_quarters.full.mp4
+
+```

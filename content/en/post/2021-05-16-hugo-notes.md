@@ -2,6 +2,9 @@
 date: 2021-05-16
 title: Notes on hugo
 description: "Switched from Jekyll to Hugo"
+summary: "Switched from Jekyll to Hugo"
+categories:
+  - notes
 ---
 
 ### 2021-05-16
@@ -85,3 +88,34 @@ description: "Switched from Jekyll to Hugo"
 * Ok nice finally found how to set images , from [here](https://themes.gohugo.io/gohugo-theme-ananke/#change-the-hero-background)  , the page for the "Ananke" theme that I am using. Maybe this is different for other themes.
 
 * So in the front matter ( between the `---` and `---`) , you can add `featured_image: 'https://example.com/blahblah.jpg'` and that will be displayed in the background for instance , when I put that into the `content/_index.md` the homepage index.
+
+### 2021-05-29
+
+#### Hmm trying this approach for embedding images
+[Here](https://hugo-geekblog.geekdocs.de/posts/post-with-images/ ) , where you do something like this
+
+```
+---
+resources:
+  - name: forest-1
+    src: "images/forest-1.jpg"
+    title: Forest (1)
+    params:
+      credits: "[Jay Mantri](https://unsplash.com/@jaymantri) on [Unsplash](https://unsplash.com/s/photos/forest)"
+---
+
+{ { < img name="forest-1" size="large" lazy=false > } }
+```
+
+
+* But I just tried this out and I'm getting this error now
+
+```html
+Rebuild failed:
+
+"/blah..../content/en/post/2021-01-07-steak-two.md:29:1": failed to extract shortcode: template for shortcode "img" not found
+
+{ { < img name="sizzle" size="small" lazy=true > } }
+```
+
+* Not sure but maybe resources must be in a page bundle and cannot have a source that is a uri.

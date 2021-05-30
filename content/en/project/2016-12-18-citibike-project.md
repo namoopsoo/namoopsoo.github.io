@@ -1,6 +1,6 @@
 ---
-title:  "Citibike Learn Project"
-date:   2016-12-18 18:33:28 2016 -0400
+title: "Citibike Learn Project"
+date: 2016-12-18 18:33:28 2016 -0400
 featured_image: "https://my-blog-content.s3.amazonaws.com/2020/CartShare.jpeg"
 ---
 

@@ -7,30 +7,16 @@ description: "Some temperature data"
 summary: "Some temperature data"
 ---
 
-```python
-import time
-import datetime
-def make_xtick_labels(x, step=5):
-    '''Given x, step the labels every <step>
-    Aka, take every <step>th x label
-    '''
-    x_ticks = [i for i in  range(len(x)) if i % step == 0]
-    x_labels = [x[i] for i in x_ticks]
-    return x_ticks, x_labels
+#### Siri was suggesting that I do the vaccine remotely, but I ended up going in person
+<img src="https://s3.amazonaws.com/my-blog-content/2021-05-07-covid-vaccine-2-temps/Capture d’écran 2021-05-30 à 16.33.57.png" width="50%">
 
-def utc_ts():
-    return datetime.datetime.utcnow().replace(tzinfo=pytz.UTC).strftime('%Y-%m-%dT%H%M%SZ')
+#### And I thought would be nice to collect and plot some of the temperatures
 
-def dt_to_unix_ts(dt):
-    return time.mktime(dt.timetuple())
+<img src="https://s3.amazonaws.com/my-blog-content/2021-05-07-covid-vaccine-2-temps/2021-05-30T200945Z-fig.png" width="50%">
 
-def ts_to_dt(ts):
-    return datetime.datetime.strptime(ts, '%Y-%m-%d %H.%M.%S')
+Here, I'm working with some self temperatures I collected in `data.csv` .
 
-def unix_ts_to_dt_ts(unix_ts):
-    return datetime.datetime.utcfromtimestamp(unix_ts).strftime('%Y-%m-%d %H:%M:%S')
-
-```
+(And I have some other supporting funcs [below](#some-other-supporting-functions)  )
 
 ```python
 import datetime
@@ -57,15 +43,11 @@ def plot(X, Y):
     plt.grid(True)
     title = "Temperature after vaccine"
 
-    #with plt.style.context('fivethirtyeight'):
-
     fig = plt.figure(figsize=(12,4))
     ax = fig.add_subplot(111)
     ax.plot(X, Y)
 
     x_labels = [unix_ts_to_dt_ts(x) for x in ax.get_xticks()]
-    # x_ticks, x_labels = make_xtick_labels(x, step=2)
-    # ax.set_xticks(x_ticks)
     ax.set_xticklabels(x_labels, rotation=-45)
     ax.set_title(title)
 
@@ -82,5 +64,30 @@ def plot(X, Y):
     pylab.savefig(out_loc, bbox_inches='tight')
 
     pylab.close()
+
+```
+
+#### Some other supporting functions
+
+```python
+import time
+import datetime
+
+def utc_ts():
+    return datetime.datetime.utcnow().replace(tzinfo=pytz.UTC).strftime('%Y-%m-%dT%H%M%SZ')
+
+def dt_to_unix_ts(dt):
+    return time.mktime(dt.timetuple())
+
+def ts_to_dt(ts):
+    return datetime.datetime.strptime(ts, '%Y-%m-%d %H.%M.%S')
+
+def unix_ts_to_dt_ts(unix_ts, utc_to_est=True):
+    dt = datetime.datetime.utcfromtimestamp(unix_ts)
+
+    if utc_to_est:
+       return dt.replace(tzinfo=pytz.UTC).astimezone(pytz.timezone('US/Eastern')).strftime('%Y-%m-%d %H:%M:%S EST')
+    else:
+       return dt.strftime('%Y-%m-%d %H:%M:%S Z')
 
 ```

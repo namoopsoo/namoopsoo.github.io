@@ -1,4 +1,9 @@
-
+---
+title: "some ffmpeg stitching"
+date: 2021-05-23
+description: ""
+summary: "using ffmpeg to stitch together some images into a slide show"
+---
 
 
 #### Trying

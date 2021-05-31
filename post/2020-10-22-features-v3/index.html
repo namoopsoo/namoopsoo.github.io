@@ -1,0 +1,206 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Visualizing time of day and birth year | My blog</title><meta name=viewport content="width=device-width,minimum-scale=1"><meta name=description content="This is a mini post part of this project. (Originally posted here ).
+Take a quick look at time of day distribution import matplotlib.pyplot as plt import numpy as np import pandas as pd datadir = '/opt/data' localdir = '/opt/program' tripsdf = pd.read_csv(f'{datadir}/2013-07 - Citi Bike trip data.csv') stationsdf = pd.read_csv(f'{localdir}/datas/stations/stations-2018-12-04-c.csv', index_col=0) tripsdf.iloc[0] tripduration 634 starttime 2013-07-01 00:00:00 stoptime 2013-07-01 00:10:34 start station id 164 start station name E 47 St & 2 Ave start station latitude 40."><meta name=generator content="Hugo 0.83.1"><meta name=ROBOTS content="NOINDEX, NOFOLLOW"><link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css><meta property="og:title" content="Visualizing time of day and birth year"><meta property="og:description" content="This is a mini post part of this project. (Originally posted here ).
+Take a quick look at time of day distribution import matplotlib.pyplot as plt import numpy as np import pandas as pd datadir = '/opt/data' localdir = '/opt/program' tripsdf = pd.read_csv(f'{datadir}/2013-07 - Citi Bike trip data.csv') stationsdf = pd.read_csv(f'{localdir}/datas/stations/stations-2018-12-04-c.csv', index_col=0) tripsdf.iloc[0] tripduration 634 starttime 2013-07-01 00:00:00 stoptime 2013-07-01 00:10:34 start station id 164 start station name E 47 St & 2 Ave start station latitude 40."><meta property="og:type" content="article"><meta property="og:url" content="https://michal.piekarczyk.xyz/post/2020-10-22-features-v3/"><meta property="article:section" content="post"><meta property="article:published_time" content="2020-10-22T00:00:00+00:00"><meta property="article:modified_time" content="2020-10-22T00:00:00+00:00"><meta property="og:site_name" content="My blog"><meta itemprop=name content="Visualizing time of day and birth year"><meta itemprop=description content="This is a mini post part of this project. (Originally posted here ).
+Take a quick look at time of day distribution import matplotlib.pyplot as plt import numpy as np import pandas as pd datadir = '/opt/data' localdir = '/opt/program' tripsdf = pd.read_csv(f'{datadir}/2013-07 - Citi Bike trip data.csv') stationsdf = pd.read_csv(f'{localdir}/datas/stations/stations-2018-12-04-c.csv', index_col=0) tripsdf.iloc[0] tripduration 634 starttime 2013-07-01 00:00:00 stoptime 2013-07-01 00:10:34 start station id 164 start station name E 47 St & 2 Ave start station latitude 40."><meta itemprop=datePublished content="2020-10-22T00:00:00+00:00"><meta itemprop=dateModified content="2020-10-22T00:00:00+00:00"><meta itemprop=wordCount content="867"><meta itemprop=keywords content><meta name=twitter:card content="summary"><meta name=twitter:title content="Visualizing time of day and birth year"><meta name=twitter:description content="This is a mini post part of this project. (Originally posted here ).
+Take a quick look at time of day distribution import matplotlib.pyplot as plt import numpy as np import pandas as pd datadir = '/opt/data' localdir = '/opt/program' tripsdf = pd.read_csv(f'{datadir}/2013-07 - Citi Bike trip data.csv') stationsdf = pd.read_csv(f'{localdir}/datas/stations/stations-2018-12-04-c.csv', index_col=0) tripsdf.iloc[0] tripduration 634 starttime 2013-07-01 00:00:00 stoptime 2013-07-01 00:10:34 start station id 164 start station name E 47 St & 2 Ave start station latitude 40."></head><body class="ma0 avenir bg-near-white"><header><div class=bg-black><nav class="pv3 ph3 ph4-ns" role=navigation><div class="flex-l justify-between items-center center"><a href=/ class="f3 fw2 hover-white no-underline white-90 dib">My blog</a><div class="flex-l items-center"><ul class="pl0 mr3"><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/about/ title="About page">About</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/handy/ title="Handy page">Handy</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/post/ title="Post page">Post</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/project/ title="Side Projects page">Side Projects</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/foo/ title="The Foos page">The Foos</a></li></ul></div></div></nav></div></header><main class=pb7 role=main><article class="flex-l flex-wrap justify-between mw8 center ph3"><header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked">POST</aside><div id=sharing class=mt3><a href="https://www.facebook.com/sharer.php?u=https://michal.piekarczyk.xyz/post/2020-10-22-features-v3/" class="facebook no-underline" aria-label="share on Facebook"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765 50.32h6.744V33.998h4.499l.596-5.624h-5.095l.007-2.816c0-1.466.14-2.253 2.244-2.253h2.812V17.68h-4.5c-5.405.0-7.307 2.729-7.307 7.317v3.377h-3.369v5.625h3.369V50.32zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg></a><a href="https://twitter.com/share?url=https://michal.piekarczyk.xyz/post/2020-10-22-features-v3/&text=Visualizing%20time%20of%20day%20and%20birth%20year" class="twitter no-underline" aria-label="share on Twitter"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https://michal.piekarczyk.xyz/post/2020-10-22-features-v3/&title=Visualizing%20time%20of%20day%20and%20birth%20year" class="linkedin no-underline" aria-label="share on LinkedIn"><svg height="32" style="enable-background:new 0 0 65 65" viewBox="0 0 65 65" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M50.837 48.137V36.425c0-6.275-3.35-9.195-7.816-9.195-3.604.0-5.219 1.983-6.119 3.374V27.71h-6.79c.09 1.917.0 20.427.0 20.427h6.79V36.729c0-.609.044-1.219.224-1.655.49-1.22 1.607-2.483 3.482-2.483 2.458.0 3.44 1.873 3.44 4.618v10.929H50.837zM22.959 24.922c2.367.0 3.842-1.57 3.842-3.531-.044-2.003-1.475-3.528-3.797-3.528s-3.841 1.524-3.841 3.528c0 1.961 1.474 3.531 3.753 3.531H22.959zM34 64C17.432 64 4 50.568 4 34 4 17.431 17.432 4 34 4s30 13.431 30 30c0 16.568-13.432 30-30 30zM26.354 48.137V27.71h-6.789v20.427h6.789z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></a></div><h1 class="f1 athelas mt3 mb1">Visualizing time of day and birth year</h1><time class="f6 mv4 dib tracked" datetime=2020-10-22T00:00:00Z>October 22, 2020</time></header><div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>This is a mini post part of <a href=/project/2020-10-20-bike-share-learn-reboot/>this project</a>. (Originally posted <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-22-features-v3.md>here</a> ).</p><h4 id=take-a-quick-look-at-time-of-day-distribution>Take a quick look at time of day distribution</h4><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> matplotlib.pyplot <span style=color:#f92672>as</span> plt
+<span style=color:#f92672>import</span> numpy <span style=color:#f92672>as</span> np
+<span style=color:#f92672>import</span> pandas <span style=color:#f92672>as</span> pd
+
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>datadir <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;/opt/data&#39;</span>
+localdir <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;/opt/program&#39;</span>
+tripsdf <span style=color:#f92672>=</span> pd<span style=color:#f92672>.</span>read_csv(f<span style=color:#e6db74>&#39;{datadir}/2013-07 - Citi Bike trip data.csv&#39;</span>)
+stationsdf <span style=color:#f92672>=</span> pd<span style=color:#f92672>.</span>read_csv(f<span style=color:#e6db74>&#39;{localdir}/datas/stations/stations-2018-12-04-c.csv&#39;</span>,
+                        index_col<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>)
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>tripsdf<span style=color:#f92672>.</span>iloc[<span style=color:#ae81ff>0</span>]
+</code></pre></div><pre><code>tripduration                               634
+starttime                  2013-07-01 00:00:00
+stoptime                   2013-07-01 00:10:34
+start station id                           164
+start station name             E 47 St &amp; 2 Ave
+start station latitude                 40.7532
+start station longitude               -73.9703
+end station id                             504
+end station name               1 Ave &amp; E 15 St
+end station latitude                   40.7322
+end station longitude                 -73.9817
+bikeid                                   16950
+usertype                              Customer
+birth year                                  \N
+gender                                       0
+Name: 0, dtype: object
+</code></pre><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>tripsdf[<span style=color:#e6db74>&#39;starttime&#39;</span>]<span style=color:#f92672>.</span>map(<span style=color:#66d9ef>lambda</span> x: x[<span style=color:#ae81ff>11</span>:<span style=color:#ae81ff>13</span>])<span style=color:#f92672>.</span>iloc[:<span style=color:#ae81ff>10</span>]
+</code></pre></div><pre><code>0    00
+1    00
+2    00
+3    00
+4    00
+5    00
+6    00
+7    00
+8    00
+9    00
+Name: starttime, dtype: object
+</code></pre><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>tripsdf[<span style=color:#e6db74>&#39;hour&#39;</span>] <span style=color:#f92672>=</span> tripsdf[<span style=color:#e6db74>&#39;starttime&#39;</span>]<span style=color:#f92672>.</span>map(<span style=color:#66d9ef>lambda</span> x: x[<span style=color:#ae81ff>11</span>:<span style=color:#ae81ff>13</span>])
+
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># For all time looks like maybe two peaks</span>
+
+fig <span style=color:#f92672>=</span> plt<span style=color:#f92672>.</span>figure(figsize<span style=color:#f92672>=</span>(<span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>6</span>))
+fig<span style=color:#f92672>.</span>patch<span style=color:#f92672>.</span>set_facecolor(<span style=color:#e6db74>&#39;xkcd:mint green&#39;</span>)
+ax <span style=color:#f92672>=</span> fig<span style=color:#f92672>.</span>add_subplot(<span style=color:#ae81ff>111</span>, )
+
+ax<span style=color:#f92672>.</span>hist(tripsdf<span style=color:#f92672>.</span>hour<span style=color:#f92672>.</span>tolist(), bins<span style=color:#f92672>=</span><span style=color:#ae81ff>24</span>)
+plt<span style=color:#f92672>.</span>grid(True)
+</code></pre></div><p><img src=2020-10-22-features-v3_files/2020-10-22-features-v3_6_0.png alt=png></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Perhaps on weekdays different?</span>
+<span style=color:#f92672>import</span> fresh.utils <span style=color:#f92672>as</span> fu
+
+fu<span style=color:#f92672>.</span>prepare_weekday_feature(tripsdf)
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>fig <span style=color:#f92672>=</span> plt<span style=color:#f92672>.</span>figure(figsize<span style=color:#f92672>=</span>(<span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>6</span>))
+fig<span style=color:#f92672>.</span>patch<span style=color:#f92672>.</span>set_facecolor(<span style=color:#e6db74>&#39;xkcd:mint green&#39;</span>)
+ax <span style=color:#f92672>=</span> fig<span style=color:#f92672>.</span>add_subplot(<span style=color:#ae81ff>111</span>, )
+ax<span style=color:#f92672>.</span>hist(tripsdf[tripsdf<span style=color:#f92672>.</span>weekday <span style=color:#f92672>==</span> True]<span style=color:#f92672>.</span>hour<span style=color:#f92672>.</span>tolist(), bins<span style=color:#f92672>=</span><span style=color:#ae81ff>24</span>)
+ax<span style=color:#f92672>.</span>set_title(<span style=color:#e6db74>&#39;Weekday hour histogram&#39;</span>)
+plt<span style=color:#f92672>.</span>grid(True)
+</code></pre></div><p><img src=2020-10-22-features-v3_files/2020-10-22-features-v3_8_0.png alt=png></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Weekend wow big difference. </span>
+fig <span style=color:#f92672>=</span> plt<span style=color:#f92672>.</span>figure(figsize<span style=color:#f92672>=</span>(<span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>6</span>))
+fig<span style=color:#f92672>.</span>patch<span style=color:#f92672>.</span>set_facecolor(<span style=color:#e6db74>&#39;xkcd:mint green&#39;</span>)
+ax <span style=color:#f92672>=</span> fig<span style=color:#f92672>.</span>add_subplot(<span style=color:#ae81ff>111</span>, )
+ax<span style=color:#f92672>.</span>hist(tripsdf[tripsdf<span style=color:#f92672>.</span>weekday <span style=color:#f92672>==</span> False]<span style=color:#f92672>.</span>hour<span style=color:#f92672>.</span>tolist(), bins<span style=color:#f92672>=</span><span style=color:#ae81ff>24</span>)
+ax<span style=color:#f92672>.</span>set_title(<span style=color:#e6db74>&#39;Weekend hour histogram&#39;</span>)
+plt<span style=color:#f92672>.</span>grid(True)
+</code></pre></div><p><img src=2020-10-22-features-v3_files/2020-10-22-features-v3_9_0.png alt=png></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Ok based on the above, going to create a version 2...</span>
+<span style=color:#75715e># time_of_day_v2_peaky</span>
+<span style=color:#75715e># Not sure how to account for the different peaks on weekends</span>
+<span style=color:#75715e>#     # 0: 6-10, 1: 11-15, 2: 16-20, 3: 21-00, 00-5</span>
+
+
+</code></pre></div><h4 id=age>Age</h4><ul><li>Somehow I did not include age this time around but I should.</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>tripsdf[[<span style=color:#e6db74>&#39;usertype&#39;</span>, <span style=color:#e6db74>&#39;birth year&#39;</span>]]<span style=color:#f92672>.</span>iloc[:<span style=color:#ae81ff>5</span>]
+
+</code></pre></div><div><style scoped>.dataframe tbody tr th:only-of-type{vertical-align:middle}<pre><code>.dataframe tbody tr th{vertical-align:top}.dataframe thead th{text-align:right}</code></pre><p></style></p><table border=1 class=dataframe><thead><tr style=text-align:right><th></th><th>usertype</th><th>birth year</th></tr></thead><tbody><tr><th>0</th><td>Customer</td><td>\N</td></tr><tr><th>1</th><td>Customer</td><td>\N</td></tr><tr><th>2</th><td>Subscriber</td><td>1980</td></tr><tr><th>3</th><td>Customer</td><td>\N</td></tr><tr><th>4</th><td>Subscriber</td><td>1986</td></tr></tbody></table></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Ok should basically fill these as np.nan for &#39;Customer&#39;</span>
+dict(tripsdf[tripsdf<span style=color:#f92672>.</span>usertype<span style=color:#f92672>==</span><span style=color:#e6db74>&#39;Customer&#39;</span>][<span style=color:#e6db74>&#39;birth year&#39;</span>]<span style=color:#f92672>.</span>value_counts())
+</code></pre></div><pre><code>{'\\N': 174887, '1995': 28}
+</code></pre><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Luckily no nulls</span>
+tripsdf[(tripsdf<span style=color:#f92672>.</span>usertype<span style=color:#f92672>==</span><span style=color:#e6db74>&#39;Subscriber&#39;</span>)<span style=color:#f92672>&amp;</span> (tripsdf[<span style=color:#e6db74>&#39;birth year&#39;</span>]<span style=color:#f92672>.</span>isnull())]<span style=color:#f92672>.</span>shape
+</code></pre></div><pre><code>(0, 18)
+</code></pre><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>make_xtick_labels</span>(x, step<span style=color:#f92672>=</span><span style=color:#ae81ff>5</span>):
+    <span style=color:#e6db74>&#39;&#39;&#39;Given x, step the labels every &lt;step&gt;
+</span><span style=color:#e6db74>    Aka, take every &lt;step&gt;th x label
+</span><span style=color:#e6db74>    &#39;&#39;&#39;</span>
+    x_ticks <span style=color:#f92672>=</span> [i <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span>  range(len(x)) <span style=color:#66d9ef>if</span> i <span style=color:#f92672>%</span> step <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>]
+    x_labels <span style=color:#f92672>=</span> [x[i] <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> x_ticks]
+    <span style=color:#66d9ef>return</span> x_ticks, x_labels
+
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> numpy <span style=color:#f92672>as</span> np
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>tripsdf[<span style=color:#e6db74>&#39;birth year&#39;</span>] <span style=color:#f92672>=</span> tripsdf[<span style=color:#e6db74>&#39;birth year&#39;</span>]<span style=color:#f92672>.</span>map(<span style=color:#66d9ef>lambda</span> x:int(x) <span style=color:#66d9ef>if</span> x <span style=color:#f92672>!=</span> <span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\\</span><span style=color:#e6db74>N&#39;</span> <span style=color:#66d9ef>else</span> np<span style=color:#f92672>.</span>nan )
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Discard below 1913 as np.nan. TODO</span>
+tripsdf[(tripsdf<span style=color:#f92672>.</span>usertype<span style=color:#f92672>==</span><span style=color:#e6db74>&#39;Subscriber&#39;</span>)<span style=color:#f92672>&amp;</span> (tripsdf[<span style=color:#e6db74>&#39;birth year&#39;</span>] <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>1913</span>)]<span style=color:#f92672>.</span>shape
+</code></pre></div><pre><code>(226, 18)
+</code></pre><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>X <span style=color:#f92672>=</span> [x <span style=color:#66d9ef>for</span> x <span style=color:#f92672>in</span> tripsdf[(tripsdf<span style=color:#f92672>.</span>usertype <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;Subscriber&#39;</span>)][<span style=color:#e6db74>&#39;birth year&#39;</span>]<span style=color:#f92672>.</span>tolist()
+    <span style=color:#66d9ef>if</span> x <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>1913</span>]
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>print</span>(len(X))
+fig <span style=color:#f92672>=</span> plt<span style=color:#f92672>.</span>figure(figsize<span style=color:#f92672>=</span>(<span style=color:#ae81ff>12</span>, <span style=color:#ae81ff>6</span>))
+fig<span style=color:#f92672>.</span>patch<span style=color:#f92672>.</span>set_facecolor(<span style=color:#e6db74>&#39;xkcd:mint green&#39;</span>)
+ax <span style=color:#f92672>=</span> fig<span style=color:#f92672>.</span>add_subplot(<span style=color:#ae81ff>111</span>, )
+
+ax<span style=color:#f92672>.</span>hist(X[:<span style=color:#ae81ff>10000</span>], bins<span style=color:#f92672>=</span><span style=color:#ae81ff>70</span>)
+
+<span style=color:#75715e># x_ticks, x_labels = make_xtick_labels(x[:1000], step=20)</span>
+<span style=color:#75715e># ax.set_xticks(x_ticks)</span>
+<span style=color:#75715e># ax.set_xticklabels(x_labels, rotation=-45)</span>
+
+ax<span style=color:#f92672>.</span>set_title(<span style=color:#e6db74>&#39;Birth year binned (2013-07)&#39;</span>)
+plt<span style=color:#f92672>.</span>grid(True)
+fig<span style=color:#f92672>.</span>show()
+</code></pre></div><pre><code>668262
+</code></pre><p><img src=2020-10-22-features-v3_files/2020-10-22-features-v3_20_1.png alt=png></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Ok this seems normal ish. so might as well just split somewhat arbitrarily or evenly</span>
+
+<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>get_quantiles</span>(unsorted):
+    data <span style=color:#f92672>=</span> sorted(unsorted)
+    minimum <span style=color:#f92672>=</span> data[<span style=color:#ae81ff>0</span>]
+    Q1 <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>percentile(data, <span style=color:#ae81ff>25</span>, interpolation <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;midpoint&#39;</span>) 
+    median <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>median(data)
+    Q3 <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>percentile(data, <span style=color:#ae81ff>75</span>, interpolation <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;midpoint&#39;</span>) 
+    maximum <span style=color:#f92672>=</span> data[<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]
+    <span style=color:#66d9ef>return</span> [minimum, Q1, median, Q3, maximum]
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>
+<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>show_da_stats</span>(bundle):
+    H, bins <span style=color:#f92672>=</span> bundle[<span style=color:#e6db74>&#39;hist&#39;</span>]
+    quantiles <span style=color:#f92672>=</span> bundle[<span style=color:#e6db74>&#39;quantiles&#39;</span>]
+    fig <span style=color:#f92672>=</span> plt<span style=color:#f92672>.</span>figure(figsize<span style=color:#f92672>=</span>(<span style=color:#ae81ff>12</span>, <span style=color:#ae81ff>6</span>))
+    fig<span style=color:#f92672>.</span>patch<span style=color:#f92672>.</span>set_facecolor(<span style=color:#e6db74>&#39;xkcd:mint green&#39;</span>)
+    ax <span style=color:#f92672>=</span> fig<span style=color:#f92672>.</span>add_subplot(<span style=color:#ae81ff>111</span>, )
+    ax<span style=color:#f92672>.</span>scatter(quantiles, [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>])
+    ax<span style=color:#f92672>.</span>axvline(quantiles[<span style=color:#ae81ff>1</span>], label<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;q:25%&#39;</span>)
+    ax<span style=color:#f92672>.</span>axvline(quantiles[<span style=color:#ae81ff>2</span>], label<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;q:50%&#39;</span>)
+    ax<span style=color:#f92672>.</span>axvline(quantiles[<span style=color:#ae81ff>3</span>], label<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;q:75%&#39;</span>)
+
+    ax<span style=color:#f92672>.</span>set_title(bundle[<span style=color:#e6db74>&#39;title&#39;</span>])
+    ax<span style=color:#f92672>.</span>plot(bins, np<span style=color:#f92672>.</span>insert(H, <span style=color:#ae81ff>0</span>, H[<span style=color:#ae81ff>0</span>]), drawstyle<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;steps&#39;</span>, color<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;green&#39;</span>)
+    plt<span style=color:#f92672>.</span>grid(True)
+    fig<span style=color:#f92672>.</span>legend()
+    fig<span style=color:#f92672>.</span>show()
+    
+<span style=color:#75715e>#</span>
+hist <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>histogram(X, bins<span style=color:#f92672>=</span><span style=color:#ae81ff>100</span>, range<span style=color:#f92672>=</span>None)
+
+quantiles <span style=color:#f92672>=</span> get_quantiles(X)
+bundle <span style=color:#f92672>=</span> {<span style=color:#e6db74>&#39;hist&#39;</span>: hist, <span style=color:#e6db74>&#39;quantiles&#39;</span>: quantiles,
+               <span style=color:#e6db74>&#39;title&#39;</span>: <span style=color:#e6db74>&#39;Birth year binned (2013-07)&#39;</span>}
+<span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#39;quantiles&#39;</span>, quantiles)
+show_da_stats(bundle)
+</code></pre></div><pre><code>quantiles [1920.0, 1969.0, 1978.0, 1984.0, 1997.0]
+</code></pre><p><img src=2020-10-22-features-v3_files/2020-10-22-features-v3_22_1.png alt=png></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># And the age quantiles to make this a year independent feature.. </span>
+<span style=color:#ae81ff>2013</span> <span style=color:#f92672>-</span> np<span style=color:#f92672>.</span>array([<span style=color:#ae81ff>1920.0</span>, <span style=color:#ae81ff>1969.0</span>, <span style=color:#ae81ff>1978.0</span>, <span style=color:#ae81ff>1984.0</span>, <span style=color:#ae81ff>1997.0</span>])
+</code></pre></div><pre><code>array([93., 44., 35., 29., 16.])
+</code></pre><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> datetime; <span style=color:#f92672>import</span> pytz
+x <span style=color:#f92672>=</span> dict(tripsdf<span style=color:#f92672>.</span>iloc[<span style=color:#ae81ff>2</span>])
+x
+
+(x[<span style=color:#e6db74>&#39;start_dt&#39;</span>] <span style=color:#f92672>-</span> 
+     datetime<span style=color:#f92672>.</span>datetime(int(x[<span style=color:#e6db74>&#39;birth year&#39;</span>]), <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>, tzinfo<span style=color:#f92672>=</span>pytz<span style=color:#f92672>.</span>timezone(<span style=color:#e6db74>&#39;US/Eastern&#39;</span>))
+)<span style=color:#f92672>.</span>days<span style=color:#f92672>/</span><span style=color:#ae81ff>365.</span> , (x[<span style=color:#e6db74>&#39;start_dt&#39;</span>] <span style=color:#f92672>-</span> np<span style=color:#f92672>.</span>nan)
+</code></pre></div><pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-102-ee3bddc50852&gt; in &lt;module&gt;
+      5 (x['start_dt'] - 
+      6      datetime.datetime(int(x['birth year']), 1, 1, tzinfo=pytz.timezone('US/Eastern'))
+----&gt; 7 ).days/365. , (x['start_dt'] - np.nan)
+
+
+TypeError: unsupported operand type(s) for -: 'Timestamp' and 'float'
+</code></pre><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>x[<span style=color:#e6db74>&#39;start_dt&#39;</span>] <span style=color:#f92672>-</span> pd<span style=color:#f92672>.</span>NaT
+</code></pre></div><pre><code>NaT
+</code></pre><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Reload once again since I modified a col</span>
+tripsdf <span style=color:#f92672>=</span> pd<span style=color:#f92672>.</span>read_csv(f<span style=color:#e6db74>&#39;{datadir}/2013-07 - Citi Bike trip data.csv&#39;</span>)
+
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>reload(fu)
+minidf <span style=color:#f92672>=</span> tripsdf<span style=color:#f92672>.</span>iloc[:<span style=color:#ae81ff>1000</span>]<span style=color:#f92672>.</span>copy()
+fu<span style=color:#f92672>.</span>prepare_weekday_feature(minidf)
+fu<span style=color:#f92672>.</span>age_feature(minidf)
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>list(reversed([<span style=color:#ae81ff>93.</span>, <span style=color:#ae81ff>44.</span>, <span style=color:#ae81ff>35.</span>, <span style=color:#ae81ff>29.</span>, <span style=color:#ae81ff>16.</span>]))
+</code></pre></div><pre><code>[16.0, 29.0, 35.0, 44.0, 93.0]
+</code></pre><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>minidf[<span style=color:#e6db74>&#39;birth_bin&#39;</span>] <span style=color:#f92672>=</span> pd<span style=color:#f92672>.</span>cut(minidf[<span style=color:#e6db74>&#39;age&#39;</span>], bins<span style=color:#f92672>=</span>[<span style=color:#ae81ff>16.0</span>, <span style=color:#ae81ff>29.0</span>, <span style=color:#ae81ff>35.0</span>, <span style=color:#ae81ff>44.0</span>, <span style=color:#ae81ff>93.0</span>],
+                            labels<span style=color:#f92672>=</span>[<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>])
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>minidf[[<span style=color:#e6db74>&#39;age&#39;</span>, <span style=color:#e6db74>&#39;birth&#39;</span>, <span style=color:#e6db74>&#39;birth_bin&#39;</span>]]<span style=color:#f92672>.</span>iloc[:<span style=color:#ae81ff>10</span>]
+</code></pre></div><div><style scoped>.dataframe tbody tr th:only-of-type{vertical-align:middle}<pre><code>.dataframe tbody tr th{vertical-align:top}.dataframe thead th{text-align:right}</code></pre><p></style></p><table border=1 class=dataframe><thead><tr style=text-align:right><th></th><th>age</th><th>birth</th><th>birth_bin</th></tr></thead><tbody><tr><th>0</th><td>NaN</td><td>NaT</td><td>NaN</td></tr><tr><th>1</th><td>NaN</td><td>NaT</td><td>NaN</td></tr><tr><th>2</th><td>33.520548</td><td>1979-12-31 23:56:00-05:00</td><td>1</td></tr><tr><th>3</th><td>NaN</td><td>NaT</td><td>NaN</td></tr><tr><th>4</th><td>27.515068</td><td>1985-12-31 23:56:00-05:00</td><td>0</td></tr><tr><th>5</th><td>25.515068</td><td>1987-12-31 23:56:00-05:00</td><td>0</td></tr><tr><th>6</th><td>NaN</td><td>NaT</td><td>NaN</td></tr><tr><th>7</th><td>28.515068</td><td>1984-12-31 23:56:00-05:00</td><td>0</td></tr><tr><th>8</th><td>33.520548</td><td>1979-12-31 23:56:00-05:00</td><td>1</td></tr><tr><th>9</th><td>24.512329</td><td>1988-12-31 23:56:00-05:00</td><td>0</td></tr></tbody></table></div><h4 id=prepare-to-build-the-v3-proc-bundle>Prepare to build the v3 proc bundle</h4><ul><li>I have a nice <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-18-glue.md>reference</a> for testing</li><li>And for building, I need to do some reverse engineering to maintain the train/test split from earlier.</li><li></li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> fresh.predict_utils <span style=color:#f92672>as</span> fpu
+
+bundle <span style=color:#f92672>=</span> fpu<span style=color:#f92672>.</span>load_bundle_in_docker()
+
+</code></pre></div><pre><code>Loading from bundle_loc /opt/ml/model/all_bundle_with_stationsdf.joblib
+</code></pre><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#39;original proc bundle notebook&#39;</span>, bundle[<span style=color:#e6db74>&#39;proc_bundle&#39;</span>][<span style=color:#e6db74>&#39;bundle&#39;</span>][<span style=color:#e6db74>&#39;notebook&#39;</span>])
+bundle[<span style=color:#e6db74>&#39;proc_bundle&#39;</span>][<span style=color:#e6db74>&#39;bundle&#39;</span>][<span style=color:#e6db74>&#39;proc_bundle&#39;</span>]<span style=color:#f92672>.</span>keys()
+<span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#39;this is the bundle glue notebook, cool&#39;</span>, bundle[<span style=color:#e6db74>&#39;notebook&#39;</span>])
+<span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#39;model notebook&#39;</span>, bundle[<span style=color:#e6db74>&#39;model_bundle&#39;</span>][<span style=color:#e6db74>&#39;bundle&#39;</span>][<span style=color:#e6db74>&#39;notebook&#39;</span>])
+<span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#39;train&#39;</span>, bundle[<span style=color:#e6db74>&#39;model_bundle&#39;</span>][<span style=color:#e6db74>&#39;bundle&#39;</span>][<span style=color:#e6db74>&#39;train&#39;</span>])
+<span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#39;test&#39;</span>, bundle[<span style=color:#e6db74>&#39;model_bundle&#39;</span>][<span style=color:#e6db74>&#39;bundle&#39;</span>][<span style=color:#e6db74>&#39;validation_metrics&#39;</span>][<span style=color:#e6db74>&#39;test&#39;</span>])
+</code></pre></div><pre><code>original proc bundle notebook 2020-07-03-aws.ipynb
+this is the bundle glue notebook, cool 2020-08-18-glue.ipynb
+model notebook 2020-07-10-aws.ipynb
+train /home/ec2-user/SageMaker/learn-citibike/artifacts/2020-07-08T143732Z/train.libsvm
+test /home/ec2-user/SageMaker/learn-citibike/artifacts/2020-07-08T143732Z/test.libsvm
+</code></pre><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> fresh.preproc.v3 <span style=color:#f92672>as</span> pv3
+
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#960050;background-color:#1e0010>!</span>pwd
+
+</code></pre></div><ul class=pa0></ul><div class="mt6 instapaper_ignoref"></div></div><aside class="w-30-l mt6-l"></aside></article></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo><div class="flex justify-between"><a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://michal.piekarczyk.xyz/>&copy; My blog 2021</a><div></div></div></footer></body></html>

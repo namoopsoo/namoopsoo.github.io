@@ -33,9 +33,8 @@ Again, the data looks like this
 * [Multi class classification notes](#multi-class-classification-notes)
 * [2020-06-19](#2020-06-19)
 * [Previously](#previously-vs-this-time)
-* [model highlights](#model-highlights)
-* data used
-* [Glue notes](#glue-notes)
+* [Model highlights](#model-highlights)
+* [Gluing everything together](#glue-notes)
 * [Looking at hyperparameter tuning results](#looking-at-hyperparameter-tuning-results)
 * [Follow on](#follow-on)
 
@@ -142,28 +141,26 @@ tripsdf = pd.read_csv(f'{datadir}/2013-07 - Citi Bike trip data.csv'
 
 but that it would be better to build a more balanced dataset instead of just random sampling.
 
-#### TODO describe additional experiments
+#### A rapid fire list of some additional experiments
 
-* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-21.md , another cache train data one more time with functional api .
-( especially https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-21.md#log-dump-w-num_round100 ), max_depth not changing so no learning happening
-* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-23.md , Adding new features here for a 'v2' dataset. `weekday`. and `time_of_day`. Added this in a new module, `fresh/preproc/v2.py`
-* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-24.md  , more memory struggles (since I added more data I think )
-* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-26.md , describing that after lots of crashing, I describe starting to use numpy append mode, [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-26.md#2020-06-27)  , to allow for doing preprocessing in chunks. And starting to look at target class distribution.
-* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-27.md , discovering # Quite possible that this caching is only allowed w/ the "libsvm" format ..
-* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-28.md , Hmm kind of weird, that with cache, without... producing different feature_names ?   more kernel dying.  
-* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-28-take2.md  , bigger box?
-* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-29.md  , class distribution for size reduction.  https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-29.md#2020-07-01  , dataset rebalancing.
-* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-03-aws.md  , Ok take the result from the balancing/shrinking concept from the "2020-06-29.ipynb" notebook and try to use less data see if we can avoid a kernel crash that happened in "2020-06-28-take2.ipynb"
-* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-04-aws.md , Want to do a quick recalc of yesterday's model using the sklearn API Again..
-* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-05-aws-two.md , more rebalancing
-* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-05.md
-* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-08-aws.md , end result: compared with "2020-07-03-aws.md" , I am not really seeing much of a difference. the balanced test accuracy perhaps looks every so slightly better but probably not significantly.
-* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-09-aws.md , change up 'subsample' and 'max_depth', measuring logloss, accuracy and balanced_accuracy ,  there are some noticable changes in logloss, but overall the changes are probably not significant  ,
-* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-10-aws.md
-* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md
-* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.md
-* https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-26-feature-importances.md
-
+* [Here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-21.md), I had another training attempt using the so called "cache data"  with functional api.  (But finding  especially [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-21.md#log-dump-w-num_round100) that the `max_depth` was not changing so likely no learning was happening).
+* [Here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-23.md) I aadded new features here for a 'v2' dataset, including  `weekday`. and `time_of_day`. Added this in a new module, `fresh/preproc/v2.py`.
+* [Here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-24.md) , more memory struggles (especially since I added more data).
+* [Here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-26.md), describing that after lots of crashing, starting to use numpy append mode, [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-26.md#2020-06-27)  , to allow for doing preprocessing in chunks. And starting to look at target class distribution.
+* [Here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-27.md) I'm  discovering that it is quite possible that this caching is only allowed w/ the "libsvm" format!
+* And [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-28.md), I see hmm it is kind of weird, that with cache, without... producing different `feature_names` ?   more kernel dying!
+* [Here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-28-take2.md)  , bigger box?
+* [Here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-29.md) , class distribution for size reduction and [dataset rebalancing]( https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-29.md#2020-07-01).
+* [Here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-03-aws.md) ok I took the result from the balancing/shrinking concept from the "2020-06-29.ipynb" notebook and tried to use less data see if we can avoid a kernel crash that happened in "2020-06-28-take2.ipynb".
+* [Here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-04-aws.md) I wanted to do a quick recalc of yesterday's model using the sklearn API Again.
+* [Here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-05-aws-two.md), more rebalancing.
+* [Here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-05.md).
+* [Here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-08-aws.md), end result: compared with "2020-07-03-aws.md" , I am not really seeing much of a difference. the balanced test accuracy perhaps looks every so slightly better but probably not significantly.
+* [Here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-09-aws.md) , change up `'subsample'` and `'max_depth'`, measuring logloss, accuracy and balanced_accuracy ,  there are some noticable changes in logloss, but overall the changes are probably not significant.
+* [Here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-10-aws.md).
+* [Here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md).
+* [Here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.md).
+* [Here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-26-feature-importances.md).
 
 
 
@@ -448,15 +445,10 @@ And it can be interesting to look at a random tree from xgboost too sometimes, a
 
 
 
-### Annotating my earlier posts
-
-#### xgb notes
-[xgboost notes](/post/2020-06-21-notes-xgboost/)
 
 
-#### Glue notes
-[Glue notes](https://github.com/namoopsoo/learn-citibike/blob/2020-oct/notes/2020-08-25-glue.md)
-Here I face the challenges of taking the model from model bundle to demo site. There were a lot of challenges involved. My concept was to use the Google Static Map API to display the top neighborhood predictions. Hitting this API properly did take a little bit of time, but it was not that bad. And later on, I updated the whole AWS Lambda approach so the lambda function calls the API with the result from the dockerized SageMaker served model.
+#### Gluing everything together
+In [this notebook](https://github.com/namoopsoo/learn-citibike/blob/2020-oct/notes/2020-08-25-glue.md), I face the challenges of taking the model from bundle to a demo site. There were a lot of challenges involved. My concept was to use the Google Static Map API to display the top neighborhood predictions. Hitting this API properly did take a little bit of time, but it was not that bad. And later on, I updated the whole AWS Lambda approach so the lambda function calls the API with the result from the dockerized SageMaker served model.
 
 Admittedly, the most time consuming part was figuring out the API Gateway Cognito "Unauthenticated Authentication". AWS has this Cognito service which manages user/password based authentication for you but it also lets you use Anonymous authentication. But there must be a lot of degrees of freedom in how this is used, because I could not find good documentation on how to set this up properly for my usecase at all.
 
@@ -515,11 +507,11 @@ And per [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/202
 
 <img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_17_0.png">
 
-And per  [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#look-at-subsample-w-different-rounds)  , `subsample` is just not appearing to be influencing accuracy.
+And per  [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#look-at-subsample-w-different-rounds)  , `subsample` row sampling is just not appearing to be influencing accuracy.
 
 <img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_20_0.png">
 
-And per [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#hmm-colsample_bylevel)  , the rando column sampling may have just removed the good columns
+And per [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#hmm-colsample_bylevel)  , the random column sampling may have just removed the good columns
 
 <img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_22_0.png">
 

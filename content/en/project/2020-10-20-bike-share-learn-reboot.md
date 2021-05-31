@@ -7,12 +7,14 @@ summary: This project is a reboot of an earlier project predicting bicycle ride 
 
 
 
-### What
-This project is a reboot of [my earlier project](https://michal.piekarczyk.xyz/project/2016-12-18-citibike-project/) of predicting bicycle ride share riders destinations.
+### Summary
+This project is a reboot of [my earlier project](/project/2016-12-18-citibike-project/) of predicting bicycle ride share riders destinations.
 https://bike-hop-predict.s3.amazonaws.com/index.html
 
-This time around I used XGBoost, newer features, hyper parameter tuning and I have a <a href="https://bike-hop-predict.s3.amazonaws.com/index.html" target="_blank"> demo site </a> as well.   
-<!-- http://bike.michal.piekarczyk.xyz/index.html -->
+This time around I used XGBoost, newer features, hyper parameter tuning and I have a <a href="https://bike-hop-predict.s3.amazonaws.com/index.html" target="_blank"> Demo Site </a> as well! I wanted very much to see if XGBoost has online learning like I used in [an earlier TensorFlow project](/project/2020-04-05-aviation-kaggle-low-level/), but as I [wrote here](/post/2020-06-21-notes-xgboost/), I could not pick up where I left off at least the way I tried it.
+
+
+
 
 Again, the data looks like this
 
@@ -64,13 +66,13 @@ array([29.03426394, 25.61716199, 29.19083979, 28.312853  , 22.04601817])
 ```
 
 #### Dockerization
-Next, for repeatability and portability, [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-07-local-docker-notes.md) I re-adapted some earlier Dockerization I had setup before to wrap xgboost, along with jupyter notebook for experimentation.
+Next, for repeatability and portability, [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-07-local-docker-notes.md) I re-adapted some earlier Dockerization I had setup before to wrap xgboost, along with jupyter notebook for experimentation. This was crucial, because if you want to jump between some quick experiments on your laptop and a notebook in the cloud, you don't want to deal with strange differences in library dependencies between MacOs and linux.
 
 ### Xgboost detour
 To start, I wanted to better understand how to use Xgboost abilities with respect to training a model, putting it down, saving it to disk, loading it again and continuing to train on new data. I had used this capability in Tensorflow land earlier and I read it might be possible with Xgboost, but even after trial and error with both the main Xgboost API and its scikit learn API, I could not get this to work properly.
-My notes on this are  [here in an earlier post](https://michal.piekarczyk.xyz/2020/06/21/notes-xgboost.html ).
+My notes on this are  [here in an earlier post](/post/2020-06-21-notes-xgboost/).
 
-One cool thing I did [learn](https://michal.piekarczyk.xyz/2020/06/21/notes-xgboost.html#parallelism) however was that when repeating a model train and evaluation experiment with both the functional API and the scikit learn API, the functional API took advantage of multithreading, and produced a particular result in `4min 18s` vs `49min 6s`, with both models using the same `seed=42` and ending up with the same accuracy and log loss on some held out data.
+One cool thing I did [learn](/post/2020-06-21-notes-xgboost/#parallelism) however was that when repeating a model train and evaluation experiment with both the functional API and the scikit learn API, the functional API took advantage of multithreading, and produced a particular result in `4min 18s` vs `49min 6s`, with both models using the same `seed=42` and ending up with the same accuracy and log loss on some held out data.
 
 As I mentioned [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-12--snapshot-2020-06-14T2258Z.md#2020-06-13)  , I experienced some early problems running out of memory and crashing, for instance computing log los son `843416 rows`. And that is why I was seeking out approaches of online learning. But because of the limitations, my workout ended up being the use of at least carefully deleting objects in memory with `del` to free up space for, between preprocessing, training and validation. And I also played around with the approach of initializing a `xgb.DMatrix` using the `xgb.DMatrix('/my/blah/path#dtrain.cache')` syntax where you specify `#` a cache file to allow for file access to reduce the in-memory burden, also requiring to dump your pre-processed training data to file first. (And doing that is good anyway because it allows you to free up that precious memory).
 
@@ -171,10 +173,10 @@ but that it would be better to build a more balanced dataset instead of just ran
 
 ### Multi class classification notes
 
-* [Notes on multi class classification](https://michal.piekarczyk.xyz/2020/07/13/multi-multi-class.html)
+* [Notes on multi class classification](/post/2020-07-13-multi-multi-class/)
 
 ### Understanding tuning results
- [hyper parameter tuning and train/test acc](https://michal.piekarczyk.xyz/2020/07/24/understanding-tuning-results.html)
+ [hyper parameter tuning and train/test acc](/post/2020-07-24-understanding-tuning-results/)
 
 
 ### Previously vs This time
@@ -450,7 +452,7 @@ And it can be interesting to look at a random tree from xgboost too sometimes, a
 ### Annotating my earlier posts
 
 #### xgb notes
-[xgboost notes](https://michal.piekarczyk.xyz/2020/06/21/notes-xgboost.html )
+[xgboost notes](/post/2020-06-21-notes-xgboost/)
 
 
 #### Glue notes

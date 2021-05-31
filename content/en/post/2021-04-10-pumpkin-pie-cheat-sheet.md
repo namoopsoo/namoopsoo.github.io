@@ -4,6 +4,8 @@ categories:
   - recipe
 tags:
   - keto
+  - recipe
+  - recipies
 ---
 
 #### Quick reference for that keto pie

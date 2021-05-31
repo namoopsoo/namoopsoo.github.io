@@ -34,7 +34,7 @@ Again, the data looks like this
 * [2020-06-19](#2020-06-19)
 * [Previously](#previously-vs-this-time)
 * [Model highlights](#model-highlights)
-* [Gluing everything together](#glue-notes)
+* [Gluing everything together](#gluing-everything-together)
 * [Looking at hyperparameter tuning results](#looking-at-hyperparameter-tuning-results)
 * [Follow on](#follow-on)
 

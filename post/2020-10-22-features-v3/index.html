@@ -60,14 +60,14 @@ ax <span style=color:#f92672>=</span> fig<span style=color:#f92672>.</span>add_s
 ax<span style=color:#f92672>.</span>hist(tripsdf[tripsdf<span style=color:#f92672>.</span>weekday <span style=color:#f92672>==</span> True]<span style=color:#f92672>.</span>hour<span style=color:#f92672>.</span>tolist(), bins<span style=color:#f92672>=</span><span style=color:#ae81ff>24</span>)
 ax<span style=color:#f92672>.</span>set_title(<span style=color:#e6db74>&#39;Weekday hour histogram&#39;</span>)
 plt<span style=color:#f92672>.</span>grid(True)
-</code></pre></div><p><img src=2020-10-22-features-v3_files/2020-10-22-features-v3_8_0.png alt=png></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Weekend wow big difference. </span>
+</code></pre></div><img src=https://raw.githubusercontent.com/namoopsoo/learn-citibike/master/notes/2020-10-22-features-v3_files/2020-10-22-features-v3_8_0.png><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Weekend wow big difference. </span>
 fig <span style=color:#f92672>=</span> plt<span style=color:#f92672>.</span>figure(figsize<span style=color:#f92672>=</span>(<span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>6</span>))
 fig<span style=color:#f92672>.</span>patch<span style=color:#f92672>.</span>set_facecolor(<span style=color:#e6db74>&#39;xkcd:mint green&#39;</span>)
 ax <span style=color:#f92672>=</span> fig<span style=color:#f92672>.</span>add_subplot(<span style=color:#ae81ff>111</span>, )
 ax<span style=color:#f92672>.</span>hist(tripsdf[tripsdf<span style=color:#f92672>.</span>weekday <span style=color:#f92672>==</span> False]<span style=color:#f92672>.</span>hour<span style=color:#f92672>.</span>tolist(), bins<span style=color:#f92672>=</span><span style=color:#ae81ff>24</span>)
 ax<span style=color:#f92672>.</span>set_title(<span style=color:#e6db74>&#39;Weekend hour histogram&#39;</span>)
 plt<span style=color:#f92672>.</span>grid(True)
-</code></pre></div><p><img src=2020-10-22-features-v3_files/2020-10-22-features-v3_9_0.png alt=png></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Ok based on the above, going to create a version 2...</span>
+</code></pre></div><img src=https://raw.githubusercontent.com/namoopsoo/learn-citibike/master/notes/2020-10-22-features-v3_files/2020-10-22-features-v3_9_0.png><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Ok based on the above, going to create a version 2...</span>
 <span style=color:#75715e># time_of_day_v2_peaky</span>
 <span style=color:#75715e># Not sure how to account for the different peaks on weekends</span>
 <span style=color:#75715e>#     # 0: 6-10, 1: 11-15, 2: 16-20, 3: 21-00, 00-5</span>
@@ -111,7 +111,7 @@ ax<span style=color:#f92672>.</span>set_title(<span style=color:#e6db74>&#39;Bir
 plt<span style=color:#f92672>.</span>grid(True)
 fig<span style=color:#f92672>.</span>show()
 </code></pre></div><pre><code>668262
-</code></pre><p><img src=2020-10-22-features-v3_files/2020-10-22-features-v3_20_1.png alt=png></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Ok this seems normal ish. so might as well just split somewhat arbitrarily or evenly</span>
+</code></pre><img src=https://raw.githubusercontent.com/namoopsoo/learn-citibike/master/notes/2020-10-22-features-v3_files/2020-10-22-features-v3_files/2020-10-22-features-v3_20_1.png><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Ok this seems normal ish. so might as well just split somewhat arbitrarily or evenly</span>
 
 <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>get_quantiles</span>(unsorted):
     data <span style=color:#f92672>=</span> sorted(unsorted)
@@ -148,7 +148,7 @@ bundle <span style=color:#f92672>=</span> {<span style=color:#e6db74>&#39;hist&#
 <span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#39;quantiles&#39;</span>, quantiles)
 show_da_stats(bundle)
 </code></pre></div><pre><code>quantiles [1920.0, 1969.0, 1978.0, 1984.0, 1997.0]
-</code></pre><p><img src=2020-10-22-features-v3_files/2020-10-22-features-v3_22_1.png alt=png></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># And the age quantiles to make this a year independent feature.. </span>
+</code></pre><img src=https://raw.githubusercontent.com/namoopsoo/learn-citibike/master/notes/2020-10-22-features-v3_files/2020-10-22-features-v3_files/2020-10-22-features-v3_22_1.png><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># And the age quantiles to make this a year independent feature.. </span>
 <span style=color:#ae81ff>2013</span> <span style=color:#f92672>-</span> np<span style=color:#f92672>.</span>array([<span style=color:#ae81ff>1920.0</span>, <span style=color:#ae81ff>1969.0</span>, <span style=color:#ae81ff>1978.0</span>, <span style=color:#ae81ff>1984.0</span>, <span style=color:#ae81ff>1997.0</span>])
 </code></pre></div><pre><code>array([93., 44., 35., 29., 16.])
 </code></pre><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> datetime; <span style=color:#f92672>import</span> pytz

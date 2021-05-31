@@ -11,7 +11,7 @@ summary: This project is a reboot of an earlier project predicting bicycle ride 
 This project is a reboot of [my earlier project](/project/2016-12-18-citibike-project/) of predicting bicycle ride share riders destinations.
 https://bike-hop-predict.s3.amazonaws.com/index.html
 
-This time around I used XGBoost, newer features, hyper parameter tuning and I have a <a href="https://bike-hop-predict.s3.amazonaws.com/index.html" target="_blank"> Demo Site </a> as well! I wanted very much to see if XGBoost has online learning like I used in [an earlier TensorFlow project](/project/2020-04-05-aviation-kaggle-low-level/), but as I [wrote here](/post/2020-06-21-notes-xgboost/), I could not pick up where I left off at least the way I tried it. And [here](/post/2020-07-24-understanding-tuning-results/) is a mini post on looking at hyper parameter tuning results.
+This time around I used XGBoost, newer features, hyper parameter tuning and I have a <a href="https://bike-hop-predict.s3.amazonaws.com/index.html" target="_blank"> Demo Site </a> as well! I wanted very much to see if XGBoost has online learning like I used in [an earlier TensorFlow project](/project/2020-04-05-aviation-kaggle-low-level/), but as I [wrote here](/post/2020-06-21-notes-xgboost/), I could not pick up where I left off at least the way I tried it. And [here](/post/2020-07-24-understanding-tuning-results/) is a mini post on looking at hyper parameter tuning results. And [here](/post/2020-10-22-features-v3/) is a visual look at some of the new features I explored including.
 
 
 

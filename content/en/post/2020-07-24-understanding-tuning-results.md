@@ -1,17 +1,23 @@
+---
+title: Understanding Tuning Results
+date: 2020-07-24
+summary: "Looking at hyperparameter tuning results"
+---
 
+This a mini post, part of [this project](/project/2020-10-20-bike-share-learn-reboot/)
 
 To explore some of the hyperparameter boundaries with this model, I ran some tests in these notebooks, [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-09-aws.md) and [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-10-aws.md).
 
 And to get a better understanding of the overfitting-ness / underfitting-ness of models , [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.md#2020-07-18) , I took the model artifacts and recalculated metrics on the training set, to generate some stats comparing training and testing performance.
 
 
-### Hyperparameter testing
-(Going to describe this later)
-
+Here below, we see the effect of the row subsample ratio and tree max depth on test logloss.
 <img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-09-aws_files/2020-07-09-aws_10_1.png">
 
+And also the effect on test accuracy.
 <img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-09-aws_files/2020-07-09-aws_13_0.png">
 
+And the effect on balanced test accuracy.
 <img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-09-aws_files/2020-07-09-aws_14_0.png">
 
 The tuning took several days to complete, but I started plotting early results in [this notebook](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md)
@@ -28,7 +34,7 @@ Maybe this one below did not have enough data points yet, but slightly surprisin
 
 ### Train / Test Comparisons
 
-For instance, keeping a few parameters fixed, I started looking at accuracy across the number of rounds used during training,
+Keeping a few parameters fixed, I started looking at train vs test accuracy across the number of rounds used during training,
 
 ```python
 import fresh.plot as fp

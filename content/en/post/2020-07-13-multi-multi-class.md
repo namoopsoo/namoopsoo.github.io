@@ -4,7 +4,7 @@ title: Notes on multi-multi-class classifiers
 ---
 
 ### Summary
-Here is an early draft of a post, trying to extract some of the insights from the project [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/).
+Here is an early draft of a post, trying to extract some of the insights from the project [here](/project/2020-10-20-bike-share-learn-reboot/).
 There is a lot to write about and I want to just start getting it out.
 
 ### Quick outline
@@ -51,6 +51,7 @@ And the cumulative distribution looks like this
 
 <img src="https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-04-aws_files/2020-07-04-aws_36_0.png?raw=true" />
 
+So the `k area` metric is the area under this second curve. The fewer `k` we need to find the correct answer, the larger the area under this figure. This feels a bit more intuitive of a metric for evaluating classifiers with many many classes, at least compared to logloss!
 
 
 #### Effect of balancing training data
@@ -104,4 +105,6 @@ Logloss vs acc, that is an interesting choice.
 
 With hyper parameter tuning, we can look at a lot of results and see how these all compare.
 
-I write about some hyper parameter tuning result [here](/2020/07/24/understanding-tuning-results.html)
+I write about some hyper parameter tuning result [here](/post/2020-07-24-understanding-tuning-results/)
+
+But ultimately I think `k area` is a more granular measure than simple accuracy.

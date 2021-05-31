@@ -473,7 +473,7 @@ quick pearson's chi squared independence test
 https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-05.md
 
 #### Looking at hyperparameter tuning results
-* ( EDIT: After writing the below section, I realized I had already [here earlier, on 2020-07-24 ](https://michal.piekarczyk.xyz/2020/07/24/understanding-tuning-results.html) , described some of these results already haha. Doing the work twice, forgetting what I had done.  )  
+* ( EDIT: After writing the below section, I realized I had already [here earlier, on 2020-07-24 ](/post/2020-07-24-understanding-tuning-results/) , described some of these results already haha. Doing the work twice, forgetting what I had done.  )  
 
 * I spent a bit of time on hyper parameter tuning, looking at the results, fixing some parameters two focus on two others at a time.
 

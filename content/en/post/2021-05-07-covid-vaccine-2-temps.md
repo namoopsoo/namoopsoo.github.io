@@ -14,7 +14,7 @@ summary: "Some temperature data"
 
 <img src="https://s3.amazonaws.com/my-blog-content/2021-05-07-covid-vaccine-2-temps/2021-05-30T200945Z-fig.png" width="50%">
 
-Here, I'm working with some self temperatures I collected in `data.csv` .
+Here, I'm working with some self temperatures I collected in `data.csv`. Although the tylenol did not appear to have an immediate affect on my fever, I remember feeling I was cooler after even half an hour. 
 
 (And I have some other supporting funcs [below](#some-other-supporting-functions)  )
 

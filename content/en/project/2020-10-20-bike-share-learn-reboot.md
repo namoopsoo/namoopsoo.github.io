@@ -2,12 +2,13 @@
 title:  "Bike Share Learn Reboot"
 date:   2020-10-20 10:00:05 -0400
 featured_image: "https://s3.amazonaws.com/my-blog-content/2020/2020-10-20-bike-share-learn-reboot/IMG_8499.jpg"
+summary: This project is a reboot of an earlier project predicting bicycle ride share riders destinations.
 ---
 
 
 
 ### What
-This project is a reboot of [my earlier project](/portfolio/citibike-project-readme.html) of predicting bicycle ride share riders destinations.
+This project is a reboot of [my earlier project](https://michal.piekarczyk.xyz/project/2016-12-18-citibike-project/) of predicting bicycle ride share riders destinations.
 https://bike-hop-predict.s3.amazonaws.com/index.html
 
 This time around I used XGBoost, newer features, hyper parameter tuning and I have a <a href="https://bike-hop-predict.s3.amazonaws.com/index.html" target="_blank"> demo site </a> as well.   

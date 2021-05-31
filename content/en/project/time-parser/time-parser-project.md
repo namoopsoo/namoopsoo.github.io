@@ -3,6 +3,7 @@ layout: post
 title:  "Time Parser Project"
 date:   2018-02-11 19:39:35 -0400
 featured_image: "https://my-blog-content.s3.amazonaws.com/2020/02/2020-02-27+10.38.52-timeparse.jpg"
+summary: This is a simple personal time tracker built with clojure, aws lambda and dynamodb,  inspired by Laura Vanderkam's "168 Hours" book
 ---
 
 <a href="https://github.com/namoopsoo/time-parser">https://github.com/namoopsoo/time-parser</a>

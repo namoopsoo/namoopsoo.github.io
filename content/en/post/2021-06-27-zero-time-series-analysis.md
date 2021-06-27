@@ -1,7 +1,9 @@
 ---
 title: Fasting Data Time Series Analysis Notebook
 tags: time-series, notebook
+date: 2021-06-27
 ---
+This is a notebook of the day to day activity of a look into three years of fasting data.
 
 ### 2021-06-27
 
@@ -41,4 +43,4 @@ tags: time-series, notebook
 
 #### Next
 * Yea next I would like to start building out a dataset of these features
-* And would be cool to visualize some of these features too, get some summary stats on them. 
+* And would be cool to visualize some of these features too, get some summary stats on them.

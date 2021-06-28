@@ -46,3 +46,54 @@ This is a notebook of the day to day activity of a look into three years of fast
 #### Next
 * Yea next I would like to start building out a dataset of these features
 * And would be cool to visualize some of these features too, get some summary stats on them.
+
+### 2021-06-28
+
+#### build dataset...
+
+```python
+import os
+import pandas as pd
+workdir = os.getenv("WORKDIR")
+datadir = os.getenv("DATADIR")
+
+loc = f"{datadir}/2021-06-26-zero-fast.csv"
+df = pd.read_csv(loc)
+
+
+
+In [3]: df.shape                                                                
+Out[3]: (1109, 5)
+
+In [4]: df.iloc[:4]                                                             
+Out[4]:
+      Date  Start    End  Hours  Night Eating
+0  6/26/21  01:57    NaN    NaN           NaN
+1  6/25/21  00:14  17:17   17.0           NaN
+2  6/24/21  01:50  18:39   16.0           NaN
+3  6/23/21  01:02  19:21   18.0           NaN
+```
+* Probably the simples question, is what is a unit of fasting? A fast can start and end on two different dates or it can start and end on the same day.
+* A Fast can also span multiple days and it can also happen while traveling, resulting in different time zones messing with the data.
+* However this dataset doesn't appear to have time zones, so I wonder if it kind of simplifies that.
+* Simplest I think is to ignore the first row for example,
+
+```
+      Date  Start    End  Hours  Night Eating
+0  6/26/21  01:57    NaN    NaN           NaN
+
+```
+* Since this fast is on-going. So a fast unit has a start and an end.
+
+```python
+In [6]:  df[df.Hours.isnull()].shape, df.shape                                  
+Out[6]: ((1, 5), (1109, 5))
+```
+* Ok per above only the latest fast would be null then.
+
+
+#### Next
+* Start writing that dataset
+* write a fast id perhaps as the "start-date-start-time" which would be unique, and has to have defined end of course.
+* And figure out what does that "Night Eating" column mean.
+* names for the features I started writing out.

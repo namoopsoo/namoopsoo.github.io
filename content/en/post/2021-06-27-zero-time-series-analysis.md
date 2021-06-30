@@ -97,3 +97,19 @@ Out[6]: ((1, 5), (1109, 5))
 * write a fast id perhaps as the "start-date-start-time" which would be unique, and has to have defined end of course.
 * And figure out what does that "Night Eating" column mean.
 * names for the features I started writing out.
+
+### 2021-06-30
+
+#### quick notes
+* Also realized that the time between fasts can be a feature too.
+
+* For each "row", we can basically say the "End time" is a separator between what happened before a fasting event, which can be used to create the "X" or independent variables and what happens after is the "Y" or dependent variables.
+* So for each row, if using pandas for example, we want a way to take perhaps 4 or more rows surrounding it and that would be used to create the features.
+* Perhaps this feels like a job for  [rolling window](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.core.window.rolling.Rolling.apply.html#pandas.core.window.rolling.Rolling.apply) , [interesting article](https://towardsdatascience.com/dont-miss-out-on-rolling-window-functions-in-pandas-850b817131db)
+
+```python
+
+# most recent fast started before midnight
+
+
+```

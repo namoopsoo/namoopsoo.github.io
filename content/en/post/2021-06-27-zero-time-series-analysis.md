@@ -115,3 +115,28 @@ Out[6]: ((1, 5), (1109, 5))
 
 
 ```
+
+### 2021-07-07
+
+#### tried this rolling calc
+* Looks good just need to calibrate the direction.
+```python
+df['RollingHoursMean2Fasts'] = df['Hours'].rolling(2).mean()
+
+In [8]: df.iloc[:10]                                                                  
+Out[8]:
+      Date  Start    End  Hours  Night Eating  RollingHoursMean2Fasts
+0  6/26/21  01:57    NaN    NaN           NaN                     NaN
+1  6/25/21  00:14  17:17   17.0           NaN                     NaN
+2  6/24/21  01:50  18:39   16.0           NaN                    16.5
+3  6/23/21  01:02  19:21   18.0           NaN                    17.0
+4  6/22/21  00:06  17:52   17.0           NaN                    17.5
+5  6/21/21  01:46  20:55   19.0           NaN                    18.0
+6  6/20/21  04:39  13:28    8.0           NaN                    13.5
+7  6/19/21  02:37  18:21   15.0           NaN                    11.5
+8  6/18/21  01:41  18:41   17.0           NaN                    16.0
+9  6/17/21  01:02  21:38   20.0           NaN                    18.5
+
+
+
+```

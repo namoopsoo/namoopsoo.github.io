@@ -136,6 +136,40 @@ Out[8]:
 7  6/19/21  02:37  18:21   15.0           NaN                    11.5
 8  6/18/21  01:41  18:41   17.0           NaN                    16.0
 9  6/17/21  01:02  21:38   20.0           NaN                    18.5
+```
+
+### 2021-07-09
+
+* Add index too...
+
+```python
+import datetime
+df['StartDt'] =  df.apply(lambda x: datetime.datetime(int(f"20{x.Date.split('/')[2]}"),
+                                                      int(x.Date.split("/")[0]),
+                                                      int(x.Date.split("/")[1]),
+                                                      int(x.Start.split(":")[0]),
+                                                      int(x.Start.split(":")[1])
+                                                      ), axis=1)
+df['id'] = df.apply(lambda x: x.StartDt.strftime("%Y-%m-%dT%H%M"), axis=1)
+
+In [21]: df.iloc[:10]                                                                                                                 
+Out[21]:
+      Date  Start    End  Hours  Night Eating  RollingHoursMean2Fasts             StartDt               id
+0  6/26/21  01:57    NaN    NaN           NaN                     NaN 2021-06-26 01:57:00  2021-06-26T0157
+1  6/25/21  00:14  17:17   17.0           NaN                     NaN 2021-06-25 00:14:00  2021-06-25T0014
+2  6/24/21  01:50  18:39   16.0           NaN                    16.5 2021-06-24 01:50:00  2021-06-24T0150
+3  6/23/21  01:02  19:21   18.0           NaN                    17.0 2021-06-23 01:02:00  2021-06-23T0102
+4  6/22/21  00:06  17:52   17.0           NaN                    17.5 2021-06-22 00:06:00  2021-06-22T0006
+5  6/21/21  01:46  20:55   19.0           NaN                    18.0 2021-06-21 01:46:00  2021-06-21T0146
+6  6/20/21  04:39  13:28    8.0           NaN                    13.5 2021-06-20 04:39:00  2021-06-20T0439
+7  6/19/21  02:37  18:21   15.0           NaN                    11.5 2021-06-19 02:37:00  2021-06-19T0237
+8  6/18/21  01:41  18:41   17.0           NaN                    16.0 2021-06-18 01:41:00  2021-06-18T0141
+9  6/17/21  01:02  21:38   20.0           NaN                    18.5 2021-06-17 01:02:00  2021-06-17T0102
+```
+* Looking at above, I see that `RollingHoursMean2Fasts` for `2021-06-24T0150` is `16.5 = mean([17, 16])` , so the rows it is taking into account should be current row and next not current row and last
+
+#### Next
+* Make `RollingHoursMean2Fasts` be for current and previous fast , not current and future fast haha since cannot know the future!
 
 
 

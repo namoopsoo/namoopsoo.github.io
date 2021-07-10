@@ -116,6 +116,24 @@ Out[6]: ((1, 5), (1109, 5))
 
 ```
 
+#### updated feature list
+
+#### Feature list initial
+* most recent fast started before midnight
+* most recent fast ended before 20:00
+* most recent fast more than 18 hours
+* most recent fast more than 16 hours
+* most recent fast more than 14 hours
+* last two fasts, average start time before midnight
+* last two fasts, both start time before midnight
+* last two fasts, average end time before 20:00
+* last two fasts, average more than 18 hours
+* last two fasts, average more than 16 hours
+* last two fasts, max is more than 18 hours
+* last two fasts, min is more than 18 hours
+* last two fasts, m in is more than 16 hours
+* last two feeding windows, average less than 4 hours
+
 ### 2021-07-07
 
 #### tried this rolling calc
@@ -171,6 +189,86 @@ Out[21]:
 #### Next
 * Make `RollingHoursMean2Fasts` be for current and previous fast , not current and future fast haha since cannot know the future!
 
+### 2021-07-10
+
+#### how to update the rolling window to reflect the last 2 fasts
+
+```python
+
+df['foo'] = df['Hours'].shift(-1)
+df['RollingHoursMean2Fasts'] = df['Hours'].shift(-1).rolling(2).mean()
+```
+* Nice, per the below, this is perfect.
+```python
+In [33]: cols = ['id', 'Date', 'Start', 'End', 'Hours', 'RollingHoursMean2Fasts', 'foo']
+    ...: df[cols].iloc[:10]                                                                                                           
+Out[33]:
+                id     Date  Start    End  Hours  RollingHoursMean2Fasts   foo
+0  2021-06-26T0157  6/26/21  01:57    NaN    NaN                     NaN  17.0
+1  2021-06-25T0014  6/25/21  00:14  17:17   17.0                    16.5  16.0
+2  2021-06-24T0150  6/24/21  01:50  18:39   16.0                    17.0  18.0
+3  2021-06-23T0102  6/23/21  01:02  19:21   18.0                    17.5  17.0
+4  2021-06-22T0006  6/22/21  00:06  17:52   17.0                    18.0  19.0
+5  2021-06-21T0146  6/21/21  01:46  20:55   19.0                    13.5   8.0
+6  2021-06-20T0439  6/20/21  04:39  13:28    8.0                    11.5  15.0
+7  2021-06-19T0237  6/19/21  02:37  18:21   15.0                    16.0  17.0
+8  2021-06-18T0141  6/18/21  01:41  18:41   17.0                    18.5  20.0
+9  2021-06-17T0102  6/17/21  01:02  21:38   20.0                    18.5  17.0
+```
+
+#### Ok, going to add two more features like this
+* last two fasts, both start time before midnight, "LastTwoFastsStartedBeforeMidnight"
+
+```python
+def func(x):
+    pass
+    import ipdb; ipdb.set_trace()
+    return all([18 <= int(a.split(":")[0]) <=23 for a in x])
+
+df["LastTwoFastsStartedBeforeMidnight"] = df['Start'].shift(-1).rolling(2).apply(func)
 
 
 ```
+* I encountered `DataError: No numeric types to aggregate` and deeper in there I also stumbled on
+```
+ValueError: could not convert string to float: '00:14'
+```
+* So got to convert first to a numerical..
+
+```python
+def func(data):
+    return all([18 <= x <=23 for x in data])
+
+df["StartHour"] = df["Start"].map(lambda x: int(x.split(":")[0]))
+
+df["LastTwoFastsStartedBeforeMidnight"] = df['StartHour'].shift(-1).rolling(2).apply(func)
+
+```
+* Ok I think that worked ..
+
+```python
+In [57]: df.LastTwoFastsStartedBeforeMidnight.value_counts()                                                                          
+Out[57]:
+0.0    907
+1.0    200
+Name: LastTwoFastsStartedBeforeMidnight, dtype: int64
+
+In [60]: cols = ['id', 'Date', 'Start', 'End', 'Hours', 'LastTwoFastsStartedBeforeMidnight',]
+    ...: df[cols].iloc[35:45]                                                                                                         
+Out[60]:
+                 id     Date  Start    End  Hours  LastTwoFastsStartedBeforeMidnight
+35  2021-05-21T2341  5/21/21  23:41  21:02   21.0                                0.0
+36  2021-05-21T0026  5/21/21  00:26  20:31   20.0                                0.0
+37  2021-05-20T0101  5/20/21  01:01  20:57   19.0                                0.0
+38  2021-05-19T0008  5/19/21  00:08  20:29   20.0                                0.0
+39  2021-05-17T2324  5/17/21  23:24  21:38   22.0                                1.0
+40  2021-05-16T2300  5/16/21  23:00  20:21   21.0                                1.0
+41  2021-05-15T2358  5/15/21  23:58  14:06   14.0                                0.0
+42  2021-05-15T0110  5/15/21  01:10  21:42   20.0                                0.0
+43  2021-05-14T0049  5/14/21  00:49  17:53   17.0                                0.0
+44  2021-05-13T0015  5/13/21  00:15  17:26   17.0                                0.0
+```
+
+#### Next
+* Ok at this point I should start throwing stuff into version control so creating these features and visualizing/analyzing them can be more deterministic/reproducible.
+* And then I can try visualizing / understanding some features and see how predictive they are w.r.t. "does past behavior determine future behavior such as the length of the next fast". 

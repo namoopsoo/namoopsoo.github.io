@@ -271,4 +271,80 @@ Out[60]:
 
 #### Next
 * Ok at this point I should start throwing stuff into version control so creating these features and visualizing/analyzing them can be more deterministic/reproducible.
-* And then I can try visualizing / understanding some features and see how predictive they are w.r.t. "does past behavior determine future behavior such as the length of the next fast". 
+* And then I can try visualizing / understanding some features and see how predictive they are w.r.t. "does past behavior determine future behavior such as the length of the next fast".
+
+
+### 2021-07-11
+
+#### ok started things off in a new repo
+
+```python
+import os
+import core.dataset as cd
+
+import pandas as pd
+workdir = os.getenv("WORKDIR")
+datadir = os.getenv("DATADIR")
+
+loc = f"{datadir}/2021-06-26-zero-fast.csv"
+df = pd.read_csv(loc)
+
+datasetdf = cd.build_dataset(df)
+
+In [11]: datasetdf.iloc[:10]                                                                                                          
+Out[11]:
+      Date  Start    End  Hours  ...               id StartHour LastTwoFastsStartedBeforeMidnight  RollingHoursMean2Fasts
+0  6/26/21  01:57    NaN    NaN  ...  2021-06-26T0157         1                               NaN                     NaN
+1  6/25/21  00:14  17:17   17.0  ...  2021-06-25T0014         0                               0.0                    16.5
+2  6/24/21  01:50  18:39   16.0  ...  2021-06-24T0150         1                               0.0                    17.0
+3  6/23/21  01:02  19:21   18.0  ...  2021-06-23T0102         1                               0.0                    17.5
+4  6/22/21  00:06  17:52   17.0  ...  2021-06-22T0006         0                               0.0                    18.0
+5  6/21/21  01:46  20:55   19.0  ...  2021-06-21T0146         1                               0.0                    13.5
+6  6/20/21  04:39  13:28    8.0  ...  2021-06-20T0439         4                               0.0                    11.5
+7  6/19/21  02:37  18:21   15.0  ...  2021-06-19T0237         2                               0.0                    16.0
+8  6/18/21  01:41  18:41   17.0  ...  2021-06-18T0141         1                               0.0                    18.5
+9  6/17/21  01:02  21:38   20.0  ...  2021-06-17T0102         1                               0.0                    18.5
+
+[10 rows x 10 columns]
+
+In [12]: datasetdf.iloc[0]                                                                                                            
+Out[12]:
+Date                                             6/26/21
+Start                                              01:57
+End                                                  NaN
+Hours                                                NaN
+Night Eating                                         NaN
+StartDt                              2021-06-26 01:57:00
+id                                       2021-06-26T0157
+StartHour                                              1
+LastTwoFastsStartedBeforeMidnight                    NaN
+RollingHoursMean2Fasts                               NaN
+Name: 0, dtype: object
+
+```
+
+#### look at RollingHoursMean2Fasts briefly
+
+```python
+import matplotlib.pyplot as plt
+
+import pylab
+import date_utils as du
+
+col = "RollingHoursMean2Fasts"
+loc = f"{workdir}/{du.utc_ts()}-{col}.png"
+with plt.style.context('fivethirtyeight'):
+    plt.plot(datasetdf[col].tolist())
+    plt.title(f'{col}')
+    pylab.savefig(loc, bbox_inches='tight')
+    pylab.close()
+
+```
+
+<img src="https://s3.amazonaws.com/my-blog-content/2021-06-27-zero-time-series-analysis/2021-07-11T173459-RollingHoursMean2Fasts.png" width="50%">
+
+
+#### Next
+* I think the main next thing to do is to create a "y" dependent variable for this dataset, which can for example be something like "hours fasted in next fast" or "hours until next fast" or "proportion of hours fasted in next 7 days".
+* And with a dependent variable I can then see how predictive these features are, as a first iteration with only the twofeatures so far.
+* And I can continue to add other features too.

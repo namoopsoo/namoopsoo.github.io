@@ -277,6 +277,7 @@ Out[60]:
 ### 2021-07-11
 
 #### ok started things off in a new repo
+* New repo here , https://github.com/namoopsoo/fasting-analyze
 
 ```python
 import os

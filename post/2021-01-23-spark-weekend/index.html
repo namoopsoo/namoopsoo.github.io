@@ -1,18 +1,132 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Spark Weekend | My blog</title><meta name=viewport content="width=device-width,minimum-scale=1"><meta name=description content="Trying out Spark this weekend These are just my casual notes from doing that, updating them as I go along.
-Following this post to get kubernetes running in Docker for mac  Per this post , I just ticked the &ldquo;Enable Kubernetes&rdquo; option in the docker settings. Kubernetes is taking quite a while to start up though . several minutes. kind of weird?  Download spark image  From here  2021-01-24 ok backup my docker images  Per notes , I backed up local docker images, Like this&mldr;  docker save citibike-learn:0."><meta name=generator content="Hugo 0.85.0"><meta name=ROBOTS content="NOINDEX, NOFOLLOW"><link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css><meta property="og:title" content="Spark Weekend"><meta property="og:description" content="Trying out Spark this weekend These are just my casual notes from doing that, updating them as I go along.
-Following this post to get kubernetes running in Docker for mac  Per this post , I just ticked the &ldquo;Enable Kubernetes&rdquo; option in the docker settings. Kubernetes is taking quite a while to start up though . several minutes. kind of weird?  Download spark image  From here  2021-01-24 ok backup my docker images  Per notes , I backed up local docker images, Like this&mldr;  docker save citibike-learn:0."><meta property="og:type" content="article"><meta property="og:url" content="https://michal.piekarczyk.xyz/post/2021-01-23-spark-weekend/"><meta property="article:section" content="post"><meta property="article:published_time" content="2021-01-23T00:00:00+00:00"><meta property="article:modified_time" content="2021-01-23T00:00:00+00:00"><meta property="og:site_name" content="My blog"><meta itemprop=name content="Spark Weekend"><meta itemprop=description content="Trying out Spark this weekend These are just my casual notes from doing that, updating them as I go along.
-Following this post to get kubernetes running in Docker for mac  Per this post , I just ticked the &ldquo;Enable Kubernetes&rdquo; option in the docker settings. Kubernetes is taking quite a while to start up though . several minutes. kind of weird?  Download spark image  From here  2021-01-24 ok backup my docker images  Per notes , I backed up local docker images, Like this&mldr;  docker save citibike-learn:0."><meta itemprop=datePublished content="2021-01-23T00:00:00+00:00"><meta itemprop=dateModified content="2021-01-23T00:00:00+00:00"><meta itemprop=wordCount content="3413"><meta itemprop=keywords content="spark,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Spark Weekend"><meta name=twitter:description content="Trying out Spark this weekend These are just my casual notes from doing that, updating them as I go along.
-Following this post to get kubernetes running in Docker for mac  Per this post , I just ticked the &ldquo;Enable Kubernetes&rdquo; option in the docker settings. Kubernetes is taking quite a while to start up though . several minutes. kind of weird?  Download spark image  From here  2021-01-24 ok backup my docker images  Per notes , I backed up local docker images, Like this&mldr;  docker save citibike-learn:0."></head><body class="ma0 avenir bg-near-white"><header><div class=bg-black><nav class="pv3 ph3 ph4-ns" role=navigation><div class="flex-l justify-between items-center center"><a href=/ class="f3 fw2 hover-white no-underline white-90 dib">My blog</a><div class="flex-l items-center"><ul class="pl0 mr3"><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/about/ title="About page">About</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/handy/ title="Handy page">Handy</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/post/ title="Post page">Post</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/project/ title="Side Projects page">Side Projects</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/foo/ title="The Foos page">The Foos</a></li></ul></div></div></nav></div></header><main class=pb7 role=main><article class="flex-l flex-wrap justify-between mw8 center ph3"><header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked">POST</aside><div id=sharing class=mt3><a href="https://www.facebook.com/sharer.php?u=https://michal.piekarczyk.xyz/post/2021-01-23-spark-weekend/" class="facebook no-underline" aria-label="share on Facebook"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765 50.32h6.744V33.998h4.499l.596-5.624h-5.095l.007-2.816c0-1.466.14-2.253 2.244-2.253h2.812V17.68h-4.5c-5.405.0-7.307 2.729-7.307 7.317v3.377h-3.369v5.625h3.369V50.32zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg></a><a href="https://twitter.com/share?url=https://michal.piekarczyk.xyz/post/2021-01-23-spark-weekend/&text=Spark%20Weekend" class="twitter no-underline" aria-label="share on Twitter"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https://michal.piekarczyk.xyz/post/2021-01-23-spark-weekend/&title=Spark%20Weekend" class="linkedin no-underline" aria-label="share on LinkedIn"><svg height="32" style="enable-background:new 0 0 65 65" viewBox="0 0 65 65" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M50.837 48.137V36.425c0-6.275-3.35-9.195-7.816-9.195-3.604.0-5.219 1.983-6.119 3.374V27.71h-6.79c.09 1.917.0 20.427.0 20.427h6.79V36.729c0-.609.044-1.219.224-1.655.49-1.22 1.607-2.483 3.482-2.483 2.458.0 3.44 1.873 3.44 4.618v10.929H50.837zM22.959 24.922c2.367.0 3.842-1.57 3.842-3.531-.044-2.003-1.475-3.528-3.797-3.528s-3.841 1.524-3.841 3.528c0 1.961 1.474 3.531 3.753 3.531H22.959zM34 64C17.432 64 4 50.568 4 34 4 17.431 17.432 4 34 4s30 13.431 30 30c0 16.568-13.432 30-30 30zM26.354 48.137V27.71h-6.789v20.427h6.789z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></a></div><h1 class="f1 athelas mt3 mb1">Spark Weekend</h1><time class="f6 mv4 dib tracked" datetime=2021-01-23T00:00:00Z>January 23, 2021</time></header><div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h3 id=trying-out-spark-this-weekend>Trying out Spark this weekend</h3><p><em>These are just my casual notes from doing that, updating them as I go along.</em></p><h4 id=following-this-post-to-get-kubernetes-running-in-docker-for-mac>Following this post to get kubernetes running in Docker for mac</h4><ul><li>Per <a href=https://medium.com/faun/apache-spark-on-kubernetes-docker-for-mac-2501cc72e659>this post</a> , I just ticked the &ldquo;Enable Kubernetes&rdquo; option in the docker settings.</li><li>Kubernetes is taking quite a while to start up though . several minutes. kind of weird?</li></ul><h4 id=download-spark-image>Download spark image</h4><ul><li>From <a href=https://spark.apache.org/downloads.html>here</a></li></ul><h3 id=2021-01-24>2021-01-24</h3><h4 id=ok-backup-my-docker-images>ok backup my docker images</h4><ul><li>Per <a href=https://corgibytes.com/blog/2019/05/13/docker-for-mac-safely-reset-from-factory-defaults/>notes</a> , I backed up local docker images,</li><li>Like this&mldr;</li></ul><pre><code>docker save citibike-learn:0.9
+<!doctype html><html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<title>Spark Weekend | My blog</title>
+<meta name=viewport content="width=device-width,minimum-scale=1">
+<meta name=description content="Trying out Spark this weekend These are just my casual notes from doing that, updating them as I go along.
+Following this post to get kubernetes running in Docker for mac  Per this post , I just ticked the &ldquo;Enable Kubernetes&rdquo; option in the docker settings. Kubernetes is taking quite a while to start up though . several minutes. kind of weird?  Download spark image  From here  2021-01-24 ok backup my docker images  Per notes , I backed up local docker images, Like this&mldr;  docker save citibike-learn:0.">
+<meta name=generator content="Hugo 0.87.0">
+<meta name=ROBOTS content="NOINDEX, NOFOLLOW">
+<link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
+<meta property="og:title" content="Spark Weekend">
+<meta property="og:description" content="Trying out Spark this weekend These are just my casual notes from doing that, updating them as I go along.
+Following this post to get kubernetes running in Docker for mac  Per this post , I just ticked the &ldquo;Enable Kubernetes&rdquo; option in the docker settings. Kubernetes is taking quite a while to start up though . several minutes. kind of weird?  Download spark image  From here  2021-01-24 ok backup my docker images  Per notes , I backed up local docker images, Like this&mldr;  docker save citibike-learn:0.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://michal.piekarczyk.xyz/post/2021-01-23-spark-weekend/"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2021-01-23T00:00:00+00:00">
+<meta property="article:modified_time" content="2021-01-23T00:00:00+00:00"><meta property="og:site_name" content="My blog">
+<meta itemprop=name content="Spark Weekend">
+<meta itemprop=description content="Trying out Spark this weekend These are just my casual notes from doing that, updating them as I go along.
+Following this post to get kubernetes running in Docker for mac  Per this post , I just ticked the &ldquo;Enable Kubernetes&rdquo; option in the docker settings. Kubernetes is taking quite a while to start up though . several minutes. kind of weird?  Download spark image  From here  2021-01-24 ok backup my docker images  Per notes , I backed up local docker images, Like this&mldr;  docker save citibike-learn:0."><meta itemprop=datePublished content="2021-01-23T00:00:00+00:00">
+<meta itemprop=dateModified content="2021-01-23T00:00:00+00:00">
+<meta itemprop=wordCount content="3413">
+<meta itemprop=keywords content="spark,"><meta name=twitter:card content="summary">
+<meta name=twitter:title content="Spark Weekend">
+<meta name=twitter:description content="Trying out Spark this weekend These are just my casual notes from doing that, updating them as I go along.
+Following this post to get kubernetes running in Docker for mac  Per this post , I just ticked the &ldquo;Enable Kubernetes&rdquo; option in the docker settings. Kubernetes is taking quite a while to start up though . several minutes. kind of weird?  Download spark image  From here  2021-01-24 ok backup my docker images  Per notes , I backed up local docker images, Like this&mldr;  docker save citibike-learn:0.">
+</head>
+<body class="ma0 avenir bg-near-white">
+<header>
+<div class=bg-black>
+<nav class="pv3 ph3 ph4-ns" role=navigation>
+<div class="flex-l justify-between items-center center">
+<a href=/ class="f3 fw2 hover-white no-underline white-90 dib">
+My blog
+</a>
+<div class="flex-l items-center">
+<ul class="pl0 mr3">
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/about/ title="About page">
+About
+</a>
+</li>
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/handy/ title="Handy page">
+Handy
+</a>
+</li>
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/post/ title="Post page">
+Post
+</a>
+</li>
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/project/ title="Side Projects page">
+Side Projects
+</a>
+</li>
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/foo/ title="The Foos page">
+The Foos
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<main class=pb7 role=main>
+<article class="flex-l flex-wrap justify-between mw8 center ph3">
+<header class="mt4 w-100">
+<aside class="instapaper_ignoref b helvetica tracked">
+POST
+</aside>
+<div id=sharing class=mt3>
+<a href="https://www.facebook.com/sharer.php?u=https://michal.piekarczyk.xyz/post/2021-01-23-spark-weekend/" class="facebook no-underline" aria-label="share on Facebook"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765 50.32h6.744V33.998h4.499l.596-5.624h-5.095l.007-2.816c0-1.466.14-2.253 2.244-2.253h2.812V17.68h-4.5c-5.405.0-7.307 2.729-7.307 7.317v3.377h-3.369v5.625h3.369V50.32zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
+</a>
+<a href="https://twitter.com/share?url=https://michal.piekarczyk.xyz/post/2021-01-23-spark-weekend/&text=Spark%20Weekend" class="twitter no-underline" aria-label="share on Twitter"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+</a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&url=https://michal.piekarczyk.xyz/post/2021-01-23-spark-weekend/&title=Spark%20Weekend" class="linkedin no-underline" aria-label="share on LinkedIn"><svg height="32" style="enable-background:new 0 0 65 65" viewBox="0 0 65 65" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M50.837 48.137V36.425c0-6.275-3.35-9.195-7.816-9.195-3.604.0-5.219 1.983-6.119 3.374V27.71h-6.79c.09 1.917.0 20.427.0 20.427h6.79V36.729c0-.609.044-1.219.224-1.655.49-1.22 1.607-2.483 3.482-2.483 2.458.0 3.44 1.873 3.44 4.618v10.929H50.837zM22.959 24.922c2.367.0 3.842-1.57 3.842-3.531-.044-2.003-1.475-3.528-3.797-3.528s-3.841 1.524-3.841 3.528c0 1.961 1.474 3.531 3.753 3.531H22.959zM34 64C17.432 64 4 50.568 4 34 4 17.431 17.432 4 34 4s30 13.431 30 30c0 16.568-13.432 30-30 30zM26.354 48.137V27.71h-6.789v20.427h6.789z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+</a>
+</div>
+<h1 class="f1 athelas mt3 mb1">Spark Weekend</h1>
+<time class="f6 mv4 dib tracked" datetime=2021-01-23T00:00:00Z>January 23, 2021</time>
+</header>
+<div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h3 id=trying-out-spark-this-weekend>Trying out Spark this weekend</h3>
+<p><em>These are just my casual notes from doing that, updating them as I go along.</em></p>
+<h4 id=following-this-post-to-get-kubernetes-running-in-docker-for-mac>Following this post to get kubernetes running in Docker for mac</h4>
+<ul>
+<li>Per <a href=https://medium.com/faun/apache-spark-on-kubernetes-docker-for-mac-2501cc72e659>this post</a> , I just ticked the &ldquo;Enable Kubernetes&rdquo; option in the docker settings.</li>
+<li>Kubernetes is taking quite a while to start up though . several minutes. kind of weird?</li>
+</ul>
+<h4 id=download-spark-image>Download spark image</h4>
+<ul>
+<li>From <a href=https://spark.apache.org/downloads.html>here</a></li>
+</ul>
+<h3 id=2021-01-24>2021-01-24</h3>
+<h4 id=ok-backup-my-docker-images>ok backup my docker images</h4>
+<ul>
+<li>Per <a href=https://corgibytes.com/blog/2019/05/13/docker-for-mac-safely-reset-from-factory-defaults/>notes</a> , I backed up local docker images,</li>
+<li>Like this&mldr;</li>
+</ul>
+<pre><code>docker save citibike-learn:0.9
 # image:citibike-learn, tag:latest, image-id:1ff5cd891f00
 # image:citibike-learn, tag:0.9, imageid:c8d430e84654
-</code></pre><ul><li>Then I did the factory reset.</li><li>And Enabled Kubernetes and wow! Nice finally got the green light.</li><li>And restoring with <code>docker load</code> like this</li></ul><pre><code>docker load -i  citibike-learn-0.9.tar
-</code></pre><h4 id=ok-now-i-can-continue-trying-to-get-spark-setup>Ok now I can continue trying to get spark setup..</h4><ul><li>Per the <a href=https://medium.com/faun/apache-spark-on-kubernetes-docker-for-mac-2501cc72e659>post</a> , I grabbed spark albeit <code>3.0.1</code> , instead of <code>2.x</code> ( from <a href=https://www.apache.org/dyn/closer.lua/spark/spark-3.0.1/spark-3.0.1-bin-hadoop3.2.tgz>here</a> ) , because according to the <a href=https://databricks.com/blog/2020/06/18/introducing-apache-spark-3-0-now-available-in-databricks-runtime-7-0.html>release notes</a> , 3.0 and 2.x are sounding very compatible.</li></ul><pre><code>./bin/docker-image-tool.sh -t spark-docker build
-</code></pre><ul><li>&mldr; following along&mldr;</li></ul><pre><code>kubectl create serviceaccount spark
+</code></pre><ul>
+<li>Then I did the factory reset.</li>
+<li>And Enabled Kubernetes and wow! Nice finally got the green light.</li>
+<li>And restoring with <code>docker load</code> like this</li>
+</ul>
+<pre><code>docker load -i  citibike-learn-0.9.tar
+</code></pre><h4 id=ok-now-i-can-continue-trying-to-get-spark-setup>Ok now I can continue trying to get spark setup..</h4>
+<ul>
+<li>Per the <a href=https://medium.com/faun/apache-spark-on-kubernetes-docker-for-mac-2501cc72e659>post</a> , I grabbed spark albeit <code>3.0.1</code> , instead of <code>2.x</code> ( from <a href=https://www.apache.org/dyn/closer.lua/spark/spark-3.0.1/spark-3.0.1-bin-hadoop3.2.tgz>here</a> ) , because according to the <a href=https://databricks.com/blog/2020/06/18/introducing-apache-spark-3-0-now-available-in-databricks-runtime-7-0.html>release notes</a> , 3.0 and 2.x are sounding very compatible.</li>
+</ul>
+<pre><code>./bin/docker-image-tool.sh -t spark-docker build
+</code></pre><ul>
+<li>&mldr; following along&mldr;</li>
+</ul>
+<pre><code>kubectl create serviceaccount spark
 # serviceaccount/spark created
 
 kubectl create clusterrolebinding spark-role --clusterrole=edit  --serviceaccount=default:spark --namespace=default
 # clusterrolebinding.rbac.authorization.k8s.io/spark-role created
-</code></pre><ul><li>And submitting an example job</li></ul><pre><code>bin/spark-submit  \
+</code></pre><ul>
+<li>And submitting an example job</li>
+</ul>
+<pre><code>bin/spark-submit  \
     --master k8s://https://localhost:6443  \
     --deploy-mode cluster  \
     --conf spark.executor.instances=1  \
@@ -21,7 +135,15 @@ kubectl create clusterrolebinding spark-role --clusterrole=edit  --serviceaccoun
     --class org.apache.spark.examples.SparkPi  \
     --name spark-pi  \
     local:///opt/spark/examples/jars/spark-examples_2.12-3.0.1.jar
-</code></pre><ul><li><p>Taking <code>4 minutes</code> so far. Not sure how long this is meant to take haha.</p></li><li><p>I tried https://localhost:6443/ from my browser but got denied for now, as below&mldr;</p></li></ul><pre><code>{
+</code></pre><ul>
+<li>
+<p>Taking <code>4 minutes</code> so far. Not sure how long this is meant to take haha.</p>
+</li>
+<li>
+<p>I tried https://localhost:6443/ from my browser but got denied for now, as below&mldr;</p>
+</li>
+</ul>
+<pre><code>{
 kind: &quot;Status&quot;,
 apiVersion: &quot;v1&quot;,
 metadata: { },
@@ -31,11 +153,18 @@ reason: &quot;Forbidden&quot;,
 details: { },
 code: 403
 }
-</code></pre><ul><li>I tried the <code>kubectl get pods</code> command and I can see the run time so far..</li></ul><pre><code>$ kubectl get pods
+</code></pre><ul>
+<li>I tried the <code>kubectl get pods </code> command and I can see the run time so far..</li>
+</ul>
+<pre><code>$ kubectl get pods
 NAME                               READY   STATUS    RESTARTS   AGE
 spark-pi-4df4497735de91a1-driver   1/1     Running   0          6m1s
 spark-pi-79033a7735deb0a4-exec-1   0/1     Pending   0          5m52s
-</code></pre><ul><li>Likely something is blocking. (Actually I noticed my Dropbox was being pretty aggressive. so I paused that.)</li></ul><h5 id=enabling-port-forwarding-to-get-access-to-the-dashboard>enabling port forwarding to get access to the dashboard..</h5><pre><code>kubectl get pods -n kube-system
+</code></pre><ul>
+<li>Likely something is blocking. (Actually I noticed my Dropbox was being pretty aggressive. so I paused that.)</li>
+</ul>
+<h5 id=enabling-port-forwarding-to-get-access-to-the-dashboard>enabling port forwarding to get access to the dashboard..</h5>
+<pre><code>kubectl get pods -n kube-system
 </code></pre><pre><code>NAME                                     READY   STATUS    RESTARTS   AGE
 coredns-f9fd979d6-pdx99                  1/1     Running   0          30m
 coredns-f9fd979d6-vjpfp                  1/1     Running   0          30m
@@ -46,7 +175,18 @@ kube-proxy-42wws                         1/1     Running   0          30m
 kube-scheduler-docker-desktop            1/1     Running   0          29m
 storage-provisioner                      1/1     Running   0          29m
 vpnkit-controller                        1/1     Running   0          29m
-</code></pre><ul><li><p>and hmm I cant run <code>kubectl port-forward kubernetes-dashboard-7b9c7bc8c9-ckfmr 8443:8443 -n kube-system</code> because I dont have that running looks like .</p></li><li><p>Ah according to <a href=https://medium.com/backbase/kubernetes-in-local-the-easy-way-f8ef2b98be68>here</a> the kubernetes dashboard does not come <em>out of the box</em></p></li><li><p>Per <a href=https://stackoverflow.com/a/30094032/472876>here</a> tried killing</p></li></ul><pre><code># ./bin/spark-class org.apache.spark.deploy.Client kill &lt;master url&gt; &lt;driver ID&gt;
+</code></pre><ul>
+<li>
+<p>and hmm I cant run <code>kubectl port-forward kubernetes-dashboard-7b9c7bc8c9-ckfmr 8443:8443 -n kube-system</code> because I dont have that running looks like .</p>
+</li>
+<li>
+<p>Ah according to <a href=https://medium.com/backbase/kubernetes-in-local-the-easy-way-f8ef2b98be68>here</a> the kubernetes dashboard does not come <em>out of the box</em></p>
+</li>
+<li>
+<p>Per <a href=https://stackoverflow.com/a/30094032/472876>here</a> tried killing</p>
+</li>
+</ul>
+<pre><code># ./bin/spark-class org.apache.spark.deploy.Client kill &lt;master url&gt; &lt;driver ID&gt;
 ./bin/spark-class org.apache.spark.deploy.Client kill k8s://https://localhost:6443 spark-pi-4df4497735de91a1-driver
 
 WARNING: This client is deprecated and will be removed in a future version of Spark
@@ -58,7 +198,24 @@ log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more in
 ...
 Exception in thread &quot;main&quot; org.apache.spark.SparkException: Invalid master URL: spark://k8s://https://localhost:6443
 
-</code></pre><ul><li><p>Crashed&mldr; anyway just <code>Ctrl-C</code> for now</p></li><li><p>But when looking around I see per <a href=https://issues.apache.org/jira/browse/SPARK-11909>here</a> that the master url in that command should be <code>spark://localhost:6443</code> instead.</p></li><li><p>And per <a href=https://sparkbyexamples.com/spark/spark-how-to-kill-running-application/>this note</a> , yarn is mentioned too. I dont have that yet however.</p></li><li><p>TRy to get that dashboard , following from <a href=https://medium.com/backbase/kubernetes-in-local-the-easy-way-f8ef2b98be68>here</a></p></li><li><p>It is here, <a href=https://github.com/kubernetes/dashboard/releases/tag/v2.0.5>https://github.com/kubernetes/dashboard/releases/tag/v2.0.5</a></p></li></ul><pre><code>kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.5/aio/deploy/recommended.yaml
+</code></pre><ul>
+<li>
+<p>Crashed&mldr; anyway just <code>Ctrl-C</code> for now</p>
+</li>
+<li>
+<p>But when looking around I see per <a href=https://issues.apache.org/jira/browse/SPARK-11909>here</a> that the master url in that command should be <code>spark://localhost:6443</code> instead.</p>
+</li>
+<li>
+<p>And per <a href=https://sparkbyexamples.com/spark/spark-how-to-kill-running-application/>this note</a> , yarn is mentioned too. I dont have that yet however.</p>
+</li>
+<li>
+<p>TRy to get that dashboard , following from <a href=https://medium.com/backbase/kubernetes-in-local-the-easy-way-f8ef2b98be68>here</a></p>
+</li>
+<li>
+<p>It is here, <a href=https://github.com/kubernetes/dashboard/releases/tag/v2.0.5>https://github.com/kubernetes/dashboard/releases/tag/v2.0.5</a></p>
+</li>
+</ul>
+<pre><code>kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.5/aio/deploy/recommended.yaml
 
 namespace/kubernetes-dashboard created
 serviceaccount/kubernetes-dashboard created
@@ -74,12 +231,32 @@ clusterrolebinding.rbac.authorization.k8s.io/kubernetes-dashboard created
 deployment.apps/kubernetes-dashboard created
 service/dashboard-metrics-scraper created
 deployment.apps/dashboard-metrics-scraper created
-</code></pre><ul><li>Hmm I did not see the dashboard with <code>kubectl get pods -n kube-system</code>, but the mentioned to look using <code>kubectl get pods --all-namespaces</code> , and I do see it indeed , in its own namespace indeed&mldr; not in the <code>kube-system</code> namespace</li></ul><pre><code>NAMESPACE              NAME                                         READY   STATUS    RESTARTS   AGE
+</code></pre><ul>
+<li>Hmm I did not see the dashboard with <code>kubectl get pods -n kube-system</code>, but the mentioned to look using <code>kubectl get pods --all-namespaces</code> , and I do see it indeed , in its own namespace indeed&mldr; not in the <code>kube-system</code> namespace</li>
+</ul>
+<pre><code>NAMESPACE              NAME                                         READY   STATUS    RESTARTS   AGE
 kubernetes-dashboard   kubernetes-dashboard-6f65cb5c64-kbq8d        1/1     Running   0          2m46s
-</code></pre><ul><li>Not seeing anything listening on <code>8443</code> with <code>netstat -an |grep LIST</code> however, as mentioned <a href=https://medium.com/faun/apache-spark-on-kubernetes-docker-for-mac-2501cc72e659>here</a></li><li>But the other blog post is telling me to go here , http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy</li><li>After first starting a local proxy that is..</li></ul><pre><code>kubectl proxy
+</code></pre><ul>
+<li>Not seeing anything listening on <code>8443</code> with <code>netstat -an |grep LIST</code> however, as mentioned <a href=https://medium.com/faun/apache-spark-on-kubernetes-docker-for-mac-2501cc72e659>here</a></li>
+<li>But the other blog post is telling me to go here , http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy</li>
+<li>After first starting a local proxy that is..</li>
+</ul>
+<pre><code>kubectl proxy
 # Starting to serve on 127.0.0.1:8001
-</code></pre><ul><li>As mentioned, when I visited this url, I saw the screen asking for a token.</li><li>And running the one liner ,</li></ul><pre><code>kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | awk '/^deployment-controller-token-/{print $1}') | awk '$1==&quot;token:&quot;{print $2}'
-</code></pre><ul><li>Yielded a token, which was accepted.</li></ul><h4 id=let-me-retry-that-earlier-example-job->let me retry that earlier example job ..</h4><ul><li>Since now I can look at the dashboard. Maybe I will see why that job was stalling..</li><li>trying again</li></ul><pre><code>bin/spark-submit  \
+</code></pre><ul>
+<li>As mentioned, when I visited this url, I saw the screen asking for a token.</li>
+<li>And running the one liner ,</li>
+</ul>
+<pre><code>kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | awk '/^deployment-controller-token-/{print $1}') | awk '$1==&quot;token:&quot;{print $2}'
+</code></pre><ul>
+<li>Yielded a token, which was accepted.</li>
+</ul>
+<h4 id=let-me-retry-that-earlier-example-job->let me retry that earlier example job ..</h4>
+<ul>
+<li>Since now I can look at the dashboard. Maybe I will see why that job was stalling..</li>
+<li>trying again</li>
+</ul>
+<pre><code>bin/spark-submit  \
 --master k8s://https://localhost:6443  \
 --deploy-mode cluster  \
 --conf spark.executor.instances=1  \
@@ -88,17 +265,57 @@ kubernetes-dashboard   kubernetes-dashboard-6f65cb5c64-kbq8d        1/1     Runn
 --class org.apache.spark.examples.SparkPi  \
 --name spark-pi  \
 local:///opt/spark/examples/jars/spark-examples_2.12-3.0.1.jar
-</code></pre><ul><li>One of the early outputs&mldr;</li></ul><pre><code>21/01/24 16:03:01 INFO KerberosConfDriverFeatureStep: You have not specified a krb5.conf file locally or via a ConfigMap. Make sure that you have the krb5.conf locally on the driver image.
-</code></pre><ul><li>And basically now stuck in <code>Pending</code>.</li></ul><h5 id=insufficient-memory>Insufficient Memory!</h5><ul><li>Ok so when I looked around in the Dashboard, I see oddly &mldr; the first attempt could not succeed because of memory</li></ul><img src="https://s3.amazonaws.com/my-blog-content/2021-01-23-spark-weekend/Screen Shot 2021-01-24 at 4.15.17 PM-insufficient-memory.png" width=50%><ul><li>Oh and it is hanging around still blocking resources.</li></ul><pre><code>$ kubectl get pods --all-namespaces
+</code></pre><ul>
+<li>One of the early outputs&mldr;</li>
+</ul>
+<pre><code>21/01/24 16:03:01 INFO KerberosConfDriverFeatureStep: You have not specified a krb5.conf file locally or via a ConfigMap. Make sure that you have the krb5.conf locally on the driver image.
+</code></pre><ul>
+<li>And basically now stuck in <code>Pending</code>.</li>
+</ul>
+<h5 id=insufficient-memory>Insufficient Memory!</h5>
+<ul>
+<li>Ok so when I looked around in the Dashboard, I see oddly &mldr; the first attempt could not succeed because of memory</li>
+</ul>
+<img src="https://s3.amazonaws.com/my-blog-content/2021-01-23-spark-weekend/Screen Shot 2021-01-24 at 4.15.17 PM-insufficient-memory.png" width=50%>
+<ul>
+<li>Oh and it is hanging around still blocking resources.</li>
+</ul>
+<pre><code>$ kubectl get pods --all-namespaces
 NAMESPACE              NAME                                         READY   STATUS    RESTARTS   AGE
 default                spark-pi-4df4497735de91a1-driver             1/1     Running   0          116m
 default                spark-pi-79033a7735deb0a4-exec-1             0/1     Pending   0          116m
 default                spark-pi-df12a57736350578-driver             0/1     Pending   0          21m
 default                spark-pi-e333f47736434a39-driver             0/1     Pending   0          6m16s
-</code></pre><ul><li>So actually <code>Ctrl-C</code> was not enough to kill it.</li><li>When I look at the logs for this driver pod, I&rsquo;m seeing</li></ul><pre><code>21/01/24 21:23:30 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
-</code></pre><ul><li>Not sure how to know what resources are needed though.</li></ul><h5 id=deleting-this-pod>Deleting this pod</h5><ul><li>Kind of handy , when I try deleting that pod in the dashboard , I&rsquo;m seeing a handy note that</li></ul><pre><code>This action is equivalent to:kubectl delete -n default pod spark-pi-4df4497735de91a1-driver
-</code></pre><ul><li>And as soon as that was terminated, the Pending job is running. So yea none of my <code>Ctrl-C</code> were useful haha.</li><li>Trying that CLI delete instead then</li></ul><pre><code>kubectl delete -n default pod spark-pi-df12a57736350578-driver
-</code></pre><ul><li>Ok that seems to have worked.</li></ul><h4 id=how-to-try-this-again-without-the-memory-issue>How to try this again without the memory issue?</h4><ul><li>not sure but&mldr;</li></ul><h4 id=read-about-the-pyspark-shell-being-in-the-base-spark-so-trying>Read about the pyspark shell being in the base spark so trying</h4><ul><li>nice ..</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#960050;background-color:#1e0010>$</span> <span style=color:#f92672>./</span>bin<span style=color:#f92672>/</span>pyspark
+</code></pre><ul>
+<li>So actually <code>Ctrl-C</code> was not enough to kill it.</li>
+<li>When I look at the logs for this driver pod, I&rsquo;m seeing</li>
+</ul>
+<pre><code>21/01/24 21:23:30 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+</code></pre><ul>
+<li>Not sure how to know what resources are needed though.</li>
+</ul>
+<h5 id=deleting-this-pod>Deleting this pod</h5>
+<ul>
+<li>Kind of handy , when I try deleting that pod in the dashboard , I&rsquo;m seeing a handy note that</li>
+</ul>
+<pre><code>This action is equivalent to:kubectl delete -n default pod spark-pi-4df4497735de91a1-driver
+</code></pre><ul>
+<li>And as soon as that was terminated, the Pending job is running. So yea none of my <code>Ctrl-C</code> were useful haha.</li>
+<li>Trying that CLI delete instead then</li>
+</ul>
+<pre><code>kubectl delete -n default pod spark-pi-df12a57736350578-driver
+</code></pre><ul>
+<li>Ok that seems to have worked.</li>
+</ul>
+<h4 id=how-to-try-this-again-without-the-memory-issue>How to try this again without the memory issue?</h4>
+<ul>
+<li>not sure but&mldr;</li>
+</ul>
+<h4 id=read-about-the-pyspark-shell-being-in-the-base-spark-so-trying>Read about the pyspark shell being in the base spark so trying</h4>
+<ul>
+<li>nice ..</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#960050;background-color:#1e0010>$</span> <span style=color:#f92672>./</span>bin<span style=color:#f92672>/</span>pyspark
 Python <span style=color:#ae81ff>3.7.2</span> (default, Dec <span style=color:#ae81ff>29</span> <span style=color:#ae81ff>2018</span>, <span style=color:#ae81ff>00</span>:<span style=color:#ae81ff>00</span>:<span style=color:#ae81ff>04</span>)
 [Clang <span style=color:#ae81ff>4.0.1</span> (tags<span style=color:#f92672>/</span>RELEASE_401<span style=color:#f92672>/</span>final)] :: Anaconda, Inc<span style=color:#f92672>.</span> on darwin
 Type <span style=color:#e6db74>&#34;help&#34;</span>, <span style=color:#e6db74>&#34;copyright&#34;</span>, <span style=color:#e6db74>&#34;credits&#34;</span> <span style=color:#f92672>or</span> <span style=color:#e6db74>&#34;license&#34;</span> <span style=color:#66d9ef>for</span> more information<span style=color:#f92672>.</span>
@@ -115,9 +332,10 @@ Welcome to
 
 Using Python version <span style=color:#ae81ff>3.7.2</span> (default, Dec <span style=color:#ae81ff>29</span> <span style=color:#ae81ff>2018</span> <span style=color:#ae81ff>00</span>:<span style=color:#ae81ff>00</span>:<span style=color:#ae81ff>04</span>)
 SparkSession available <span style=color:#66d9ef>as</span> <span style=color:#e6db74>&#39;spark&#39;</span><span style=color:#f92672>.</span>
-</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>from</span> pyspark.context <span style=color:#f92672>import</span> SparkContext
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>from</span> pyspark.context <span style=color:#f92672>import</span> SparkContext
 sc <span style=color:#f92672>=</span> SparkContext(<span style=color:#e6db74>&#39;local&#39;</span>, <span style=color:#e6db74>&#39;test&#39;</span>)
-</code></pre></div><p>Oops</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>Traceback (most recent call last):
+</code></pre></div><p>Oops</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>Traceback (most recent call last):
   File <span style=color:#e6db74>&#34;&lt;stdin&gt;&#34;</span>, line <span style=color:#ae81ff>1</span>, <span style=color:#f92672>in</span> <span style=color:#f92672>&lt;</span>module<span style=color:#f92672>&gt;</span>
   File <span style=color:#e6db74>&#34;/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/pyspark/context.py&#34;</span>, line <span style=color:#ae81ff>133</span>, <span style=color:#f92672>in</span> __init__
     SparkContext<span style=color:#f92672>.</span>_ensure_initialized(self, gateway<span style=color:#f92672>=</span>gateway, conf<span style=color:#f92672>=</span>conf)
@@ -125,9 +343,15 @@ sc <span style=color:#f92672>=</span> SparkContext(<span style=color:#e6db74>&#3
     callsite<span style=color:#f92672>.</span>function, callsite<span style=color:#f92672>.</span>file, callsite<span style=color:#f92672>.</span>linenum))
 <span style=color:#a6e22e>ValueError</span>: Cannot run multiple SparkContexts at once; existing SparkContext(app<span style=color:#f92672>=</span>PySparkShell, master<span style=color:#f92672>=</span>local[<span style=color:#f92672>*</span>]) created by <span style=color:#f92672>&lt;</span>module<span style=color:#f92672>&gt;</span> at <span style=color:#f92672>/</span>Users<span style=color:#f92672>/</span>michal<span style=color:#f92672>/</span>Downloads<span style=color:#f92672>/</span>spark<span style=color:#f92672>-</span><span style=color:#ae81ff>3.0.1</span><span style=color:#f92672>-</span>bin<span style=color:#f92672>-</span>hadoop3<span style=color:#ae81ff>.2</span><span style=color:#f92672>/</span>python<span style=color:#f92672>/</span>pyspark<span style=color:#f92672>/</span>shell<span style=color:#f92672>.</span>py:<span style=color:#ae81ff>41</span>
 
-</code></pre></div><ul><li>oh interesting it is already pre defined</li></ul><pre><code>&gt;&gt;&gt; sc
+</code></pre></div><ul>
+<li>oh interesting it is already pre defined</li>
+</ul>
+<pre><code>&gt;&gt;&gt; sc
 &lt;SparkContext master=local[*] appName=PySparkShell&gt;
-</code></pre><ul><li>Will try something basic..</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>rdd <span style=color:#f92672>=</span> sc<span style=color:#f92672>.</span>parallelize([<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>])
+</code></pre><ul>
+<li>Will try something basic..</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>rdd <span style=color:#f92672>=</span> sc<span style=color:#f92672>.</span>parallelize([<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>])
 rdd
 <span style=color:#75715e># ParallelCollectionRDD[0] at readRDDFromFile at PythonRDD.scala:262</span>
 
@@ -136,17 +360,38 @@ rdd<span style=color:#f92672>.</span>map(<span style=color:#66d9ef>lambda</span>
 
 rdd<span style=color:#f92672>.</span>collect()
 <span style=color:#75715e># [1, 2, 3, 4]</span>
-</code></pre></div><ul><li>ok haha not quite right.</li><li>Ah duh of course have to compose/chain that..</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>rdd<span style=color:#f92672>.</span>map(<span style=color:#66d9ef>lambda</span> x: x<span style=color:#f92672>*</span><span style=color:#ae81ff>3</span>)<span style=color:#f92672>.</span>collect()
+</code></pre></div><ul>
+<li>ok haha not quite right.</li>
+<li>Ah duh of course have to compose/chain that..</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>rdd<span style=color:#f92672>.</span>map(<span style=color:#66d9ef>lambda</span> x: x<span style=color:#f92672>*</span><span style=color:#ae81ff>3</span>)<span style=color:#f92672>.</span>collect()
 <span style=color:#75715e># [3, 6, 9, 12]                                                                   </span>
 rdd<span style=color:#f92672>.</span>collect()
 <span style=color:#75715e># [1, 2, 3, 4]</span>
-</code></pre></div><ul><li>Ok excellent!</li><li>Going to look more through these docs <a href=spark.apache.org/docs/latest/api/python/index.html>here</a></li></ul><h4 id=next>Next</h4><ul><li>I would like to try some more basic transformations and actions.</li></ul><h3 id=2021-01-31>2021-01-31</h3><h4 id=try-some-things-on-this-covid19-dataset>try some things on this covid19 dataset</h4><ul><li>from <a href=https://data.cdc.gov/Case-Surveillance/COVID-19-Case-Surveillance-Public-Use-Data/vbim-akqf>here</a></li><li>This is a <code>1.59GiB</code> file , so perfect, how do I use Spark to split this up and perform some basic statistics</li><li><code>COVID-19_Case_Surveillance_Public_Use_Data.csv</code></li><li>Specifically, I think a good idea to test if random sampling this data, the <code>onset_dt</code> or onset date of symptoms, what is the onset rate by age bin, which is already binned as <code>age_group</code>.</li><li>Ah and looks like you need to be explicit with specifying a header is present.</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>workdir <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;/Users/michal/Downloads/&#39;</span>
+</code></pre></div><ul>
+<li>Ok excellent!</li>
+<li>Going to look more through these docs <a href=spark.apache.org/docs/latest/api/python/index.html>here</a></li>
+</ul>
+<h4 id=next>Next</h4>
+<ul>
+<li>I would like to try some more basic transformations and actions.</li>
+</ul>
+<h3 id=2021-01-31>2021-01-31</h3>
+<h4 id=try-some-things-on-this-covid19-dataset>try some things on this covid19 dataset</h4>
+<ul>
+<li>from <a href=https://data.cdc.gov/Case-Surveillance/COVID-19-Case-Surveillance-Public-Use-Data/vbim-akqf>here</a></li>
+<li>This is a <code>1.59GiB</code> file , so perfect, how do I use Spark to split this up and perform some basic statistics</li>
+<li><code>COVID-19_Case_Surveillance_Public_Use_Data.csv</code></li>
+<li>Specifically, I think a good idea to test if random sampling this data, the <code>onset_dt</code> or onset date of symptoms, what is the onset rate by age bin, which is already binned as <code>age_group</code>.</li>
+<li>Ah and looks like you need to be explicit with specifying a header is present.</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>workdir <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;/Users/michal/Downloads/&#39;</span>
 loc <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>workdir<span style=color:#e6db74>}</span><span style=color:#e6db74>/COVID-19_Case_Surveillance_Public_Use_Data.head.csv&#39;</span>
 
 df <span style=color:#f92672>=</span> spark<span style=color:#f92672>.</span>read<span style=color:#f92672>.</span>option(<span style=color:#e6db74>&#34;header&#34;</span>,<span style=color:#66d9ef>True</span>)<span style=color:#f92672>.</span>csv(loc)
 
 df<span style=color:#f92672>.</span>printSchema()
-</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>root
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>root
  <span style=color:#f92672>|--</span> cdc_case_earliest_dt : string (nullable <span style=color:#f92672>=</span> true)
  <span style=color:#f92672>|--</span> cdc_report_dt: string (nullable <span style=color:#f92672>=</span> true)
  <span style=color:#f92672>|--</span> pos_spec_dt: string (nullable <span style=color:#f92672>=</span> true)
@@ -160,27 +405,44 @@ df<span style=color:#f92672>.</span>printSchema()
  <span style=color:#f92672>|--</span> death_yn: string (nullable <span style=color:#f92672>=</span> true)
  <span style=color:#f92672>|--</span> medcond_yn: string (nullable <span style=color:#f92672>=</span> true)
 
-</code></pre></div><h3 id=2021-02-07>2021-02-07</h3><h4 id=symptomatic-by-age-group>Symptomatic by age group.</h4><ul><li>Hmm interesting that <a href=https://spark.apache.org/docs/latest/api/python/pyspark.sql.html#pyspark.sql.DataFrameReader.jdbc>in docs</a> is says that so does that mean that all the partitions are running in parallel? How do you only run based on the number of workers you can run simultaneously?</li></ul><blockquote><p>Note: Don’t create too many partitions in parallel on a large cluster; otherwise Spark might crash your external database systems.</p></blockquote><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>df<span style=color:#f92672>.</span>groupBy(<span style=color:#e6db74>&#39;age_group&#39;</span>)<span style=color:#f92672>.</span>count()<span style=color:#f92672>.</span>collect()
+</code></pre></div><h3 id=2021-02-07>2021-02-07</h3>
+<h4 id=symptomatic-by-age-group>Symptomatic by age group.</h4>
+<ul>
+<li>Hmm interesting that <a href=https://spark.apache.org/docs/latest/api/python/pyspark.sql.html#pyspark.sql.DataFrameReader.jdbc>in docs</a> is says that so does that mean that all the partitions are running in parallel? How do you only run based on the number of workers you can run simultaneously?</li>
+</ul>
+<blockquote>
+<p>Note: Don’t create too many partitions in parallel on a large cluster; otherwise Spark might crash your external database systems.</p>
+</blockquote>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>df<span style=color:#f92672>.</span>groupBy(<span style=color:#e6db74>&#39;age_group&#39;</span>)<span style=color:#f92672>.</span>count()<span style=color:#f92672>.</span>collect()
 
 [Row(age_group<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;0 - 9 Years&#39;</span>, count<span style=color:#f92672>=</span><span style=color:#ae81ff>9</span>)]                                         
 
-</code></pre></div><ul><li>Try w/ a column that has more variation.. and <code>1000</code> rows instead.</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>loc <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>workdir<span style=color:#e6db74>}</span><span style=color:#e6db74>/COVID-19_Case_Surveillance_Public_Use_Data.head1000.csv&#39;</span>
+</code></pre></div><ul>
+<li>Try w/ a column that has more variation.. and <code>1000</code> rows instead.</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>loc <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>workdir<span style=color:#e6db74>}</span><span style=color:#e6db74>/COVID-19_Case_Surveillance_Public_Use_Data.head1000.csv&#39;</span>
 df <span style=color:#f92672>=</span> spark<span style=color:#f92672>.</span>read<span style=color:#f92672>.</span>option(<span style=color:#e6db74>&#34;header&#34;</span>,<span style=color:#66d9ef>True</span>)<span style=color:#f92672>.</span>csv(loc)
 df<span style=color:#f92672>.</span>groupBy(<span style=color:#e6db74>&#39;sex&#39;</span>)<span style=color:#f92672>.</span>count()<span style=color:#f92672>.</span>collect()
 
 <span style=color:#75715e># [Row(sex=&#39;Female&#39;, count=446), Row(sex=&#39;Unknown&#39;, count=30), Row(sex=&#39;Missing&#39;, count=3), Row(sex=&#39;Male&#39;, count=520)]</span>
 
-</code></pre></div><ul><li>And how do I apply a custom <code>apply</code> function with my group by</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>foo</span>(dfx):
+</code></pre></div><ul>
+<li>And how do I apply a custom <code>apply</code> function with my group by</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>foo</span>(dfx):
     <span style=color:#66d9ef>return</span> dfx<span style=color:#f92672>.</span>count()
 
 
 df<span style=color:#f92672>.</span>groupBy(<span style=color:#e6db74>&#39;sex&#39;</span>)<span style=color:#f92672>.</span>apply(foo)
-</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>Traceback (most recent call last):
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>Traceback (most recent call last):
   File <span style=color:#e6db74>&#34;&lt;stdin&gt;&#34;</span>, line <span style=color:#ae81ff>2</span>, <span style=color:#f92672>in</span> <span style=color:#f92672>&lt;</span>module<span style=color:#f92672>&gt;</span>
   File <span style=color:#e6db74>&#34;/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/pyspark/sql/pandas/group_ops.py&#34;</span>, line <span style=color:#ae81ff>70</span>, <span style=color:#f92672>in</span> apply
     <span style=color:#66d9ef>raise</span> <span style=color:#a6e22e>ValueError</span>(<span style=color:#e6db74>&#34;Invalid udf: the udf argument must be a pandas_udf of type &#34;</span>
 <span style=color:#a6e22e>ValueError</span>: Invalid udf: the udf argument must be a pandas_udf of type GROUPED_MAP<span style=color:#f92672>.</span>
-</code></pre></div><ul><li>hmm oops</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>from</span> pyspark.sql.functions <span style=color:#f92672>import</span> pandas_udf, PandasUDFType
+</code></pre></div><ul>
+<li>hmm oops</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>from</span> pyspark.sql.functions <span style=color:#f92672>import</span> pandas_udf, PandasUDFType
 <span style=color:#f92672>from</span> pyspark.sql.types <span style=color:#f92672>import</span> StructType, StringType, LongType, DoubleType, StructField
 
 schema <span style=color:#f92672>=</span> StructType([StructField(<span style=color:#e6db74>&#39;sex&#39;</span>, StringType(), <span style=color:#66d9ef>True</span>),
@@ -189,14 +451,17 @@ schema <span style=color:#f92672>=</span> StructType([StructField(<span style=co
 <span style=color:#a6e22e>@pandas_udf</span>(schema, PandasUDFType<span style=color:#f92672>.</span>GROUPED_MAP)
 <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>foo</span>(dfx):
     <span style=color:#66d9ef>return</span> dfx<span style=color:#f92672>.</span>count()
-</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>Traceback (most recent call last):
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>Traceback (most recent call last):
   File <span style=color:#e6db74>&#34;&lt;stdin&gt;&#34;</span>, line <span style=color:#ae81ff>1</span>, <span style=color:#f92672>in</span> <span style=color:#f92672>&lt;</span>module<span style=color:#f92672>&gt;</span>
   File <span style=color:#e6db74>&#34;/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/pyspark/sql/pandas/functions.py&#34;</span>, line <span style=color:#ae81ff>325</span>, <span style=color:#f92672>in</span> pandas_udf
     require_minimum_pyarrow_version()
   File <span style=color:#e6db74>&#34;/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/pyspark/sql/pandas/utils.py&#34;</span>, line <span style=color:#ae81ff>54</span>, <span style=color:#f92672>in</span> require_minimum_pyarrow_version
     <span style=color:#e6db74>&#34;it was not found.&#34;</span> <span style=color:#f92672>%</span> minimum_pyarrow_version)
 <span style=color:#a6e22e>ImportError</span>: PyArrow <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>0.15.1</span> must be installed; however, it was <span style=color:#f92672>not</span> found<span style=color:#f92672>.</span>
-</code></pre></div><ul><li>hmm</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>(pandars3) <span style=color:#960050;background-color:#1e0010>$</span> pip install  PyArrow
+</code></pre></div><ul>
+<li>hmm</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>(pandars3) <span style=color:#960050;background-color:#1e0010>$</span> pip install  PyArrow
 Collecting PyArrow
   Downloading https:<span style=color:#f92672>//</span>files<span style=color:#f92672>.</span>pythonhosted<span style=color:#f92672>.</span>org<span style=color:#f92672>/</span>packages<span style=color:#f92672>/</span><span style=color:#ae81ff>68</span><span style=color:#f92672>/</span><span style=color:#ae81ff>5</span>f<span style=color:#f92672>/</span><span style=color:#ae81ff>1</span>fb0c604636d46257af3c3075955e860161e8c41386405467f073df73f91<span style=color:#f92672>/</span>pyarrow<span style=color:#f92672>-</span><span style=color:#ae81ff>3.0.0</span><span style=color:#f92672>-</span>cp37<span style=color:#f92672>-</span>cp37m<span style=color:#f92672>-</span>macosx_10_13_x86_64<span style=color:#f92672>.</span>whl (<span style=color:#ae81ff>14.1</span>MB)
     <span style=color:#ae81ff>100</span><span style=color:#f92672>%</span> <span style=color:#f92672>|</span><span style=color:#960050;background-color:#1e0010>████████████████████████████████</span><span style=color:#f92672>|</span> <span style=color:#ae81ff>14.1</span>MB <span style=color:#ae81ff>1.6</span>MB<span style=color:#f92672>/</span>s
@@ -209,7 +474,10 @@ Installing collected packages: numpy, PyArrow
     Uninstalling numpy<span style=color:#f92672>-</span><span style=color:#ae81ff>1.16.0</span>:
       Successfully uninstalled numpy<span style=color:#f92672>-</span><span style=color:#ae81ff>1.16.0</span>
 Successfully installed PyArrow<span style=color:#f92672>-</span><span style=color:#ae81ff>3.0.0</span> numpy<span style=color:#f92672>-</span><span style=color:#ae81ff>1.20.1</span>
-</code></pre></div><ul><li>Ok cool now this worked ..</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>
+</code></pre></div><ul>
+<li>Ok cool now this worked ..</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>
 <span style=color:#f92672>from</span> pyspark.sql.functions <span style=color:#f92672>import</span> pandas_udf, PandasUDFType
 <span style=color:#f92672>from</span> pyspark.sql.types <span style=color:#f92672>import</span> StructType, StringType, LongType, DoubleType, StructField
 
@@ -229,7 +497,10 @@ df<span style=color:#f92672>.</span>groupBy(<span style=color:#e6db74>&#39;sex&#
 
 <span style=color:#75715e>#</span>
 out <span style=color:#f92672>=</span> df<span style=color:#f92672>.</span>groupBy(<span style=color:#e6db74>&#39;sex&#39;</span>)<span style=color:#f92672>.</span>apply(foo)
-</code></pre></div><ul><li>Really weird error though haha&mldr;</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> out<span style=color:#f92672>.</span>collect()
+</code></pre></div><ul>
+<li>Really weird error though haha&mldr;</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> out<span style=color:#f92672>.</span>collect()
 <span style=color:#ae81ff>21</span><span style=color:#f92672>/</span><span style=color:#ae81ff>02</span><span style=color:#f92672>/</span><span style=color:#ae81ff>07</span> <span style=color:#ae81ff>23</span>:<span style=color:#ae81ff>33</span>:<span style=color:#ae81ff>31</span> ERROR Executor: <span style=color:#a6e22e>Exception</span> <span style=color:#f92672>in</span> task <span style=color:#ae81ff>60.0</span> <span style=color:#f92672>in</span> stage <span style=color:#ae81ff>6.0</span> (TID <span style=color:#ae81ff>205</span>)]
 org<span style=color:#f92672>.</span>apache<span style=color:#f92672>.</span>spark<span style=color:#f92672>.</span>api<span style=color:#f92672>.</span>python<span style=color:#f92672>.</span>PythonException: Traceback (most recent call last):
   File <span style=color:#e6db74>&#34;/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/worker.py&#34;</span>, line <span style=color:#ae81ff>605</span>, <span style=color:#f92672>in</span> main
@@ -281,8 +552,23 @@ pyarrow<span style=color:#f92672>.</span>lib<span style=color:#f92672>.</span>Ar
 	at java<span style=color:#f92672>.</span>util<span style=color:#f92672>.</span>concurrent<span style=color:#f92672>.</span>ThreadPoolExecutor<span style=color:#960050;background-color:#1e0010>$</span>Worker<span style=color:#f92672>.</span>run(ThreadPoolExecutor<span style=color:#f92672>.</span>java:<span style=color:#ae81ff>617</span>)
 	at java<span style=color:#f92672>.</span>lang<span style=color:#f92672>.</span>Thread<span style=color:#f92672>.</span>run(Thread<span style=color:#f92672>.</span>java:<span style=color:#ae81ff>745</span>)
 
-</code></pre></div><h3 id=2021-02-20>2021-02-20</h3><h4 id=going-to-attempt-to-use-ipython-w-pyspark>Going to attempt to use ipython w/ pyspark</h4><ul><li>According to <a href=https://stackoverflow.com/questions/31862293/how-to-load-ipython-shell-with-pyspark#31863595>stackoverflow</a></li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>PYSPARK_DRIVER_PYTHON<span style=color:#f92672>=</span>ipython <span style=color:#f92672>./</span>bin<span style=color:#f92672>/</span>pyspark
-</code></pre></div><ul><li>Ok nice worked. Just had to make sure to <code>source activate pandars3</code> my conda environment which actually has <code>ipython</code> ..</li></ul><h4 id=hmm-maybe-since-i-had-errors-w-group-by--i-can-try---reducebykey-intead>Hmm maybe since i had errors w/ group by , I can try <code>reduceByKey</code> intead?</h4><ul><li>oh actually, when looking at the doc for the group by with <code>help(df.groupBy('sex'))</code> , I read in the <code>apply</code> description that it is depracated and <code>applyInPandas</code> is recommended instead.</li><li>And in the <a href=https://spark.apache.org/docs/latest/sql-pyspark-pandas-with-arrow.html#pandas-function-apis>apache spark doc here</a> , I&rsquo;m reading that " Using PandasUDFType will be deprecated in the future." so then the complicated decorator looking code I was trying above, maybe that is getting phased out anyway.</li><li>The only thing new here is that I need to pass the schema of the dataframe to <code>applyInPandas</code></li><li>My particualr dataset is actually all categorical data and dates.</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>foo</span>(dfx):
+</code></pre></div><h3 id=2021-02-20>2021-02-20</h3>
+<h4 id=going-to-attempt-to-use-ipython-w-pyspark>Going to attempt to use ipython w/ pyspark</h4>
+<ul>
+<li>According to <a href=https://stackoverflow.com/questions/31862293/how-to-load-ipython-shell-with-pyspark#31863595>stackoverflow</a></li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>PYSPARK_DRIVER_PYTHON<span style=color:#f92672>=</span>ipython <span style=color:#f92672>./</span>bin<span style=color:#f92672>/</span>pyspark
+</code></pre></div><ul>
+<li>Ok nice worked. Just had to make sure to <code>source activate pandars3</code> my conda environment which actually has <code>ipython</code> ..</li>
+</ul>
+<h4 id=hmm-maybe-since-i-had-errors-w-group-by--i-can-try---reducebykey-intead>Hmm maybe since i had errors w/ group by , I can try <code>reduceByKey</code> intead?</h4>
+<ul>
+<li>oh actually, when looking at the doc for the group by with <code>help(df.groupBy('sex'))</code> , I read in the <code>apply</code> description that it is depracated and <code>applyInPandas</code> is recommended instead.</li>
+<li>And in the <a href=https://spark.apache.org/docs/latest/sql-pyspark-pandas-with-arrow.html#pandas-function-apis>apache spark doc here</a> , I&rsquo;m reading that " Using PandasUDFType will be deprecated in the future." so then the complicated decorator looking code I was trying above, maybe that is getting phased out anyway.</li>
+<li>The only thing new here is that I need to pass the schema of the dataframe to <code>applyInPandas</code></li>
+<li>My particualr dataset is actually all categorical data and dates.</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>foo</span>(dfx):
     <span style=color:#66d9ef>return</span> dfx<span style=color:#f92672>.</span>count()
 
 <span style=color:#75715e>#</span>
@@ -302,7 +588,10 @@ schema <span style=color:#f92672>=</span> StructType([StructField(x, StringType(
 
 df<span style=color:#f92672>.</span>groupBy(<span style=color:#e6db74>&#39;sex&#39;</span>)<span style=color:#f92672>.</span>applyInPandas(foo, schema)<span style=color:#f92672>.</span>collect()
 
-</code></pre></div><ul><li>=> ok now error I got is actually more clear&mldr;</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>PythonException:
+</code></pre></div><ul>
+<li>=> ok now error I got is actually more clear&mldr;</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>PythonException:
   An exception was thrown <span style=color:#f92672>from</span> the Python worker<span style=color:#f92672>.</span> Please see the stack trace below<span style=color:#f92672>.</span>
 Traceback (most recent call last):
   File <span style=color:#e6db74>&#34;/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/worker.py&#34;</span>, line <span style=color:#ae81ff>605</span>, <span style=color:#f92672>in</span> main
@@ -322,7 +611,10 @@ Traceback (most recent call last):
   File <span style=color:#e6db74>&#34;/Users/michal/Downloads/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/worker.py&#34;</span>, line <span style=color:#ae81ff>167</span>, <span style=color:#f92672>in</span> wrapped
     <span style=color:#e6db74>&#34;pandas.DataFrame, but is </span><span style=color:#e6db74>{}</span><span style=color:#e6db74>&#34;</span><span style=color:#f92672>.</span>format(type(result)))
 <span style=color:#a6e22e>TypeError</span>: Return type of the user<span style=color:#f92672>-</span>defined function should be pandas<span style=color:#f92672>.</span>DataFrame, but <span style=color:#f92672>is</span> <span style=color:#f92672>&lt;</span><span style=color:#66d9ef>class</span> <span style=color:#960050;background-color:#1e0010>&#39;</span><span style=color:#a6e22e>pandas</span><span style=color:#f92672>.</span>core<span style=color:#f92672>.</span>series<span style=color:#f92672>.</span>Series<span style=color:#e6db74>&#39;&gt;</span>
-</code></pre></div><ul><li>So let me make sure to return a dataframe in my <code>foo</code> func</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> pandas <span style=color:#66d9ef>as</span> pd
+</code></pre></div><ul>
+<li>So let me make sure to return a dataframe in my <code>foo</code> func</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> pandas <span style=color:#66d9ef>as</span> pd
 
 <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>foo</span>(dfx):
     <span style=color:#75715e># This group by key</span>
@@ -338,12 +630,18 @@ schema <span style=color:#f92672>=</span> StructType([StructField(x, StringType(
 df<span style=color:#f92672>.</span>groupBy(<span style=color:#e6db74>&#39;sex&#39;</span>)<span style=color:#f92672>.</span>applyInPandas(foo, schema)<span style=color:#f92672>.</span>collect()
 
 
-</code></pre></div><ul><li>Now getting the error..</li></ul><pre><code>PythonException:
+</code></pre></div><ul>
+<li>Now getting the error..</li>
+</ul>
+<pre><code>PythonException:
   An exception was thrown from the Python worker. Please see the stack trace below.
   ...
 AttributeError: 'DataFrame' object has no attribute 'limit'
 
-</code></pre><ul><li>Hmm so literally the input is a vanilla pandas dataframe I think oh that&rsquo;s why!</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>foo</span>(dfx):
+</code></pre><ul>
+<li>Hmm so literally the input is a vanilla pandas dataframe I think oh that&rsquo;s why!</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>foo</span>(dfx):
     <span style=color:#75715e># This group by key</span>
     key <span style=color:#f92672>=</span> dfx<span style=color:#f92672>.</span>iloc[<span style=color:#ae81ff>0</span>]<span style=color:#f92672>.</span>sex
     <span style=color:#66d9ef>return</span> pd<span style=color:#f92672>.</span>DataFrame({<span style=color:#e6db74>&#39;sex&#39;</span>: key, <span style=color:#e6db74>&#39;count&#39;</span>: dfx<span style=color:#f92672>.</span>count()})
@@ -356,7 +654,10 @@ schema <span style=color:#f92672>=</span> StructType([StructField(x, StringType(
 df<span style=color:#f92672>.</span>groupBy(<span style=color:#e6db74>&#39;sex&#39;</span>)<span style=color:#f92672>.</span>applyInPandas(foo, schema)<span style=color:#f92672>.</span>collect()
 
 
-</code></pre></div><ul><li>hmm..</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>
+</code></pre></div><ul>
+<li>hmm..</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>
 
 PythonException:
   An exception was thrown <span style=color:#f92672>from</span> the Python worker<span style=color:#f92672>.</span> Please see the stack trace below<span style=color:#f92672>.</span>
@@ -394,21 +695,35 @@ Traceback (most recent call last):
     subarr <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>empty(length, dtype<span style=color:#f92672>=</span>dtype)
 <span style=color:#a6e22e>TypeError</span>: Cannot interpret <span style=color:#e6db74>&#39;&lt;attribute &#39;</span>dtype<span style=color:#e6db74>&#39; of &#39;</span>numpy<span style=color:#f92672>.</span>generic<span style=color:#e6db74>&#39; objects&gt;&#39;</span> <span style=color:#66d9ef>as</span> a data type
 
-</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>schema <span style=color:#f92672>=</span> StructType([StructField(<span style=color:#e6db74>&#39;sex&#39;</span>, StringType(), <span style=color:#66d9ef>True</span>),
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>schema <span style=color:#f92672>=</span> StructType([StructField(<span style=color:#e6db74>&#39;sex&#39;</span>, StringType(), <span style=color:#66d9ef>True</span>),
                      StructField(<span style=color:#e6db74>&#39;count&#39;</span>, LongType(), <span style=color:#66d9ef>True</span>)
                      ])
 df<span style=color:#f92672>.</span>groupBy(<span style=color:#e6db74>&#39;sex&#39;</span>)<span style=color:#f92672>.</span>applyInPandas(foo, schema)<span style=color:#f92672>.</span>collect()
-</code></pre></div><ul><li>group to try the string schema usage instead</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>schema <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;, &#39;</span><span style=color:#f92672>.</span>join([<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>x<span style=color:#e6db74>}</span><span style=color:#e6db74> string&#39;</span> <span style=color:#66d9ef>for</span> x <span style=color:#f92672>in</span> df<span style=color:#f92672>.</span>columns]); schema                                                               
+</code></pre></div><ul>
+<li>group to try the string schema usage instead</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>schema <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;, &#39;</span><span style=color:#f92672>.</span>join([<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>x<span style=color:#e6db74>}</span><span style=color:#e6db74> string&#39;</span> <span style=color:#66d9ef>for</span> x <span style=color:#f92672>in</span> df<span style=color:#f92672>.</span>columns]); schema                                                               
 <span style=color:#75715e># &#39;cdc_case_earliest_dt string, cdc_report_dt string, pos_spec_dt string, onset_dt string, current_status string, sex string, age_group string, race_ethnicity_combined string, hosp_yn string, icu_yn string, death_yn string, medcond_yn string&#39;</span>
 
 
 df<span style=color:#f92672>.</span>groupBy(<span style=color:#e6db74>&#39;sex&#39;</span>)<span style=color:#f92672>.</span>applyInPandas(foo, schema)<span style=color:#f92672>.</span>collect()
 
-</code></pre></div><ul><li><p>Dang same error. Maybe doesnt like string type group bys?</p></li><li><p>Randomly reading this may be something to do w/ old pandas version?</p></li></ul><pre><code>
+</code></pre></div><ul>
+<li>
+<p>Dang same error. Maybe doesnt like string type group bys?</p>
+</li>
+<li>
+<p>Randomly reading this may be something to do w/ old pandas version?</p>
+</li>
+</ul>
+<pre><code>
 In [68]: pd.__version__                                                                                                                
 Out[68]: '0.24.2'
 
-</code></pre><ul><li>I upgraded to <code>1.0.5</code></li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> pandas <span style=color:#66d9ef>as</span> pd
+</code></pre><ul>
+<li>I upgraded to <code>1.0.5</code></li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> pandas <span style=color:#66d9ef>as</span> pd
 
 workdir <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;/Users/michal/Downloads/&#39;</span>
 
@@ -429,14 +744,24 @@ df<span style=color:#f92672>.</span>groupBy(<span style=color:#e6db74>&#39;sex&#
 
 
 
-</code></pre></div><ul><li>now a different error..</li></ul><pre><code>pyarrow.lib.ArrowException: Unknown error: Wrapping 2020/03/�6 failed
+</code></pre></div><ul>
+<li>now a different error..</li>
+</ul>
+<pre><code>pyarrow.lib.ArrowException: Unknown error: Wrapping 2020/03/�6 failed
 
-</code></pre><ul><li>Makes me think I have some garbage data</li><li>Trying the 10 line datafile i have instead</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>
+</code></pre><ul>
+<li>Makes me think I have some garbage data</li>
+<li>Trying the 10 line datafile i have instead</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>
 loc <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>workdir<span style=color:#e6db74>}</span><span style=color:#e6db74>/COVID-19_Case_Surveillance_Public_Use_Data.head1000.csv&#39;</span>
 df <span style=color:#f92672>=</span> spark<span style=color:#f92672>.</span>read<span style=color:#f92672>.</span>option(<span style=color:#e6db74>&#34;header&#34;</span>,<span style=color:#66d9ef>True</span>)<span style=color:#f92672>.</span>csv(loc)
 
 <span style=color:#75715e># everything else is the same ..</span>
-</code></pre></div><ul><li>WOw now a scala/java error..</li></ul><pre><code>21/02/20 22:19:32 ERROR Executor: Exception in task 60.0 in stage 8.0 (TID 406)]
+</code></pre></div><ul>
+<li>WOw now a scala/java error..</li>
+</ul>
+<pre><code>21/02/20 22:19:32 ERROR Executor: Exception in task 60.0 in stage 8.0 (TID 406)]
 org.apache.spark.SparkException: Python worker exited unexpectedly (crashed)
 ...
 at org.apache.spark.api.python.BasePythonRunner$ReaderIterator$$anonfun$1.applyOrElse(PythonRunner.scala:536)
@@ -513,7 +838,14 @@ Py4JJavaError: An error occurred while calling o148.collectToPython.
 : org.apache.spark.SparkException: Job aborted due to stage failure: Task 159 in stage 8.0 failed 1 times, most recent failure: Lost task 159.0 in stage 8.0 (TID 409, 192.168.16.173, executor driver): org.apache.spark.SparkException: Python worker exited unexpectedly (crashed)
 
 
-</code></pre><ul><li>hahaha that is great.</li></ul><h4 id=the-toy-example-does-work-though>The toy example does work though</h4><ul><li>from the <a href=https://spark.apache.org/docs/latest/sql-pyspark-pandas-with-arrow.html#grouped-map>docs</a></li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>
+</code></pre><ul>
+<li>hahaha that is great.</li>
+</ul>
+<h4 id=the-toy-example-does-work-though>The toy example does work though</h4>
+<ul>
+<li>from the <a href=https://spark.apache.org/docs/latest/sql-pyspark-pandas-with-arrow.html#grouped-map>docs</a></li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>
 df <span style=color:#f92672>=</span> spark<span style=color:#f92672>.</span>createDataFrame(
     [(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1.0</span>), (<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2.0</span>), (<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3.0</span>), (<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>5.0</span>), (<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>10.0</span>)],
     (<span style=color:#e6db74>&#34;id&#34;</span>, <span style=color:#e6db74>&#34;v&#34;</span>))
@@ -536,7 +868,11 @@ df<span style=color:#f92672>.</span>groupby(<span style=color:#e6db74>&#34;id&#3
 <span style=color:#f92672>|</span>null<span style=color:#f92672>|</span>null<span style=color:#f92672>|</span>
 <span style=color:#f92672>+----+----+</span>
 
-</code></pre></div><ul><li>Hmm so my guess is the string group by is not appreciated..?</li></ul><h5 id=uummm-tried-again-w-the-small-file-and-this-time-worked-well-didnt-crash-at-least>uummm tried again w/ the small file and this time worked&mldr; well didnt crash at least..</h5><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> pandas <span style=color:#66d9ef>as</span> pd
+</code></pre></div><ul>
+<li>Hmm so my guess is the string group by is not appreciated..?</li>
+</ul>
+<h5 id=uummm-tried-again-w-the-small-file-and-this-time-worked-well-didnt-crash-at-least>uummm tried again w/ the small file and this time worked&mldr; well didnt crash at least..</h5>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> pandas <span style=color:#66d9ef>as</span> pd
 
 workdir <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;/Users/michal/Downloads/&#39;</span>
 
@@ -577,7 +913,15 @@ df<span style=color:#f92672>.</span>groupBy(<span style=color:#e6db74>&#39;sex&#
  Row(sex='Male', count=2),
  Row(sex='Male', count=2),
  Row(sex='Male', count=2)]
-</code></pre><ul><li>But now this output looks like well not what I would expect.</li><li>I expect two rows since you know, this is a group by. So hmm</li><li>But in any case, at least it is not crashing! so major improvement.</li><li>Hmm unless this is a partitioned group by&mldr; hmm that would be exciting. So the group by has to be combined?</li><li>So could it be I have <code>12</code> partitions here? But the file only has <code>9</code> rows. Weird.</li></ul><h4 id=oh-the-apply-func-can-take-the-key-as-an-arg->oh the apply func can take the key as an arg ?</h4><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> pandas <span style=color:#66d9ef>as</span> pd
+</code></pre><ul>
+<li>But now this output looks like well not what I would expect.</li>
+<li>I expect two rows since you know, this is a group by. So hmm</li>
+<li>But in any case, at least it is not crashing! so major improvement.</li>
+<li>Hmm unless this is a partitioned group by&mldr; hmm that would be exciting. So the group by has to be combined?</li>
+<li>So could it be I have <code>12</code> partitions here? But the file only has <code>9</code> rows. Weird.</li>
+</ul>
+<h4 id=oh-the-apply-func-can-take-the-key-as-an-arg->oh the apply func can take the key as an arg ?</h4>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> pandas <span style=color:#66d9ef>as</span> pd
 
 workdir <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;/Users/michal/Downloads/&#39;</span>
 
@@ -596,7 +940,11 @@ df <span style=color:#f92672>=</span> spark<span style=color:#f92672>.</span>rea
 schema <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;sex string, count int&#39;</span>
 <span style=color:#75715e>#</span>
 df<span style=color:#f92672>.</span>groupBy(<span style=color:#e6db74>&#39;sex&#39;</span>)<span style=color:#f92672>.</span>applyInPandas(foo, schema)<span style=color:#f92672>.</span>show()
-</code></pre></div><ul><li>result is same, but since using <code>show()</code> instead of <code>collect()</code> this time, the output looks slightly different</li><li>Still don&rsquo;t know why more than two rows though ..</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>
+</code></pre></div><ul>
+<li>result is same, but since using <code>show()</code> instead of <code>collect()</code> this time, the output looks slightly different</li>
+<li>Still don&rsquo;t know why more than two rows though ..</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>
 <span style=color:#f92672>+------+-----+</span>
 <span style=color:#f92672>|</span>   sex<span style=color:#f92672>|</span>count<span style=color:#f92672>|</span>
 <span style=color:#f92672>+------+-----+</span>
@@ -624,4 +972,26 @@ df<span style=color:#f92672>.</span>groupBy(<span style=color:#e6db74>&#39;sex&#
 only showing top <span style=color:#ae81ff>20</span> rows
 
 
-</code></pre></div><ul class=pa0><li class=list><a href=/tags/spark class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">spark</a></li></ul><div class="mt6 instapaper_ignoref"></div></div><aside class="w-30-l mt6-l"></aside></article></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo><div class="flex justify-between"><a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://michal.piekarczyk.xyz/>&copy; My blog 2021</a><div></div></div></footer></body></html>
+</code></pre></div><ul class=pa0>
+<li class=list>
+<a href=/tags/spark class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">spark</a>
+</li>
+</ul>
+<div class="mt6 instapaper_ignoref">
+</div>
+</div>
+<aside class="w-30-l mt6-l">
+</aside>
+</article>
+</main>
+<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
+<div class="flex justify-between">
+<a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://michal.piekarczyk.xyz/>
+&copy; My blog 2021
+</a>
+<div>
+</div>
+</div>
+</footer>
+</body>
+</html>

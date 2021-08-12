@@ -1,4 +1,88 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>sql handies | My blog</title><meta name=viewport content="width=device-width,minimum-scale=1"><meta name=description content="List indexes  From here  SELECT tablename, indexname, indexdef FROM pg_indexes WHERE schemaname = 'public' ORDER BY tablename, indexname; Disk Usage per table  from the postgresql wiki except one minor change &mldr; for ('user_blah', 'user_blar', 'schema1', 'schema2') schemas only &mldr;  SELECT *, pg_size_pretty(total_bytes) AS total , pg_size_pretty(index_bytes) AS INDEX , pg_size_pretty(toast_bytes) AS toast , pg_size_pretty(table_bytes) AS TABLE FROM ( SELECT *, total_bytes-index_bytes-COALESCE(toast_bytes,0) AS table_bytes FROM ( SELECT c."><meta name=generator content="Hugo 0.85.0"><meta name=ROBOTS content="NOINDEX, NOFOLLOW"><link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css><meta property="og:title" content="sql handies"><meta property="og:description" content="List indexes  From here  SELECT tablename, indexname, indexdef FROM pg_indexes WHERE schemaname = 'public' ORDER BY tablename, indexname; Disk Usage per table  from the postgresql wiki except one minor change &mldr; for ('user_blah', 'user_blar', 'schema1', 'schema2') schemas only &mldr;  SELECT *, pg_size_pretty(total_bytes) AS total , pg_size_pretty(index_bytes) AS INDEX , pg_size_pretty(toast_bytes) AS toast , pg_size_pretty(table_bytes) AS TABLE FROM ( SELECT *, total_bytes-index_bytes-COALESCE(toast_bytes,0) AS table_bytes FROM ( SELECT c."><meta property="og:type" content="article"><meta property="og:url" content="https://michal.piekarczyk.xyz/handy/sql/hmm/"><meta property="article:section" content="handy"><meta property="og:site_name" content="My blog"><meta itemprop=name content="sql handies"><meta itemprop=description content="List indexes  From here  SELECT tablename, indexname, indexdef FROM pg_indexes WHERE schemaname = 'public' ORDER BY tablename, indexname; Disk Usage per table  from the postgresql wiki except one minor change &mldr; for ('user_blah', 'user_blar', 'schema1', 'schema2') schemas only &mldr;  SELECT *, pg_size_pretty(total_bytes) AS total , pg_size_pretty(index_bytes) AS INDEX , pg_size_pretty(toast_bytes) AS toast , pg_size_pretty(table_bytes) AS TABLE FROM ( SELECT *, total_bytes-index_bytes-COALESCE(toast_bytes,0) AS table_bytes FROM ( SELECT c."><meta itemprop=wordCount content="1742"><meta itemprop=keywords content><meta name=twitter:card content="summary"><meta name=twitter:title content="sql handies"><meta name=twitter:description content="List indexes  From here  SELECT tablename, indexname, indexdef FROM pg_indexes WHERE schemaname = 'public' ORDER BY tablename, indexname; Disk Usage per table  from the postgresql wiki except one minor change &mldr; for ('user_blah', 'user_blar', 'schema1', 'schema2') schemas only &mldr;  SELECT *, pg_size_pretty(total_bytes) AS total , pg_size_pretty(index_bytes) AS INDEX , pg_size_pretty(toast_bytes) AS toast , pg_size_pretty(table_bytes) AS TABLE FROM ( SELECT *, total_bytes-index_bytes-COALESCE(toast_bytes,0) AS table_bytes FROM ( SELECT c."></head><body class="ma0 avenir bg-near-white"><header><div class=bg-black><nav class="pv3 ph3 ph4-ns" role=navigation><div class="flex-l justify-between items-center center"><a href=/ class="f3 fw2 hover-white no-underline white-90 dib">My blog</a><div class="flex-l items-center"><ul class="pl0 mr3"><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/about/ title="About page">About</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/handy/ title="Handy page">Handy</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/post/ title="Post page">Post</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/project/ title="Side Projects page">Side Projects</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/foo/ title="The Foos page">The Foos</a></li></ul></div></div></nav></div></header><main class=pb7 role=main><article class="flex-l flex-wrap justify-between mw8 center ph3"><header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked">HANDY</aside><div id=sharing class=mt3><a href="https://www.facebook.com/sharer.php?u=https://michal.piekarczyk.xyz/handy/sql/hmm/" class="facebook no-underline" aria-label="share on Facebook"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765 50.32h6.744V33.998h4.499l.596-5.624h-5.095l.007-2.816c0-1.466.14-2.253 2.244-2.253h2.812V17.68h-4.5c-5.405.0-7.307 2.729-7.307 7.317v3.377h-3.369v5.625h3.369V50.32zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg></a><a href="https://twitter.com/share?url=https://michal.piekarczyk.xyz/handy/sql/hmm/&text=sql%20handies" class="twitter no-underline" aria-label="share on Twitter"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https://michal.piekarczyk.xyz/handy/sql/hmm/&title=sql%20handies" class="linkedin no-underline" aria-label="share on LinkedIn"><svg height="32" style="enable-background:new 0 0 65 65" viewBox="0 0 65 65" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M50.837 48.137V36.425c0-6.275-3.35-9.195-7.816-9.195-3.604.0-5.219 1.983-6.119 3.374V27.71h-6.79c.09 1.917.0 20.427.0 20.427h6.79V36.729c0-.609.044-1.219.224-1.655.49-1.22 1.607-2.483 3.482-2.483 2.458.0 3.44 1.873 3.44 4.618v10.929H50.837zM22.959 24.922c2.367.0 3.842-1.57 3.842-3.531-.044-2.003-1.475-3.528-3.797-3.528s-3.841 1.524-3.841 3.528c0 1.961 1.474 3.531 3.753 3.531H22.959zM34 64C17.432 64 4 50.568 4 34 4 17.431 17.432 4 34 4s30 13.431 30 30c0 16.568-13.432 30-30 30zM26.354 48.137V27.71h-6.789v20.427h6.789z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></a></div><h1 class="f1 athelas mt3 mb1">sql handies</h1><time class="f6 mv4 dib tracked" datetime=0001-01-01T00:00:00Z>January 1, 0001</time></header><div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h4 id=list-indexes>List indexes</h4><ul><li>From <a href=https://www.postgresqltutorial.com/postgresql-indexes/postgresql-list-indexes/>here</a></li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>SELECT</span>
+<!doctype html><html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<title>sql handies | My blog</title>
+<meta name=viewport content="width=device-width,minimum-scale=1">
+<meta name=description content="List indexes  From here  SELECT tablename, indexname, indexdef FROM pg_indexes WHERE schemaname = 'public' ORDER BY tablename, indexname; Disk Usage per table  from the postgresql wiki except one minor change &mldr; for ('user_blah', 'user_blar', 'schema1', 'schema2') schemas only &mldr;  SELECT *, pg_size_pretty(total_bytes) AS total , pg_size_pretty(index_bytes) AS INDEX , pg_size_pretty(toast_bytes) AS toast , pg_size_pretty(table_bytes) AS TABLE FROM ( SELECT *, total_bytes-index_bytes-COALESCE(toast_bytes,0) AS table_bytes FROM ( SELECT c.">
+<meta name=generator content="Hugo 0.87.0">
+<meta name=ROBOTS content="NOINDEX, NOFOLLOW">
+<link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
+<meta property="og:title" content="sql handies">
+<meta property="og:description" content="List indexes  From here  SELECT tablename, indexname, indexdef FROM pg_indexes WHERE schemaname = 'public' ORDER BY tablename, indexname; Disk Usage per table  from the postgresql wiki except one minor change &mldr; for ('user_blah', 'user_blar', 'schema1', 'schema2') schemas only &mldr;  SELECT *, pg_size_pretty(total_bytes) AS total , pg_size_pretty(index_bytes) AS INDEX , pg_size_pretty(toast_bytes) AS toast , pg_size_pretty(table_bytes) AS TABLE FROM ( SELECT *, total_bytes-index_bytes-COALESCE(toast_bytes,0) AS table_bytes FROM ( SELECT c.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://michal.piekarczyk.xyz/handy/sql/hmm/"><meta property="article:section" content="handy">
+<meta property="og:site_name" content="My blog">
+<meta itemprop=name content="sql handies">
+<meta itemprop=description content="List indexes  From here  SELECT tablename, indexname, indexdef FROM pg_indexes WHERE schemaname = 'public' ORDER BY tablename, indexname; Disk Usage per table  from the postgresql wiki except one minor change &mldr; for ('user_blah', 'user_blar', 'schema1', 'schema2') schemas only &mldr;  SELECT *, pg_size_pretty(total_bytes) AS total , pg_size_pretty(index_bytes) AS INDEX , pg_size_pretty(toast_bytes) AS toast , pg_size_pretty(table_bytes) AS TABLE FROM ( SELECT *, total_bytes-index_bytes-COALESCE(toast_bytes,0) AS table_bytes FROM ( SELECT c.">
+<meta itemprop=wordCount content="1742">
+<meta itemprop=keywords content><meta name=twitter:card content="summary">
+<meta name=twitter:title content="sql handies">
+<meta name=twitter:description content="List indexes  From here  SELECT tablename, indexname, indexdef FROM pg_indexes WHERE schemaname = 'public' ORDER BY tablename, indexname; Disk Usage per table  from the postgresql wiki except one minor change &mldr; for ('user_blah', 'user_blar', 'schema1', 'schema2') schemas only &mldr;  SELECT *, pg_size_pretty(total_bytes) AS total , pg_size_pretty(index_bytes) AS INDEX , pg_size_pretty(toast_bytes) AS toast , pg_size_pretty(table_bytes) AS TABLE FROM ( SELECT *, total_bytes-index_bytes-COALESCE(toast_bytes,0) AS table_bytes FROM ( SELECT c.">
+</head>
+<body class="ma0 avenir bg-near-white">
+<header>
+<div class=bg-black>
+<nav class="pv3 ph3 ph4-ns" role=navigation>
+<div class="flex-l justify-between items-center center">
+<a href=/ class="f3 fw2 hover-white no-underline white-90 dib">
+My blog
+</a>
+<div class="flex-l items-center">
+<ul class="pl0 mr3">
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/about/ title="About page">
+About
+</a>
+</li>
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/handy/ title="Handy page">
+Handy
+</a>
+</li>
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/post/ title="Post page">
+Post
+</a>
+</li>
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/project/ title="Side Projects page">
+Side Projects
+</a>
+</li>
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/foo/ title="The Foos page">
+The Foos
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<main class=pb7 role=main>
+<article class="flex-l flex-wrap justify-between mw8 center ph3">
+<header class="mt4 w-100">
+<aside class="instapaper_ignoref b helvetica tracked">
+HANDY
+</aside>
+<div id=sharing class=mt3>
+<a href="https://www.facebook.com/sharer.php?u=https://michal.piekarczyk.xyz/handy/sql/hmm/" class="facebook no-underline" aria-label="share on Facebook"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765 50.32h6.744V33.998h4.499l.596-5.624h-5.095l.007-2.816c0-1.466.14-2.253 2.244-2.253h2.812V17.68h-4.5c-5.405.0-7.307 2.729-7.307 7.317v3.377h-3.369v5.625h3.369V50.32zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
+</a>
+<a href="https://twitter.com/share?url=https://michal.piekarczyk.xyz/handy/sql/hmm/&text=sql%20handies" class="twitter no-underline" aria-label="share on Twitter"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+</a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&url=https://michal.piekarczyk.xyz/handy/sql/hmm/&title=sql%20handies" class="linkedin no-underline" aria-label="share on LinkedIn"><svg height="32" style="enable-background:new 0 0 65 65" viewBox="0 0 65 65" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M50.837 48.137V36.425c0-6.275-3.35-9.195-7.816-9.195-3.604.0-5.219 1.983-6.119 3.374V27.71h-6.79c.09 1.917.0 20.427.0 20.427h6.79V36.729c0-.609.044-1.219.224-1.655.49-1.22 1.607-2.483 3.482-2.483 2.458.0 3.44 1.873 3.44 4.618v10.929H50.837zM22.959 24.922c2.367.0 3.842-1.57 3.842-3.531-.044-2.003-1.475-3.528-3.797-3.528s-3.841 1.524-3.841 3.528c0 1.961 1.474 3.531 3.753 3.531H22.959zM34 64C17.432 64 4 50.568 4 34 4 17.431 17.432 4 34 4s30 13.431 30 30c0 16.568-13.432 30-30 30zM26.354 48.137V27.71h-6.789v20.427h6.789z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+</a>
+</div>
+<h1 class="f1 athelas mt3 mb1">sql handies</h1>
+<time class="f6 mv4 dib tracked" datetime=0001-01-01T00:00:00Z>January 1, 0001</time>
+</header>
+<div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h4 id=list-indexes>List indexes</h4>
+<ul>
+<li>From <a href=https://www.postgresqltutorial.com/postgresql-indexes/postgresql-list-indexes/>here</a></li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>SELECT</span>
     tablename,
     indexname,
     indexdef
@@ -11,7 +95,12 @@
     tablename,
     indexname;
 
-</code></pre></div><h4 id=disk-usage-per-table>Disk Usage per table</h4><ul><li>from <a href=https://wiki.postgresql.org/wiki/Disk_Usage>the postgresql wiki</a></li><li>except one minor change &mldr; for <code>('user_blah', 'user_blar', 'schema1', 'schema2')</code> schemas only &mldr;</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>SELECT</span> <span style=color:#f92672>*</span>, pg_size_pretty(total_bytes) <span style=color:#66d9ef>AS</span> total
+</code></pre></div><h4 id=disk-usage-per-table>Disk Usage per table</h4>
+<ul>
+<li>from <a href=https://wiki.postgresql.org/wiki/Disk_Usage>the postgresql wiki</a></li>
+<li>except one minor change &mldr; for <code>('user_blah', 'user_blar', 'schema1', 'schema2')</code> schemas only &mldr;</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>SELECT</span> <span style=color:#f92672>*</span>, pg_size_pretty(total_bytes) <span style=color:#66d9ef>AS</span> total
     , pg_size_pretty(index_bytes) <span style=color:#66d9ef>AS</span> <span style=color:#66d9ef>INDEX</span>
     , pg_size_pretty(toast_bytes) <span style=color:#66d9ef>AS</span> <span style=color:#66d9ef>toast</span>
     , pg_size_pretty(table_bytes) <span style=color:#66d9ef>AS</span> <span style=color:#66d9ef>TABLE</span>
@@ -28,7 +117,11 @@
           <span style=color:#66d9ef>and</span> nspname <span style=color:#66d9ef>in</span> (<span style=color:#e6db74>&#39;user_blah&#39;</span>, <span style=color:#e6db74>&#39;user_blar&#39;</span>, <span style=color:#e6db74>&#39;schema1&#39;</span>, <span style=color:#e6db74>&#39;schema2&#39;</span>)
   ) a
 ) a
-</code></pre></div><h4 id=detect-blocked-queries>detect blocked queries?</h4><ul><li>This didnt exactly work for me as expected, but colleague had mentioned this &mldr;</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>SELECT</span>
+</code></pre></div><h4 id=detect-blocked-queries>detect blocked queries?</h4>
+<ul>
+<li>This didnt exactly work for me as expected, but colleague had mentioned this &mldr;</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>SELECT</span>
   COALESCE(blockingl.relation::regclass::text,blockingl.locktype) <span style=color:#66d9ef>as</span> locked_item,
   now() <span style=color:#f92672>-</span> blockeda.query_start <span style=color:#66d9ef>AS</span> waiting_duration, blockeda.pid <span style=color:#66d9ef>AS</span> blocked_pid,
   blockeda.query <span style=color:#66d9ef>as</span> blocked_query, blockedl.<span style=color:#66d9ef>mode</span> <span style=color:#66d9ef>as</span> blocked_mode,
@@ -46,50 +139,178 @@
 <span style=color:#66d9ef>AND</span> blockinga.datname <span style=color:#f92672>=</span> current_database()
 
 
-</code></pre></div><h4 id=hmmmm-how-about-this>hmmmm how about this</h4><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>select</span> blockingl.relation, blockingl.pid, blockingl.<span style=color:#66d9ef>mode</span>, blockingl.<span style=color:#66d9ef>granted</span>,
+</code></pre></div><h4 id=hmmmm-how-about-this>hmmmm how about this</h4>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>select</span> blockingl.relation, blockingl.pid, blockingl.<span style=color:#66d9ef>mode</span>, blockingl.<span style=color:#66d9ef>granted</span>,
         pgclass.relname, stat.usename, stat.application_name, stat.wait_event_type, stat.wait_event, stat.<span style=color:#66d9ef>state</span>, stat.query
     <span style=color:#66d9ef>from</span> pg_catalog.pg_locks blockingl
     <span style=color:#66d9ef>join</span> pg_class pgclass <span style=color:#66d9ef>on</span> blockingl.relation <span style=color:#f92672>=</span> pgclass.oid 
     <span style=color:#66d9ef>join</span> pg_stat_activity stat <span style=color:#66d9ef>on</span> stat.pid <span style=color:#f92672>=</span> blockingl.pid 
 
-</code></pre></div><h4 id=check-role-membership>check role membership</h4><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>select</span> rr.<span style=color:#f92672>*</span>, pam.<span style=color:#f92672>*</span> <span style=color:#66d9ef>from</span> pg_catalog.pg_roles rr 
+</code></pre></div><h4 id=check-role-membership>check role membership</h4>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>select</span> rr.<span style=color:#f92672>*</span>, pam.<span style=color:#f92672>*</span> <span style=color:#66d9ef>from</span> pg_catalog.pg_roles rr 
  <span style=color:#66d9ef>join</span> pg_catalog.pg_auth_members pam <span style=color:#66d9ef>on</span> rr.<span style=color:#e6db74>&#34;oid&#34;</span> <span style=color:#f92672>=</span> pam.roleid 
  
-</code></pre></div><h4 id=in-line-table>in line table</h4><ul><li>using a CTE &mldr;</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>with</span> datar(col1,col2) <span style=color:#66d9ef>as</span> (
+</code></pre></div><h4 id=in-line-table>in line table</h4>
+<ul>
+<li>using a CTE &mldr;</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>with</span> datar(col1,col2) <span style=color:#66d9ef>as</span> (
     <span style=color:#66d9ef>values</span> (<span style=color:#ae81ff>1</span>,<span style=color:#ae81ff>2</span>), (<span style=color:#ae81ff>2</span>,<span style=color:#ae81ff>3</span>), (<span style=color:#ae81ff>4</span>,<span style=color:#ae81ff>5</span>)
     )
 <span style=color:#66d9ef>select</span> col1, col2 <span style=color:#66d9ef>from</span> datar
 
-</code></pre></div><h4 id=coalesce-uses-early-stopping>COALESCE uses early stopping</h4><ul><li>I had a pretty expensive <code>COALESCE(col1, col2, ..., col50)</code> with 50 arguments recently. And in testing whether my non-null value was first or last made a big difference!</li></ul><h4 id=round-does-not-work-on-double-precision>round does not work on double precision</h4><ul><li>Wow interesting. I was comparing features generated in two tables to do some QA. Table 1 was the original or &ldquo;target gold&rdquo; table and table 2 was a table generated by production code. Using a simple <code>table1.col1 = table2.col1</code> comparison, a particular float column was coming back as <code>0.092</code> , for about <code>100k</code> rows. Hand inspecting, this looked like a difference of precision, but when I applied <code>round(table1.col1, 3) = round(table2.col1, 3)</code> instead, I got</li></ul><pre><code>UndefinedFunction: function round(double precision, integer) does not exist
-</code></pre><p>And surely enough after reading the <a href=https://www.postgresql.org/docs/9.6/functions-math.html>docs</a> , oddly enough <code>round</code> with precision is only defined for <code>numeric</code> and not <code>float8</code> (aka <code>double precision</code>). After casting to <code>numeric</code> my result of <code>round(table1.col1::numeric, 3) = round(table2.col1::numeric, 3)</code> was <code>0.990</code>. Can dig deeper about the implementation later!</p><h4 id=to-infinity-and-beyond>To infinity and beyond</h4><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>select</span> <span style=color:#ae81ff>999999</span><span style=color:#f92672>&gt;</span> <span style=color:#e6db74>&#39;infinity&#39;</span>::float 
-</code></pre></div><h4 id=unnesting--the-opposite-of-crosstab-aka-pivoting>unnesting , the opposite of crosstab (aka pivoting)</h4><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>CREATE</span>  <span style=color:#66d9ef>TABLE</span> foo (id int, a text, b text, <span style=color:#66d9ef>c</span> text);
+</code></pre></div><h4 id=coalesce-uses-early-stopping>COALESCE uses early stopping</h4>
+<ul>
+<li>I had a pretty expensive <code>COALESCE(col1, col2, ..., col50)</code> with 50 arguments recently. And in testing whether my non-null value was first or last made a big difference!</li>
+</ul>
+<h4 id=round-does-not-work-on-double-precision>round does not work on double precision</h4>
+<ul>
+<li>Wow interesting. I was comparing features generated in two tables to do some QA. Table 1 was the original or &ldquo;target gold&rdquo; table and table 2 was a table generated by production code. Using a simple <code>table1.col1 = table2.col1</code> comparison, a particular float column was coming back as <code>0.092</code> , for about <code>100k</code> rows. Hand inspecting, this looked like a difference of precision, but when I applied <code>round(table1.col1, 3) = round(table2.col1, 3)</code> instead, I got</li>
+</ul>
+<pre><code>UndefinedFunction: function round(double precision, integer) does not exist
+</code></pre><p>And surely enough after reading the <a href=https://www.postgresql.org/docs/9.6/functions-math.html>docs</a> , oddly enough <code>round</code> with precision is only defined for <code>numeric</code> and not <code>float8</code> (aka <code>double precision</code>). After casting to <code>numeric</code> my result of <code>round(table1.col1::numeric, 3) = round(table2.col1::numeric, 3)</code> was <code>0.990</code>. Can dig deeper about the implementation later!</p>
+<h4 id=to-infinity-and-beyond>To infinity and beyond</h4>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>select</span> <span style=color:#ae81ff>999999</span><span style=color:#f92672>&gt;</span> <span style=color:#e6db74>&#39;infinity&#39;</span>::float 
+</code></pre></div><h4 id=unnesting--the-opposite-of-crosstab-aka-pivoting>unnesting , the opposite of crosstab (aka pivoting)</h4>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>CREATE</span>  <span style=color:#66d9ef>TABLE</span> foo (id int, a text, b text, <span style=color:#66d9ef>c</span> text);
 <span style=color:#66d9ef>INSERT</span> <span style=color:#66d9ef>INTO</span> foo <span style=color:#66d9ef>VALUES</span> (<span style=color:#ae81ff>1</span>, <span style=color:#e6db74>&#39;ant&#39;</span>, <span style=color:#e6db74>&#39;cat&#39;</span>, <span style=color:#e6db74>&#39;chimp&#39;</span>), (<span style=color:#ae81ff>2</span>, <span style=color:#e6db74>&#39;grape&#39;</span>, <span style=color:#e6db74>&#39;mint&#39;</span>, <span style=color:#e6db74>&#39;basil&#39;</span>),
                         (<span style=color:#ae81ff>3</span>, <span style=color:#e6db74>&#39;blur&#39;</span>, <span style=color:#e6db74>&#39;cart&#39;</span>, <span style=color:#e6db74>&#39;jump&#39;</span>);
-</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>select</span> <span style=color:#f92672>*</span> <span style=color:#66d9ef>from</span> foo
-</code></pre></div><table><thead><tr><th>id</th><th>a</th><th>b</th><th>c</th></tr></thead><tbody><tr><td>1</td><td>ant</td><td>cat</td><td>chimp</td></tr><tr><td>2</td><td>grape</td><td>mint</td><td>basil</td></tr><tr><td>3</td><td>blur</td><td>cart</td><td>jump</td></tr></tbody></table><pre><code>SELECT id,
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>select</span> <span style=color:#f92672>*</span> <span style=color:#66d9ef>from</span> foo
+</code></pre></div><table>
+<thead>
+<tr>
+<th>id</th>
+<th>a</th>
+<th>b</th>
+<th>c</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>ant</td>
+<td>cat</td>
+<td>chimp</td>
+</tr>
+<tr>
+<td>2</td>
+<td>grape</td>
+<td>mint</td>
+<td>basil</td>
+</tr>
+<tr>
+<td>3</td>
+<td>blur</td>
+<td>cart</td>
+<td>jump</td>
+</tr>
+</tbody>
+</table>
+<pre><code>SELECT id,
        unnest(array['a', 'b', 'c']) AS colname,
        unnest(array[a, b, c]) AS thing
 FROM foo
 ORDER BY id;
-</code></pre><table><thead><tr><th>id</th><th>colname</th><th>thing</th></tr></thead><tbody><tr><td>1</td><td>a</td><td>ant</td></tr><tr><td>1</td><td>b</td><td>cat</td></tr><tr><td>1</td><td>c</td><td>chimp</td></tr><tr><td>2</td><td>a</td><td>grape</td></tr><tr><td>2</td><td>b</td><td>mint</td></tr><tr><td>2</td><td>c</td><td>basil</td></tr><tr><td>3</td><td>a</td><td>blur</td></tr><tr><td>3</td><td>b</td><td>cart</td></tr><tr><td>3</td><td>c</td><td>jump</td></tr></tbody></table><h4 id=copy-paste-a-table-with-create-table-as>copy paste a table with create table as</h4><ul><li>Copy-pastaing a table with <code>CREATE TABLE AS</code> is sort of obvious, but laying it out doesn&rsquo;t hurt</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>CREATE</span> <span style=color:#66d9ef>TABLE</span> blah_backup <span style=color:#66d9ef>AS</span>
+</code></pre><table>
+<thead>
+<tr>
+<th>id</th>
+<th>colname</th>
+<th>thing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>a</td>
+<td>ant</td>
+</tr>
+<tr>
+<td>1</td>
+<td>b</td>
+<td>cat</td>
+</tr>
+<tr>
+<td>1</td>
+<td>c</td>
+<td>chimp</td>
+</tr>
+<tr>
+<td>2</td>
+<td>a</td>
+<td>grape</td>
+</tr>
+<tr>
+<td>2</td>
+<td>b</td>
+<td>mint</td>
+</tr>
+<tr>
+<td>2</td>
+<td>c</td>
+<td>basil</td>
+</tr>
+<tr>
+<td>3</td>
+<td>a</td>
+<td>blur</td>
+</tr>
+<tr>
+<td>3</td>
+<td>b</td>
+<td>cart</td>
+</tr>
+<tr>
+<td>3</td>
+<td>c</td>
+<td>jump</td>
+</tr>
+</tbody>
+</table>
+<h4 id=copy-paste-a-table-with-create-table-as>copy paste a table with create table as</h4>
+<ul>
+<li>Copy-pastaing a table with <code>CREATE TABLE AS</code> is sort of obvious, but laying it out doesn&rsquo;t hurt</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>CREATE</span> <span style=color:#66d9ef>TABLE</span> blah_backup <span style=color:#66d9ef>AS</span>
 <span style=color:#66d9ef>SELECT</span> <span style=color:#f92672>*</span>
 <span style=color:#66d9ef>FROM</span> source_table
 
-</code></pre></div><ul><li><a href="https://dba.stackexchange.com/questions/156105/create-table-as-vs-select-into?newreg=f13041cd0d564c7f97956cde8793af0e">cool stack overflow response here too</a></li></ul><h4 id=create-user>Create user</h4><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>CREATE</span> <span style=color:#66d9ef>USER</span> blah_user <span style=color:#66d9ef>WITH</span> PASSWORD <span style=color:#e6db74>&#39;swear_words&#39;</span>;
+</code></pre></div><ul>
+<li><a href="https://dba.stackexchange.com/questions/156105/create-table-as-vs-select-into?newreg=f13041cd0d564c7f97956cde8793af0e">cool stack overflow response here too</a></li>
+</ul>
+<h4 id=create-user>Create user</h4>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>CREATE</span> <span style=color:#66d9ef>USER</span> blah_user <span style=color:#66d9ef>WITH</span> PASSWORD <span style=color:#e6db74>&#39;swear_words&#39;</span>;
 
 <span style=color:#66d9ef>GRANT</span> <span style=color:#66d9ef>CONNECT</span> <span style=color:#66d9ef>ON</span> <span style=color:#66d9ef>DATABASE</span> mycooldb <span style=color:#66d9ef>TO</span> blah_user;
 <span style=color:#66d9ef>GRANT</span> <span style=color:#66d9ef>USAGE</span> <span style=color:#66d9ef>ON</span> <span style=color:#66d9ef>SCHEMA</span> myschema <span style=color:#66d9ef>TO</span> blah_user;
 <span style=color:#66d9ef>GRANT</span> <span style=color:#66d9ef>SELECT</span> <span style=color:#66d9ef>ON</span> myschema.quick_table <span style=color:#66d9ef>TO</span> blah_user;
 
-</code></pre></div><ul><li>Change password</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>ALTER</span> <span style=color:#66d9ef>USER</span> user_name <span style=color:#66d9ef>WITH</span> PASSWORD <span style=color:#e6db74>&#39;new_password&#39;</span>;
+</code></pre></div><ul>
+<li>Change password</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>ALTER</span> <span style=color:#66d9ef>USER</span> user_name <span style=color:#66d9ef>WITH</span> PASSWORD <span style=color:#e6db74>&#39;new_password&#39;</span>;
 
-</code></pre></div><ul><li>check grants.. ( user w/ appropriate permissions )</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>SELECT</span> table_catalog, table_schema, <span style=color:#66d9ef>table_name</span>, privilege_type, grantee
+</code></pre></div><ul>
+<li>check grants.. ( user w/ appropriate permissions )</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>SELECT</span> table_catalog, table_schema, <span style=color:#66d9ef>table_name</span>, privilege_type, grantee
 <span style=color:#66d9ef>FROM</span>   information_schema.table_privileges 
-</code></pre></div><ul><li>list users</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>select</span> <span style=color:#f92672>*</span> <span style=color:#66d9ef>from</span> pg_user
-</code></pre></div><h4 id=set-lock_timeout-to-avoid-waiting-endlessly-on-table-alter>set lock_timeout to avoid waiting endlessly on table alter</h4><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#f92672>#</span> example <span style=color:#66d9ef>from</span> article , which bit me personally..
+</code></pre></div><ul>
+<li>list users</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>select</span> <span style=color:#f92672>*</span> <span style=color:#66d9ef>from</span> pg_user
+</code></pre></div><h4 id=set-lock_timeout-to-avoid-waiting-endlessly-on-table-alter>set lock_timeout to avoid waiting endlessly on table alter</h4>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#f92672>#</span> example <span style=color:#66d9ef>from</span> article , which bit me personally..
 <span style=color:#66d9ef>SET</span> lock_timeout <span style=color:#66d9ef>TO</span> <span style=color:#e6db74>&#39;2s&#39;</span>;
 <span style=color:#66d9ef>ALTER</span> <span style=color:#66d9ef>TABLE</span> items <span style=color:#66d9ef>ADD</span> <span style=color:#66d9ef>COLUMN</span> last_update timestamptz;
-</code></pre></div><ul><li>source: <a href=https://www.citusdata.com/blog/2018/02/22/seven-tips-for-dealing-with-postgres-locks/>here</a></li></ul><h4 id=arbitrarily-select-unrelated-data-for-presentation-purposes>arbitrarily select unrelated data for presentation purposes</h4><ul><li>Not sure if this is the best way to do this, but I wanted to be able select three different max values in one shot</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>with</span> arf <span style=color:#66d9ef>as</span> (<span style=color:#66d9ef>select</span> <span style=color:#ae81ff>1</span> <span style=color:#66d9ef>as</span> aa, 
+</code></pre></div><ul>
+<li>source: <a href=https://www.citusdata.com/blog/2018/02/22/seven-tips-for-dealing-with-postgres-locks/>here</a></li>
+</ul>
+<h4 id=arbitrarily-select-unrelated-data-for-presentation-purposes>arbitrarily select unrelated data for presentation purposes</h4>
+<ul>
+<li>Not sure if this is the best way to do this, but I wanted to be able select three different max values in one shot</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>with</span> arf <span style=color:#66d9ef>as</span> (<span style=color:#66d9ef>select</span> <span style=color:#ae81ff>1</span> <span style=color:#66d9ef>as</span> aa, 
             <span style=color:#66d9ef>max</span>(id) <span style=color:#66d9ef>as</span> max_arf
             <span style=color:#66d9ef>from</span> mytable 
             <span style=color:#66d9ef>where</span> <span style=color:#66d9ef>key</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;arf&#39;</span>),
@@ -106,14 +327,44 @@ car <span style=color:#66d9ef>as</span> (<span style=color:#66d9ef>select</span>
 <span style=color:#66d9ef>from</span> arf <span style=color:#66d9ef>join</span> bar <span style=color:#66d9ef>on</span> arf.aa <span style=color:#f92672>=</span> bar.aa
 <span style=color:#66d9ef>join</span> car <span style=color:#66d9ef>on</span> arf.aa <span style=color:#f92672>=</span> car.aa
 
-</code></pre></div><table><thead><tr><th>aa</th><th>max_arf</th><th>aa</th><th>max_bar</th><th>aa</th><th>max_car</th></tr></thead><tbody><tr><td>1</td><td>4,585,834</td><td>1</td><td>4,046,591</td><td>1</td><td>4,585,835</td></tr></tbody></table><h4 id=random-sample-from-a-table>Random sample from a table</h4><ul><li>Read this cool solution <a href=https://anitagraser.com/2011/03/12/selecting-a-random-sample-from-postgresql/>here</a></li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql>
+</code></pre></div><table>
+<thead>
+<tr>
+<th>aa</th>
+<th>max_arf</th>
+<th>aa</th>
+<th>max_bar</th>
+<th>aa</th>
+<th>max_car</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4,585,834</td>
+<td>1</td>
+<td>4,046,591</td>
+<td>1</td>
+<td>4,585,835</td>
+</tr>
+</tbody>
+</table>
+<h4 id=random-sample-from-a-table>Random sample from a table</h4>
+<ul>
+<li>Read this cool solution <a href=https://anitagraser.com/2011/03/12/selecting-a-random-sample-from-postgresql/>here</a></li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql>
 <span style=color:#66d9ef>SELECT</span> <span style=color:#f92672>*</span> <span style=color:#66d9ef>FROM</span> myTable
 <span style=color:#66d9ef>WHERE</span> attribute <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;myValue&#39;</span>
 <span style=color:#66d9ef>ORDER</span> <span style=color:#66d9ef>BY</span> random()
 <span style=color:#66d9ef>LIMIT</span> <span style=color:#ae81ff>1000</span>;
 
 
-</code></pre></div><h4 id=in-place-jsonb--extraction--unnesting>in place jsonb extraction / unnesting</h4><ul><li>If we have a table with a <code>jsonb</code> type column , called <code>value</code> , and we want to &ldquo;un-nest&rdquo; or normalize some data that happens to be one level below, in the jsonb&mldr;</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>
+</code></pre></div><h4 id=in-place-jsonb--extraction--unnesting>in place jsonb extraction / unnesting</h4>
+<ul>
+<li>If we have a table with a <code>jsonb</code> type column , called <code>value</code> , and we want to &ldquo;un-nest&rdquo; or normalize some data that happens to be one level below, in the jsonb&mldr;</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>
 ids_sql <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;(1, 2, 3)&#39;</span> 
 blah_key <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;green_type&#39;</span> <span style=color:#75715e># some additional constraint other than the id</span>
 
@@ -130,7 +381,7 @@ select_cols <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;, 
 col_str <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;, &#39;</span><span style=color:#f92672>.</span>join([<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;&#34;</span><span style=color:#e6db74>{</span>x<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;&#39;</span> <span style=color:#66d9ef>for</span> x <span style=color:#f92672>in</span> target_cols])
 targetcol_str <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;, &#39;</span><span style=color:#f92672>.</span>join([<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;blah.&#34;</span><span style=color:#e6db74>{</span>x<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;&#39;</span> <span style=color:#66d9ef>for</span> x <span style=color:#f92672>in</span> target_cols])
 
-</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>UPDATE</span> <span style=color:#960050;background-color:#1e0010>{</span><span style=color:#66d9ef>schema</span><span style=color:#960050;background-color:#1e0010>}</span>.mytable <span style=color:#66d9ef>as</span> dp
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>UPDATE</span> <span style=color:#960050;background-color:#1e0010>{</span><span style=color:#66d9ef>schema</span><span style=color:#960050;background-color:#1e0010>}</span>.mytable <span style=color:#66d9ef>as</span> dp
 <span style=color:#66d9ef>SET</span> (<span style=color:#960050;background-color:#1e0010>{</span>col_str<span style=color:#960050;background-color:#1e0010>}</span>) <span style=color:#f92672>=</span> (<span style=color:#960050;background-color:#1e0010>{</span>targetcol_str<span style=color:#960050;background-color:#1e0010>}</span>)
 <span style=color:#66d9ef>FROM</span> (<span style=color:#66d9ef>select</span> id, <span style=color:#66d9ef>key</span>, 
       <span style=color:#960050;background-color:#1e0010>{</span>select_cols<span style=color:#960050;background-color:#1e0010>}</span>  <span style=color:#75715e>-- json-&gt;expressions-&gt;to-&gt;unpack-&gt;data!
@@ -142,7 +393,12 @@ targetcol_str <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;
 <span style=color:#66d9ef>WHERE</span> (blah.id <span style=color:#f92672>=</span> dp.id
        <span style=color:#66d9ef>AND</span> blah.<span style=color:#66d9ef>key</span> <span style=color:#f92672>=</span> dp.<span style=color:#66d9ef>key</span>)
 
-</code></pre></div><h4 id=order-of-joins-matters-looks-like>order of joins matters looks like</h4><ul><li>I had two gigantic tables (10million+ each) , t1, t2,</li><li>this first query was taking forever&mldr;</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>with</span> ids(foo) <span style=color:#66d9ef>as</span> (
+</code></pre></div><h4 id=order-of-joins-matters-looks-like>order of joins matters looks like</h4>
+<ul>
+<li>I had two gigantic tables (10million+ each) , t1, t2,</li>
+<li>this first query was taking forever&mldr;</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>with</span> ids(foo) <span style=color:#66d9ef>as</span> (
     <span style=color:#66d9ef>select</span> <span style=color:#f92672>*</span> <span style=color:#66d9ef>from</span> generate_series(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>5000</span>) <span style=color:#66d9ef>as</span> foo    
     )    
 
@@ -150,7 +406,10 @@ targetcol_str <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;
 <span style=color:#66d9ef>from</span> t1 <span style=color:#66d9ef>join</span> t2 
 <span style=color:#66d9ef>on</span> t1.id <span style=color:#f92672>=</span> t2.id
 <span style=color:#66d9ef>where</span> t2.id <span style=color:#66d9ef>in</span> (<span style=color:#66d9ef>select</span> foo <span style=color:#66d9ef>from</span> ids)
-</code></pre></div><ul><li>but this one was quick , I think because the join was done after constraining the ids not before</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>with</span> ids(foo) <span style=color:#66d9ef>as</span> (
+</code></pre></div><ul>
+<li>but this one was quick , I think because the join was done after constraining the ids not before</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>with</span> ids(foo) <span style=color:#66d9ef>as</span> (
     <span style=color:#66d9ef>select</span> <span style=color:#f92672>*</span> <span style=color:#66d9ef>from</span> generate_series(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>5000</span>) <span style=color:#66d9ef>as</span> foo    
     )    
 
@@ -158,7 +417,12 @@ targetcol_str <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;
 <span style=color:#66d9ef>from</span> t1 <span style=color:#66d9ef>join</span> t2 
 <span style=color:#66d9ef>on</span> t1.id <span style=color:#f92672>=</span> t2.id
 <span style=color:#66d9ef>where</span> t1.id <span style=color:#66d9ef>in</span> (<span style=color:#66d9ef>select</span> foo <span style=color:#66d9ef>from</span> ids)
-</code></pre></div><h4 id=hashtag-binning>hashtag binning</h4><ul><li><code>width_bucket</code> very nice func for binning some data and then running a <code>sum()</code> aggregation afterwards for instance,</li><li>the array passed to <code>width_bucket</code> is an array of the lower bounds</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>with</span> deltas(delta, countt) <span style=color:#66d9ef>as</span> (
+</code></pre></div><h4 id=hashtag-binning>hashtag binning</h4>
+<ul>
+<li><code>width_bucket</code> very nice func for binning some data and then running a <code>sum()</code> aggregation afterwards for instance,</li>
+<li>the array passed to <code>width_bucket</code> is an array of the lower bounds</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>with</span> deltas(delta, countt) <span style=color:#66d9ef>as</span> (
     <span style=color:#66d9ef>values</span> (<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>3</span>), (<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>4</span>), (<span style=color:#ae81ff>19</span>, <span style=color:#ae81ff>9</span>), 
            (<span style=color:#ae81ff>50</span>, <span style=color:#ae81ff>2</span>), (<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>8</span>), (<span style=color:#ae81ff>189</span>, <span style=color:#ae81ff>3</span>), 
            (<span style=color:#ae81ff>2000</span>, <span style=color:#ae81ff>98</span>), (<span style=color:#ae81ff>2001</span>, <span style=color:#ae81ff>3</span>),
@@ -173,7 +437,68 @@ binned <span style=color:#66d9ef>as</span> (
 )
 <span style=color:#66d9ef>select</span> delta, countt, bin  <span style=color:#75715e>-- sum(countt) 
 </span><span style=color:#75715e></span><span style=color:#66d9ef>from</span> binned 
-</code></pre></div><table><thead><tr><th>delta</th><th>countt</th><th>bin</th></tr></thead><tbody><tr><td>-1</td><td>3</td><td>0</td></tr><tr><td>0</td><td>4</td><td>1</td></tr><tr><td>19</td><td>9</td><td>1</td></tr><tr><td>50</td><td>2</td><td>2</td></tr><tr><td>2</td><td>8</td><td>1</td></tr><tr><td>189</td><td>3</td><td>4</td></tr><tr><td>2,000</td><td>98</td><td>6</td></tr><tr><td>2,001</td><td>3</td><td>6</td></tr><tr><td>[NULL]</td><td>2</td><td>[NULL]</td></tr><tr><td>[NULL]</td><td>9</td><td>[NULL]</td></tr></tbody></table><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>with</span> deltas(delta, countt) <span style=color:#66d9ef>as</span> (
+</code></pre></div><table>
+<thead>
+<tr>
+<th>delta</th>
+<th>countt</th>
+<th>bin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-1</td>
+<td>3</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>4</td>
+<td>1</td>
+</tr>
+<tr>
+<td>19</td>
+<td>9</td>
+<td>1</td>
+</tr>
+<tr>
+<td>50</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8</td>
+<td>1</td>
+</tr>
+<tr>
+<td>189</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>2,000</td>
+<td>98</td>
+<td>6</td>
+</tr>
+<tr>
+<td>2,001</td>
+<td>3</td>
+<td>6</td>
+</tr>
+<tr>
+<td>[NULL]</td>
+<td>2</td>
+<td>[NULL]</td>
+</tr>
+<tr>
+<td>[NULL]</td>
+<td>9</td>
+<td>[NULL]</td>
+</tr>
+</tbody>
+</table>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>with</span> deltas(delta, countt) <span style=color:#66d9ef>as</span> (
     <span style=color:#66d9ef>values</span> (<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>3</span>), (<span style=color:#ae81ff>11</span>, <span style=color:#ae81ff>4</span>), (<span style=color:#ae81ff>19</span>, <span style=color:#ae81ff>9</span>), 
            (<span style=color:#ae81ff>50</span>, <span style=color:#ae81ff>2</span>), (<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>8</span>), (<span style=color:#ae81ff>189</span>, <span style=color:#ae81ff>3</span>), 
            (<span style=color:#ae81ff>77</span>, <span style=color:#ae81ff>98</span>), (<span style=color:#ae81ff>178</span>, <span style=color:#ae81ff>3</span>)),
@@ -187,12 +512,39 @@ binned <span style=color:#66d9ef>as</span> (
 <span style=color:#66d9ef>from</span> binned
 <span style=color:#66d9ef>group</span> <span style=color:#66d9ef>by</span> bin 
 <span style=color:#66d9ef>order</span> <span style=color:#66d9ef>by</span> bin
-</code></pre></div><table><thead><tr><th>bin</th><th>sum</th></tr></thead><tbody><tr><td>1</td><td>24</td></tr><tr><td>2</td><td>100</td></tr><tr><td>4</td><td>6</td></tr></tbody></table><h4 id=auto-make-that-markdown-table-header-line>auto make that markdown table header line</h4><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>make_table_header_line</span>(header):
+</code></pre></div><table>
+<thead>
+<tr>
+<th>bin</th>
+<th>sum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>24</td>
+</tr>
+<tr>
+<td>2</td>
+<td>100</td>
+</tr>
+<tr>
+<td>4</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<h4 id=auto-make-that-markdown-table-header-line>auto make that markdown table header line</h4>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>make_table_header_line</span>(header):
     dashes <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#39;--&#39;</span> <span style=color:#66d9ef>for</span> x <span style=color:#f92672>in</span> header<span style=color:#f92672>.</span>split(<span style=color:#e6db74>&#39;|&#39;</span>)]
     <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#39;|&#39;</span><span style=color:#f92672>.</span>join(dashes)
     
 
-</code></pre></div><h4 id=list-constraints>list constraints</h4><ul><li>from <a href=https://dba.stackexchange.com/a/214877>stack overflow</a> &mldr;</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>SELECT</span> con.<span style=color:#f92672>*</span>
+</code></pre></div><h4 id=list-constraints>list constraints</h4>
+<ul>
+<li>from <a href=https://dba.stackexchange.com/a/214877>stack overflow</a> &mldr;</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>SELECT</span> con.<span style=color:#f92672>*</span>
        <span style=color:#66d9ef>FROM</span> pg_catalog.pg_constraint con
             <span style=color:#66d9ef>INNER</span> <span style=color:#66d9ef>JOIN</span> pg_catalog.pg_class rel
                        <span style=color:#66d9ef>ON</span> rel.oid <span style=color:#f92672>=</span> con.conrelid
@@ -200,20 +552,63 @@ binned <span style=color:#66d9ef>as</span> (
                        <span style=color:#66d9ef>ON</span> nsp.oid <span style=color:#f92672>=</span> connamespace
        <span style=color:#66d9ef>WHERE</span> nsp.nspname <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;&lt;schema name&gt;&#39;</span>
              <span style=color:#66d9ef>AND</span> rel.relname <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;&lt;table name&gt;&#39;</span>;
-</code></pre></div><ul><li>Oh wow&mldr; also this section from the <a href=https://www.postgresql.org/docs/9.6/sql-altertable.html>ALTER TABLE ADD CONSTRAINT postgresql doc</a> was super useful/well written..</li></ul><blockquote><p><em>Scanning a large table to verify a new foreign key or check constraint can take a long time, and other updates to the table are locked out until the <code>ALTER TABLE ADD CONSTRAINT</code> command is committed. The main purpose of the <code>NOT VALID</code> constraint option is to reduce the impact of adding a constraint on concurrent updates. With <code>NOT VALID</code>, the <code>ADD CONSTRAINT</code> command does not scan the table and can be committed immediately. After that, a VALIDATE CONSTRAINT command can be issued to verify that existing rows satisfy the constraint. The validation step does not need to lock out concurrent updates, since it knows that other transactions will be enforcing the constraint for rows that they insert or update; only pre-existing rows need to be checked. Hence, validation acquires only a <code>SHARE UPDATE EXCLUSIVE</code> lock on the table being altered. (If the constraint is a foreign key then a ROW SHARE lock is also required on the table referenced by the constraint.) In addition to improving concurrency, it can be useful to use <code>NOT VALID</code> and <code>VALIDATE CONSTRAINT</code> in cases where the table is known to contain pre-existing violations. Once the constraint is in place, no new violations can be inserted, and the existing problems can be corrected <em>at leisure</em> until <code>VALIDATE CONSTRAINT</code> finally succeeds.</em></p></blockquote><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#75715e>-- step one.
+</code></pre></div><ul>
+<li>Oh wow&mldr; also this section from the <a href=https://www.postgresql.org/docs/9.6/sql-altertable.html>ALTER TABLE ADD CONSTRAINT postgresql doc </a> was super useful/well written..</li>
+</ul>
+<blockquote>
+<p><em>Scanning a large table to verify a new foreign key or check constraint can take a long time, and other updates to the table are locked out until the <code>ALTER TABLE ADD CONSTRAINT</code> command is committed. The main purpose of the <code>NOT VALID</code> constraint option is to reduce the impact of adding a constraint on concurrent updates. With <code>NOT VALID</code>, the <code>ADD CONSTRAINT</code> command does not scan the table and can be committed immediately. After that, a VALIDATE CONSTRAINT command can be issued to verify that existing rows satisfy the constraint. The validation step does not need to lock out concurrent updates, since it knows that other transactions will be enforcing the constraint for rows that they insert or update; only pre-existing rows need to be checked. Hence, validation acquires only a <code>SHARE UPDATE EXCLUSIVE</code> lock on the table being altered. (If the constraint is a foreign key then a ROW SHARE lock is also required on the table referenced by the constraint.) In addition to improving concurrency, it can be useful to use <code>NOT VALID</code> and <code>VALIDATE CONSTRAINT</code> in cases where the table is known to contain pre-existing violations. Once the constraint is in place, no new violations can be inserted, and the existing problems can be corrected <em>at leisure</em> until <code>VALIDATE CONSTRAINT</code> finally succeeds.</em></p>
+</blockquote>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#75715e>-- step one.
 </span><span style=color:#75715e></span><span style=color:#66d9ef>alter</span> <span style=color:#66d9ef>table</span>    the_table_name
 <span style=color:#66d9ef>ADD</span> <span style=color:#66d9ef>constraint</span> the_constraint_name <span style=color:#66d9ef>unique</span> (col1, col2) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>VALID</span> 
 
 <span style=color:#75715e>-- step two..
 </span><span style=color:#75715e></span><span style=color:#66d9ef>alter</span> <span style=color:#66d9ef>table</span> the_table_name
     VALIDATE <span style=color:#66d9ef>CONSTRAINT</span> the_constraint_name
-</code></pre></div><h4 id=having>Having</h4><ul><li>Interesting conditional syntax aroung group by , without using a CTE&mldr;</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>select</span> id, <span style=color:#66d9ef>key</span>  , <span style=color:#66d9ef>count</span>(<span style=color:#f92672>*</span>) countt
+</code></pre></div><h4 id=having>Having</h4>
+<ul>
+<li>Interesting conditional syntax aroung group by , without using a CTE&mldr;</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>select</span> id, <span style=color:#66d9ef>key</span>  , <span style=color:#66d9ef>count</span>(<span style=color:#f92672>*</span>) countt
 <span style=color:#66d9ef>from</span> my_table
 
 <span style=color:#66d9ef>group</span> <span style=color:#66d9ef>by</span> id, <span style=color:#66d9ef>key</span> 
 <span style=color:#66d9ef>having</span> <span style=color:#66d9ef>count</span>(<span style=color:#f92672>*</span>) <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>1</span>
-</code></pre></div><ul><li>=></li></ul><table><thead><tr><th>id</th><th>key</th><th>countt</th></tr></thead><tbody><tr><td>1</td><td>foo</td><td>2</td></tr><tr><td>2</td><td>bar</td><td>3</td></tr></tbody></table><h4 id=invalid-input-syntax-for-integer>invalid input syntax for integer</h4><ul><li>Having come across this a few times, writing down here..</li></ul><pre><code>InvalidTextRepresentation: invalid input syntax for integer: &quot;&quot;
-</code></pre><ul><li>This typically means a blank string is being coaxed as an integer somewhere.</li><li>The solution is basically to find these and make sure they&rsquo;re nulls on the db.</li><li>And can also partition with an <code>id</code> column too for example, to do a little at a time to experiment.</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>update</span> mytable
+</code></pre></div><ul>
+<li>=></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>key</th>
+<th>countt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>foo</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bar</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<h4 id=invalid-input-syntax-for-integer>invalid input syntax for integer</h4>
+<ul>
+<li>Having come across this a few times, writing down here..</li>
+</ul>
+<pre><code>InvalidTextRepresentation: invalid input syntax for integer: &quot;&quot;
+</code></pre><ul>
+<li>This typically means a blank string is being coaxed as an integer somewhere.</li>
+<li>The solution is basically to find these and make sure they&rsquo;re nulls on the db.</li>
+<li>And can also partition with an <code>id</code> column too for example, to do a little at a time to experiment.</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>update</span> mytable
     <span style=color:#66d9ef>set</span> blahcol <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>
 <span style=color:#66d9ef>where</span>  blahcol <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;&#39;</span>
     <span style=color:#66d9ef>and</span> ( id <span style=color:#66d9ef>between</span> <span style=color:#ae81ff>1</span> <span style=color:#66d9ef>and</span> <span style=color:#ae81ff>100000</span>)
@@ -221,8 +616,36 @@ binned <span style=color:#66d9ef>as</span> (
 
 
 
-</code></pre></div><h4 id=a-warning-about-ctes>A warning about CTEs</h4><ul><li>Per <a href=https://hakibenita.medium.com/be-careful-with-cte-in-postgresql-fca5e24d2119>this article</a> , postgresql will run full CTE and store it, which is why I feel the only practical way of using CTEs in large expressions is along with partitioning .</li><li>In other words, although most postgresql queries will be able to run only the first <code>200</code> rows like a &ldquo;generator&rdquo; and return that to you really quickly, when you have a CTE in there, it has to run the whole thing first.</li></ul><h4 id=triggers>Triggers</h4><ul><li>Per <a href=https://serverfault.com/questions/331024/how-can-i-show-the-content-of-a-trigger-with-psql>here</a></li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>SELECT</span> <span style=color:#66d9ef>trigger_schema</span>,event_object_table,<span style=color:#66d9ef>trigger_schema</span>,<span style=color:#66d9ef>trigger_name</span>,event_manipulation,action_statement,action_timing 
+</code></pre></div><h4 id=a-warning-about-ctes>A warning about CTEs</h4>
+<ul>
+<li>Per <a href=https://hakibenita.medium.com/be-careful-with-cte-in-postgresql-fca5e24d2119>this article</a> , postgresql will run full CTE and store it, which is why I feel the only practical way of using CTEs in large expressions is along with partitioning .</li>
+<li>In other words, although most postgresql queries will be able to run only the first <code>200</code> rows like a &ldquo;generator&rdquo; and return that to you really quickly, when you have a CTE in there, it has to run the whole thing first.</li>
+</ul>
+<h4 id=triggers>Triggers</h4>
+<ul>
+<li>Per <a href=https://serverfault.com/questions/331024/how-can-i-show-the-content-of-a-trigger-with-psql>here</a></li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>SELECT</span> <span style=color:#66d9ef>trigger_schema</span>,event_object_table,<span style=color:#66d9ef>trigger_schema</span>,<span style=color:#66d9ef>trigger_name</span>,event_manipulation,action_statement,action_timing 
 <span style=color:#66d9ef>FROM</span> information_schema.triggers 
 
 <span style=color:#66d9ef>ORDER</span> <span style=color:#66d9ef>BY</span> event_object_table,event_manipulation
-</code></pre></div><ul class=pa0></ul><div class="mt6 instapaper_ignoref"></div></div><aside class="w-30-l mt6-l"></aside></article></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo><div class="flex justify-between"><a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://michal.piekarczyk.xyz/>&copy; My blog 2021</a><div></div></div></footer></body></html>
+</code></pre></div><ul class=pa0>
+</ul>
+<div class="mt6 instapaper_ignoref">
+</div>
+</div>
+<aside class="w-30-l mt6-l">
+</aside>
+</article>
+</main>
+<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
+<div class="flex justify-between">
+<a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://michal.piekarczyk.xyz/>
+&copy; My blog 2021
+</a>
+<div>
+</div>
+</div>
+</footer>
+</body>
+</html>

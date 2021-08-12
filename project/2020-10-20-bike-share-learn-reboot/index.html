@@ -1,12 +1,115 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Bike Share Learn Reboot | My blog</title><meta name=viewport content="width=device-width,minimum-scale=1"><meta name=description content="This project is a reboot of an earlier project predicting bicycle ride share riders destinations."><meta name=generator content="Hugo 0.85.0"><meta name=ROBOTS content="NOINDEX, NOFOLLOW"><link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css><meta property="og:title" content="Bike Share Learn Reboot"><meta property="og:description" content="This project is a reboot of an earlier project predicting bicycle ride share riders destinations."><meta property="og:type" content="article"><meta property="og:url" content="https://michal.piekarczyk.xyz/project/2020-10-20-bike-share-learn-reboot/"><meta property="article:section" content="project"><meta property="article:published_time" content="2020-10-20T10:00:05-04:00"><meta property="article:modified_time" content="2020-10-20T10:00:05-04:00"><meta property="og:site_name" content="My blog"><meta itemprop=name content="Bike Share Learn Reboot"><meta itemprop=description content="This project is a reboot of an earlier project predicting bicycle ride share riders destinations."><meta itemprop=datePublished content="2020-10-20T10:00:05-04:00"><meta itemprop=dateModified content="2020-10-20T10:00:05-04:00"><meta itemprop=wordCount content="4219"><meta itemprop=keywords content><meta name=twitter:card content="summary"><meta name=twitter:title content="Bike Share Learn Reboot"><meta name=twitter:description content="This project is a reboot of an earlier project predicting bicycle ride share riders destinations."></head><body class="ma0 avenir bg-near-white"><header class="cover bg-top" style=background-image:url(https://s3.amazonaws.com/my-blog-content/2020/2020-10-20-bike-share-learn-reboot/IMG_8499.jpg)><div class="pb3-m pb6-l bg-black-60"><nav class="pv3 ph3 ph4-ns" role=navigation><div class="flex-l justify-between items-center center"><a href=/ class="f3 fw2 hover-white no-underline white-90 dib">My blog</a><div class="flex-l items-center"><ul class="pl0 mr3"><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/about/ title="About page">About</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/handy/ title="Handy page">Handy</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/post/ title="Post page">Post</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/project/ title="Side Projects page">Side Projects</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/foo/ title="The Foos page">The Foos</a></li></ul></div></div></nav><div class="tc-l pv6 ph3 ph4-ns"><h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Bike Share Learn Reboot</h1></div></div></header><main class=pb7 role=main><article class="flex-l flex-wrap justify-between mw8 center ph3"><header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked">SIDE PROJECTS</aside><div id=sharing class=mt3><a href="https://www.facebook.com/sharer.php?u=https://michal.piekarczyk.xyz/project/2020-10-20-bike-share-learn-reboot/" class="facebook no-underline" aria-label="share on Facebook"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765 50.32h6.744V33.998h4.499l.596-5.624h-5.095l.007-2.816c0-1.466.14-2.253 2.244-2.253h2.812V17.68h-4.5c-5.405.0-7.307 2.729-7.307 7.317v3.377h-3.369v5.625h3.369V50.32zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg></a><a href="https://twitter.com/share?url=https://michal.piekarczyk.xyz/project/2020-10-20-bike-share-learn-reboot/&text=Bike%20Share%20Learn%20Reboot" class="twitter no-underline" aria-label="share on Twitter"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https://michal.piekarczyk.xyz/project/2020-10-20-bike-share-learn-reboot/&title=Bike%20Share%20Learn%20Reboot" class="linkedin no-underline" aria-label="share on LinkedIn"><svg height="32" style="enable-background:new 0 0 65 65" viewBox="0 0 65 65" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M50.837 48.137V36.425c0-6.275-3.35-9.195-7.816-9.195-3.604.0-5.219 1.983-6.119 3.374V27.71h-6.79c.09 1.917.0 20.427.0 20.427h6.79V36.729c0-.609.044-1.219.224-1.655.49-1.22 1.607-2.483 3.482-2.483 2.458.0 3.44 1.873 3.44 4.618v10.929H50.837zM22.959 24.922c2.367.0 3.842-1.57 3.842-3.531-.044-2.003-1.475-3.528-3.797-3.528s-3.841 1.524-3.841 3.528c0 1.961 1.474 3.531 3.753 3.531H22.959zM34 64C17.432 64 4 50.568 4 34 4 17.431 17.432 4 34 4s30 13.431 30 30c0 16.568-13.432 30-30 30zM26.354 48.137V27.71h-6.789v20.427h6.789z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></a></div><h1 class="f1 athelas mt3 mb1">Bike Share Learn Reboot</h1><time class="f6 mv4 dib tracked" datetime=2020-10-20T10:00:05-04:00>October 20, 2020</time></header><div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h3 id=summary>Summary</h3><p>This project is a reboot of <a href=/project/2016-12-18-citibike-project/>my earlier project</a> of predicting bicycle ride share riders destinations.
-<a href=https://bike-hop-predict.s3.amazonaws.com/index.html>https://bike-hop-predict.s3.amazonaws.com/index.html</a></p><p>This time around I used XGBoost, newer features, hyper parameter tuning and I have a <a href=https://bike-hop-predict.s3.amazonaws.com/index.html target=_blank>Demo Site</a> as well! I wanted very much to see if XGBoost has online learning like I used in <a href=/project/2020-04-05-aviation-kaggle-low-level/>an earlier TensorFlow project</a>, but as I <a href=/post/2020-06-21-notes-xgboost/>wrote here</a>, I could not pick up where I left off at least the way I tried it. And <a href=/post/2020-07-24-understanding-tuning-results/>here</a> is a mini post on looking at hyper parameter tuning results. And <a href=/post/2020-10-22-features-v3/>here</a> is a visual look at some of the new features I explored including.</p><p>Again, the data looks like this</p><pre><code>&quot;tripduration&quot;,&quot;starttime&quot;,&quot;stoptime&quot;,&quot;start station id&quot;,&quot;start station name&quot;,&quot;start station latitude&quot;,&quot;start station longitude&quot;,&quot;end station id&quot;,&quot;end station name&quot;,&quot;end station latitude&quot;,&quot;end station longitude&quot;,&quot;bikeid&quot;,&quot;usertype&quot;,&quot;birth year&quot;,&quot;gender&quot;
+<!doctype html><html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<title>Bike Share Learn Reboot | My blog</title>
+<meta name=viewport content="width=device-width,minimum-scale=1">
+<meta name=description content="This project is a reboot of an earlier project predicting bicycle ride share riders destinations.">
+<meta name=generator content="Hugo 0.87.0">
+<meta name=ROBOTS content="NOINDEX, NOFOLLOW">
+<link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
+<meta property="og:title" content="Bike Share Learn Reboot">
+<meta property="og:description" content="This project is a reboot of an earlier project predicting bicycle ride share riders destinations.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://michal.piekarczyk.xyz/project/2020-10-20-bike-share-learn-reboot/"><meta property="article:section" content="project">
+<meta property="article:published_time" content="2020-10-20T10:00:05+00:00">
+<meta property="article:modified_time" content="2020-10-20T10:00:05+00:00"><meta property="og:site_name" content="My blog">
+<meta itemprop=name content="Bike Share Learn Reboot">
+<meta itemprop=description content="This project is a reboot of an earlier project predicting bicycle ride share riders destinations."><meta itemprop=datePublished content="2020-10-20T10:00:05+00:00">
+<meta itemprop=dateModified content="2020-10-20T10:00:05+00:00">
+<meta itemprop=wordCount content="4219">
+<meta itemprop=keywords content><meta name=twitter:card content="summary">
+<meta name=twitter:title content="Bike Share Learn Reboot">
+<meta name=twitter:description content="This project is a reboot of an earlier project predicting bicycle ride share riders destinations.">
+</head>
+<body class="ma0 avenir bg-near-white">
+<header class="cover bg-top" style=background-image:url(https://s3.amazonaws.com/my-blog-content/2020/2020-10-20-bike-share-learn-reboot/IMG_8499.jpg)>
+<div class="pb3-m pb6-l bg-black-60">
+<nav class="pv3 ph3 ph4-ns" role=navigation>
+<div class="flex-l justify-between items-center center">
+<a href=/ class="f3 fw2 hover-white no-underline white-90 dib">
+My blog
+</a>
+<div class="flex-l items-center">
+<ul class="pl0 mr3">
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/about/ title="About page">
+About
+</a>
+</li>
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/handy/ title="Handy page">
+Handy
+</a>
+</li>
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/post/ title="Post page">
+Post
+</a>
+</li>
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/project/ title="Side Projects page">
+Side Projects
+</a>
+</li>
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/foo/ title="The Foos page">
+The Foos
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<div class="tc-l pv6 ph3 ph4-ns">
+<h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Bike Share Learn Reboot</h1>
+</div>
+</div>
+</header>
+<main class=pb7 role=main>
+<article class="flex-l flex-wrap justify-between mw8 center ph3">
+<header class="mt4 w-100">
+<aside class="instapaper_ignoref b helvetica tracked">
+SIDE PROJECTS
+</aside>
+<div id=sharing class=mt3>
+<a href="https://www.facebook.com/sharer.php?u=https://michal.piekarczyk.xyz/project/2020-10-20-bike-share-learn-reboot/" class="facebook no-underline" aria-label="share on Facebook"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765 50.32h6.744V33.998h4.499l.596-5.624h-5.095l.007-2.816c0-1.466.14-2.253 2.244-2.253h2.812V17.68h-4.5c-5.405.0-7.307 2.729-7.307 7.317v3.377h-3.369v5.625h3.369V50.32zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
+</a>
+<a href="https://twitter.com/share?url=https://michal.piekarczyk.xyz/project/2020-10-20-bike-share-learn-reboot/&text=Bike%20Share%20Learn%20Reboot" class="twitter no-underline" aria-label="share on Twitter"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+</a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&url=https://michal.piekarczyk.xyz/project/2020-10-20-bike-share-learn-reboot/&title=Bike%20Share%20Learn%20Reboot" class="linkedin no-underline" aria-label="share on LinkedIn"><svg height="32" style="enable-background:new 0 0 65 65" viewBox="0 0 65 65" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M50.837 48.137V36.425c0-6.275-3.35-9.195-7.816-9.195-3.604.0-5.219 1.983-6.119 3.374V27.71h-6.79c.09 1.917.0 20.427.0 20.427h6.79V36.729c0-.609.044-1.219.224-1.655.49-1.22 1.607-2.483 3.482-2.483 2.458.0 3.44 1.873 3.44 4.618v10.929H50.837zM22.959 24.922c2.367.0 3.842-1.57 3.842-3.531-.044-2.003-1.475-3.528-3.797-3.528s-3.841 1.524-3.841 3.528c0 1.961 1.474 3.531 3.753 3.531H22.959zM34 64C17.432 64 4 50.568 4 34 4 17.431 17.432 4 34 4s30 13.431 30 30c0 16.568-13.432 30-30 30zM26.354 48.137V27.71h-6.789v20.427h6.789z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+</a>
+</div>
+<h1 class="f1 athelas mt3 mb1">Bike Share Learn Reboot</h1>
+<time class="f6 mv4 dib tracked" datetime=2020-10-20T10:00:05Z>October 20, 2020</time>
+</header>
+<div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h3 id=summary>Summary</h3>
+<p>This project is a reboot of <a href=/project/2016-12-18-citibike-project/>my earlier project</a> of predicting bicycle ride share riders destinations.
+<a href=https://bike-hop-predict.s3.amazonaws.com/index.html>https://bike-hop-predict.s3.amazonaws.com/index.html</a></p>
+<p>This time around I used XGBoost, newer features, hyper parameter tuning and I have a <a href=https://bike-hop-predict.s3.amazonaws.com/index.html target=_blank> Demo Site </a> as well! I wanted very much to see if XGBoost has online learning like I used in <a href=/project/2020-04-05-aviation-kaggle-low-level/>an earlier TensorFlow project</a>, but as I <a href=/post/2020-06-21-notes-xgboost/>wrote here</a>, I could not pick up where I left off at least the way I tried it. And <a href=/post/2020-07-24-understanding-tuning-results/>here</a> is a mini post on looking at hyper parameter tuning results. And <a href=/post/2020-10-22-features-v3/>here</a> is a visual look at some of the new features I explored including.</p>
+<p>Again, the data looks like this</p>
+<pre><code>&quot;tripduration&quot;,&quot;starttime&quot;,&quot;stoptime&quot;,&quot;start station id&quot;,&quot;start station name&quot;,&quot;start station latitude&quot;,&quot;start station longitude&quot;,&quot;end station id&quot;,&quot;end station name&quot;,&quot;end station latitude&quot;,&quot;end station longitude&quot;,&quot;bikeid&quot;,&quot;usertype&quot;,&quot;birth year&quot;,&quot;gender&quot;
 &quot;171&quot;,&quot;10/1/2015 00:00:02&quot;,&quot;10/1/2015 00:02:54&quot;,&quot;388&quot;,&quot;W 26 St &amp; 10 Ave&quot;,&quot;40.749717753&quot;,&quot;-74.002950346&quot;,&quot;494&quot;,&quot;W 26 St &amp; 8 Ave&quot;,&quot;40.74734825&quot;,&quot;-73.99723551&quot;,&quot;24302&quot;,&quot;Subscriber&quot;,&quot;1973&quot;,&quot;1&quot;
 &quot;593&quot;,&quot;10/1/2015 00:00:02&quot;,&quot;10/1/2015 00:09:55&quot;,&quot;518&quot;,&quot;E 39 St &amp; 2 Ave&quot;,&quot;40.74780373&quot;,&quot;-73.9734419&quot;,&quot;438&quot;,&quot;St Marks Pl &amp; 1 Ave&quot;,&quot;40.72779126&quot;,&quot;-73.98564945&quot;,&quot;19904&quot;,&quot;Subscriber&quot;,&quot;1990&quot;,&quot;1&quot;
 &quot;233&quot;,&quot;10/1/2015 00:00:11&quot;,&quot;10/1/2015 00:04:05&quot;,&quot;447&quot;,&quot;8 Ave &amp; W 52 St&quot;,&quot;40.76370739&quot;,&quot;-73.9851615&quot;,&quot;447&quot;,&quot;8 Ave &amp; W 52 St&quot;,&quot;40.76370739&quot;,&quot;-73.9851615&quot;,&quot;17797&quot;,&quot;Subscriber&quot;,&quot;1984&quot;,&quot;1&quot;
 &quot;250&quot;,&quot;10/1/2015 00:00:15&quot;,&quot;10/1/2015 00:04:25&quot;,&quot;336&quot;,&quot;Sullivan St &amp; Washington Sq&quot;,&quot;40.73047747&quot;,&quot;-73.99906065&quot;,&quot;223&quot;,&quot;W 13 St &amp; 7 Ave&quot;,&quot;40.73781509&quot;,&quot;-73.99994661&quot;,&quot;23966&quot;,&quot;Subscriber&quot;,&quot;1984&quot;,&quot;1&quot;
 &quot;528&quot;,&quot;10/1/2015 00:00:17&quot;,&quot;10/1/2015 00:09:05&quot;,&quot;3107&quot;,&quot;Bedford Ave &amp; Nassau Ave&quot;,&quot;40.72311651&quot;,&quot;-73.95212324&quot;,&quot;539&quot;,&quot;Metropolitan Ave &amp; Bedford Ave&quot;,&quot;40.71534825&quot;,&quot;-73.96024116&quot;,&quot;16246&quot;,&quot;Customer&quot;,&quot;&quot;,&quot;0&quot;
 &quot;440&quot;,&quot;10/1/2015 00:00:17&quot;,&quot;10/1/2015 00:07:37&quot;,&quot;3107&quot;,&quot;Bedford Ave &amp; Nassau Ave&quot;,&quot;40.72311651&quot;,&quot;-73.95212324&quot;,&quot;539&quot;,&quot;Metropolitan Ave &amp; Bedford Ave&quot;,&quot;40.71534825&quot;,&quot;-73.96024116&quot;,&quot;23698&quot;,&quot;Customer&quot;,&quot;&quot;,&quot;0&quot;
-</code></pre><h3 id=toc>TOC</h3><ul><li><a href=#prior-probability-baseline>Prior probability baseline</a></li><li><a href=#xgboost-detour>Xgboost detour</a></li><li><a href=#multi-class-classification-notes>Multi class classification notes</a></li><li><a href=#previously-vs-this-time>How does this time compare with the previous attempt</a></li><li><a href=#model-highlights>Model highlights</a></li><li><a href=#gluing-everything-together>Gluing everything together</a></li><li><a href=#looking-at-hyperparameter-tuning-results>Looking at hyperparameter tuning results</a></li><li><a href=#follow-on>Follow on</a></li></ul><h3 id=prior-probability-baseline>Prior probability baseline</h3><p><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-04-pure-prior-probability-model.md>Here</a>, I first wanted to get a metric baseline using a simple model which only uses the highest prior probability destination as the prediction for a source bike share station. Anything even slightly more sophisticated should perform better. I also used this opportunity to apply multi class logloss as an evaluation metric for this problem, which I had not tried last time. So for an output probability vector of <code>54</code> possible destination stations, log loss can more granularly assess the prediction probabilities against a vector of the correct station, <code>[0, 1, 0, 0, 0,...]</code> compared to just <code>accuracy</code>.</p><p>For example</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>from</span> sklearn.metrics <span style=color:#f92672>import</span> log_loss
+</code></pre><h3 id=toc>TOC</h3>
+<ul>
+<li><a href=#prior-probability-baseline>Prior probability baseline</a></li>
+<li><a href=#xgboost-detour>Xgboost detour</a></li>
+<li><a href=#multi-class-classification-notes>Multi class classification notes</a></li>
+<li><a href=#previously-vs-this-time>How does this time compare with the previous attempt</a></li>
+<li><a href=#model-highlights>Model highlights</a></li>
+<li><a href=#gluing-everything-together>Gluing everything together</a></li>
+<li><a href=#looking-at-hyperparameter-tuning-results>Looking at hyperparameter tuning results</a></li>
+<li><a href=#follow-on>Follow on</a></li>
+</ul>
+<h3 id=prior-probability-baseline>Prior probability baseline</h3>
+<p><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-04-pure-prior-probability-model.md>Here</a>, I first wanted to get a metric baseline using a simple model which only uses the highest prior probability destination as the prediction for a source bike share station. Anything even slightly more sophisticated should perform better. I also used this opportunity to apply multi class logloss as an evaluation metric for this problem, which I had not tried last time. So for an output probability vector of <code>54</code> possible destination stations, log loss can more granularly assess the prediction probabilities against a vector of the correct station, <code>[0, 1, 0, 0, 0,...]</code> compared to just <code>accuracy</code>.</p>
+<p>For example</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>from</span> sklearn.metrics <span style=color:#f92672>import</span> log_loss
 <span style=color:#75715e># and some noisy predictions</span>
 noisy_pred <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>array([[<span style=color:#ae81ff>.05</span>, <span style=color:#ae81ff>.05</span>, <span style=color:#ae81ff>.9</span>],
                    [<span style=color:#ae81ff>.95</span>, <span style=color:#ae81ff>0.05</span>, <span style=color:#ae81ff>0</span>],
@@ -15,9 +118,21 @@ noisy_pred <span style=color:#f92672>=</span> np<span style=color:#f92672>.</spa
                    [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>0</span>]])
 log_loss([<span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>2</span>],
          noisy_pred)
-</code></pre></div><p>the output here is <code>0.07347496827220674</code>, which is just slightly worse than the perfect <code>0.</code>, showing that log loss can be handy for comparing models.</p><p>The detail is in the <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-04-pure-prior-probability-model.md>notes</a>, but basically the cross validation log loss using this method ended up being</p><pre><code>array([29.03426394, 25.61716199, 29.19083979, 28.312853  , 22.04601817])
-</code></pre><h4 id=dockerization>Dockerization</h4><p>Next, for repeatability and portability, <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-07-local-docker-notes.md>here</a> I re-adapted some earlier Dockerization I had setup before to wrap xgboost, along with jupyter notebook for experimentation. This was crucial, because if you want to jump between some quick experiments on your laptop and a notebook in the cloud, you don&rsquo;t want to deal with strange differences in library dependencies between MacOs and linux.</p><h3 id=xgboost-detour>Xgboost detour</h3><p>To start, I wanted to better understand how to use Xgboost abilities with respect to training a model, putting it down, saving it to disk, loading it again and continuing to train on new data. I had used this capability in Tensorflow land earlier and I read it might be possible with Xgboost, but even after trial and error with both the main Xgboost API and its scikit learn API, I could not get this to work properly.
-My notes on this are <a href=/post/2020-06-21-notes-xgboost/>here in an earlier post</a>.</p><p>One cool thing I did <a href=/post/2020-06-21-notes-xgboost/#parallelism>learn</a> however was that when repeating a model train and evaluation experiment with both the functional API and the scikit learn API, the functional API took advantage of multithreading, and produced a particular result in <code>4min 18s</code> vs <code>49min 6s</code>, with both models using the same <code>seed=42</code> and ending up with the same accuracy and log loss on some held out data.</p><p>As I mentioned <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-12--snapshot-2020-06-14T2258Z.md#2020-06-13>here</a> , I experienced some early problems running out of memory and crashing, for instance computing log los son <code>843416 rows</code>. And that is why I was seeking out approaches of online learning. But because of the limitations, my workout ended up being the use of at least carefully deleting objects in memory with <code>del</code> to free up space for, between preprocessing, training and validation. And I also played around with the approach of initializing a <code>xgb.DMatrix</code> using the <code>xgb.DMatrix('/my/blah/path#dtrain.cache')</code> syntax where you specify <code>#</code> a cache file to allow for file access to reduce the in-memory burden, also requiring to dump your pre-processed training data to file first. (And doing that is good anyway because it allows you to free up that precious memory).</p><p>Compared to the initial baseline logloss from earlier of around <code>29</code>, here I <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-12--snapshot-2020-06-14T2258Z.md#averaging-log-losses>noted</a> a result of <code>3.9934347</code> with the initial xgboost approach.</p><p>On <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-14.md>2020-06-14</a>, I tried using the xgboost caching with the scikitlearn api approach. In the meantime I also ran into a fun issue where an xgboost model was trained on data without a particular output class , with only <code>53</code> classes in fact and would produce predict probability vectors of length <code>53</code> instead of <code>54</code>, so I ended up having to make sure to better shuffle the data to make sure when trying to use less data (when using cross validation for instance) that all of the output classes are accounted for, without having a more direct way of telling Xgboost what the output classes should be.</p><p>Also another fun Tensorflow comparison was I got <code>XGBoostError: need to call fit or load_model beforehand</code> when trying to call predict on a bare model that had not undergone training. Whereas with Tensorflow, I experienced in a previous project that this is absolutely fine, because you simply have a fully formed neural network with some randomly (or otherwise) initialized weights. But with xgboost, or at least the particular implementation I was using, this is not possible, because there is no notion of a base model.</p><p><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-14.md#trying-out-that-model-save>Here</a>, I tried cutting up the training data like</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>clf <span style=color:#f92672>=</span> xgb<span style=color:#f92672>.</span>XGBClassifier()
+</code></pre></div><p>the output here is <code>0.07347496827220674</code>, which is just slightly worse than the perfect <code>0.</code>, showing that log loss can be handy for comparing models.</p>
+<p>The detail is in the <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-04-pure-prior-probability-model.md>notes</a>, but basically the cross validation log loss using this method ended up being</p>
+<pre><code>array([29.03426394, 25.61716199, 29.19083979, 28.312853  , 22.04601817])
+</code></pre><h4 id=dockerization>Dockerization</h4>
+<p>Next, for repeatability and portability, <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-07-local-docker-notes.md>here</a> I re-adapted some earlier Dockerization I had setup before to wrap xgboost, along with jupyter notebook for experimentation. This was crucial, because if you want to jump between some quick experiments on your laptop and a notebook in the cloud, you don&rsquo;t want to deal with strange differences in library dependencies between MacOs and linux.</p>
+<h3 id=xgboost-detour>Xgboost detour</h3>
+<p>To start, I wanted to better understand how to use Xgboost abilities with respect to training a model, putting it down, saving it to disk, loading it again and continuing to train on new data. I had used this capability in Tensorflow land earlier and I read it might be possible with Xgboost, but even after trial and error with both the main Xgboost API and its scikit learn API, I could not get this to work properly.
+My notes on this are <a href=/post/2020-06-21-notes-xgboost/>here in an earlier post</a>.</p>
+<p>One cool thing I did <a href=/post/2020-06-21-notes-xgboost/#parallelism>learn</a> however was that when repeating a model train and evaluation experiment with both the functional API and the scikit learn API, the functional API took advantage of multithreading, and produced a particular result in <code>4min 18s</code> vs <code>49min 6s</code>, with both models using the same <code>seed=42</code> and ending up with the same accuracy and log loss on some held out data.</p>
+<p>As I mentioned <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-12--snapshot-2020-06-14T2258Z.md#2020-06-13>here</a> , I experienced some early problems running out of memory and crashing, for instance computing log los son <code>843416 rows</code>. And that is why I was seeking out approaches of online learning. But because of the limitations, my workout ended up being the use of at least carefully deleting objects in memory with <code>del</code> to free up space for, between preprocessing, training and validation. And I also played around with the approach of initializing a <code>xgb.DMatrix</code> using the <code>xgb.DMatrix('/my/blah/path#dtrain.cache')</code> syntax where you specify <code>#</code> a cache file to allow for file access to reduce the in-memory burden, also requiring to dump your pre-processed training data to file first. (And doing that is good anyway because it allows you to free up that precious memory).</p>
+<p>Compared to the initial baseline logloss from earlier of around <code>29</code>, here I <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-12--snapshot-2020-06-14T2258Z.md#averaging-log-losses>noted</a> a result of <code>3.9934347</code> with the initial xgboost approach.</p>
+<p>On <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-14.md>2020-06-14</a>, I tried using the xgboost caching with the scikitlearn api approach. In the meantime I also ran into a fun issue where an xgboost model was trained on data without a particular output class , with only <code>53</code> classes in fact and would produce predict probability vectors of length <code>53</code> instead of <code>54</code>, so I ended up having to make sure to better shuffle the data to make sure when trying to use less data (when using cross validation for instance) that all of the output classes are accounted for, without having a more direct way of telling Xgboost what the output classes should be.</p>
+<p>Also another fun Tensorflow comparison was I got <code>XGBoostError: need to call fit or load_model beforehand</code> when trying to call predict on a bare model that had not undergone training. Whereas with Tensorflow, I experienced in a previous project that this is absolutely fine, because you simply have a fully formed neural network with some randomly (or otherwise) initialized weights. But with xgboost, or at least the particular implementation I was using, this is not possible, because there is no notion of a base model.</p>
+<p><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-14.md#trying-out-that-model-save>Here</a>, I tried cutting up the training data like</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>clf <span style=color:#f92672>=</span> xgb<span style=color:#f92672>.</span>XGBClassifier()
 
 workdir <span style=color:#f92672>=</span> fu<span style=color:#f92672>.</span>make_work_dir(); print(workdir)
 fu<span style=color:#f92672>.</span>log(workdir, <span style=color:#e6db74>&#39;Starting&#39;</span>)
@@ -41,26 +156,83 @@ loss_vec <span style=color:#f92672>=</span> []; acc_vec <span style=color:#f9267
     acc <span style=color:#f92672>=</span> accuracy_score(y_test_enc, np<span style=color:#f92672>.</span>argmax(y_prob_vec, axis<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>))
     acc_vec<span style=color:#f92672>.</span>append(acc)
     fu<span style=color:#f92672>.</span>log(workdir, <span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;[</span><span style=color:#e6db74>{</span>i<span style=color:#e6db74>}</span><span style=color:#e6db74>] Done accuracy, acc=</span><span style=color:#e6db74>{</span>acc<span style=color:#e6db74>}</span><span style=color:#e6db74>.&#39;</span>)
-</code></pre></div><p>to see if the scikit learn API can allow saving and restoring previously trained models and continuing, with the <code>fit(X, xgb_model=prev_model)</code> syntax, but the output performance data was basically random indicating to me that the <code>fit</code> was starting from scratch each time.</p><p>Here, below, is a plot of accuracy after multiple epochs, just to visually show the lack of any progression. (This plot is from a similar experiment in my <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-16.md>2020-06-16 notebook</a> ).</p><img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-06-16_files/2020-06-16_10_1.png><p>So basically I gave up on this approach for using xgboost.</p><p>Also in that notebook, I found I was oddly getting <code>0</code> logloss during some experimentation because I had like in this toy example below, been specifying labels to the <code>log_loss</code> func, not matching the actual <code>y_true</code> data (which is the first arg).</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>a, b <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>array([<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>]), np<span style=color:#f92672>.</span>array([[<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0.</span>, <span style=color:#ae81ff>0</span>],
+</code></pre></div><p>to see if the scikit learn API can allow saving and restoring previously trained models and continuing, with the <code>fit(X, xgb_model=prev_model)</code> syntax, but the output performance data was basically random indicating to me that the <code>fit</code> was starting from scratch each time.</p>
+<p>Here, below, is a plot of accuracy after multiple epochs, just to visually show the lack of any progression. (This plot is from a similar experiment in my <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-16.md>2020-06-16 notebook</a> ).</p>
+<img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-06-16_files/2020-06-16_10_1.png>
+<p>So basically I gave up on this approach for using xgboost.</p>
+<p>Also in that notebook, I found I was oddly getting <code>0</code> logloss during some experimentation because I had like in this toy example below, been specifying labels to the <code>log_loss</code> func, not matching the actual <code>y_true</code> data (which is the first arg).</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>a, b <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>array([<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>]), np<span style=color:#f92672>.</span>array([[<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0.</span>, <span style=color:#ae81ff>0</span>],
                                       [<span style=color:#ae81ff>0.</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>],
                                       [<span style=color:#ae81ff>0.</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>]])
 print(log_loss(a, b, labels<span style=color:#f92672>=</span>[<span style=color:#e6db74>&#39;a&#39;</span>, <span style=color:#e6db74>&#39;b&#39;</span>, <span style=color:#e6db74>&#39;c&#39;</span>]))
 
 <span style=color:#75715e># =&gt; 0.0</span>
-</code></pre></div><h4 id=2020-06-19>2020-06-19</h4><p><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-19.md>Here</a> , because a lot of the test set prediction for model evaluation takes time I ended up creating a mini parallelization func. I verified that it was producing roughly the same validation and the time to execute was less.</p><img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-06-19_files/2020-06-19_18_1.png><p>I also wrote about how I had needed to use less data to avoid crashing, using the pandas <code>sample()</code> func like,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>tripsdf <span style=color:#f92672>=</span> pd<span style=color:#f92672>.</span>read_csv(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>datadir<span style=color:#e6db74>}</span><span style=color:#e6db74>/2013-07 - Citi Bike trip data.csv&#39;</span>
+</code></pre></div><h4 id=2020-06-19>2020-06-19</h4>
+<p><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-19.md>Here</a> , because a lot of the test set prediction for model evaluation takes time I ended up creating a mini parallelization func. I verified that it was producing roughly the same validation and the time to execute was less.</p>
+<img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-06-19_files/2020-06-19_18_1.png>
+<p>I also wrote about how I had needed to use less data to avoid crashing, using the pandas <code>sample()</code> func like,</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>tripsdf <span style=color:#f92672>=</span> pd<span style=color:#f92672>.</span>read_csv(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>datadir<span style=color:#e6db74>}</span><span style=color:#e6db74>/2013-07 - Citi Bike trip data.csv&#39;</span>
                      )<span style=color:#f92672>.</span>sample(frac<span style=color:#f92672>=</span><span style=color:#ae81ff>0.017</span>, random_state<span style=color:#f92672>=</span><span style=color:#ae81ff>42</span>)
-</code></pre></div><p>but that it would be better to build a more balanced dataset instead of just random sampling.</p><h4 id=a-rapid-fire-list-of-some-additional-experiments>A rapid fire list of some additional experiments</h4><ul><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-21.md>Here</a>, I had another training attempt using the so called &ldquo;cache data&rdquo; with functional api. (But finding especially <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-21.md#log-dump-w-num_round100>here</a> that the <code>max_depth</code> was not changing so likely no learning was happening).</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-23.md>Here</a> I aadded new features here for a &lsquo;v2&rsquo; dataset, including <code>weekday</code>. and <code>time_of_day</code>. Added this in a new module, <code>fresh/preproc/v2.py</code>.</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-24.md>Here</a> , more memory struggles (especially since I added more data).</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-26.md>Here</a>, describing that after lots of crashing, starting to use numpy append mode, <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-26.md#2020-06-27>here</a> , to allow for doing preprocessing in chunks. And starting to look at target class distribution.</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-27.md>Here</a> I&rsquo;m discovering that it is quite possible that this caching is only allowed w/ the &ldquo;libsvm&rdquo; format!</li><li>And <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-28.md>here</a>, I see hmm it is kind of weird, that with cache, without&mldr; producing different <code>feature_names</code> ? more kernel dying!</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-28-take2.md>Here</a> , bigger box?</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-29.md>Here</a> , class distribution for size reduction and <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-29.md#2020-07-01>dataset rebalancing</a>.</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-03-aws.md>Here</a> ok I took the result from the balancing/shrinking concept from the &ldquo;2020-06-29.ipynb&rdquo; notebook and tried to use less data see if we can avoid a kernel crash that happened in &ldquo;2020-06-28-take2.ipynb&rdquo;.</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-04-aws.md>Here</a> I wanted to do a quick recalc of yesterday&rsquo;s model using the sklearn API Again.</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-05-aws-two.md>Here</a>, more rebalancing.</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-05.md>Here</a>.</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-08-aws.md>Here</a>, end result: compared with &ldquo;2020-07-03-aws.md&rdquo; , I am not really seeing much of a difference. the balanced test accuracy perhaps looks every so slightly better but probably not significantly.</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-09-aws.md>Here</a> , change up <code>'subsample'</code> and <code>'max_depth'</code>, measuring logloss, accuracy and balanced_accuracy , there are some noticable changes in logloss, but overall the changes are probably not significant.</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-10-aws.md>Here</a>.</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md>Here</a>.</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.md>Here</a>.</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-26-feature-importances.md>Here</a>.</li></ul><h3 id=multi-class-classification-notes>Multi class classification notes</h3><ul><li><a href=/post/2020-07-13-multi-multi-class/>Notes on multi class classification</a></li></ul><h3 id=understanding-tuning-results>Understanding tuning results</h3><p><a href=/post/2020-07-24-understanding-tuning-results/>hyper parameter tuning and train/test acc</a></p><h3 id=previously-vs-this-time>Previously vs This time</h3><ul><li>Last time around, I segmented the starting data into <code>24</code> hour-long segments. This time, I segmented time into only <code>5</code> bins to make the model slightly more generalizable.</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># time_of_day</span>
+</code></pre></div><p>but that it would be better to build a more balanced dataset instead of just random sampling.</p>
+<h4 id=a-rapid-fire-list-of-some-additional-experiments>A rapid fire list of some additional experiments</h4>
+<ul>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-21.md>Here</a>, I had another training attempt using the so called &ldquo;cache data&rdquo; with functional api. (But finding especially <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-21.md#log-dump-w-num_round100>here</a> that the <code>max_depth</code> was not changing so likely no learning was happening).</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-23.md>Here</a> I aadded new features here for a &lsquo;v2&rsquo; dataset, including <code>weekday</code>. and <code>time_of_day</code>. Added this in a new module, <code>fresh/preproc/v2.py</code>.</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-24.md>Here</a> , more memory struggles (especially since I added more data).</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-26.md>Here</a>, describing that after lots of crashing, starting to use numpy append mode, <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-26.md#2020-06-27>here</a> , to allow for doing preprocessing in chunks. And starting to look at target class distribution.</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-27.md>Here</a> I&rsquo;m discovering that it is quite possible that this caching is only allowed w/ the &ldquo;libsvm&rdquo; format!</li>
+<li>And <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-28.md>here</a>, I see hmm it is kind of weird, that with cache, without&mldr; producing different <code>feature_names</code> ? more kernel dying!</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-28-take2.md>Here</a> , bigger box?</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-29.md>Here</a> , class distribution for size reduction and <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-29.md#2020-07-01>dataset rebalancing</a>.</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-03-aws.md>Here</a> ok I took the result from the balancing/shrinking concept from the &ldquo;2020-06-29.ipynb&rdquo; notebook and tried to use less data see if we can avoid a kernel crash that happened in &ldquo;2020-06-28-take2.ipynb&rdquo;.</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-04-aws.md>Here</a> I wanted to do a quick recalc of yesterday&rsquo;s model using the sklearn API Again.</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-05-aws-two.md>Here</a>, more rebalancing.</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-05.md>Here</a>.</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-08-aws.md>Here</a>, end result: compared with &ldquo;2020-07-03-aws.md&rdquo; , I am not really seeing much of a difference. the balanced test accuracy perhaps looks every so slightly better but probably not significantly.</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-09-aws.md>Here</a> , change up <code>'subsample'</code> and <code>'max_depth'</code>, measuring logloss, accuracy and balanced_accuracy , there are some noticable changes in logloss, but overall the changes are probably not significant.</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-10-aws.md>Here</a>.</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md>Here</a>.</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.md>Here</a>.</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-26-feature-importances.md>Here</a>.</li>
+</ul>
+<h3 id=multi-class-classification-notes>Multi class classification notes</h3>
+<ul>
+<li><a href=/post/2020-07-13-multi-multi-class/>Notes on multi class classification</a></li>
+</ul>
+<h3 id=understanding-tuning-results>Understanding tuning results</h3>
+<p><a href=/post/2020-07-24-understanding-tuning-results/>hyper parameter tuning and train/test acc</a></p>
+<h3 id=previously-vs-this-time>Previously vs This time</h3>
+<ul>
+<li>Last time around, I segmented the starting data into <code>24</code> hour-long segments. This time, I segmented time into only <code>5</code> bins to make the model slightly more generalizable.</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># time_of_day</span>
 <span style=color:#ae81ff>0</span>: <span style=color:#ae81ff>6</span><span style=color:#f92672>-</span><span style=color:#ae81ff>9</span>,
 <span style=color:#ae81ff>1</span>: <span style=color:#ae81ff>10</span><span style=color:#f92672>-</span><span style=color:#ae81ff>13</span>,
 <span style=color:#ae81ff>2</span>: <span style=color:#ae81ff>14</span><span style=color:#f92672>-</span><span style=color:#ae81ff>16</span>,
 <span style=color:#ae81ff>3</span>: <span style=color:#ae81ff>17</span><span style=color:#f92672>-</span><span style=color:#ae81ff>21</span>,
 <span style=color:#ae81ff>4</span>: <span style=color:#ae81ff>22</span><span style=color:#f92672>-</span><span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span><span style=color:#f92672>-</span><span style=color:#ae81ff>5</span>
-</code></pre></div><ul><li><p>Actually after picking these bins arbitrarily, I ended up also looking at the time of day histograms <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-22-features-v3.md>here</a> and the peaks look close to what I had as a mental model in my mind. It might be interesting try some other bins at some point later.</p></li><li><p>One other new feature this time is the binary <code>weekday</code> feature, specifying weekday vs weekend.</p></li><li><p>The starting neighborhood one hot encoded was kept as an input.</p></li><li><p>Also last time around, the main model was a Random Forest classifier, but using XGBoost this time.</p></li></ul><h3 id=model-highlights>Model Highlights</h3><p>The top model has these stats&mldr;</p><pre><code>(pandars3) $ docker run -p 8889:8889 -p 8080:8080 -i -t -v $(pwd):/opt/program \
+</code></pre></div><ul>
+<li>
+<p>Actually after picking these bins arbitrarily, I ended up also looking at the time of day histograms <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-22-features-v3.md>here</a> and the peaks look close to what I had as a mental model in my mind. It might be interesting try some other bins at some point later.</p>
+</li>
+<li>
+<p>One other new feature this time is the binary <code>weekday</code> feature, specifying weekday vs weekend.</p>
+</li>
+<li>
+<p>The starting neighborhood one hot encoded was kept as an input.</p>
+</li>
+<li>
+<p>Also last time around, the main model was a Random Forest classifier, but using XGBoost this time.</p>
+</li>
+</ul>
+<h3 id=model-highlights>Model Highlights</h3>
+<p>The top model has these stats&mldr;</p>
+<pre><code>(pandars3) $ docker run -p 8889:8889 -p 8080:8080 -i -t -v $(pwd):/opt/program \
              -v ${MY_LOCAL_DATA_DIRECTORY}:/opt/data \
              -v   ~/Downloads:/opt/downloads \
              -v  $(pwd)/artifacts/2020-08-19T144654Z:/opt/ml \
              citibike-learn:latest \
-</code></pre><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> fresh.predict_utils <span style=color:#66d9ef>as</span> fpu
+</code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> fresh.predict_utils <span style=color:#66d9ef>as</span> fpu
 bundle <span style=color:#f92672>=</span> fpu<span style=color:#f92672>.</span>load_bundle_in_docker()
 
 In [<span style=color:#ae81ff>7</span>]: bundle[<span style=color:#e6db74>&#39;model_bundle&#39;</span>][<span style=color:#e6db74>&#39;bundle&#39;</span>][<span style=color:#e6db74>&#39;validation_metrics&#39;</span>]                                                                 
@@ -79,9 +251,232 @@ Out[<span style=color:#ae81ff>7</span>]:
  <span style=color:#e6db74>&#39;karea&#39;</span>: <span style=color:#ae81ff>0.760827309330065</span>}
 
 
-</code></pre></div><ul><li>More on the &ldquo;k-area&rdquo; metric is <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-20-karea-worst.md>here</a></li></ul><h4 id=top-models-top-fscore-features>Top Model&rsquo;s Top Fscore features</h4><p>Extracting from <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-21-look-at-model-plot.md>this notebook</a> ,</p><div><style scoped>.dataframe tbody tr th:only-of-type{vertical-align:middle}<pre><code>.dataframe tbody tr th{vertical-align:top}.dataframe thead th{text-align:right}</code></pre><p></style></p><table border=1 class=dataframe><thead><tr style=text-align:right><th></th><th>name</th><th>f</th><th>fscore</th></tr></thead><tbody><tr><th>9</th><td>weekday</td><td>f84</td><td>12812</td></tr><tr><th>10</th><td>gender=1</td><td>f76</td><td>8973</td></tr><tr><th>2</th><td>time_of_day=3</td><td>f81</td><td>8377</td></tr><tr><th>8</th><td>gender=0</td><td>f75</td><td>7969</td></tr><tr><th>11</th><td>time_of_day=1</td><td>f79</td><td>7064</td></tr><tr><th>26</th><td>time_of_day=2</td><td>f80</td><td>6594</td></tr><tr><th>7</th><td>time_of_day=0</td><td>f78</td><td>6302</td></tr><tr><th>17</th><td>gender=2</td><td>f77</td><td>5509</td></tr><tr><th>3</th><td>time_of_day=4</td><td>f82</td><td>4854</td></tr><tr><th>40</th><td>start_neighborhood=Chelsea</td><td>f12</td><td>1199</td></tr><tr><th>37</th><td>start_neighborhood=Midtown East</td><td>f46</td><td>1058</td></tr><tr><th>36</th><td>start_neighborhood=Midtown West</td><td>f47</td><td>947</td></tr><tr><th>30</th><td>start_neighborhood=Downtown Brooklyn</td><td>f18</td><td>910</td></tr><tr><th>41</th><td>start_neighborhood=Hell's Kitchen</td><td>f33</td><td>877</td></tr><tr><th>21</th><td>start_neighborhood=Fort Greene</td><td>f25</td><td>865</td></tr><tr><th>14</th><td>start_neighborhood=Financial District</td><td>f23</td><td>860</td></tr><tr><th>23</th><td>start_neighborhood=Brooklyn Heights</td><td>f7</td><td>834</td></tr><tr><th>49</th><td>start_neighborhood=Kips Bay</td><td>f36</td><td>821</td></tr><tr><th>13</th><td>start_neighborhood=Tribeca</td><td>f64</td><td>813</td></tr><tr><th>28</th><td>start_neighborhood=Lower East Side</td><td>f42</td><td>786</td></tr><tr><th>38</th><td>start_neighborhood=Theater District</td><td>f63</td><td>745</td></tr><tr><th>39</th><td>start_neighborhood=Midtown</td><td>f45</td><td>736</td></tr><tr><th>5</th><td>start_neighborhood=Greenwich Village</td><td>f32</td><td>733</td></tr><tr><th>19</th><td>start_neighborhood=Clinton Hill</td><td>f15</td><td>703</td></tr><tr><th>33</th><td>start_neighborhood=Chinatown</td><td>f13</td><td>695</td></tr><tr><th>20</th><td>start_neighborhood=Williamsburg</td><td>f73</td><td>683</td></tr><tr><th>48</th><td>start_neighborhood=Murray Hill</td><td>f48</td><td>681</td></tr><tr><th>31</th><td>start_neighborhood=Dumbo</td><td>f19</td><td>680</td></tr><tr><th>44</th><td>start_neighborhood=Civic Center</td><td>f14</td><td>660</td></tr><tr><th>12</th><td>start_neighborhood=Battery Park City</td><td>f1</td><td>649</td></tr></tbody></table></div><p>And it can be interesting to look at a random tree from xgboost too sometimes, again extracting from the above mentioned notebook.</p><img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-10-21-look-at-model-plot_files/2020-10-21-look-at-model-plot_5_0.png><h4 id=gluing-everything-together>Gluing everything together</h4><p>In <a href=https://github.com/namoopsoo/learn-citibike/blob/2020-oct/notes/2020-08-25-glue.md>this notebook</a>, I face the challenges of taking the model from bundle to a demo site. There were a lot of challenges involved. My concept was to use the Google Static Map API to display the top neighborhood predictions. Hitting this API properly did take a little bit of time, but it was not that bad. And later on, I updated the whole AWS Lambda approach so the lambda function calls the API with the result from the dockerized SageMaker served model.</p><p>Admittedly, the most time consuming part was figuring out the API Gateway Cognito &ldquo;Unauthenticated Authentication&rdquo;. AWS has this Cognito service which manages user/password based authentication for you but it also lets you use Anonymous authentication. But there must be a lot of degrees of freedom in how this is used, because I could not find good documentation on how to set this up properly for my usecase at all.</p><p>I had used API Gateway for authentication through CORS in the past and I recalled a bit of nuance that for example you may have setup CORS properly for <code>200</code> status codes, but if your program crashes with a <code>500</code> then your browser will scream about a CORS error, because the response is not returning the expected <code>allow-origin-blah</code> header. In the past this had taken me a while to figure out, but now I luckily had that knowledge in my back pocket. In any case, it is worth it for the serverless approach.</p><h4 id=automation-made-the-process-very-convenient>Automation made the process very convenient</h4><p><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-07-local-docker-notes.md>https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-07-local-docker-notes.md</a></p><p>I also described my build process in the earlier mentioned <a href=https://github.com/namoopsoo/learn-citibike/blob/2020-oct/notes/2020-08-25-glue.md>glue notes</a> too. With so many tweaks to the python side, the model and the javascript side, being able to build and deploy with quick <code>make</code> style commands made everything faster. I document some of these <a href=https://github.com/namoopsoo/learn-citibike/blob/master/docs/common_tasks.md>here</a> too.</p><h4 id=quick-pearsons-chi-squared-independence-test>quick pearson&rsquo;s chi squared independence test</h4><p>quick pearson&rsquo;s chi squared independence test
-<a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-05.md>https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-05.md</a></p><h4 id=looking-at-hyperparameter-tuning-results>Looking at hyperparameter tuning results</h4><ul><li><p>( EDIT: After writing the below section, I realized I had already <a href=/post/2020-07-24-understanding-tuning-results/>here earlier, on 2020-07-24</a> , described some of these results already haha. Doing the work twice, forgetting what I had done. )</p></li><li><p>I spent a bit of time on hyper parameter tuning, looking at the results, fixing some parameters two focus on two others at a time.</p></li><li><p>So per <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#looking-at-num_round-fundamentally>here</a> ,
-the <code>num_round</code> as expected improves logloss,</p></li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>keep_fixed <span style=color:#f92672>=</span> {
+</code></pre></div><ul>
+<li>More on the &ldquo;k-area&rdquo; metric is <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-20-karea-worst.md>here</a></li>
+</ul>
+<h4 id=top-models-top-fscore-features>Top Model&rsquo;s Top Fscore features</h4>
+<p>Extracting from <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-21-look-at-model-plot.md>this notebook</a> ,</p>
+<div>
+<style scoped>.dataframe tbody tr th:only-of-type{vertical-align:middle}<pre><code>.dataframe tbody tr th{vertical-align:top}.dataframe thead th{text-align:right}</code></pre><p></style></p>
+<table border=1 class=dataframe>
+<thead>
+<tr style=text-align:right>
+<th></th>
+<th>name</th>
+<th>f</th>
+<th>fscore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>9</th>
+<td>weekday</td>
+<td>f84</td>
+<td>12812</td>
+</tr>
+<tr>
+<th>10</th>
+<td>gender=1</td>
+<td>f76</td>
+<td>8973</td>
+</tr>
+<tr>
+<th>2</th>
+<td>time_of_day=3</td>
+<td>f81</td>
+<td>8377</td>
+</tr>
+<tr>
+<th>8</th>
+<td>gender=0</td>
+<td>f75</td>
+<td>7969</td>
+</tr>
+<tr>
+<th>11</th>
+<td>time_of_day=1</td>
+<td>f79</td>
+<td>7064</td>
+</tr>
+<tr>
+<th>26</th>
+<td>time_of_day=2</td>
+<td>f80</td>
+<td>6594</td>
+</tr>
+<tr>
+<th>7</th>
+<td>time_of_day=0</td>
+<td>f78</td>
+<td>6302</td>
+</tr>
+<tr>
+<th>17</th>
+<td>gender=2</td>
+<td>f77</td>
+<td>5509</td>
+</tr>
+<tr>
+<th>3</th>
+<td>time_of_day=4</td>
+<td>f82</td>
+<td>4854</td>
+</tr>
+<tr>
+<th>40</th>
+<td>start_neighborhood=Chelsea</td>
+<td>f12</td>
+<td>1199</td>
+</tr>
+<tr>
+<th>37</th>
+<td>start_neighborhood=Midtown East</td>
+<td>f46</td>
+<td>1058</td>
+</tr>
+<tr>
+<th>36</th>
+<td>start_neighborhood=Midtown West</td>
+<td>f47</td>
+<td>947</td>
+</tr>
+<tr>
+<th>30</th>
+<td>start_neighborhood=Downtown Brooklyn</td>
+<td>f18</td>
+<td>910</td>
+</tr>
+<tr>
+<th>41</th>
+<td>start_neighborhood=Hell's Kitchen</td>
+<td>f33</td>
+<td>877</td>
+</tr>
+<tr>
+<th>21</th>
+<td>start_neighborhood=Fort Greene</td>
+<td>f25</td>
+<td>865</td>
+</tr>
+<tr>
+<th>14</th>
+<td>start_neighborhood=Financial District</td>
+<td>f23</td>
+<td>860</td>
+</tr>
+<tr>
+<th>23</th>
+<td>start_neighborhood=Brooklyn Heights</td>
+<td>f7</td>
+<td>834</td>
+</tr>
+<tr>
+<th>49</th>
+<td>start_neighborhood=Kips Bay</td>
+<td>f36</td>
+<td>821</td>
+</tr>
+<tr>
+<th>13</th>
+<td>start_neighborhood=Tribeca</td>
+<td>f64</td>
+<td>813</td>
+</tr>
+<tr>
+<th>28</th>
+<td>start_neighborhood=Lower East Side</td>
+<td>f42</td>
+<td>786</td>
+</tr>
+<tr>
+<th>38</th>
+<td>start_neighborhood=Theater District</td>
+<td>f63</td>
+<td>745</td>
+</tr>
+<tr>
+<th>39</th>
+<td>start_neighborhood=Midtown</td>
+<td>f45</td>
+<td>736</td>
+</tr>
+<tr>
+<th>5</th>
+<td>start_neighborhood=Greenwich Village</td>
+<td>f32</td>
+<td>733</td>
+</tr>
+<tr>
+<th>19</th>
+<td>start_neighborhood=Clinton Hill</td>
+<td>f15</td>
+<td>703</td>
+</tr>
+<tr>
+<th>33</th>
+<td>start_neighborhood=Chinatown</td>
+<td>f13</td>
+<td>695</td>
+</tr>
+<tr>
+<th>20</th>
+<td>start_neighborhood=Williamsburg</td>
+<td>f73</td>
+<td>683</td>
+</tr>
+<tr>
+<th>48</th>
+<td>start_neighborhood=Murray Hill</td>
+<td>f48</td>
+<td>681</td>
+</tr>
+<tr>
+<th>31</th>
+<td>start_neighborhood=Dumbo</td>
+<td>f19</td>
+<td>680</td>
+</tr>
+<tr>
+<th>44</th>
+<td>start_neighborhood=Civic Center</td>
+<td>f14</td>
+<td>660</td>
+</tr>
+<tr>
+<th>12</th>
+<td>start_neighborhood=Battery Park City</td>
+<td>f1</td>
+<td>649</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>And it can be interesting to look at a random tree from xgboost too sometimes, again extracting from the above mentioned notebook.</p>
+<img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-10-21-look-at-model-plot_files/2020-10-21-look-at-model-plot_5_0.png>
+<h4 id=gluing-everything-together>Gluing everything together</h4>
+<p>In <a href=https://github.com/namoopsoo/learn-citibike/blob/2020-oct/notes/2020-08-25-glue.md>this notebook</a>, I face the challenges of taking the model from bundle to a demo site. There were a lot of challenges involved. My concept was to use the Google Static Map API to display the top neighborhood predictions. Hitting this API properly did take a little bit of time, but it was not that bad. And later on, I updated the whole AWS Lambda approach so the lambda function calls the API with the result from the dockerized SageMaker served model.</p>
+<p>Admittedly, the most time consuming part was figuring out the API Gateway Cognito &ldquo;Unauthenticated Authentication&rdquo;. AWS has this Cognito service which manages user/password based authentication for you but it also lets you use Anonymous authentication. But there must be a lot of degrees of freedom in how this is used, because I could not find good documentation on how to set this up properly for my usecase at all.</p>
+<p>I had used API Gateway for authentication through CORS in the past and I recalled a bit of nuance that for example you may have setup CORS properly for <code>200</code> status codes, but if your program crashes with a <code>500</code> then your browser will scream about a CORS error, because the response is not returning the expected <code>allow-origin-blah</code> header. In the past this had taken me a while to figure out, but now I luckily had that knowledge in my back pocket. In any case, it is worth it for the serverless approach.</p>
+<h4 id=automation-made-the-process-very-convenient>Automation made the process very convenient</h4>
+<p><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-07-local-docker-notes.md>https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-07-local-docker-notes.md</a></p>
+<p>I also described my build process in the earlier mentioned <a href=https://github.com/namoopsoo/learn-citibike/blob/2020-oct/notes/2020-08-25-glue.md>glue notes</a> too. With so many tweaks to the python side, the model and the javascript side, being able to build and deploy with quick <code>make</code> style commands made everything faster. I document some of these <a href=https://github.com/namoopsoo/learn-citibike/blob/master/docs/common_tasks.md>here</a> too.</p>
+<h4 id=quick-pearsons-chi-squared-independence-test>quick pearson&rsquo;s chi squared independence test</h4>
+<p>quick pearson&rsquo;s chi squared independence test
+<a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-05.md>https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-05.md</a></p>
+<h4 id=looking-at-hyperparameter-tuning-results>Looking at hyperparameter tuning results</h4>
+<ul>
+<li>
+<p>( EDIT: After writing the below section, I realized I had already <a href=/post/2020-07-24-understanding-tuning-results/>here earlier, on 2020-07-24 </a> , described some of these results already haha. Doing the work twice, forgetting what I had done. )</p>
+</li>
+<li>
+<p>I spent a bit of time on hyper parameter tuning, looking at the results, fixing some parameters two focus on two others at a time.</p>
+</li>
+<li>
+<p>So per <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#looking-at-num_round-fundamentally>here</a> ,
+the <code>num_round</code> as expected improves logloss,</p>
+</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>keep_fixed <span style=color:#f92672>=</span> {
  <span style=color:#e6db74>&#39;max_depth&#39;</span>: <span style=color:#ae81ff>3</span>,
  <span style=color:#e6db74>&#39;learning_rate&#39;</span>: <span style=color:#ae81ff>0.01</span>,
  <span style=color:#e6db74>&#39;colsample_bylevel&#39;</span>: <span style=color:#ae81ff>0.1</span>,
@@ -96,7 +491,23 @@ fp<span style=color:#f92672>.</span>compare_tuning(df, feature_col_1<span style=
              metric_col<span style=color:#f92672>=</span>metric_col,
              keep_fixed<span style=color:#f92672>=</span>fvu<span style=color:#f92672>.</span>without(
                  keep_fixed, keys<span style=color:#f92672>=</span>[col1, col2]))
-</code></pre></div><img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_11_0.png><p>And maybe this is good as a sanity check, but more rounds take more time, ( <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#walltime>per here</a> )</p><img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_13_0.png><p>And from <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#look-at-walltime-and-learning-rate-again>here</a> it was interesting to see that walltime is stable mostly when it comes to learning rate except sometimes&mldr;</p><img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_33_0.png><p>And per <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#also-learning-rate-vs-acc>here</a> at least per the fixed parameters, the <code>0.1</code> learning rate is better than the <code>0.01</code> learning rate.</p><img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_17_0.png><p>And per <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#look-at-subsample-w-different-rounds>here</a> , <code>subsample</code> row sampling is just not appearing to be influencing accuracy.</p><img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_20_0.png><p>And per <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#hmm-colsample_bylevel>here</a> , the random column sampling may have just removed the good columns</p><img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_22_0.png><h4 id=train-and-test-accuracy-comparison>Train and test accuracy comparison</h4><ul><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.md>Here</a> , I took all of my <code>1000+</code> models from earlier, (which were on S3 so I had to copy them locally for convenience) and calculated accuracy, logloss and karea metrics for the training data, in order to be able to get learning curves to understand underfitting/overfitting.</li><li>Just showing ihere an example run for one model&mldr;</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>
+</code></pre></div><img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_11_0.png>
+<p>And maybe this is good as a sanity check, but more rounds take more time, ( <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#walltime>per here</a> )</p>
+<img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_13_0.png>
+<p>And from <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#look-at-walltime-and-learning-rate-again>here</a> it was interesting to see that walltime is stable mostly when it comes to learning rate except sometimes&mldr;</p>
+<img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_33_0.png>
+<p>And per <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#also-learning-rate-vs-acc>here</a> at least per the fixed parameters, the <code>0.1</code> learning rate is better than the <code>0.01</code> learning rate.</p>
+<img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_17_0.png>
+<p>And per <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#look-at-subsample-w-different-rounds>here</a> , <code>subsample</code> row sampling is just not appearing to be influencing accuracy.</p>
+<img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_20_0.png>
+<p>And per <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md#hmm-colsample_bylevel>here</a> , the random column sampling may have just removed the good columns</p>
+<img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-11-local_files/2020-07-11-local_22_0.png>
+<h4 id=train-and-test-accuracy-comparison>Train and test accuracy comparison</h4>
+<ul>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.md>Here</a> , I took all of my <code>1000+</code> models from earlier, (which were on S3 so I had to copy them locally for convenience) and calculated accuracy, logloss and karea metrics for the training data, in order to be able to get learning curves to understand underfitting/overfitting.</li>
+<li>Just showing ihere an example run for one model&mldr;</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>
 <span style=color:#75715e># As per https://github.com/namoopsoo/learn-citibike/blob/2020-revisit/notes/2020-07-10-aws.md</span>
 <span style=color:#75715e># the data dir was artifacts/2020-07-08T143732Z  ... going to re-create that locally too</span>
 <span style=color:#75715e>#</span>
@@ -139,8 +550,15 @@ Wall time: 21.4 s
 </code></pre><pre><code>(0.05276320740101365,
  0.03727538888502701,
  0.6435250908504123)
-</code></pre><p>The whole thing, took about <code>10 hours</code> as measured by the final line from <code>tqdm</code>,</p><pre><code>100%|█████████▉| 1052/1054 [10:00:57&lt;01:08, 34.27s/it]
-</code></pre><h5 id=putting-that-together>Putting that together,</h5><p><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.md#2020-07-23>Here</a> putting that together ..</p><p>training and test accuracy are pretty consistently close, with training accuracy being slightly better as expected. So there is no evidence overall of overfitting. But perhaps some evidence of underfitting .</p><p>The first thing I just looked at the parameters fixed by just what happened to be the first model built, so pretty arbitrary and comparing over the number of rounds. The results not unexpected not showing much learning happening.</p><img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-16-local_files/2020-07-16-local_28_0.png><p>Then I took the model with the best test accuracy results,</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>best_params <span style=color:#f92672>=</span> dict(alldf<span style=color:#f92672>.</span>sort_values(by<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;acc&#39;</span>)<span style=color:#f92672>.</span>iloc[<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>])
+</code></pre><p>The whole thing, took about <code>10 hours</code> as measured by the final line from <code>tqdm</code>,</p>
+<pre><code>100%|█████████▉| 1052/1054 [10:00:57&lt;01:08, 34.27s/it]
+</code></pre><h5 id=putting-that-together>Putting that together,</h5>
+<p><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.md#2020-07-23>Here</a> putting that together ..</p>
+<p>training and test accuracy are pretty consistently close, with training accuracy being slightly better as expected. So there is no evidence overall of overfitting. But perhaps some evidence of underfitting .</p>
+<p>The first thing I just looked at the parameters fixed by just what happened to be the first model built, so pretty arbitrary and comparing over the number of rounds. The results not unexpected not showing much learning happening.</p>
+<img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-16-local_files/2020-07-16-local_28_0.png>
+<p>Then I took the model with the best test accuracy results,</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>best_params <span style=color:#f92672>=</span> dict(alldf<span style=color:#f92672>.</span>sort_values(by<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;acc&#39;</span>)<span style=color:#f92672>.</span>iloc[<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>])
 best_params
 {<span style=color:#e6db74>&#39;train_acc&#39;</span>: <span style=color:#ae81ff>0.12693459297270465</span>,
  <span style=color:#e6db74>&#39;train_balanced_acc&#39;</span>: <span style=color:#ae81ff>0.11012147901980039</span>,
@@ -172,9 +590,15 @@ best_params
  <span style=color:#e6db74>&#39;walltime&#39;</span>: <span style=color:#ae81ff>1918.593945</span>,
  <span style=color:#e6db74>&#39;karea&#39;</span>: <span style=color:#ae81ff>0.75845582462009</span>,
  <span style=color:#e6db74>&#39;num_round&#39;</span>: <span style=color:#ae81ff>100</span>}
-</code></pre></div><p>And plotted all the train/test metrics across rounds, and this figure definitely shows learning happening . Very exciting!</p><img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-16-local_files/2020-07-16-local_31_0.png><h5 id=also-looked-for-the-biggest-gap-between-traintest-accuracy>Also looked for the biggest gap between train/test accuracy</h5><ul><li>And per the below, interestingly, it&rsquo;s seeming like the biggest train/test gap is very small..</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>alldf[<span style=color:#e6db74>&#39;train_test_acc_delta&#39;</span>] <span style=color:#f92672>=</span> alldf<span style=color:#f92672>.</span>apply(<span style=color:#66d9ef>lambda</span> x: abs(x[<span style=color:#e6db74>&#39;acc&#39;</span>] <span style=color:#f92672>-</span> x[<span style=color:#e6db74>&#39;train_acc&#39;</span>]), axis<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>)
+</code></pre></div><p>And plotted all the train/test metrics across rounds, and this figure definitely shows learning happening . Very exciting!</p>
+<img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-16-local_files/2020-07-16-local_31_0.png>
+<h5 id=also-looked-for-the-biggest-gap-between-traintest-accuracy>Also looked for the biggest gap between train/test accuracy</h5>
+<ul>
+<li>And per the below, interestingly, it&rsquo;s seeming like the biggest train/test gap is very small..</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>alldf[<span style=color:#e6db74>&#39;train_test_acc_delta&#39;</span>] <span style=color:#f92672>=</span> alldf<span style=color:#f92672>.</span>apply(<span style=color:#66d9ef>lambda</span> x: abs(x[<span style=color:#e6db74>&#39;acc&#39;</span>] <span style=color:#f92672>-</span> x[<span style=color:#e6db74>&#39;train_acc&#39;</span>]), axis<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>)
 alldf<span style=color:#f92672>.</span>sort_values(by<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;train_test_acc_delta&#39;</span>)<span style=color:#f92672>.</span>iloc[<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]
-</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>train_acc                     <span style=color:#ae81ff>0.128123</span>
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>train_acc                     <span style=color:#ae81ff>0.128123</span>
 train_balanced_acc            <span style=color:#ae81ff>0.111239</span>
 i                                 <span style=color:#ae81ff>1241</span>
 train_logloss                  <span style=color:#ae81ff>3.40954</span>
@@ -206,16 +630,88 @@ karea                         <span style=color:#ae81ff>0.760578</span>
 num_round                          <span style=color:#ae81ff>100</span>
 train_test_acc_delta        <span style=color:#ae81ff>0.00559313</span>
 Name: <span style=color:#ae81ff>1242</span>, dtype: object
-</code></pre></div><h4 id=initial-time-of-day-look>Initial time of day look</h4><p><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-05-woe.md>https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-05-woe.md</a></p><p>super</p><h4 id=discuss>discuss</h4><p><a href=https://github.com/namoopsoo/learn-citibike/blob/2020-oct/notes/2020-08-25-glue.md>https://github.com/namoopsoo/learn-citibike/blob/2020-oct/notes/2020-08-25-glue.md</a></p><h4 id=feature-importances>Feature importances</h4><p><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-26-feature-importances.md>notes</a></p><p>From the many hyper parameter tuning jobs I had run, I used the xgboost feature importance functionality to dump the perceived feature importances for all of the models. And in the <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-26-feature-importances.md#2020-08-02>notes</a> I plotted feature importances against accuracy for all of them.</p><p>For example, here are some of the more interesting plots,</p><img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_37_0.png>
+</code></pre></div><h4 id=initial-time-of-day-look>Initial time of day look</h4>
+<p><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-05-woe.md>https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-05-woe.md</a></p>
+<p>super</p>
+<h4 id=discuss>discuss</h4>
+<p><a href=https://github.com/namoopsoo/learn-citibike/blob/2020-oct/notes/2020-08-25-glue.md>https://github.com/namoopsoo/learn-citibike/blob/2020-oct/notes/2020-08-25-glue.md</a></p>
+<h4 id=feature-importances>Feature importances</h4>
+<p><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-26-feature-importances.md>notes</a></p>
+<p>From the many hyper parameter tuning jobs I had run, I used the xgboost feature importance functionality to dump the perceived feature importances for all of the models. And in the <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-26-feature-importances.md#2020-08-02>notes</a> I plotted feature importances against accuracy for all of them.</p>
+<p>For example, here are some of the more interesting plots,</p>
+<img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_37_0.png>
 <img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_37_1.png>
 <img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_37_2.png>
 <img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_37_3.png>
 <img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_37_4.png>
 <img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_37_5.png>
-<img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_37_6.png><p>The point here is that I had one hot encoded all of the starting neighborhoods. I am hoping of course that if a particular starting location looks important, then that should mean it is important in discriminating where you go next. Meaning it narrows down where you go. On the other hand, if your starting location is boring then that should mean it is more like a hub and there are too many destinations for the start along to be a helpful feature.</p><p>In the above plots, there is a wide range of models and they are showing that for some reason high importance does not necessarily mean high accuracy. If anything, I want to make a mental note that maybe these kinds of plots can be indicators of something wrong and some kind of under-fitting in particular. Or weak fitting at least. And one of the other scenarios is that fitting is weak, because there is not enough entropy in the data available to yield helpful discrimination with a model. No matter how well XGBoost can extract information, if the raw material does not have any diamonds, then we will be stuck.</p><p>The other thought is that there is an overfitting danger around not just an imbalance in the target variable (aka the destination neighborhood) but an imbalance in the starting locations too. This is why it would be really interesting to also look at the entropy of the multiclass outputs for signs of clear uncertainty for specific examples. Putting a pin on this <a href=#follow-on>in the follow-on section</a></p><p>The time of day features look like this, below, but again, this is not to say that these views represent the full story.</p><img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_40_79.png>
+<img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_37_6.png>
+<p>The point here is that I had one hot encoded all of the starting neighborhoods. I am hoping of course that if a particular starting location looks important, then that should mean it is important in discriminating where you go next. Meaning it narrows down where you go. On the other hand, if your starting location is boring then that should mean it is more like a hub and there are too many destinations for the start along to be a helpful feature.</p>
+<p>In the above plots, there is a wide range of models and they are showing that for some reason high importance does not necessarily mean high accuracy. If anything, I want to make a mental note that maybe these kinds of plots can be indicators of something wrong and some kind of under-fitting in particular. Or weak fitting at least. And one of the other scenarios is that fitting is weak, because there is not enough entropy in the data available to yield helpful discrimination with a model. No matter how well XGBoost can extract information, if the raw material does not have any diamonds, then we will be stuck.</p>
+<p>The other thought is that there is an overfitting danger around not just an imbalance in the target variable (aka the destination neighborhood) but an imbalance in the starting locations too. This is why it would be really interesting to also look at the entropy of the multiclass outputs for signs of clear uncertainty for specific examples. Putting a pin on this <a href=#follow-on>in the follow-on section</a></p>
+<p>The time of day features look like this, below, but again, this is not to say that these views represent the full story.</p>
+<img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_40_79.png>
 <img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_40_80.png>
 <img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_40_81.png>
 <img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_40_82.png>
 <img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_40_83.png>
 <img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_40_84.png>
-<img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_40_85.png><p>Thinking about this abit more in retrospect, these particular representations are probably not very meaningful to look at because if there are trends they need to be looked at &ldquo;localizing&rdquo; or &ldquo;fixing&rdquo; some of the parameters. Because these representations are all over the place but the relationship may still be hidden inside.</p><p>I think one of the top <a href=#follow-on>follow ons</a> has to be to find better time of day splits. I chose my time of day splits based on a model in my head, and so there is definitely some room for exploration here.</p><h3 id=follow-on>Follow On</h3><h4 id=time-of-day-more-splitting-exploration>Time of day more splitting exploration</h4><p>Find some more interesting techniques to try out different segmentation of the time of day. ( I&rsquo;m thinking &ldquo;adaptive binning " as described <a href=https://towardsdatascience.com/understanding-feature-engineering-part-1-continuous-numeric-data-da4e47099a7b>here</a> )</p><h4 id=better-understanding-of-model-uncertainty>Better understanding of model uncertainty</h4><ul><li>As discussed in the <a href=#feature-importances>feature importances section</a>, it would be really interesting to take the test dataset and for the output probability vectors of all of the examples, to calculate the multi-class entropy, to see if indeed high uncertainty is associated with worse correctness rank (<code>kth accuracy</code> and <code>karea</code> in other terminology I have been using).</li><li>Of course this is really tricky from an <em>Active Learning</em> point of view, because I can see a scenario where adding more training examples around the cases which have a higher uncertainty may improve the accuracy for the related test examples , but that feels like there is a risk of overfitting to the test set. In any case, however, if the live data is not reflective of the training/test data distributions ( covariate shift ), then refreshing the model is important.</li></ul><h3 id=some-lessons-for-the-future>Some lessons for the future</h3><h4 id=approach-to-training-and-artifacts>Approach to training and artifacts</h4><p>Training and hyperparameter tuning takes a long time. Dumping artifacts along the way, including models and results (for example using json), is helpful to allow another notebook to actively monitor the results as they are running. And doing this is also helpful because notebooks that run long experiments can sometimes crash. So it is nice to save intermediary results.</p><h4 id=notebooks>Notebooks</h4><p>I like the concept of keeping a daily notebook, because keeping several experiments in one notebook can risk running out of memory and sometimes it is difficult to load large notebooks on github, even if they are turned into markdown, if there are a lot of images.</p><h4 id=write-sooner-rather-than-later>Write sooner rather than later</h4><ul><li>Although it is tempting to just keep trying more and more experiments and to keep iterating the frontier forward, I think a difficult lesson to learn is that putting together the results of the day or the week takes much more time when done weeks or months later. I think summarizing and discussing your results as you go along is way more useful.</li><li>But if you do wait, another idae is to just create a notebook table of concents as I am doing below, as a way of having quick chronological reference about the work that was done.</li></ul><h3 id=notebooks-toc>Notebooks TOC</h3><ul><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-10-aws.md>2020-07-10</a> , like &ldquo;2020-07-09-aws&rdquo; , another hyperparameter tuning round here. <code>max_depth</code> , <code>subsample</code> , <code>colsample_bytree</code> .</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md>2020-07-11</a> , here I plot a bunch of results (on my laptop) , from the <em>2020-07-10</em> notebook running on aws.</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.md>2020-07-16-local.md</a> , recalculataing train metrics for the ~1250 or so models from the hyper parameter tuning session</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-26-feature-importances.md>2020-07-26-feature-importances.md</a> , looking at feature importances , reverse engineering my <code>proc_bundle</code> , to get back my list of feature names, which I had not done originally. Initially trying <code>model.get_score()</code> , dumping from each model. This actually took <code>3.5 hours</code>. I plotted features and accuracy in a few ways to try to gauge features being more oftan associated with high accuracy models. Plotting the correlation of feature importance and acuracy. I think this was not a super useful method. Ultimately, <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-21-look-at-model-plot.md>the fscore approach was better</a></li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-05-woe.md>2020-08-05-woe.md</a> , EDA on the time_of_day feature, visual histogram comparisons. Not the most fruitful however.</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-17-bundle-glue.md>2020-08-17-bundle-glue.md</a></li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-18-glue.md>2020-08-18-glue.md</a> some reverse engineering to repurpose my preprocessor bundle for live etraffic. And combining preprocessor and model to make a joblib bundle with everything in it. And drafint a <code>full_predict</code> method.</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-22-static-map-api.md>2020-08-22-static-map-api.md</a> getting setup with the Google Static Map API . Very nice.</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-25-glue.md>2020-08-25-glue.md</a> Docker entry code end to end live code. And building the code for the lambda that calls Docker. Unfortunately xgboost does not fit on the lambda. And oops lambda cannot write to the file system. And working through the new API Gateway authentication methods here. I wrote some support code for quick lambda deployment because I ended up using many iterations to get this right. Content type weirdness. Javascript plus cognito. This was not documented very well, so a lot of blundering here. Can&rsquo;t believe I finally made all of this work. This was insane.</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-20-karea-worst.md>2020-10-20-karea-worst.md</a> K Area worst case scenario.</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-21-look-at-model-plot.md>2020-10-21-look-at-model-plot.md</a> looking at Fscore and as well as plotting individual trees with graphviz . Also some interesting issues with versions of xgboost in docker and lack of backward compatibility.</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-21-uncertainty-xgboost.md>2020-10-21-uncertainty-xgboost.md</a> this is mainly just a footnote about the idea around measuring uncertainty in xgboost. But this is likely not super reliable.</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-22-features-v3.md>2020-10-22-features-v3.md</a> Take a quick look at time of day distribution</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-23-quick-new-v3-proc-bundle.md>2020-10-23-quick-new-v3-proc-bundle.md</a> one more model iteration using new features.</li><li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-25.md>2020-10-25.md</a> evaluate new v3. But although not yet done any tuning, so far this does not seem significantly better, with karea <code>0.761</code> versus earlier best <code>0.760</code> karea.</li></ul><ul class=pa0></ul><div class="mt6 instapaper_ignoref"></div></div><aside class="w-30-l mt6-l"></aside></article></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo><div class="flex justify-between"><a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://michal.piekarczyk.xyz/>&copy; My blog 2021</a><div></div></div></footer></body></html>
+<img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-26-feature-importances_files/2020-07-26-feature-importances_40_85.png>
+<p>Thinking about this abit more in retrospect, these particular representations are probably not very meaningful to look at because if there are trends they need to be looked at &ldquo;localizing&rdquo; or &ldquo;fixing&rdquo; some of the parameters. Because these representations are all over the place but the relationship may still be hidden inside.</p>
+<p>I think one of the top <a href=#follow-on>follow ons</a> has to be to find better time of day splits. I chose my time of day splits based on a model in my head, and so there is definitely some room for exploration here.</p>
+<h3 id=follow-on>Follow On</h3>
+<h4 id=time-of-day-more-splitting-exploration>Time of day more splitting exploration</h4>
+<p>Find some more interesting techniques to try out different segmentation of the time of day. ( I&rsquo;m thinking &ldquo;adaptive binning " as described <a href=https://towardsdatascience.com/understanding-feature-engineering-part-1-continuous-numeric-data-da4e47099a7b>here</a> )</p>
+<h4 id=better-understanding-of-model-uncertainty>Better understanding of model uncertainty</h4>
+<ul>
+<li>As discussed in the <a href=#feature-importances>feature importances section</a>, it would be really interesting to take the test dataset and for the output probability vectors of all of the examples, to calculate the multi-class entropy, to see if indeed high uncertainty is associated with worse correctness rank (<code>kth accuracy</code> and <code>karea</code> in other terminology I have been using).</li>
+<li>Of course this is really tricky from an <em>Active Learning</em> point of view, because I can see a scenario where adding more training examples around the cases which have a higher uncertainty may improve the accuracy for the related test examples , but that feels like there is a risk of overfitting to the test set. In any case, however, if the live data is not reflective of the training/test data distributions ( covariate shift ), then refreshing the model is important.</li>
+</ul>
+<h3 id=some-lessons-for-the-future>Some lessons for the future</h3>
+<h4 id=approach-to-training-and-artifacts>Approach to training and artifacts</h4>
+<p>Training and hyperparameter tuning takes a long time. Dumping artifacts along the way, including models and results (for example using json), is helpful to allow another notebook to actively monitor the results as they are running. And doing this is also helpful because notebooks that run long experiments can sometimes crash. So it is nice to save intermediary results.</p>
+<h4 id=notebooks>Notebooks</h4>
+<p>I like the concept of keeping a daily notebook, because keeping several experiments in one notebook can risk running out of memory and sometimes it is difficult to load large notebooks on github, even if they are turned into markdown, if there are a lot of images.</p>
+<h4 id=write-sooner-rather-than-later>Write sooner rather than later</h4>
+<ul>
+<li>Although it is tempting to just keep trying more and more experiments and to keep iterating the frontier forward, I think a difficult lesson to learn is that putting together the results of the day or the week takes much more time when done weeks or months later. I think summarizing and discussing your results as you go along is way more useful.</li>
+<li>But if you do wait, another idae is to just create a notebook table of concents as I am doing below, as a way of having quick chronological reference about the work that was done.</li>
+</ul>
+<h3 id=notebooks-toc>Notebooks TOC</h3>
+<ul>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-10-aws.md>2020-07-10</a> , like &ldquo;2020-07-09-aws&rdquo; , another hyperparameter tuning round here. <code>max_depth</code> , <code>subsample</code> , <code>colsample_bytree</code> .</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-11-local.md>2020-07-11</a> , here I plot a bunch of results (on my laptop) , from the <em>2020-07-10</em> notebook running on aws.</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.md>2020-07-16-local.md</a> , recalculataing train metrics for the ~1250 or so models from the hyper parameter tuning session</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-26-feature-importances.md>2020-07-26-feature-importances.md</a> , looking at feature importances , reverse engineering my <code>proc_bundle</code> , to get back my list of feature names, which I had not done originally. Initially trying <code>model.get_score()</code> , dumping from each model. This actually took <code>3.5 hours</code>. I plotted features and accuracy in a few ways to try to gauge features being more oftan associated with high accuracy models. Plotting the correlation of feature importance and acuracy. I think this was not a super useful method. Ultimately, <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-21-look-at-model-plot.md>the fscore approach was better</a></li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-05-woe.md>2020-08-05-woe.md</a> , EDA on the time_of_day feature, visual histogram comparisons. Not the most fruitful however.</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-17-bundle-glue.md>2020-08-17-bundle-glue.md</a></li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-18-glue.md>2020-08-18-glue.md</a> some reverse engineering to repurpose my preprocessor bundle for live etraffic. And combining preprocessor and model to make a joblib bundle with everything in it. And drafint a <code>full_predict</code> method.</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-22-static-map-api.md>2020-08-22-static-map-api.md</a> getting setup with the Google Static Map API . Very nice.</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-08-25-glue.md>2020-08-25-glue.md</a> Docker entry code end to end live code. And building the code for the lambda that calls Docker. Unfortunately xgboost does not fit on the lambda. And oops lambda cannot write to the file system. And working through the new API Gateway authentication methods here. I wrote some support code for quick lambda deployment because I ended up using many iterations to get this right. Content type weirdness. Javascript plus cognito. This was not documented very well, so a lot of blundering here. Can&rsquo;t believe I finally made all of this work. This was insane.</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-20-karea-worst.md>2020-10-20-karea-worst.md</a> K Area worst case scenario.</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-21-look-at-model-plot.md>2020-10-21-look-at-model-plot.md</a> looking at Fscore and as well as plotting individual trees with graphviz . Also some interesting issues with versions of xgboost in docker and lack of backward compatibility.</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-21-uncertainty-xgboost.md>2020-10-21-uncertainty-xgboost.md</a> this is mainly just a footnote about the idea around measuring uncertainty in xgboost. But this is likely not super reliable.</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-22-features-v3.md>2020-10-22-features-v3.md</a> Take a quick look at time of day distribution</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-23-quick-new-v3-proc-bundle.md>2020-10-23-quick-new-v3-proc-bundle.md</a> one more model iteration using new features.</li>
+<li><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-25.md>2020-10-25.md</a> evaluate new v3. But although not yet done any tuning, so far this does not seem significantly better, with karea <code>0.761</code> versus earlier best <code>0.760</code> karea.</li>
+</ul>
+<ul class=pa0>
+</ul>
+<div class="mt6 instapaper_ignoref">
+</div>
+</div>
+<aside class="w-30-l mt6-l">
+</aside>
+</article>
+</main>
+<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
+<div class="flex justify-between">
+<a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://michal.piekarczyk.xyz/>
+&copy; My blog 2021
+</a>
+<div>
+</div>
+</div>
+</footer>
+</body>
+</html>

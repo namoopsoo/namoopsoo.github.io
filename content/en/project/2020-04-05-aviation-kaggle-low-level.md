@@ -9,8 +9,8 @@ summary: learning physiological state from time series data
 
 
 #### Summary
-_Here, below, I write a bit retrospectively about my notes from the ["Reducing Commercial Aviation Fatalities" kaggle](https://www.kaggle.com/c/reducing-commercial-aviation-fatalities/data), trying to summarize some of the journey. I try to give some high lights
-from my various notebook entries. ( [github](https://github.com/namoopsoo/aviation-pilot-physiology-hmm) )_ 
+_Below, I write a bit retrospectively about my notes from the ["Reducing Commercial Aviation Fatalities" kaggle](https://www.kaggle.com/c/reducing-commercial-aviation-fatalities/data), trying to summarize some of the journey. I try to give some high lights
+from my various notebook entries. ( [github](https://github.com/namoopsoo/aviation-pilot-physiology-hmm) )_
 
 
 #### My High Level Recap

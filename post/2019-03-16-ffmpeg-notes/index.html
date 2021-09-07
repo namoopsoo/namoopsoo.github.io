@@ -5,7 +5,7 @@
 <title>Using ffmpeg to Merge Videos | My blog</title>
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="Put together our hyperlapse puzzle videos&mldr;  First stab at a merge using ffmpeg  time ffmpeg -safe 0 -f concat -i infiles.txt -vcodec copy -acodec copy merged.MOV  full output here and used this infiles.txt , following the directions  file ./2019-03-09\ 23.03.34.mov file ./2019-03-10\ 01.21.50.mov file ./2019-03-10\ 13.01.46.mov file ./2019-03-10\ 13.03.59.mov file ./2019-03-10\ 13.05.02.mov file ./2019-03-10\ 18.43.53.mov Did it do the right thing?  What are my mov lengths.">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content="Using ffmpeg to Merge Videos">
@@ -84,12 +84,12 @@ POST
 <ul>
 <li>First stab at a merge using <code>ffmpeg</code></li>
 </ul>
-<pre><code>time ffmpeg -safe 0 -f concat -i infiles.txt -vcodec copy -acodec copy merged.MOV
+<pre tabindex=0><code>time ffmpeg -safe 0 -f concat -i infiles.txt -vcodec copy -acodec copy merged.MOV
 </code></pre><ul>
 <li><a href=#full-output-of-the-merge-command>full output here</a></li>
 <li>and used this <code>infiles.txt</code> , following the directions</li>
 </ul>
-<pre><code>file ./2019-03-09\ 23.03.34.mov
+<pre tabindex=0><code>file ./2019-03-09\ 23.03.34.mov
 file ./2019-03-10\ 01.21.50.mov
 file ./2019-03-10\ 13.01.46.mov
 file ./2019-03-10\ 13.03.59.mov
@@ -99,7 +99,7 @@ file ./2019-03-10\ 18.43.53.mov
 <ul>
 <li>What are my mov lengths..</li>
 </ul>
-<pre><code>$ cat fileslist.txt |xargs -t -I % sh -c 'ffmpeg -i &quot;%&quot;  2&gt;&amp;1 |grep Duration '
+<pre tabindex=0><code>$ cat fileslist.txt |xargs -t -I % sh -c 'ffmpeg -i &quot;%&quot;  2&gt;&amp;1 |grep Duration '
 sh -c ffmpeg -i &quot;./2019-03-09 23.03.34.mov&quot;  2&gt;&amp;1 |grep Duration 
   Duration: 00:00:30.40, start: 0.000000, bitrate: 14837 kb/s
 sh -c ffmpeg -i &quot;./2019-03-10 01.21.50.mov&quot;  2&gt;&amp;1 |grep Duration 
@@ -115,7 +115,7 @@ sh -c ffmpeg -i &quot;./2019-03-10 18.43.53.mov&quot;  2&gt;&amp;1 |grep Duratio
 </code></pre><ul>
 <li>And the length of the merged movie created &mldr;</li>
 </ul>
-<pre><code>$ ffmpeg -i merged.MOV 2&gt;&amp;1|grep Duration
+<pre tabindex=0><code>$ ffmpeg -i merged.MOV 2&gt;&amp;1|grep Duration
   Duration: 00:02:18.10, start: 0.000000, bitrate: 14921 kb/s
 </code></pre><ul>
 <li>Doing some quick mental maths, that actually roughly adds up.</li>
@@ -126,26 +126,26 @@ sh -c ffmpeg -i &quot;./2019-03-10 18.43.53.mov&quot;  2&gt;&amp;1 |grep Duratio
 <li>My file <code>2019-03-10 13.05.02.mov</code> appears to be the one which was rotated.</li>
 <li>Trying to process it to see what happens&mldr;</li>
 </ul>
-<pre><code>ffmpeg -i 2019-03-10\ 13.05.02.mov -c:a copy 2019-03-10\ 13.05.02.ROTATED.mov
+<pre tabindex=0><code>ffmpeg -i 2019-03-10\ 13.05.02.mov -c:a copy 2019-03-10\ 13.05.02.ROTATED.mov
 
 </code></pre><ul>
 <li>Wow that took at least a minute. So umm, since the initial concatenation took under a second, I seriously doubt the autorotation was done during the concatenation.</li>
 <li>Okay, lets try that concat one more time, this time with the new file&mldr; and new files list</li>
 </ul>
-<pre><code>file ./2019-03-09\ 23.03.34.mov
+<pre tabindex=0><code>file ./2019-03-09\ 23.03.34.mov
 file ./2019-03-10\ 01.21.50.mov
 file ./2019-03-10\ 13.01.46.mov
 file ./2019-03-10\ 13.03.59.mov
 file ./2019-03-10\ 13.05.02.mov
 file ./2019-03-10\ 18.43.53.mov
-</code></pre><pre><code>time ffmpeg -safe 0 -f concat -i infiles.2019-03-16T2004Z.txt -vcodec copy -acodec copy 2019-03-16T2006Z-puzzle-merged.MOV
+</code></pre><pre tabindex=0><code>time ffmpeg -safe 0 -f concat -i infiles.2019-03-16T2004Z.txt -vcodec copy -acodec copy 2019-03-16T2006Z-puzzle-merged.MOV
 
 </code></pre><ul>
 <li>Unfortunately, <code>2019-03-16T2006Z-puzzle-merged.MOV</code> is even worse, because for some reason, only one frame is displayed for several minutes. So some more tweaking is needed.</li>
 </ul>
 <h3 id=appendix>Appendix</h3>
 <h4 id=full-output-of-the-merge-command>full output of the merge command</h4>
-<pre><code>ffmpeg version 4.1.1 Copyright (c) 2000-2019 the FFmpeg developers
+<pre tabindex=0><code>ffmpeg version 4.1.1 Copyright (c) 2000-2019 the FFmpeg developers
   built with Apple LLVM version 10.0.0 (clang-1000.11.45.5)
   configuration: --prefix=/usr/local/Cellar/ffmpeg/4.1.1 --enable-shared --enable-pthreads --enable-version3 --enable-hardcoded-tables --enable-avresample --cc=clang --host-cflags='-I/Library/Java/JavaVirtualMachines/openjdk-11.0.2.jdk/Contents/Home/include -I/Library/Java/JavaVirtualMachines/openjdk-11.0.2.jdk/Contents/Home/include/darwin' --host-ldflags= --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libbluray --enable-libmp3lame --enable-libopus --enable-librubberband --enable-libsnappy --enable-libtesseract --enable-libtheora --enable-libvorbis --enable-libvpx --enable-libx264 --enable-libx265 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-librtmp --enable-libspeex --enable-videotoolbox --disable-libjack --disable-indev=jack --enable-libaom --enable-libsoxr
   libavutil      56. 22.100 / 56. 22.100

@@ -9,7 +9,7 @@ I have picked up my bike share data learning project from earlier, to try to red
 This is mainly around navigating XGBoost.
 There are two XGBoost APIs With the sklearn API you can
 import xgboost as xgb from xgboost import XGBClassifier import numpy as np from sklearn.">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content="Some xgboost notes so far">
@@ -152,10 +152,10 @@ y_pred <span style=color:#f92672>=</span> bst<span style=color:#f92672>.</span>p
 <p>The walltime difference was <code>4min 18s</code> vs <code>49min 6s</code> ! (What a difference multithreading makes!)</p>
 <p>The first case used <code>2 threads</code>. I didn&rsquo;t actually set the <code>nthread</code> parameter, but I read in <a href=https://xgboost.readthedocs.io/en/latest/parameter.html>the docs</a> it defaults to the max. The <a href=https://xgboost.readthedocs.io/en/latest/python/python_api.html#xgboost.XGBClassifier>sklearn doc</a> seems to show <code>n_jobs</code> is the equivalent parameter here, but it does not appear to describe the default.</p>
 <p>Nicely, the magic func <code>%%time</code> shows the parallelization as</p>
-<pre><code>CPU times: user 8min 24s, sys: 1.24 s, total: 8min 26s
+<pre tabindex=0><code>CPU times: user 8min 24s, sys: 1.24 s, total: 8min 26s
 Wall time: 4min 18s
 </code></pre><p>vs</p>
-<pre><code>CPU times: user 49min 10s, sys: 1.15 s, total: 49min 11s
+<pre tabindex=0><code>CPU times: user 49min 10s, sys: 1.15 s, total: 49min 11s
 Wall time: 49min 6s
 </code></pre><h4 id=side-note>Side note</h4>
 <ul>

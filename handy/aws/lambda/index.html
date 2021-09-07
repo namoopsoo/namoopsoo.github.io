@@ -5,7 +5,7 @@
 <title>My blog</title>
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="Make a zip file for a lambda layer  From a well written reference here : adjust the python version as needed  #!/bin/bash export LIB_DIR=&#34;python&#34; rm -rf ${LIB_DIR} && mkdir -p ${LIB_DIR} docker run --rm -v $(pwd):/foo -w /foo lambci/lambda:build-python3.8 \ pip install -r requirements.txt -t ${LIB_DIR} zip -r layer.zip python  And I like to use vim layer.zip to look at the contents  ">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content>
@@ -83,7 +83,7 @@ HANDY
 <li>From a well written reference <a href=https://medium.com/swlh/how-to-create-and-use-layer-for-python-aws-lambda-function-80bc6eefa331>here</a> :</li>
 <li>adjust the python version as needed</li>
 </ul>
-<pre><code>#!/bin/bash
+<pre tabindex=0><code>#!/bin/bash
 export LIB_DIR=&quot;python&quot;
 
 rm -rf ${LIB_DIR} &amp;&amp; mkdir -p ${LIB_DIR}

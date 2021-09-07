@@ -6,7 +6,7 @@
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="Trying out Spark this weekend These are just my casual notes from doing that, updating them as I go along.
 Following this post to get kubernetes running in Docker for mac  Per this post , I just ticked the &ldquo;Enable Kubernetes&rdquo; option in the docker settings. Kubernetes is taking quite a while to start up though . several minutes. kind of weird?  Download spark image  From here  2021-01-24 ok backup my docker images  Per notes , I backed up local docker images, Like this&mldr;  docker save citibike-learn:0.">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content="Spark Weekend">
@@ -101,7 +101,7 @@ POST
 <li>Per <a href=https://corgibytes.com/blog/2019/05/13/docker-for-mac-safely-reset-from-factory-defaults/>notes</a> , I backed up local docker images,</li>
 <li>Like this&mldr;</li>
 </ul>
-<pre><code>docker save citibike-learn:0.9
+<pre tabindex=0><code>docker save citibike-learn:0.9
 # image:citibike-learn, tag:latest, image-id:1ff5cd891f00
 # image:citibike-learn, tag:0.9, imageid:c8d430e84654
 </code></pre><ul>
@@ -109,16 +109,16 @@ POST
 <li>And Enabled Kubernetes and wow! Nice finally got the green light.</li>
 <li>And restoring with <code>docker load</code> like this</li>
 </ul>
-<pre><code>docker load -i  citibike-learn-0.9.tar
+<pre tabindex=0><code>docker load -i  citibike-learn-0.9.tar
 </code></pre><h4 id=ok-now-i-can-continue-trying-to-get-spark-setup>Ok now I can continue trying to get spark setup..</h4>
 <ul>
 <li>Per the <a href=https://medium.com/faun/apache-spark-on-kubernetes-docker-for-mac-2501cc72e659>post</a> , I grabbed spark albeit <code>3.0.1</code> , instead of <code>2.x</code> ( from <a href=https://www.apache.org/dyn/closer.lua/spark/spark-3.0.1/spark-3.0.1-bin-hadoop3.2.tgz>here</a> ) , because according to the <a href=https://databricks.com/blog/2020/06/18/introducing-apache-spark-3-0-now-available-in-databricks-runtime-7-0.html>release notes</a> , 3.0 and 2.x are sounding very compatible.</li>
 </ul>
-<pre><code>./bin/docker-image-tool.sh -t spark-docker build
+<pre tabindex=0><code>./bin/docker-image-tool.sh -t spark-docker build
 </code></pre><ul>
 <li>&mldr; following along&mldr;</li>
 </ul>
-<pre><code>kubectl create serviceaccount spark
+<pre tabindex=0><code>kubectl create serviceaccount spark
 # serviceaccount/spark created
 
 kubectl create clusterrolebinding spark-role --clusterrole=edit  --serviceaccount=default:spark --namespace=default
@@ -126,7 +126,7 @@ kubectl create clusterrolebinding spark-role --clusterrole=edit  --serviceaccoun
 </code></pre><ul>
 <li>And submitting an example job</li>
 </ul>
-<pre><code>bin/spark-submit  \
+<pre tabindex=0><code>bin/spark-submit  \
     --master k8s://https://localhost:6443  \
     --deploy-mode cluster  \
     --conf spark.executor.instances=1  \
@@ -143,7 +143,7 @@ kubectl create clusterrolebinding spark-role --clusterrole=edit  --serviceaccoun
 <p>I tried https://localhost:6443/ from my browser but got denied for now, as below&mldr;</p>
 </li>
 </ul>
-<pre><code>{
+<pre tabindex=0><code>{
 kind: &quot;Status&quot;,
 apiVersion: &quot;v1&quot;,
 metadata: { },
@@ -156,7 +156,7 @@ code: 403
 </code></pre><ul>
 <li>I tried the <code>kubectl get pods </code> command and I can see the run time so far..</li>
 </ul>
-<pre><code>$ kubectl get pods
+<pre tabindex=0><code>$ kubectl get pods
 NAME                               READY   STATUS    RESTARTS   AGE
 spark-pi-4df4497735de91a1-driver   1/1     Running   0          6m1s
 spark-pi-79033a7735deb0a4-exec-1   0/1     Pending   0          5m52s
@@ -164,8 +164,8 @@ spark-pi-79033a7735deb0a4-exec-1   0/1     Pending   0          5m52s
 <li>Likely something is blocking. (Actually I noticed my Dropbox was being pretty aggressive. so I paused that.)</li>
 </ul>
 <h5 id=enabling-port-forwarding-to-get-access-to-the-dashboard>enabling port forwarding to get access to the dashboard..</h5>
-<pre><code>kubectl get pods -n kube-system
-</code></pre><pre><code>NAME                                     READY   STATUS    RESTARTS   AGE
+<pre tabindex=0><code>kubectl get pods -n kube-system
+</code></pre><pre tabindex=0><code>NAME                                     READY   STATUS    RESTARTS   AGE
 coredns-f9fd979d6-pdx99                  1/1     Running   0          30m
 coredns-f9fd979d6-vjpfp                  1/1     Running   0          30m
 etcd-docker-desktop                      1/1     Running   0          29m
@@ -186,7 +186,7 @@ vpnkit-controller                        1/1     Running   0          29m
 <p>Per <a href=https://stackoverflow.com/a/30094032/472876>here</a> tried killing</p>
 </li>
 </ul>
-<pre><code># ./bin/spark-class org.apache.spark.deploy.Client kill &lt;master url&gt; &lt;driver ID&gt;
+<pre tabindex=0><code># ./bin/spark-class org.apache.spark.deploy.Client kill &lt;master url&gt; &lt;driver ID&gt;
 ./bin/spark-class org.apache.spark.deploy.Client kill k8s://https://localhost:6443 spark-pi-4df4497735de91a1-driver
 
 WARNING: This client is deprecated and will be removed in a future version of Spark
@@ -215,7 +215,7 @@ Exception in thread &quot;main&quot; org.apache.spark.SparkException: Invalid ma
 <p>It is here, <a href=https://github.com/kubernetes/dashboard/releases/tag/v2.0.5>https://github.com/kubernetes/dashboard/releases/tag/v2.0.5</a></p>
 </li>
 </ul>
-<pre><code>kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.5/aio/deploy/recommended.yaml
+<pre tabindex=0><code>kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.5/aio/deploy/recommended.yaml
 
 namespace/kubernetes-dashboard created
 serviceaccount/kubernetes-dashboard created
@@ -234,20 +234,20 @@ deployment.apps/dashboard-metrics-scraper created
 </code></pre><ul>
 <li>Hmm I did not see the dashboard with <code>kubectl get pods -n kube-system</code>, but the mentioned to look using <code>kubectl get pods --all-namespaces</code> , and I do see it indeed , in its own namespace indeed&mldr; not in the <code>kube-system</code> namespace</li>
 </ul>
-<pre><code>NAMESPACE              NAME                                         READY   STATUS    RESTARTS   AGE
+<pre tabindex=0><code>NAMESPACE              NAME                                         READY   STATUS    RESTARTS   AGE
 kubernetes-dashboard   kubernetes-dashboard-6f65cb5c64-kbq8d        1/1     Running   0          2m46s
 </code></pre><ul>
 <li>Not seeing anything listening on <code>8443</code> with <code>netstat -an |grep LIST</code> however, as mentioned <a href=https://medium.com/faun/apache-spark-on-kubernetes-docker-for-mac-2501cc72e659>here</a></li>
 <li>But the other blog post is telling me to go here , http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy</li>
 <li>After first starting a local proxy that is..</li>
 </ul>
-<pre><code>kubectl proxy
+<pre tabindex=0><code>kubectl proxy
 # Starting to serve on 127.0.0.1:8001
 </code></pre><ul>
 <li>As mentioned, when I visited this url, I saw the screen asking for a token.</li>
 <li>And running the one liner ,</li>
 </ul>
-<pre><code>kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | awk '/^deployment-controller-token-/{print $1}') | awk '$1==&quot;token:&quot;{print $2}'
+<pre tabindex=0><code>kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | awk '/^deployment-controller-token-/{print $1}') | awk '$1==&quot;token:&quot;{print $2}'
 </code></pre><ul>
 <li>Yielded a token, which was accepted.</li>
 </ul>
@@ -256,7 +256,7 @@ kubernetes-dashboard   kubernetes-dashboard-6f65cb5c64-kbq8d        1/1     Runn
 <li>Since now I can look at the dashboard. Maybe I will see why that job was stalling..</li>
 <li>trying again</li>
 </ul>
-<pre><code>bin/spark-submit  \
+<pre tabindex=0><code>bin/spark-submit  \
 --master k8s://https://localhost:6443  \
 --deploy-mode cluster  \
 --conf spark.executor.instances=1  \
@@ -268,7 +268,7 @@ local:///opt/spark/examples/jars/spark-examples_2.12-3.0.1.jar
 </code></pre><ul>
 <li>One of the early outputs&mldr;</li>
 </ul>
-<pre><code>21/01/24 16:03:01 INFO KerberosConfDriverFeatureStep: You have not specified a krb5.conf file locally or via a ConfigMap. Make sure that you have the krb5.conf locally on the driver image.
+<pre tabindex=0><code>21/01/24 16:03:01 INFO KerberosConfDriverFeatureStep: You have not specified a krb5.conf file locally or via a ConfigMap. Make sure that you have the krb5.conf locally on the driver image.
 </code></pre><ul>
 <li>And basically now stuck in <code>Pending</code>.</li>
 </ul>
@@ -280,7 +280,7 @@ local:///opt/spark/examples/jars/spark-examples_2.12-3.0.1.jar
 <ul>
 <li>Oh and it is hanging around still blocking resources.</li>
 </ul>
-<pre><code>$ kubectl get pods --all-namespaces
+<pre tabindex=0><code>$ kubectl get pods --all-namespaces
 NAMESPACE              NAME                                         READY   STATUS    RESTARTS   AGE
 default                spark-pi-4df4497735de91a1-driver             1/1     Running   0          116m
 default                spark-pi-79033a7735deb0a4-exec-1             0/1     Pending   0          116m
@@ -290,7 +290,7 @@ default                spark-pi-e333f47736434a39-driver             0/1     Pend
 <li>So actually <code>Ctrl-C</code> was not enough to kill it.</li>
 <li>When I look at the logs for this driver pod, I&rsquo;m seeing</li>
 </ul>
-<pre><code>21/01/24 21:23:30 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+<pre tabindex=0><code>21/01/24 21:23:30 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
 </code></pre><ul>
 <li>Not sure how to know what resources are needed though.</li>
 </ul>
@@ -298,12 +298,12 @@ default                spark-pi-e333f47736434a39-driver             0/1     Pend
 <ul>
 <li>Kind of handy , when I try deleting that pod in the dashboard , I&rsquo;m seeing a handy note that</li>
 </ul>
-<pre><code>This action is equivalent to:kubectl delete -n default pod spark-pi-4df4497735de91a1-driver
+<pre tabindex=0><code>This action is equivalent to:kubectl delete -n default pod spark-pi-4df4497735de91a1-driver
 </code></pre><ul>
 <li>And as soon as that was terminated, the Pending job is running. So yea none of my <code>Ctrl-C</code> were useful haha.</li>
 <li>Trying that CLI delete instead then</li>
 </ul>
-<pre><code>kubectl delete -n default pod spark-pi-df12a57736350578-driver
+<pre tabindex=0><code>kubectl delete -n default pod spark-pi-df12a57736350578-driver
 </code></pre><ul>
 <li>Ok that seems to have worked.</li>
 </ul>
@@ -346,7 +346,7 @@ sc <span style=color:#f92672>=</span> SparkContext(<span style=color:#e6db74>&#3
 </code></pre></div><ul>
 <li>oh interesting it is already pre defined</li>
 </ul>
-<pre><code>&gt;&gt;&gt; sc
+<pre tabindex=0><code>&gt;&gt;&gt; sc
 &lt;SparkContext master=local[*] appName=PySparkShell&gt;
 </code></pre><ul>
 <li>Will try something basic..</li>
@@ -633,7 +633,7 @@ df<span style=color:#f92672>.</span>groupBy(<span style=color:#e6db74>&#39;sex&#
 </code></pre></div><ul>
 <li>Now getting the error..</li>
 </ul>
-<pre><code>PythonException:
+<pre tabindex=0><code>PythonException:
   An exception was thrown from the Python worker. Please see the stack trace below.
   ...
 AttributeError: 'DataFrame' object has no attribute 'limit'
@@ -716,7 +716,7 @@ df<span style=color:#f92672>.</span>groupBy(<span style=color:#e6db74>&#39;sex&#
 <p>Randomly reading this may be something to do w/ old pandas version?</p>
 </li>
 </ul>
-<pre><code>
+<pre tabindex=0><code>
 In [68]: pd.__version__                                                                                                                
 Out[68]: '0.24.2'
 
@@ -747,7 +747,7 @@ df<span style=color:#f92672>.</span>groupBy(<span style=color:#e6db74>&#39;sex&#
 </code></pre></div><ul>
 <li>now a different error..</li>
 </ul>
-<pre><code>pyarrow.lib.ArrowException: Unknown error: Wrapping 2020/03/�6 failed
+<pre tabindex=0><code>pyarrow.lib.ArrowException: Unknown error: Wrapping 2020/03/�6 failed
 
 </code></pre><ul>
 <li>Makes me think I have some garbage data</li>
@@ -761,7 +761,7 @@ df <span style=color:#f92672>=</span> spark<span style=color:#f92672>.</span>rea
 </code></pre></div><ul>
 <li>WOw now a scala/java error..</li>
 </ul>
-<pre><code>21/02/20 22:19:32 ERROR Executor: Exception in task 60.0 in stage 8.0 (TID 406)]
+<pre tabindex=0><code>21/02/20 22:19:32 ERROR Executor: Exception in task 60.0 in stage 8.0 (TID 406)]
 org.apache.spark.SparkException: Python worker exited unexpectedly (crashed)
 ...
 at org.apache.spark.api.python.BasePythonRunner$ReaderIterator$$anonfun$1.applyOrElse(PythonRunner.scala:536)
@@ -889,7 +889,7 @@ df <span style=color:#f92672>=</span> spark<span style=color:#f92672>.</span>rea
 schema <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;sex string, count int&#39;</span>
 <span style=color:#75715e>#</span>
 df<span style=color:#f92672>.</span>groupBy(<span style=color:#e6db74>&#39;sex&#39;</span>)<span style=color:#f92672>.</span>applyInPandas(foo, schema)<span style=color:#f92672>.</span>collect()
-</code></pre></div><pre><code>[Row(sex='Female', count=7),
+</code></pre></div><pre tabindex=0><code>[Row(sex='Female', count=7),
  Row(sex='Female', count=7),
  Row(sex='Female', count=7),
  Row(sex='Female', count=3),

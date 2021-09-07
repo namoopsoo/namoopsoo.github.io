@@ -6,7 +6,7 @@
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="Build issues again haha I am doing jekyll build but this time from a Makefile , containing
 build: jekyll build  with make build And I&rsquo;m getting  $ make build jekyll build Traceback (most recent call last): 10: from /usr/local/lib/ruby/gems/2.6.0/bin/jekyll:23:in `<main>' 9: from /usr/local/lib/ruby/gems/2.6.0/bin/jekyll:23:in `load' 8: from /usr/local/lib/ruby/gems/2.6.0/gems/jekyll-4.0.0/exe/jekyll:11:in `<top (required)>' 7: from /usr/local/lib/ruby/gems/2.6.0/gems/jekyll-4.0.0/lib/jekyll/plugin_manager.rb:52:in `require_from_bundler' 6: from /usr/local/lib/ruby/gems/2.6.0/gems/bundler-2.0.2/lib/bundler.rb:107:in `setup' 5: from /usr/local/lib/ruby/gems/2.6.0/gems/bundler-2.0.2/lib/bundler/runtime.rb:26:in `setup' 4: from /usr/local/lib/ruby/gems/2.6.0/gems/bundler-2.0.2/lib/bundler/runtime.rb:26:in `map' 3: from /usr/local/lib/ruby/gems/2.6.0/gems/bundler-2.0.2/lib/bundler/spec_set.rb:148:in `each' 2: from /usr/local/lib/ruby/gems/2.">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content>
@@ -84,14 +84,14 @@ POST
 </header>
 <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h4 id=build-issues-again-haha>Build issues again haha</h4>
 <p>I am doing <code>jekyll build</code> but this time from a <code>Makefile</code> , containing</p>
-<pre><code>build:
+<pre tabindex=0><code>build:
     jekyll build
 
 </code></pre><ul>
 <li>with <code>make build</code></li>
 <li>And I&rsquo;m getting</li>
 </ul>
-<pre><code>$ make build
+<pre tabindex=0><code>$ make build
 jekyll build
 Traceback (most recent call last):
 	10: from /usr/local/lib/ruby/gems/2.6.0/bin/jekyll:23:in `&lt;main&gt;'
@@ -110,7 +110,7 @@ make: *** [build] Error 1
 <li>Ok cool. Whatever that means haha. So going full Memento here, looking at <a href=/jekyll/update/meta/2020/05/30/trying-again.html>my earlier notes</a> , I see last time I used <code>gem update --system</code> to solve the problem.</li>
 <li>So doing that again this time , and saw this output..</li>
 </ul>
-<pre><code>$ gem update --system
+<pre tabindex=0><code>$ gem update --system
 Updating rubygems-update
 Fetching rubygems-update-3.1.4.gem
 Successfully installed rubygems-update-3.1.4
@@ -162,7 +162,7 @@ RubyGems system software updated
 You have new mail in /var/mail/michal
 $ 
 </code></pre><h4 id=ok-letss-try-again>ok letss try again</h4>
-<pre><code>make build
+<pre tabindex=0><code>make build
 </code></pre><ul>
 <li>
 <p>Darn getting same result. Ok it says to use <code>bundle exec jekyll build</code> instead. Going to try that</p>
@@ -171,7 +171,7 @@ $
 <p>Ok now it did stuff&mldr;</p>
 </li>
 </ul>
-<pre><code>$ make build
+<pre tabindex=0><code>$ make build
 bundle exec jekyll build
 Configuration file: /xxxx/repo/namoopsoo.github.io/_config.yml
             Source: /xxxx/repo/namoopsoo.github.io
@@ -195,14 +195,14 @@ $
 <li>Turns out per reading <a href=https://jekyllrb.com/docs/continuous-integration/buddyworks/>here</a> , there is indeed a <a href=https://hub.docker.com/r/jekyll/jekyll/>jekyll Docker image</a> already.</li>
 <li>Let me just test run that wow.</li>
 </ul>
-<pre><code>docker pull jekyll/jekyll
+<pre tabindex=0><code>docker pull jekyll/jekyll
 ...
 Digest: sha256:bb45414c3fefa80a75c5001f30baf1dff48ae31dc961b8b51003b93b60675334
 Status: Downloaded newer image for jekyll/jekyll:latest
 </code></pre><ul>
 <li>But then when running from the <a href=https://github.com/envygeeks/jekyll-docker/blob/master/README.md>github</a> ,</li>
 </ul>
-<pre><code>export JEKYLL_VERSION=3.8
+<pre tabindex=0><code>export JEKYLL_VERSION=3.8
 docker run --rm \
   --volume=&quot;$PWD:/srv/jekyll&quot; \
   -it jekyll/jekyll:$JEKYLL_VERSION 
@@ -211,7 +211,7 @@ docker run --rm \
 </code></pre><ul>
 <li>But I got this</li>
 </ul>
-<pre><code>Unable to find image 'jekyll/jekyll:3.8' locally
+<pre tabindex=0><code>Unable to find image 'jekyll/jekyll:3.8' locally
 3.8: Pulling from jekyll/jekyll
 ...
 Digest: sha256:9521c8aae4739fcbc7137ead19f91841b833d671542f13e91ca40280e88d6e34
@@ -220,7 +220,7 @@ Status: Downloaded newer image for jekyll/jekyll:3.8
 <li>So I suppose latesst was not <code>3.8</code>.</li>
 <li>Anyway wow, a few minutes later this run command is still well, <em>running</em></li>
 </ul>
-<pre><code>Fetching gem metadata from https://rubygems.org/.........
+<pre tabindex=0><code>Fetching gem metadata from https://rubygems.org/.........
 Fetching public_suffix 4.0.1
 Installing public_suffix 4.0.1
 Fetching addressable 2.7.0
@@ -247,7 +247,7 @@ Installing sassc 2.2.1 with native extensions
 </code></pre><ul>
 <li>ok continued.. that last part took a while, but the later stuff was quick.</li>
 </ul>
-<pre><code>Fetching jekyll-sass-converter 2.0.1
+<pre tabindex=0><code>Fetching jekyll-sass-converter 2.0.1
 Installing jekyll-sass-converter 2.0.1
 Fetching rb-fsevent 0.10.3
 Installing rb-fsevent 0.10.3
@@ -320,7 +320,7 @@ Subcommands:
 <li>Oops, guess I ran this poorly&mldr; wait hmm I have the interactive flags, not sure why it quit. weird.</li>
 <li>Going to try again &mldr; and w/o the <code>--rm</code> so I dont have to redo it&mldr;</li>
 </ul>
-<pre><code>export JEKYLL_VERSION=3.8
+<pre tabindex=0><code>export JEKYLL_VERSION=3.8
 docker run  \
   --volume=&quot;$PWD:/srv/jekyll&quot; \
   -i -t jekyll/jekyll:$JEKYLL_VERSION 
@@ -331,7 +331,7 @@ docker run  \
 <li>So let me at least try build. Hmm but <code>docker ps</code> shows nothing weird.</li>
 <li>COnfused why it&rsquo;s exiting&mldr;</li>
 </ul>
-<pre><code>$ docker ps --last 5
+<pre tabindex=0><code>$ docker ps --last 5
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                     PORTS                                            NAMES
 9ac4abb74269        jekyll/jekyll:3.8   &quot;/usr/jekyll/bin/ent…&quot;   7 minutes ago       Exited (0) 2 minutes ago                                                    compassionate_mccarthy
 </code></pre><ul>
@@ -349,7 +349,7 @@ My <code>Gemfile</code> has <code>"jekyll", "~> 4.0.0"</code> actually. I wonder
 <p>Aha and in the output it does actually show</p>
 </li>
 </ul>
-<pre><code>Fetching jekyll 4.0.0
+<pre tabindex=0><code>Fetching jekyll 4.0.0
 Installing jekyll 4.0.0
 </code></pre><ul>
 <li>
@@ -365,7 +365,7 @@ Installing jekyll 4.0.0
 <p>Ok trying again w/ <code>gem "jekyll", "~> 3.8"</code> in my Gemfile this time.</p>
 </li>
 </ul>
-<pre><code>$ docker run    --volume=&quot;$PWD:/srv/jekyll&quot;   -i -t jekyll/jekyll:$JEKYLL_VERSION jekyll build
+<pre tabindex=0><code>$ docker run    --volume=&quot;$PWD:/srv/jekyll&quot;   -i -t jekyll/jekyll:$JEKYLL_VERSION jekyll build
 
 Fetching gem metadata from https://rubygems.org/..........
 Fetching gem metadata from https://rubygems.org/.

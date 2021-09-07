@@ -9,7 +9,7 @@
   Using the API explorer &mldr; I hit Get Token ..
   https://www.dropbox.com/oauth2/authorize?response_type=token&client_id=xxxxxxxxx&redirect_uri=https%3A%2F%2Fdropbox.github.io%2Fdropbox-api-v2-explorer%2F&state=file_requests_list!39%2B%2Bxxxxxxxx&token_access_type=online&
  That generated a token and I used https://dropbox.github.io/dropbox-api-v2-explorer/#files_list_folder and I was able to see actual folders in my account.">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content="Easy Blog Posting (&#34;My Noting Book&#34;)">
@@ -159,20 +159,20 @@ meta, response <span style=color:#f92672>=</span> dbx<span style=color:#f92672>.
 <li>But ah that&rsquo;s right you can create a token for your account from here, <a href=https://github.com/settings/tokens/new>Github settings</a> .</li>
 <li>Ok cool I was able to perform a simple curl w/ the personal token I created for myself &mldr; ( per <a href=https://docs.github.com/en/free-pro-team@latest/rest/overview/other-authentication-methods>docs</a> )</li>
 </ul>
-<pre><code>$ curl -v -H &quot;Authorization: token ${GITHUB_TOKEN}&quot; https://api.github.com/users/namoopsoo/repos
+<pre tabindex=0><code>$ curl -v -H &quot;Authorization: token ${GITHUB_TOKEN}&quot; https://api.github.com/users/namoopsoo/repos
 </code></pre><h4 id=ok-but-can-your-write-using-this-api-is-the-big-question>ok but can your write using this API is the big question..</h4>
 <ul>
 <li>Hmm according to <a href=https://docs.github.com/en/free-pro-team@latest/rest/reference/git#commits>here</a> you can commit.</li>
 </ul>
-<pre><code>post /repos/{owner}/{repo}/git/commits
+<pre tabindex=0><code>post /repos/{owner}/{repo}/git/commits
 </code></pre><ul>
 <li>But not seeing how to include the actual diffs in there. Maybe a <a href=https://docs.github.com/en/free-pro-team@latest/rest/reference/git#blobs>blob?</a></li>
 <li>Ok according to <a href=http://www.levibotelho.com/development/commit-a-file-with-the-github-api/>this nice article</a> , indeed the blob endpoint is for files! hmm</li>
 </ul>
 <h5 id=step-1-get-a-reference-like-herehttpsdevelopergithubcomv3gitrefsget-a-reference>step 1, get a reference.. like <a href=https://developer.github.com/v3/git/refs/#get-a-reference>here</a></h5>
-<pre><code>curl -v -H &quot;Authorization: token ${GITHUB_TOKEN}&quot;   https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/ref/heads/master
+<pre tabindex=0><code>curl -v -H &quot;Authorization: token ${GITHUB_TOKEN}&quot;   https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/ref/heads/master
 </code></pre><p>Nice excellent, &mldr;</p>
-<pre><code>...
+<pre tabindex=0><code>...
 ...
 {
   &quot;ref&quot;: &quot;refs/heads/master&quot;,
@@ -185,8 +185,8 @@ meta, response <span style=color:#f92672>=</span> dbx<span style=color:#f92672>.
   }
 }
 </code></pre><h5 id=step-2--grab-the-commit-that-head-points-to>step 2 , Grab the commit that HEAD points to</h5>
-<pre><code>curl -H &quot;Authorization: token ${GITHUB_TOKEN}&quot; https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/commits/482d52f53a146dd688eff4ed8093cf2980580662
-</code></pre><pre><code>{
+<pre tabindex=0><code>curl -H &quot;Authorization: token ${GITHUB_TOKEN}&quot; https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/commits/482d52f53a146dd688eff4ed8093cf2980580662
+</code></pre><pre tabindex=0><code>{
   &quot;sha&quot;: &quot;482d52f53a146dd688eff4ed8093cf2980580662&quot;,
   &quot;node_id&quot;: &quot;MDY6Q29tbWl0MTAwMTg1NjcwOjQ4MmQ1MmY1M2ExNDZkZDY4OGVmZjRlZDgwOTNjZjI5ODA1ODA2NjI=&quot;,
   &quot;url&quot;: &quot;https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/commits/482d52f53a146dd688eff4ed8093cf2980580662&quot;,
@@ -227,13 +227,13 @@ meta, response <span style=color:#f92672>=</span> dbx<span style=color:#f92672>.
 <li>So continuing with <a href=http://www.levibotelho.com/development/commit-a-file-with-the-github-api/>this article</a> , going to post a blob next</li>
 </ul>
 <h4 id=3-post-your-new-file-to-the-server>3. Post your new file to the server</h4>
-<pre><code>curl \
+<pre tabindex=0><code>curl \
   -X POST \
   -H &quot;Accept: application/vnd.github.v3+json&quot; \
   -H &quot;Authorization: token ${GITHUB_TOKEN}&quot; https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/blobs \
   -d '{&quot;content&quot;: &quot;content of the blob&quot;, &quot;encoding&quot;: &quot;utf-8&quot;}'
 </code></pre><p>Getting</p>
-<pre><code>{
+<pre tabindex=0><code>{
   &quot;message&quot;: &quot;Not Found&quot;,
   &quot;documentation_url&quot;: &quot;https://docs.github.com/rest/reference/git#create-a-blob&quot;
 }
@@ -242,7 +242,7 @@ meta, response <span style=color:#f92672>=</span> dbx<span style=color:#f92672>.
 <li>Ah actually, .. I took a random guess and looking at <a href=https://github.com/settings/tokens>https://github.com/settings/tokens</a> indeed found I needed to just add some extra permissions.</li>
 <li>Tried that same <code>curl -X POST</code> again and now got back</li>
 </ul>
-<pre><code>{
+<pre tabindex=0><code>{
   &quot;sha&quot;: &quot;6b2d785ecc7db8b71ee933a5b22961a52f40592c&quot;,
   &quot;url&quot;: &quot;https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/blobs/6b2d785ecc7db8b71ee933a5b22961a52f40592c&quot;
 }
@@ -252,7 +252,7 @@ meta, response <span style=color:#f92672>=</span> dbx<span style=color:#f92672>.
 <li>Ok so grabbing that <code>e5a9ee9506a040a7cc8c608614db7531f8f32e70</code> tree of my target branch&rsquo;s current <code>HEAD</code> commit now&mldr;</li>
 <li>( and incidentally that <code>jq</code> json querying parsing utility is kind of nice here.. )</li>
 </ul>
-<pre><code>get /repos/{owner}/{repo}/git/trees/e5a9ee9506a040a7cc8c608614db7531f8f32e70
+<pre tabindex=0><code>get /repos/{owner}/{repo}/git/trees/e5a9ee9506a040a7cc8c608614db7531f8f32e70
 curl \
   -H &quot;Accept: application/vnd.github.v3+json&quot; \
   -H &quot;Authorization: token ${GITHUB_TOKEN}&quot; https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/trees/e5a9ee9506a040a7cc8c608614db7531f8f32e70  \
@@ -285,7 +285,7 @@ curl \
   ]
 
 
-</code></pre><pre><code>(pandars3) $ curl   -H &quot;Accept: application/vnd.github.v3+json&quot;   -H &quot;Authorization: token ${GITHUB_TOKEN}&quot; https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/trees/e5a9ee9506a040a7cc8c608614db7531f8f32e70 |jq --color-output '.tree | map(.type)'
+</code></pre><pre tabindex=0><code>(pandars3) $ curl   -H &quot;Accept: application/vnd.github.v3+json&quot;   -H &quot;Authorization: token ${GITHUB_TOKEN}&quot; https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/trees/e5a9ee9506a040a7cc8c608614db7531f8f32e70 |jq --color-output '.tree | map(.type)'
 [
   &quot;blob&quot;,
   &quot;blob&quot;,
@@ -317,7 +317,7 @@ curl \
 <li>Also noticed the paths dont seem to be absolute paths ..</li>
 <li>I looked up the tree representing the directory <code>_sass</code> and got a relative path there inside..</li>
 </ul>
-<pre><code>[
+<pre tabindex=0><code>[
   {
     &quot;path&quot;: &quot;main.scss&quot;,
     &quot;mode&quot;: &quot;100644&quot;,
@@ -337,7 +337,7 @@ main.scss
 <li>Ok So I must create a new tree containing the newly created blob.</li>
 <li>I had actually committed a few commits in the meantime, so I just have to fetch the last trees commit again &mldr;</li>
 </ul>
-<pre><code># using the last commit ... bc74103c6c376a267f6f480e185fcb0c816d2f5b
+<pre tabindex=0><code># using the last commit ... bc74103c6c376a267f6f480e185fcb0c816d2f5b
 
 (pandars3) $ curl -H &quot;Authorization: token ${GITHUB_TOKEN}&quot; https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/commits/bc74103c6c376a267f6f480e185fcb0c816d2f5b
 {
@@ -378,7 +378,7 @@ main.scss
 <li>ok now to create a new tree using <code>e25ed95e0655cc209c8a3f9c61d18a182abd60d0</code> from above, as the base tree</li>
 <li>And the new blob I had created earlier&mldr; is <code>6b2d785ecc7db8b71ee933a5b22961a52f40592c</code></li>
 </ul>
-<pre><code>post /repos/{owner}/{repo}/git/trees
+<pre tabindex=0><code>post /repos/{owner}/{repo}/git/trees
 
 curl \
   -X POST \
@@ -399,20 +399,20 @@ curl \
 </code></pre><ul>
 <li>ok first try I got</li>
 </ul>
-<pre><code>{
+<pre tabindex=0><code>{
   &quot;message&quot;: &quot;Problems parsing JSON&quot;,
   &quot;documentation_url&quot;: &quot;https://docs.github.com/rest/reference/git#create-a-tree&quot;
 }
 </code></pre><ul>
 <li>Ok tried without trying to break it up on multiple lines and this time somehow worked..</li>
 </ul>
-<pre><code>curl \
+<pre tabindex=0><code>curl \
   -X POST \
   -H &quot;Accept: application/vnd.github.v3+json&quot; \
   -H &quot;Authorization: token ${GITHUB_TOKEN}&quot; https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/trees \
   -d '{&quot;base_tree&quot;: &quot;e25ed95e0655cc209c8a3f9c61d18a182abd60d0&quot;, &quot;tree&quot;: [ { &quot;path&quot;: &quot;new_blob.txt&quot;, &quot;mode&quot;: &quot;100644&quot;, &quot;type&quot;: &quot;blob&quot;, &quot;sha&quot;: &quot;6b2d785ecc7db8b71ee933a5b22961a52f40592c&quot; } ] }'
 
-</code></pre><pre><code>{
+</code></pre><pre tabindex=0><code>{
   &quot;sha&quot;: &quot;477075b08cae14b22534e7071b066d383696222c&quot;,
   &quot;url&quot;: &quot;https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/trees/477075b08cae14b22534e7071b066d383696222c&quot;,
   &quot;tree&quot;: [
@@ -441,7 +441,7 @@ curl \
 <li>The parent commit in this case&mldr; <code>bc74103c6c376a267f6f480e185fcb0c816d2f5b</code></li>
 <li>And the <code>477075b08cae14b22534e7071b066d383696222c</code> new tree created in last step&mldr;</li>
 </ul>
-<pre><code>curl \
+<pre tabindex=0><code>curl \
   -X POST \
   -H &quot;Accept: application/vnd.github.v3+json&quot; \
   -H &quot;Authorization: token ${GITHUB_TOKEN}&quot; https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/commits \
@@ -450,7 +450,7 @@ curl \
 
 
 </code></pre><p>As far as I can tell that created a commit .. <code>526dea236deed39d9a996187a6eb31c55137f675</code></p>
-<pre><code>{
+<pre tabindex=0><code>{
   &quot;sha&quot;: &quot;526dea236deed39d9a996187a6eb31c55137f675&quot;,
   &quot;node_id&quot;: &quot;MDY6Q29tbWl0MTAwMTg1NjcwOjUyNmRlYTIzNmRlZWQzOWQ5YTk5NjE4N2E2ZWIzMWM1NTEzN2Y2NzU=&quot;,
   &quot;url&quot;: &quot;https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/commits/526dea236deed39d9a996187a6eb31c55137f675&quot;,
@@ -486,14 +486,14 @@ curl \
 }
 
 </code></pre><h4 id=7-update-head>7. Update HEAD</h4>
-<pre><code>patch /repos/{owner}/{repo}/git/refs/{ref}
+<pre tabindex=0><code>patch /repos/{owner}/{repo}/git/refs/{ref}
 curl \
   -X PATCH \
   -H &quot;Accept: application/vnd.github.v3+json&quot; \
   -H &quot;Authorization: token ${GITHUB_TOKEN}&quot; https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/refs/master/HEAD \
   -d  '{&quot;sha&quot;: &quot;526dea236deed39d9a996187a6eb31c55137f675&quot;} '
 </code></pre><p>First stab I&rsquo;m seeing</p>
-<pre><code>{
+<pre tabindex=0><code>{
   &quot;message&quot;: &quot;Reference does not exist&quot;,
   &quot;documentation_url&quot;: &quot;https://docs.github.com/rest/reference/git#update-a-reference&quot;
 }
@@ -501,13 +501,13 @@ curl \
 <li>(Incidentally at this point I tried <code>git fetch</code> and didnt work. Also didnt see the new commit on the github.com through a browser either. )</li>
 <li>Ok using a slightly different syntax..</li>
 </ul>
-<pre><code>curl \
+<pre tabindex=0><code>curl \
   -X PATCH \
   -H &quot;Accept: application/vnd.github.v3+json&quot; \
   -H &quot;Authorization: token ${GITHUB_TOKEN}&quot; https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/refs/heads/master \
   -d  '{&quot;sha&quot;: &quot;526dea236deed39d9a996187a6eb31c55137f675&quot;} '
 
-</code></pre><pre><code>{
+</code></pre><pre tabindex=0><code>{
   &quot;ref&quot;: &quot;refs/heads/master&quot;,
   &quot;node_id&quot;: &quot;MDM6UmVmMTAwMTg1NjcwOnJlZnMvaGVhZHMvbWFzdGVy&quot;,
   &quot;url&quot;: &quot;https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/refs/heads/master&quot;,
@@ -518,7 +518,7 @@ curl \
   }
 }
 </code></pre><p>Nice and success..</p>
-<pre><code>(pandars3) $ git log  --graph --pretty=oneline --abbrev-commit --decorate  --all
+<pre tabindex=0><code>(pandars3) $ git log  --graph --pretty=oneline --abbrev-commit --decorate  --all
 * 526dea2 (origin/master) my first commit using github api!
 * bc74103 (HEAD -&gt; master) moar
 * c968420 moar

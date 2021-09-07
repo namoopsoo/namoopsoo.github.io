@@ -6,7 +6,7 @@
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="Summary Ok managed to get DeepSpeech to run, but the output for my voice maybe does not translate to any text that makes sense hahaha. But it was pretty funny to read the interpretation.
 My recording was in m4a so I had to change over to wav first  ffmpeg is good for m4a to wav conversion but my ffmpeg is having some issues.  (deep3) $ ffmpeg dyld: Library not loaded: /usr/local/opt/openssl/lib/libssl.">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content="Quick test drive this Mozilla/Baidu Deep Speech">
@@ -90,7 +90,7 @@ POST
 <ul>
 <li>ffmpeg is good for m4a to wav conversion but my <code>ffmpeg</code> is having some issues.</li>
 </ul>
-<pre><code>(deep3) $ ffmpeg
+<pre tabindex=0><code>(deep3) $ ffmpeg
 dyld: Library not loaded: /usr/local/opt/openssl/lib/libssl.1.0.0.dylib
   Referenced from: /usr/local/bin/ffmpeg
   Reason: image not found
@@ -101,7 +101,7 @@ Abort trap: 6
 <li>I ran <code>brew update</code></li>
 <li>Then</li>
 </ul>
-<pre><code>$ brew upgrade ffmpeg
+<pre tabindex=0><code>$ brew upgrade ffmpeg
 ...
 ==&gt; Upgrading 1 outdated package:
 ffmpeg 4.1.1 -&gt; 4.3.1_4
@@ -110,7 +110,7 @@ ffmpeg 4.1.1 -&gt; 4.3.1_4
 </code></pre><ul>
 <li>That worked but I saw this at the end , so I did that</li>
 </ul>
-<pre><code>...
+<pre tabindex=0><code>...
 Error: Xcode alone is not sufficient on Mojave.
 Install the Command Line Tools:
   xcode-select --install
@@ -118,7 +118,7 @@ Install the Command Line Tools:
 </code></pre><ul>
 <li>Still getting..</li>
 </ul>
-<pre><code>$ ffmpeg
+<pre tabindex=0><code>$ ffmpeg
 dyld: Library not loaded: /usr/local/opt/openssl/lib/libssl.1.0.0.dylib
   Referenced from: /usr/local/bin/ffmpeg
   Reason: image not found
@@ -126,7 +126,7 @@ Abort trap: 6
 </code></pre><ul>
 <li>ok thank the ages, <a href=https://stackoverflow.com/questions/59006602/dyld-library-not-loaded-usr-local-opt-openssl-lib-libssl-1-0-0-dylib>this stackoverflow</a> helped a lot !!</li>
 </ul>
-<pre><code>$ brew switch openssl 1.0.2s
+<pre tabindex=0><code>$ brew switch openssl 1.0.2s
 Error: openssl does not have a version &quot;1.0.2s&quot; in the Cellar.
 openssl's installed versions: 1.0.2q
 $ brew switch openssl 1.0.2q
@@ -142,7 +142,7 @@ ffmpeg version 4.1.1 Copyright (c) 2000-2019 the FFmpeg developers
 <li><a href=https://github.com/mozilla/DeepSpeech>Starting page</a> and the <a href="https://deepspeech.readthedocs.io/en/v0.9.1/?badge=latest">readthedocs</a></li>
 <li>I created a separate environment for this with <code>conda create -n deep3</code> and <code>source activate deep3</code></li>
 </ul>
-<pre><code># Install DeepSpeech
+<pre tabindex=0><code># Install DeepSpeech
 pip install deepspeech
 
 # Download pre-trained English model files
@@ -173,7 +173,7 @@ Inference took 5.095s for 1.975s audio file.
 <li>Ok cool according to <a href=https://www.howtoforge.com/tutorial/ffmpeg-audio-conversion/>here</a> I can use <code>ffmpeg</code> to convert from <code>m4a</code> to <code>wav</code> with just <code>ffmpeg -i blah.m4a blah.wav</code></li>
 <li>But I tried <code>deepspeech</code> on my wav file</li>
 </ul>
-<pre><code>deepspeech --model deepspeech-0.9.1-models.pbmm --scorer deepspeech-0.9.1-models.scorer --audio blah.wav
+<pre tabindex=0><code>deepspeech --model deepspeech-0.9.1-models.pbmm --scorer deepspeech-0.9.1-models.scorer --audio blah.wav
 
 Loading model from file deepspeech-0.9.1-models.pbmm
 TensorFlow: v2.3.0-6-g23ad988fcd
@@ -186,15 +186,15 @@ Warning: original sample rate (24000) is different than 16000hz. Resampling migh
 <li>Then the <code>sox</code> program for resampling not present&mldr;</li>
 <li>I read Some notes on resampling <a href=https://transcoding.wordpress.com/2011/11/16/careful-with-audio-resampling-using-ffmpeg/>here</a> and finding that <code>ffmpeg</code> has <code>sox</code> built in now.</li>
 </ul>
-<pre><code>workdir=/blah/my/workdir
+<pre tabindex=0><code>workdir=/blah/my/workdir
 infile=${workdir}/2020-11-22-09.54.59.wav
 outfile=${workdir}/2020-11-22-09.54.59--resampled.wav
 ffmpeg -i $infile  -af aresample=resampler=soxr -ar 16000 $outfile
-</code></pre><pre><code>deepspeech --model deepspeech-0.9.1-models.pbmm --scorer deepspeech-0.9.1-models.scorer --audio $outfile
+</code></pre><pre tabindex=0><code>deepspeech --model deepspeech-0.9.1-models.pbmm --scorer deepspeech-0.9.1-models.scorer --audio $outfile
 </code></pre><ul>
 <li>Ok hahaha this time after resampling to <code>16000Hz</code> finally worked, but the output does not match any kind of reality haha.</li>
 </ul>
-<pre><code>Loading model from file deepspeech-0.9.1-models.pbmm
+<pre tabindex=0><code>Loading model from file deepspeech-0.9.1-models.pbmm
 TensorFlow: v2.3.0-6-g23ad988fcd
 DeepSpeech: v0.9.1-0-gab8bd3e1
 Loaded model in 0.0451s.

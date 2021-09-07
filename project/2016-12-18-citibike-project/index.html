@@ -5,7 +5,7 @@
 <title>Citibike Learn Project | My blog</title>
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="Can your Bike Share Destination be Predicted">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content="Citibike Learn Project">
@@ -17,7 +17,7 @@
 <meta itemprop=name content="Citibike Learn Project">
 <meta itemprop=description content="Can your Bike Share Destination be Predicted"><meta itemprop=datePublished content="2016-12-18T18:33:28+00:00">
 <meta itemprop=dateModified content="2016-12-18T18:33:28+00:00">
-<meta itemprop=wordCount content="2893">
+<meta itemprop=wordCount content="2895">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Citibike Learn Project">
 <meta name=twitter:description content="Can your Bike Share Destination be Predicted">
@@ -89,7 +89,7 @@ SIDE PROJECTS
 <p>I think sometimes the most interesting projects live behind ideas that sound impractical or even crazy. That&rsquo;s why I thought
 it would be fun to use the Citibike bike share trip data to try and predict a person&rsquo;s destination based on what we know.</p>
 <p><em>Roughly speaking trip data looks like this</em></p>
-<pre><code>&quot;tripduration&quot;,&quot;starttime&quot;,&quot;stoptime&quot;,&quot;start station id&quot;,&quot;start station name&quot;,&quot;start station latitude&quot;,&quot;start station longitude&quot;,&quot;end station id&quot;,&quot;end station name&quot;,&quot;end station latitude&quot;,&quot;end station longitude&quot;,&quot;bikeid&quot;,&quot;usertype&quot;,&quot;birth year&quot;,&quot;gender&quot;
+<pre tabindex=0><code>&quot;tripduration&quot;,&quot;starttime&quot;,&quot;stoptime&quot;,&quot;start station id&quot;,&quot;start station name&quot;,&quot;start station latitude&quot;,&quot;start station longitude&quot;,&quot;end station id&quot;,&quot;end station name&quot;,&quot;end station latitude&quot;,&quot;end station longitude&quot;,&quot;bikeid&quot;,&quot;usertype&quot;,&quot;birth year&quot;,&quot;gender&quot;
 &quot;171&quot;,&quot;10/1/2015 00:00:02&quot;,&quot;10/1/2015 00:02:54&quot;,&quot;388&quot;,&quot;W 26 St &amp; 10 Ave&quot;,&quot;40.749717753&quot;,&quot;-74.002950346&quot;,&quot;494&quot;,&quot;W 26 St &amp; 8 Ave&quot;,&quot;40.74734825&quot;,&quot;-73.99723551&quot;,&quot;24302&quot;,&quot;Subscriber&quot;,&quot;1973&quot;,&quot;1&quot;
 &quot;593&quot;,&quot;10/1/2015 00:00:02&quot;,&quot;10/1/2015 00:09:55&quot;,&quot;518&quot;,&quot;E 39 St &amp; 2 Ave&quot;,&quot;40.74780373&quot;,&quot;-73.9734419&quot;,&quot;438&quot;,&quot;St Marks Pl &amp; 1 Ave&quot;,&quot;40.72779126&quot;,&quot;-73.98564945&quot;,&quot;19904&quot;,&quot;Subscriber&quot;,&quot;1990&quot;,&quot;1&quot;
 &quot;233&quot;,&quot;10/1/2015 00:00:11&quot;,&quot;10/1/2015 00:04:05&quot;,&quot;447&quot;,&quot;8 Ave &amp; W 52 St&quot;,&quot;40.76370739&quot;,&quot;-73.9851615&quot;,&quot;447&quot;,&quot;8 Ave &amp; W 52 St&quot;,&quot;40.76370739&quot;,&quot;-73.9851615&quot;,&quot;17797&quot;,&quot;Subscriber&quot;,&quot;1984&quot;,&quot;1&quot;
@@ -136,7 +136,7 @@ at lat around <code>40.723</code> and using the earth&rsquo;s radius of about <c
 here in NYC.</p>
 <p>So from there, looking at some of the speed data just involved looking at the tripdata trip time and calculating the
 cartesian distance.</p>
-<p><img src=assets/Screen%20Shot%202019-05-21%20at%2011.02.41%20AM.png width=435 height=307></p>
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 11.02.41 AM.png" width=50%>
 <p>(More on the code <a href=https://github.com/namoopsoo/learn-citibike/blob/master/bikelearn/utils.py#L86>here</a> )
 (Also more detail on this analysis in the main <a href=https://github.com/namoopsoo/learn-citibike/blob/master/project%20report.ipynb>jupyter notebook</a>)</p>
 <h4 id=need-additional-location-data>Need additional location data</h4>
@@ -190,7 +190,7 @@ use the raw <em>latitude and longitude</em> .</li>
 <li>However, I eventually noticed that often times the <em>docking stations</em> were on the edge of neighborhoods. So I literally had
 edge cases! The Neighborhood would come back blank and I ended up having to fill in a lot of that data by hand anyhow!</li>
 </ul>
-<p><img src=assets/Screen%20Shot%202018-12-04%20at%2012.11.42%20PM.png width=457 height=328></p>
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2018-12-04 at 12.11.42 PM.png" width=50%>
 <ul>
 <li>Also the data calls were not free and I ended up building a small <em>caching layer</em> with <em>redis</em> .</li>
 <li>The other reason I had done that was that I would often work out of cafes where the Wifi was spotty and I didn&rsquo;t want an internet
@@ -425,7 +425,7 @@ ipdb<span style=color:#f92672>&gt;</span>
 <ul>
 <li>Of course one data problem always leads to another data problem. This time around, when I started updating my docking station geolocation data, I found that my payment information may have changed and so I was getting the following</li>
 </ul>
-<pre><code>ipdb&gt; pp geocoding_result
+<pre tabindex=0><code>ipdb&gt; pp geocoding_result
 {u'error_message': u'You have exceeded your daily request quota for this API. If you did not set a custom daily request quota, verify your project has an active billing account: http://g.co/dev/maps-no-account',
  u'results': [],
  u'status': u'OVER_QUERY_LIMIT'}
@@ -440,6 +440,14 @@ ipdb<span style=color:#f92672>&gt;</span>
 <li>There may also be many other datasets which can be joined with this one to bolster the information available, including information about the weather or perhaps other demographic attributes available.</li>
 <li>A more thorough comparison of algorithms should also be considered.</li>
 </ul>
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 1.00.56 PM.png" width=50%>
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 1.07.21 PM.png" width=50%>
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 1.07.47 PM.png" width=50%>
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.12.54 PM.png" width=50%>
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.30.52 PM.png" width=50%>
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.39.07 PM.png" width=50%>
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.45.13 PM.png" width=50%>
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.54.28 PM.png" width=50%>
 <ul class=pa0>
 </ul>
 <div class="mt6 instapaper_ignoref">

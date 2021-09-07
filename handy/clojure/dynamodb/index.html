@@ -8,7 +8,7 @@
 boot.user=> (use '[taoensso.faraday :as dynamo])   with a client-config hash defined in a separate clj file, here one/dynamo.clj is my file.
 (def client-config (if (:development env) {:access-key &#34;OMGDEVELOPMENT&#34; :secret-key &#34;I_SHOULD_KEEP_THIS_SECRET!&#34; ; Point the configuration at the DynamoDB Local :endpoint &#34;http://localhost:8000&#34;} {:endpoint &#34;http://dynamodb.us-east-1.amazonaws.com&#34;} ) )   and use list-tables from the module/class thing,
 boot.user=> (use '[one.dynamo :as db]) ; `one/dynamo.">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content>
@@ -94,11 +94,11 @@ HANDY
 <ul>
 <li>
 <p>first get the <code>faraday</code> class thing ready.</p>
-<pre><code>boot.user=&gt; (use '[taoensso.faraday :as dynamo])
+<pre tabindex=0><code>boot.user=&gt; (use '[taoensso.faraday :as dynamo])
 </code></pre></li>
 <li>
 <p>with a <code>client-config</code> hash defined in a separate <code>clj</code> file, here <code>one/dynamo.clj</code> is my file.</p>
-<pre><code>(def client-config
+<pre tabindex=0><code>(def client-config
   (if (:development env)
     {:access-key &quot;OMGDEVELOPMENT&quot;
      :secret-key &quot;I_SHOULD_KEEP_THIS_SECRET!&quot;
@@ -112,7 +112,7 @@ HANDY
 </code></pre></li>
 <li>
 <p>and use <code>list-tables</code> from the module/class thing,</p>
-<pre><code>boot.user=&gt; (use '[one.dynamo :as db])    ; `one/dynamo.clj`
+<pre tabindex=0><code>boot.user=&gt; (use '[one.dynamo :as db])    ; `one/dynamo.clj`
 
 boot.user=&gt; (dynamo/list-tables db/client-config)
 (:primes :projects :times)
@@ -122,7 +122,7 @@ boot.user=&gt; (dynamo/list-tables db/client-config)
 <ul>
 <li>
 <p>to get this <code>env</code> part to work, I didnt see any way to set the env vars in clojure, so I just set them on my shell,</p>
-<pre><code>export development=true  # and this could have been anything that reduces to boolean true actually.
+<pre tabindex=0><code>export development=true  # and this could have been anything that reduces to boolean true actually.
 </code></pre></li>
 <li>
 <p>and the dynamodb local credentials dont matter it turns out,</p>
@@ -150,7 +150,7 @@ boot.user=&gt; (dynamo/list-tables db/client-config)
 </code></pre></div></li>
 <li>
 <p>continuing to follow along from <a href=https://github.com/jamesleonis/serverless-in-clojure>https://github.com/jamesleonis/serverless-in-clojure</a> ,</p>
-<pre><code>boot.user=&gt; (use '[lesson-two.dynamo :as db] )  ; using some of the predefined functions from here,
+<pre tabindex=0><code>boot.user=&gt; (use '[lesson-two.dynamo :as db] )  ; using some of the predefined functions from here,
 
 boot.user=&gt; (db/list-primes)
 []

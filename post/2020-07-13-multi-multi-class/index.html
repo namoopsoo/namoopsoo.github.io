@@ -6,7 +6,7 @@
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="Summary Here is an early draft of a post, trying to extract some of the insights from the project here. There is a lot to write about and I want to just start getting it out.
 Quick outline  The logloss upper bound Does the &ldquo;k area&rdquo; metric help? training balancing Is it possible to calculate the Bayesian error rate here? And logloss seems to be very sensitive. (can look at correlations , not super high) So what metric should be used ?">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content="Notes on multi-multi-class classifiers">
@@ -213,7 +213,7 @@ _plot(topk)
 <p>In the <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-03-aws.md>&ldquo;2020-07-03-aws.md&rdquo;</a> notebook, I also added some &ldquo;shrinkage&rdquo; because of my Jupyter kernel crashing. The other useful concept is how much data do we really need? Obviously if there is too much data and it crashes the notebook (as <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-28-take2.md>here</a> for example ) , but I think this &ldquo;balanced shrinkage&rdquo; concept is interesting to explore just to be more efficient in for example use of hyper parameter tuning time. If you can perhaps &ldquo;boil down&rdquo; your data reducing its size by <code>50%</code> and if the dev/test set error does not change much then in principle that can save a lot of hyper parameter tuning time, where you may be training/predicting hundreds of models.</p>
 <p>And here <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-08-aws.md>&ldquo;2020-07-08-aws.md&rdquo;</a> I have another version of balancing that is less aggressive. The first iteration of balancing I was using sort of flipped the proportions. It dramatically (proportionally) weighed down the majority class (too much). This second iteration tries to just bring the plurality classes down closer to the &ldquo;equal share&rdquo; each class should get .</p>
 <p>But surprisingly, in <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-08-aws.md>&ldquo;2020-07-08-aws.md&rdquo;</a> the &ldquo;balanced test accuracy&rdquo; did not improve much.</p>
-<pre><code>test acc 0.12198962315156459
+<pre tabindex=0><code>test acc 0.12198962315156459
 test balanced acc 0.1044572104146026
 logloss 3.4794945441534866
 </code></pre><p>Also in past projects I had balanced out a &ldquo;groomed&rdquo; test set myself but this time I just tried using <code>balanced_accuracy_score</code> from sklearn.</p>
@@ -223,7 +223,7 @@ logloss 3.4794945441534866
 <p>is showing the evidence of no balancing at all, because we see the classifier is focused on predicting basically one class, what looks like class <code>8</code> or <code>9</code>.</p>
 <img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-05-aws-two_files/2020-07-05-aws-two_11_0.png?raw=true">
 <p>And the corresponding metrics for that classifier are</p>
-<pre><code>logloss 3.282076793024198
+<pre tabindex=0><code>logloss 3.282076793024198
 acc 0.15964601098390355
 balanced acc 0.08281646671786597
 </code></pre><p>which helps to show that when <code>acc</code> and <code>balanced acc</code> are far from each other, then the <code>acc</code> probably cannot be trusted.</p>

@@ -5,18 +5,18 @@
 <title>Physiological deep learnings | My blog</title>
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="learning physiological state from time series data">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content="Physiological deep learnings">
 <meta property="og:description" content="learning physiological state from time series data">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://michal.piekarczyk.xyz/project/2020-04-05-aviation-kaggle-low-level/"><meta property="article:section" content="project">
-<meta property="article:published_time" content="2020-04-05T10:00:00+00:00">
-<meta property="article:modified_time" content="2020-04-05T10:00:00+00:00"><meta property="og:site_name" content="My blog">
+<meta property="article:published_time" content="2020-04-05T10:00:00-04:00">
+<meta property="article:modified_time" content="2020-04-05T10:00:00-04:00"><meta property="og:site_name" content="My blog">
 <meta itemprop=name content="Physiological deep learnings">
-<meta itemprop=description content="learning physiological state from time series data"><meta itemprop=datePublished content="2020-04-05T10:00:00+00:00">
-<meta itemprop=dateModified content="2020-04-05T10:00:00+00:00">
+<meta itemprop=description content="learning physiological state from time series data"><meta itemprop=datePublished content="2020-04-05T10:00:00-04:00">
+<meta itemprop=dateModified content="2020-04-05T10:00:00-04:00">
 <meta itemprop=wordCount content="2987">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Physiological deep learnings">
@@ -81,7 +81,7 @@ SIDE PROJECTS
 </a>
 </div>
 <h1 class="f1 athelas mt3 mb1">Physiological deep learnings</h1>
-<time class="f6 mv4 dib tracked" datetime=2020-04-05T10:00:00Z>April 5, 2020</time>
+<time class="f6 mv4 dib tracked" datetime=2020-04-05T10:00:00-04:00>April 5, 2020</time>
 </header>
 <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h4 id=summary>Summary</h4>
 <p><em>Below, I write a bit retrospectively about my notes from the <a href=https://www.kaggle.com/c/reducing-commercial-aviation-fatalities/data>&ldquo;Reducing Commercial Aviation Fatalities&rdquo; kaggle</a>, trying to summarize some of the journey. I try to give some high lights
@@ -146,7 +146,7 @@ from my various notebook entries. ( <a href=https://github.com/namoopsoo/aviatio
 </table>
 <p>In my early <a href=https://github.com/namoopsoo/aviation-pilot-physiology-hmm/blob/master/notes/2019-05-10-initial-look.md>notebook</a> I took a quick look at the proportion of experiment time had been spent in the different states. Per the below, looking at each person separately, I saw that for the first person as an example, (<code>crew=1, seat=0</code>) , <code>~98%</code> of <code>CA</code> was labeled as &ldquo;Channelized Attention&rdquo; and <code>2%</code> as baseline. But for the other two experiments, the target states appear to be much more brief, with only <code>13%</code> of the &ldquo;DA&rdquo; and <code>9%</code> of the &ldquo;SS&rdquo; experiments.</p>
 <p><em>(copying an output from that notebook&mldr;)</em></p>
-<pre><code>statsdf = gpdf.groupby(by=['crew', 'seat']).apply(extract_proportions).reset_index()
+<pre tabindex=0><code>statsdf = gpdf.groupby(by=['crew', 'seat']).apply(extract_proportions).reset_index()
 In [78]: statsdf                                                                                                                         
 Out[78]:
     crew  seat      A/CA      A/DA      A/SS      C/CA      D/DA      B/SS
@@ -232,7 +232,7 @@ I then <a href=https://github.com/namoopsoo/aviation-pilot-physiology-hmm/blob/m
 <p>At this point I think I was realizing that the order of ideas to try matters. And you do not know in advance what is the best order. Perhaps the weight initialization matters a good deal, but I had not yet found the critical next step yet at that point.</p>
 <h4 id=class-balance>Class balance</h4>
 <p>In my <a href=https://github.com/namoopsoo/aviation-pilot-physiology-hmm/blob/master/notes/2020-01-18.md>next notebook</a> I wanted to understand why my <code>class 1</code> kept getting favored. I tried out <a href=https://github.com/namoopsoo/aviation-pilot-physiology-hmm/blob/master/notes/2020-01-18.md#force-weights>forcing the weights</a> of my training data to basically</p>
-<pre><code>{0: 1., 1: 0., 2: 0., 3: 0.}
+<pre tabindex=0><code>{0: 1., 1: 0., 2: 0., 3: 0.}
 </code></pre><p>to see what happens and sure enough, per the <a href=https://github.com/namoopsoo/aviation-pilot-physiology-hmm/blob/master/notes/2020-01-18.md#validation-loss>validation loss</a> , the loss now went down only for class <code>0</code>. So the effect was controlled.</p>
 <img src=https://raw.githubusercontent.com/namoopsoo/aviation-pilot-physiology-hmm/master/notes/2020-01-18_files/2020-01-18_11_4.png>
 <h4 id=active-learning-changing-the-training-approach>Active Learning: changing the training approach</h4>

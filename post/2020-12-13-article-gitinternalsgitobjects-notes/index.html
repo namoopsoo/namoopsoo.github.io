@@ -6,7 +6,7 @@
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="Reading https://git-scm.com/book/en/v2/Git-Internals-Git-Objects
 (pandars3) $ echo 'test content' | git hash-object -w --stdin d670460b4b4aece5915caf5c68d12f560a9fe3e4  I tried that and oh hah so -w tells git hash-object to actually add that hash to my git key value store database hmm.. lets see if i can find it ..  (pandars3) $ file .git/objects/d6/70460b4b4aece5915caf5c68d12f560a9fe3e4 .git/objects/d6/70460b4b4aece5915caf5c68d12f560a9fe3e4: VAX COFF executable not stripped - version 737  Ah indeed. ok binary though. hmm but apparently this is actual data.">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content="notes on Git Internals Git Objects article">
@@ -85,18 +85,18 @@ POST
 <time class="f6 mv4 dib tracked" datetime=2020-12-13T00:00:00Z>December 13, 2020</time>
 </header>
 <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Reading <a href=https://git-scm.com/book/en/v2/Git-Internals-Git-Objects>https://git-scm.com/book/en/v2/Git-Internals-Git-Objects</a></p>
-<pre><code>(pandars3) $ echo 'test content' | git hash-object -w --stdin
+<pre tabindex=0><code>(pandars3) $ echo 'test content' | git hash-object -w --stdin
 d670460b4b4aece5915caf5c68d12f560a9fe3e4
 </code></pre><ul>
 <li>I tried that and oh hah so <code>-w</code> tells <code>git hash-object</code> to actually add that hash to my git key value store database hmm..</li>
 <li>lets see if i can find it ..</li>
 </ul>
-<pre><code>(pandars3) $ file .git/objects/d6/70460b4b4aece5915caf5c68d12f560a9fe3e4
+<pre tabindex=0><code>(pandars3) $ file .git/objects/d6/70460b4b4aece5915caf5c68d12f560a9fe3e4
 .git/objects/d6/70460b4b4aece5915caf5c68d12f560a9fe3e4: VAX COFF executable not stripped - version 737
 </code></pre><ul>
 <li>Ah indeed. ok binary though. hmm but apparently this is actual data..</li>
 </ul>
-<pre><code>(pandars3) $ ls -lh .git/objects/d6/
+<pre tabindex=0><code>(pandars3) $ ls -lh .git/objects/d6/
 total 32
 -rw-r--r--@ 1 michal  staff   152B Dec  6 15:06 20fe6a1800a210848ce33e3ec41fc1077feeee
 -rw-r--r--@ 1 michal  staff   153B Jul  4 14:20 56ffc9856515711c4114654acb0f36c1ee8ddb
@@ -105,11 +105,11 @@ total 32
 </code></pre><ul>
 <li>Hmm but it looks like some of the other files here actually have header looking things.</li>
 </ul>
-<pre><code>git cat-file -p d670460b4b4aece5915caf5c68d12f560a9fe3e4
+<pre tabindex=0><code>git cat-file -p d670460b4b4aece5915caf5c68d12f560a9fe3e4
 </code></pre><ul>
 <li>But I&rsquo;m not seeing actual data, just metadata like commit messages, parent hash, tree hash, author, and timestamps</li>
 </ul>
-<pre><code>(pandars3) $ git cat-file -p d670460b4b4aece5915caf5c68d12f560a9fe3e4
+<pre tabindex=0><code>(pandars3) $ git cat-file -p d670460b4b4aece5915caf5c68d12f560a9fe3e4
 test content
 (pandars3) $ git cat-file -p d656ffc9856515711c4114654acb0f36c1ee8ddb
 tree 5ff96d0717daba0106acba2dd1b1145ba1e99275
@@ -130,7 +130,7 @@ moar
 </code></pre><ul>
 <li></li>
 </ul>
-<pre><code>echo 'version 1' &gt; test.txt
+<pre tabindex=0><code>echo 'version 1' &gt; test.txt
 git hash-object -w test.txt
 # 83baae61804e65cc73a7201a7252750c76066a30
 
@@ -146,7 +146,7 @@ version 2
 (pandars3) $ cat test.txt
 version 1
 
-</code></pre><pre><code>(pandars3) $ for sha in  20fe6a1800a210848ce33e3ec41fc1077feeee 56ffc9856515711c4114654acb0f36c1ee8ddb 70460b4b4aece5915caf5c68d12f560a9fe3e4 953fd15e1fa200b94fd6124f661adf1528165a ; do echo d5${sha} ; git cat-file -t d6${sha} ; done
+</code></pre><pre tabindex=0><code>(pandars3) $ for sha in  20fe6a1800a210848ce33e3ec41fc1077feeee 56ffc9856515711c4114654acb0f36c1ee8ddb 70460b4b4aece5915caf5c68d12f560a9fe3e4 953fd15e1fa200b94fd6124f661adf1528165a ; do echo d5${sha} ; git cat-file -t d6${sha} ; done
 d520fe6a1800a210848ce33e3ec41fc1077feeee
 commit
 d556ffc9856515711c4114654acb0f36c1ee8ddb
@@ -161,7 +161,7 @@ blob
 <li>Ahhh, reading more now so a <em>Tree Object</em> is what solves the problem of how to store file names and group multiple files together.</li>
 <li>Ok wow when I use that special syntax in my repo&mldr;</li>
 </ul>
-<pre><code>(pandars3) $ git cat-file -p master^{tree}
+<pre tabindex=0><code>(pandars3) $ git cat-file -p master^{tree}
 100644 blob f40fbd8ba564ea28e0a2501e2921909467b39887	.gitignore
 100644 blob 086a5c9ea988c5a4d37acc5f8ea089e37cb19371	404.html
 100644 blob 922c44a4850e7421585c9030ecd82face732adc6	CNAME

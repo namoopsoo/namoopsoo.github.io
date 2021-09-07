@@ -6,7 +6,7 @@
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="Binomial Distribution Plot Binomial distribution for p, and a sample of n
 from scipy.stats import binom import numpy as np import matplotlib.pyplot as plt import pylab workdir = '_posts/2020-11-14-georgia-recount-stats_files' fig, ax = plt.subplots(1, 1) n, p = 5, 0.4 mean, var, skew, kurt = binom.stats(n, p, moments='mvsk') x = np.arange(binom.ppf(0.01, n, p), binom.ppf(0.99, n, p)) ax.plot(x, binom.pmf(x, n, p), 'bo', ms=8, label='binom pmf') ax.vlines(x, 0, binom.pmf(x, n, p), colors='b', lw=5, alpha=0.">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content>

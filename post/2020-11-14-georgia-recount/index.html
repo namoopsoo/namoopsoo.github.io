@@ -7,7 +7,7 @@
 <meta name=description content="Here, looking at the recent recount in Georgia as an example around determining, what would a good number of votes to randomly sample to help validate an election result.
 According to the latest results of this writing there is
 B, T = 2472182, 2458010 p_observed = B*1./(B + T) # 0.501437 For now just starting off below visualizing the binomial distribution around the p_observed for different numbers of samples to look at what likelihoods are assigned to the different outcomes specified by that given binomial distribution.">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content>
@@ -88,7 +88,7 @@ POST
 </header>
 <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Here, looking at the recent recount in Georgia as an example around determining, what would a good number of votes to randomly sample to help validate an election result.</p>
 <p>According to the latest results of this writing there is</p>
-<pre><code>B, T = 2472182, 2458010
+<pre tabindex=0><code>B, T = 2472182, 2458010
 p_observed = B*1./(B + T) # 0.501437
 </code></pre><p>For now just starting off below visualizing the binomial distribution around the <code>p_observed</code> for different numbers of samples to look at what likelihoods are assigned to the different outcomes specified by that given binomial distribution.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>from</span> scipy.stats <span style=color:#f92672>import</span> binom

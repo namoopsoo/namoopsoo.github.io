@@ -6,7 +6,7 @@
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="TLDR This time, the brew update && brew upgrade approach resolved my openssl dyld: Library not loaded woes. And brew apparently no longer has the switch command which had been the cornerstone of a popular stackoverflow answer for this problem.
 Trying to run this new ffmpeg usage, but&mldr; $ ffmpeg -i 2021*.jpg -sameq -r 25 outmovie.mp4 dyld: Library not loaded: /usr/local/opt/openssl/lib/libssl.1.0.0.dylib Referenced from: /usr/local/bin/ffmpeg Reason: image not found Abort trap: 6 $ brew update Error: homebrew-core is a shallow clone.">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content>
@@ -85,13 +85,13 @@ POST
 <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h4 id=tldr>TLDR</h4>
 <p>This time, the <code>brew update && brew upgrade</code> approach resolved my <code>openssl</code> <code>dyld: Library not loaded</code> woes. And <code>brew</code> apparently no longer has the <code>switch</code> command which had been the cornerstone of a popular stackoverflow answer for this problem.</p>
 <h4 id=trying-to-run-this-new-ffmpeg-usage-but>Trying to run this new ffmpeg usage, but&mldr;</h4>
-<pre><code>$  ffmpeg -i 2021*.jpg -sameq -r 25 outmovie.mp4
+<pre tabindex=0><code>$  ffmpeg -i 2021*.jpg -sameq -r 25 outmovie.mp4
 dyld: Library not loaded: /usr/local/opt/openssl/lib/libssl.1.0.0.dylib
   Referenced from: /usr/local/bin/ffmpeg
   Reason: image not found
 Abort trap: 6
 
-</code></pre><pre><code>$ brew update
+</code></pre><pre tabindex=0><code>$ brew update
 Error:
   homebrew-core is a shallow clone.
   homebrew-cask is a shallow clone.
@@ -108,7 +108,7 @@ the inconvenience!
 </code></pre><ul>
 <li></li>
 </ul>
-<pre><code>$ openssl version
+<pre tabindex=0><code>$ openssl version
 OpenSSL 1.0.2n  7 Dec 2017
 $ ls -al /usr/local/Cellar/openssl
 ls: /usr/local/Cellar/openssl: No such file or directory
@@ -120,7 +120,7 @@ drwxr-xr-x   14 michal  staff   448 16 oct  2020 1.1.1h
 </code></pre><ul>
 <li>Well <a href=https://stackoverflow.com/questions/59006602/dyld-library-not-loaded-usr-local-opt-openssl-lib-libssl-1-0-0-dylib>this subject</a> is super busy on stack overflow. But the top answer did not work for me hmm</li>
 </ul>
-<pre><code>$ brew switch openssl 1.1.1h
+<pre tabindex=0><code>$ brew switch openssl 1.1.1h
 Error: Unknown command: switch
 $
 </code></pre><ul>
@@ -131,7 +131,7 @@ $
 <p>Doing <code>brew upgrade</code></p>
 </li>
 </ul>
-<pre><code>==&gt; Installing ruby dependency: openssl@1.1
+<pre tabindex=0><code>==&gt; Installing ruby dependency: openssl@1.1
 ==&gt; Pouring openssl@1.1--1.1.1k.mojave.bottle.tar.gz
 ==&gt; Regenerating CA certificate bundle from keychain, this may take a while...
 🍺  /usr/local/Cellar/openssl@1.1/1.1.1k: 8,071 files, 18.4MB

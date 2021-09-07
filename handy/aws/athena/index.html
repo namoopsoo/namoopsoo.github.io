@@ -6,7 +6,7 @@
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="This may apply to Athena and or prestodb in general
 array empty?  Per stackoverflow learned the name for this in the docs is cardinality  select cardinality(array[]) = 0;  This cannot be applied to the output of a json_extract(json_parse(data), '$.blah.flah.clah') since cardinality() takes ARRAY and not JSON. However, that JSON can be cast. For example, if '$.blah.flah.clah' is like [{&#34;hi&#34;: &#34;there&#34;}, {&#34;so&#34;: &#34;then&#34;}], then this  cardinality(cast(json_extract(json_parse(what), '$.blah.flah.clah') as array(map(varchar, varchar)))) will produce the length of those arrays.">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content>

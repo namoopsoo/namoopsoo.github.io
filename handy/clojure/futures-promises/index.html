@@ -5,7 +5,7 @@
 <title>My blog</title>
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="sleeping&mldr; (Thread/sleep 4000) simple multithreading , from the Brave clojure book (future (Thread/sleep 4000) (println &#34;I'll print after 4 seconds&#34;)) (println &#34;I'll print immediately&#34;) hmm this is weird. so dereferencing the future blocks? (defn fight-crime [] (let [] (println &#34;hi&#34;) (Thread/sleep 2000) (println &#34;ho&#34;) (Thread/sleep 1000) (println &#34;yo&#34;) 5 )) (let [result (future (fight-crime))] (println &#34;@: &#34; @result) (println &#34;snore. &#34; ) (println &#34;@: &#34; @result) (Thread/sleep 1000) (println &#34;@: &#34; @result) )  Ah ok, but you can stop waiting.">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content>

@@ -5,18 +5,18 @@
 <title>Bike Share Learn Reboot | My blog</title>
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="This project is a reboot of an earlier project predicting bicycle ride share riders destinations.">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content="Bike Share Learn Reboot">
 <meta property="og:description" content="This project is a reboot of an earlier project predicting bicycle ride share riders destinations.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://michal.piekarczyk.xyz/project/2020-10-20-bike-share-learn-reboot/"><meta property="article:section" content="project">
-<meta property="article:published_time" content="2020-10-20T10:00:05+00:00">
-<meta property="article:modified_time" content="2020-10-20T10:00:05+00:00"><meta property="og:site_name" content="My blog">
+<meta property="article:published_time" content="2020-10-20T10:00:05-04:00">
+<meta property="article:modified_time" content="2020-10-20T10:00:05-04:00"><meta property="og:site_name" content="My blog">
 <meta itemprop=name content="Bike Share Learn Reboot">
-<meta itemprop=description content="This project is a reboot of an earlier project predicting bicycle ride share riders destinations."><meta itemprop=datePublished content="2020-10-20T10:00:05+00:00">
-<meta itemprop=dateModified content="2020-10-20T10:00:05+00:00">
+<meta itemprop=description content="This project is a reboot of an earlier project predicting bicycle ride share riders destinations."><meta itemprop=datePublished content="2020-10-20T10:00:05-04:00">
+<meta itemprop=dateModified content="2020-10-20T10:00:05-04:00">
 <meta itemprop=wordCount content="4219">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Bike Share Learn Reboot">
@@ -81,14 +81,14 @@ SIDE PROJECTS
 </a>
 </div>
 <h1 class="f1 athelas mt3 mb1">Bike Share Learn Reboot</h1>
-<time class="f6 mv4 dib tracked" datetime=2020-10-20T10:00:05Z>October 20, 2020</time>
+<time class="f6 mv4 dib tracked" datetime=2020-10-20T10:00:05-04:00>October 20, 2020</time>
 </header>
 <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h3 id=summary>Summary</h3>
 <p>This project is a reboot of <a href=/project/2016-12-18-citibike-project/>my earlier project</a> of predicting bicycle ride share riders destinations.
 <a href=https://bike-hop-predict.s3.amazonaws.com/index.html>https://bike-hop-predict.s3.amazonaws.com/index.html</a></p>
 <p>This time around I used XGBoost, newer features, hyper parameter tuning and I have a <a href=https://bike-hop-predict.s3.amazonaws.com/index.html target=_blank> Demo Site </a> as well! I wanted very much to see if XGBoost has online learning like I used in <a href=/project/2020-04-05-aviation-kaggle-low-level/>an earlier TensorFlow project</a>, but as I <a href=/post/2020-06-21-notes-xgboost/>wrote here</a>, I could not pick up where I left off at least the way I tried it. And <a href=/post/2020-07-24-understanding-tuning-results/>here</a> is a mini post on looking at hyper parameter tuning results. And <a href=/post/2020-10-22-features-v3/>here</a> is a visual look at some of the new features I explored including.</p>
 <p>Again, the data looks like this</p>
-<pre><code>&quot;tripduration&quot;,&quot;starttime&quot;,&quot;stoptime&quot;,&quot;start station id&quot;,&quot;start station name&quot;,&quot;start station latitude&quot;,&quot;start station longitude&quot;,&quot;end station id&quot;,&quot;end station name&quot;,&quot;end station latitude&quot;,&quot;end station longitude&quot;,&quot;bikeid&quot;,&quot;usertype&quot;,&quot;birth year&quot;,&quot;gender&quot;
+<pre tabindex=0><code>&quot;tripduration&quot;,&quot;starttime&quot;,&quot;stoptime&quot;,&quot;start station id&quot;,&quot;start station name&quot;,&quot;start station latitude&quot;,&quot;start station longitude&quot;,&quot;end station id&quot;,&quot;end station name&quot;,&quot;end station latitude&quot;,&quot;end station longitude&quot;,&quot;bikeid&quot;,&quot;usertype&quot;,&quot;birth year&quot;,&quot;gender&quot;
 &quot;171&quot;,&quot;10/1/2015 00:00:02&quot;,&quot;10/1/2015 00:02:54&quot;,&quot;388&quot;,&quot;W 26 St &amp; 10 Ave&quot;,&quot;40.749717753&quot;,&quot;-74.002950346&quot;,&quot;494&quot;,&quot;W 26 St &amp; 8 Ave&quot;,&quot;40.74734825&quot;,&quot;-73.99723551&quot;,&quot;24302&quot;,&quot;Subscriber&quot;,&quot;1973&quot;,&quot;1&quot;
 &quot;593&quot;,&quot;10/1/2015 00:00:02&quot;,&quot;10/1/2015 00:09:55&quot;,&quot;518&quot;,&quot;E 39 St &amp; 2 Ave&quot;,&quot;40.74780373&quot;,&quot;-73.9734419&quot;,&quot;438&quot;,&quot;St Marks Pl &amp; 1 Ave&quot;,&quot;40.72779126&quot;,&quot;-73.98564945&quot;,&quot;19904&quot;,&quot;Subscriber&quot;,&quot;1990&quot;,&quot;1&quot;
 &quot;233&quot;,&quot;10/1/2015 00:00:11&quot;,&quot;10/1/2015 00:04:05&quot;,&quot;447&quot;,&quot;8 Ave &amp; W 52 St&quot;,&quot;40.76370739&quot;,&quot;-73.9851615&quot;,&quot;447&quot;,&quot;8 Ave &amp; W 52 St&quot;,&quot;40.76370739&quot;,&quot;-73.9851615&quot;,&quot;17797&quot;,&quot;Subscriber&quot;,&quot;1984&quot;,&quot;1&quot;
@@ -120,7 +120,7 @@ log_loss([<span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>1</span>
          noisy_pred)
 </code></pre></div><p>the output here is <code>0.07347496827220674</code>, which is just slightly worse than the perfect <code>0.</code>, showing that log loss can be handy for comparing models.</p>
 <p>The detail is in the <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-04-pure-prior-probability-model.md>notes</a>, but basically the cross validation log loss using this method ended up being</p>
-<pre><code>array([29.03426394, 25.61716199, 29.19083979, 28.312853  , 22.04601817])
+<pre tabindex=0><code>array([29.03426394, 25.61716199, 29.19083979, 28.312853  , 22.04601817])
 </code></pre><h4 id=dockerization>Dockerization</h4>
 <p>Next, for repeatability and portability, <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-07-local-docker-notes.md>here</a> I re-adapted some earlier Dockerization I had setup before to wrap xgboost, along with jupyter notebook for experimentation. This was crucial, because if you want to jump between some quick experiments on your laptop and a notebook in the cloud, you don&rsquo;t want to deal with strange differences in library dependencies between MacOs and linux.</p>
 <h3 id=xgboost-detour>Xgboost detour</h3>
@@ -227,7 +227,7 @@ print(log_loss(a, b, labels<span style=color:#f92672>=</span>[<span style=color:
 </ul>
 <h3 id=model-highlights>Model Highlights</h3>
 <p>The top model has these stats&mldr;</p>
-<pre><code>(pandars3) $ docker run -p 8889:8889 -p 8080:8080 -i -t -v $(pwd):/opt/program \
+<pre tabindex=0><code>(pandars3) $ docker run -p 8889:8889 -p 8080:8080 -i -t -v $(pwd):/opt/program \
              -v ${MY_LOCAL_DATA_DIRECTORY}:/opt/data \
              -v   ~/Downloads:/opt/downloads \
              -v  $(pwd)/artifacts/2020-08-19T144654Z:/opt/ml \
@@ -543,15 +543,15 @@ balanced_acc <span style=color:#f92672>=</span> balanced_accuracy_score(actuals,
 correct_kth, karea <span style=color:#f92672>=</span> fm<span style=color:#f92672>.</span>kth_area(y_train, y_prob_vec,
         num_classes<span style=color:#f92672>=</span><span style=color:#ae81ff>54</span>)
 
-</code></pre></div><pre><code>CPU times: user 31.3 s, sys: 110 ms, total: 31.4 s
+</code></pre></div><pre tabindex=0><code>CPU times: user 31.3 s, sys: 110 ms, total: 31.4 s
 Wall time: 21.4 s
-</code></pre><pre><code>acc, balanced_acc, karea
+</code></pre><pre tabindex=0><code>acc, balanced_acc, karea
 
-</code></pre><pre><code>(0.05276320740101365,
+</code></pre><pre tabindex=0><code>(0.05276320740101365,
  0.03727538888502701,
  0.6435250908504123)
 </code></pre><p>The whole thing, took about <code>10 hours</code> as measured by the final line from <code>tqdm</code>,</p>
-<pre><code>100%|█████████▉| 1052/1054 [10:00:57&lt;01:08, 34.27s/it]
+<pre tabindex=0><code>100%|█████████▉| 1052/1054 [10:00:57&lt;01:08, 34.27s/it]
 </code></pre><h5 id=putting-that-together>Putting that together,</h5>
 <p><a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-16-local.md#2020-07-23>Here</a> putting that together ..</p>
 <p>training and test accuracy are pretty consistently close, with training accuracy being slightly better as expected. So there is no evidence overall of overfitting. But perhaps some evidence of underfitting .</p>

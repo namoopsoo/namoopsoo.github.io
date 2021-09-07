@@ -5,7 +5,7 @@
 <title>Notes on hugo | My blog</title>
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="Switched from Jekyll to Hugo">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content="Notes on hugo">
@@ -94,7 +94,7 @@ POST
 <li>The &ldquo;homepage template&rdquo; is <code>/layouts/index.html</code> . If that doesnt exist a default one will be used I think.</li>
 <li>I copied this example below from <a href=https://bwaycer.github.io/hugo_tutorial.hugo/content/using-index-md/>here</a> , and I had to create <code>/layouts/partials/header.html</code>, <code>/layouts/partials/summary.html</code> for some errors to disappear. But anyhow, that just produced a blank homepage.</li>
 </ul>
-<pre><code>{{ partial &quot;header.html&quot; . }}
+<pre tabindex=0><code>{{ partial &quot;header.html&quot; . }}
     &lt;main&gt;
           {{ .Content }}
           {{ range .Paginator.Pages }}
@@ -165,7 +165,7 @@ POST
 <h3 id=2021-05-29>2021-05-29</h3>
 <h4 id=hmm-trying-this-approach-for-embedding-images>Hmm trying this approach for embedding images</h4>
 <p><a href=https://hugo-geekblog.geekdocs.de/posts/post-with-images/>Here</a> , where you do something like this</p>
-<pre><code>---
+<pre tabindex=0><code>---
 resources:
   - name: forest-1
     src: &quot;images/forest-1.jpg&quot;

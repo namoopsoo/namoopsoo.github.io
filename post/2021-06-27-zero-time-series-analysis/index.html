@@ -5,7 +5,7 @@
 <title>Fasting Data Time Series Analysis Notebook | My blog</title>
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="This is a notebook of the day to day activity of a look into three years of fasting data.">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content="Fasting Data Time Series Analysis Notebook">
@@ -152,7 +152,7 @@ Out[<span style=color:#ae81ff>4</span>]:
 <li>However this dataset doesn&rsquo;t appear to have time zones, so I wonder if it kind of simplifies that.</li>
 <li>Simplest I think is to ignore the first row for example,</li>
 </ul>
-<pre><code>      Date  Start    End  Hours  Night Eating
+<pre tabindex=0><code>      Date  Start    End  Hours  Night Eating
 0  6/26/21  01:57    NaN    NaN           NaN
 
 </code></pre><ul>
@@ -298,7 +298,7 @@ df[<span style=color:#e6db74>&#34;LastTwoFastsStartedBeforeMidnight&#34;</span>]
 </code></pre></div><ul>
 <li>I encountered <code>DataError: No numeric types to aggregate</code> and deeper in there I also stumbled on</li>
 </ul>
-<pre><code>ValueError: could not convert string to float: '00:14'
+<pre tabindex=0><code>ValueError: could not convert string to float: '00:14'
 </code></pre><ul>
 <li>So got to convert first to a numerical..</li>
 </ul>

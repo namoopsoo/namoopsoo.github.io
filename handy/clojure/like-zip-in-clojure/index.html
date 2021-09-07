@@ -5,7 +5,7 @@
 <title>My blog</title>
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="I am used to python&rsquo;s zip zip([1, 2, 3], ['a', 'b', 'c']) # [(1, 'a'), (2, 'b'), (3, 'c')] Interleaving and partitioning can do the same thing  From stackoverflow , below, This is so clever &mldr;  (partition 2 (interleave '(1 2 3) '(4 5 6))) ; => ((1 4) (2 5) (3 6)) ; or more generally (defn zip [& colls] (partition (count colls) (apply interleave colls))) (zip '( 1 2 3) '(4 5 6)) ;=> ((1 4) (2 5) (3 6)) (zip '( 1 2 3) '(4 5 6) '(2 4 8)) ;=> ((1 4 2) (2 5 4) (3 6 8)) This was also a cool solution  From here  user=> (map vector [1 2 3] [4 5 6]) ([1 4] [2 5] [3 6]) user=> ">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content>

@@ -70,8 +70,14 @@ here in NYC.
 So from there, looking at some of the speed data just involved looking at the tripdata trip time and calculating the 
 cartesian distance. 
 
-<img src="assets/Screen%20Shot%202019-05-21%20at%2011.02.41%20AM.png"
-width="435" height="307"  >
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 11.02.41 AM.png" width="50%">
+<!-- <img src="assets/Screen%20Shot%202019-05-21%20at%2011.02.41%20AM.png"
+width="435" height="307"  > -->
+
+
+
+
+
 
 
 (More on the code [here](https://github.com/namoopsoo/learn-citibike/blob/master/bikelearn/utils.py#L86) )
@@ -130,8 +136,15 @@ use the raw _latitude and longitude_ .
 * However, I eventually noticed that often times the _docking stations_ were on the edge of neighborhoods. So I literally had 
 edge cases! The Neighborhood would come back blank and I ended up having to fill in a lot of that data by hand anyhow!
 
-<img src="assets/Screen%20Shot%202018-12-04%20at%2012.11.42%20PM.png"
-width="457" height="328">
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2018-12-04 at 12.11.42 PM.png" width="50%">
+<!--<img src="assets/Screen%20Shot%202018-12-04%20at%2012.11.42%20PM.png"
+width="457" height="328">-->
+
+
+
+
+
+
 
 * Also the data calls were not free and I ended up building a small _caching layer_ with _redis_ . 
 * The other reason I had done that was that I would often work out of cafes where the Wifi was spotty and I didn't want an internet
@@ -415,3 +428,16 @@ ipdb> pp geocoding_result
 * And in discussing with a few colleagues, seasonality would also be a really good feature to consider. Time bucketing was explored to a limited extent, but the day of the week nor the month of the year was not explored. 
 * There may also be many other datasets which can be joined with this one to bolster the information available, including information about the weather or perhaps other demographic attributes available. 
 * A more thorough comparison of algorithms should also be considered.
+
+
+
+
+
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 1.00.56 PM.png" width="50%">
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 1.07.21 PM.png" width="50%">
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 1.07.47 PM.png" width="50%">
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.12.54 PM.png" width="50%">
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.30.52 PM.png" width="50%">
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.39.07 PM.png" width="50%">
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.45.13 PM.png" width="50%">
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.54.28 PM.png" width="50%">

@@ -17,7 +17,7 @@
 <meta itemprop=name content="Citibike Learn Project">
 <meta itemprop=description content="Can your Bike Share Destination be Predicted"><meta itemprop=datePublished content="2016-12-18T18:33:28+00:00">
 <meta itemprop=dateModified content="2016-12-18T18:33:28+00:00">
-<meta itemprop=wordCount content="2895">
+<meta itemprop=wordCount content="2903">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Citibike Learn Project">
 <meta name=twitter:description content="Can your Bike Share Destination be Predicted">
@@ -254,17 +254,17 @@ for about a months worth of trip data, I saw roughly the following comparison.</
 <h4 id=deeper-into-the-weeds>Deeper into the weeds</h4>
 <p>I compared the <code>SGDClassifier</code> with the <code>LogisticRegression</code> classifier (which I believe just uses Gradient Descent, while the <code>SGDClassifier</code> classifier is also a Logistic Regression classifier, but it uses Stochastic Gradient Descent).</p>
 <p>I also tried applying <a href=https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html>Standard Scaling</a> to my input data after <a href=http://scikit-learn.org/stable/modules/sgd.html#tips-on-practical-use>reading</a> that <code>scikit learn</code> &rsquo;s <code>SGDClassifier</code> implementation is sensitive unless the input data has a <code>mean=0</code> and <code>variance=1</code> . Indeed per the below this helped a little.</p>
-<p><img src=assets/Screen%20Shot%202019-05-21%20at%2012.12.54%20PM.png width=637 height=302></p>
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.12.54 PM.png" width=50%>
 <p>I also applied a GridSearch around the alpha parameter to the SGDClassifier, but this did not help at least the way I tried it,</p>
-<p><img src=assets/Screen%20Shot%202019-05-21%20at%2012.30.52%20PM.png width=690 height=450></p>
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.30.52 PM.png" width=50%>
 <p>I next started varying the training set size, given that a month worth of trip data had about a million rows, I went from <code>10k</code> to <code>1M</code>,</p>
-<p><img src=assets/Screen%20Shot%202019-05-21%20at%2012.39.07%20PM.png width=678 height=235></p>
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.39.07 PM.png" width=50%>
 <p>But this didn&rsquo;t look great. I realized a problem I had was that I was not randomly sampling my input data. Since a month-size dataset is around 1.2 Million rows, then a 10,000 large set just ends up barely dipping into the first day. So choosing the dataset sizes has to be done, by random sampling.</p>
 <p>After making the sampling randomized, the output below, feels like it has a better upward trend, but it is still not visible enough.</p>
-<p><img src=assets/Screen%20Shot%202019-05-21%20at%2012.45.13%20PM.png width=682 height=235></p>
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.45.13 PM.png" width=50%>
 <p>I also realized I was being inconsistent in my assessment because I was not using a single holdout set to test. I was actually randomly generating a test set each time. That was really bad. So I created ten models on sizes 10,000 through 100,000 datasets, created from <code>09 and 10 2015</code>, and testing on a single holdout dataset, taken from <code>November 2015</code>. In this approach, the accuracy results are found using the same holdout set instead of using a differently derived test set each time.</p>
-<p><img src=assets/Screen%20Shot%202019-05-21%20at%2012.54.28%20PM.png width=673 height=232>
-Although the results were still pretty flat, at least I can trust the consistency of my test method more now.</p>
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.54.28 PM.png" width=50%>
+<p>Although the results were still pretty flat, at least I can trust the consistency of my test method more now.</p>
 <p>More in the jupyter <a href="https://render.githubusercontent.com/view/ipynb?commit=b2beb2af23f4f803a059161aeeb1a8e628a1bd4b&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6e616d6f6f70736f6f2f6c6561726e2d6369746962696b652f623262656232616632336634663830336130353931363161656562316138653632386131626434622f70726f6a6563742532307265706f72742e6970796e62&nwo=namoopsoo%2Flearn-citibike&path=project+report.ipynb&repository_id=60489657&repository_type=Repository#Also-comparing-with-additional-classifiers">notebook</a></p>
 <h4 id=binarizing-the-inputs>Binarizing the inputs</h4>
 <ul>
@@ -273,18 +273,18 @@ Although the results were still pretty flat, at least I can trust the consistenc
 <li>These were created from just the single 2015-09 dataset (201509-citibike-tripdata.csv).</li>
 <li>I found this to be very helpful. Here&rsquo;s a summary graphic,</li>
 </ul>
-<p><img src=assets/Screen%20Shot%202019-05-21%20at%201.00.56%20PM.png width=445 height=310></p>
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 1.00.56 PM.png" width=50%>
 <p>More details <a href="https://render.githubusercontent.com/view/ipynb?commit=b2beb2af23f4f803a059161aeeb1a8e628a1bd4b&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6e616d6f6f70736f6f2f6c6561726e2d6369746962696b652f623262656232616632336634663830336130353931363161656562316138653632386131626434622f70726f6a6563742532307265706f72742e6970796e62&nwo=namoopsoo%2Flearn-citibike&path=project+report.ipynb&repository_id=60489657&repository_type=Repository#Binarizing-geolocation-start-data">in the notebook</a></p>
 <h4 id=changing-my-metric-one-more-time>Changing my metric one more time</h4>
 <ul>
 <li>Given that there are about <code>28</code> neighborhoods covered by Citibike (at least in the data end of <code>2015</code>), a high accuracy is difficult to achieve especially because there are many output classes to choose from.</li>
 <li>Another idea that was explored was to create a Rank K Accuracy, such that a prediction is correct when the correct class is found in the top highest K probabilities.</li>
 </ul>
-<p><img src=assets/Screen%20Shot%202019-05-21%20at%201.07.21%20PM.png width=415 height=67></p>
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 1.07.21 PM.png" width=50%>
 <p>The overall reasoning I had here is two-fold. One, I think of the analogy of a search engine, where it is typically acceptable to show someone
 <em>five results</em> as opposed to the so called <em>&ldquo;I am feeling lucky&rdquo;</em> result. Of course not every machine learning use case will have the tolerance to take five results as opposed to five, but I think my particular problem of choice it might be fine. Or at least asking people would help to answer that question.</p>
 <p>But I think the main reason I wanted to do this was to just better understand whether my classification approach was doing anything at all. So since, out of these <code>28</code> or so neighborhoods, if going from the <code>top 1</code> result to the <code>top 2</code> results, yields an additional <code>20 points</code> of accuracy, then I feel a little better about the result making sense.</p>
-<p><img src=assets/Screen%20Shot%202019-05-21%20at%201.07.47%20PM.png width=334 height=239></p>
+<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 1.07.47 PM.png" width=50%>
 <p>More detail in the <a href="https://render.githubusercontent.com/view/ipynb?commit=b2beb2af23f4f803a059161aeeb1a8e628a1bd4b&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6e616d6f6f70736f6f2f6c6561726e2d6369746962696b652f623262656232616632336634663830336130353931363161656562316138653632386131626434622f70726f6a6563742532307265706f72742e6970796e62&nwo=namoopsoo%2Flearn-citibike&path=project+report.ipynb&repository_id=60489657&repository_type=Repository#Redefining-the-accuracy-score">notebook</a></p>
 <h4 id=sagemaker-approach>SageMaker approach</h4>
 <p>I wanted to test drive AWS SageMaker ,</p>
@@ -440,14 +440,6 @@ ipdb<span style=color:#f92672>&gt;</span>
 <li>There may also be many other datasets which can be joined with this one to bolster the information available, including information about the weather or perhaps other demographic attributes available.</li>
 <li>A more thorough comparison of algorithms should also be considered.</li>
 </ul>
-<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 1.00.56 PM.png" width=50%>
-<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 1.07.21 PM.png" width=50%>
-<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 1.07.47 PM.png" width=50%>
-<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.12.54 PM.png" width=50%>
-<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.30.52 PM.png" width=50%>
-<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.39.07 PM.png" width=50%>
-<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.45.13 PM.png" width=50%>
-<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.54.28 PM.png" width=50%>
 <ul class=pa0>
 </ul>
 <div class="mt6 instapaper_ignoref">

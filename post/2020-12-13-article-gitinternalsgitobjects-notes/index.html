@@ -6,7 +6,7 @@
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="Reading https://git-scm.com/book/en/v2/Git-Internals-Git-Objects
 (pandars3) $ echo 'test content' | git hash-object -w --stdin d670460b4b4aece5915caf5c68d12f560a9fe3e4  I tried that and oh hah so -w tells git hash-object to actually add that hash to my git key value store database hmm.. lets see if i can find it ..  (pandars3) $ file .git/objects/d6/70460b4b4aece5915caf5c68d12f560a9fe3e4 .git/objects/d6/70460b4b4aece5915caf5c68d12f560a9fe3e4: VAX COFF executable not stripped - version 737  Ah indeed. ok binary though. hmm but apparently this is actual data.">
-<meta name=generator content="Hugo 0.88.1">
+<meta name=generator content="Hugo 0.91.2">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content="notes on Git Internals Git Objects article">
@@ -185,7 +185,7 @@ blob
 <footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
 <div class="flex justify-between">
 <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://michal.piekarczyk.xyz/>
-&copy; My blog 2021
+&copy; My blog 2022
 </a>
 <div>
 </div>

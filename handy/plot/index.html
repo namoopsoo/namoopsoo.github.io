@@ -6,7 +6,7 @@
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="histogram overlays # Nice technique from https://srome.github.io/Covariate-Shift,-i.e.-Why-Prediction-Quality-Can-Degrade-In-Production-and-How-To-Fix-It/  # ... put two histograms on same plot ... def produce_overlayed_hists_for_col_dfs(col, dfs): fig = plt.figure(figsize=(12,12)) ax = fig.add_subplot(121) ax.hist(dfs[0][1][col], color='r', alpha=0.2, bins=50) ax.hist(dfs[1][1][col], color='b', alpha=0.2, bins=50) ax.set(title=f'{dfs[0][0]}(red) vs {dfs[1][0]}(blue)', ylabel=col) Basic goal looks like the below.
 sparse diagonal x axis ticks import matplotlib.pyplot as plt import pandas as pd import datetime def make_xtick_labels(x, step=5): '''Given x, step the labels every <step> Aka, take every <step>th x label ''' x_ticks = [i for i in range(len(x)) if i % step == 0] x_labels = [x[i] for i in x_ticks] return x_ticks, x_labels  Did not add an example x , y yet, but showing an example where x contains dates and y is numeric.">
-<meta name=generator content="Hugo 0.88.1">
+<meta name=generator content="Hugo 0.91.2">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content="plot handies">
@@ -302,7 +302,7 @@ display(Image(filename<span style=color:#f92672>=</span>loc))
 <footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
 <div class="flex justify-between">
 <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://michal.piekarczyk.xyz/>
-&copy; My blog 2021
+&copy; My blog 2022
 </a>
 <div>
 </div>

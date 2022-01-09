@@ -5,7 +5,7 @@
 <title>My blog</title>
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="Create a new user username = 'new_user_foo' passw = input() sql = &#34;CREATE USER {}WITH PASSWORD '{}' &#34;.format(username, passw) Make some quick grants tables = ['table1', 'table_foo', ] username = 'xx' grant_queries = [q.format(username) for q in [&#34;GRANT CONNECT ON DATABASE mydb TO {}&#34;, &#34;GRANT USAGE ON SCHEMA public TO {}&#34;,] + [&#34;GRANT SELECT ON {}TO &#34;.format(t) + &#34; {}&#34; for t in tables]] check exissting users select * from pg_user update user password ; change ALTER USER user_name WITH PASSWORD 'new_password';  can use input() here too actually  Check Existing Grants  The user running this query might not be able to see all the rows  SELECT table_catalog, table_schema, table_name, privilege_type, grantee FROM information_schema.">
-<meta name=generator content="Hugo 0.88.1">
+<meta name=generator content="Hugo 0.91.2">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content>
@@ -118,7 +118,7 @@ grant_queries <span style=color:#f92672>=</span> [q<span style=color:#f92672>.</
 <footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
 <div class="flex justify-between">
 <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://michal.piekarczyk.xyz/>
-&copy; My blog 2021
+&copy; My blog 2022
 </a>
 <div>
 </div>

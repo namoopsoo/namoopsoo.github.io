@@ -5,7 +5,7 @@
 <title>Understanding Tuning Results | My blog</title>
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="Looking at hyperparameter tuning results">
-<meta name=generator content="Hugo 0.88.1">
+<meta name=generator content="Hugo 0.91.2">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content="Understanding Tuning Results">
@@ -110,7 +110,7 @@ keep_fixed <span style=color:#f92672>=</span> {
 fp<span style=color:#f92672>.</span>compare_train_test(alldf, feature_col<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;num_round&#39;</span>,
                       metric_cols<span style=color:#f92672>=</span>[<span style=color:#e6db74>&#39;acc&#39;</span>, <span style=color:#e6db74>&#39;train_acc&#39;</span>],
                       keep_fixed<span style=color:#f92672>=</span>keep_fixed)
-</code></pre></div><p><img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-16-local_files/2020-07-16-local_28_0.png></p>
+</code></pre></div><img src=https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-16-local_files/2020-07-16-local_28_0.png>
 <p>And sorting the metrics dataframe by test accuracy, I also plotted that,</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>best_params <span style=color:#f92672>=</span> dict(alldf<span style=color:#f92672>.</span>sort_values(by<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;acc&#39;</span>)<span style=color:#f92672>.</span>iloc[<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>])
 best_params
@@ -175,7 +175,7 @@ fp<span style=color:#f92672>.</span>compare_train_test(alldf, feature_col<span s
 <footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
 <div class="flex justify-between">
 <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://michal.piekarczyk.xyz/>
-&copy; My blog 2021
+&copy; My blog 2022
 </a>
 <div>
 </div>

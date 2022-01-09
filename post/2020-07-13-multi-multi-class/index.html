@@ -6,7 +6,7 @@
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="Summary Here is an early draft of a post, trying to extract some of the insights from the project here. There is a lot to write about and I want to just start getting it out.
 Quick outline  The logloss upper bound Does the &ldquo;k area&rdquo; metric help? training balancing Is it possible to calculate the Bayesian error rate here? And logloss seems to be very sensitive. (can look at correlations , not super high) So what metric should be used ?">
-<meta name=generator content="Hugo 0.88.1">
+<meta name=generator content="Hugo 0.91.2">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content="Notes on multi-multi-class classifiers">
@@ -110,10 +110,10 @@ There is a lot to write about and I want to just start getting it out.</p>
 <p>The idea is if we want to compare two models predicting multi-class probabilities, in an ideal world, the accuracy will be good enough. But when the number of classes is really high (in this case <code>54</code>), we will be looking at very low accuracies. And accuracy only looks at the top class. You can also look at the &ldquo;Top k=5 accuracy&rdquo;, or the &ldquo;Top k=10 accuracy&rdquo;, meaning whether the target class is in the top <code>k=5</code> or top <code>k=10</code> ranked probabilities.</p>
 <p>Instead you can create a single number between <code>0</code> and <code>1</code> by accumulating the ranked probabilities</p>
 <p>If you plot, for all of the examples in a test set, what is the <code>k</code> required to get the correct answer you get this distribution,</p>
-<p><img src="https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-04-aws_files/2020-07-04-aws_34_0.png?raw=true"></p>
+<img src="https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-04-aws_files/2020-07-04-aws_34_0.png?raw=true">
 <p>This looks good in the sense the numbers are higher for lower k.</p>
 <p>And the cumulative distribution looks like this</p>
-<p><img src="https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-04-aws_files/2020-07-04-aws_36_0.png?raw=true"></p>
+<img src="https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-04-aws_files/2020-07-04-aws_36_0.png?raw=true">
 <p>So the <code>k area</code> metric is the area under this second curve. The fewer <code>k</code> we need to find the correct answer, the larger the area under this figure. This feels a bit more intuitive of a metric for evaluating classifiers with many many classes, at least compared to logloss!</p>
 <h4 id=extending-notes-on-k-area>Extending notes on k-area</h4>
 <ul>
@@ -218,7 +218,7 @@ test balanced acc 0.1044572104146026
 logloss 3.4794945441534866
 </code></pre><p>Also in past projects I had balanced out a &ldquo;groomed&rdquo; test set myself but this time I just tried using <code>balanced_accuracy_score</code> from sklearn.</p>
 <p>I think visualizing the confusion is pretty interesting too in multiclass problems like this one from <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-03-aws.md>&ldquo;2020-07-03-aws.md&rdquo;</a>, where I had noted the last class (bright yellow!) is sort of taking over the color spectrum of this data, because it is in the <code>1000</code> range but all the other data appears to be below <code>200</code>.</p>
-<p><img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-03-aws_files/2020-07-03-aws_32_0.png?raw=true"></p>
+<img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-03-aws_files/2020-07-03-aws_32_0.png?raw=true">
 <p>And as a proof of concept my confusion visualization from <a href=https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-07-05-aws-two.md>2020-07-05-aws-two</a> ,</p>
 <p>is showing the evidence of no balancing at all, because we see the classifier is focused on predicting basically one class, what looks like class <code>8</code> or <code>9</code>.</p>
 <img src="https://github.com/namoopsoo/learn-citibike/raw/master/notes/2020-07-05-aws-two_files/2020-07-05-aws-two_11_0.png?raw=true">
@@ -245,7 +245,7 @@ balanced acc 0.08281646671786597
 <footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
 <div class="flex justify-between">
 <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://michal.piekarczyk.xyz/>
-&copy; My blog 2021
+&copy; My blog 2022
 </a>
 <div>
 </div>

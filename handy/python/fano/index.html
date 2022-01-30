@@ -5,7 +5,7 @@
 <title>My blog</title>
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="import numpy as np from bokeh.plotting import figure, show, output_file def doplot(x, y, **figure_kwargs): N = x.shape[0] radii = np.array([0.1,]*N) # print 'DEBUG, ', radii[:4], ', ', N colors = [ &#34;#%02x%02x%02x&#34; % (int(r), int(g), 150) for r, g in zip(50+2*x, 30+2*y) ] TOOLS=&#34;hover,crosshair,pan,wheel_zoom,zoom_in,zoom_out,box_zoom,undo,redo,reset,tap,save,box_select,poly_select,lasso_select,&#34; p = figure(tools=TOOLS, **figure_kwargs) p.scatter(x, y, radius=radii, fill_color=colors, fill_alpha=0.6, line_color=None) output_file(&#34;color_scatter.html&#34;) show(p) # open a browser def make_data(N=100, trials=1000, minmax=(0, 1)): a, b = minmax data = [[sum(vec), fano(vec)] for vec in [a + (b - a)*np.">
-<meta name=generator content="Hugo 0.91.2">
+<meta name=generator content="Hugo 0.92.1">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content>

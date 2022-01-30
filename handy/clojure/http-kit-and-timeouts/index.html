@@ -5,7 +5,7 @@
 <title>My blog</title>
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="test http-kit timeout..  look at result for a timeout 1ms..  (require ['org.httpkit.client :as 'http]) (let [options {:timeout 1} url &#34;http://yahoo.com&#34; ] (def vout @(http/get url options)))  ==>  user=> (keys vout) (:opts :error) user=> vout {:opts {:timeout 1, :method :get, :url &#34;http://yahoo.com&#34;}, :error #error { :cause &#34;read timeout: 1ms&#34; :via [{:type org.httpkit.client.TimeoutException :message &#34;read timeout: 1ms&#34; :at [org.httpkit.client.HttpClient clearTimeout &#34;HttpClient.java&#34; 82]}] :trace [[org.httpkit.client.HttpClient clearTimeout &#34;HttpClient.java&#34; 82] [org.httpkit.client.HttpClient run &#34;HttpClient.">
-<meta name=generator content="Hugo 0.91.2">
+<meta name=generator content="Hugo 0.92.1">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content>

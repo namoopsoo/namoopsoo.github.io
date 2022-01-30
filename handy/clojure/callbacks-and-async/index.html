@@ -5,7 +5,7 @@
 <title>My blog</title>
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="basic callbacks&mldr; (comment &#34;basic callback&#34; (let [callback-fn #(+ 5 %) ] (callback-fn 10)) )  &mldr;  user=> (let [callback-fn #(+ 5 %) #_=> ] #_=> (callback-fn 10)) 15 callback w future (comment &#34;future w callback func&#34; (defn use-callback-when-done [callback-fn] (future (callback-fn (+ 4 5)))) (def output (use-callback-when-done #(println &#34;printings.. &#34; % &#34; .end&#34;))) )  =>  user=> (def output (use-callback-when-done #(println &#34;printings.. &#34; % &#34; .end&#34;))) #'user/output printings.. 9 .">
-<meta name=generator content="Hugo 0.91.2">
+<meta name=generator content="Hugo 0.92.1">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content>

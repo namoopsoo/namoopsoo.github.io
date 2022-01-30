@@ -8,7 +8,7 @@
 boot.user=> (use '[taoensso.faraday :as dynamo])   with a client-config hash defined in a separate clj file, here one/dynamo.clj is my file.
 (def client-config (if (:development env) {:access-key &#34;OMGDEVELOPMENT&#34; :secret-key &#34;I_SHOULD_KEEP_THIS_SECRET!&#34; ; Point the configuration at the DynamoDB Local :endpoint &#34;http://localhost:8000&#34;} {:endpoint &#34;http://dynamodb.us-east-1.amazonaws.com&#34;} ) )   and use list-tables from the module/class thing,
 boot.user=> (use '[one.dynamo :as db]) ; `one/dynamo.">
-<meta name=generator content="Hugo 0.91.2">
+<meta name=generator content="Hugo 0.92.1">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <meta property="og:title" content>

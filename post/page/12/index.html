@@ -5,7 +5,7 @@
 <title>My blog</title>
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="The last theme you'll ever need. Maybe.">
-<meta name=generator content="Hugo 0.91.2">
+<meta name=generator content="Hugo 0.92.1">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
 <link href=/post/index.xml rel=alternate type=application/rss+xml title="My blog">
@@ -73,6 +73,18 @@ Post
 <div class="relative w-100 w-30-l mb4 bg-white">
 <div class="mb3 pa4 mid-gray overflow-hidden">
 <h1 class="f3 near-black">
+<a href=https://michal.piekarczyk.xyz/post/2020-11-14-georgia-recount-stats/ class="link black dim">
+</a>
+</h1>
+<div class="nested-links f5 lh-copy nested-copy-line-height">
+Binomial Distribution Plot Binomial distribution for p, and a sample of n
+from scipy.stats import binom import numpy as np import matplotlib.pyplot as plt import pylab workdir = '_posts/2020-11-14-georgia-recount-stats_files' fig, ax = plt.subplots(1, 1) n, p = 5, 0.4 mean, var, skew, kurt = binom.stats(n, p, moments='mvsk') x = np.arange(binom.ppf(0.01, n, p), binom.ppf(0.99, n, p)) ax.plot(x, binom.pmf(x, n, p), 'bo', ms=8, label='binom pmf') ax.vlines(x, 0, binom.pmf(x, n, p), colors='b', lw=5, alpha=0.
+</div>
+</div>
+</div>
+<div class="relative w-100 w-30-l mb4 bg-white">
+<div class="mb3 pa4 mid-gray overflow-hidden">
+<h1 class="f3 near-black">
 <a href=https://michal.piekarczyk.xyz/post/2020-11-14-georgia-recount/ class="link black dim">
 </a>
 </h1>
@@ -91,17 +103,6 @@ B, T = 2472182, 2458010 p_observed = B*1./(B + T) # 0.501437 For now just starti
 </h1>
 <div class="nested-links f5 lh-copy nested-copy-line-height">
 Reference Title &ldquo;The Practice&rdquo; Author [[Seth Godin]] Book in three Sentences (almost) ( Here&rsquo;s my first stab at this, on [[February 1st, 2021]] ) If you&rsquo;re not on the hook, then you are working as an #amateur or as a #hack Your daily practice is not about doing what you love but loving what you do. Author says if you are not doing for someone other than yourself, then that is also #amateur status.
-</div>
-</div>
-</div>
-<div class="relative w-100 w-30-l mb4 bg-white">
-<div class="mb3 pa4 mid-gray overflow-hidden">
-<h1 class="f3 near-black">
-<a href=https://michal.piekarczyk.xyz/post/2021-03-27-nutrition-calcs/ class="link black dim">
-</a>
-</h1>
-<div class="nested-links f5 lh-copy nested-copy-line-height">
-Tryingo to figure out whether Calories specified typically include grams from Fiber Managed to find some documentation , here on &ldquo;proximates&rdquo; , &ldquo;Carbohydrate content, referred to as “carbohydrate by difference” in the tables, is expressed as the difference between 100 and the sum of the percentages of water, protein, total lipid (fat), ash, and alcohol (when present). Values for carbohydrate by difference include total dietary fiber content. “Sugars, total NLEA” refers to the sum of the values for individual monosaccharides (galactose, glucose, and fructose) and disaccharides (sucrose, lactose, and maltose), which are those sugars analyzed for nutrition labelling.
 </div>
 </div>
 </div>
@@ -132,7 +133,7 @@ Tryingo to figure out whether Calories specified typically include grams from Fi
 <a href=/post/page/13/ aria-label=Next class=page-link role=button><span aria-hidden=true>&#187;</span></a>
 </li>
 <li class=page-item>
-<a href=/post/page/15/ aria-label=Last class=page-link role=button><span aria-hidden=true>&#187;&#187;</span></a>
+<a href=/post/page/16/ aria-label=Last class=page-link role=button><span aria-hidden=true>&#187;&#187;</span></a>
 </li>
 </ul>
 </article>

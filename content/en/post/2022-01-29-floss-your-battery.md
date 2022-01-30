@@ -8,3 +8,9 @@ Today I thought it would take me maybe half an hour to replace my laptop battery
 Anyway, turns out they are glued to the inside and you need some kind of epoxy loosener. I randomly stumbled on this video someone put together using some kind of wax line to actually remove batteries. Well I didn't have wax thread, but I had floss so umm hey why not try that? 
 
 <img src="https://s3.amazonaws.com/my-blog-content/2022-01-29-floss-your-battery/2022-01-29 13.40.01.jpg" width="50%">
+
+And wow somehow it worked after some trial and error.
+
+
+
+<img src="https://s3.amazonaws.com/my-blog-content/2022-01-29-floss-your-battery/2022-01-29 13.50.46.jpg" width="50%">

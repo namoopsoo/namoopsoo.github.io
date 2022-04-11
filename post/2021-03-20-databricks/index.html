@@ -1,485 +1,107 @@
-<!doctype html><html lang=en-us>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-<title>Trying Databricks | My blog</title>
-<meta name=viewport content="width=device-width,minimum-scale=1">
-<meta name=description content="https://databricks.com/try-databricks
-2021-03-21 Running A quick start notebook  Based on the notes here, it is pretty easy to create an auto-scaling cluster. Not sure yet what events prompt the cluster to get more workers. But I would be curious to try a job that uses fewer workers and more workers, to see how the outcomes compare. I also like ethat this notebook supports SQL and also python , using what looks like first line as %python to indicate the language.">
-<meta name=generator content="Hugo 0.92.1">
-<meta name=ROBOTS content="NOINDEX, NOFOLLOW">
-<link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
-<meta property="og:title" content="Trying Databricks">
-<meta property="og:description" content="https://databricks.com/try-databricks
-2021-03-21 Running A quick start notebook  Based on the notes here, it is pretty easy to create an auto-scaling cluster. Not sure yet what events prompt the cluster to get more workers. But I would be curious to try a job that uses fewer workers and more workers, to see how the outcomes compare. I also like ethat this notebook supports SQL and also python , using what looks like first line as %python to indicate the language.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://michal.piekarczyk.xyz/post/2021-03-20-databricks/"><meta property="article:section" content="post">
-<meta property="article:published_time" content="2021-03-21T00:00:00+00:00">
-<meta property="article:modified_time" content="2021-03-21T00:00:00+00:00"><meta property="og:site_name" content="My blog">
-<meta itemprop=name content="Trying Databricks">
-<meta itemprop=description content="https://databricks.com/try-databricks
-2021-03-21 Running A quick start notebook  Based on the notes here, it is pretty easy to create an auto-scaling cluster. Not sure yet what events prompt the cluster to get more workers. But I would be curious to try a job that uses fewer workers and more workers, to see how the outcomes compare. I also like ethat this notebook supports SQL and also python , using what looks like first line as %python to indicate the language."><meta itemprop=datePublished content="2021-03-21T00:00:00+00:00">
-<meta itemprop=dateModified content="2021-03-21T00:00:00+00:00">
-<meta itemprop=wordCount content="1435">
-<meta itemprop=keywords content="spark,covid,"><meta name=twitter:card content="summary">
-<meta name=twitter:title content="Trying Databricks">
-<meta name=twitter:description content="https://databricks.com/try-databricks
-2021-03-21 Running A quick start notebook  Based on the notes here, it is pretty easy to create an auto-scaling cluster. Not sure yet what events prompt the cluster to get more workers. But I would be curious to try a job that uses fewer workers and more workers, to see how the outcomes compare. I also like ethat this notebook supports SQL and also python , using what looks like first line as %python to indicate the language.">
-</head>
-<body class="ma0 avenir bg-near-white">
-<header>
-<div class=bg-black>
-<nav class="pv3 ph3 ph4-ns" role=navigation>
-<div class="flex-l justify-between items-center center">
-<a href=/ class="f3 fw2 hover-white no-underline white-90 dib">
-My blog
-</a>
-<div class="flex-l items-center">
-<ul class="pl0 mr3">
-<li class="list f5 f4-ns fw4 dib pr3">
-<a class="hover-white no-underline white-90" href=/about/ title="About page">
-About
-</a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
-<a class="hover-white no-underline white-90" href=/handy/ title="Handy page">
-Handy
-</a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
-<a class="hover-white no-underline white-90" href=/post/ title="Post page">
-Post
-</a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
-<a class="hover-white no-underline white-90" href=/project/ title="Side Projects page">
-Side Projects
-</a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
-<a class="hover-white no-underline white-90" href=/foo/ title="The Foos page">
-The Foos
-</a>
-</li>
-</ul>
-</div>
-</div>
-</nav>
-</div>
-</header>
-<main class=pb7 role=main>
-<article class="flex-l flex-wrap justify-between mw8 center ph3">
-<header class="mt4 w-100">
-<aside class="instapaper_ignoref b helvetica tracked">
-POST
-</aside>
-<div id=sharing class=mt3>
-<a href="https://www.facebook.com/sharer.php?u=https://michal.piekarczyk.xyz/post/2021-03-20-databricks/" class="facebook no-underline" aria-label="share on Facebook"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765 50.32h6.744V33.998h4.499l.596-5.624h-5.095l.007-2.816c0-1.466.14-2.253 2.244-2.253h2.812V17.68h-4.5c-5.405.0-7.307 2.729-7.307 7.317v3.377h-3.369v5.625h3.369V50.32zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
-</a>
-<a href="https://twitter.com/share?url=https://michal.piekarczyk.xyz/post/2021-03-20-databricks/&text=Trying%20Databricks" class="twitter no-underline" aria-label="share on Twitter"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
-</a>
-<a href="https://www.linkedin.com/shareArticle?mini=true&url=https://michal.piekarczyk.xyz/post/2021-03-20-databricks/&title=Trying%20Databricks" class="linkedin no-underline" aria-label="share on LinkedIn"><svg height="32" style="enable-background:new 0 0 65 65" viewBox="0 0 65 65" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M50.837 48.137V36.425c0-6.275-3.35-9.195-7.816-9.195-3.604.0-5.219 1.983-6.119 3.374V27.71h-6.79c.09 1.917.0 20.427.0 20.427h6.79V36.729c0-.609.044-1.219.224-1.655.49-1.22 1.607-2.483 3.482-2.483 2.458.0 3.44 1.873 3.44 4.618v10.929H50.837zM22.959 24.922c2.367.0 3.842-1.57 3.842-3.531-.044-2.003-1.475-3.528-3.797-3.528s-3.841 1.524-3.841 3.528c0 1.961 1.474 3.531 3.753 3.531H22.959zM34 64C17.432 64 4 50.568 4 34 4 17.431 17.432 4 34 4s30 13.431 30 30c0 16.568-13.432 30-30 30zM26.354 48.137V27.71h-6.789v20.427h6.789z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
-</a>
-</div>
-<h1 class="f1 athelas mt3 mb1">Trying Databricks</h1>
-<time class="f6 mv4 dib tracked" datetime=2021-03-21T00:00:00Z>March 21, 2021</time>
-</header>
-<div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p><a href=https://databricks.com/try-databricks>https://databricks.com/try-databricks</a></p>
-<h3 id=2021-03-21>2021-03-21</h3>
-<h4 id=running-a-quick-start-notebook>Running A quick start notebook</h4>
-<ul>
-<li>Based on the notes here, it is pretty easy to create an auto-scaling cluster.</li>
-<li>Not sure yet what events prompt the cluster to get more workers.</li>
-<li>But I would be curious to try a job that uses fewer workers and more workers, to see how the outcomes compare.</li>
-<li>I also like ethat this notebook supports <code>SQL</code> and also <code>python</code> , using what looks like first line as <code>%python</code> to indicate the language.</li>
-</ul>
-<h4 id=is-this-spark-sql-or-sql->Is this spark sql or sql ?</h4>
-<ul>
-<li>From the quick start notebook&mldr;</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>CREATE</span> <span style=color:#66d9ef>TABLE</span> diamonds
-<span style=color:#66d9ef>USING</span> csv
-<span style=color:#66d9ef>OPTIONS</span> (path <span style=color:#e6db74>&#34;/databricks-datasets/Rdatasets/data-001/csv/ggplot2/diamonds.csv&#34;</span>, header <span style=color:#e6db74>&#34;true&#34;</span>)
-</code></pre></div><h3 id=2021-04-03>2021-04-03</h3>
-<h4 id=revisit-my-earlier-problem>Revisit my earlier problem</h4>
-<ul>
-<li><a href=https://michal.piekarczyk.xyz/2021/01/23/spark-weekend.html#2021-01-31>Last time</a> , I found this <a href=https://data.cdc.gov/Case-Surveillance/COVID-19-Case-Surveillance-Public-Use-Data/vbim-akqf>CDC dataset</a> called &ldquo;COVID-19_Case_Surveillance_Public_Use_Data.csv&rdquo;</li>
-<li>My basic initial question I would like to answer is &ldquo;how do the symptomatic rates compare by age bin&rdquo;, since this dataset has an <code>onset_dt</code> column, which is eithr blank if no symptoms and has a date if symptoms.</li>
-</ul>
-<h4 id=more-dataset-metadata>More dataset metadata..</h4>
-<ul>
-<li>22.5 M rows</li>
-<li>each row is a de-identified patient</li>
-<li>created: <code>2020-05-15</code></li>
-<li>updated <code>2021-03-31</code> (not sure what was being updated though)</li>
-<li>Temporal Applicability: <code>2020-01-01/2021-03-16</code></li>
-<li>Update Frequency: Monthly</li>
-<li>columns</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Column Name</th>
-<th>Description</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>cdc_case_earliest_dt</td>
-<td>Calculated date&ndash;the earliest available date for the record, taken from either the available set of clinical dates (date related to the illness or specimen collection) or the calculated date representing initial date case was received by CDC. This variable is optimized for completeness and may change for a given record from time to time as new information is submitted about a case.</td>
-<td>Date & Time</td>
-</tr>
-<tr>
-<td>cdc_report_dt</td>
-<td>Calculated date representing initial date case was reported to CDC. Depreciated; CDC recommends researchers use cdc_case_earliest_dt in time series and other time-based analyses.</td>
-<td>Date & Time</td>
-</tr>
-<tr>
-<td>pos_spec_dt</td>
-<td>Date of first positive specimen collection</td>
-<td>Date & Time</td>
-</tr>
-<tr>
-<td>onset_dt</td>
-<td>Symptom onset date, if symptomatic</td>
-<td>Date & Time</td>
-</tr>
-<tr>
-<td>current_status</td>
-<td>Case Status: Laboratory-confirmed case; Probable case</td>
-<td>Plain Text</td>
-</tr>
-<tr>
-<td>sex</td>
-<td>Sex: Male; Female; Unknown; Other</td>
-<td>Plain Text</td>
-</tr>
-<tr>
-<td>age_group</td>
-<td>Age Group: 0 - 9 Years; 10 - 19 Years; 20 - 39 Years; 40 - 49 Years; 50 - 59 Years; 60 - 69 Years; 70 - 79 Years; 80 + Years</td>
-<td>Plain Text</td>
-</tr>
-<tr>
-<td>race_ethnicity_combined</td>
-<td>Race and ethnicity (combined): Hispanic/Latino; American Indian / Alaska Native, Non-Hispanic; Asian, Non-Hispanic; Black, Non-Hispanic; Native Hawaiian / Other Pacific Islander, Non-Hispanic; White, Non-Hispanic; Multiple/Other, Non-Hispanic</td>
-<td>Plain Text</td>
-</tr>
-<tr>
-<td>hosp_yn</td>
-<td>Hospitalization status</td>
-<td>Plain Text</td>
-</tr>
-<tr>
-<td>icu_yn</td>
-<td>ICU admission status</td>
-<td>Plain Text</td>
-</tr>
-<tr>
-<td>death_yn</td>
-<td>Death status</td>
-<td>Plain Text</td>
-</tr>
-<tr>
-<td>medcond_yn</td>
-<td>Presence of underlying comorbidity or disease</td>
-<td>Plain Text</td>
-</tr>
-</tbody>
-</table>
-<h4 id=get-data-in-there>Get data in there</h4>
-<ul>
-<li>Per the Databricks web console I can specify an S3 bucket and create a table from my file like that</li>
-<li>And they refer to &ldquo;DBFS&rdquo; as &ldquo;Databricks File System&rdquo;</li>
-<li>from the example you can load from the File Store like</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>sparkDF <span style=color:#f92672>=</span> spark<span style=color:#f92672>.</span>read<span style=color:#f92672>.</span>csv(<span style=color:#e6db74>&#39;/FileStore/tables/state_income-9f7c5.csv&#39;</span>, header<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;true&#34;</span>, inferSchema<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;true&#34;</span>)
-
-<span style=color:#75715e># then you can create a temp table from that df</span>
-sparkDF<span style=color:#f92672>.</span>createOrReplaceTempView(<span style=color:#e6db74>&#34;temp_table_name&#34;</span>)
-</code></pre></div><ul>
-<li>THere was also an interesting note in the help notebook about permanent tables available across cluster restarts&mldr;</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Since this table is registered as a temp view, it will only be available to this notebook. If you&#39;d like other users to be able to query this table, you can also create a table from the DataFrame.</span>
-<span style=color:#75715e># Once saved, this table will persist across cluster restarts as well as allow various users across different notebooks to query this data.</span>
-<span style=color:#75715e># To do so, choose your table name and uncomment the bottom line.</span>
-
-permanent_table_name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;{{table_name}}&#34;</span>
-
-<span style=color:#75715e># df.write.format(&#34;{{table_import_type}}&#34;).saveAsTable(permanent_table_name)</span>
-</code></pre></div><ul>
-<li>I am looking for how to do this w/ s3&mldr;</li>
-<li>Ah according to <a href=https://docs.databricks.com/data/data-sources/aws/amazon-s3.html>docs</a> you mount s3 files as regular files then proceed as usual</li>
-<li>ok will try that &mldr;</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>aws_bucket_name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;my-databricks-assets-alpha&#34;</span>
-s3fn <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;s3://my-databricks-assets-alpha/cdc-dataset/COVID-19_Case_Surveillance_Public_Use_Data.csv&#34;</span>
-s3fn <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;s3://my-databricks-assets-alpha/cdc-dataset/COVID-19_Case_Surveillance_Public_Use_Data.head1000.csv&#34;</span>
-
-mount_name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;blah&#34;</span>
-dbutils<span style=color:#f92672>.</span>fs<span style=color:#f92672>.</span>mount(<span style=color:#e6db74>&#34;s3a://</span><span style=color:#e6db74>%s</span><span style=color:#e6db74>&#34;</span> <span style=color:#f92672>%</span> aws_bucket_name, <span style=color:#e6db74>&#34;/mnt/</span><span style=color:#e6db74>%s</span><span style=color:#e6db74>&#34;</span> <span style=color:#f92672>%</span> mount_name)
-display(dbutils<span style=color:#f92672>.</span>fs<span style=color:#f92672>.</span>ls(<span style=color:#e6db74>&#34;/mnt/</span><span style=color:#e6db74>%s</span><span style=color:#e6db74>&#34;</span> <span style=color:#f92672>%</span> mount_name))
-
-</code></pre></div><ul>
-<li>
-<p>Funny thing I was trying to run this cell in the databricks notebook but it would not run and no error was given. But the reason I am pretty sure is that no cluster was attached to the notebook.</p>
-</li>
-<li>
-<p>Then when I started the cluster creation process and then tried executing a cell, I was seeing &ldquo;Waiting for cluster to start: Starting Spark&rdquo; in the output.</p>
-</li>
-<li>
-<p>Now <code>AccessDenied</code>. Will try to tweak the Role which I created for databricks . Ah I see it has no s3 access at all&mldr;</p>
-</li>
-<li>
-<p>Hmm I tweaked permissions and tried again but now got a new error that the directory is already mounted.</p>
-</li>
-<li>
-<p>So going to try just the second part..</p>
-</li>
-<li>
-<p>Now getting Access Denied for <code>getFileStatus on s3a://my-databricks-assets-alpha/:</code> ,</p>
-</li>
-<li>
-<p>I unmounted <code>dbutils.fs.unmount("/mnt/%s" % mount_name)</code> , gave all the read s3 permissions available, but still getting that Access Denied for <code>getFileStatus on s3a://my-databricks-assets-alpha/:</code> ,</p>
-</li>
-<li>
-<p>But oddly enough when I go to my AWS EC2 the workers which were created have no &ldquo;IAM Role"s associated with them. so that&rsquo;s weird.</p>
-</li>
-<li>
-<p>Trying to use these <a href=http://hadoop.apache.org/docs/r2.8.0/hadoop-aws/tools/hadoop-aws/index.html#Troubleshooting_S3A>docs</a> to troubleshoot s3a</p>
-</li>
-<li>
-<p>Ok going to just try the upload instead because cannot figure out the permissions. But I feel it is possibly because of the missing IAM Role on the ec2 workers.</p>
-</li>
-</ul>
-<h4 id=wait-oops>Wait oops!</h4>
-<ul>
-<li>At the very top of this sample notebook I completely ignored the link , <a href=https://docs.databricks.com/administration-guide/cloud-configurations/aws/instance-profiles.html>https://docs.databricks.com/administration-guide/cloud-configurations/aws/instance-profiles.html</a> , which has super detailed IAM role instructions #$%*#$$#!! haha</li>
-<li>Ok going to try the upload route anyway just so I can possibly get started ..</li>
-</ul>
-<h4 id=upload>upload</h4>
-<ul>
-<li>ok I stepped away from my upload of this 1.5 gig file, and when I came back there was no evidence of success or error hehe,</li>
-<li>I looked around the file system w/ the notebook and stumbled upon this interesting dir, which looks like it has my file</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>
-<span style=color:#f92672>import</span> os
-print(os<span style=color:#f92672>.</span>listdir(<span style=color:#e6db74>&#34;/dbfs/FileStore/tables&#34;</span>))
-<span style=color:#75715e># [&#39;COVID_19_Case_Surveillance_Public_Use_Data.csv&#39;]</span>
-
-</code></pre></div><ul>
-<li>So going to try making a table from it&mldr;</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># File location and type</span>
-file_location <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;/dbfs/FileStore/tables/COVID_19_Case_Surveillance_Public_Use_Data.csv&#34;</span>
-file_type <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;csv&#34;</span>
-
-<span style=color:#75715e># CSV options</span>
-infer_schema <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;true&#34;</span>
-first_row_is_header <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;true&#34;</span>
-delimiter <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;,&#34;</span>
-
-<span style=color:#75715e># The applied options are for CSV files. For other file types, these will be ignored.</span>
-df <span style=color:#f92672>=</span> spark<span style=color:#f92672>.</span>read<span style=color:#f92672>.</span>format(file_type) \
-  <span style=color:#f92672>.</span>option(<span style=color:#e6db74>&#34;inferSchema&#34;</span>, infer_schema) \
-  <span style=color:#f92672>.</span>option(<span style=color:#e6db74>&#34;header&#34;</span>, first_row_is_header) \
-  <span style=color:#f92672>.</span>option(<span style=color:#e6db74>&#34;sep&#34;</span>, delimiter) \
-  <span style=color:#f92672>.</span>load(file_location)
-
-display(df)
-</code></pre></div><ul>
-<li>Got &mldr;</li>
-</ul>
-<pre tabindex=0><code>AnalysisException: Path does not exist: dbfs:/dbfs/FileStore/tables/COVID_19_Case_Surveillance_Public_Use_Data.csv;
-</code></pre><ul>
-<li>Maybe without the leading <code>/dbfs/</code> ?</li>
-<li>Ah bingo.. so it&rsquo;s not an absolute path but like a relative path..</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># File location and type</span>
-file_location <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;/FileStore/tables/COVID_19_Case_Surveillance_Public_Use_Data.csv&#34;</span>
-file_type <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;csv&#34;</span>
-
-<span style=color:#75715e># CSV options</span>
-infer_schema <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;true&#34;</span>
-first_row_is_header <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;true&#34;</span>
-delimiter <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;,&#34;</span>
-
-<span style=color:#75715e># The applied options are for CSV files. For other file types, these will be ignored.</span>
-df <span style=color:#f92672>=</span> spark<span style=color:#f92672>.</span>read<span style=color:#f92672>.</span>format(file_type) \
-  <span style=color:#f92672>.</span>option(<span style=color:#e6db74>&#34;inferSchema&#34;</span>, infer_schema) \
-  <span style=color:#f92672>.</span>option(<span style=color:#e6db74>&#34;header&#34;</span>, first_row_is_header) \
-  <span style=color:#f92672>.</span>option(<span style=color:#e6db74>&#34;sep&#34;</span>, delimiter) \
-  <span style=color:#f92672>.</span>load(file_location)
-
-display(df)
-</code></pre></div><ul>
-<li>
-<p>Ok that was pretty fast..</p>
-</li>
-<li>
-<p>And create that table..</p>
-</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Since this table is registered as a temp view, it will only be available to this notebook. If you&#39;d like other users to be able to query this table, you can also create a table from the DataFrame.</span>
-<span style=color:#75715e># Once saved, this table will persist across cluster restarts as well as allow various users across different notebooks to query this data.</span>
-<span style=color:#75715e># To do so, choose your table name and uncomment the bottom line.</span>
-
-permanent_table_name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;covid&#34;</span>
-<span style=color:#75715e># table_import_type?</span>
-df<span style=color:#f92672>.</span>write<span style=color:#f92672>.</span>format(<span style=color:#e6db74>&#34;json&#34;</span>)<span style=color:#f92672>.</span>saveAsTable(permanent_table_name)
-</code></pre></div><ul>
-<li>Took 50 seconds</li>
-<li>try read ..</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>select</span> <span style=color:#f92672>*</span> <span style=color:#66d9ef>from</span> covid <span style=color:#66d9ef>limit</span> <span style=color:#ae81ff>10</span>
-</code></pre></div><ul>
-<li>wow ok actually worked &mldr; I am now seeing first ten rows ..</li>
-</ul>
-<h4 id=quick-stat>quick stat</h4>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#f92672>%</span><span style=color:#66d9ef>sql</span>
-<span style=color:#66d9ef>select</span> age_group, <span style=color:#66d9ef>count</span>(<span style=color:#ae81ff>1</span>)
-<span style=color:#66d9ef>from</span> covid
-<span style=color:#66d9ef>group</span> <span style=color:#66d9ef>by</span> age_group
-<span style=color:#66d9ef>order</span> <span style=color:#66d9ef>by</span> age_group <span style=color:#66d9ef>asc</span>
-</code></pre></div><img src=https://s3.amazonaws.com/my-blog-content/2021-03-20-databricks/2021-04-01T2017Z-age-ranges.png width=50%>
-<h4 id=ok-try-that-group-by-from-last-time>ok try that group by from last time..</h4>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>select</span>   age_group, <span style=color:#66d9ef>sum</span>(<span style=color:#66d9ef>case</span> <span style=color:#66d9ef>when</span> onset_dt <span style=color:#66d9ef>is</span> <span style=color:#66d9ef>null</span> <span style=color:#66d9ef>then</span> <span style=color:#ae81ff>0</span> <span style=color:#66d9ef>else</span> <span style=color:#ae81ff>1</span> <span style=color:#66d9ef>end</span>)<span style=color:#f92672>/</span><span style=color:#66d9ef>count</span>(<span style=color:#ae81ff>1</span>) <span style=color:#66d9ef>as</span> asymptomatic_rate
-<span style=color:#66d9ef>from</span> covid
-
-<span style=color:#66d9ef>group</span> <span style=color:#66d9ef>by</span> age_group
-<span style=color:#66d9ef>order</span> <span style=color:#66d9ef>by</span> age_group
-</code></pre></div><img src=https://s3.amazonaws.com/my-blog-content/2021-03-20-databricks/2021-04-01T2027Z-symptomatic-rates-age.png width=50%>
-<ul>
-<li>And side notes, in the databricks browser notebook , I generated this above plot by clicking &ldquo;bar chart&rdquo; option and generating a &ldquo;Bokeh&rdquo; looking graphic, then downloading it. But I had tried to export the notebook as <code>ipynb</code> and the images did not get saved . Instead it looked like only the tabular data was saved.</li>
-</ul>
-<h4 id=and-although-this-data-is-pretty-sparse-look-at-the-comorbidity-data-too>And although this data is pretty sparse, look at the comorbidity data too</h4>
-<pre tabindex=0><code>hosp_yn	|Hospitalization status|Plain Text
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Trying Databricks | My blog</title><meta name=viewport content="width=device-width,minimum-scale=1"><meta name=description content="https://databricks.com/try-databricks
+2021-03-21 Running A quick start notebook  Based on the notes here, it is pretty easy to create an auto-scaling cluster. Not sure yet what events prompt the cluster to get more workers. But I would be curious to try a job that uses fewer workers and more workers, to see how the outcomes compare. I also like ethat this notebook supports SQL and also python , using what looks like first line as %python to indicate the language."><meta name=generator content="Hugo 0.96.0"><meta name=ROBOTS content="NOINDEX, NOFOLLOW"><link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css><meta property="og:title" content="Trying Databricks"><meta property="og:description" content="https://databricks.com/try-databricks
+2021-03-21 Running A quick start notebook  Based on the notes here, it is pretty easy to create an auto-scaling cluster. Not sure yet what events prompt the cluster to get more workers. But I would be curious to try a job that uses fewer workers and more workers, to see how the outcomes compare. I also like ethat this notebook supports SQL and also python , using what looks like first line as %python to indicate the language."><meta property="og:type" content="article"><meta property="og:url" content="https://michal.piekarczyk.xyz/post/2021-03-20-databricks/"><meta property="article:section" content="post"><meta property="article:published_time" content="2021-03-21T00:00:00+00:00"><meta property="article:modified_time" content="2021-03-21T00:00:00+00:00"><meta property="og:site_name" content="My blog"><meta itemprop=name content="Trying Databricks"><meta itemprop=description content="https://databricks.com/try-databricks
+2021-03-21 Running A quick start notebook  Based on the notes here, it is pretty easy to create an auto-scaling cluster. Not sure yet what events prompt the cluster to get more workers. But I would be curious to try a job that uses fewer workers and more workers, to see how the outcomes compare. I also like ethat this notebook supports SQL and also python , using what looks like first line as %python to indicate the language."><meta itemprop=datePublished content="2021-03-21T00:00:00+00:00"><meta itemprop=dateModified content="2021-03-21T00:00:00+00:00"><meta itemprop=wordCount content="1435"><meta itemprop=keywords content="spark,covid,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Trying Databricks"><meta name=twitter:description content="https://databricks.com/try-databricks
+2021-03-21 Running A quick start notebook  Based on the notes here, it is pretty easy to create an auto-scaling cluster. Not sure yet what events prompt the cluster to get more workers. But I would be curious to try a job that uses fewer workers and more workers, to see how the outcomes compare. I also like ethat this notebook supports SQL and also python , using what looks like first line as %python to indicate the language."></head><body class="ma0 avenir bg-near-white"><header><div class=bg-black><nav class="pv3 ph3 ph4-ns" role=navigation><div class="flex-l justify-between items-center center"><a href=/ class="f3 fw2 hover-white no-underline white-90 dib">My blog</a><div class="flex-l items-center"><ul class="pl0 mr3"><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/about/ title="About page">About</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/handy/ title="Handy page">Handy</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/post/ title="Post page">Post</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/project/ title="Side Projects page">Side Projects</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/foo/ title="The Foos page">The Foos</a></li></ul></div></div></nav></div></header><main class=pb7 role=main><article class="flex-l flex-wrap justify-between mw8 center ph3"><header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked">POST</aside><div id=sharing class=mt3><a href="https://www.facebook.com/sharer.php?u=https://michal.piekarczyk.xyz/post/2021-03-20-databricks/" class="facebook no-underline" aria-label="share on Facebook"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765 50.32h6.744V33.998h4.499l.596-5.624h-5.095l.007-2.816c0-1.466.14-2.253 2.244-2.253h2.812V17.68h-4.5c-5.405.0-7.307 2.729-7.307 7.317v3.377h-3.369v5.625h3.369V50.32zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg></a><a href="https://twitter.com/share?url=https://michal.piekarczyk.xyz/post/2021-03-20-databricks/&text=Trying%20Databricks" class="twitter no-underline" aria-label="share on Twitter"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https://michal.piekarczyk.xyz/post/2021-03-20-databricks/&title=Trying%20Databricks" class="linkedin no-underline" aria-label="share on LinkedIn"><svg height="32" style="enable-background:new 0 0 65 65" viewBox="0 0 65 65" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M50.837 48.137V36.425c0-6.275-3.35-9.195-7.816-9.195-3.604.0-5.219 1.983-6.119 3.374V27.71h-6.79c.09 1.917.0 20.427.0 20.427h6.79V36.729c0-.609.044-1.219.224-1.655.49-1.22 1.607-2.483 3.482-2.483 2.458.0 3.44 1.873 3.44 4.618v10.929H50.837zM22.959 24.922c2.367.0 3.842-1.57 3.842-3.531-.044-2.003-1.475-3.528-3.797-3.528s-3.841 1.524-3.841 3.528c0 1.961 1.474 3.531 3.753 3.531H22.959zM34 64C17.432 64 4 50.568 4 34 4 17.431 17.432 4 34 4s30 13.431 30 30c0 16.568-13.432 30-30 30zM26.354 48.137V27.71h-6.789v20.427h6.789z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></a></div><h1 class="f1 athelas mt3 mb1">Trying Databricks</h1><time class="f6 mv4 dib tracked" datetime=2021-03-21T00:00:00Z>March 21, 2021</time></header><div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p><a href=https://databricks.com/try-databricks>https://databricks.com/try-databricks</a></p><h3 id=2021-03-21>2021-03-21</h3><h4 id=running-a-quick-start-notebook>Running A quick start notebook</h4><ul><li>Based on the notes here, it is pretty easy to create an auto-scaling cluster.</li><li>Not sure yet what events prompt the cluster to get more workers.</li><li>But I would be curious to try a job that uses fewer workers and more workers, to see how the outcomes compare.</li><li>I also like ethat this notebook supports <code>SQL</code> and also <code>python</code> , using what looks like first line as <code>%python</code> to indicate the language.</li></ul><h4 id=is-this-spark-sql-or-sql->Is this spark sql or sql ?</h4><ul><li>From the quick start notebook&mldr;</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>CREATE</span> <span style=color:#66d9ef>TABLE</span> diamonds
+</span></span><span style=display:flex><span><span style=color:#66d9ef>USING</span> csv
+</span></span><span style=display:flex><span><span style=color:#66d9ef>OPTIONS</span> (path <span style=color:#e6db74>&#34;/databricks-datasets/Rdatasets/data-001/csv/ggplot2/diamonds.csv&#34;</span>, header <span style=color:#e6db74>&#34;true&#34;</span>)
+</span></span></code></pre></div><h3 id=2021-04-03>2021-04-03</h3><h4 id=revisit-my-earlier-problem>Revisit my earlier problem</h4><ul><li><a href=https://michal.piekarczyk.xyz/2021/01/23/spark-weekend.html#2021-01-31>Last time</a> , I found this <a href=https://data.cdc.gov/Case-Surveillance/COVID-19-Case-Surveillance-Public-Use-Data/vbim-akqf>CDC dataset</a> called &ldquo;COVID-19_Case_Surveillance_Public_Use_Data.csv&rdquo;</li><li>My basic initial question I would like to answer is &ldquo;how do the symptomatic rates compare by age bin&rdquo;, since this dataset has an <code>onset_dt</code> column, which is eithr blank if no symptoms and has a date if symptoms.</li></ul><h4 id=more-dataset-metadata>More dataset metadata..</h4><ul><li>22.5 M rows</li><li>each row is a de-identified patient</li><li>created: <code>2020-05-15</code></li><li>updated <code>2021-03-31</code> (not sure what was being updated though)</li><li>Temporal Applicability: <code>2020-01-01/2021-03-16</code></li><li>Update Frequency: Monthly</li><li>columns</li></ul><table><thead><tr><th>Column Name</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td>cdc_case_earliest_dt</td><td>Calculated date&ndash;the earliest available date for the record, taken from either the available set of clinical dates (date related to the illness or specimen collection) or the calculated date representing initial date case was received by CDC. This variable is optimized for completeness and may change for a given record from time to time as new information is submitted about a case.</td><td>Date & Time</td></tr><tr><td>cdc_report_dt</td><td>Calculated date representing initial date case was reported to CDC. Depreciated; CDC recommends researchers use cdc_case_earliest_dt in time series and other time-based analyses.</td><td>Date & Time</td></tr><tr><td>pos_spec_dt</td><td>Date of first positive specimen collection</td><td>Date & Time</td></tr><tr><td>onset_dt</td><td>Symptom onset date, if symptomatic</td><td>Date & Time</td></tr><tr><td>current_status</td><td>Case Status: Laboratory-confirmed case; Probable case</td><td>Plain Text</td></tr><tr><td>sex</td><td>Sex: Male; Female; Unknown; Other</td><td>Plain Text</td></tr><tr><td>age_group</td><td>Age Group: 0 - 9 Years; 10 - 19 Years; 20 - 39 Years; 40 - 49 Years; 50 - 59 Years; 60 - 69 Years; 70 - 79 Years; 80 + Years</td><td>Plain Text</td></tr><tr><td>race_ethnicity_combined</td><td>Race and ethnicity (combined): Hispanic/Latino; American Indian / Alaska Native, Non-Hispanic; Asian, Non-Hispanic; Black, Non-Hispanic; Native Hawaiian / Other Pacific Islander, Non-Hispanic; White, Non-Hispanic; Multiple/Other, Non-Hispanic</td><td>Plain Text</td></tr><tr><td>hosp_yn</td><td>Hospitalization status</td><td>Plain Text</td></tr><tr><td>icu_yn</td><td>ICU admission status</td><td>Plain Text</td></tr><tr><td>death_yn</td><td>Death status</td><td>Plain Text</td></tr><tr><td>medcond_yn</td><td>Presence of underlying comorbidity or disease</td><td>Plain Text</td></tr></tbody></table><h4 id=get-data-in-there>Get data in there</h4><ul><li>Per the Databricks web console I can specify an S3 bucket and create a table from my file like that</li><li>And they refer to &ldquo;DBFS&rdquo; as &ldquo;Databricks File System&rdquo;</li><li>from the example you can load from the File Store like</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>sparkDF <span style=color:#f92672>=</span> spark<span style=color:#f92672>.</span>read<span style=color:#f92672>.</span>csv(<span style=color:#e6db74>&#39;/FileStore/tables/state_income-9f7c5.csv&#39;</span>, header<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;true&#34;</span>, inferSchema<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;true&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># then you can create a temp table from that df</span>
+</span></span><span style=display:flex><span>sparkDF<span style=color:#f92672>.</span>createOrReplaceTempView(<span style=color:#e6db74>&#34;temp_table_name&#34;</span>)
+</span></span></code></pre></div><ul><li>THere was also an interesting note in the help notebook about permanent tables available across cluster restarts&mldr;</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Since this table is registered as a temp view, it will only be available to this notebook. If you&#39;d like other users to be able to query this table, you can also create a table from the DataFrame.</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Once saved, this table will persist across cluster restarts as well as allow various users across different notebooks to query this data.</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># To do so, choose your table name and uncomment the bottom line.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>permanent_table_name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;{{table_name}}&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># df.write.format(&#34;{{table_import_type}}&#34;).saveAsTable(permanent_table_name)</span>
+</span></span></code></pre></div><ul><li>I am looking for how to do this w/ s3&mldr;</li><li>Ah according to <a href=https://docs.databricks.com/data/data-sources/aws/amazon-s3.html>docs</a> you mount s3 files as regular files then proceed as usual</li><li>ok will try that &mldr;</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>aws_bucket_name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;my-databricks-assets-alpha&#34;</span>
+</span></span><span style=display:flex><span>s3fn <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;s3://my-databricks-assets-alpha/cdc-dataset/COVID-19_Case_Surveillance_Public_Use_Data.csv&#34;</span>
+</span></span><span style=display:flex><span>s3fn <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;s3://my-databricks-assets-alpha/cdc-dataset/COVID-19_Case_Surveillance_Public_Use_Data.head1000.csv&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>mount_name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;blah&#34;</span>
+</span></span><span style=display:flex><span>dbutils<span style=color:#f92672>.</span>fs<span style=color:#f92672>.</span>mount(<span style=color:#e6db74>&#34;s3a://</span><span style=color:#e6db74>%s</span><span style=color:#e6db74>&#34;</span> <span style=color:#f92672>%</span> aws_bucket_name, <span style=color:#e6db74>&#34;/mnt/</span><span style=color:#e6db74>%s</span><span style=color:#e6db74>&#34;</span> <span style=color:#f92672>%</span> mount_name)
+</span></span><span style=display:flex><span>display(dbutils<span style=color:#f92672>.</span>fs<span style=color:#f92672>.</span>ls(<span style=color:#e6db74>&#34;/mnt/</span><span style=color:#e6db74>%s</span><span style=color:#e6db74>&#34;</span> <span style=color:#f92672>%</span> mount_name))
+</span></span></code></pre></div><ul><li><p>Funny thing I was trying to run this cell in the databricks notebook but it would not run and no error was given. But the reason I am pretty sure is that no cluster was attached to the notebook.</p></li><li><p>Then when I started the cluster creation process and then tried executing a cell, I was seeing &ldquo;Waiting for cluster to start: Starting Spark&rdquo; in the output.</p></li><li><p>Now <code>AccessDenied</code>. Will try to tweak the Role which I created for databricks . Ah I see it has no s3 access at all&mldr;</p></li><li><p>Hmm I tweaked permissions and tried again but now got a new error that the directory is already mounted.</p></li><li><p>So going to try just the second part..</p></li><li><p>Now getting Access Denied for <code>getFileStatus on s3a://my-databricks-assets-alpha/:</code> ,</p></li><li><p>I unmounted <code>dbutils.fs.unmount("/mnt/%s" % mount_name)</code> , gave all the read s3 permissions available, but still getting that Access Denied for <code>getFileStatus on s3a://my-databricks-assets-alpha/:</code> ,</p></li><li><p>But oddly enough when I go to my AWS EC2 the workers which were created have no &ldquo;IAM Role"s associated with them. so that&rsquo;s weird.</p></li><li><p>Trying to use these <a href=http://hadoop.apache.org/docs/r2.8.0/hadoop-aws/tools/hadoop-aws/index.html#Troubleshooting_S3A>docs</a> to troubleshoot s3a</p></li><li><p>Ok going to just try the upload instead because cannot figure out the permissions. But I feel it is possibly because of the missing IAM Role on the ec2 workers.</p></li></ul><h4 id=wait-oops>Wait oops!</h4><ul><li>At the very top of this sample notebook I completely ignored the link , <a href=https://docs.databricks.com/administration-guide/cloud-configurations/aws/instance-profiles.html>https://docs.databricks.com/administration-guide/cloud-configurations/aws/instance-profiles.html</a> , which has super detailed IAM role instructions #$%*#$$#!! haha</li><li>Ok going to try the upload route anyway just so I can possibly get started ..</li></ul><h4 id=upload>upload</h4><ul><li>ok I stepped away from my upload of this 1.5 gig file, and when I came back there was no evidence of success or error hehe,</li><li>I looked around the file system w/ the notebook and stumbled upon this interesting dir, which looks like it has my file</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> os
+</span></span><span style=display:flex><span>print(os<span style=color:#f92672>.</span>listdir(<span style=color:#e6db74>&#34;/dbfs/FileStore/tables&#34;</span>))
+</span></span><span style=display:flex><span><span style=color:#75715e># [&#39;COVID_19_Case_Surveillance_Public_Use_Data.csv&#39;]</span>
+</span></span></code></pre></div><ul><li>So going to try making a table from it&mldr;</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># File location and type</span>
+</span></span><span style=display:flex><span>file_location <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;/dbfs/FileStore/tables/COVID_19_Case_Surveillance_Public_Use_Data.csv&#34;</span>
+</span></span><span style=display:flex><span>file_type <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;csv&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># CSV options</span>
+</span></span><span style=display:flex><span>infer_schema <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>first_row_is_header <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>delimiter <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;,&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># The applied options are for CSV files. For other file types, these will be ignored.</span>
+</span></span><span style=display:flex><span>df <span style=color:#f92672>=</span> spark<span style=color:#f92672>.</span>read<span style=color:#f92672>.</span>format(file_type) \
+</span></span><span style=display:flex><span>  <span style=color:#f92672>.</span>option(<span style=color:#e6db74>&#34;inferSchema&#34;</span>, infer_schema) \
+</span></span><span style=display:flex><span>  <span style=color:#f92672>.</span>option(<span style=color:#e6db74>&#34;header&#34;</span>, first_row_is_header) \
+</span></span><span style=display:flex><span>  <span style=color:#f92672>.</span>option(<span style=color:#e6db74>&#34;sep&#34;</span>, delimiter) \
+</span></span><span style=display:flex><span>  <span style=color:#f92672>.</span>load(file_location)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>display(df)
+</span></span></code></pre></div><ul><li>Got &mldr;</li></ul><pre tabindex=0><code>AnalysisException: Path does not exist: dbfs:/dbfs/FileStore/tables/COVID_19_Case_Surveillance_Public_Use_Data.csv;
+</code></pre><ul><li>Maybe without the leading <code>/dbfs/</code> ?</li><li>Ah bingo.. so it&rsquo;s not an absolute path but like a relative path..</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># File location and type</span>
+</span></span><span style=display:flex><span>file_location <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;/FileStore/tables/COVID_19_Case_Surveillance_Public_Use_Data.csv&#34;</span>
+</span></span><span style=display:flex><span>file_type <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;csv&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># CSV options</span>
+</span></span><span style=display:flex><span>infer_schema <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>first_row_is_header <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>delimiter <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;,&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># The applied options are for CSV files. For other file types, these will be ignored.</span>
+</span></span><span style=display:flex><span>df <span style=color:#f92672>=</span> spark<span style=color:#f92672>.</span>read<span style=color:#f92672>.</span>format(file_type) \
+</span></span><span style=display:flex><span>  <span style=color:#f92672>.</span>option(<span style=color:#e6db74>&#34;inferSchema&#34;</span>, infer_schema) \
+</span></span><span style=display:flex><span>  <span style=color:#f92672>.</span>option(<span style=color:#e6db74>&#34;header&#34;</span>, first_row_is_header) \
+</span></span><span style=display:flex><span>  <span style=color:#f92672>.</span>option(<span style=color:#e6db74>&#34;sep&#34;</span>, delimiter) \
+</span></span><span style=display:flex><span>  <span style=color:#f92672>.</span>load(file_location)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>display(df)
+</span></span></code></pre></div><ul><li><p>Ok that was pretty fast..</p></li><li><p>And create that table..</p></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Since this table is registered as a temp view, it will only be available to this notebook. If you&#39;d like other users to be able to query this table, you can also create a table from the DataFrame.</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Once saved, this table will persist across cluster restarts as well as allow various users across different notebooks to query this data.</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># To do so, choose your table name and uncomment the bottom line.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>permanent_table_name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;covid&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># table_import_type?</span>
+</span></span><span style=display:flex><span>df<span style=color:#f92672>.</span>write<span style=color:#f92672>.</span>format(<span style=color:#e6db74>&#34;json&#34;</span>)<span style=color:#f92672>.</span>saveAsTable(permanent_table_name)
+</span></span></code></pre></div><ul><li>Took 50 seconds</li><li>try read ..</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>select</span> <span style=color:#f92672>*</span> <span style=color:#66d9ef>from</span> covid <span style=color:#66d9ef>limit</span> <span style=color:#ae81ff>10</span>
+</span></span></code></pre></div><ul><li>wow ok actually worked &mldr; I am now seeing first ten rows ..</li></ul><h4 id=quick-stat>quick stat</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#f92672>%</span><span style=color:#66d9ef>sql</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>select</span> age_group, <span style=color:#66d9ef>count</span>(<span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>from</span> covid
+</span></span><span style=display:flex><span><span style=color:#66d9ef>group</span> <span style=color:#66d9ef>by</span> age_group
+</span></span><span style=display:flex><span><span style=color:#66d9ef>order</span> <span style=color:#66d9ef>by</span> age_group <span style=color:#66d9ef>asc</span>
+</span></span></code></pre></div><img src=https://s3.amazonaws.com/my-blog-content/2021-03-20-databricks/2021-04-01T2017Z-age-ranges.png width=50%><h4 id=ok-try-that-group-by-from-last-time>ok try that group by from last time..</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>select</span>   age_group, <span style=color:#66d9ef>sum</span>(<span style=color:#66d9ef>case</span> <span style=color:#66d9ef>when</span> onset_dt <span style=color:#66d9ef>is</span> <span style=color:#66d9ef>null</span> <span style=color:#66d9ef>then</span> <span style=color:#ae81ff>0</span> <span style=color:#66d9ef>else</span> <span style=color:#ae81ff>1</span> <span style=color:#66d9ef>end</span>)<span style=color:#f92672>/</span><span style=color:#66d9ef>count</span>(<span style=color:#ae81ff>1</span>) <span style=color:#66d9ef>as</span> asymptomatic_rate
+</span></span><span style=display:flex><span><span style=color:#66d9ef>from</span> covid
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>group</span> <span style=color:#66d9ef>by</span> age_group
+</span></span><span style=display:flex><span><span style=color:#66d9ef>order</span> <span style=color:#66d9ef>by</span> age_group
+</span></span></code></pre></div><img src=https://s3.amazonaws.com/my-blog-content/2021-03-20-databricks/2021-04-01T2027Z-symptomatic-rates-age.png width=50%><ul><li>And side notes, in the databricks browser notebook , I generated this above plot by clicking &ldquo;bar chart&rdquo; option and generating a &ldquo;Bokeh&rdquo; looking graphic, then downloading it. But I had tried to export the notebook as <code>ipynb</code> and the images did not get saved . Instead it looked like only the tabular data was saved.</li></ul><h4 id=and-although-this-data-is-pretty-sparse-look-at-the-comorbidity-data-too>And although this data is pretty sparse, look at the comorbidity data too</h4><pre tabindex=0><code>hosp_yn	|Hospitalization status|Plain Text
 icu_yn	|ICU admission status|Plain Text
 death_yn	|Death status|Plain Text
 medcond_yn	|Presence of underlying comorbidity or disease|Plain Text
-</code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>select</span> medcond_yn, <span style=color:#66d9ef>count</span>(<span style=color:#ae81ff>1</span>)
-<span style=color:#66d9ef>from</span> covid
-<span style=color:#66d9ef>group</span> <span style=color:#66d9ef>by</span> medcond_yn
-
-</code></pre></div><pre tabindex=0><code>medcond_yn|count(1)
+</code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>select</span> medcond_yn, <span style=color:#66d9ef>count</span>(<span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>from</span> covid
+</span></span><span style=display:flex><span><span style=color:#66d9ef>group</span> <span style=color:#66d9ef>by</span> medcond_yn
+</span></span></code></pre></div><pre tabindex=0><code>medcond_yn|count(1)
 --|--
 Unknown|1290951
 No|938017
 Yes|944195
 Missing|10242673
-</code></pre><img src=https://s3.amazonaws.com/my-blog-content/2021-03-20-databricks/2021-04-01T2048Z-comorbodities.png width=50%>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>select</span> <span style=color:#66d9ef>sum</span>(<span style=color:#66d9ef>case</span> <span style=color:#66d9ef>when</span> hosp_yn)
-<span style=color:#66d9ef>from</span> covid
-<span style=color:#66d9ef>group</span> <span style=color:#66d9ef>by</span> medcond_yn
-
-</code></pre></div><table>
-<thead>
-<tr>
-<th>hosp_yn</th>
-<th>count(1)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Unknown</td>
-<td>2139571</td>
-</tr>
-<tr>
-<td>No</td>
-<td>4830822</td>
-</tr>
-<tr>
-<td>Yes</td>
-<td>703734</td>
-</tr>
-<tr>
-<td>Missing</td>
-<td>5741709</td>
-</tr>
-</tbody>
-</table>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#f92672>%</span><span style=color:#66d9ef>sql</span>
-<span style=color:#66d9ef>select</span> medcond_yn,
-<span style=color:#66d9ef>sum</span>(<span style=color:#66d9ef>case</span> <span style=color:#66d9ef>when</span> hosp_yn <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;Yes&#39;</span> <span style=color:#66d9ef>then</span> <span style=color:#ae81ff>1</span> <span style=color:#66d9ef>else</span> <span style=color:#ae81ff>0</span> <span style=color:#66d9ef>end</span>)<span style=color:#f92672>/</span><span style=color:#66d9ef>count</span>(<span style=color:#ae81ff>1</span>) <span style=color:#66d9ef>as</span> hospYes_rate,
-<span style=color:#66d9ef>sum</span>(<span style=color:#66d9ef>case</span> <span style=color:#66d9ef>when</span> hosp_yn <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;No&#39;</span> <span style=color:#66d9ef>then</span> <span style=color:#ae81ff>1</span> <span style=color:#66d9ef>else</span> <span style=color:#ae81ff>0</span> <span style=color:#66d9ef>end</span>)<span style=color:#f92672>/</span><span style=color:#66d9ef>count</span>(<span style=color:#ae81ff>1</span>) <span style=color:#66d9ef>as</span> hospNo_rate,
-<span style=color:#66d9ef>sum</span>(<span style=color:#66d9ef>case</span> <span style=color:#66d9ef>when</span> hosp_yn <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;Unknown&#39;</span> <span style=color:#66d9ef>then</span> <span style=color:#ae81ff>1</span> <span style=color:#66d9ef>else</span> <span style=color:#ae81ff>0</span> <span style=color:#66d9ef>end</span>)<span style=color:#f92672>/</span><span style=color:#66d9ef>count</span>(<span style=color:#ae81ff>1</span>) <span style=color:#66d9ef>as</span> hospUnknown_rate,
-<span style=color:#66d9ef>sum</span>(<span style=color:#66d9ef>case</span> <span style=color:#66d9ef>when</span> hosp_yn <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;Missing&#39;</span> <span style=color:#66d9ef>then</span> <span style=color:#ae81ff>1</span> <span style=color:#66d9ef>else</span> <span style=color:#ae81ff>0</span> <span style=color:#66d9ef>end</span>)<span style=color:#f92672>/</span><span style=color:#66d9ef>count</span>(<span style=color:#ae81ff>1</span>) <span style=color:#66d9ef>as</span> hospMissing_rate
-<span style=color:#66d9ef>from</span> covid
-<span style=color:#66d9ef>group</span> <span style=color:#66d9ef>by</span> medcond_yn
-
-</code></pre></div><table>
-<thead>
-<tr>
-<th>medcond_yn</th>
-<th>hospMissing_rate</th>
-<th>hospYes_rate</th>
-<th>hospUnknown_rate</th>
-<th>hospNo_rate</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Unknown</td>
-<td>0.12071333458822217</td>
-<td>0.06108210148952207</td>
-<td>0.6504840230186894</td>
-<td>0.16772054090356645</td>
-</tr>
-<tr>
-<td>No</td>
-<td>0.22393943819781517</td>
-<td>0.03035552660559457</td>
-<td>0.021185117114082153</td>
-<td>0.7245199180825082</td>
-</tr>
-<tr>
-<td>Yes</td>
-<td>0.10189102886585928</td>
-<td>0.21121802170102574</td>
-<td>0.04902694888238129</td>
-<td>0.6378640005507337</td>
-</tr>
-<tr>
-<td>Missing</td>
-<td>0.5154523628744176</td>
-<td>0.03875697291127033</td>
-<td>0.12044365762726195</td>
-<td>0.32534700658705007</td>
-</tr>
-</tbody>
-</table>
-<img src="https://s3.amazonaws.com/my-blog-content/2021-03-20-databricks/Capture d’écran 2021-04-03 à 17.13.27.png" width=50%>
-<ul class=pa0>
-<li class=list>
-<a href=/tags/spark class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">spark</a>
-</li>
-<li class=list>
-<a href=/tags/covid class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">covid</a>
-</li>
-</ul>
-<div class="mt6 instapaper_ignoref">
-</div>
-</div>
-<aside class="w-30-l mt6-l">
-<div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-<p class="f5 b mb3">Related</p>
-<ul class="pa0 list">
-<li class=mb2>
-<a href=/post/2021-01-23-spark-weekend/>Spark Weekend</a>
-</li>
-</ul>
-</div>
-</aside>
-</article>
-</main>
-<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
-<div class="flex justify-between">
-<a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://michal.piekarczyk.xyz/>
-&copy; My blog 2022
-</a>
-<div>
-</div>
-</div>
-</footer>
-</body>
-</html>
+</code></pre><img src=https://s3.amazonaws.com/my-blog-content/2021-03-20-databricks/2021-04-01T2048Z-comorbodities.png width=50%><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>select</span> <span style=color:#66d9ef>sum</span>(<span style=color:#66d9ef>case</span> <span style=color:#66d9ef>when</span> hosp_yn)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>from</span> covid
+</span></span><span style=display:flex><span><span style=color:#66d9ef>group</span> <span style=color:#66d9ef>by</span> medcond_yn
+</span></span></code></pre></div><table><thead><tr><th>hosp_yn</th><th>count(1)</th></tr></thead><tbody><tr><td>Unknown</td><td>2139571</td></tr><tr><td>No</td><td>4830822</td></tr><tr><td>Yes</td><td>703734</td></tr><tr><td>Missing</td><td>5741709</td></tr></tbody></table><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#f92672>%</span><span style=color:#66d9ef>sql</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>select</span> medcond_yn,
+</span></span><span style=display:flex><span><span style=color:#66d9ef>sum</span>(<span style=color:#66d9ef>case</span> <span style=color:#66d9ef>when</span> hosp_yn <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;Yes&#39;</span> <span style=color:#66d9ef>then</span> <span style=color:#ae81ff>1</span> <span style=color:#66d9ef>else</span> <span style=color:#ae81ff>0</span> <span style=color:#66d9ef>end</span>)<span style=color:#f92672>/</span><span style=color:#66d9ef>count</span>(<span style=color:#ae81ff>1</span>) <span style=color:#66d9ef>as</span> hospYes_rate,
+</span></span><span style=display:flex><span><span style=color:#66d9ef>sum</span>(<span style=color:#66d9ef>case</span> <span style=color:#66d9ef>when</span> hosp_yn <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;No&#39;</span> <span style=color:#66d9ef>then</span> <span style=color:#ae81ff>1</span> <span style=color:#66d9ef>else</span> <span style=color:#ae81ff>0</span> <span style=color:#66d9ef>end</span>)<span style=color:#f92672>/</span><span style=color:#66d9ef>count</span>(<span style=color:#ae81ff>1</span>) <span style=color:#66d9ef>as</span> hospNo_rate,
+</span></span><span style=display:flex><span><span style=color:#66d9ef>sum</span>(<span style=color:#66d9ef>case</span> <span style=color:#66d9ef>when</span> hosp_yn <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;Unknown&#39;</span> <span style=color:#66d9ef>then</span> <span style=color:#ae81ff>1</span> <span style=color:#66d9ef>else</span> <span style=color:#ae81ff>0</span> <span style=color:#66d9ef>end</span>)<span style=color:#f92672>/</span><span style=color:#66d9ef>count</span>(<span style=color:#ae81ff>1</span>) <span style=color:#66d9ef>as</span> hospUnknown_rate,
+</span></span><span style=display:flex><span><span style=color:#66d9ef>sum</span>(<span style=color:#66d9ef>case</span> <span style=color:#66d9ef>when</span> hosp_yn <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;Missing&#39;</span> <span style=color:#66d9ef>then</span> <span style=color:#ae81ff>1</span> <span style=color:#66d9ef>else</span> <span style=color:#ae81ff>0</span> <span style=color:#66d9ef>end</span>)<span style=color:#f92672>/</span><span style=color:#66d9ef>count</span>(<span style=color:#ae81ff>1</span>) <span style=color:#66d9ef>as</span> hospMissing_rate
+</span></span><span style=display:flex><span><span style=color:#66d9ef>from</span> covid
+</span></span><span style=display:flex><span><span style=color:#66d9ef>group</span> <span style=color:#66d9ef>by</span> medcond_yn
+</span></span></code></pre></div><table><thead><tr><th>medcond_yn</th><th>hospMissing_rate</th><th>hospYes_rate</th><th>hospUnknown_rate</th><th>hospNo_rate</th></tr></thead><tbody><tr><td>Unknown</td><td>0.12071333458822217</td><td>0.06108210148952207</td><td>0.6504840230186894</td><td>0.16772054090356645</td></tr><tr><td>No</td><td>0.22393943819781517</td><td>0.03035552660559457</td><td>0.021185117114082153</td><td>0.7245199180825082</td></tr><tr><td>Yes</td><td>0.10189102886585928</td><td>0.21121802170102574</td><td>0.04902694888238129</td><td>0.6378640005507337</td></tr><tr><td>Missing</td><td>0.5154523628744176</td><td>0.03875697291127033</td><td>0.12044365762726195</td><td>0.32534700658705007</td></tr></tbody></table><img src="https://s3.amazonaws.com/my-blog-content/2021-03-20-databricks/Capture d’écran 2021-04-03 à 17.13.27.png" width=50%><ul class=pa0><li class=list><a href=/tags/spark class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">spark</a></li><li class=list><a href=/tags/covid class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">covid</a></li></ul><div class="mt6 instapaper_ignoref"></div></div><aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links"><p class="f5 b mb3">Related</p><ul class="pa0 list"><li class=mb2><a href=/post/2021-01-23-spark-weekend/>Spark Weekend</a></li></ul></div></aside></article></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo><div class="flex justify-between"><a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://michal.piekarczyk.xyz/>&copy; My blog 2022</a><div></div></div></footer></body></html>

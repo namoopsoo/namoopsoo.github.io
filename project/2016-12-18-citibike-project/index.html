@@ -1,462 +1,219 @@
-<!doctype html><html lang=en-us>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-<title>Citibike Learn Project | My blog</title>
-<meta name=viewport content="width=device-width,minimum-scale=1">
-<meta name=description content="Can your Bike Share Destination be Predicted">
-<meta name=generator content="Hugo 0.92.1">
-<meta name=ROBOTS content="NOINDEX, NOFOLLOW">
-<link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css>
-<meta property="og:title" content="Citibike Learn Project">
-<meta property="og:description" content="Can your Bike Share Destination be Predicted">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://michal.piekarczyk.xyz/project/2016-12-18-citibike-project/"><meta property="article:section" content="project">
-<meta property="article:published_time" content="2016-12-18T18:33:28+00:00">
-<meta property="article:modified_time" content="2016-12-18T18:33:28+00:00"><meta property="og:site_name" content="My blog">
-<meta itemprop=name content="Citibike Learn Project">
-<meta itemprop=description content="Can your Bike Share Destination be Predicted"><meta itemprop=datePublished content="2016-12-18T18:33:28+00:00">
-<meta itemprop=dateModified content="2016-12-18T18:33:28+00:00">
-<meta itemprop=wordCount content="2903">
-<meta itemprop=keywords content><meta name=twitter:card content="summary">
-<meta name=twitter:title content="Citibike Learn Project">
-<meta name=twitter:description content="Can your Bike Share Destination be Predicted">
-</head>
-<body class="ma0 avenir bg-near-white">
-<header class="cover bg-top" style=background-image:url(https://my-blog-content.s3.amazonaws.com/2020/CartShare.jpeg)>
-<div class="pb3-m pb6-l bg-black-60">
-<nav class="pv3 ph3 ph4-ns" role=navigation>
-<div class="flex-l justify-between items-center center">
-<a href=/ class="f3 fw2 hover-white no-underline white-90 dib">
-My blog
-</a>
-<div class="flex-l items-center">
-<ul class="pl0 mr3">
-<li class="list f5 f4-ns fw4 dib pr3">
-<a class="hover-white no-underline white-90" href=/about/ title="About page">
-About
-</a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
-<a class="hover-white no-underline white-90" href=/handy/ title="Handy page">
-Handy
-</a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
-<a class="hover-white no-underline white-90" href=/post/ title="Post page">
-Post
-</a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
-<a class="hover-white no-underline white-90" href=/project/ title="Side Projects page">
-Side Projects
-</a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
-<a class="hover-white no-underline white-90" href=/foo/ title="The Foos page">
-The Foos
-</a>
-</li>
-</ul>
-</div>
-</div>
-</nav>
-<div class="tc-l pv6 ph3 ph4-ns">
-<h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Citibike Learn Project</h1>
-</div>
-</div>
-</header>
-<main class=pb7 role=main>
-<article class="flex-l flex-wrap justify-between mw8 center ph3">
-<header class="mt4 w-100">
-<aside class="instapaper_ignoref b helvetica tracked">
-SIDE PROJECTS
-</aside>
-<div id=sharing class=mt3>
-<a href="https://www.facebook.com/sharer.php?u=https://michal.piekarczyk.xyz/project/2016-12-18-citibike-project/" class="facebook no-underline" aria-label="share on Facebook"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765 50.32h6.744V33.998h4.499l.596-5.624h-5.095l.007-2.816c0-1.466.14-2.253 2.244-2.253h2.812V17.68h-4.5c-5.405.0-7.307 2.729-7.307 7.317v3.377h-3.369v5.625h3.369V50.32zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
-</a>
-<a href="https://twitter.com/share?url=https://michal.piekarczyk.xyz/project/2016-12-18-citibike-project/&text=Citibike%20Learn%20Project" class="twitter no-underline" aria-label="share on Twitter"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
-</a>
-<a href="https://www.linkedin.com/shareArticle?mini=true&url=https://michal.piekarczyk.xyz/project/2016-12-18-citibike-project/&title=Citibike%20Learn%20Project" class="linkedin no-underline" aria-label="share on LinkedIn"><svg height="32" style="enable-background:new 0 0 65 65" viewBox="0 0 65 65" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M50.837 48.137V36.425c0-6.275-3.35-9.195-7.816-9.195-3.604.0-5.219 1.983-6.119 3.374V27.71h-6.79c.09 1.917.0 20.427.0 20.427h6.79V36.729c0-.609.044-1.219.224-1.655.49-1.22 1.607-2.483 3.482-2.483 2.458.0 3.44 1.873 3.44 4.618v10.929H50.837zM22.959 24.922c2.367.0 3.842-1.57 3.842-3.531-.044-2.003-1.475-3.528-3.797-3.528s-3.841 1.524-3.841 3.528c0 1.961 1.474 3.531 3.753 3.531H22.959zM34 64C17.432 64 4 50.568 4 34 4 17.431 17.432 4 34 4s30 13.431 30 30c0 16.568-13.432 30-30 30zM26.354 48.137V27.71h-6.789v20.427h6.789z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
-</a>
-</div>
-<h1 class="f1 athelas mt3 mb1">Citibike Learn Project</h1>
-<time class="f6 mv4 dib tracked" datetime=2016-12-18T18:33:28Z>December 18, 2016</time>
-</header>
-<div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h3 id=citibike-project-can-your-destination-be-predicted>Citibike Project: Can your Destination be Predicted</h3>
-<p><em>( <a href=https://github.com/namoopsoo/learn-citibike> <a href=https://github.com/namoopsoo/learn-citibike>https://github.com/namoopsoo/learn-citibike</a></a> )</em></p>
-<h4 id=motivation>Motivation</h4>
-<p>I think sometimes the most interesting projects live behind ideas that sound impractical or even crazy. That&rsquo;s why I thought
-it would be fun to use the Citibike bike share trip data to try and predict a person&rsquo;s destination based on what we know.</p>
-<p><em>Roughly speaking trip data looks like this</em></p>
-<pre tabindex=0><code>&quot;tripduration&quot;,&quot;starttime&quot;,&quot;stoptime&quot;,&quot;start station id&quot;,&quot;start station name&quot;,&quot;start station latitude&quot;,&quot;start station longitude&quot;,&quot;end station id&quot;,&quot;end station name&quot;,&quot;end station latitude&quot;,&quot;end station longitude&quot;,&quot;bikeid&quot;,&quot;usertype&quot;,&quot;birth year&quot;,&quot;gender&quot;
-&quot;171&quot;,&quot;10/1/2015 00:00:02&quot;,&quot;10/1/2015 00:02:54&quot;,&quot;388&quot;,&quot;W 26 St &amp; 10 Ave&quot;,&quot;40.749717753&quot;,&quot;-74.002950346&quot;,&quot;494&quot;,&quot;W 26 St &amp; 8 Ave&quot;,&quot;40.74734825&quot;,&quot;-73.99723551&quot;,&quot;24302&quot;,&quot;Subscriber&quot;,&quot;1973&quot;,&quot;1&quot;
-&quot;593&quot;,&quot;10/1/2015 00:00:02&quot;,&quot;10/1/2015 00:09:55&quot;,&quot;518&quot;,&quot;E 39 St &amp; 2 Ave&quot;,&quot;40.74780373&quot;,&quot;-73.9734419&quot;,&quot;438&quot;,&quot;St Marks Pl &amp; 1 Ave&quot;,&quot;40.72779126&quot;,&quot;-73.98564945&quot;,&quot;19904&quot;,&quot;Subscriber&quot;,&quot;1990&quot;,&quot;1&quot;
-&quot;233&quot;,&quot;10/1/2015 00:00:11&quot;,&quot;10/1/2015 00:04:05&quot;,&quot;447&quot;,&quot;8 Ave &amp; W 52 St&quot;,&quot;40.76370739&quot;,&quot;-73.9851615&quot;,&quot;447&quot;,&quot;8 Ave &amp; W 52 St&quot;,&quot;40.76370739&quot;,&quot;-73.9851615&quot;,&quot;17797&quot;,&quot;Subscriber&quot;,&quot;1984&quot;,&quot;1&quot;
-&quot;250&quot;,&quot;10/1/2015 00:00:15&quot;,&quot;10/1/2015 00:04:25&quot;,&quot;336&quot;,&quot;Sullivan St &amp; Washington Sq&quot;,&quot;40.73047747&quot;,&quot;-73.99906065&quot;,&quot;223&quot;,&quot;W 13 St &amp; 7 Ave&quot;,&quot;40.73781509&quot;,&quot;-73.99994661&quot;,&quot;23966&quot;,&quot;Subscriber&quot;,&quot;1984&quot;,&quot;1&quot;
-&quot;528&quot;,&quot;10/1/2015 00:00:17&quot;,&quot;10/1/2015 00:09:05&quot;,&quot;3107&quot;,&quot;Bedford Ave &amp; Nassau Ave&quot;,&quot;40.72311651&quot;,&quot;-73.95212324&quot;,&quot;539&quot;,&quot;Metropolitan Ave &amp; Bedford Ave&quot;,&quot;40.71534825&quot;,&quot;-73.96024116&quot;,&quot;16246&quot;,&quot;Customer&quot;,&quot;&quot;,&quot;0&quot;
-&quot;440&quot;,&quot;10/1/2015 00:00:17&quot;,&quot;10/1/2015 00:07:37&quot;,&quot;3107&quot;,&quot;Bedford Ave &amp; Nassau Ave&quot;,&quot;40.72311651&quot;,&quot;-73.95212324&quot;,&quot;539&quot;,&quot;Metropolitan Ave &amp; Bedford Ave&quot;,&quot;40.71534825&quot;,&quot;-73.96024116&quot;,&quot;23698&quot;,&quot;Customer&quot;,&quot;&quot;,&quot;0&quot;
-</code></pre><p>The data if fairly clean and regular, so I thought this was a fun data set to sharpen my teeth on.</p>
-<h4 id=quick-birds-eye--of-my-journey>Quick Bird&rsquo;s Eye of my Journey</h4>
-<ul>
-<li>First started just <a href=#more-on-this-data>looking</a> at this data.</li>
-<li>Just out of curiosity, as a first mini starter project I decided to look at the <a href=#speed-and-age>relationship between rider age and speed</a></li>
-<li>I realized pretty early that the bike station target was too small, so I started using the Google Geolocation API to get broader location data such
-as <em>zip codes</em> and <em>neighborhoods</em> . <a href=#need-additional-location-data>geolocation</a></li>
-<li>I also thought on a high level that knowing whether you got on your bike at <code>4:05</code> in the afternoon versus <code>4:06</code> shouldn&rsquo;t
-influence my learning algorithm, so I added some more <a href=#time-bucketing>transformations</a>.</li>
-<li>I compared the prediction accuracy of the new geolocation data as a <a href=#comparing-geolocation-granularities>first stab</a></li>
-<li>I ran through a couple of modeling scenarios <a href=#deeper-into-the-weeds>here</a> and finding some impoartant inconsistencies in how I was running my testing</li>
-<li>I ended up getting some good gains by <a href=#binarizing-the-inputs>binarizing my inputs</a></li>
-<li>I ended up using a <a href=#changing-my-metric-one-more-time>different evaluation metric</a> again to get a different perspective on this problem.</li>
-<li>Maybe a year or more later I came back to this problem from the point of view of experimenting with <a href=#sagemaker-approach>AWS approaches to training models</a> , including Docker and SageMaker.</li>
-<li>Thoughts for <a href=#future-improvements>future improvements</a></li>
-</ul>
-<h4 id=more-on-this-data>More on this data</h4>
-<ul>
-<li>When I started looking at this data, there were 400+ stations for docking your citibike.</li>
-<li>There is age, and some of the riders were actually born in the 1800s, which is kind of cool.</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>df <span style=color:#f92672>=</span> load_data(<span style=color:#e6db74>&#39;data/201509_10-citibike-tripdata.csv.annotated.100000.06112016T1814.csv&#39;</span>)
-
-In [<span style=color:#ae81ff>6</span>]: df[<span style=color:#e6db74>&#39;birth year&#39;</span>]<span style=color:#f92672>.</span>describe()
-Out[<span style=color:#ae81ff>6</span>]: 
-count    <span style=color:#ae81ff>83171.000000</span>
-mean      <span style=color:#ae81ff>1977.149680</span>
-std         <span style=color:#ae81ff>11.400096</span>
-min       <span style=color:#ae81ff>1885.000000</span>
-<span style=color:#ae81ff>25</span><span style=color:#f92672>%</span>       <span style=color:#ae81ff>1969.000000</span>
-<span style=color:#ae81ff>50</span><span style=color:#f92672>%</span>       <span style=color:#ae81ff>1980.000000</span>
-<span style=color:#ae81ff>75</span><span style=color:#f92672>%</span>       <span style=color:#ae81ff>1986.000000</span>
-max       <span style=color:#ae81ff>1999.000000</span>
-Name: birth year, dtype: float64
-</code></pre></div><h4 id=speed-and-age>Speed and Age</h4>
-<p>Turns out that you need to know the miles per the longitude degree at a particular latitude on our planet. So for our particular location,
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Citibike Learn Project | My blog</title><meta name=viewport content="width=device-width,minimum-scale=1"><meta name=description content="Can your Bike Share Destination be Predicted"><meta name=generator content="Hugo 0.96.0"><meta name=ROBOTS content="NOINDEX, NOFOLLOW"><link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css><meta property="og:title" content="Citibike Learn Project"><meta property="og:description" content="Can your Bike Share Destination be Predicted"><meta property="og:type" content="article"><meta property="og:url" content="https://michal.piekarczyk.xyz/project/2016-12-18-citibike-project/"><meta property="article:section" content="project"><meta property="article:published_time" content="2016-12-18T18:33:28+00:00"><meta property="article:modified_time" content="2016-12-18T18:33:28+00:00"><meta property="og:site_name" content="My blog"><meta itemprop=name content="Citibike Learn Project"><meta itemprop=description content="Can your Bike Share Destination be Predicted"><meta itemprop=datePublished content="2016-12-18T18:33:28+00:00"><meta itemprop=dateModified content="2016-12-18T18:33:28+00:00"><meta itemprop=wordCount content="2903"><meta itemprop=keywords content><meta name=twitter:card content="summary"><meta name=twitter:title content="Citibike Learn Project"><meta name=twitter:description content="Can your Bike Share Destination be Predicted"></head><body class="ma0 avenir bg-near-white"><header class="cover bg-top" style=background-image:url(https://my-blog-content.s3.amazonaws.com/2020/CartShare.jpeg)><div class="pb3-m pb6-l bg-black-60"><nav class="pv3 ph3 ph4-ns" role=navigation><div class="flex-l justify-between items-center center"><a href=/ class="f3 fw2 hover-white no-underline white-90 dib">My blog</a><div class="flex-l items-center"><ul class="pl0 mr3"><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/about/ title="About page">About</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/handy/ title="Handy page">Handy</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/post/ title="Post page">Post</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/project/ title="Side Projects page">Side Projects</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/foo/ title="The Foos page">The Foos</a></li></ul></div></div></nav><div class="tc-l pv6 ph3 ph4-ns"><h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Citibike Learn Project</h1></div></div></header><main class=pb7 role=main><article class="flex-l flex-wrap justify-between mw8 center ph3"><header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked">SIDE PROJECTS</aside><div id=sharing class=mt3><a href="https://www.facebook.com/sharer.php?u=https://michal.piekarczyk.xyz/project/2016-12-18-citibike-project/" class="facebook no-underline" aria-label="share on Facebook"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765 50.32h6.744V33.998h4.499l.596-5.624h-5.095l.007-2.816c0-1.466.14-2.253 2.244-2.253h2.812V17.68h-4.5c-5.405.0-7.307 2.729-7.307 7.317v3.377h-3.369v5.625h3.369V50.32zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg></a><a href="https://twitter.com/share?url=https://michal.piekarczyk.xyz/project/2016-12-18-citibike-project/&text=Citibike%20Learn%20Project" class="twitter no-underline" aria-label="share on Twitter"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https://michal.piekarczyk.xyz/project/2016-12-18-citibike-project/&title=Citibike%20Learn%20Project" class="linkedin no-underline" aria-label="share on LinkedIn"><svg height="32" style="enable-background:new 0 0 65 65" viewBox="0 0 65 65" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M50.837 48.137V36.425c0-6.275-3.35-9.195-7.816-9.195-3.604.0-5.219 1.983-6.119 3.374V27.71h-6.79c.09 1.917.0 20.427.0 20.427h6.79V36.729c0-.609.044-1.219.224-1.655.49-1.22 1.607-2.483 3.482-2.483 2.458.0 3.44 1.873 3.44 4.618v10.929H50.837zM22.959 24.922c2.367.0 3.842-1.57 3.842-3.531-.044-2.003-1.475-3.528-3.797-3.528s-3.841 1.524-3.841 3.528c0 1.961 1.474 3.531 3.753 3.531H22.959zM34 64C17.432 64 4 50.568 4 34 4 17.431 17.432 4 34 4s30 13.431 30 30c0 16.568-13.432 30-30 30zM26.354 48.137V27.71h-6.789v20.427h6.789z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></a></div><h1 class="f1 athelas mt3 mb1">Citibike Learn Project</h1><time class="f6 mv4 dib tracked" datetime=2016-12-18T18:33:28Z>December 18, 2016</time></header><div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h3 id=citibike-project-can-your-destination-be-predicted>Citibike Project: Can your Destination be Predicted</h3><p><em>( <a href=https://github.com/namoopsoo/learn-citibike><a href=https://github.com/namoopsoo/learn-citibike>https://github.com/namoopsoo/learn-citibike</a></a> )</em></p><h4 id=motivation>Motivation</h4><p>I think sometimes the most interesting projects live behind ideas that sound impractical or even crazy. That&rsquo;s why I thought
+it would be fun to use the Citibike bike share trip data to try and predict a person&rsquo;s destination based on what we know.</p><p><em>Roughly speaking trip data looks like this</em></p><pre tabindex=0><code>&#34;tripduration&#34;,&#34;starttime&#34;,&#34;stoptime&#34;,&#34;start station id&#34;,&#34;start station name&#34;,&#34;start station latitude&#34;,&#34;start station longitude&#34;,&#34;end station id&#34;,&#34;end station name&#34;,&#34;end station latitude&#34;,&#34;end station longitude&#34;,&#34;bikeid&#34;,&#34;usertype&#34;,&#34;birth year&#34;,&#34;gender&#34;
+&#34;171&#34;,&#34;10/1/2015 00:00:02&#34;,&#34;10/1/2015 00:02:54&#34;,&#34;388&#34;,&#34;W 26 St &amp; 10 Ave&#34;,&#34;40.749717753&#34;,&#34;-74.002950346&#34;,&#34;494&#34;,&#34;W 26 St &amp; 8 Ave&#34;,&#34;40.74734825&#34;,&#34;-73.99723551&#34;,&#34;24302&#34;,&#34;Subscriber&#34;,&#34;1973&#34;,&#34;1&#34;
+&#34;593&#34;,&#34;10/1/2015 00:00:02&#34;,&#34;10/1/2015 00:09:55&#34;,&#34;518&#34;,&#34;E 39 St &amp; 2 Ave&#34;,&#34;40.74780373&#34;,&#34;-73.9734419&#34;,&#34;438&#34;,&#34;St Marks Pl &amp; 1 Ave&#34;,&#34;40.72779126&#34;,&#34;-73.98564945&#34;,&#34;19904&#34;,&#34;Subscriber&#34;,&#34;1990&#34;,&#34;1&#34;
+&#34;233&#34;,&#34;10/1/2015 00:00:11&#34;,&#34;10/1/2015 00:04:05&#34;,&#34;447&#34;,&#34;8 Ave &amp; W 52 St&#34;,&#34;40.76370739&#34;,&#34;-73.9851615&#34;,&#34;447&#34;,&#34;8 Ave &amp; W 52 St&#34;,&#34;40.76370739&#34;,&#34;-73.9851615&#34;,&#34;17797&#34;,&#34;Subscriber&#34;,&#34;1984&#34;,&#34;1&#34;
+&#34;250&#34;,&#34;10/1/2015 00:00:15&#34;,&#34;10/1/2015 00:04:25&#34;,&#34;336&#34;,&#34;Sullivan St &amp; Washington Sq&#34;,&#34;40.73047747&#34;,&#34;-73.99906065&#34;,&#34;223&#34;,&#34;W 13 St &amp; 7 Ave&#34;,&#34;40.73781509&#34;,&#34;-73.99994661&#34;,&#34;23966&#34;,&#34;Subscriber&#34;,&#34;1984&#34;,&#34;1&#34;
+&#34;528&#34;,&#34;10/1/2015 00:00:17&#34;,&#34;10/1/2015 00:09:05&#34;,&#34;3107&#34;,&#34;Bedford Ave &amp; Nassau Ave&#34;,&#34;40.72311651&#34;,&#34;-73.95212324&#34;,&#34;539&#34;,&#34;Metropolitan Ave &amp; Bedford Ave&#34;,&#34;40.71534825&#34;,&#34;-73.96024116&#34;,&#34;16246&#34;,&#34;Customer&#34;,&#34;&#34;,&#34;0&#34;
+&#34;440&#34;,&#34;10/1/2015 00:00:17&#34;,&#34;10/1/2015 00:07:37&#34;,&#34;3107&#34;,&#34;Bedford Ave &amp; Nassau Ave&#34;,&#34;40.72311651&#34;,&#34;-73.95212324&#34;,&#34;539&#34;,&#34;Metropolitan Ave &amp; Bedford Ave&#34;,&#34;40.71534825&#34;,&#34;-73.96024116&#34;,&#34;23698&#34;,&#34;Customer&#34;,&#34;&#34;,&#34;0&#34;
+</code></pre><p>The data if fairly clean and regular, so I thought this was a fun data set to sharpen my teeth on.</p><h4 id=quick-birds-eye--of-my-journey>Quick Bird&rsquo;s Eye of my Journey</h4><ul><li>First started just <a href=#more-on-this-data>looking</a> at this data.</li><li>Just out of curiosity, as a first mini starter project I decided to look at the <a href=#speed-and-age>relationship between rider age and speed</a></li><li>I realized pretty early that the bike station target was too small, so I started using the Google Geolocation API to get broader location data such
+as <em>zip codes</em> and <em>neighborhoods</em> . <a href=#need-additional-location-data>geolocation</a></li><li>I also thought on a high level that knowing whether you got on your bike at <code>4:05</code> in the afternoon versus <code>4:06</code> shouldn&rsquo;t
+influence my learning algorithm, so I added some more <a href=#time-bucketing>transformations</a>.</li><li>I compared the prediction accuracy of the new geolocation data as a <a href=#comparing-geolocation-granularities>first stab</a></li><li>I ran through a couple of modeling scenarios <a href=#deeper-into-the-weeds>here</a> and finding some impoartant inconsistencies in how I was running my testing</li><li>I ended up getting some good gains by <a href=#binarizing-the-inputs>binarizing my inputs</a></li><li>I ended up using a <a href=#changing-my-metric-one-more-time>different evaluation metric</a> again to get a different perspective on this problem.</li><li>Maybe a year or more later I came back to this problem from the point of view of experimenting with <a href=#sagemaker-approach>AWS approaches to training models</a> , including Docker and SageMaker.</li><li>Thoughts for <a href=#future-improvements>future improvements</a></li></ul><h4 id=more-on-this-data>More on this data</h4><ul><li>When I started looking at this data, there were 400+ stations for docking your citibike.</li><li>There is age, and some of the riders were actually born in the 1800s, which is kind of cool.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>df <span style=color:#f92672>=</span> load_data(<span style=color:#e6db74>&#39;data/201509_10-citibike-tripdata.csv.annotated.100000.06112016T1814.csv&#39;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>In [<span style=color:#ae81ff>6</span>]: df[<span style=color:#e6db74>&#39;birth year&#39;</span>]<span style=color:#f92672>.</span>describe()
+</span></span><span style=display:flex><span>Out[<span style=color:#ae81ff>6</span>]: 
+</span></span><span style=display:flex><span>count    <span style=color:#ae81ff>83171.000000</span>
+</span></span><span style=display:flex><span>mean      <span style=color:#ae81ff>1977.149680</span>
+</span></span><span style=display:flex><span>std         <span style=color:#ae81ff>11.400096</span>
+</span></span><span style=display:flex><span>min       <span style=color:#ae81ff>1885.000000</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>25</span><span style=color:#f92672>%</span>       <span style=color:#ae81ff>1969.000000</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>50</span><span style=color:#f92672>%</span>       <span style=color:#ae81ff>1980.000000</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>75</span><span style=color:#f92672>%</span>       <span style=color:#ae81ff>1986.000000</span>
+</span></span><span style=display:flex><span>max       <span style=color:#ae81ff>1999.000000</span>
+</span></span><span style=display:flex><span>Name: birth year, dtype: float64
+</span></span></code></pre></div><h4 id=speed-and-age>Speed and Age</h4><p>Turns out that you need to know the miles per the longitude degree at a particular latitude on our planet. So for our particular location,
 at lat around <code>40.723</code> and using the earth&rsquo;s radius of about <code>3958 miles</code> , we have about <code>52.3 miles/longitude degree</code>
-here in NYC.</p>
-<p>So from there, looking at some of the speed data just involved looking at the tripdata trip time and calculating the
-cartesian distance.</p>
-<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 11.02.41 AM.png" width=50%>
-<p>(More on the code <a href=https://github.com/namoopsoo/learn-citibike/blob/master/bikelearn/utils.py#L86>here</a> )
-(Also more detail on this analysis in the main <a href=https://github.com/namoopsoo/learn-citibike/blob/master/project%20report.ipynb>jupyter notebook</a>)</p>
-<h4 id=need-additional-location-data>Need additional location data</h4>
-<ul>
-<li>With the 400+ stations, trying to predict a multi-class problem of this sort with basic machine learning algorithms
+here in NYC.</p><p>So from there, looking at some of the speed data just involved looking at the tripdata trip time and calculating the
+cartesian distance.</p><img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 11.02.41 AM.png" width=50%><p>(More on the code <a href=https://github.com/namoopsoo/learn-citibike/blob/master/bikelearn/utils.py#L86>here</a> )
+(Also more detail on this analysis in the main <a href=https://github.com/namoopsoo/learn-citibike/blob/master/project%20report.ipynb>jupyter notebook</a>)</p><h4 id=need-additional-location-data>Need additional location data</h4><ul><li>With the 400+ stations, trying to predict a multi-class problem of this sort with basic machine learning algorithms
 would not be a way to get quick results to help keep the project going, so I decided to constrain the problem. I ended up
 turning to the Google Geocoding API. Using this data became its own side project, because parsing through
-the Google geolocation data can get pretty hairy!</li>
-</ul>
-<p><em>The meat of the output can look like this, for the docking station &ldquo;1st Avenue & E 15th St&rdquo;</em></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>{
-<span style=color:#e6db74>&#39;raw_result&#39;</span>: [{<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;address_components&#39;</span>: [{<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;long_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;1st Avenue&#39;</span>,
-                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;short_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;1st Avenue&#39;</span>,
-                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;types&#39;</span>: [<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;route&#39;</span>]},
-               {<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;long_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;Midtown&#39;</span>,
-                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;short_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;Midtown&#39;</span>,
-                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;types&#39;</span>: [<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;neighborhood&#39;</span>,
-                           <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;political&#39;</span>]},
-               {<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;long_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;Manhattan&#39;</span>,
-                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;short_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;Manhattan&#39;</span>,
-                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;types&#39;</span>: [<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;sublocality_level_1&#39;</span>,
-                           <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;sublocality&#39;</span>,
-                           <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;political&#39;</span>]},
-               {<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;long_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;New York&#39;</span>,
-                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;short_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;New York&#39;</span>,
-                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;types&#39;</span>: [<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;locality&#39;</span>,
-                           <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;political&#39;</span>]},
-               {<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;long_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;New York County&#39;</span>,
-                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;short_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;New York County&#39;</span>,
-                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;types&#39;</span>: [<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;administrative_area_level_2&#39;</span>,
-                           <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;political&#39;</span>]},
-               {<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;long_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;New York&#39;</span>,
-                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;short_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;NY&#39;</span>,
-                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;types&#39;</span>: [<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;administrative_area_level_1&#39;</span>,
-                           <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;political&#39;</span>]},
-               {<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;long_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;United States&#39;</span>,
-                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;short_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;US&#39;</span>,
-                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;types&#39;</span>: [<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;country&#39;</span>,
-                           <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;political&#39;</span>]},
-               {<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;long_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;10003&#39;</span>,
-                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;short_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;10003&#39;</span>,
-                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;types&#39;</span>: [<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;postal_code&#39;</span>]}],
-               <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;formatted_address&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;1st Avenue &amp; E 15th St, New York, NY 10003, USA&#39;</span>,
-               }
-</code></pre></div><ul>
-<li>Some of the challenges here were that the outputs from the API were not always consistent. The above output shows that the<br>
-<code>'neighborhood'</code> is <code>'Midtown'</code>, but because there were 400+ stations, I did not initially notice that sometimes the <code>neighborhood</code>
-was missing or that the <code>zip code</code> was missing. That ended up throwing off my code a couple of times.</li>
-<li>It turned out that the <em>street intersection</em> was not an ideal clean data input to the API. For instance <code>E 3 St & 1 Ave, NY</code> was understood by the API as just a street or a <code>route</code> as it is called, ( <a href=assets/E%203%20St%20&%201%20Ave,%20NY.md>raw output</a> ). Later on I ended up refactoring this to
-use the raw <em>latitude and longitude</em> .</li>
-<li>However, I eventually noticed that often times the <em>docking stations</em> were on the edge of neighborhoods. So I literally had
-edge cases! The Neighborhood would come back blank and I ended up having to fill in a lot of that data by hand anyhow!</li>
-</ul>
-<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2018-12-04 at 12.11.42 PM.png" width=50%>
-<ul>
-<li>Also the data calls were not free and I ended up building a small <em>caching layer</em> with <em>redis</em> .</li>
-<li>The other reason I had done that was that I would often work out of cafes where the Wifi was spotty and I didn&rsquo;t want an internet
-connection to hold me back.</li>
-<li>I think in hind-sight, I could have avoided some of the automation here and just decoupled the data fetch so that I wouldn&rsquo;t have to
-worry about that internet connection.</li>
-<li>Of course every time I wanted to add additional data from Citibike, there would be new docking stations and I had to get back to making sure
-my station location data was correct, so that bad data did not impact predictions.</li>
-</ul>
-<h4 id=time-bucketing>Time bucketing</h4>
-<p>In order to get better information from the source time, the source time was bucketted into 24 hour-buckets per day. That is since a ride starting at 1:04:23pm shouldn&rsquo;t be treated as being too different from a ride departing at 1:05:24pm . There is more value in intuitively clustering the rides.</p>
-<h4 id=comparing-geolocation-granularities>Comparing Geolocation Granularities</h4>
-<p>There are about 463 stations found in the dataset, 28 neighborhoods, representing 49 postal codes and 3 out of 5 boroughs,</p>
-<p>So using the <code>(start time bucket, start station id, age, gender)</code> as the inputs and with <code>RandomizedLogisticRegression</code> as a classifier ,
-for about a months worth of trip data, I saw roughly the following comparison.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>{<span style=color:#e6db74>&#39;end station id&#39;</span>: OrderedDict([(<span style=color:#e6db74>&#39;training&#39;</span>,
-               OrderedDict([(<span style=color:#e6db74>&#39;accuracy_score&#39;</span>, <span style=color:#ae81ff>0.041432771986099973</span>),
-                            (<span style=color:#e6db74>&#39;f1_score&#39;</span>, <span style=color:#ae81ff>0.015138704086611844</span>),
-                            (<span style=color:#e6db74>&#39;recall_score&#39;</span>, <span style=color:#ae81ff>0.041432771986099973</span>),
-                            (<span style=color:#e6db74>&#39;precision_score&#39;</span>, <span style=color:#ae81ff>0.016942125433308568</span>)])),
-              (<span style=color:#e6db74>&#39;holdout&#39;</span>,
-               OrderedDict([(<span style=color:#e6db74>&#39;accuracy_score&#39;</span>, <span style=color:#ae81ff>0.031533939070016032</span>),
-                            (<span style=color:#e6db74>&#39;f1_score&#39;</span>, <span style=color:#ae81ff>0.0093952628045424723</span>),
-                            (<span style=color:#e6db74>&#39;recall_score&#39;</span>, <span style=color:#ae81ff>0.031533939070016032</span>),
-                            (<span style=color:#e6db74>&#39;precision_score&#39;</span>, <span style=color:#ae81ff>0.0067157290264759353</span>)]))]),
- <span style=color:#e6db74>&#39;end_neighborhood&#39;</span>: OrderedDict([(<span style=color:#e6db74>&#39;training&#39;</span>,
-               OrderedDict([(<span style=color:#e6db74>&#39;accuracy_score&#39;</span>, <span style=color:#ae81ff>0.39047231270358307</span>),
-                            (<span style=color:#e6db74>&#39;f1_score&#39;</span>, <span style=color:#ae81ff>0.28885663229134789</span>),
-                            (<span style=color:#e6db74>&#39;recall_score&#39;</span>, <span style=color:#ae81ff>0.39047231270358307</span>),
-                            (<span style=color:#e6db74>&#39;precision_score&#39;</span>, <span style=color:#ae81ff>0.26445041603375502</span>)])),
-              (<span style=color:#e6db74>&#39;holdout&#39;</span>,
-               OrderedDict([(<span style=color:#e6db74>&#39;accuracy_score&#39;</span>, <span style=color:#ae81ff>0.39630836047774159</span>),
-                            (<span style=color:#e6db74>&#39;f1_score&#39;</span>, <span style=color:#ae81ff>0.2935527390151364</span>),
-                            (<span style=color:#e6db74>&#39;recall_score&#39;</span>, <span style=color:#ae81ff>0.39630836047774159</span>),
-                            (<span style=color:#e6db74>&#39;precision_score&#39;</span>, <span style=color:#ae81ff>0.26579390443173939</span>)]))]),
- <span style=color:#e6db74>&#39;end_postal_code&#39;</span>: OrderedDict([(<span style=color:#e6db74>&#39;training&#39;</span>,
-               OrderedDict([(<span style=color:#e6db74>&#39;accuracy_score&#39;</span>, <span style=color:#ae81ff>0.14129127122042506</span>),
-                            (<span style=color:#e6db74>&#39;f1_score&#39;</span>, <span style=color:#ae81ff>0.068340173428106887</span>),
-                            (<span style=color:#e6db74>&#39;recall_score&#39;</span>, <span style=color:#ae81ff>0.14129127122042506</span>),
-                            (<span style=color:#e6db74>&#39;precision_score&#39;</span>, <span style=color:#ae81ff>0.068168259430770747</span>)])),
-              (<span style=color:#e6db74>&#39;holdout&#39;</span>,
-               OrderedDict([(<span style=color:#e6db74>&#39;accuracy_score&#39;</span>, <span style=color:#ae81ff>0.13361838588989844</span>),
-                            (<span style=color:#e6db74>&#39;f1_score&#39;</span>, <span style=color:#ae81ff>0.064738931917963718</span>),
-                            (<span style=color:#e6db74>&#39;recall_score&#39;</span>, <span style=color:#ae81ff>0.13361838588989844</span>),
-                            (<span style=color:#e6db74>&#39;precision_score&#39;</span>, <span style=color:#ae81ff>0.067139580345228156</span>)]))]),
- <span style=color:#e6db74>&#39;end_sublocality&#39;</span>: OrderedDict([(<span style=color:#e6db74>&#39;training&#39;</span>,
-               OrderedDict([(<span style=color:#e6db74>&#39;accuracy_score&#39;</span>, <span style=color:#ae81ff>0.95354786589470852</span>),
-                            (<span style=color:#e6db74>&#39;f1_score&#39;</span>, <span style=color:#ae81ff>0.95209028150037733</span>),
-                            (<span style=color:#e6db74>&#39;recall_score&#39;</span>, <span style=color:#ae81ff>0.95354786589470852</span>),
-                            (<span style=color:#e6db74>&#39;precision_score&#39;</span>, <span style=color:#ae81ff>0.95217920885515972</span>)])),
-              (<span style=color:#e6db74>&#39;holdout&#39;</span>,
-               OrderedDict([(<span style=color:#e6db74>&#39;accuracy_score&#39;</span>, <span style=color:#ae81ff>0.9493807215939688</span>),
-                            (<span style=color:#e6db74>&#39;f1_score&#39;</span>, <span style=color:#ae81ff>0.94990282092170586</span>),
-                            (<span style=color:#e6db74>&#39;recall_score&#39;</span>, <span style=color:#ae81ff>0.9493807215939688</span>),
-                            (<span style=color:#e6db74>&#39;precision_score&#39;</span>, <span style=color:#ae81ff>0.95132373575480056</span>)]))])}
-</code></pre></div><ul>
-<li>The rough accuracies for prediction, end station id (~3%), postal code (~13%), neighborhood (~40%), and borough (~95%), using the small dataset, shows the rough differences in what happens when you reduce the number of possible outputs.</li>
-<li>Overall this gave me the motivation to focus on the <code>neighborhood</code> as a target to try to improve upon.</li>
-<li>More in the <a href="https://render.githubusercontent.com/view/ipynb?commit=b2beb2af23f4f803a059161aeeb1a8e628a1bd4b&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6e616d6f6f70736f6f2f6c6561726e2d6369746962696b652f623262656232616632336634663830336130353931363161656562316138653632386131626434622f70726f6a6563742532307265706f72742e6970796e62&nwo=namoopsoo%2Flearn-citibike&path=project+report.ipynb&repository_id=60489657&repository_type=Repository#A-basic-learning-strategy-is-used">jupyter notebook</a></li>
-</ul>
-<h4 id=deeper-into-the-weeds>Deeper into the weeds</h4>
-<p>I compared the <code>SGDClassifier</code> with the <code>LogisticRegression</code> classifier (which I believe just uses Gradient Descent, while the <code>SGDClassifier</code> classifier is also a Logistic Regression classifier, but it uses Stochastic Gradient Descent).</p>
-<p>I also tried applying <a href=https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html>Standard Scaling</a> to my input data after <a href=http://scikit-learn.org/stable/modules/sgd.html#tips-on-practical-use>reading</a> that <code>scikit learn</code> &rsquo;s <code>SGDClassifier</code> implementation is sensitive unless the input data has a <code>mean=0</code> and <code>variance=1</code> . Indeed per the below this helped a little.</p>
-<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.12.54 PM.png" width=50%>
-<p>I also applied a GridSearch around the alpha parameter to the SGDClassifier, but this did not help at least the way I tried it,</p>
-<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.30.52 PM.png" width=50%>
-<p>I next started varying the training set size, given that a month worth of trip data had about a million rows, I went from <code>10k</code> to <code>1M</code>,</p>
-<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.39.07 PM.png" width=50%>
-<p>But this didn&rsquo;t look great. I realized a problem I had was that I was not randomly sampling my input data. Since a month-size dataset is around 1.2 Million rows, then a 10,000 large set just ends up barely dipping into the first day. So choosing the dataset sizes has to be done, by random sampling.</p>
-<p>After making the sampling randomized, the output below, feels like it has a better upward trend, but it is still not visible enough.</p>
-<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.45.13 PM.png" width=50%>
-<p>I also realized I was being inconsistent in my assessment because I was not using a single holdout set to test. I was actually randomly generating a test set each time. That was really bad. So I created ten models on sizes 10,000 through 100,000 datasets, created from <code>09 and 10 2015</code>, and testing on a single holdout dataset, taken from <code>November 2015</code>. In this approach, the accuracy results are found using the same holdout set instead of using a differently derived test set each time.</p>
-<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.54.28 PM.png" width=50%>
-<p>Although the results were still pretty flat, at least I can trust the consistency of my test method more now.</p>
-<p>More in the jupyter <a href="https://render.githubusercontent.com/view/ipynb?commit=b2beb2af23f4f803a059161aeeb1a8e628a1bd4b&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6e616d6f6f70736f6f2f6c6561726e2d6369746962696b652f623262656232616632336634663830336130353931363161656562316138653632386131626434622f70726f6a6563742532307265706f72742e6970796e62&nwo=namoopsoo%2Flearn-citibike&path=project+report.ipynb&repository_id=60489657&repository_type=Repository#Also-comparing-with-additional-classifiers">notebook</a></p>
-<h4 id=binarizing-the-inputs>Binarizing the inputs</h4>
-<ul>
-<li>Another important modeling change to try was to do a better of job of preparing the input data to better expose the stratification across citibike trips across the sources. To do this, instead of using a source station column and source neighborhood columns, the source neighborhood column was binarized using the sklearn OneHotEncoder, to a column for each of the neighborhoods in the surface area of the city.</li>
-<li>The same experiment as earlier was conducted, comparing results across the default SGDClassifier and LogisticRegression classifiers and also across 100,000 to 1,000,000 size datasets used for a train/test split along with a 100,000 large holdout set.</li>
-<li>These were created from just the single 2015-09 dataset (201509-citibike-tripdata.csv).</li>
-<li>I found this to be very helpful. Here&rsquo;s a summary graphic,</li>
-</ul>
-<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 1.00.56 PM.png" width=50%>
-<p>More details <a href="https://render.githubusercontent.com/view/ipynb?commit=b2beb2af23f4f803a059161aeeb1a8e628a1bd4b&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6e616d6f6f70736f6f2f6c6561726e2d6369746962696b652f623262656232616632336634663830336130353931363161656562316138653632386131626434622f70726f6a6563742532307265706f72742e6970796e62&nwo=namoopsoo%2Flearn-citibike&path=project+report.ipynb&repository_id=60489657&repository_type=Repository#Binarizing-geolocation-start-data">in the notebook</a></p>
-<h4 id=changing-my-metric-one-more-time>Changing my metric one more time</h4>
-<ul>
-<li>Given that there are about <code>28</code> neighborhoods covered by Citibike (at least in the data end of <code>2015</code>), a high accuracy is difficult to achieve especially because there are many output classes to choose from.</li>
-<li>Another idea that was explored was to create a Rank K Accuracy, such that a prediction is correct when the correct class is found in the top highest K probabilities.</li>
-</ul>
-<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 1.07.21 PM.png" width=50%>
-<p>The overall reasoning I had here is two-fold. One, I think of the analogy of a search engine, where it is typically acceptable to show someone
-<em>five results</em> as opposed to the so called <em>&ldquo;I am feeling lucky&rdquo;</em> result. Of course not every machine learning use case will have the tolerance to take five results as opposed to five, but I think my particular problem of choice it might be fine. Or at least asking people would help to answer that question.</p>
-<p>But I think the main reason I wanted to do this was to just better understand whether my classification approach was doing anything at all. So since, out of these <code>28</code> or so neighborhoods, if going from the <code>top 1</code> result to the <code>top 2</code> results, yields an additional <code>20 points</code> of accuracy, then I feel a little better about the result making sense.</p>
-<img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 1.07.47 PM.png" width=50%>
-<p>More detail in the <a href="https://render.githubusercontent.com/view/ipynb?commit=b2beb2af23f4f803a059161aeeb1a8e628a1bd4b&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6e616d6f6f70736f6f2f6c6561726e2d6369746962696b652f623262656232616632336634663830336130353931363161656562316138653632386131626434622f70726f6a6563742532307265706f72742e6970796e62&nwo=namoopsoo%2Flearn-citibike&path=project+report.ipynb&repository_id=60489657&repository_type=Repository#Redefining-the-accuracy-score">notebook</a></p>
-<h4 id=sagemaker-approach>SageMaker approach</h4>
-<p>I wanted to test drive AWS SageMaker ,</p>
-<ul>
-<li>To see if I could more easily train models without relying on my laptop</li>
-<li>And make my training environment more reproducible</li>
-<li>And the prospect of hyper parameter tuning jobs seemed pretty neat too</li>
-<li>And I wanated to see just how simple serving models would be</li>
-<li>And in general I wanted to do all of these things to see if I could end up using this at my job (which I did).</li>
-</ul>
-<h4 id=what-ended-up-happening>What ended up happening</h4>
-<ul>
-<li>I managed to recreate my basic model training and evaluation setup using Docker and Sagemaker.</li>
-<li>With SageMaker, Docker, your model is more compartmentalized and I found this was helpful when iterating model code and boiler plate code.</li>
-<li>I also ended up serving the model on an endpoint.</li>
-<li>This is still a sort of a back burner project I would like to come back to at some point,</li>
-<li>but below I show one update I made to have a slightly better time debugging <a href=#changes-to-model-iterations>changes my model iterations</a></li>
-<li>And I go over <a href=#bad-data-strikes-again>several more data roadblocks</a> I ran into.</li>
-</ul>
-<h4 id=changes-to-model-iterations>Changes to Model Iterations</h4>
-<p>To make things slightly easier to understand, especially for debugging purposes, I now made models into json objects that are easier to display</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>
-localfn <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;/Users/michal/Downloads/2018-12-07-update-model/2018-12-07-update-</span>
-   <span style=color:#f92672>...</span>: model<span style=color:#f92672>/</span>tree<span style=color:#f92672>-</span>foo<span style=color:#f92672>-</span>bundle<span style=color:#f92672>-</span>pensive<span style=color:#f92672>-</span>swirles<span style=color:#ae81ff>.2018</span><span style=color:#f92672>-</span><span style=color:#ae81ff>12</span><span style=color:#f92672>-</span><span style=color:#ae81ff>04</span>T210259ZUTC<span style=color:#f92672>.</span>pkl<span style=color:#e6db74>&#39;</span>
-
-In [<span style=color:#ae81ff>5</span>]: <span style=color:#66d9ef>with</span> open(localfn) <span style=color:#66d9ef>as</span> fd: bundle <span style=color:#f92672>=</span> cPickle<span style=color:#f92672>.</span>load(fd)
-
-In [<span style=color:#ae81ff>6</span>]: <span style=color:#f92672>from</span> bikelearn <span style=color:#f92672>import</span> classify <span style=color:#66d9ef>as</span> blc
-
-In [<span style=color:#ae81ff>12</span>]: blc<span style=color:#f92672>.</span>label_decode(bundle[<span style=color:#e6db74>&#39;label_encoders&#39;</span>][<span style=color:#e6db74>&#39;end_neighborhood&#39;</span>], range(<span style=color:#ae81ff>40</span>))
-Out[<span style=color:#ae81ff>12</span>]: 
-array([<span style=color:#e6db74>&#39;-1&#39;</span>, <span style=color:#e6db74>&#39;Alphabet City&#39;</span>, <span style=color:#e6db74>&#39;Battery Park City&#39;</span>, <span style=color:#e6db74>&#39;Bedford-Stuyvesant&#39;</span>,
-       <span style=color:#e6db74>&#39;Boerum Hill&#39;</span>, <span style=color:#e6db74>&#39;Bowery&#39;</span>, <span style=color:#e6db74>&#39;Broadway Triangle&#39;</span>, <span style=color:#e6db74>&#39;Brooklyn Heights&#39;</span>,
-       <span style=color:#e6db74>&#39;Brooklyn Navy Yard&#39;</span>, <span style=color:#e6db74>&#39;Central Park&#39;</span>, <span style=color:#e6db74>&#39;Chelsea&#39;</span>, <span style=color:#e6db74>&#39;Chinatown&#39;</span>,
-       <span style=color:#e6db74>&#39;Civic Center&#39;</span>, <span style=color:#e6db74>&#39;Clinton Hill&#39;</span>,
-       <span style=color:#e6db74>&#39;Columbia Street Waterfront District&#39;</span>, <span style=color:#e6db74>&#39;Downtown Brooklyn&#39;</span>,
-       <span style=color:#e6db74>&#39;Dumbo&#39;</span>, <span style=color:#e6db74>&#39;East Village&#39;</span>, <span style=color:#e6db74>&#39;Financial District&#39;</span>, <span style=color:#e6db74>&#39;Flatiron District&#39;</span>,
-       <span style=color:#e6db74>&#39;Fort Greene&#39;</span>, <span style=color:#e6db74>&#39;Fulton Ferry District&#39;</span>, <span style=color:#e6db74>&#39;Garment District&#39;</span>,
-       <span style=color:#e6db74>&#39;Gramercy Park&#39;</span>, <span style=color:#e6db74>&#39;Greenpoint&#39;</span>, <span style=color:#e6db74>&#39;Greenwich Village&#39;</span>,
-       <span style=color:#e6db74>&#34;Hell&#39;s Kitchen&#34;</span>, <span style=color:#e6db74>&#39;Hudson Square&#39;</span>, <span style=color:#e6db74>&#39;Hunters Point&#39;</span>, <span style=color:#e6db74>&#39;Kips Bay&#39;</span>,
-       <span style=color:#e6db74>&#39;Korea Town&#39;</span>, <span style=color:#e6db74>&#39;Lenox Hill&#39;</span>, <span style=color:#e6db74>&#39;Lincoln Square&#39;</span>, <span style=color:#e6db74>&#39;Little Italy&#39;</span>,
-       <span style=color:#e6db74>&#39;Long Island City&#39;</span>, <span style=color:#e6db74>&#39;Lower East Side&#39;</span>, <span style=color:#e6db74>&#39;Lower Manhattan&#39;</span>,
-       <span style=color:#e6db74>&#39;Meatpacking District&#39;</span>, <span style=color:#e6db74>&#39;Midtown&#39;</span>, <span style=color:#e6db74>&#39;Midtown East&#39;</span>], dtype<span style=color:#f92672>=</span>object)
-
-In [<span style=color:#ae81ff>19</span>]: len(bundle[<span style=color:#e6db74>&#39;label_encoders&#39;</span>][<span style=color:#e6db74>&#39;end_neighborhood&#39;</span>]<span style=color:#f92672>.</span>classes_)
-Out[<span style=color:#ae81ff>19</span>]: <span style=color:#ae81ff>65</span>
-
-In [<span style=color:#ae81ff>42</span>]: bu<span style=color:#f92672>.</span>print_bundle(bundle)
-Out[<span style=color:#ae81ff>42</span>]: 
-{<span style=color:#e6db74>&#39;bundle_name&#39;</span>: <span style=color:#e6db74>&#39;tree-foo-bundle-pensive-swirles&#39;</span>,
- <span style=color:#e6db74>&#39;clf&#39;</span>: RandomForestClassifier(bootstrap<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>, class_weight<span style=color:#f92672>=</span><span style=color:#66d9ef>None</span>, criterion<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;gini&#39;</span>,
-             max_depth<span style=color:#f92672>=</span><span style=color:#ae81ff>5</span>, max_features<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;auto&#39;</span>, max_leaf_nodes<span style=color:#f92672>=</span><span style=color:#66d9ef>None</span>,
-             min_impurity_decrease<span style=color:#f92672>=</span><span style=color:#ae81ff>0.0</span>, min_impurity_split<span style=color:#f92672>=</span><span style=color:#66d9ef>None</span>,
-             min_samples_leaf<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>, min_samples_split<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>,
-             min_weight_fraction_leaf<span style=color:#f92672>=</span><span style=color:#ae81ff>0.0</span>, n_estimators<span style=color:#f92672>=</span><span style=color:#ae81ff>20</span>, n_jobs<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>,
-             oob_score<span style=color:#f92672>=</span><span style=color:#66d9ef>False</span>, random_state<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>, verbose<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>, warm_start<span style=color:#f92672>=</span><span style=color:#66d9ef>False</span>),
- <span style=color:#e6db74>&#39;clf_info&#39;</span>: {<span style=color:#e6db74>&#39;feature_importances&#39;</span>: [(<span style=color:#e6db74>&#39;start_postal_code&#39;</span>,
-    <span style=color:#ae81ff>0.4118465753431595</span>),
-   (<span style=color:#e6db74>&#39;start_sublocality&#39;</span>, <span style=color:#ae81ff>0.2228924462201325</span>),
-   (<span style=color:#e6db74>&#39;start_neighborhood&#39;</span>, <span style=color:#ae81ff>0.28008403752725497</span>),
-   (<span style=color:#e6db74>&#39;start_day&#39;</span>, <span style=color:#ae81ff>0.006151427471547376</span>),
-   (<span style=color:#e6db74>&#39;start_hour&#39;</span>, <span style=color:#ae81ff>0.03971509075090292</span>),
-   (<span style=color:#e6db74>&#39;age&#39;</span>, <span style=color:#ae81ff>0.0180403831546044</span>),
-   (<span style=color:#e6db74>&#39;gender&#39;</span>, <span style=color:#ae81ff>0.008144851450140815</span>),
-   (<span style=color:#e6db74>&#39;usertype&#39;</span>, <span style=color:#ae81ff>0.013125188082257624</span>)]},
- <span style=color:#e6db74>&#39;evaluation&#39;</span>: {<span style=color:#e6db74>&#39;test_metrics&#39;</span>: {<span style=color:#e6db74>&#39;confusion_matrix&#39;</span>: <span style=color:#ae81ff>64</span>,
-   <span style=color:#e6db74>&#39;f1_scores&#39;</span>: {<span style=color:#e6db74>&#39;macro&#39;</span>: <span style=color:#ae81ff>0.041605116043552354</span>,
-    <span style=color:#e6db74>&#39;micro&#39;</span>: <span style=color:#ae81ff>0.1599860211928701</span>,
-    <span style=color:#e6db74>&#39;weighted&#39;</span>: <span style=color:#ae81ff>0.06355337311627869</span>},
-   <span style=color:#e6db74>&#39;rank_k_proba_scores&#39;</span>: {<span style=color:#ae81ff>1</span>: <span style=color:#ae81ff>0.1599860211928701</span>,
-    <span style=color:#ae81ff>2</span>: <span style=color:#ae81ff>0.2536814721966162</span>,
-    <span style=color:#ae81ff>3</span>: <span style=color:#ae81ff>0.3240640528912417</span>,
-    <span style=color:#ae81ff>4</span>: <span style=color:#ae81ff>0.3873466833318772</span>,
-    <span style=color:#ae81ff>5</span>: <span style=color:#ae81ff>0.443358194451626</span>,
-    <span style=color:#ae81ff>10</span>: <span style=color:#ae81ff>0.629839760791229</span>}},
-  <span style=color:#e6db74>&#39;validation_metrics&#39;</span>: {<span style=color:#e6db74>&#39;confusion_matrix&#39;</span>: <span style=color:#ae81ff>64</span>,
-   <span style=color:#e6db74>&#39;f1_scores&#39;</span>: {<span style=color:#e6db74>&#39;macro&#39;</span>: <span style=color:#ae81ff>0.04327900735885162</span>,
-    <span style=color:#e6db74>&#39;micro&#39;</span>: <span style=color:#ae81ff>0.16284068269032595</span>,
-    <span style=color:#e6db74>&#39;weighted&#39;</span>: <span style=color:#ae81ff>0.06549596580599053</span>},
-   <span style=color:#e6db74>&#39;rank_k_proba_scores&#39;</span>: {<span style=color:#ae81ff>1</span>: <span style=color:#ae81ff>0.16284068269032595</span>,
-    <span style=color:#ae81ff>2</span>: <span style=color:#ae81ff>0.2563720053782964</span>,
-    <span style=color:#ae81ff>3</span>: <span style=color:#ae81ff>0.3247784397051751</span>,
-    <span style=color:#ae81ff>4</span>: <span style=color:#ae81ff>0.3873943724175835</span>,
-    <span style=color:#ae81ff>5</span>: <span style=color:#ae81ff>0.4436898254016547</span>,
-    <span style=color:#ae81ff>10</span>: <span style=color:#ae81ff>0.6304384096730821</span>}}},
- <span style=color:#e6db74>&#39;features&#39;</span>: {<span style=color:#e6db74>&#39;dtypes&#39;</span>: {<span style=color:#e6db74>&#39;age&#39;</span>: float,
-   <span style=color:#e6db74>&#39;end_neighborhood&#39;</span>: str,
-   <span style=color:#e6db74>&#39;start_neighborhood&#39;</span>: str,
-   <span style=color:#e6db74>&#39;start_postal_code&#39;</span>: str,
-   <span style=color:#e6db74>&#39;start_sublocality&#39;</span>: str,
-   <span style=color:#e6db74>&#39;usertype&#39;</span>: str},
-  <span style=color:#e6db74>&#39;input&#39;</span>: [<span style=color:#e6db74>&#39;start_postal_code&#39;</span>,
-   <span style=color:#e6db74>&#39;start_sublocality&#39;</span>,
-   <span style=color:#e6db74>&#39;start_neighborhood&#39;</span>,
-   <span style=color:#e6db74>&#39;start_day&#39;</span>,
-   <span style=color:#e6db74>&#39;start_hour&#39;</span>,
-   <span style=color:#e6db74>&#39;age&#39;</span>,
-   <span style=color:#e6db74>&#39;gender&#39;</span>,
-   <span style=color:#e6db74>&#39;usertype&#39;</span>],
-  <span style=color:#e6db74>&#39;output_label&#39;</span>: <span style=color:#e6db74>&#39;end_neighborhood&#39;</span>},
- <span style=color:#e6db74>&#39;label_encoders&#39;</span>: {<span style=color:#e6db74>&#39;age&#39;</span>: LabelEncoder(),
-  <span style=color:#e6db74>&#39;end_neighborhood&#39;</span>: LabelEncoder(),
-  <span style=color:#e6db74>&#39;start_neighborhood&#39;</span>: LabelEncoder(),
-  <span style=color:#e6db74>&#39;start_postal_code&#39;</span>: LabelEncoder(),
-  <span style=color:#e6db74>&#39;start_sublocality&#39;</span>: LabelEncoder(),
-  <span style=color:#e6db74>&#39;usertype&#39;</span>: LabelEncoder()},
- <span style=color:#e6db74>&#39;model_id&#39;</span>: <span style=color:#e6db74>&#39;tree-foo&#39;</span>,
- <span style=color:#e6db74>&#39;test_metadata&#39;</span>: {<span style=color:#e6db74>&#39;testset_fn&#39;</span>: <span style=color:#e6db74>&#39;/opt/ml/input/data/testing/201602-citibike-tripdata.csv&#39;</span>},
- <span style=color:#e6db74>&#39;timestamp&#39;</span>: <span style=color:#e6db74>&#39;2018-12-04T210259ZUTC&#39;</span>,
- <span style=color:#e6db74>&#39;train_metadata&#39;</span>: {<span style=color:#e6db74>&#39;hyperparameters&#39;</span>: {<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;max_depth&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;5&#39;</span>,
-   <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;n_estimators&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;20&#39;</span>},
-  <span style=color:#e6db74>&#39;stations_df_fn&#39;</span>: <span style=color:#e6db74>&#39;/opt/ml/input/data/training/support/stations-2018-12-04-c.csv&#39;</span>,
-  <span style=color:#e6db74>&#39;trainset_fn&#39;</span>: <span style=color:#e6db74>&#39;/opt/ml/input/data/training/201601-citibike-tripdata.csv&#39;</span>}}
-
-</code></pre></div><ul>
-<li>I like how the AWS SageMaker setup allows for custom Docker image based models, only requiring a particular <code>csv</code> format as a data input for predictions and also requiring the Docker image implement a <code>train</code> command for running <em>training</em> jobs.</li>
-<li>I ended up adding a <code>setup.py</code> to my git repo to version what code a particular <code>Dockerfile</code> would use</li>
-<li>I made many iterations in trying to get the model on SageMaker up and running, so I liked the experience overall.</li>
-</ul>
-<h4 id=bad-data-strikes-again>Bad data strikes again</h4>
-<ul>
-<li>After quickly updating docking station data and retraining, I ended up with a model which was returning only one value as an output</li>
-<li>I took a deeper dive into my docking station data and found yet again that I had a lot of blank geolocation neighborhood and postal code data.</li>
-<li>This is the same problem I had to deal with in the past as well.</li>
-<li>I ended up finding while debugging, that the empty data was essentially pinning the majority of the training data as <code>neighborhood : 'nan'</code>, and so the predictions, per this confusion matrix, were basically all the same output.</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>ipdb<span style=color:#f92672>&gt;</span> pp skm<span style=color:#f92672>.</span>confusion_matrix(y_validation, y_predictions, classes)
-array([[    <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,   <span style=color:#ae81ff>174</span>],
-       [    <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,   <span style=color:#ae81ff>116</span>],
-       [    <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,   <span style=color:#ae81ff>130</span>],
-       [    <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,   <span style=color:#ae81ff>357</span>],
-       [    <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,   <span style=color:#ae81ff>364</span>],
-       [    <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,   <span style=color:#ae81ff>255</span>],
-       [    <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,   <span style=color:#ae81ff>862</span>],
-       [    <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>97977</span>]])
-ipdb<span style=color:#f92672>&gt;</span> 
-</code></pre></div><p><img src=https://user-images.githubusercontent.com/2048242/48679839-d5bc2600-eb62-11e8-8d99-b6bdbf82e6e0.png alt=image></p>
-<ul>
-<li>Of course one data problem always leads to another data problem. This time around, when I started updating my docking station geolocation data, I found that my payment information may have changed and so I was getting the following</li>
-</ul>
-<pre tabindex=0><code>ipdb&gt; pp geocoding_result
-{u'error_message': u'You have exceeded your daily request quota for this API. If you did not set a custom daily request quota, verify your project has an active billing account: http://g.co/dev/maps-no-account',
- u'results': [],
- u'status': u'OVER_QUERY_LIMIT'}
-</code></pre><ul>
-<li>And of course I also ended up stepping on my own foot as well. I found I had created an unfortinate <a href=https://github.com/namoopsoo/learn-citibike/commit/438e425482db1c105ae6a22b8248696d0f91dfef>git commit</a> where I accidentally undid the url-encoding and intersections with <code>&</code> are I think treated as query string parameters , , which ended up being a reason why some of my data was coming back as just the geolocation for a single street (<code>route</code>) and not an actual intersection.</li>
-</ul>
-<h4 id=future-improvements>Future Improvements</h4>
-<ul>
-<li>I am hoping to come back to this and continue to iterate the approach.</li>
-<li>In particular, I would like to continue to explore model degradation over time.</li>
-<li>And in discussing with a few colleagues, seasonality would also be a really good feature to consider. Time bucketing was explored to a limited extent, but the day of the week nor the month of the year was not explored.</li>
-<li>There may also be many other datasets which can be joined with this one to bolster the information available, including information about the weather or perhaps other demographic attributes available.</li>
-<li>A more thorough comparison of algorithms should also be considered.</li>
-</ul>
-<ul class=pa0>
-</ul>
-<div class="mt6 instapaper_ignoref">
-</div>
-</div>
-<aside class="w-30-l mt6-l">
-</aside>
-</article>
-</main>
-<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
-<div class="flex justify-between">
-<a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://michal.piekarczyk.xyz/>
-&copy; My blog 2022
-</a>
-<div>
-</div>
-</div>
-</footer>
-</body>
-</html>
+the Google geolocation data can get pretty hairy!</li></ul><p><em>The meat of the output can look like this, for the docking station &ldquo;1st Avenue & E 15th St&rdquo;</em></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>{
+</span></span><span style=display:flex><span><span style=color:#e6db74>&#39;raw_result&#39;</span>: [{<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;address_components&#39;</span>: [{<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;long_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;1st Avenue&#39;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;short_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;1st Avenue&#39;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;types&#39;</span>: [<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;route&#39;</span>]},
+</span></span><span style=display:flex><span>               {<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;long_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;Midtown&#39;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;short_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;Midtown&#39;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;types&#39;</span>: [<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;neighborhood&#39;</span>,
+</span></span><span style=display:flex><span>                           <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;political&#39;</span>]},
+</span></span><span style=display:flex><span>               {<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;long_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;Manhattan&#39;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;short_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;Manhattan&#39;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;types&#39;</span>: [<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;sublocality_level_1&#39;</span>,
+</span></span><span style=display:flex><span>                           <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;sublocality&#39;</span>,
+</span></span><span style=display:flex><span>                           <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;political&#39;</span>]},
+</span></span><span style=display:flex><span>               {<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;long_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;New York&#39;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;short_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;New York&#39;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;types&#39;</span>: [<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;locality&#39;</span>,
+</span></span><span style=display:flex><span>                           <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;political&#39;</span>]},
+</span></span><span style=display:flex><span>               {<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;long_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;New York County&#39;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;short_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;New York County&#39;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;types&#39;</span>: [<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;administrative_area_level_2&#39;</span>,
+</span></span><span style=display:flex><span>                           <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;political&#39;</span>]},
+</span></span><span style=display:flex><span>               {<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;long_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;New York&#39;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;short_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;NY&#39;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;types&#39;</span>: [<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;administrative_area_level_1&#39;</span>,
+</span></span><span style=display:flex><span>                           <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;political&#39;</span>]},
+</span></span><span style=display:flex><span>               {<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;long_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;United States&#39;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;short_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;US&#39;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;types&#39;</span>: [<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;country&#39;</span>,
+</span></span><span style=display:flex><span>                           <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;political&#39;</span>]},
+</span></span><span style=display:flex><span>               {<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;long_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;10003&#39;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;short_name&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;10003&#39;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;types&#39;</span>: [<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;postal_code&#39;</span>]}],
+</span></span><span style=display:flex><span>               <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;formatted_address&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;1st Avenue &amp; E 15th St, New York, NY 10003, USA&#39;</span>,
+</span></span><span style=display:flex><span>               }
+</span></span></code></pre></div><ul><li>Some of the challenges here were that the outputs from the API were not always consistent. The above output shows that the<br><code>'neighborhood'</code> is <code>'Midtown'</code>, but because there were 400+ stations, I did not initially notice that sometimes the <code>neighborhood</code>
+was missing or that the <code>zip code</code> was missing. That ended up throwing off my code a couple of times.</li><li>It turned out that the <em>street intersection</em> was not an ideal clean data input to the API. For instance <code>E 3 St & 1 Ave, NY</code> was understood by the API as just a street or a <code>route</code> as it is called, ( <a href=assets/E%203%20St%20&%201%20Ave,%20NY.md>raw output</a> ). Later on I ended up refactoring this to
+use the raw <em>latitude and longitude</em> .</li><li>However, I eventually noticed that often times the <em>docking stations</em> were on the edge of neighborhoods. So I literally had
+edge cases! The Neighborhood would come back blank and I ended up having to fill in a lot of that data by hand anyhow!</li></ul><img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2018-12-04 at 12.11.42 PM.png" width=50%><ul><li>Also the data calls were not free and I ended up building a small <em>caching layer</em> with <em>redis</em> .</li><li>The other reason I had done that was that I would often work out of cafes where the Wifi was spotty and I didn&rsquo;t want an internet
+connection to hold me back.</li><li>I think in hind-sight, I could have avoided some of the automation here and just decoupled the data fetch so that I wouldn&rsquo;t have to
+worry about that internet connection.</li><li>Of course every time I wanted to add additional data from Citibike, there would be new docking stations and I had to get back to making sure
+my station location data was correct, so that bad data did not impact predictions.</li></ul><h4 id=time-bucketing>Time bucketing</h4><p>In order to get better information from the source time, the source time was bucketted into 24 hour-buckets per day. That is since a ride starting at 1:04:23pm shouldn&rsquo;t be treated as being too different from a ride departing at 1:05:24pm . There is more value in intuitively clustering the rides.</p><h4 id=comparing-geolocation-granularities>Comparing Geolocation Granularities</h4><p>There are about 463 stations found in the dataset, 28 neighborhoods, representing 49 postal codes and 3 out of 5 boroughs,</p><p>So using the <code>(start time bucket, start station id, age, gender)</code> as the inputs and with <code>RandomizedLogisticRegression</code> as a classifier ,
+for about a months worth of trip data, I saw roughly the following comparison.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>{<span style=color:#e6db74>&#39;end station id&#39;</span>: OrderedDict([(<span style=color:#e6db74>&#39;training&#39;</span>,
+</span></span><span style=display:flex><span>               OrderedDict([(<span style=color:#e6db74>&#39;accuracy_score&#39;</span>, <span style=color:#ae81ff>0.041432771986099973</span>),
+</span></span><span style=display:flex><span>                            (<span style=color:#e6db74>&#39;f1_score&#39;</span>, <span style=color:#ae81ff>0.015138704086611844</span>),
+</span></span><span style=display:flex><span>                            (<span style=color:#e6db74>&#39;recall_score&#39;</span>, <span style=color:#ae81ff>0.041432771986099973</span>),
+</span></span><span style=display:flex><span>                            (<span style=color:#e6db74>&#39;precision_score&#39;</span>, <span style=color:#ae81ff>0.016942125433308568</span>)])),
+</span></span><span style=display:flex><span>              (<span style=color:#e6db74>&#39;holdout&#39;</span>,
+</span></span><span style=display:flex><span>               OrderedDict([(<span style=color:#e6db74>&#39;accuracy_score&#39;</span>, <span style=color:#ae81ff>0.031533939070016032</span>),
+</span></span><span style=display:flex><span>                            (<span style=color:#e6db74>&#39;f1_score&#39;</span>, <span style=color:#ae81ff>0.0093952628045424723</span>),
+</span></span><span style=display:flex><span>                            (<span style=color:#e6db74>&#39;recall_score&#39;</span>, <span style=color:#ae81ff>0.031533939070016032</span>),
+</span></span><span style=display:flex><span>                            (<span style=color:#e6db74>&#39;precision_score&#39;</span>, <span style=color:#ae81ff>0.0067157290264759353</span>)]))]),
+</span></span><span style=display:flex><span> <span style=color:#e6db74>&#39;end_neighborhood&#39;</span>: OrderedDict([(<span style=color:#e6db74>&#39;training&#39;</span>,
+</span></span><span style=display:flex><span>               OrderedDict([(<span style=color:#e6db74>&#39;accuracy_score&#39;</span>, <span style=color:#ae81ff>0.39047231270358307</span>),
+</span></span><span style=display:flex><span>                            (<span style=color:#e6db74>&#39;f1_score&#39;</span>, <span style=color:#ae81ff>0.28885663229134789</span>),
+</span></span><span style=display:flex><span>                            (<span style=color:#e6db74>&#39;recall_score&#39;</span>, <span style=color:#ae81ff>0.39047231270358307</span>),
+</span></span><span style=display:flex><span>                            (<span style=color:#e6db74>&#39;precision_score&#39;</span>, <span style=color:#ae81ff>0.26445041603375502</span>)])),
+</span></span><span style=display:flex><span>              (<span style=color:#e6db74>&#39;holdout&#39;</span>,
+</span></span><span style=display:flex><span>               OrderedDict([(<span style=color:#e6db74>&#39;accuracy_score&#39;</span>, <span style=color:#ae81ff>0.39630836047774159</span>),
+</span></span><span style=display:flex><span>                            (<span style=color:#e6db74>&#39;f1_score&#39;</span>, <span style=color:#ae81ff>0.2935527390151364</span>),
+</span></span><span style=display:flex><span>                            (<span style=color:#e6db74>&#39;recall_score&#39;</span>, <span style=color:#ae81ff>0.39630836047774159</span>),
+</span></span><span style=display:flex><span>                            (<span style=color:#e6db74>&#39;precision_score&#39;</span>, <span style=color:#ae81ff>0.26579390443173939</span>)]))]),
+</span></span><span style=display:flex><span> <span style=color:#e6db74>&#39;end_postal_code&#39;</span>: OrderedDict([(<span style=color:#e6db74>&#39;training&#39;</span>,
+</span></span><span style=display:flex><span>               OrderedDict([(<span style=color:#e6db74>&#39;accuracy_score&#39;</span>, <span style=color:#ae81ff>0.14129127122042506</span>),
+</span></span><span style=display:flex><span>                            (<span style=color:#e6db74>&#39;f1_score&#39;</span>, <span style=color:#ae81ff>0.068340173428106887</span>),
+</span></span><span style=display:flex><span>                            (<span style=color:#e6db74>&#39;recall_score&#39;</span>, <span style=color:#ae81ff>0.14129127122042506</span>),
+</span></span><span style=display:flex><span>                            (<span style=color:#e6db74>&#39;precision_score&#39;</span>, <span style=color:#ae81ff>0.068168259430770747</span>)])),
+</span></span><span style=display:flex><span>              (<span style=color:#e6db74>&#39;holdout&#39;</span>,
+</span></span><span style=display:flex><span>               OrderedDict([(<span style=color:#e6db74>&#39;accuracy_score&#39;</span>, <span style=color:#ae81ff>0.13361838588989844</span>),
+</span></span><span style=display:flex><span>                            (<span style=color:#e6db74>&#39;f1_score&#39;</span>, <span style=color:#ae81ff>0.064738931917963718</span>),
+</span></span><span style=display:flex><span>                            (<span style=color:#e6db74>&#39;recall_score&#39;</span>, <span style=color:#ae81ff>0.13361838588989844</span>),
+</span></span><span style=display:flex><span>                            (<span style=color:#e6db74>&#39;precision_score&#39;</span>, <span style=color:#ae81ff>0.067139580345228156</span>)]))]),
+</span></span><span style=display:flex><span> <span style=color:#e6db74>&#39;end_sublocality&#39;</span>: OrderedDict([(<span style=color:#e6db74>&#39;training&#39;</span>,
+</span></span><span style=display:flex><span>               OrderedDict([(<span style=color:#e6db74>&#39;accuracy_score&#39;</span>, <span style=color:#ae81ff>0.95354786589470852</span>),
+</span></span><span style=display:flex><span>                            (<span style=color:#e6db74>&#39;f1_score&#39;</span>, <span style=color:#ae81ff>0.95209028150037733</span>),
+</span></span><span style=display:flex><span>                            (<span style=color:#e6db74>&#39;recall_score&#39;</span>, <span style=color:#ae81ff>0.95354786589470852</span>),
+</span></span><span style=display:flex><span>                            (<span style=color:#e6db74>&#39;precision_score&#39;</span>, <span style=color:#ae81ff>0.95217920885515972</span>)])),
+</span></span><span style=display:flex><span>              (<span style=color:#e6db74>&#39;holdout&#39;</span>,
+</span></span><span style=display:flex><span>               OrderedDict([(<span style=color:#e6db74>&#39;accuracy_score&#39;</span>, <span style=color:#ae81ff>0.9493807215939688</span>),
+</span></span><span style=display:flex><span>                            (<span style=color:#e6db74>&#39;f1_score&#39;</span>, <span style=color:#ae81ff>0.94990282092170586</span>),
+</span></span><span style=display:flex><span>                            (<span style=color:#e6db74>&#39;recall_score&#39;</span>, <span style=color:#ae81ff>0.9493807215939688</span>),
+</span></span><span style=display:flex><span>                            (<span style=color:#e6db74>&#39;precision_score&#39;</span>, <span style=color:#ae81ff>0.95132373575480056</span>)]))])}
+</span></span></code></pre></div><ul><li>The rough accuracies for prediction, end station id (~3%), postal code (~13%), neighborhood (~40%), and borough (~95%), using the small dataset, shows the rough differences in what happens when you reduce the number of possible outputs.</li><li>Overall this gave me the motivation to focus on the <code>neighborhood</code> as a target to try to improve upon.</li><li>More in the <a href="https://render.githubusercontent.com/view/ipynb?commit=b2beb2af23f4f803a059161aeeb1a8e628a1bd4b&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6e616d6f6f70736f6f2f6c6561726e2d6369746962696b652f623262656232616632336634663830336130353931363161656562316138653632386131626434622f70726f6a6563742532307265706f72742e6970796e62&nwo=namoopsoo%2Flearn-citibike&path=project+report.ipynb&repository_id=60489657&repository_type=Repository#A-basic-learning-strategy-is-used">jupyter notebook</a></li></ul><h4 id=deeper-into-the-weeds>Deeper into the weeds</h4><p>I compared the <code>SGDClassifier</code> with the <code>LogisticRegression</code> classifier (which I believe just uses Gradient Descent, while the <code>SGDClassifier</code> classifier is also a Logistic Regression classifier, but it uses Stochastic Gradient Descent).</p><p>I also tried applying <a href=https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html>Standard Scaling</a> to my input data after <a href=http://scikit-learn.org/stable/modules/sgd.html#tips-on-practical-use>reading</a> that <code>scikit learn</code> &rsquo;s <code>SGDClassifier</code> implementation is sensitive unless the input data has a <code>mean=0</code> and <code>variance=1</code> . Indeed per the below this helped a little.</p><img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.12.54 PM.png" width=50%><p>I also applied a GridSearch around the alpha parameter to the SGDClassifier, but this did not help at least the way I tried it,</p><img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.30.52 PM.png" width=50%><p>I next started varying the training set size, given that a month worth of trip data had about a million rows, I went from <code>10k</code> to <code>1M</code>,</p><img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.39.07 PM.png" width=50%><p>But this didn&rsquo;t look great. I realized a problem I had was that I was not randomly sampling my input data. Since a month-size dataset is around 1.2 Million rows, then a 10,000 large set just ends up barely dipping into the first day. So choosing the dataset sizes has to be done, by random sampling.</p><p>After making the sampling randomized, the output below, feels like it has a better upward trend, but it is still not visible enough.</p><img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.45.13 PM.png" width=50%><p>I also realized I was being inconsistent in my assessment because I was not using a single holdout set to test. I was actually randomly generating a test set each time. That was really bad. So I created ten models on sizes 10,000 through 100,000 datasets, created from <code>09 and 10 2015</code>, and testing on a single holdout dataset, taken from <code>November 2015</code>. In this approach, the accuracy results are found using the same holdout set instead of using a differently derived test set each time.</p><img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 12.54.28 PM.png" width=50%><p>Although the results were still pretty flat, at least I can trust the consistency of my test method more now.</p><p>More in the jupyter <a href="https://render.githubusercontent.com/view/ipynb?commit=b2beb2af23f4f803a059161aeeb1a8e628a1bd4b&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6e616d6f6f70736f6f2f6c6561726e2d6369746962696b652f623262656232616632336634663830336130353931363161656562316138653632386131626434622f70726f6a6563742532307265706f72742e6970796e62&nwo=namoopsoo%2Flearn-citibike&path=project+report.ipynb&repository_id=60489657&repository_type=Repository#Also-comparing-with-additional-classifiers">notebook</a></p><h4 id=binarizing-the-inputs>Binarizing the inputs</h4><ul><li>Another important modeling change to try was to do a better of job of preparing the input data to better expose the stratification across citibike trips across the sources. To do this, instead of using a source station column and source neighborhood columns, the source neighborhood column was binarized using the sklearn OneHotEncoder, to a column for each of the neighborhoods in the surface area of the city.</li><li>The same experiment as earlier was conducted, comparing results across the default SGDClassifier and LogisticRegression classifiers and also across 100,000 to 1,000,000 size datasets used for a train/test split along with a 100,000 large holdout set.</li><li>These were created from just the single 2015-09 dataset (201509-citibike-tripdata.csv).</li><li>I found this to be very helpful. Here&rsquo;s a summary graphic,</li></ul><img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 1.00.56 PM.png" width=50%><p>More details <a href="https://render.githubusercontent.com/view/ipynb?commit=b2beb2af23f4f803a059161aeeb1a8e628a1bd4b&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6e616d6f6f70736f6f2f6c6561726e2d6369746962696b652f623262656232616632336634663830336130353931363161656562316138653632386131626434622f70726f6a6563742532307265706f72742e6970796e62&nwo=namoopsoo%2Flearn-citibike&path=project+report.ipynb&repository_id=60489657&repository_type=Repository#Binarizing-geolocation-start-data">in the notebook</a></p><h4 id=changing-my-metric-one-more-time>Changing my metric one more time</h4><ul><li>Given that there are about <code>28</code> neighborhoods covered by Citibike (at least in the data end of <code>2015</code>), a high accuracy is difficult to achieve especially because there are many output classes to choose from.</li><li>Another idea that was explored was to create a Rank K Accuracy, such that a prediction is correct when the correct class is found in the top highest K probabilities.</li></ul><img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 1.07.21 PM.png" width=50%><p>The overall reasoning I had here is two-fold. One, I think of the analogy of a search engine, where it is typically acceptable to show someone
+<em>five results</em> as opposed to the so called <em>&ldquo;I am feeling lucky&rdquo;</em> result. Of course not every machine learning use case will have the tolerance to take five results as opposed to five, but I think my particular problem of choice it might be fine. Or at least asking people would help to answer that question.</p><p>But I think the main reason I wanted to do this was to just better understand whether my classification approach was doing anything at all. So since, out of these <code>28</code> or so neighborhoods, if going from the <code>top 1</code> result to the <code>top 2</code> results, yields an additional <code>20 points</code> of accuracy, then I feel a little better about the result making sense.</p><img src="https://s3.amazonaws.com/my-blog-content/2016-12-18-citibike-project/Screen Shot 2019-05-21 at 1.07.47 PM.png" width=50%><p>More detail in the <a href="https://render.githubusercontent.com/view/ipynb?commit=b2beb2af23f4f803a059161aeeb1a8e628a1bd4b&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6e616d6f6f70736f6f2f6c6561726e2d6369746962696b652f623262656232616632336634663830336130353931363161656562316138653632386131626434622f70726f6a6563742532307265706f72742e6970796e62&nwo=namoopsoo%2Flearn-citibike&path=project+report.ipynb&repository_id=60489657&repository_type=Repository#Redefining-the-accuracy-score">notebook</a></p><h4 id=sagemaker-approach>SageMaker approach</h4><p>I wanted to test drive AWS SageMaker ,</p><ul><li>To see if I could more easily train models without relying on my laptop</li><li>And make my training environment more reproducible</li><li>And the prospect of hyper parameter tuning jobs seemed pretty neat too</li><li>And I wanated to see just how simple serving models would be</li><li>And in general I wanted to do all of these things to see if I could end up using this at my job (which I did).</li></ul><h4 id=what-ended-up-happening>What ended up happening</h4><ul><li>I managed to recreate my basic model training and evaluation setup using Docker and Sagemaker.</li><li>With SageMaker, Docker, your model is more compartmentalized and I found this was helpful when iterating model code and boiler plate code.</li><li>I also ended up serving the model on an endpoint.</li><li>This is still a sort of a back burner project I would like to come back to at some point,</li><li>but below I show one update I made to have a slightly better time debugging <a href=#changes-to-model-iterations>changes my model iterations</a></li><li>And I go over <a href=#bad-data-strikes-again>several more data roadblocks</a> I ran into.</li></ul><h4 id=changes-to-model-iterations>Changes to Model Iterations</h4><p>To make things slightly easier to understand, especially for debugging purposes, I now made models into json objects that are easier to display</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>
+</span></span><span style=display:flex><span>localfn <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;/Users/michal/Downloads/2018-12-07-update-model/2018-12-07-update-</span>
+</span></span><span style=display:flex><span>   <span style=color:#f92672>...</span>: model<span style=color:#f92672>/</span>tree<span style=color:#f92672>-</span>foo<span style=color:#f92672>-</span>bundle<span style=color:#f92672>-</span>pensive<span style=color:#f92672>-</span>swirles<span style=color:#ae81ff>.2018</span><span style=color:#f92672>-</span><span style=color:#ae81ff>12</span><span style=color:#f92672>-</span><span style=color:#ae81ff>04</span>T210259ZUTC<span style=color:#f92672>.</span>pkl<span style=color:#e6db74>&#39;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>In [<span style=color:#ae81ff>5</span>]: <span style=color:#66d9ef>with</span> open(localfn) <span style=color:#66d9ef>as</span> fd: bundle <span style=color:#f92672>=</span> cPickle<span style=color:#f92672>.</span>load(fd)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>In [<span style=color:#ae81ff>6</span>]: <span style=color:#f92672>from</span> bikelearn <span style=color:#f92672>import</span> classify <span style=color:#66d9ef>as</span> blc
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>In [<span style=color:#ae81ff>12</span>]: blc<span style=color:#f92672>.</span>label_decode(bundle[<span style=color:#e6db74>&#39;label_encoders&#39;</span>][<span style=color:#e6db74>&#39;end_neighborhood&#39;</span>], range(<span style=color:#ae81ff>40</span>))
+</span></span><span style=display:flex><span>Out[<span style=color:#ae81ff>12</span>]: 
+</span></span><span style=display:flex><span>array([<span style=color:#e6db74>&#39;-1&#39;</span>, <span style=color:#e6db74>&#39;Alphabet City&#39;</span>, <span style=color:#e6db74>&#39;Battery Park City&#39;</span>, <span style=color:#e6db74>&#39;Bedford-Stuyvesant&#39;</span>,
+</span></span><span style=display:flex><span>       <span style=color:#e6db74>&#39;Boerum Hill&#39;</span>, <span style=color:#e6db74>&#39;Bowery&#39;</span>, <span style=color:#e6db74>&#39;Broadway Triangle&#39;</span>, <span style=color:#e6db74>&#39;Brooklyn Heights&#39;</span>,
+</span></span><span style=display:flex><span>       <span style=color:#e6db74>&#39;Brooklyn Navy Yard&#39;</span>, <span style=color:#e6db74>&#39;Central Park&#39;</span>, <span style=color:#e6db74>&#39;Chelsea&#39;</span>, <span style=color:#e6db74>&#39;Chinatown&#39;</span>,
+</span></span><span style=display:flex><span>       <span style=color:#e6db74>&#39;Civic Center&#39;</span>, <span style=color:#e6db74>&#39;Clinton Hill&#39;</span>,
+</span></span><span style=display:flex><span>       <span style=color:#e6db74>&#39;Columbia Street Waterfront District&#39;</span>, <span style=color:#e6db74>&#39;Downtown Brooklyn&#39;</span>,
+</span></span><span style=display:flex><span>       <span style=color:#e6db74>&#39;Dumbo&#39;</span>, <span style=color:#e6db74>&#39;East Village&#39;</span>, <span style=color:#e6db74>&#39;Financial District&#39;</span>, <span style=color:#e6db74>&#39;Flatiron District&#39;</span>,
+</span></span><span style=display:flex><span>       <span style=color:#e6db74>&#39;Fort Greene&#39;</span>, <span style=color:#e6db74>&#39;Fulton Ferry District&#39;</span>, <span style=color:#e6db74>&#39;Garment District&#39;</span>,
+</span></span><span style=display:flex><span>       <span style=color:#e6db74>&#39;Gramercy Park&#39;</span>, <span style=color:#e6db74>&#39;Greenpoint&#39;</span>, <span style=color:#e6db74>&#39;Greenwich Village&#39;</span>,
+</span></span><span style=display:flex><span>       <span style=color:#e6db74>&#34;Hell&#39;s Kitchen&#34;</span>, <span style=color:#e6db74>&#39;Hudson Square&#39;</span>, <span style=color:#e6db74>&#39;Hunters Point&#39;</span>, <span style=color:#e6db74>&#39;Kips Bay&#39;</span>,
+</span></span><span style=display:flex><span>       <span style=color:#e6db74>&#39;Korea Town&#39;</span>, <span style=color:#e6db74>&#39;Lenox Hill&#39;</span>, <span style=color:#e6db74>&#39;Lincoln Square&#39;</span>, <span style=color:#e6db74>&#39;Little Italy&#39;</span>,
+</span></span><span style=display:flex><span>       <span style=color:#e6db74>&#39;Long Island City&#39;</span>, <span style=color:#e6db74>&#39;Lower East Side&#39;</span>, <span style=color:#e6db74>&#39;Lower Manhattan&#39;</span>,
+</span></span><span style=display:flex><span>       <span style=color:#e6db74>&#39;Meatpacking District&#39;</span>, <span style=color:#e6db74>&#39;Midtown&#39;</span>, <span style=color:#e6db74>&#39;Midtown East&#39;</span>], dtype<span style=color:#f92672>=</span>object)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>In [<span style=color:#ae81ff>19</span>]: len(bundle[<span style=color:#e6db74>&#39;label_encoders&#39;</span>][<span style=color:#e6db74>&#39;end_neighborhood&#39;</span>]<span style=color:#f92672>.</span>classes_)
+</span></span><span style=display:flex><span>Out[<span style=color:#ae81ff>19</span>]: <span style=color:#ae81ff>65</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>In [<span style=color:#ae81ff>42</span>]: bu<span style=color:#f92672>.</span>print_bundle(bundle)
+</span></span><span style=display:flex><span>Out[<span style=color:#ae81ff>42</span>]: 
+</span></span><span style=display:flex><span>{<span style=color:#e6db74>&#39;bundle_name&#39;</span>: <span style=color:#e6db74>&#39;tree-foo-bundle-pensive-swirles&#39;</span>,
+</span></span><span style=display:flex><span> <span style=color:#e6db74>&#39;clf&#39;</span>: RandomForestClassifier(bootstrap<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>, class_weight<span style=color:#f92672>=</span><span style=color:#66d9ef>None</span>, criterion<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;gini&#39;</span>,
+</span></span><span style=display:flex><span>             max_depth<span style=color:#f92672>=</span><span style=color:#ae81ff>5</span>, max_features<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;auto&#39;</span>, max_leaf_nodes<span style=color:#f92672>=</span><span style=color:#66d9ef>None</span>,
+</span></span><span style=display:flex><span>             min_impurity_decrease<span style=color:#f92672>=</span><span style=color:#ae81ff>0.0</span>, min_impurity_split<span style=color:#f92672>=</span><span style=color:#66d9ef>None</span>,
+</span></span><span style=display:flex><span>             min_samples_leaf<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>, min_samples_split<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>,
+</span></span><span style=display:flex><span>             min_weight_fraction_leaf<span style=color:#f92672>=</span><span style=color:#ae81ff>0.0</span>, n_estimators<span style=color:#f92672>=</span><span style=color:#ae81ff>20</span>, n_jobs<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>,
+</span></span><span style=display:flex><span>             oob_score<span style=color:#f92672>=</span><span style=color:#66d9ef>False</span>, random_state<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>, verbose<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>, warm_start<span style=color:#f92672>=</span><span style=color:#66d9ef>False</span>),
+</span></span><span style=display:flex><span> <span style=color:#e6db74>&#39;clf_info&#39;</span>: {<span style=color:#e6db74>&#39;feature_importances&#39;</span>: [(<span style=color:#e6db74>&#39;start_postal_code&#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>0.4118465753431595</span>),
+</span></span><span style=display:flex><span>   (<span style=color:#e6db74>&#39;start_sublocality&#39;</span>, <span style=color:#ae81ff>0.2228924462201325</span>),
+</span></span><span style=display:flex><span>   (<span style=color:#e6db74>&#39;start_neighborhood&#39;</span>, <span style=color:#ae81ff>0.28008403752725497</span>),
+</span></span><span style=display:flex><span>   (<span style=color:#e6db74>&#39;start_day&#39;</span>, <span style=color:#ae81ff>0.006151427471547376</span>),
+</span></span><span style=display:flex><span>   (<span style=color:#e6db74>&#39;start_hour&#39;</span>, <span style=color:#ae81ff>0.03971509075090292</span>),
+</span></span><span style=display:flex><span>   (<span style=color:#e6db74>&#39;age&#39;</span>, <span style=color:#ae81ff>0.0180403831546044</span>),
+</span></span><span style=display:flex><span>   (<span style=color:#e6db74>&#39;gender&#39;</span>, <span style=color:#ae81ff>0.008144851450140815</span>),
+</span></span><span style=display:flex><span>   (<span style=color:#e6db74>&#39;usertype&#39;</span>, <span style=color:#ae81ff>0.013125188082257624</span>)]},
+</span></span><span style=display:flex><span> <span style=color:#e6db74>&#39;evaluation&#39;</span>: {<span style=color:#e6db74>&#39;test_metrics&#39;</span>: {<span style=color:#e6db74>&#39;confusion_matrix&#39;</span>: <span style=color:#ae81ff>64</span>,
+</span></span><span style=display:flex><span>   <span style=color:#e6db74>&#39;f1_scores&#39;</span>: {<span style=color:#e6db74>&#39;macro&#39;</span>: <span style=color:#ae81ff>0.041605116043552354</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;micro&#39;</span>: <span style=color:#ae81ff>0.1599860211928701</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;weighted&#39;</span>: <span style=color:#ae81ff>0.06355337311627869</span>},
+</span></span><span style=display:flex><span>   <span style=color:#e6db74>&#39;rank_k_proba_scores&#39;</span>: {<span style=color:#ae81ff>1</span>: <span style=color:#ae81ff>0.1599860211928701</span>,
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>2</span>: <span style=color:#ae81ff>0.2536814721966162</span>,
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>3</span>: <span style=color:#ae81ff>0.3240640528912417</span>,
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>4</span>: <span style=color:#ae81ff>0.3873466833318772</span>,
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>5</span>: <span style=color:#ae81ff>0.443358194451626</span>,
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>10</span>: <span style=color:#ae81ff>0.629839760791229</span>}},
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#39;validation_metrics&#39;</span>: {<span style=color:#e6db74>&#39;confusion_matrix&#39;</span>: <span style=color:#ae81ff>64</span>,
+</span></span><span style=display:flex><span>   <span style=color:#e6db74>&#39;f1_scores&#39;</span>: {<span style=color:#e6db74>&#39;macro&#39;</span>: <span style=color:#ae81ff>0.04327900735885162</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;micro&#39;</span>: <span style=color:#ae81ff>0.16284068269032595</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;weighted&#39;</span>: <span style=color:#ae81ff>0.06549596580599053</span>},
+</span></span><span style=display:flex><span>   <span style=color:#e6db74>&#39;rank_k_proba_scores&#39;</span>: {<span style=color:#ae81ff>1</span>: <span style=color:#ae81ff>0.16284068269032595</span>,
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>2</span>: <span style=color:#ae81ff>0.2563720053782964</span>,
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>3</span>: <span style=color:#ae81ff>0.3247784397051751</span>,
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>4</span>: <span style=color:#ae81ff>0.3873943724175835</span>,
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>5</span>: <span style=color:#ae81ff>0.4436898254016547</span>,
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>10</span>: <span style=color:#ae81ff>0.6304384096730821</span>}}},
+</span></span><span style=display:flex><span> <span style=color:#e6db74>&#39;features&#39;</span>: {<span style=color:#e6db74>&#39;dtypes&#39;</span>: {<span style=color:#e6db74>&#39;age&#39;</span>: float,
+</span></span><span style=display:flex><span>   <span style=color:#e6db74>&#39;end_neighborhood&#39;</span>: str,
+</span></span><span style=display:flex><span>   <span style=color:#e6db74>&#39;start_neighborhood&#39;</span>: str,
+</span></span><span style=display:flex><span>   <span style=color:#e6db74>&#39;start_postal_code&#39;</span>: str,
+</span></span><span style=display:flex><span>   <span style=color:#e6db74>&#39;start_sublocality&#39;</span>: str,
+</span></span><span style=display:flex><span>   <span style=color:#e6db74>&#39;usertype&#39;</span>: str},
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#39;input&#39;</span>: [<span style=color:#e6db74>&#39;start_postal_code&#39;</span>,
+</span></span><span style=display:flex><span>   <span style=color:#e6db74>&#39;start_sublocality&#39;</span>,
+</span></span><span style=display:flex><span>   <span style=color:#e6db74>&#39;start_neighborhood&#39;</span>,
+</span></span><span style=display:flex><span>   <span style=color:#e6db74>&#39;start_day&#39;</span>,
+</span></span><span style=display:flex><span>   <span style=color:#e6db74>&#39;start_hour&#39;</span>,
+</span></span><span style=display:flex><span>   <span style=color:#e6db74>&#39;age&#39;</span>,
+</span></span><span style=display:flex><span>   <span style=color:#e6db74>&#39;gender&#39;</span>,
+</span></span><span style=display:flex><span>   <span style=color:#e6db74>&#39;usertype&#39;</span>],
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#39;output_label&#39;</span>: <span style=color:#e6db74>&#39;end_neighborhood&#39;</span>},
+</span></span><span style=display:flex><span> <span style=color:#e6db74>&#39;label_encoders&#39;</span>: {<span style=color:#e6db74>&#39;age&#39;</span>: LabelEncoder(),
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#39;end_neighborhood&#39;</span>: LabelEncoder(),
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#39;start_neighborhood&#39;</span>: LabelEncoder(),
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#39;start_postal_code&#39;</span>: LabelEncoder(),
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#39;start_sublocality&#39;</span>: LabelEncoder(),
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#39;usertype&#39;</span>: LabelEncoder()},
+</span></span><span style=display:flex><span> <span style=color:#e6db74>&#39;model_id&#39;</span>: <span style=color:#e6db74>&#39;tree-foo&#39;</span>,
+</span></span><span style=display:flex><span> <span style=color:#e6db74>&#39;test_metadata&#39;</span>: {<span style=color:#e6db74>&#39;testset_fn&#39;</span>: <span style=color:#e6db74>&#39;/opt/ml/input/data/testing/201602-citibike-tripdata.csv&#39;</span>},
+</span></span><span style=display:flex><span> <span style=color:#e6db74>&#39;timestamp&#39;</span>: <span style=color:#e6db74>&#39;2018-12-04T210259ZUTC&#39;</span>,
+</span></span><span style=display:flex><span> <span style=color:#e6db74>&#39;train_metadata&#39;</span>: {<span style=color:#e6db74>&#39;hyperparameters&#39;</span>: {<span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;max_depth&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;5&#39;</span>,
+</span></span><span style=display:flex><span>   <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;n_estimators&#39;</span>: <span style=color:#e6db74>u</span><span style=color:#e6db74>&#39;20&#39;</span>},
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#39;stations_df_fn&#39;</span>: <span style=color:#e6db74>&#39;/opt/ml/input/data/training/support/stations-2018-12-04-c.csv&#39;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#39;trainset_fn&#39;</span>: <span style=color:#e6db74>&#39;/opt/ml/input/data/training/201601-citibike-tripdata.csv&#39;</span>}}
+</span></span></code></pre></div><ul><li>I like how the AWS SageMaker setup allows for custom Docker image based models, only requiring a particular <code>csv</code> format as a data input for predictions and also requiring the Docker image implement a <code>train</code> command for running <em>training</em> jobs.</li><li>I ended up adding a <code>setup.py</code> to my git repo to version what code a particular <code>Dockerfile</code> would use</li><li>I made many iterations in trying to get the model on SageMaker up and running, so I liked the experience overall.</li></ul><h4 id=bad-data-strikes-again>Bad data strikes again</h4><ul><li>After quickly updating docking station data and retraining, I ended up with a model which was returning only one value as an output</li><li>I took a deeper dive into my docking station data and found yet again that I had a lot of blank geolocation neighborhood and postal code data.</li><li>This is the same problem I had to deal with in the past as well.</li><li>I ended up finding while debugging, that the empty data was essentially pinning the majority of the training data as <code>neighborhood : 'nan'</code>, and so the predictions, per this confusion matrix, were basically all the same output.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>ipdb<span style=color:#f92672>&gt;</span> pp skm<span style=color:#f92672>.</span>confusion_matrix(y_validation, y_predictions, classes)
+</span></span><span style=display:flex><span>array([[    <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,   <span style=color:#ae81ff>174</span>],
+</span></span><span style=display:flex><span>       [    <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,   <span style=color:#ae81ff>116</span>],
+</span></span><span style=display:flex><span>       [    <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,   <span style=color:#ae81ff>130</span>],
+</span></span><span style=display:flex><span>       [    <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,   <span style=color:#ae81ff>357</span>],
+</span></span><span style=display:flex><span>       [    <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,   <span style=color:#ae81ff>364</span>],
+</span></span><span style=display:flex><span>       [    <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,   <span style=color:#ae81ff>255</span>],
+</span></span><span style=display:flex><span>       [    <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,   <span style=color:#ae81ff>862</span>],
+</span></span><span style=display:flex><span>       [    <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>,     <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>97977</span>]])
+</span></span><span style=display:flex><span>ipdb<span style=color:#f92672>&gt;</span> 
+</span></span></code></pre></div><p><img src=https://user-images.githubusercontent.com/2048242/48679839-d5bc2600-eb62-11e8-8d99-b6bdbf82e6e0.png alt=image></p><ul><li>Of course one data problem always leads to another data problem. This time around, when I started updating my docking station geolocation data, I found that my payment information may have changed and so I was getting the following</li></ul><pre tabindex=0><code>ipdb&gt; pp geocoding_result
+{u&#39;error_message&#39;: u&#39;You have exceeded your daily request quota for this API. If you did not set a custom daily request quota, verify your project has an active billing account: http://g.co/dev/maps-no-account&#39;,
+ u&#39;results&#39;: [],
+ u&#39;status&#39;: u&#39;OVER_QUERY_LIMIT&#39;}
+</code></pre><ul><li>And of course I also ended up stepping on my own foot as well. I found I had created an unfortinate <a href=https://github.com/namoopsoo/learn-citibike/commit/438e425482db1c105ae6a22b8248696d0f91dfef>git commit</a> where I accidentally undid the url-encoding and intersections with <code>&</code> are I think treated as query string parameters , , which ended up being a reason why some of my data was coming back as just the geolocation for a single street (<code>route</code>) and not an actual intersection.</li></ul><h4 id=future-improvements>Future Improvements</h4><ul><li>I am hoping to come back to this and continue to iterate the approach.</li><li>In particular, I would like to continue to explore model degradation over time.</li><li>And in discussing with a few colleagues, seasonality would also be a really good feature to consider. Time bucketing was explored to a limited extent, but the day of the week nor the month of the year was not explored.</li><li>There may also be many other datasets which can be joined with this one to bolster the information available, including information about the weather or perhaps other demographic attributes available.</li><li>A more thorough comparison of algorithms should also be considered.</li></ul><ul class=pa0></ul><div class="mt6 instapaper_ignoref"></div></div><aside class="w-30-l mt6-l"></aside></article></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo><div class="flex justify-between"><a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://michal.piekarczyk.xyz/>&copy; My blog 2022</a><div></div></div></footer></body></html>

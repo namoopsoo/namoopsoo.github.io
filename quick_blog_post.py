@@ -1,6 +1,8 @@
 import argparse
 import datetime
+import frontmatter
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -80,12 +82,14 @@ def write_post_file(path, content, append):
 
 
 def make_image_html(s3fn_vec):
-    deploy_bucket = os.getenv('S3_DEPLOY_BUCKET')
     return '\n'.join([
-        (f'<img src="https://s3.amazonaws.com'
-         f'/{deploy_bucket}/{x}" width="50%">')
-
+        (f'<img src="{make_s3_image_url(x)}" width="50%">')
         for x in s3fn_vec])
+
+
+def make_s3_image_url(loc):
+    deploy_bucket = os.getenv("S3_DEPLOY_BUCKET")
+    return f"https://s3.amazonaws.com/{deploy_bucket}/{loc}"
 
 
 def upload_images_s3(images, prefix, dry_run=False):
@@ -113,7 +117,7 @@ def check_env_vars():
     deploy_bucket = os.getenv('S3_DEPLOY_BUCKET')
     assert deploy_bucket
 
-def convert_local_images_to_s3_assets(content_file_path, absolute_asset_dir):
+def convert_local_images_to_s3_assets(content_file_path, absolute_asset_dir, replace=True):
     """
     Args:
         content_file: the html or md file
@@ -121,22 +125,52 @@ def convert_local_images_to_s3_assets(content_file_path, absolute_asset_dir):
             to convert its relative path to find the image
     """
     output_lines = []
-    lines = Path(content_file_path).read_text().split()
+    lines = Path(content_file_path).read_text().split("\n")
     asset_dir = Path(absolute_asset_dir)
     images = []
 
     # first pass
     for line in lines:
         match = re.search(r"<img\s+src=\"([^\"]+)\"", line)
-        relative_path = match.groups()[0]
-        absolute_path = asset_dir
-        local_path = Path("assets/2022-08-28T012206_1661649829702_0.png")
-        image_path = asset_dir / local_path
-        assert image_path.exists()
-        images.append(image_path)
+        if match:
+            relative_path = match.groups()[0]
+            assert " " not in relative_path, relative_path
+            image_path = asset_dir / relative_path
+            assert image_path.exists(), image_path
+            images.append(image_path)
 
     print("Ok cool now we know all the images exist. Going to upload,", 
             [x.name for x in images])
+
+
+    post = frontmatter.loads(Path(content_file_path).read_text())
+    date, title = post.to_dict()["date"], post.to_dict()["title"]
+
+    prefix = make_prefix(date=date, title=title)
+    s3fn_vec = upload_images_s3(images, prefix, dry_run=False)
+
+    print(s3fn_vec)
+    mapping = {k: make_s3_image_url(k) for k in s}
+    ...
+
+    # second pass
+    for line in lines:
+        match = re.search(r"<img\s+src=\"([^\"]+)\"", line)
+        if match:
+            relative_path = Path(match.groups()[0])
+            assert " " not in str(relative_path), relative_path
+            image_path = asset_dir / relative_path
+            assert image_path.exists(), image_path
+            images.append(image_path)
+
+            updated_line = line.replace(
+                relative_path,
+                make_s3_image_url(str(Path(prefix) / relative_path.name))
+            )
+            output_lines.append(updated_line)
+        else:
+            output_lines.append(line)
+
 
 
 def do():
@@ -189,5 +223,6 @@ def do():
                         content=content,
                         append=append)
     
-    
-do()
+
+if __name__ == "__main__":    
+    do()

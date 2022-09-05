@@ -2,6 +2,7 @@ import argparse
 import datetime
 import os
 import sys
+from pathlib import Path
 
 import s3utils as fs3
 
@@ -111,6 +112,31 @@ def make_prefix(date, title):
 def check_env_vars():
     deploy_bucket = os.getenv('S3_DEPLOY_BUCKET')
     assert deploy_bucket
+
+def convert_local_images_to_s3_assets(content_file_path, absolute_asset_dir):
+    """
+    Args:
+        content_file: the html or md file
+        absolute_asset_dir: prepend to what is in the <img src=""> right now,
+            to convert its relative path to find the image
+    """
+    output_lines = []
+    lines = Path(content_file_path).read_text().split()
+    asset_dir = Path(absolute_asset_dir)
+    images = []
+
+    # first pass
+    for line in lines:
+        match = re.search(r"<img\s+src=\"([^\"]+)\"", line)
+        relative_path = match.groups()[0]
+        absolute_path = asset_dir
+        local_path = Path("assets/2022-08-28T012206_1661649829702_0.png")
+        image_path = asset_dir / local_path
+        assert image_path.exists()
+        images.append(image_path)
+
+    print("Ok cool now we know all the images exist. Going to upload,", 
+            [x.name for x in images])
 
 
 def do():

@@ -131,10 +131,16 @@ def convert_local_images_to_s3_assets(content_file_path, absolute_asset_dir, rep
 
     # first pass
     for line in lines:
-        match = re.search(r"<img\s+src=\"([^\"]+)\"", line)
-        if match:
-            relative_path = match.groups()[0]
-            assert " " not in relative_path, relative_path
+        match_img_src = re.search(r"<img\s+src=\"([^\"]+)\"", line)
+        match_img_md = re.search(r"!\[[^\[\]]+\]\(([^\(\)]+)\)", line)
+        if match_img_src:
+            relative_path = Path(match_img_src.groups()[0])
+        elif match_img_md:
+            relative_path = Path(match_img_md.groups()[0])
+        else:
+            relative_path = ""
+        if relative_path:
+            assert " " not in str(relative_path), relative_path
             image_path = asset_dir / relative_path
             assert image_path.exists(), image_path
             images.append(image_path)
@@ -143,7 +149,7 @@ def convert_local_images_to_s3_assets(content_file_path, absolute_asset_dir, rep
             [x.name for x in images])
 
     post = frontmatter.loads(Path(content_file_path).read_text())
-    date, title = post.to_dict()["date"], post.to_dict()["title"]
+    date, title = str(post.to_dict()["date"]), post.to_dict()["title"]
 
     prefix = make_prefix(date=date, title=title)
     s3fn_vec = upload_images_s3(images, prefix, dry_run=False)
@@ -155,10 +161,15 @@ def convert_local_images_to_s3_assets(content_file_path, absolute_asset_dir, rep
 
     # second pass
     for line in lines:
-        match = re.search(r"<img\s+src=\"([^\"]+)\"", line)
-        if match:
-            relative_path = Path(match.groups()[0])
-            assert " " not in str(relative_path), relative_path
+        match_img_src = re.search(r"<img\s+src=\"([^\"]+)\"", line)
+        match_img_md = re.search(r"!\[[^\[\]]+\]\(([^\(\)]+)\)", line)
+        if match_img_src:
+            relative_path = Path(match_img_src.groups()[0])
+        elif match_img_md:
+            relative_path = Path(match_img_md.groups()[0])
+        else:
+            relative_path = ""
+        if relative_path:
             image_path = asset_dir / relative_path
             assert image_path.exists(), image_path
             # images.append(image_path)

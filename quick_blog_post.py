@@ -142,16 +142,16 @@ def convert_local_images_to_s3_assets(content_file_path, absolute_asset_dir, rep
     print("Ok cool now we know all the images exist. Going to upload,", 
             [x.name for x in images])
 
-
     post = frontmatter.loads(Path(content_file_path).read_text())
     date, title = post.to_dict()["date"], post.to_dict()["title"]
 
     prefix = make_prefix(date=date, title=title)
     s3fn_vec = upload_images_s3(images, prefix, dry_run=False)
-
     print(s3fn_vec)
-    mapping = {k: make_s3_image_url(k) for k in s}
-    ...
+
+    # mapping = {k: make_s3_image_url(k) for k in s}
+
+    print("Pass two now")
 
     # second pass
     for line in lines:
@@ -161,16 +161,21 @@ def convert_local_images_to_s3_assets(content_file_path, absolute_asset_dir, rep
             assert " " not in str(relative_path), relative_path
             image_path = asset_dir / relative_path
             assert image_path.exists(), image_path
-            images.append(image_path)
+            # images.append(image_path)
 
             updated_line = line.replace(
-                relative_path,
+                str(relative_path),
                 make_s3_image_url(str(Path(prefix) / relative_path.name))
             )
+            if line == updated_line:
+                print("Hmm, line and updated_line are both ", line, ", that is weird")
             output_lines.append(updated_line)
         else:
             output_lines.append(line)
-
+    if replace:
+        out = Path(content_file_path).write_text("\n".join(output_lines))
+        print("write out", out)
+        
 
 
 def do():

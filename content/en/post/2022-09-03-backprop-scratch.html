@@ -1,0 +1,88 @@
+---
+title: "Backprop and SGD From Scratch Part 4"
+date: "2022-09-03"
+---
+<!-- directives: [] -->
+<div id="content">
+  <ul>
+    <li></li>
+    <li><a class="tag">[[my back prop SGD from scratch 2022-Aug]]</a>
+      <ul>
+        <li>16:38 why no learning going on
+          <ul>
+            <li>hmm look at this network 
+              <pre><code data-lang="python" class="python">		  import network as n
+		  import dataset
+		  import plot
+		  X, Y = dataset.build_dataset_inside_outside_circle(0.5)
+		  
+		  model = n.initialize_model({&quot;learning_rate&quot;: 0.01})
+		  (
+		    loss_vec, model, artifacts, X_validation, Y_validation, Y_prob
+		  )  = n.train_network(X, Y, model)
+
+</code></pre>
+
+              <p>		  
+                <br />
+		  <img src="https://s3.amazonaws.com/my-blog-content/2022/2022-09-18-Backprop-and-SGD-From-Scratch-Part-4/2022-09-03T204358_1662261891846_0.png" title="2022-09-03T204358.png" />
+                <br />
+</p>
+            </li>
+            <li>17:02 wondering if I can inspect the gradient, to see if it is pointing where it should</li>
+            <li>23:02  so for a random weight initialized network, curious at least here the response should be nonlinear right?
+              <ul>
+                <li>hmm 
+                  <pre><code data-lang="python" class="python">			  model = n.initialize_model({&quot;learning_rate&quot;: 0.01})
+			  
+			  # X_validation  # from earlier 
+			  Y_prob, total_loss = loss(model.layers, X_validation, Y_validation)
+			  
+			  plot.scatter_plot_by_z(X_validation, Y_prob)  # 2022-09-04T031837-scatter.png
+
+</code></pre>
+
+                  <p>			  
+                    <br />
+			  <img src="https://s3.amazonaws.com/my-blog-content/2022/2022-09-18-Backprop-and-SGD-From-Scratch-Part-4/2022-09-04T031837-scatter_1662261630595_0.png" title="2022-09-04T031837-scatter.png" />
+                    <br />
+</p>
+                </li>
+                <li>wow super weird but basically even for random weights we have only the linear separation, so that makes me think maybe even the basic feed forward might have some problem?</li>
+                <li>and the probability sharpness?
+                  <pre><code data-lang="python" class="python">			  from utils import utc_now, utc_ts
+			  out_loc = f&quot;{utc_ts(utc_now())}-hist.png&quot;
+			  plt.hist(Y_prob, bins=50)
+			  pylab.savefig(out_loc, bbox_inches=&apos;tight&apos;)  # 2022-09-04T033435-hist.png
+
+</code></pre>
+
+                  <p>			  
+                    <br />
+			  <img src="https://s3.amazonaws.com/my-blog-content/2022/2022-09-18-Backprop-and-SGD-From-Scratch-Part-4/2022-09-04T033435-hist_1662262649757_0.png" title="2022-09-04T033435-hist.png" />
+                    <br />
+</p>
+                </li>
+                <li>23:38 yea the probability output above is super sharp, for a completely random network. Hmm ok. Well nice separation but yea why is it just only doing linear separation right now and the random initial weights even not non-linear?</li>
+                <li></li>
+              </ul>
+            </li>
+            <li>also one side idea is I&apos;m not changing the bias at all. but that is unrelated to the above linear weirdness .
+              <ul>
+                <li></li>
+                <li>hm
+                  <ul>
+                    <li></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li></li>
+  </ul>
+</div>
+
+

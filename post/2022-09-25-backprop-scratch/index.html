@@ -1,0 +1,103 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>back prop from scratch 2022-09-25 | My blog</title><meta name=viewport content="width=device-width,minimum-scale=1"><meta name=description content="[[my back prop SGD from scratch 2022-Aug]] 13:35 yea so last time I had noticed , hey on a random initialization why was the y_prob 0.5 ? I had literally just initialized a new network and got this first example, ipdb> p x, y (array([10.31816265, -8.80044688]), 1) while running the ipdb debug mode, and inside of train_network() , ran --> 186 y_prob = feed_forward(x, model.layers, verbose=False) and got ipdb> p y_prob 0."><meta name=generator content="Hugo 0.104.2"><meta name=ROBOTS content="NOINDEX, NOFOLLOW"><link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css><meta property="og:title" content="back prop from scratch 2022-09-25"><meta property="og:description" content="[[my back prop SGD from scratch 2022-Aug]] 13:35 yea so last time I had noticed , hey on a random initialization why was the y_prob 0.5 ? I had literally just initialized a new network and got this first example, ipdb> p x, y (array([10.31816265, -8.80044688]), 1) while running the ipdb debug mode, and inside of train_network() , ran --> 186 y_prob = feed_forward(x, model.layers, verbose=False) and got ipdb> p y_prob 0."><meta property="og:type" content="article"><meta property="og:url" content="https://michal.piekarczyk.xyz/post/2022-09-25-backprop-scratch/"><meta property="article:section" content="post"><meta property="article:published_time" content="2022-09-25T00:00:00+00:00"><meta property="article:modified_time" content="2022-09-25T00:00:00+00:00"><meta property="og:site_name" content="My blog"><meta itemprop=name content="back prop from scratch 2022-09-25"><meta itemprop=description content="[[my back prop SGD from scratch 2022-Aug]] 13:35 yea so last time I had noticed , hey on a random initialization why was the y_prob 0.5 ? I had literally just initialized a new network and got this first example, ipdb> p x, y (array([10.31816265, -8.80044688]), 1) while running the ipdb debug mode, and inside of train_network() , ran --> 186 y_prob = feed_forward(x, model.layers, verbose=False) and got ipdb> p y_prob 0."><meta itemprop=datePublished content="2022-09-25T00:00:00+00:00"><meta itemprop=dateModified content="2022-09-25T00:00:00+00:00"><meta itemprop=wordCount content="683"><meta itemprop=keywords content><meta name=twitter:card content="summary"><meta name=twitter:title content="back prop from scratch 2022-09-25"><meta name=twitter:description content="[[my back prop SGD from scratch 2022-Aug]] 13:35 yea so last time I had noticed , hey on a random initialization why was the y_prob 0.5 ? I had literally just initialized a new network and got this first example, ipdb> p x, y (array([10.31816265, -8.80044688]), 1) while running the ipdb debug mode, and inside of train_network() , ran --> 186 y_prob = feed_forward(x, model.layers, verbose=False) and got ipdb> p y_prob 0."></head><body class="ma0 avenir bg-near-white"><header><div class=bg-black><nav class="pv3 ph3 ph4-ns" role=navigation><div class="flex-l justify-between items-center center"><a href=/ class="f3 fw2 hover-white no-underline white-90 dib">My blog</a><div class="flex-l items-center"><ul class="pl0 mr3"><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/about/ title="About page">About</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/handy/ title="Handy page">Handy</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/post/ title="Post page">Post</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/project/ title="Side Projects page">Side Projects</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/foo/ title="The Foos page">The Foos</a></li></ul></div></div></nav></div></header><main class=pb7 role=main><article class="flex-l flex-wrap justify-between mw8 center ph3"><header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked">POST</aside><div id=sharing class=mt3><a href="https://www.facebook.com/sharer.php?u=https://michal.piekarczyk.xyz/post/2022-09-25-backprop-scratch/" class="facebook no-underline" aria-label="share on Facebook"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765 50.32h6.744V33.998h4.499l.596-5.624h-5.095l.007-2.816c0-1.466.14-2.253 2.244-2.253h2.812V17.68h-4.5c-5.405.0-7.307 2.729-7.307 7.317v3.377h-3.369v5.625h3.369V50.32zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg></a><a href="https://twitter.com/share?url=https://michal.piekarczyk.xyz/post/2022-09-25-backprop-scratch/&text=back%20prop%20from%20scratch%202022-09-25" class="twitter no-underline" aria-label="share on Twitter"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https://michal.piekarczyk.xyz/post/2022-09-25-backprop-scratch/&title=back%20prop%20from%20scratch%202022-09-25" class="linkedin no-underline" aria-label="share on LinkedIn"><svg height="32" style="enable-background:new 0 0 65 65" viewBox="0 0 65 65" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M50.837 48.137V36.425c0-6.275-3.35-9.195-7.816-9.195-3.604.0-5.219 1.983-6.119 3.374V27.71h-6.79c.09 1.917.0 20.427.0 20.427h6.79V36.729c0-.609.044-1.219.224-1.655.49-1.22 1.607-2.483 3.482-2.483 2.458.0 3.44 1.873 3.44 4.618v10.929H50.837zM22.959 24.922c2.367.0 3.842-1.57 3.842-3.531-.044-2.003-1.475-3.528-3.797-3.528s-3.841 1.524-3.841 3.528c0 1.961 1.474 3.531 3.753 3.531H22.959zM34 64C17.432 64 4 50.568 4 34 4 17.431 17.432 4 34 4s30 13.431 30 30c0 16.568-13.432 30-30 30zM26.354 48.137V27.71h-6.789v20.427h6.789z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></a></div><h1 class="f1 athelas mt3 mb1">back prop from scratch 2022-09-25</h1><time class="f6 mv4 dib tracked" datetime=2022-09-25T00:00:00Z>September 25, 2022</time></header><div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div id=content><ul><li><a class=tag>[[my back prop SGD from scratch 2022-Aug]]</a><ul><li>13:35 yea so last time I had noticed , hey on a random initialization why was the <code>y_prob</code> <code>0.5</code> ?<ul><li>I had literally just initialized a new network and got this first example,<pre><code>			  ipdb&gt; p x, y
+			  (array([10.31816265, -8.80044688]), 1)
+
+</code></pre><p>while running the <code>ipdb</code> debug mode, and inside of <code>train_network()</code> , ran<br></p><pre><code data-lang=python class=python>			  --&gt; 186         y_prob = feed_forward(x, model.layers, verbose=False)
+
+</code></pre><p>and got<br></p><pre><code>			  ipdb&gt; p y_prob
+			  0.5
+
+</code></pre></li><li>Let me just use <code>joblib</code> to save this so I can just test it again. So I ran this inside of my ipdb,<pre><code data-lang=python class=python>			  import joblib
+			  joblib.dump(model, f&quot;{utc_ts(utc_now())}-model.joblib&quot;)
+			  # &apos;2022-09-25T174708-model.joblib&apos;
+
+</code></pre></li><li>13:57 And then inanother session ,<pre><code data-lang=python class=python>			  import joblib
+			  
+			  import ipdb
+			  import matplotlib.pyplot as plt
+			  import pylab
+			  from collections import Counter
+			  from utils import utc_now, utc_ts
+			  import network as n
+			  import dataset
+			  import plot
+			  import runner
+			  
+			  model = joblib.load(&quot;2022-09-25T174708-model.joblib&quot;)
+			  y_prob = n.feed_forward(x, model.layers, verbose=False)
+			  
+			  y_prob # Out[8]: 0.5
+
+</code></pre><p>ok nice, now that I got this reproduced, let me hunt for some more bugs. Maybe this is purely a coincidence?!????!<br></p></li><li>So at this moment for this particular network, the input has no effect basically ,<pre><code data-lang=python class=python>			  
+			  In [12]: [n.feed_forward(x, model.layers, verbose=False)
+			      ...: for x in [
+			      ...: [10.31816265, -8.80044688],
+			      ...: [1, 1],
+			      ...: [0, 0],
+			      ...: [1e4, -1e4]
+			      ...: ]]
+			  Out[12]: [0.5, 0.5, 0.5, 0.5]
+
+</code></pre></li><li>ok so currently, the final sum appears to always be negative and so the <code>relu(negative_num)</code> step at the end always produces a <code>0</code> and then after that I have a <a class=tag>sigmoid</a> so for <code>0</code> yea makes sense the output is the <code>0.5</code> .</li><li>but why is the input into that final relu always seeming to be negative then ?</li></ul></li><li>15:05 so I think I want to answer a side question , of hey if I create a bunch of random networks, will they all have this weirdness? If not then this might not be a problem .<ul><li>ok so ,<pre><code data-lang=python class=python>			  from tqdm import tqdm
+			  import numpy as np
+			  import network as n
+			  import dataset
+			  import plot
+			  import runner
+			  import ipdb
+			  import matplotlib.pyplot as plt
+			  import pylab
+			  from collections import Counter
+			  from utils import utc_now, utc_ts
+			  
+			  data = dataset.build_dataset_inside_outside_circle(0.5)
+			  parameters = {&quot;learning_rate&quot;: 0.01,
+			          &quot;steps&quot;: 100,
+			          &quot;log_loss_every_k_steps&quot;: 10
+			          }
+			  outputs = []
+			  x = np.array([10.31816265, -8.80044688])
+			  
+			  for _ in tqdm(range(10000)):
+			  	model = n.initialize_model(parameters)
+			  	outputs.append(n.feed_forward(x, model.layers, verbose=False))
+			      
+			  plt.hist(outputs, bins=50)
+			  out_loc = f&quot;{utc_ts(utc_now())}.png&quot;
+			  print(&quot;saving to&quot;, out_loc)
+			  pylab.savefig(out_loc, bbox_inches=&quot;tight&quot;)
+			  pylab.close()
+			  # saving to 2022-09-25T192657.png
+			  
+
+</code></pre><p><img src=https://s3.amazonaws.com/my-blog-content/2022/2022-09-25-back-prop-from-scratch-2022-09-25/2022-09-25T192657_1664134096390_0.png title=2022-09-25T192657.png><br></p></li><li>15:28 ok so false alarm from the sense that, the network is not always stuck at 0.5 .<ul><li></li><li>And the <code>0.5</code> is special only because this is the minimum possible when the step before the <a class=tag>sigmoid</a> happens to be a <a class=tag>relu</a> . <a class=tag>stories</a> heh.</li><li>But maybe does beg the question, hey my dataset output is either <code>0</code> or <code>1</code> so if my minimum is <code>0.5</code> , well that's not ideal haha!</li><li>So I need to for sure next either scale the output so the <code>[0.5, 1.0]</code> maps to <code>[0, 1.0]</code> or otherwise, just get rid of that <code>relu</code> all together since I can then allow for all values , mapping into that <a class=tag>sigmoid</a> , and that would produce the <code>[0, 1.0]</code> I need .</li><li></li></ul></li><li>17:38 ok so if I take out the final relu, I will also have to adjust the partial derivative calculations too,</li><li>18:19 ok so first I just updated the <code>feed_forward</code> , so then now on commit , <code>61465a5</code> , redoing the above mini test, we have ,<p><br></p><pre><code data-lang=python class=python>			  
+			  for _ in tqdm(range(10000)):
+			      model = n.initialize_model(parameters)
+			      outputs.append(n.feed_forward(x, model.layers, verbose=False))
+			      
+			  plt.hist(outputs, bins=50)
+			  out_loc = f&quot;{utc_ts(utc_now())}.png&quot;
+			  print(&quot;saving to&quot;, out_loc)
+			  pylab.savefig(out_loc, bbox_inches=&quot;tight&quot;)
+			  pylab.close()
+			  
+			  # saving to 2022-09-25T222204.png
+
+</code></pre><p><br><img src=https://s3.amazonaws.com/my-blog-content/2022/2022-09-25-back-prop-from-scratch-2022-09-25/2022-09-25T222204_1664144583213_0.png title=2022-09-25T222204.png><br></p></li><li>18:41 hmm ok so this is still kind of asymmetric but finally getting the values less than <code>0.5</code> so better than before.</li><li>Ok going to update the partial derivatives too then.</li><li>18:56 ok lets try this out on commit <code>ea46849</code> , having updated partial derivatives for the weights w13, w14 which are affected .<p><br></p><pre><code data-lang=python class=python>			  import network as n
+			  import dataset
+			  import plot
+			  import runner
+			  import ipdb
+			  import matplotlib.pyplot as plt
+			  import pylab
+			  from collections import Counter
+			  from utils import utc_now, utc_ts
+			  
+			  data = dataset.build_dataset_inside_outside_circle(0.5)
+			  parameters = {&quot;learning_rate&quot;: 0.01,
+			          &quot;steps&quot;: 50,
+			          &quot;log_loss_every_k_steps&quot;: 10
+			  
+			          }
+			  runner.train_and_analysis(data, parameters)
+			  
+</code></pre></li></ul></li></ul></li></ul></li></ul></div><ul class=pa0></ul><div class="mt6 instapaper_ignoref"></div></div><aside class="w-30-l mt6-l"></aside></article></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo><div class="flex justify-between"><a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://michal.piekarczyk.xyz/>&copy; My blog 2022</a><div></div></div></footer></body></html>

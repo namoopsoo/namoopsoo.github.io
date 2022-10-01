@@ -1,0 +1,197 @@
+---
+title: back prop from scratch 2022-09-25
+date: 2022-09-25
+---
+
+<!-- directives: [] -->
+<div id="content">
+  <ul>
+    <li><a class="tag">[[my back prop SGD from scratch 2022-Aug]]</a>
+      <ul>
+        <li>13:35 yea so last time I had noticed , hey on a random initialization why  was the <code>y_prob</code> <code>0.5</code> ?
+          <ul>
+            <li>I had literally just initialized a new network and got this  first example, 
+              <pre><code>			  ipdb&gt; p x, y
+			  (array([10.31816265, -8.80044688]), 1)
+
+</code></pre>
+
+              <p>			  while running the <code>ipdb</code> debug mode, and inside of <code>train_network()</code> , ran 
+                <br />
+</p>
+
+              <pre><code data-lang="python" class="python">			  --&gt; 186         y_prob = feed_forward(x, model.layers, verbose=False)
+
+</code></pre>
+
+              <p>			  and got 
+                <br />
+</p>
+
+              <pre><code>			  ipdb&gt; p y_prob
+			  0.5
+
+</code></pre>
+            </li>
+            <li>Let me just use <code>joblib</code> to save this so I can just test it again. So I ran this inside of my ipdb, 
+              <pre><code data-lang="python" class="python">			  import joblib
+			  joblib.dump(model, f&quot;{utc_ts(utc_now())}-model.joblib&quot;)
+			  # &apos;2022-09-25T174708-model.joblib&apos;
+
+</code></pre>
+</li>
+            <li>13:57 And then inanother session , 
+              <pre><code data-lang="python" class="python">			  import joblib
+			  
+			  import ipdb
+			  import matplotlib.pyplot as plt
+			  import pylab
+			  from collections import Counter
+			  from utils import utc_now, utc_ts
+			  import network as n
+			  import dataset
+			  import plot
+			  import runner
+			  
+			  model = joblib.load(&quot;2022-09-25T174708-model.joblib&quot;)
+			  y_prob = n.feed_forward(x, model.layers, verbose=False)
+			  
+			  y_prob # Out[8]: 0.5
+
+</code></pre>
+
+              <p>			  ok nice, now that I got this reproduced, let me hunt for some more bugs. Maybe this is purely a coincidence?!????!
+                <br />
+</p>
+            </li>
+            <li>So at this moment for this particular network, the input has no effect basically , 
+              <pre><code data-lang="python" class="python">			  
+			  In [12]: [n.feed_forward(x, model.layers, verbose=False)
+			      ...: for x in [
+			      ...: [10.31816265, -8.80044688],
+			      ...: [1, 1],
+			      ...: [0, 0],
+			      ...: [1e4, -1e4]
+			      ...: ]]
+			  Out[12]: [0.5, 0.5, 0.5, 0.5]
+
+</code></pre>
+</li>
+            <li>ok so currently, the final sum appears to always be negative and so the <code>relu(negative_num)</code> step at the end always produces a <code>0</code> and then after that I have a <a class="tag">sigmoid</a> so for <code>0</code> yea makes sense the output is the <code>0.5</code> .</li>
+            <li>but why is the input into that final relu always seeming to be negative then ?</li>
+          </ul>
+        </li>
+        <li>15:05 so I think I want to answer a side question , of hey if I create a bunch of random networks, will they all have this weirdness? If not then this might not be a problem .
+          <ul>
+            <li>ok so , 
+              <pre><code data-lang="python" class="python">			  from tqdm import tqdm
+			  import numpy as np
+			  import network as n
+			  import dataset
+			  import plot
+			  import runner
+			  import ipdb
+			  import matplotlib.pyplot as plt
+			  import pylab
+			  from collections import Counter
+			  from utils import utc_now, utc_ts
+			  
+			  data = dataset.build_dataset_inside_outside_circle(0.5)
+			  parameters = {&quot;learning_rate&quot;: 0.01,
+			          &quot;steps&quot;: 100,
+			          &quot;log_loss_every_k_steps&quot;: 10
+			          }
+			  outputs = []
+			  x = np.array([10.31816265, -8.80044688])
+			  
+			  for _ in tqdm(range(10000)):
+			  	model = n.initialize_model(parameters)
+			  	outputs.append(n.feed_forward(x, model.layers, verbose=False))
+			      
+			  plt.hist(outputs, bins=50)
+			  out_loc = f&quot;{utc_ts(utc_now())}.png&quot;
+			  print(&quot;saving to&quot;, out_loc)
+			  pylab.savefig(out_loc, bbox_inches=&quot;tight&quot;)
+			  pylab.close()
+			  # saving to 2022-09-25T192657.png
+			  
+
+</code></pre>
+
+              <p>			  <img src="https://s3.amazonaws.com/my-blog-content/2022/2022-09-25-back-prop-from-scratch-2022-09-25/2022-09-25T192657_1664134096390_0.png" title="2022-09-25T192657.png" />
+                <br />
+</p>
+            </li>
+            <li>15:28 ok so false alarm from the sense that, the network is not always stuck at 0.5 .
+              <ul>
+                <li></li>
+                <li>And the <code>0.5</code> is special only because this is the minimum possible when the step before the <a class="tag">sigmoid</a> happens to be a <a class="tag">relu</a> . <a class="tag">stories</a> heh.</li>
+                <li>But maybe does beg the question, hey my dataset output is either <code>0</code> or <code>1</code> so if my minimum is <code>0.5</code> , well that&apos;s not ideal haha!</li>
+                <li>So I need to for sure next either scale the output so the <code>[0.5, 1.0]</code> maps to <code>[0, 1.0]</code> or otherwise, just get rid of that <code>relu</code> all together since I can then allow for all values , mapping into that <a class="tag">sigmoid</a> , and that would produce the <code>[0, 1.0]</code> I need .</li>
+                <li></li>
+              </ul>
+            </li>
+            <li>17:38 ok so if I take out the final relu, I will also have to adjust the partial derivative calculations too,</li>
+            <li>18:19 ok so first I just updated the <code>feed_forward</code> , so then now on commit , <code>61465a5</code> , redoing the above mini test, we have , 
+              <p>			  
+                <br />
+</p>
+
+              <pre><code data-lang="python" class="python">			  
+			  for _ in tqdm(range(10000)):
+			      model = n.initialize_model(parameters)
+			      outputs.append(n.feed_forward(x, model.layers, verbose=False))
+			      
+			  plt.hist(outputs, bins=50)
+			  out_loc = f&quot;{utc_ts(utc_now())}.png&quot;
+			  print(&quot;saving to&quot;, out_loc)
+			  pylab.savefig(out_loc, bbox_inches=&quot;tight&quot;)
+			  pylab.close()
+			  
+			  # saving to 2022-09-25T222204.png
+
+</code></pre>
+
+              <p>			  
+                <br />
+			  <img src="https://s3.amazonaws.com/my-blog-content/2022/2022-09-25-back-prop-from-scratch-2022-09-25/2022-09-25T222204_1664144583213_0.png" title="2022-09-25T222204.png" />
+                <br />
+</p>
+            </li>
+            <li>18:41 hmm ok so this is still kind of asymmetric but finally getting the values less than <code>0.5</code> so better than before.</li>
+            <li>Ok going to update the partial derivatives too then.</li>
+            <li>18:56 ok lets try this out on commit <code>ea46849</code> , having updated partial derivatives for the weights w13, w14 which are affected . 
+              <p>			  
+                <br />
+</p>
+
+              <pre><code data-lang="python" class="python">			  import network as n
+			  import dataset
+			  import plot
+			  import runner
+			  import ipdb
+			  import matplotlib.pyplot as plt
+			  import pylab
+			  from collections import Counter
+			  from utils import utc_now, utc_ts
+			  
+			  data = dataset.build_dataset_inside_outside_circle(0.5)
+			  parameters = {&quot;learning_rate&quot;: 0.01,
+			          &quot;steps&quot;: 50,
+			          &quot;log_loss_every_k_steps&quot;: 10
+			  
+			          }
+			  runner.train_and_analysis(data, parameters)
+			  
+</code></pre>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+

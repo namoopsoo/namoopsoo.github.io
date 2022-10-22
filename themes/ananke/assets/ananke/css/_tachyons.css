@@ -86,6 +86,10 @@
 @import 'tachyons/src/_colors';
 @import 'tachyons/src/_media-queries';
 
+/* Max Width Percentages */
+.mw-100 { max-width: 100%; }
+
+
 /* Debugging */
 /* @import 'tachyons/src/_debug-children';
 @import 'tachyons/src/_debug-grid'; */

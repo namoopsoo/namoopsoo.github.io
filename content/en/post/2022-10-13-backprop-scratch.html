@@ -1,0 +1,100 @@
+---
+title: Backprop and SGD From Scratch 2022-10-13 
+date: 2022-10-13
+---
+
+<!-- directives: [] -->
+<div id="content">
+  <ul>
+    <li><a class="tag">[[my backprop SGD from scratch 2022-Aug]]</a>
+      <ul>
+        <li>13:16 so per yesterday, wondering why is it that the network I have is producing basically the same  result , around <code>0.48</code> for any inputs. And that&apos;s true both in my original <a class="tag">matrix-multiplication</a> code and manually constructed too.
+          <ul>
+            <li>So lets say for a simple network, <code>y_prob = sigmoid(x1*w1 + x2*w2)</code> where <code>x1</code> and <code>x2</code> are also outputs of sigmoids, in <code>(0, 1)</code> , what are possible values for <code>y_prob</code> ?
+              <p>			  
+                <br />
+</p>
+
+              <pre><code data-lang="python" class="python">			  import numpy as np 
+			  from itertools import product
+			  import pylab
+			  import matplotlib.pyplot as plt
+			  
+			  from utils import utc_now, utc_ts
+			  import plot
+			  
+			  side = 5
+			  vec = []
+			  for i in range(side*side):
+			  	w1, w2 = -0.5 + np.random.random((2, ))
+			  	vec.append(
+			        	[
+			  		    [
+			  			  	n.logit_to_prob(x1*w1 + x2*w2) 
+			  				for x1, x2 in product(np.arange(0, 1, .01), np.arange(0, 1, .01))
+			              ],
+			      		f&quot;w1={round(w1, 2)}, w2={round(w2, 2)}&quot;	
+			      	])
+			      
+			  out_loc = plot.plot_grid(vec, side=5, title=&quot;y_prob-outputs&quot;)
+			      
+			  
+			  # saving to 2022-10-13T185339-y_prob-outputs.png
+
+</code></pre>
+
+              <p>			  <img src="https://s3.amazonaws.com/my-blog-content/2022/2022-10-13-Backprop-and-SGD-From-Scratch-2022-10-13/2022-10-13T185339-y_prob-outputs_1665687334740_0.png" title="2022-10-13T185339-y_prob-outputs.png" />
+                <br />
+</p>
+            </li>
+            <li>ok so yea we have a pretty tight range just from this. Hmm let me see what happens if I were to add a bunch of extra nodes. 
+              <p>			  
+                <br />
+</p>
+
+              <pre><code data-lang="python" class="python">			  
+			  
+			  side = 5
+			  vec = []
+			  for i in range(side*side):
+			  	w1, w2, w3, w4, w5 = -0.5 + np.random.random((5, ))
+			  	vec.append(
+			        	[
+			  		    [
+			  			  	n.logit_to_prob(x1*w1 + x2*w2 + x3*w3 + x4*w4 + x5*w5) 
+			  				for x1, x2, x3, x4, x5 in product(
+			                    np.arange(0, 1, .1), 
+			                    np.arange(0, 1, .1), 
+			                    np.arange(0, 1, .1), 
+			                    np.arange(0, 1, .1), 
+			                    np.arange(0, 1, .1)
+			                  )
+			              ],
+			              
+			      		f&quot;w1={round(w1, 1)}, w2={round(w2, 1)}, w3={round(w3, 1)}, w4={round(w4, 1)}, w5={round(w5, 1)}&quot;	
+			      	])
+			      
+			  out_loc = plot.plot_grid(vec, side=5, title=&quot;y_prob-outputs&quot;)
+			  
+			  # saving to 2022-10-13T200559-y_prob-outputs.png
+			  
+
+</code></pre>
+
+              <p>			  
+                <br />
+			  <img src="https://s3.amazonaws.com/my-blog-content/2022/2022-10-13-Backprop-and-SGD-From-Scratch-2022-10-13/2022-10-13T200559-y_prob-outputs_1665691653255_0.png" title="2022-10-13T200559-y_prob-outputs.png" />
+                <br />
+</p>
+            </li>
+            <li>hmm, can&apos;t say these distributions are looking that much wider actually.</li>
+          </ul>
+        </li>
+        <li>Ok then this constraint is just a reality then. Then maybe as far as using this for classification purposes, this should be scaled to <code>(0, 1)</code> maybe?</li>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+

@@ -1,4 +1,6 @@
 ---
+title: Quick lang chain test drive
+date: 2023-01-29
 ---
 
 

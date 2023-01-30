@@ -51,8 +51,9 @@
 		  Out[16]: ' William Barr referred to Trump\'s legal team as the "clown car."'
 		  ```
 		- indeed
-		  ![IMG_1033.jpg](../assets/IMG_1033_1675042706821_0.jpg)
-		-
+
+<img src="https://s3.amazonaws.com/my-blog-content/2022-01-29-lang-chain-quick-look/IMG_1033_1675042706821_0.jpg" width="50%">
+
 		- 20:24 amazing haha ! Let me try another. 
 		  ```python
 		  In [19]: query = "Did Cheney get reelected?"
@@ -62,7 +63,9 @@
 		  Out[19]: ' No, Cheney lost her bid for reelection.'
 		  ```
 		- wow !
-		  ![IMG_1034.jpg](../assets/IMG_1034_1675042979259_0.jpg)
+
+<img src="https://s3.amazonaws.com/my-blog-content/2022-01-29-lang-chain-quick-look/IMG_1034_1675042979259_0.jpg" width="50%">
+
 		- okay one more 
 		  ```python
 		  query = "Was there election fraud?"
@@ -73,8 +76,11 @@
 		  
 		  ```
 		- Wow this is really cool! I'm not sure which section was used for this answer. I wonder if it was this one? 
-		  ![IMG_1035.jpg](../assets/IMG_1035_1675043012989_0.jpg)
+
+<img src="https://s3.amazonaws.com/my-blog-content/2022-01-29-lang-chain-quick-look/IMG_1035_1675043012989_0.jpg" width="50%">
+
 		- I want to check out the section here which says you can get a precise link to how the answer to your question was constructed, with the evidence basically.
 		-
 	-
+
 

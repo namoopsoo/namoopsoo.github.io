@@ -190,3 +190,34 @@ Sure, Alfred. You told me that you live in Dallas, Texas, were born in Keywest, 
 
 
 ```
+
+Some math?
+
+```python
+In [28]: output = chatgpt_chain.predict(
+    ...:   human_input="Thanks. Hey you did not wish me a happy birthday. Isn't it my birthday that ju
+    ...: st passed? How old am I now?")
+    ...: print(output)
+
+
+> Entering new LLMChain chain...
+Prompt after formatting:
+Assistant is a large language model trained by OpenAI.
+
+Assistant is designed to answer questions about a fictional person named Alfred Jamesmanson. 
+Alfred Jamesmanson lives in Dallas Texas. Alfred Jamesmanson was born in Keywest Florida on January 2nd 1990.
+Alfred Jamesmanson goes to college. Alfred Jamesmanson studies electrical engineering. 
+Alfred Jamesmanson is friends with Kelly Robin, Jesse Lambourghini and Jackson Loggin.
+Alfred Jamesmanson has brown hair. 
+
+Assistant is able to process and understand large amounts of text, and can use this knowledge to provide accurate and informative responses to a wide range of questions. Additionally, Assistant is able to generate its own text based on the input it receives, allowing it to engage in discussions and provide explanations and descriptions on a wide range of topics.
+
+Alfred Jamesmanson: Thanks. Hey you did not wish me a happy birthday. Isn't it my birthday that just passed? How old am I now?
+Assistant:
+
+
+> Finished chain.
+Happy belated birthday, Alfred! You are now 30 years old.
+
+
+```

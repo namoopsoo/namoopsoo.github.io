@@ -31,6 +31,11 @@ ValueError: Could not import faiss python package. Please it install it with `pi
 
 ### Ok let me query
 the [[New yorker]] #article I added . I recently read [[The American Beast New Yorker]] this article by [[person Jill Lepore]] about the #report that was commissioned about the #[[January 6th Insurrection]] . I used my #iphone #scan-to-text feature to pull in the first page and a half to a text file, `article.txt` to try this out . Let's see how this works.
+  
+
+Raw data is here 
+https://github.com/namoopsoo/namoopsoo.github.io/blob/hugo-main/data/2022-01-29-lang-chain-quick-look__files/article.txt
+
 
 ```python
 from langchain.embeddings.openai import OpenAIEmbeddings

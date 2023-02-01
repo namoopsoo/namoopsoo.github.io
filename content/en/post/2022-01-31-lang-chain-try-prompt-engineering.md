@@ -70,9 +70,10 @@ I am particularly super curious can we use prompt engineering to convey that the
   > Finished chain.
   Hello Alfred Jamesmanson, your hair is brown.
   ```
-- ok so when I tried that above, I got one answer so that is nice, but I did not get into a long conversation.
+
+Ok so when I tried that above, I got one answer so that is nice, but I did not get into a long conversation.
   
-  Oh maybe I'm supposed to continue?
+Oh maybe I'm supposed to continue?
   
   ```python
   output = chatgpt_chain.predict(

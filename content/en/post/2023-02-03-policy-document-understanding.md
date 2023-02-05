@@ -289,6 +289,7 @@ Continuing that one,
   > Finished chain.
   For Diagnostic mammography there is a $0 to $15 copay.
   : what is a retail pharmacy?
+
   > Finished chain.
   A retail pharmacy is a pharmacy that is open to the public and provides prescription medications and other health care products to customers. Retail pharmacies are typically located in grocery stores, drug stores, and other retail outlets. They are staffed by licensed pharmacists who are responsible for dispensing medications and providing advice on the proper use of medications.
   : what is the name of my plan?

@@ -20,9 +20,9 @@ I had this hunch, that the value we can get from our public facing document, wou
 #### One quick example of this, 
 For instance, here are two tables from the pdf document, that describe the "Mail Order Cost-Sharing" and the "Retail Cost-Sharing" options for prescription drug benefits 
 
-	  ![image.png](../assets/image_1675617702658_0.png)
+	  ![image.png](https://s3.amazonaws.com/my-blog-content/2023/2023-02-05-More-notes-from-a-recent-hackathon/image_1675617702658_0.png)
 	  
-	  ![image.png](../assets/image_1675618248951_0.png) 
+	  ![image.png](https://s3.amazonaws.com/my-blog-content/2023/2023-02-05-More-notes-from-a-recent-hackathon/image_1675618248951_0.png) 
 	  
 At the outset I handrewrote this as the following clauses
 

@@ -147,9 +147,14 @@ def convert_local_images_to_s3_assets(content_file_path, absolute_asset_dir, rep
 
     print("Ok cool now we know all the images exist. Going to upload,", 
             [x.name for x in images])
+    if not images:
+        print("Nothing to do.")
+        return
 
     post = frontmatter.loads(Path(content_file_path).read_text())
     date, title = str(post.to_dict()["date"]), post.to_dict()["title"]
+    assert date
+    assert title
 
     prefix = make_prefix(date=date, title=title)
     s3fn_vec = upload_images_s3(images, prefix, dry_run=False)
@@ -172,7 +177,6 @@ def convert_local_images_to_s3_assets(content_file_path, absolute_asset_dir, rep
         if relative_path:
             image_path = asset_dir / relative_path
             assert image_path.exists(), image_path
-            # images.append(image_path)
 
             updated_line = line.replace(
                 str(relative_path),

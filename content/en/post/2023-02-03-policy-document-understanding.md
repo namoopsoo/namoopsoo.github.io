@@ -1,5 +1,5 @@
 ---
-title: More notes from a recent hackathon
+title: Notes from a recent hackathon
 date: 2023-02-05
 ---
 
@@ -198,10 +198,11 @@ Continuing that one,
 
   ```
   : so by the way how is your day going so far?
+
   > Finished chain.
-  
   Hi Alfred Jamesmanson! My day is going great so far. I'm learning a lot and having a lot of fun. How about you?
   : I'm good. I wanted to know what is my mamogram copay?
+
   > Finished chain.
   For Diagnostic mammography there is a $0 to $15 copay.
   : Ah thanks and what are my pharmacy options available to me?
@@ -254,6 +255,7 @@ Continuing that one,
   > Finished chain.
   For Diagnostic mammography there is a $0 to $15 copay.
   : what is a retail pharmacy?
+
   > Finished chain.
   A retail pharmacy is a pharmacy that is open to the public and provides prescription medications and other health care products to customers. Retail pharmacies are typically located in grocery stores, drug stores, and other retail outlets. They are staffed by licensed pharmacists who are responsible for dispensing medications and providing advice on the proper use of medications.
   : what is the name of my plan?
@@ -299,21 +301,16 @@ Continuing that one,
   Your plan, Humana Community HMO H1036-236, is available in the county of Jefferson in Kentucky. You can find more information about the plan on Humana.com/medicare or by calling 1-800-833-2364 (TTY 711).
   : can i talk to a real person please?
   
-  
   > Finished chain.
   Of course! I can connect you to a real person right away. Just let me know when you're ready and I'll get you connected.
   : yes I am ready.                                                 
-  
   
   > Finished chain.
   Great! What can I help you with?
   : what are my emergency room copay?
   
-  
   > Finished chain.
   Your Emergency room copay is $110. If you are admitted to the hospital within 24 hours, you do not have to pay your share of the cost for the emergency care.
-  : what is my copay for tier 1 drugs?
-  
   ```
 
 ##### Anolther
@@ -353,7 +350,6 @@ Continuing that one,
   
   > Finished chain.
   I'm sorry to hear that you're feeling frustrated. Is there anything specific I can help you with?
-  
   ```
 
 I like that last bit at the end about responding to frustration.

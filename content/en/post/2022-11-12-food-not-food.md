@@ -1,8 +1,12 @@
 ---
 title: Dockerizing Daniel Bourke's Food Not Food
 date: 2022-11-12
-tags: docker, tensorflow
+tags: 
+  - docker
+  - tensorflow
 ---
+
+
 I have this on-going effort to be able to more easily show off my photos in the context of conversations. (I have a repo here, https://github.com/namoopsoo/manage-my-photos related to my glue code.)
 
 But I want a nice photo stream and my food diary is not part of that at all haha. So after manually moving food photos out, ultimately I stumbled upon  Daniel Bourke's Food Not Food repo, https://github.com/mrdbourke/food-not-food . 

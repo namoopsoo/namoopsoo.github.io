@@ -1,179 +1,143 @@
 <!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Using langchain to interview myself about my skills | My blog</title><meta name=viewport content="width=device-width,minimum-scale=1"><meta name=description content="Premise Ok, got this half baked idea , combine my #brag-document with the available [[langchain]] QA chains into a proof of concept maybe I can call [[langchain interview me 2023-feb]]
 So I&rsquo;m going to throw a bunch of my source material together, language based, accessible as plain text doc, and then I will run the Link examples that provide references, citations,
-Ok, so for accumulating my information, ```python import yaml import tempfile from pathlib import Path from datetime import datetime import pytz def utc_now(): return datetime."><meta name=generator content="Hugo 0.110.0"><meta name=ROBOTS content="NOINDEX, NOFOLLOW"><link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css><meta property="og:title" content="Using langchain to interview myself about my skills"><meta property="og:description" content="Premise Ok, got this half baked idea , combine my #brag-document with the available [[langchain]] QA chains into a proof of concept maybe I can call [[langchain interview me 2023-feb]]
+Ok, so for accumulating my information, import yaml import tempfile from pathlib import Path from datetime import datetime import pytz def utc_now(): return datetime."><meta name=generator content="Hugo 0.110.0"><meta name=ROBOTS content="NOINDEX, NOFOLLOW"><link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css><meta property="og:title" content="Using langchain to interview myself about my skills"><meta property="og:description" content="Premise Ok, got this half baked idea , combine my #brag-document with the available [[langchain]] QA chains into a proof of concept maybe I can call [[langchain interview me 2023-feb]]
 So I&rsquo;m going to throw a bunch of my source material together, language based, accessible as plain text doc, and then I will run the Link examples that provide references, citations,
-Ok, so for accumulating my information, ```python import yaml import tempfile from pathlib import Path from datetime import datetime import pytz def utc_now(): return datetime."><meta property="og:type" content="article"><meta property="og:url" content="https://michal.piekarczyk.xyz/post/2023-02-18-first-stab-langchain-interview-me/"><meta property="article:section" content="post"><meta property="article:published_time" content="2023-02-18T00:00:00+00:00"><meta property="article:modified_time" content="2023-02-18T00:00:00+00:00"><meta property="og:site_name" content="My blog"><meta itemprop=name content="Using langchain to interview myself about my skills"><meta itemprop=description content="Premise Ok, got this half baked idea , combine my #brag-document with the available [[langchain]] QA chains into a proof of concept maybe I can call [[langchain interview me 2023-feb]]
+Ok, so for accumulating my information, import yaml import tempfile from pathlib import Path from datetime import datetime import pytz def utc_now(): return datetime."><meta property="og:type" content="article"><meta property="og:url" content="https://michal.piekarczyk.xyz/post/2023-02-18-first-stab-langchain-interview-me/"><meta property="article:section" content="post"><meta property="article:published_time" content="2023-02-18T00:00:00+00:00"><meta property="article:modified_time" content="2023-02-18T00:00:00+00:00"><meta property="og:site_name" content="My blog"><meta itemprop=name content="Using langchain to interview myself about my skills"><meta itemprop=description content="Premise Ok, got this half baked idea , combine my #brag-document with the available [[langchain]] QA chains into a proof of concept maybe I can call [[langchain interview me 2023-feb]]
 So I&rsquo;m going to throw a bunch of my source material together, language based, accessible as plain text doc, and then I will run the Link examples that provide references, citations,
-Ok, so for accumulating my information, ```python import yaml import tempfile from pathlib import Path from datetime import datetime import pytz def utc_now(): return datetime."><meta itemprop=datePublished content="2023-02-18T00:00:00+00:00"><meta itemprop=dateModified content="2023-02-18T00:00:00+00:00"><meta itemprop=wordCount content="1011"><meta itemprop=keywords content="openai,langchain,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Using langchain to interview myself about my skills"><meta name=twitter:description content="Premise Ok, got this half baked idea , combine my #brag-document with the available [[langchain]] QA chains into a proof of concept maybe I can call [[langchain interview me 2023-feb]]
+Ok, so for accumulating my information, import yaml import tempfile from pathlib import Path from datetime import datetime import pytz def utc_now(): return datetime."><meta itemprop=datePublished content="2023-02-18T00:00:00+00:00"><meta itemprop=dateModified content="2023-02-18T00:00:00+00:00"><meta itemprop=wordCount content="985"><meta itemprop=keywords content="openai,langchain,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Using langchain to interview myself about my skills"><meta name=twitter:description content="Premise Ok, got this half baked idea , combine my #brag-document with the available [[langchain]] QA chains into a proof of concept maybe I can call [[langchain interview me 2023-feb]]
 So I&rsquo;m going to throw a bunch of my source material together, language based, accessible as plain text doc, and then I will run the Link examples that provide references, citations,
-Ok, so for accumulating my information, ```python import yaml import tempfile from pathlib import Path from datetime import datetime import pytz def utc_now(): return datetime."></head><body class="ma0 avenir bg-near-white"><header><div class=bg-black><nav class="pv3 ph3 ph4-ns" role=navigation><div class="flex-l justify-between items-center center"><a href=/ class="f3 fw2 hover-white no-underline white-90 dib">My blog</a><div class="flex-l items-center"><ul class="pl0 mr3"><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/about/ title="About page">About</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/handy/ title="Handy page">Handy</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/post/ title="Post page">Post</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/project/ title="Side Projects page">Side Projects</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/foo/ title="The Foos page">The Foos</a></li></ul></div></div></nav></div></header><main class=pb7 role=main><article class="flex-l flex-wrap justify-between mw8 center ph3"><header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked">POST</aside><div id=sharing class=mt3><a href="https://www.facebook.com/sharer.php?u=https://michal.piekarczyk.xyz/post/2023-02-18-first-stab-langchain-interview-me/" class="facebook no-underline" aria-label="share on Facebook"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765 50.32h6.744V33.998h4.499l.596-5.624h-5.095l.007-2.816c0-1.466.14-2.253 2.244-2.253h2.812V17.68h-4.5c-5.405.0-7.307 2.729-7.307 7.317v3.377h-3.369v5.625h3.369V50.32zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg></a><a href="https://twitter.com/share?url=https://michal.piekarczyk.xyz/post/2023-02-18-first-stab-langchain-interview-me/&text=Using%20langchain%20to%20interview%20myself%20about%20my%20skills" class="twitter no-underline" aria-label="share on Twitter"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https://michal.piekarczyk.xyz/post/2023-02-18-first-stab-langchain-interview-me/&title=Using%20langchain%20to%20interview%20myself%20about%20my%20skills" class="linkedin no-underline" aria-label="share on LinkedIn"><svg height="32" style="enable-background:new 0 0 65 65" viewBox="0 0 65 65" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M50.837 48.137V36.425c0-6.275-3.35-9.195-7.816-9.195-3.604.0-5.219 1.983-6.119 3.374V27.71h-6.79c.09 1.917.0 20.427.0 20.427h6.79V36.729c0-.609.044-1.219.224-1.655.49-1.22 1.607-2.483 3.482-2.483 2.458.0 3.44 1.873 3.44 4.618v10.929H50.837zM22.959 24.922c2.367.0 3.842-1.57 3.842-3.531-.044-2.003-1.475-3.528-3.797-3.528s-3.841 1.524-3.841 3.528c0 1.961 1.474 3.531 3.753 3.531H22.959zM34 64C17.432 64 4 50.568 4 34 4 17.431 17.432 4 34 4s30 13.431 30 30c0 16.568-13.432 30-30 30zM26.354 48.137V27.71h-6.789v20.427h6.789z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></a></div><h1 class="f1 athelas mt3 mb1">Using langchain to interview myself about my skills</h1><time class="f6 mv4 dib tracked" datetime=2023-02-18T00:00:00Z>February 18, 2023</time></header><div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h3 id=premise>Premise</h3><p>Ok, got this half baked idea , combine my #brag-document with the available [[langchain]] QA chains into a proof of concept maybe I can call [[langchain interview me 2023-feb]]</p><p>So I&rsquo;m going to throw a bunch of my source material together, language based, accessible as plain text doc, and then I will run the <a href=https://langchain.readthedocs.io/en/latest/modules/chains/combine_docs_examples/qa_with_sources.html>Link</a> examples that provide references, citations,</p><h3 id=ok-so-for-accumulating-my-information>Ok, so for accumulating my information,</h3><pre><code>  ```python
-  import yaml
-  import tempfile
-  from pathlib import Path
-  from datetime import datetime
-  import pytz
-  
-  def utc_now():
-      return datetime.utcnow().replace(tzinfo=pytz.UTC)
-  
-  def utc_ts(dt):
-      return dt.strftime(&quot;%Y-%m-%dT%H%M%S&quot;)
-  
-  def read_yaml(loc):
-      with open(loc) as fd:
-          return yaml.safe_load(fd)
-  
-  from pathlib import Path
-  import os
-  repos_dir = Path(os.getenv(&quot;REPOS_DIR&quot;))
-  assert repos_dir.is_dir()      
-  experience_loc = repos_dir / &quot;my-challenges-and-accomplishments/experience.yaml&quot;
-  
-  experiences_dict = read_yaml(experience_loc)[&quot;Descriptions&quot;]
-  
-  sections = []
-  for project, detail in experiences_dict.items():
-      section = &quot;&quot;
-      if detail.get(&quot;company&quot;):
-          company = detail.get(&quot;company&quot;)
-          section = (f&quot;When I worked at {company}, &quot;
-                    f&quot;there was a project in {detail['year']}, {project}.&quot;)
-      elif detail.get(&quot;project&quot;):
-          project = detail.get(&quot;project&quot;)
-          section = f&quot;In {detail['year']}, I had a side project, {project}. &quot;
-      section += &quot;. &quot;.join([x for x in detail.get(&quot;one-liners&quot;, [])])
-      section += &quot;. &quot;.join([x for x in detail.get(&quot;stories&quot;, [])])
-      sections.append(section)
-  
-  
-  workdir = repos_dir / &quot;2023-interview-me&quot;    
-  path = workdir / f&quot;{utc_ts(utc_now())}-the-story-blurb.txt&quot; 
-      
-  path.write_text(&quot;\n\n\n&quot;.join(sections))
-  
-  ```
-</code></pre><h3 id=ok-let-me-run-now-some-of-the-basic-question-answer-chains>Ok let me run now some of the basic question answer chains</h3><p>Use my environment from before,</p><pre><code>  ```sh
-  source ~/.python_venvs/langchainz/bin/activate
+Ok, so for accumulating my information, import yaml import tempfile from pathlib import Path from datetime import datetime import pytz def utc_now(): return datetime."></head><body class="ma0 avenir bg-near-white"><header><div class=bg-black><nav class="pv3 ph3 ph4-ns" role=navigation><div class="flex-l justify-between items-center center"><a href=/ class="f3 fw2 hover-white no-underline white-90 dib">My blog</a><div class="flex-l items-center"><ul class="pl0 mr3"><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/about/ title="About page">About</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/handy/ title="Handy page">Handy</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/post/ title="Post page">Post</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/project/ title="Side Projects page">Side Projects</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/foo/ title="The Foos page">The Foos</a></li></ul></div></div></nav></div></header><main class=pb7 role=main><article class="flex-l flex-wrap justify-between mw8 center ph3"><header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked">POST</aside><div id=sharing class=mt3><a href="https://www.facebook.com/sharer.php?u=https://michal.piekarczyk.xyz/post/2023-02-18-first-stab-langchain-interview-me/" class="facebook no-underline" aria-label="share on Facebook"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765 50.32h6.744V33.998h4.499l.596-5.624h-5.095l.007-2.816c0-1.466.14-2.253 2.244-2.253h2.812V17.68h-4.5c-5.405.0-7.307 2.729-7.307 7.317v3.377h-3.369v5.625h3.369V50.32zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg></a><a href="https://twitter.com/share?url=https://michal.piekarczyk.xyz/post/2023-02-18-first-stab-langchain-interview-me/&text=Using%20langchain%20to%20interview%20myself%20about%20my%20skills" class="twitter no-underline" aria-label="share on Twitter"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https://michal.piekarczyk.xyz/post/2023-02-18-first-stab-langchain-interview-me/&title=Using%20langchain%20to%20interview%20myself%20about%20my%20skills" class="linkedin no-underline" aria-label="share on LinkedIn"><svg height="32" style="enable-background:new 0 0 65 65" viewBox="0 0 65 65" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M50.837 48.137V36.425c0-6.275-3.35-9.195-7.816-9.195-3.604.0-5.219 1.983-6.119 3.374V27.71h-6.79c.09 1.917.0 20.427.0 20.427h6.79V36.729c0-.609.044-1.219.224-1.655.49-1.22 1.607-2.483 3.482-2.483 2.458.0 3.44 1.873 3.44 4.618v10.929H50.837zM22.959 24.922c2.367.0 3.842-1.57 3.842-3.531-.044-2.003-1.475-3.528-3.797-3.528s-3.841 1.524-3.841 3.528c0 1.961 1.474 3.531 3.753 3.531H22.959zM34 64C17.432 64 4 50.568 4 34 4 17.431 17.432 4 34 4s30 13.431 30 30c0 16.568-13.432 30-30 30zM26.354 48.137V27.71h-6.789v20.427h6.789z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></a></div><h1 class="f1 athelas mt3 mb1">Using langchain to interview myself about my skills</h1><time class="f6 mv4 dib tracked" datetime=2023-02-18T00:00:00Z>February 18, 2023</time></header><div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h3 id=premise>Premise</h3><p>Ok, got this half baked idea , combine my #brag-document with the available [[langchain]] QA chains into a proof of concept maybe I can call [[langchain interview me 2023-feb]]</p><p>So I&rsquo;m going to throw a bunch of my source material together, language based, accessible as plain text doc, and then I will run the <a href=https://langchain.readthedocs.io/en/latest/modules/chains/combine_docs_examples/qa_with_sources.html>Link</a> examples that provide references, citations,</p><h3 id=ok-so-for-accumulating-my-information>Ok, so for accumulating my information,</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> yaml
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> tempfile
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pathlib <span style=color:#f92672>import</span> Path
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> datetime <span style=color:#f92672>import</span> datetime
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> pytz
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>utc_now</span>():
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> datetime<span style=color:#f92672>.</span>utcnow()<span style=color:#f92672>.</span>replace(tzinfo<span style=color:#f92672>=</span>pytz<span style=color:#f92672>.</span>UTC)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>utc_ts</span>(dt):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> dt<span style=color:#f92672>.</span>strftime(<span style=color:#e6db74>&#34;%Y-%m-</span><span style=color:#e6db74>%d</span><span style=color:#e6db74>T%H%M%S&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>read_yaml</span>(loc):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>with</span> open(loc) <span style=color:#66d9ef>as</span> fd:
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> yaml<span style=color:#f92672>.</span>safe_load(fd)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pathlib <span style=color:#f92672>import</span> Path
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> os
+</span></span><span style=display:flex><span>repos_dir <span style=color:#f92672>=</span> Path(os<span style=color:#f92672>.</span>getenv(<span style=color:#e6db74>&#34;REPOS_DIR&#34;</span>))
+</span></span><span style=display:flex><span><span style=color:#66d9ef>assert</span> repos_dir<span style=color:#f92672>.</span>is_dir()      
+</span></span><span style=display:flex><span>experience_loc <span style=color:#f92672>=</span> repos_dir <span style=color:#f92672>/</span> <span style=color:#e6db74>&#34;my-challenges-and-accomplishments/experience.yaml&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>experiences_dict <span style=color:#f92672>=</span> read_yaml(experience_loc)[<span style=color:#e6db74>&#34;Descriptions&#34;</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>sections <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> project, detail <span style=color:#f92672>in</span> experiences_dict<span style=color:#f92672>.</span>items():
+</span></span><span style=display:flex><span>    section <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> detail<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;company&#34;</span>):
+</span></span><span style=display:flex><span>        company <span style=color:#f92672>=</span> detail<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;company&#34;</span>)
+</span></span><span style=display:flex><span>        section <span style=color:#f92672>=</span> (<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;When I worked at </span><span style=color:#e6db74>{</span>company<span style=color:#e6db74>}</span><span style=color:#e6db74>, &#34;</span>
+</span></span><span style=display:flex><span>                  <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;there was a project in </span><span style=color:#e6db74>{</span>detail[<span style=color:#e6db74>&#39;year&#39;</span>]<span style=color:#e6db74>}</span><span style=color:#e6db74>, </span><span style=color:#e6db74>{</span>project<span style=color:#e6db74>}</span><span style=color:#e6db74>.&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>elif</span> detail<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;project&#34;</span>):
+</span></span><span style=display:flex><span>        project <span style=color:#f92672>=</span> detail<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;project&#34;</span>)
+</span></span><span style=display:flex><span>        section <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;In </span><span style=color:#e6db74>{</span>detail[<span style=color:#e6db74>&#39;year&#39;</span>]<span style=color:#e6db74>}</span><span style=color:#e6db74>, I had a side project, </span><span style=color:#e6db74>{</span>project<span style=color:#e6db74>}</span><span style=color:#e6db74>. &#34;</span>
+</span></span><span style=display:flex><span>    section <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#34;. &#34;</span><span style=color:#f92672>.</span>join([x <span style=color:#66d9ef>for</span> x <span style=color:#f92672>in</span> detail<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;one-liners&#34;</span>, [])])
+</span></span><span style=display:flex><span>    section <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#34;. &#34;</span><span style=color:#f92672>.</span>join([x <span style=color:#66d9ef>for</span> x <span style=color:#f92672>in</span> detail<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;stories&#34;</span>, [])])
+</span></span><span style=display:flex><span>    sections<span style=color:#f92672>.</span>append(section)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>workdir <span style=color:#f92672>=</span> repos_dir <span style=color:#f92672>/</span> <span style=color:#e6db74>&#34;2023-interview-me&#34;</span>    
+</span></span><span style=display:flex><span>path <span style=color:#f92672>=</span> workdir <span style=color:#f92672>/</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>{</span>utc_ts(utc_now())<span style=color:#e6db74>}</span><span style=color:#e6db74>-the-story-blurb.txt&#34;</span> 
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>path<span style=color:#f92672>.</span>write_text(<span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n\n\n</span><span style=color:#e6db74>&#34;</span><span style=color:#f92672>.</span>join(sections))
+</span></span></code></pre></div><h3 id=ok-let-me-run-now-some-of-the-basic-question-answer-chains>Ok let me run now some of the basic question answer chains</h3><p>Use my environment from before,</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>source ~/.python_venvs/langchainz/bin/activate
+</span></span></code></pre></div><p>But when trying to use this just like per the qa with sources example in that <a href=https://langchain.readthedocs.io/en/latest/modules/chains/combine_docs_examples/qa_with_sources.html>here</a>,</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> langchain.embeddings.openai <span style=color:#f92672>import</span> OpenAIEmbeddings
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> langchain.embeddings.cohere <span style=color:#f92672>import</span> CohereEmbeddings
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> langchain.text_splitter <span style=color:#f92672>import</span> CharacterTextSplitter
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> langchain.vectorstores.elastic_vector_search <span style=color:#f92672>import</span> ElasticVectorSearch
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> langchain.vectorstores <span style=color:#f92672>import</span> Chroma
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> langchain.docstore.document <span style=color:#f92672>import</span> Document
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> langchain.prompts <span style=color:#f92672>import</span> PromptTemplate
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pathlib <span style=color:#f92672>import</span> Path
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>workdir <span style=color:#f92672>=</span> str(repos_dir <span style=color:#f92672>/</span> <span style=color:#e6db74>&#34;2023-interview-me&#34;</span>  )  
+</span></span><span style=display:flex><span>story_path <span style=color:#f92672>=</span> repos_dir <span style=color:#f92672>/</span> <span style=color:#e6db74>&#34;2023-interview-me&#34;</span> <span style=color:#f92672>/</span> <span style=color:#e6db74>&#34;2023-02-19T011846-the-story-blurb.txt&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>my_story <span style=color:#f92672>=</span> story_path<span style=color:#f92672>.</span>read_text()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>text_splitter <span style=color:#f92672>=</span> CharacterTextSplitter(chunk_size<span style=color:#f92672>=</span><span style=color:#ae81ff>1000</span>, chunk_overlap<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>texts <span style=color:#f92672>=</span> text_splitter<span style=color:#f92672>.</span>split_text(my_story)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>embeddings <span style=color:#f92672>=</span> OpenAIEmbeddings()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>docsearch <span style=color:#f92672>=</span> Chroma<span style=color:#f92672>.</span>from_texts(
+</span></span><span style=display:flex><span>    texts, 
+</span></span><span style=display:flex><span>    embeddings, 
+</span></span><span style=display:flex><span>    metadatas<span style=color:#f92672>=</span>[{<span style=color:#e6db74>&#34;source&#34;</span>: str(i)} <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(len(texts))])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> langchain.chains.qa_with_sources <span style=color:#f92672>import</span> load_qa_with_sources_chain
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> langchain.llms <span style=color:#f92672>import</span> OpenAI
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>query <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;What kind of projects have I worked on with tensor flow?&#34;</span>
+</span></span><span style=display:flex><span>docs <span style=color:#f92672>=</span> docsearch<span style=color:#f92672>.</span>similarity_search(query)
+</span></span><span style=display:flex><span>chain <span style=color:#f92672>=</span> load_qa_with_sources_chain(OpenAI(temperature<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>), chain_type<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;stuff&#34;</span>)
+</span></span><span style=display:flex><span>chain({<span style=color:#e6db74>&#34;input_documents&#34;</span>: docs, <span style=color:#e6db74>&#34;question&#34;</span>: query}, return_only_outputs<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>)
+</span></span></code></pre></div><p>this line,</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>docsearch <span style=color:#f92672>=</span> Chroma<span style=color:#f92672>.</span>from_texts(texts, embeddings, metadatas<span style=color:#f92672>=</span>[{<span style=color:#e6db74>&#34;source&#34;</span>: str(i)} <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(len(texts))])
+</span></span></code></pre></div><p>yielded a new install request, so that&rsquo;s what I did,</p><pre tabindex=0><code>ValueError: Could not import chromadb python package. Please it install it with `pip install chromadb`.
 
-  ```
-</code></pre><p>But when trying to use this just like per the qa with sources example in that <a href=https://langchain.readthedocs.io/en/latest/modules/chains/combine_docs_examples/qa_with_sources.html>here</a>,</p><pre><code>  ```python
-  
-  from langchain.embeddings.openai import OpenAIEmbeddings
-  from langchain.embeddings.cohere import CohereEmbeddings
-  from langchain.text_splitter import CharacterTextSplitter
-  from langchain.vectorstores.elastic_vector_search import ElasticVectorSearch
-  from langchain.vectorstores import Chroma
-  from langchain.docstore.document import Document
-  from langchain.prompts import PromptTemplate
-  
-  from pathlib import Path
-  
-  workdir = str(repos_dir / &quot;2023-interview-me&quot;  )  
-  story_path = repos_dir / &quot;2023-interview-me&quot; / &quot;2023-02-19T011846-the-story-blurb.txt&quot;
-  
-  my_story = story_path.read_text()
-  
-  text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
-  texts = text_splitter.split_text(my_story)
-  
-  embeddings = OpenAIEmbeddings()
-  
-  docsearch = Chroma.from_texts(
-      texts, 
-      embeddings, 
-      metadatas=[{&quot;source&quot;: str(i)} for i in range(len(texts))])
-  
-  
-  from langchain.chains.qa_with_sources import load_qa_with_sources_chain
-  from langchain.llms import OpenAI
-  
-  
-  query = &quot;What kind of projects have I worked on with tensor flow?&quot;
-  docs = docsearch.similarity_search(query)
-  chain = load_qa_with_sources_chain(OpenAI(temperature=0), chain_type=&quot;stuff&quot;)
-  chain({&quot;input_documents&quot;: docs, &quot;question&quot;: query}, return_only_outputs=True)
-  
-  
-  ```
-</code></pre><p>this line,</p><pre><code>  ```python
-  docsearch = Chroma.from_texts(texts, embeddings, metadatas=[{&quot;source&quot;: str(i)} for i in range(len(texts))])
-  
-  ```
-</code></pre><p>yielded a new install request, so that&rsquo;s what I did,</p><pre><code>  ```
-  ValueError: Could not import chromadb python package. Please it install it with `pip install chromadb`.
-  
-  In [4]: !pip install chromadb
-  ```
-</code></pre><p>Ok wow, so I reran that again and I am getting,</p><pre><code>  ```python
-  Created a chunk of size 1474, which is longer than the specified 1000
-  Created a chunk of size 2846, which is longer than the specified 1000
-  Created a chunk of size 2348, which is longer than the specified 1000
-  Running Chroma using direct local API.
-  Using DuckDB in-memory for database. Data will be transient.
-  Out[1]: {'output_text': &quot; I have worked on projects with Tensor Flow that involve predicting pilot's states of awareness, predicting bike share rider's destinations, and using Tensor Flow LSTM to answer questions about a CDC Covid dataset.\nSOURCES: 14, 15, 0&quot;}
-  
-  ```
-</code></pre><p>which is not bad</p><h4 id=so--also-i-realized-the-really-cool-part-about-the-approach-here-is-that-the-numbers-correspond-simply-to-the-indices-of-the-texts-and-the-texts-split-actually-intuitively-haha-by-a-double-new-line-nn-because-at-least-that-is-how-i-split-them-just-naturally>So , also I realized the really cool part about the approach here, is that the numbers, correspond simply to the indices of the texts, and the texts split, actually intuitively haha by a double new line, <code>\n\n</code> because at least that is how I split them just naturally.</h4><pre><code>  ```python
-  In [2]: len(texts)
-  Out[2]: 16
-  In [6]: text_splitter._separator
-  Out[6]: '\n\n'
-  
-  ```
-</code></pre><p>So since the above output says <code>14, 15, 0</code>, I think also this is somewhat sorted by relevance, so let me see what is in those,</p><pre><code>  ```python
-  In [9]: for i in [14, 15, 0]:
-     ...:     print(&quot;i&quot;, i, texts[i], &quot;\n===================================================\n\n&quot;)
-     ...: 
-  
-        
-  ```
-</code></pre><p>Okay when I looked at that ^^ I noticed actually some texts were getting actually smushed together? There was a lot of information. Going to create my text corpus one more time but this time separating by three newlines .</p><p>Ok let&rsquo;s see , I now created <code>2023-interview-me/2023-02-19T015128-the-story-blurb.txt</code> , lets see if there are more than 16 texts?</p><pre><code>  ```python
-
-  story_path = repos_dir / &quot;2023-interview-me&quot; / &quot;2023-02-19T015128-the-story-blurb.txt&quot;
-  
-  my_story = Path(loc).read_text()
-  
-  text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
-  texts = text_splitter.split_text(my_story)
-  
-  In [11]: len(texts)
-  Out[11]: 16
-  ```
-</code></pre><p>Ah ok still 16 texts, but actually maybe this is based on the <code>chunk_size</code> ?</p><h3 id=ok-i-want-to-try-the-chain-which-gives-the-intermediate-results>Ok I want to try the chain which gives the intermediate results,</h3><p>Also needed one more package, here for the below,</p><pre><code>  ```
-  ValueError: Could not import tiktoken python package. This is needed in order to calculate get_num_tokens. Please it install it with `pip install tiktoken`.
-  ```
-
-  ```python
-  
-  query = &quot;What kind of projects have I worked on with tensor flow?&quot;
-  docs = docsearch.similarity_search(query)
-  chain = load_qa_with_sources_chain(OpenAI(temperature=0), 
-                                     chain_type=&quot;map_reduce&quot;, 
-                                     return_intermediate_steps=True)
-  chain({&quot;input_documents&quot;: docs, &quot;question&quot;: query}, return_only_outputs=True)
-  ```
-</code></pre><p>Ok this looks like it only returns the relevant statements, nice.</p><pre><code>  ```python
-  {'intermediate_steps': [&quot; In 2019, I had a side project, Reducing Commercial Aviation Fatalities (kaggle). Designed and built a Tensor Flow LSTM based model to predict pilot's states of awareness, given time series physiological data.&quot;,
-    ' None.',
-    ' None',
-    ' None.'],
-   'output_text': &quot; I have worked on a Tensor Flow LSTM based model to predict pilot's states of awareness, given time series physiological data.\nSOURCES: 14&quot;}
-  
-  ```
-</code></pre><p>And the important thing is that this code preserves the original text so I can nicely look for myself exactly at the primary source !</p><h3 id=let-me-try-another-query>Let me try another query,</h3><pre><code>  ```python
-  
-  query = &quot;What is my  experience with Docker?&quot;
-  docs = docsearch.similarity_search(query)
-  chain = load_qa_with_sources_chain(OpenAI(temperature=0), 
-                                     chain_type=&quot;map_reduce&quot;, 
-                                     return_intermediate_steps=True)
-  chain({&quot;input_documents&quot;: docs, &quot;question&quot;: query}, return_only_outputs=True)
-  
-  {'intermediate_steps': [' &quot;Dockerized our production underwriting stack and split from the main company git repo to give us the flexibility to deploy both scikit learn and XGBoost models with AWS SageMaker.&quot;',
-    ' &quot;Helped make better underwriting decisions on returning customers, by optimizing /re-engineering /versioning our SQL based logistic regression model, with a python + Docker + SQL pipeline, cutting runtime from 6+ hours to under an hour.&quot;',
-    ' None.',
-    ' None'],
-   'output_text': ' I have no experience with Docker.\nSOURCES: 0, 14'}
-  
-  ```
-</code></pre><p>Hah I feel like I need to do some kind of tuning here? But it is cool to see the intermediate step here even though it is not reflected in the final output.</p><ul class=pa0><li class=list><a href=/tags/openai class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">openai</a></li><li class=list><a href=/tags/langchain class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">langchain</a></li></ul><div class="mt6 instapaper_ignoref"></div></div><aside class="w-30-l mt6-l"></aside></article></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo><div class="flex justify-between"><a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://michal.piekarczyk.xyz/>&copy; My blog 2023</a><div></div></div></footer></body></html>
+In [4]: !pip install chromadb
+</code></pre><p>Ok wow, so I reran that again and I am getting,</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>Created a chunk of size <span style=color:#ae81ff>1474</span>, which <span style=color:#f92672>is</span> longer than the specified <span style=color:#ae81ff>1000</span>
+</span></span><span style=display:flex><span>Created a chunk of size <span style=color:#ae81ff>2846</span>, which <span style=color:#f92672>is</span> longer than the specified <span style=color:#ae81ff>1000</span>
+</span></span><span style=display:flex><span>Created a chunk of size <span style=color:#ae81ff>2348</span>, which <span style=color:#f92672>is</span> longer than the specified <span style=color:#ae81ff>1000</span>
+</span></span><span style=display:flex><span>Running Chroma using direct local API<span style=color:#f92672>.</span>
+</span></span><span style=display:flex><span>Using DuckDB <span style=color:#f92672>in</span><span style=color:#f92672>-</span>memory <span style=color:#66d9ef>for</span> database<span style=color:#f92672>.</span> Data will be transient<span style=color:#f92672>.</span>
+</span></span><span style=display:flex><span>Out[<span style=color:#ae81ff>1</span>]: {<span style=color:#e6db74>&#39;output_text&#39;</span>: <span style=color:#e6db74>&#34; I have worked on projects with Tensor Flow that involve predicting pilot&#39;s states of awareness, predicting bike share rider&#39;s destinations, and using Tensor Flow LSTM to answer questions about a CDC Covid dataset.</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>SOURCES: 14, 15, 0&#34;</span>}
+</span></span></code></pre></div><p>which is not bad</p><h4 id=so--also-i-realized-the-really-cool-part-about-the-approach-here-is-that-the-numbers-correspond-simply-to-the-indices-of-the-texts-and-the-texts-split-actually-intuitively-haha-by-a-double-new-line-nn-because-at-least-that-is-how-i-split-them-just-naturally>So , also I realized the really cool part about the approach here, is that the numbers, correspond simply to the indices of the texts, and the texts split, actually intuitively haha by a double new line, <code>\n\n</code> because at least that is how I split them just naturally.</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>In [<span style=color:#ae81ff>2</span>]: len(texts)
+</span></span><span style=display:flex><span>Out[<span style=color:#ae81ff>2</span>]: <span style=color:#ae81ff>16</span>
+</span></span><span style=display:flex><span>In [<span style=color:#ae81ff>6</span>]: text_splitter<span style=color:#f92672>.</span>_separator
+</span></span><span style=display:flex><span>Out[<span style=color:#ae81ff>6</span>]: <span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\n\n</span><span style=color:#e6db74>&#39;</span>
+</span></span></code></pre></div><p>So since the above output says <code>14, 15, 0</code>, I think also this is somewhat sorted by relevance, so let me see what is in those,</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>In [<span style=color:#ae81ff>9</span>]: <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> [<span style=color:#ae81ff>14</span>, <span style=color:#ae81ff>15</span>, <span style=color:#ae81ff>0</span>]:
+</span></span><span style=display:flex><span>   <span style=color:#f92672>...</span>:     print(<span style=color:#e6db74>&#34;i&#34;</span>, i, texts[i], <span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>===================================================</span><span style=color:#ae81ff>\n\n</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>   <span style=color:#f92672>...</span>: 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      
+</span></span></code></pre></div><p>Okay when I looked at that ^^ I noticed actually some texts were getting actually smushed together? There was a lot of information. Going to create my text corpus one more time but this time separating by three newlines .</p><p>Ok let&rsquo;s see , I now created <code>2023-interview-me/2023-02-19T015128-the-story-blurb.txt</code> , lets see if there are more than 16 texts?</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>
+</span></span><span style=display:flex><span>story_path <span style=color:#f92672>=</span> repos_dir <span style=color:#f92672>/</span> <span style=color:#e6db74>&#34;2023-interview-me&#34;</span> <span style=color:#f92672>/</span> <span style=color:#e6db74>&#34;2023-02-19T015128-the-story-blurb.txt&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>my_story <span style=color:#f92672>=</span> Path(loc)<span style=color:#f92672>.</span>read_text()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>text_splitter <span style=color:#f92672>=</span> CharacterTextSplitter(chunk_size<span style=color:#f92672>=</span><span style=color:#ae81ff>1000</span>, chunk_overlap<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>texts <span style=color:#f92672>=</span> text_splitter<span style=color:#f92672>.</span>split_text(my_story)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>In [<span style=color:#ae81ff>11</span>]: len(texts)
+</span></span><span style=display:flex><span>Out[<span style=color:#ae81ff>11</span>]: <span style=color:#ae81ff>16</span>
+</span></span></code></pre></div><p>Ah ok still 16 texts, but actually maybe this is based on the <code>chunk_size</code> ?</p><h3 id=ok-i-want-to-try-the-chain-which-gives-the-intermediate-results>Ok I want to try the chain which gives the intermediate results,</h3><p>Also needed one more package, here for the below,</p><pre tabindex=0><code>ValueError: Could not import tiktoken python package. This is needed in order to calculate get_num_tokens. Please it install it with `pip install tiktoken`.
+</code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>
+</span></span><span style=display:flex><span>query <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;What kind of projects have I worked on with tensor flow?&#34;</span>
+</span></span><span style=display:flex><span>docs <span style=color:#f92672>=</span> docsearch<span style=color:#f92672>.</span>similarity_search(query)
+</span></span><span style=display:flex><span>chain <span style=color:#f92672>=</span> load_qa_with_sources_chain(OpenAI(temperature<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>), 
+</span></span><span style=display:flex><span>                                   chain_type<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;map_reduce&#34;</span>, 
+</span></span><span style=display:flex><span>                                   return_intermediate_steps<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>)
+</span></span><span style=display:flex><span>chain({<span style=color:#e6db74>&#34;input_documents&#34;</span>: docs, <span style=color:#e6db74>&#34;question&#34;</span>: query}, return_only_outputs<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>)
+</span></span></code></pre></div><p>Ok this looks like it only returns the relevant statements, nice.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>{<span style=color:#e6db74>&#39;intermediate_steps&#39;</span>: [<span style=color:#e6db74>&#34; In 2019, I had a side project, Reducing Commercial Aviation Fatalities (kaggle). Designed and built a Tensor Flow LSTM based model to predict pilot&#39;s states of awareness, given time series physiological data.&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#39; None.&#39;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#39; None&#39;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#39; None.&#39;</span>],
+</span></span><span style=display:flex><span> <span style=color:#e6db74>&#39;output_text&#39;</span>: <span style=color:#e6db74>&#34; I have worked on a Tensor Flow LSTM based model to predict pilot&#39;s states of awareness, given time series physiological data.</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>SOURCES: 14&#34;</span>}
+</span></span></code></pre></div><p>And the important thing is that this code preserves the original text so I can nicely look for myself exactly at the primary source !</p><h3 id=let-me-try-another-query>Let me try another query,</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>
+</span></span><span style=display:flex><span>query <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;What is my  experience with Docker?&#34;</span>
+</span></span><span style=display:flex><span>docs <span style=color:#f92672>=</span> docsearch<span style=color:#f92672>.</span>similarity_search(query)
+</span></span><span style=display:flex><span>chain <span style=color:#f92672>=</span> load_qa_with_sources_chain(OpenAI(temperature<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>), 
+</span></span><span style=display:flex><span>                                   chain_type<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;map_reduce&#34;</span>, 
+</span></span><span style=display:flex><span>                                   return_intermediate_steps<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>)
+</span></span><span style=display:flex><span>chain({<span style=color:#e6db74>&#34;input_documents&#34;</span>: docs, <span style=color:#e6db74>&#34;question&#34;</span>: query}, return_only_outputs<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{<span style=color:#e6db74>&#39;intermediate_steps&#39;</span>: [<span style=color:#e6db74>&#39; &#34;Dockerized our production underwriting stack and split from the main company git repo to give us the flexibility to deploy both scikit learn and XGBoost models with AWS SageMaker.&#34;&#39;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#39; &#34;Helped make better underwriting decisions on returning customers, by optimizing /re-engineering /versioning our SQL based logistic regression model, with a python + Docker + SQL pipeline, cutting runtime from 6+ hours to under an hour.&#34;&#39;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#39; None.&#39;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#39; None&#39;</span>],
+</span></span><span style=display:flex><span> <span style=color:#e6db74>&#39;output_text&#39;</span>: <span style=color:#e6db74>&#39; I have no experience with Docker.</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>SOURCES: 0, 14&#39;</span>}
+</span></span></code></pre></div><p>Hah I feel like I need to do some kind of tuning here? But it is cool to see the intermediate step here even though it is not reflected in the final output.</p><ul class=pa0><li class=list><a href=/tags/openai class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">openai</a></li><li class=list><a href=/tags/langchain class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">langchain</a></li></ul><div class="mt6 instapaper_ignoref"></div></div><aside class="w-30-l mt6-l"></aside></article></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo><div class="flex justify-between"><a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://michal.piekarczyk.xyz/>&copy; My blog 2023</a><div></div></div></footer></body></html>

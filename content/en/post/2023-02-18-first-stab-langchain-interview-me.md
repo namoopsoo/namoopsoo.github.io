@@ -162,7 +162,7 @@ So since the above output says `14, 15, 0`, I think also this is somewhat sorted
 
 Okay when I looked at that ^^ I noticed actually some texts were getting actually smushed together? There was a lot of information. Going to create my text corpus one more time but this time separating by three newlines . 
 	  
-Ok let's see , I now created `/Users/michal/Dropbox/Code/repo/2023-interview-me/2023-02-19T015128-the-story-blurb.txt` , lets see if there are more than 16 texts? 
+Ok let's see , I now created `2023-interview-me/2023-02-19T015128-the-story-blurb.txt` , lets see if there are more than 16 texts? 
 
 	  ```python
 

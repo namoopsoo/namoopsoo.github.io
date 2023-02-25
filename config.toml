@@ -39,3 +39,4 @@ unsafe = true
   favicon = ""
   site_logo = ""
   description = "The last theme you'll ever need. Maybe."
+  custom_css = ["css/custom_code_style.css"]

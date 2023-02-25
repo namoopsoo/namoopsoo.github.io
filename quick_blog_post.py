@@ -40,6 +40,13 @@ def bake_options():
             [['--stdout'],
                 {'action': 'store_true',
                     'help': 'Send the html to stdout instead.'},],
+            [['--only-convert-images-to-s3-assets'],
+                {'action': 'store_true',
+                    'help': 'For an existing file, send its local images to S3 and replace the links with S3 links.'},],
+            [['--local-asset-dir'],
+                {'action': 'store',
+                    'help': 'Where to find local relative mentioned assets like images mentioned in the content (e.g. md ) file '},],
+
                 ]
 
     ##
@@ -201,13 +208,24 @@ def do():
 
     # Collect args from user.
     args = vars(parser.parse_args())
-    images = [x.replace('\\', '').strip() for x in args.get('images').split(',')]
-    print('images', images)
-    dry_run = args.get('dry_run')
-    title = args.get('title')
-    date = args.get('date')
-    existing_file = args.get('existing_file')
-    out_dir = args.get('out_dir')
+    if args.get("only_convert_images_to_s3_assets"):
+
+        content_file_path = args.get("existing_file")
+        assert existing_file and Path(existing_file).is_file()
+        local_asset_dir = args.get("local_asset_dir")
+        assert local_asset_dir and Path(local_asset_dir).is_dir()
+        convert_local_images_to_s3_assets(content_file_path, local_asset_dir)
+        print("Done.")
+        return
+
+
+    images = [x.replace("\\", "").strip() for x in args.get("images").split(",")]
+    print("images", images)
+    dry_run = args.get("dry_run")
+    title = args.get("title")
+    date = args.get("date")
+    existing_file = args.get("existing_file")
+    out_dir = args.get("out_dir")
     assert existing_file or out_dir
 
     print(args)

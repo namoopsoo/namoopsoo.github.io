@@ -1,4 +1,5 @@
 baseURL = "https://michal.piekarczyk.xyz/"
+
 paginate = 100
 languageCode = "en-us"
 title = "michal.piekarczyk.xyz"
@@ -21,7 +22,7 @@ unsafe = true
 
 [languages]
   [languages.en]
-    title = "My blog"
+    title = "michal.piekarczyk.xyz"
     weight = 1 
     contentDir = "content/en"
   [languages.fr]

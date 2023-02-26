@@ -1,3 +1,6 @@
 [submodule "content/handy"]
 	path = content/handy
 	url = https://github.com/namoopsoo/handy.git
+[submodule "themes/PaperMod"]
+	path = themes/PaperMod
+	url = https://github.com/adityatelange/hugo-PaperMod.git

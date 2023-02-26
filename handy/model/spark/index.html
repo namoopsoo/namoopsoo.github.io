@@ -1,0 +1,458 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>michal.piekarczyk.xyz</title><meta name=viewport content="width=device-width,minimum-scale=1"><meta name=description content="Read loc = &#34;dbfs:/databricks-datasets/wine-quality/winequality-red.csv&#34; blah_df = spark.read.csv(loc, sep=&#34;;&#34;, header=True) Map an existing function import spark.sql.functions as F loc = &#34;dbfs:/databricks-datasets/wine-quality/winequality-red.csv&#34; df = spark.read.csv(loc, sep=&#34;;&#34;, header=True) df = df.withColumn(&#34;sugar_rounded&#34;, F.round(df[&#34;residual sugar&#34;])) df.select(&#34;residual sugar&#34;, &#34;sugar_rounded&#34;).show(5) +--------------+-------------+ |residual sugar|sugar_rounded| +--------------+-------------+ | 1.9 | 2.0| | 2.6 | 3.0| +--------------+-------------+ Also can split a col to a json array Here imagine there is a column , &ldquo;_c0&rdquo; which has tab separated data,
+df = df."><meta name=generator content="Hugo 0.110.0"><meta name=ROBOTS content="NOINDEX, NOFOLLOW"><link rel=stylesheet href=/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css><link rel=stylesheet href=/css/custom_code_style.css><meta property="og:title" content><meta property="og:description" content="Read loc = &#34;dbfs:/databricks-datasets/wine-quality/winequality-red.csv&#34; blah_df = spark.read.csv(loc, sep=&#34;;&#34;, header=True) Map an existing function import spark.sql.functions as F loc = &#34;dbfs:/databricks-datasets/wine-quality/winequality-red.csv&#34; df = spark.read.csv(loc, sep=&#34;;&#34;, header=True) df = df.withColumn(&#34;sugar_rounded&#34;, F.round(df[&#34;residual sugar&#34;])) df.select(&#34;residual sugar&#34;, &#34;sugar_rounded&#34;).show(5) +--------------+-------------+ |residual sugar|sugar_rounded| +--------------+-------------+ | 1.9 | 2.0| | 2.6 | 3.0| +--------------+-------------+ Also can split a col to a json array Here imagine there is a column , &ldquo;_c0&rdquo; which has tab separated data,
+df = df."><meta property="og:type" content="article"><meta property="og:url" content="https://michal.piekarczyk.xyz/handy/model/spark/"><meta property="article:section" content="handy"><meta property="og:site_name" content="michal.piekarczyk.xyz"><meta itemprop=name content><meta itemprop=description content="Read loc = &#34;dbfs:/databricks-datasets/wine-quality/winequality-red.csv&#34; blah_df = spark.read.csv(loc, sep=&#34;;&#34;, header=True) Map an existing function import spark.sql.functions as F loc = &#34;dbfs:/databricks-datasets/wine-quality/winequality-red.csv&#34; df = spark.read.csv(loc, sep=&#34;;&#34;, header=True) df = df.withColumn(&#34;sugar_rounded&#34;, F.round(df[&#34;residual sugar&#34;])) df.select(&#34;residual sugar&#34;, &#34;sugar_rounded&#34;).show(5) +--------------+-------------+ |residual sugar|sugar_rounded| +--------------+-------------+ | 1.9 | 2.0| | 2.6 | 3.0| +--------------+-------------+ Also can split a col to a json array Here imagine there is a column , &ldquo;_c0&rdquo; which has tab separated data,
+df = df."><meta itemprop=wordCount content="2119"><meta itemprop=keywords content><meta name=twitter:card content="summary"><meta name=twitter:title content><meta name=twitter:description content="Read loc = &#34;dbfs:/databricks-datasets/wine-quality/winequality-red.csv&#34; blah_df = spark.read.csv(loc, sep=&#34;;&#34;, header=True) Map an existing function import spark.sql.functions as F loc = &#34;dbfs:/databricks-datasets/wine-quality/winequality-red.csv&#34; df = spark.read.csv(loc, sep=&#34;;&#34;, header=True) df = df.withColumn(&#34;sugar_rounded&#34;, F.round(df[&#34;residual sugar&#34;])) df.select(&#34;residual sugar&#34;, &#34;sugar_rounded&#34;).show(5) +--------------+-------------+ |residual sugar|sugar_rounded| +--------------+-------------+ | 1.9 | 2.0| | 2.6 | 3.0| +--------------+-------------+ Also can split a col to a json array Here imagine there is a column , &ldquo;_c0&rdquo; which has tab separated data,
+df = df."></head><body class="ma0 avenir bg-near-white"><header><div class=bg-black><nav class="pv3 ph3 ph4-ns" role=navigation><div class="flex-l justify-between items-center center"><a href=/ class="f3 fw2 hover-white no-underline white-90 dib">michal.piekarczyk.xyz</a><div class="flex-l items-center"><ul class="pl0 mr3"><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/about/ title="About page">About</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/handy/ title="Handy page">Handy</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/post/ title="Post page">Post</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/project/ title="Side Projects page">Side Projects</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/foo/ title="The Foos page">The Foos</a></li></ul></div></div></nav></div></header><main class=pb7 role=main><article class="flex-l flex-wrap justify-between mw8 center ph3"><header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked">HANDY</aside><div id=sharing class=mt3><a href="https://www.facebook.com/sharer.php?u=https://michal.piekarczyk.xyz/handy/model/spark/" class="facebook no-underline" aria-label="share on Facebook"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765 50.32h6.744V33.998h4.499l.596-5.624h-5.095l.007-2.816c0-1.466.14-2.253 2.244-2.253h2.812V17.68h-4.5c-5.405.0-7.307 2.729-7.307 7.317v3.377h-3.369v5.625h3.369V50.32zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg></a><a href="https://twitter.com/share?url=https://michal.piekarczyk.xyz/handy/model/spark/&text=" class="twitter no-underline" aria-label="share on Twitter"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https://michal.piekarczyk.xyz/handy/model/spark/&title=" class="linkedin no-underline" aria-label="share on LinkedIn"><svg height="32" style="enable-background:new 0 0 65 65" viewBox="0 0 65 65" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M50.837 48.137V36.425c0-6.275-3.35-9.195-7.816-9.195-3.604.0-5.219 1.983-6.119 3.374V27.71h-6.79c.09 1.917.0 20.427.0 20.427h6.79V36.729c0-.609.044-1.219.224-1.655.49-1.22 1.607-2.483 3.482-2.483 2.458.0 3.44 1.873 3.44 4.618v10.929H50.837zM22.959 24.922c2.367.0 3.842-1.57 3.842-3.531-.044-2.003-1.475-3.528-3.797-3.528s-3.841 1.524-3.841 3.528c0 1.961 1.474 3.531 3.753 3.531H22.959zM34 64C17.432 64 4 50.568 4 34 4 17.431 17.432 4 34 4s30 13.431 30 30c0 16.568-13.432 30-30 30zM26.354 48.137V27.71h-6.789v20.427h6.789z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></a></div><h1 class="f1 athelas mt3 mb1"></h1><time class="f6 mv4 dib tracked" datetime=0001-01-01T00:00:00Z>January 1, 0001</time></header><div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h4 id=read>Read</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>loc <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;dbfs:/databricks-datasets/wine-quality/winequality-red.csv&#34;</span>
+</span></span><span style=display:flex><span>blah_df <span style=color:#f92672>=</span> spark<span style=color:#f92672>.</span>read<span style=color:#f92672>.</span>csv(loc, sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;;&#34;</span>, header<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>)
+</span></span></code></pre></div><h4 id=map-an-existing-function>Map an existing function</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> spark.sql.functions <span style=color:#66d9ef>as</span> F
+</span></span><span style=display:flex><span>loc <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;dbfs:/databricks-datasets/wine-quality/winequality-red.csv&#34;</span>
+</span></span><span style=display:flex><span>df <span style=color:#f92672>=</span> spark<span style=color:#f92672>.</span>read<span style=color:#f92672>.</span>csv(loc, sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;;&#34;</span>, header<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>)
+</span></span><span style=display:flex><span>df <span style=color:#f92672>=</span> df<span style=color:#f92672>.</span>withColumn(<span style=color:#e6db74>&#34;sugar_rounded&#34;</span>, F<span style=color:#f92672>.</span>round(df[<span style=color:#e6db74>&#34;residual sugar&#34;</span>]))
+</span></span><span style=display:flex><span>df<span style=color:#f92672>.</span>select(<span style=color:#e6db74>&#34;residual sugar&#34;</span>, <span style=color:#e6db74>&#34;sugar_rounded&#34;</span>)<span style=color:#f92672>.</span>show(<span style=color:#ae81ff>5</span>)
+</span></span></code></pre></div><pre tabindex=0><code>+--------------+-------------+
+|residual sugar|sugar_rounded|
++--------------+-------------+
+| 1.9          |          2.0|
+| 2.6          |          3.0|
++--------------+-------------+
+</code></pre><p>Also can split a col to a json array
+Here imagine there is a column , &ldquo;_c0&rdquo; which has tab separated data,</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>df <span style=color:#f92672>=</span> df<span style=color:#f92672>.</span>withColumn(<span style=color:#e6db74>&#34;col_split&#34;</span>, F<span style=color:#f92672>.</span>split(F<span style=color:#f92672>.</span>col(<span style=color:#e6db74>&#34;_c0&#34;</span>), <span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\t</span><span style=color:#e6db74>&#34;</span>))
+</span></span></code></pre></div><p>And casting</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>df <span style=color:#f92672>=</span> df<span style=color:#f92672>.</span>withColumn(<span style=color:#e6db74>&#34;foo&#34;</span>, df[<span style=color:#e6db74>&#34;foo&#34;</span>]<span style=color:#f92672>.</span>cast(<span style=color:#e6db74>&#34;double&#34;</span>))
+</span></span></code></pre></div><h4 id=unique-ids>unique ids!</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>df <span style=color:#f92672>=</span> df<span style=color:#f92672>.</span>withColumn(<span style=color:#e6db74>&#34;id&#34;</span>, F<span style=color:#f92672>.</span>monotonically_increasing_id())
+</span></span><span style=display:flex><span>df<span style=color:#f92672>.</span>write<span style=color:#f92672>.</span>parquet(<span style=color:#e6db74>&#34;foo.parquet&#34;</span>)
+</span></span></code></pre></div><h4 id=user-defined-functions>User Defined Functions</h4><ul><li>A user defined function needs to be defined with a return type</li><li>For instance, say there&rsquo;s a dataframe <code>df</code> with a <code>name</code> column, that have spaces between first and last names say, and you can split them up like so, only grabbing the first <code>2</code> , for example, by also using <code>F.lit</code> to specify a literal value being passed to the func as well.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> pyspark.sql.functions <span style=color:#66d9ef>as</span> F
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.types <span style=color:#f92672>import</span> ArrayType, StringType
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>split_name</span>(name):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> name<span style=color:#f92672>.</span>split(<span style=color:#e6db74>&#34; &#34;</span>)[:<span style=color:#ae81ff>2</span>]
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>udfSplitter <span style=color:#f92672>=</span> F<span style=color:#f92672>.</span>udf(split_name, ArrayType(StringType()))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>df <span style=color:#f92672>=</span> <span style=color:#f92672>...</span>
+</span></span><span style=display:flex><span>df <span style=color:#f92672>=</span> df<span style=color:#f92672>.</span>withColumn(<span style=color:#e6db74>&#34;separated_names&#34;</span>, udfSplitter(df<span style=color:#f92672>.</span>name, F<span style=color:#f92672>.</span>lit(<span style=color:#ae81ff>2</span>)))
+</span></span></code></pre></div><h4 id=quick-spark-ml-lib-logistic-regression-pipeline>Quick Spark ml lib Logistic Regression Pipeline</h4><p>Given a dataframe with features you would like to use/transform in a LogisticRegression, similarly to sklearn taking an input without feature names, the spark flavor does the same, taking a single column for the input features.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml.classification <span style=color:#f92672>import</span> LogisticRegression
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml.linalg <span style=color:#f92672>import</span> Vectors
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml.feature <span style=color:#f92672>import</span> VectorAssembler
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml <span style=color:#f92672>import</span> Pipeline
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>predict_all_of_the_things</span>(df):
+</span></span><span style=display:flex><span>    vector_assembler <span style=color:#f92672>=</span> VectorAssembler(inputCols<span style=color:#f92672>=</span>[
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;f1&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;f2&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;f3&#34;</span>,        
+</span></span><span style=display:flex><span>    ], outputCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;features&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    lr <span style=color:#f92672>=</span> LogisticRegression(
+</span></span><span style=display:flex><span>        featuresCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;features&#34;</span>,
+</span></span><span style=display:flex><span>        labelCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;y_my_label&#34;</span>,
+</span></span><span style=display:flex><span>        maxIter<span style=color:#f92672>=</span><span style=color:#ae81ff>10</span>,
+</span></span><span style=display:flex><span>        regParam<span style=color:#f92672>=</span><span style=color:#ae81ff>0.1</span>,
+</span></span><span style=display:flex><span>        elasticNetParam<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>,
+</span></span><span style=display:flex><span>        threshold<span style=color:#f92672>=</span><span style=color:#ae81ff>0.5</span>,
+</span></span><span style=display:flex><span>        )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    pipeline <span style=color:#f92672>=</span> Pipeline(stages<span style=color:#f92672>=</span>[vector_assembler, lr])
+</span></span><span style=display:flex><span>    e2e <span style=color:#f92672>=</span> pipeline<span style=color:#f92672>.</span>fit(df)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    outdf <span style=color:#f92672>=</span> e2e<span style=color:#f92672>.</span>transform(df)
+</span></span><span style=display:flex><span>    print(outdf<span style=color:#f92672>.</span>head(<span style=color:#ae81ff>10</span>))
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> outdf<span style=color:#f92672>.</span>select([<span style=color:#e6db74>&#34;user_id&#34;</span>, <span style=color:#e6db74>&#34;rawPrediction&#34;</span>, <span style=color:#e6db74>&#34;probability&#34;</span>, <span style=color:#e6db74>&#34;prediction&#34;</span>])
+</span></span></code></pre></div><h4 id=pipeline-with-traintest-handling-also>Pipeline with train/test handling also</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml.classification <span style=color:#f92672>import</span> LogisticRegression
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml.linalg <span style=color:#f92672>import</span> Vectors
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml.feature <span style=color:#f92672>import</span> VectorAssembler
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml.feature <span style=color:#f92672>import</span> OneHotEncoderEstimator
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml.feature <span style=color:#f92672>import</span> StringIndexer
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml <span style=color:#f92672>import</span> Pipeline
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>indexer <span style=color:#f92672>=</span> StringIndexer(<span style=color:#f92672>...</span>)
+</span></span><span style=display:flex><span>onehot <span style=color:#f92672>=</span> OneHotEncoderEstimator(<span style=color:#f92672>...</span>)
+</span></span><span style=display:flex><span>assemble <span style=color:#f92672>=</span> VectorAssembler(<span style=color:#f92672>...</span>)
+</span></span><span style=display:flex><span>regression <span style=color:#f92672>=</span> LogisticRegression(<span style=color:#f92672>...</span>)
+</span></span><span style=display:flex><span>pipeline <span style=color:#f92672>=</span> Pipeline(stages<span style=color:#f92672>=</span>[indexer, onehot, assemble, regression])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>blah_df <span style=color:#f92672>=</span> spark<span style=color:#f92672>.</span>read<span style=color:#f92672>.</span>csv(<span style=color:#f92672>...</span>)
+</span></span><span style=display:flex><span>train_df, test_df <span style=color:#f92672>=</span> blah_df<span style=color:#f92672>.</span>randomSplit([<span style=color:#ae81ff>0.8</span>, <span style=color:#ae81ff>0.2</span>], seed<span style=color:#f92672>=</span><span style=color:#ae81ff>42</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># And now fit the pipeline only on the train part</span>
+</span></span><span style=display:flex><span>pipeline <span style=color:#f92672>=</span> pipeline<span style=color:#f92672>.</span>fit(train_df)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># And predictions..</span>
+</span></span><span style=display:flex><span>predictions <span style=color:#f92672>=</span> pipeline<span style=color:#f92672>.</span>transform(test_df)
+</span></span></code></pre></div><p>And the various stages of the pipeline are indexable, for example, to get the intercept and coefficient of the <code>regression</code> step,</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>print(pipeline<span style=color:#f92672>.</span>stages[<span style=color:#ae81ff>3</span>]<span style=color:#f92672>.</span>intercept, pipeline<span style=color:#f92672>.</span>stages[<span style=color:#ae81ff>3</span>]<span style=color:#f92672>.</span>coefficients)
+</span></span></code></pre></div><p>Will produce the intercept <code>3.9</code> and coefficients, <code>DenseVector([...])</code> for the regression stage of the pipeline.</p><h4 id=spark-stringindexer-is-like-scikitlearns-labelencoder>spark StringIndexer is like scikitlearn&rsquo;s LabelEncoder</h4><p>Given a dataframe <code>flugts</code> and a categorical col <code>blah</code> , we can do a <code>fit</code> , <code>transform</code> , kind of like in scikitlearn.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml.feature <span style=color:#f92672>import</span> StringIndexer
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>flugts <span style=color:#f92672>=</span> StringIndexer(
+</span></span><span style=display:flex><span>    inputCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;blah&#34;</span>, 
+</span></span><span style=display:flex><span>    outputCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;blah_index&#34;</span>
+</span></span><span style=display:flex><span>)<span style=color:#f92672>.</span>fit(
+</span></span><span style=display:flex><span>    flugts
+</span></span><span style=display:flex><span>)<span style=color:#f92672>.</span>transform(
+</span></span><span style=display:flex><span>    flugts
+</span></span><span style=display:flex><span>)
+</span></span></code></pre></div><h4 id=decision-tree-classifier>Decision tree classifier</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml.classification <span style=color:#f92672>import</span> DecisionTreeClassifier
+</span></span><span style=display:flex><span>model <span style=color:#f92672>=</span> DecisionTreeClassifier<span style=color:#f92672>.</span>fit(foo_train)
+</span></span><span style=display:flex><span>prediction <span style=color:#f92672>=</span> model<span style=color:#f92672>.</span>transform(foo_test)
+</span></span></code></pre></div><ul><li>This will produce two new columns, in prediction,</li><li>&ldquo;prediction&rdquo; and &ldquo;probability&rdquo;</li><li>quick confusion matrix , if you also for instance, had the &ldquo;label&rdquo; column,</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>prediction<span style=color:#f92672>.</span>groupBy(<span style=color:#e6db74>&#34;label&#34;</span>, <span style=color:#e6db74>&#34;prediction&#34;</span>)<span style=color:#f92672>.</span>count()<span style=color:#f92672>.</span>show()
+</span></span></code></pre></div><h4 id=logistic-regression>Logistic Regression</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml.classification <span style=color:#f92672>import</span> LogisticRegression
+</span></span></code></pre></div><h4 id=linear-regression>Linear Regression</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml.regression <span style=color:#f92672>import</span> LinearRegression
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml.evaluation <span style=color:#f92672>import</span> RegressionEvaluator
+</span></span><span style=display:flex><span>regression <span style=color:#f92672>=</span> LinearRegression(labelCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;the_label_col&#34;</span>)
+</span></span><span style=display:flex><span>regression <span style=color:#f92672>=</span> regression<span style=color:#f92672>.</span>fit(train_df)
+</span></span><span style=display:flex><span>predictions <span style=color:#f92672>=</span> regression<span style=color:#f92672>.</span>transform(test_df)
+</span></span><span style=display:flex><span>regression<span style=color:#f92672>.</span>intercept
+</span></span><span style=display:flex><span>regression<span style=color:#f92672>.</span>coefficients <span style=color:#75715e># &lt;== weights for the regression </span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># using whatever the default evaluator is ... ( rmse I think)</span>
+</span></span><span style=display:flex><span>RegressionEvaluator(labelCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;the_label_col&#34;</span>)<span style=color:#f92672>.</span>evaluate(predictions)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># And also if &#34;predictions_col&#34; is where predictions are , </span>
+</span></span><span style=display:flex><span>evaluator <span style=color:#f92672>=</span> RegressionEvaluator(labelCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;the_label_col&#34;</span>)<span style=color:#f92672>.</span>setPredictionCol(<span style=color:#e6db74>&#34;predictions_col&#34;</span>)
+</span></span><span style=display:flex><span>evaluator<span style=color:#f92672>.</span>evaluate(predictions, {evaluator<span style=color:#f92672>.</span>metricName: <span style=color:#e6db74>&#34;mae&#34;</span>}) <span style=color:#75715e># &#34;mean absolute error&#34;</span>
+</span></span><span style=display:flex><span>evaluator<span style=color:#f92672>.</span>evaluate(predictions, {evaluator<span style=color:#f92672>.</span>metricName: <span style=color:#e6db74>&#34;r2&#34;</span>})
+</span></span></code></pre></div><h4 id=and-linear-regression-with-regularization>And Linear Regression with regularization</h4><ul><li>Lambda term =0 ==> no regularization</li><li>Lambda term =inf ==> complete regularization , all coefficients are zero.</li><li>Ridge</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>ridge <span style=color:#f92672>=</span> LinearRegression(
+</span></span><span style=display:flex><span>    labelCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;my_label&#34;</span>,
+</span></span><span style=display:flex><span>    elasticNetParam<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>,
+</span></span><span style=display:flex><span>    regParam<span style=color:#f92672>=</span><span style=color:#ae81ff>0.1</span>
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>ridge<span style=color:#f92672>.</span>fit(train_df)
+</span></span></code></pre></div><ul><li>Lasso</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>lasso <span style=color:#f92672>=</span> LinearRegression(
+</span></span><span style=display:flex><span>    labelCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;my_label&#34;</span>,
+</span></span><span style=display:flex><span>    elasticNetParam<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>,
+</span></span><span style=display:flex><span>    regParam<span style=color:#f92672>=</span><span style=color:#ae81ff>0.1</span>
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>lasso<span style=color:#f92672>.</span>fit(train_df)
+</span></span></code></pre></div><h4 id=train-test-split>Train test split</h4><p>A Dataframe has this built in func,</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>train, test <span style=color:#f92672>=</span> mydf<span style=color:#f92672>.</span>randomSplit([<span style=color:#ae81ff>0.8</span>, <span style=color:#ae81ff>0.2</span>], seed<span style=color:#f92672>=</span><span style=color:#ae81ff>42</span>)
+</span></span></code></pre></div><p>But it does not produce separate X/y train/test variables the way that is typical in scikitlearn. Maybe that is a helper func that is available.</p><h4 id=getting-fancier-with-evaluation>Getting fancier with evaluation</h4><p>Given a <code>prediction</code> dataframe with columns, <code>label</code> and <code>prediction</code> , which have been calculated at a particular threshold, we can evaluate as follows,</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml.evaluation <span style=color:#f92672>import</span> MulticlassClassificationEvaluator
+</span></span><span style=display:flex><span>evaluator <span style=color:#f92672>=</span> MulticlassClassificationEvaluator()
+</span></span><span style=display:flex><span>evaluator<span style=color:#f92672>.</span>evaluate(prediction, {evaluator<span style=color:#f92672>.</span>metricName: <span style=color:#e6db74>&#34;weightedPrecision&#34;</span>})
+</span></span><span style=display:flex><span>evaluator<span style=color:#f92672>.</span>evaluate(prediction, {evaluator<span style=color:#f92672>.</span>metricName: <span style=color:#e6db74>&#34;weightedRecall&#34;</span>})
+</span></span><span style=display:flex><span>evaluator<span style=color:#f92672>.</span>evaluate(prediction, {evaluator<span style=color:#f92672>.</span>metricName: <span style=color:#e6db74>&#34;accuracy&#34;</span>})
+</span></span><span style=display:flex><span>evaluator<span style=color:#f92672>.</span>evaluate(prediction, {evaluator<span style=color:#f92672>.</span>metricName: <span style=color:#e6db74>&#34;f1&#34;</span>})
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml.evaluation <span style=color:#f92672>import</span> BinaryClassificationEvaluator
+</span></span><span style=display:flex><span>binary_evaluator <span style=color:#f92672>=</span> BinaryClassificationEvaluator()
+</span></span><span style=display:flex><span>auc <span style=color:#f92672>=</span> binary_evaluator<span style=color:#f92672>.</span>evaluate(
+</span></span><span style=display:flex><span>    prediction,
+</span></span><span style=display:flex><span>    {binary_evaluator<span style=color:#f92672>.</span>metricName: <span style=color:#e6db74>&#34;areaUnderROC&#34;</span>}
+</span></span><span style=display:flex><span>)
+</span></span></code></pre></div><h3 id=text>Text</h3><h4 id=simple-regex-substitution>Simple regex substitution</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.sql.functions <span style=color:#f92672>import</span> regexp_replace
+</span></span><span style=display:flex><span>REGEX <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;[,</span><span style=color:#ae81ff>\\</span><span style=color:#e6db74>-]&#39;</span>
+</span></span><span style=display:flex><span>df <span style=color:#f92672>=</span> df<span style=color:#f92672>.</span>withColumn(<span style=color:#e6db74>&#39;text&#39;</span>, regexp_replace(books<span style=color:#f92672>.</span>text, REGEX, <span style=color:#e6db74>&#39; &#39;</span>))
+</span></span></code></pre></div><h4 id=tokenization>Tokenization</h4><p>Create a new column with an array of words from free form text.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml.feature <span style=color:#f92672>import</span> Tokenizer
+</span></span><span style=display:flex><span>df <span style=color:#f92672>=</span> Tokenizer(inputCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;text&#34;</span>, outputCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;tokens&#34;</span>)<span style=color:#f92672>.</span>transform(df)
+</span></span></code></pre></div><p>Remove stop words</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml.feature <span style=color:#f92672>import</span> StopWordsRemover
+</span></span><span style=display:flex><span>stopwords <span style=color:#f92672>=</span> StopWordsRemover()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>stopwords<span style=color:#f92672>.</span>getStopWords()
+</span></span><span style=display:flex><span>[<span style=color:#e6db74>&#39;i&#39;</span>, <span style=color:#e6db74>&#39;me&#39;</span>, <span style=color:#e6db74>&#39;my&#39;</span>, <span style=color:#e6db74>&#39;myself&#39;</span>, <span style=color:#e6db74>&#39;we&#39;</span>, <span style=color:#e6db74>&#39;our&#39;</span>, <span style=color:#e6db74>&#39;ours&#39;</span>, <span style=color:#e6db74>&#39;ourselves&#39;</span>, <span style=color:#e6db74>&#39;you&#39;</span>, <span style=color:#e6db74>&#39;your&#39;</span>, <span style=color:#e6db74>&#39;yours&#39;</span>,<span style=color:#e6db74>&#39;yourself&#39;</span>, <span style=color:#e6db74>&#39;yourselves&#39;</span>, <span style=color:#e6db74>&#39;he&#39;</span>, <span style=color:#e6db74>&#39;him&#39;</span>, <span style=color:#e6db74>&#39;his&#39;</span>, <span style=color:#e6db74>&#39;himself&#39;</span>, <span style=color:#e6db74>&#39;she&#39;</span>, <span style=color:#e6db74>&#39;her&#39;</span>, <span style=color:#e6db74>&#39;hers&#39;</span>, <span style=color:#e6db74>&#39;herself&#39;</span>,<span style=color:#e6db74>&#39;it&#39;</span>, <span style=color:#e6db74>&#39;its&#39;</span>, <span style=color:#e6db74>&#39;itself&#39;</span>, <span style=color:#e6db74>&#39;they&#39;</span>, <span style=color:#e6db74>&#39;them&#39;</span>, <span style=color:#e6db74>&#39;their&#39;</span>, <span style=color:#e6db74>&#39;theirs&#39;</span>, <span style=color:#e6db74>&#39;themselves&#39;</span>, <span style=color:#e6db74>&#39;what&#39;</span>, <span style=color:#e6db74>&#39;which&#39;</span>,<span style=color:#e6db74>&#39;who&#39;</span>, <span style=color:#e6db74>&#39;whom&#39;</span>, <span style=color:#e6db74>&#39;this&#39;</span>, <span style=color:#e6db74>&#39;that&#39;</span>, <span style=color:#e6db74>&#39;these&#39;</span>, <span style=color:#e6db74>&#39;those&#39;</span>, <span style=color:#e6db74>&#39;am&#39;</span>, <span style=color:#e6db74>&#39;is&#39;</span>, <span style=color:#e6db74>&#39;are&#39;</span>, <span style=color:#e6db74>&#39;was&#39;</span>, <span style=color:#e6db74>&#39;were&#39;</span>, <span style=color:#e6db74>&#39;be&#39;</span>,<span style=color:#e6db74>&#39;been&#39;</span>, <span style=color:#e6db74>&#39;being&#39;</span>, <span style=color:#e6db74>&#39;have&#39;</span>, <span style=color:#e6db74>&#39;has&#39;</span>, <span style=color:#e6db74>&#39;had&#39;</span>, <span style=color:#e6db74>&#39;having&#39;</span>, <span style=color:#e6db74>&#39;do&#39;</span>, <span style=color:#e6db74>&#39;does&#39;</span>, <span style=color:#e6db74>&#39;did&#39;</span>, <span style=color:#e6db74>&#39;doing&#39;</span>, <span style=color:#f92672>...</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Specify the input and output column names</span>
+</span></span><span style=display:flex><span>stopwords <span style=color:#f92672>=</span> stopwords<span style=color:#f92672>.</span>setInputCol(<span style=color:#e6db74>&#39;tokens&#39;</span>)<span style=color:#f92672>.</span>setOutputCol(<span style=color:#e6db74>&#39;words&#39;</span>)
+</span></span><span style=display:flex><span>df <span style=color:#f92672>=</span> stopwords<span style=color:#f92672>.</span>transform(df)
+</span></span></code></pre></div><h4 id=term-frequency-transformer>Term frequency transformer</h4><p>HashingTF , will use a hash algo <code>MurmurHash 3</code> (not sure why not a more well known hash func) , to map to an integer from <code>1</code> to a default of <code>262,144</code> . (Oh that&rsquo;s probably part of the difference, using an integer as opposed to a long 256 bit output hash then) . And the output will include the frequency of the hashed output.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml.feature <span style=color:#f92672>import</span> HashingTF
+</span></span><span style=display:flex><span>hasher <span style=color:#f92672>=</span> HashingTF(inputCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;words&#34;</span>, outputCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;hash&#34;</span>, numFeatures<span style=color:#f92672>=</span><span style=color:#ae81ff>32</span>)
+</span></span><span style=display:flex><span>df <span style=color:#f92672>=</span> hasher<span style=color:#f92672>.</span>transform(df)
+</span></span></code></pre></div><p>And we can do page-rank like proportional inverted indexing too</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml.feature <span style=color:#f92672>import</span> IDF
+</span></span><span style=display:flex><span>df <span style=color:#f92672>=</span> IDF(inputCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;hash&#34;</span>, outputCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;features&#34;</span>)<span style=color:#f92672>.</span>fit(df)<span style=color:#f92672>.</span>transform(df)
+</span></span></code></pre></div><h4 id=pipeline-for-some-of-these-nlp-steps>pipeline for some of these NLP steps</h4><p>Below, assume we have an input dataframe with some kind of <code>raw_text</code> column that has free form text. Then the below pipeline can tokenize that text, remove stop words, and create a term frequency inverted index,</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml.feature <span style=color:#f92672>import</span> Tokenizer, StopWordsRemover, HashingTF, IDF
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml.regression <span style=color:#f92672>import</span> LogisticRegression
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml.feature <span style=color:#f92672>import</span> Pipeline
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>tokenizer <span style=color:#f92672>=</span> Tokenizer(
+</span></span><span style=display:flex><span>    inputCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;raw_text&#34;</span>, outputCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;tokens&#34;</span>
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>remover <span style=color:#f92672>=</span> StopWordsRemover(
+</span></span><span style=display:flex><span>    inputCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;tokens&#34;</span>, outputCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;terms&#34;</span>
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>hasher <span style=color:#f92672>=</span> HashingTF(
+</span></span><span style=display:flex><span>    inputCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;terms&#34;</span>, outputCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;hash&#34;</span>
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>idf <span style=color:#f92672>=</span> IDF(
+</span></span><span style=display:flex><span>    inputCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;hash&#34;</span>, outputCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;features&#34;</span>
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>logistic <span style=color:#f92672>=</span> LogisticRegression()
+</span></span><span style=display:flex><span>pipeline <span style=color:#f92672>=</span> Pipeline(
+</span></span><span style=display:flex><span>    stages<span style=color:#f92672>=</span>[
+</span></span><span style=display:flex><span>        tokenizer,
+</span></span><span style=display:flex><span>        remover,
+</span></span><span style=display:flex><span>        hasher,
+</span></span><span style=display:flex><span>        idf,
+</span></span><span style=display:flex><span>        logistic,
+</span></span><span style=display:flex><span>    ]
+</span></span><span style=display:flex><span>)
+</span></span></code></pre></div><h4 id=one-hot-encoding>One Hot Encoding</h4><p>Spark uses a sparse representation of one-hot-encoded features</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml.feature <span style=color:#f92672>import</span> OneHotEncoderEstimator
+</span></span><span style=display:flex><span>onehot <span style=color:#f92672>=</span> OneHotEncoderEstimator(
+</span></span><span style=display:flex><span>    inputCols<span style=color:#f92672>=</span>[<span style=color:#e6db74>&#34;type_blah&#34;</span>], 
+</span></span><span style=display:flex><span>    outputCols<span style=color:#f92672>=</span>[<span style=color:#e6db74>&#34;type_one_hot&#34;</span>]
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>onehot<span style=color:#f92672>.</span>fit(df)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>onehot<span style=color:#f92672>.</span>categorySizes <span style=color:#75715e># &lt;== gives how many categories processed.</span>
+</span></span><span style=display:flex><span>df <span style=color:#f92672>=</span> onehot<span style=color:#f92672>.</span>transform(df)
+</span></span></code></pre></div><p>A <code>SparseVector</code> takes the length of the vector as the first arg and a key-val dict for the sparse values</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.mllib.linalg <span style=color:#f92672>import</span> DenseVector, SparseVector
+</span></span><span style=display:flex><span>DenseVector([<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>7</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>]) <span style=color:#75715e># each value is kept</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>SparseVector(<span style=color:#ae81ff>8</span>, {<span style=color:#ae81ff>0</span>: <span style=color:#ae81ff>1.0</span>, <span style=color:#ae81ff>5</span>: <span style=color:#ae81ff>7.0</span>})
+</span></span></code></pre></div><h4 id=bucketing>Bucketing</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml.feature <span style=color:#f92672>import</span> Bucketizer
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>bucketizer <span style=color:#f92672>=</span> Bucketizer(
+</span></span><span style=display:flex><span>    splits<span style=color:#f92672>=</span>[<span style=color:#ae81ff>20</span>, <span style=color:#ae81ff>30</span>, <span style=color:#ae81ff>40</span>, <span style=color:#ae81ff>50</span>],
+</span></span><span style=display:flex><span>    inputCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;age&#34;</span>,
+</span></span><span style=display:flex><span>    outputCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;age_bin&#34;</span>
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>df <span style=color:#f92672>=</span> bucketizer<span style=color:#f92672>.</span>transform(df)
+</span></span></code></pre></div><p>Similar to categorical encoding benefiting from one hot encoding, bucketing will also benefit from one hot encoding</p><h4 id=cross-validation>Cross Validation</h4><p>Given a model and an evaluator, where the model can also be a pipeline,</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml.tuning <span style=color:#f92672>import</span> CrossValidator, ParamGridBuilder
+</span></span><span style=display:flex><span>model <span style=color:#f92672>=</span> LinearRegression(labelCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;y_label&#34;</span>)
+</span></span><span style=display:flex><span>evaluator <span style=color:#f92672>=</span> RegressionEvaluator(labelCol<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;y_label&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>grid <span style=color:#f92672>=</span> ParamGridBuilder() \
+</span></span><span style=display:flex><span>    <span style=color:#f92672>.</span>addGrid(model<span style=color:#f92672>.</span>elasticNetParam, [<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0.5</span>, <span style=color:#ae81ff>1.</span>]) \
+</span></span><span style=display:flex><span>    <span style=color:#f92672>.</span>addGrid(model<span style=color:#f92672>.</span>regParam, [<span style=color:#ae81ff>0.01</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>10</span>]) \
+</span></span><span style=display:flex><span>    <span style=color:#f92672>.</span>addGrid(model<span style=color:#f92672>.</span>fitIntercept, [<span style=color:#66d9ef>True</span>, <span style=color:#66d9ef>False</span>]) \
+</span></span><span style=display:flex><span>    <span style=color:#f92672>.</span>build()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;number of models to be built from the grid =&gt;&#34;</span>, len(grid))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>cv <span style=color:#f92672>=</span> CrossValidator(
+</span></span><span style=display:flex><span>    estimator<span style=color:#f92672>=</span>model,
+</span></span><span style=display:flex><span>    estimatorParamMaps<span style=color:#f92672>=</span>grid,
+</span></span><span style=display:flex><span>    evaluator<span style=color:#f92672>=</span>evaluator,
+</span></span><span style=display:flex><span>    numFolds<span style=color:#f92672>=</span><span style=color:#ae81ff>5</span>,
+</span></span><span style=display:flex><span>    seed<span style=color:#f92672>=</span><span style=color:#ae81ff>42</span>,
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>cv<span style=color:#f92672>.</span>fit(train_df)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># the average metric whatever it is, for each combo in the grid.</span>
+</span></span><span style=display:flex><span>cv<span style=color:#f92672>.</span>avgMetrics 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># can use the best model like this,</span>
+</span></span><span style=display:flex><span>cv<span style=color:#f92672>.</span>bestModel<span style=color:#f92672>.</span>transform(test_df) 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Can also use the best model implicitly...</span>
+</span></span><span style=display:flex><span>cv<span style=color:#f92672>.</span>transform(test_df)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># And look at a metric hence for that model, </span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;rmse&#34;</span>, evaluator<span style=color:#f92672>.</span>evaluate(cv<span style=color:#f92672>.</span>bestModel<span style=color:#f92672>.</span>transform(test_df), {evaluator<span style=color:#f92672>.</span>metricName: <span style=color:#e6db74>&#34;rmse&#34;</span>}))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># You can get some quick documentation like this wow. Neat trick.</span>
+</span></span><span style=display:flex><span>cv<span style=color:#f92672>.</span>bestModel<span style=color:#f92672>.</span>explainParam(<span style=color:#e6db74>&#34;elasticNetParam&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Can look at the params like this too</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> param, val <span style=color:#f92672>in</span> cv<span style=color:#f92672>.</span>bestModel<span style=color:#f92672>.</span>extractParamMap()<span style=color:#f92672>.</span>items:
+</span></span><span style=display:flex><span>    print((param<span style=color:#f92672>.</span>name, val), <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;(</span><span style=color:#e6db74>{</span>param<span style=color:#f92672>.</span>doc<span style=color:#e6db74>}</span><span style=color:#e6db74>)&#34;</span>)
+</span></span></code></pre></div><p>for a RandomForestClassifier this will print for instance &mldr; something like</p><pre tabindex=0><code>predictionCol prediction
+featureSubsetStrategy onethird
+maxMemoryInMB 256
+rawPredictionCol rawPrediction
+cacheNodeIds False
+probabilityCol probability
+impurity gini
+featuresCol features
+maxDepth 20
+labelCol label
+subsamplingRate 1.0
+maxBins 32
+checkpointInterval 10
+minInstancesPerNode 1
+minInfoGain 0.0
+numTrees 20
+seed 1720035589386331064
+</code></pre><h4 id=random-forest>random forest</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml.classification <span style=color:#f92672>import</span> RandomForestClassifier, GBTClassifier
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pyspark.ml.evaluation <span style=color:#f92672>import</span> BinaryClassificationEvaluator
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>forest <span style=color:#f92672>=</span> RandomForestClassifier()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>forest<span style=color:#f92672>.</span>featureImportances <span style=color:#75715e># produces a SparseVector , </span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>gbt <span style=color:#f92672>=</span> GBTClassifier()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>gbt<span style=color:#f92672>.</span>getNumTrees  <span style=color:#75715e># number of trees </span>
+</span></span></code></pre></div><p>There is also an amazing debug output available with , <code>gbt.toDebugString</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>In [<span style=color:#ae81ff>10</span>]:
+</span></span><span style=display:flex><span>print(gbt<span style=color:#f92672>.</span>toDebugString<span style=color:#f92672>.</span>split(<span style=color:#e6db74>&#34;Tree&#34;</span>)[<span style=color:#ae81ff>0</span>])
+</span></span><span style=display:flex><span>GBTClassificationModel (uid<span style=color:#f92672>=</span>GBTClassifier_c601194e39a1) <span style=color:#66d9ef>with</span> <span style=color:#ae81ff>20</span> trees
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>In [<span style=color:#ae81ff>12</span>]:
+</span></span><span style=display:flex><span>print(gbt<span style=color:#f92672>.</span>toDebugString<span style=color:#f92672>.</span>split(<span style=color:#e6db74>&#34;Tree&#34;</span>)[<span style=color:#ae81ff>1</span>])
+</span></span><span style=display:flex><span> <span style=color:#ae81ff>0</span> (weight <span style=color:#ae81ff>1.0</span>):
+</span></span><span style=display:flex><span>    If (feature <span style=color:#ae81ff>1</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>9.6</span>)
+</span></span><span style=display:flex><span>     If (feature <span style=color:#ae81ff>2</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>118.5</span>)
+</span></span><span style=display:flex><span>      If (feature <span style=color:#ae81ff>0</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>2.5</span>)
+</span></span><span style=display:flex><span>       If (feature <span style=color:#ae81ff>1</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>7.075</span>)
+</span></span><span style=display:flex><span>        If (feature <span style=color:#ae81ff>2</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>109.5</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#f92672>-</span><span style=color:#ae81ff>0.5702479338842975</span>
+</span></span><span style=display:flex><span>        Else (feature <span style=color:#ae81ff>2</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>109.5</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#f92672>-</span><span style=color:#ae81ff>0.17391304347826086</span>
+</span></span><span style=display:flex><span>       Else (feature <span style=color:#ae81ff>1</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>7.075</span>)
+</span></span><span style=display:flex><span>        If (feature <span style=color:#ae81ff>2</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>92.5</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#f92672>-</span><span style=color:#ae81ff>0.3117782909930716</span>
+</span></span><span style=display:flex><span>        Else (feature <span style=color:#ae81ff>2</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>92.5</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#f92672>-</span><span style=color:#ae81ff>0.1232876712328767</span>
+</span></span><span style=display:flex><span>      Else (feature <span style=color:#ae81ff>0</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>2.5</span>)
+</span></span><span style=display:flex><span>       If (feature <span style=color:#ae81ff>0</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>10.5</span>)
+</span></span><span style=display:flex><span>        If (feature <span style=color:#ae81ff>2</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>92.5</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#f92672>-</span><span style=color:#ae81ff>0.6527027027027027</span>
+</span></span><span style=display:flex><span>        Else (feature <span style=color:#ae81ff>2</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>92.5</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#f92672>-</span><span style=color:#ae81ff>0.48745046235138706</span>
+</span></span><span style=display:flex><span>       Else (feature <span style=color:#ae81ff>0</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>10.5</span>)
+</span></span><span style=display:flex><span>        If (feature <span style=color:#ae81ff>1</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>7.075</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#f92672>-</span><span style=color:#ae81ff>0.47368421052631576</span>
+</span></span><span style=display:flex><span>        Else (feature <span style=color:#ae81ff>1</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>7.075</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#f92672>-</span><span style=color:#ae81ff>0.19090909090909092</span>
+</span></span><span style=display:flex><span>     Else (feature <span style=color:#ae81ff>2</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>118.5</span>)
+</span></span><span style=display:flex><span>      If (feature <span style=color:#ae81ff>0</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>5.5</span>)
+</span></span><span style=display:flex><span>       If (feature <span style=color:#ae81ff>1</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>7.74</span>)
+</span></span><span style=display:flex><span>        If (feature <span style=color:#ae81ff>2</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>197.5</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#f92672>-</span><span style=color:#ae81ff>0.3770491803278688</span>
+</span></span><span style=display:flex><span>        Else (feature <span style=color:#ae81ff>2</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>197.5</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#f92672>-</span><span style=color:#ae81ff>0.0916030534351145</span>
+</span></span><span style=display:flex><span>       Else (feature <span style=color:#ae81ff>1</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>7.74</span>)
+</span></span><span style=display:flex><span>        If (feature <span style=color:#ae81ff>0</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>4.5</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#f92672>-</span><span style=color:#ae81ff>0.10258418167580266</span>
+</span></span><span style=display:flex><span>        Else (feature <span style=color:#ae81ff>0</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>4.5</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#ae81ff>0.10580204778156997</span>
+</span></span><span style=display:flex><span>      Else (feature <span style=color:#ae81ff>0</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>5.5</span>)
+</span></span><span style=display:flex><span>       If (feature <span style=color:#ae81ff>0</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>10.5</span>)
+</span></span><span style=display:flex><span>        If (feature <span style=color:#ae81ff>0</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>8.5</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#f92672>-</span><span style=color:#ae81ff>0.27740863787375414</span>
+</span></span><span style=display:flex><span>        Else (feature <span style=color:#ae81ff>0</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>8.5</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#f92672>-</span><span style=color:#ae81ff>0.5332348596750369</span>
+</span></span><span style=display:flex><span>       Else (feature <span style=color:#ae81ff>0</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>10.5</span>)
+</span></span><span style=display:flex><span>        If (feature <span style=color:#ae81ff>1</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>8.66</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#f92672>-</span><span style=color:#ae81ff>0.014492753623188406</span>
+</span></span><span style=display:flex><span>        Else (feature <span style=color:#ae81ff>1</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>8.66</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#ae81ff>0.23333333333333334</span>
+</span></span><span style=display:flex><span>    Else (feature <span style=color:#ae81ff>1</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>9.6</span>)
+</span></span><span style=display:flex><span>     If (feature <span style=color:#ae81ff>0</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>6.5</span>)
+</span></span><span style=display:flex><span>      If (feature <span style=color:#ae81ff>2</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>124.5</span>)
+</span></span><span style=display:flex><span>       If (feature <span style=color:#ae81ff>1</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>16.509999999999998</span>)
+</span></span><span style=display:flex><span>        If (feature <span style=color:#ae81ff>0</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>1.5</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#ae81ff>0.11760883690708251</span>
+</span></span><span style=display:flex><span>        Else (feature <span style=color:#ae81ff>0</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>1.5</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#f92672>-</span><span style=color:#ae81ff>0.023830031581969568</span>
+</span></span><span style=display:flex><span>       Else (feature <span style=color:#ae81ff>1</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>16.509999999999998</span>)
+</span></span><span style=display:flex><span>        If (feature <span style=color:#ae81ff>2</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>50.5</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#f92672>-</span><span style=color:#ae81ff>0.23404255319148937</span>
+</span></span><span style=display:flex><span>        Else (feature <span style=color:#ae81ff>2</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>50.5</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#ae81ff>0.20102827763496145</span>
+</span></span><span style=display:flex><span>      Else (feature <span style=color:#ae81ff>2</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>124.5</span>)
+</span></span><span style=display:flex><span>       If (feature <span style=color:#ae81ff>1</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>15.675</span>)
+</span></span><span style=display:flex><span>        If (feature <span style=color:#ae81ff>0</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>1.5</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#ae81ff>0.2877813504823151</span>
+</span></span><span style=display:flex><span>        Else (feature <span style=color:#ae81ff>0</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>1.5</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#ae81ff>0.19178515007898894</span>
+</span></span><span style=display:flex><span>       Else (feature <span style=color:#ae81ff>1</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>15.675</span>)
+</span></span><span style=display:flex><span>        If (feature <span style=color:#ae81ff>2</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>288.0</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#ae81ff>0.475375296286542</span>
+</span></span><span style=display:flex><span>        Else (feature <span style=color:#ae81ff>2</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>288.0</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#ae81ff>0.18562874251497005</span>
+</span></span><span style=display:flex><span>     Else (feature <span style=color:#ae81ff>0</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>6.5</span>)
+</span></span><span style=display:flex><span>      If (feature <span style=color:#ae81ff>0</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>10.5</span>)
+</span></span><span style=display:flex><span>       If (feature <span style=color:#ae81ff>0</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>8.5</span>)
+</span></span><span style=display:flex><span>        If (feature <span style=color:#ae81ff>2</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>85.5</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#f92672>-</span><span style=color:#ae81ff>0.27121464226289516</span>
+</span></span><span style=display:flex><span>        Else (feature <span style=color:#ae81ff>2</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>85.5</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#ae81ff>0.0723354000590493</span>
+</span></span><span style=display:flex><span>       Else (feature <span style=color:#ae81ff>0</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>8.5</span>)
+</span></span><span style=display:flex><span>        If (feature <span style=color:#ae81ff>1</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>13.16</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#f92672>-</span><span style=color:#ae81ff>0.4181152790484904</span>
+</span></span><span style=display:flex><span>        Else (feature <span style=color:#ae81ff>1</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>13.16</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#f92672>-</span><span style=color:#ae81ff>0.2569395017793594</span>
+</span></span><span style=display:flex><span>      Else (feature <span style=color:#ae81ff>0</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>10.5</span>)
+</span></span><span style=display:flex><span>       If (feature <span style=color:#ae81ff>1</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>15.125</span>)
+</span></span><span style=display:flex><span>        If (feature <span style=color:#ae81ff>2</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>60.5</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#ae81ff>0.3333333333333333</span>
+</span></span><span style=display:flex><span>        Else (feature <span style=color:#ae81ff>2</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>60.5</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#ae81ff>0.15768056968463887</span>
+</span></span><span style=display:flex><span>       Else (feature <span style=color:#ae81ff>1</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>15.125</span>)
+</span></span><span style=display:flex><span>        If (feature <span style=color:#ae81ff>2</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>76.5</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#ae81ff>0.12863070539419086</span>
+</span></span><span style=display:flex><span>        Else (feature <span style=color:#ae81ff>2</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>76.5</span>)
+</span></span><span style=display:flex><span>         Predict: <span style=color:#ae81ff>0.37316017316017314</span>
+</span></span></code></pre></div><h3 id=special-databricks-stuff>Special databricks stuff</h3><ul><li>Check out what local file system access is available , by</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>display(dbutils<span style=color:#f92672>.</span>fs<span style=color:#f92672>.</span>ls(<span style=color:#e6db74>&#34;dbfs:/&#34;</span>))
+</span></span></code></pre></div><ul><li>how about ADLS/blob storage on ADLS Azure ??</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>display(dbutils<span style=color:#f92672>.</span>fs<span style=color:#f92672>.</span>ls(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;abfss://</span><span style=color:#e6db74>{</span>container_name<span style=color:#e6db74>}</span><span style=color:#e6db74>@</span><span style=color:#e6db74>{</span>storage_account_name<span style=color:#e6db74>}</span><span style=color:#e6db74>.dfs.core.windows.net&#34;</span>))
+</span></span></code></pre></div><p>And the above require special configuration addition too&mldr;</p><pre tabindex=0><code>spark.databricks.pyspark.trustedFilesystems org.apache.hadoop.fs.LocalFileSystem,com.databricks.adl.AdlFileSystem,com.databricks.s3a.S3AFileSystem,shaded.databricks.org.apache.hadoop.fs.azure.NativeAzureFileSystem,shaded.datrabricks.org.apache.hadoop.fs.azurebfs.SecureAzureBlobFileSystem
+</code></pre><h4 id=ml-flow>ML FLow</h4><p>If you are not on the special &ldquo;ML&rdquo; instnce, you can install <code>mlflow</code> on a cluster like ..</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>dbutils<span style=color:#f92672>.</span>library<span style=color:#f92672>.</span>installPyPI(<span style=color:#e6db74>&#34;mlflow&#34;</span>, <span style=color:#e6db74>&#34;1.0.0&#34;</span>)
+</span></span><span style=display:flex><span>dbutils<span style=color:#f92672>.</span>library<span style=color:#f92672>.</span>restartPython()
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> pylab
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> matplotlib.pyplot <span style=color:#66d9ef>as</span> plt
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> mlflow.sklearn
+</span></span><span style=display:flex><span><span style=color:#66d9ef>with</span> mlflow<span style=color:#f92672>.</span>start_run(run_name<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Basic RF Experiment&#34;</span>) <span style=color:#66d9ef>as</span> run:
+</span></span><span style=display:flex><span>    rf <span style=color:#f92672>=</span> RandomForestRegressor()
+</span></span><span style=display:flex><span>    rf<span style=color:#f92672>.</span>fit(X_train, y_train)
+</span></span><span style=display:flex><span>    predictions <span style=color:#f92672>=</span> rf<span style=color:#f92672>.</span>predict(X_test)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># log model</span>
+</span></span><span style=display:flex><span>    mlflow<span style=color:#f92672>.</span>sklearn<span style=color:#f92672>.</span>log_model(rf, <span style=color:#e6db74>&#34;random-forest-model&#34;</span>)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    mse <span style=color:#f92672>=</span> mean_squared_error(y_test, predictions)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># log metrics</span>
+</span></span><span style=display:flex><span>    mlflow<span style=color:#f92672>.</span>log_metric(<span style=color:#e6db74>&#34;mse&#34;</span>, mse)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    runID <span style=color:#f92672>=</span> run<span style=color:#f92672>.</span>info<span style=color:#f92672>.</span>run_uuid
+</span></span><span style=display:flex><span>    experimentID <span style=color:#f92672>=</span> run<span style=color:#f92672>.</span>info<span style=color:#f92672>.</span>experiment_id
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Inside mlflow run with run id  </span><span style=color:#e6db74>{</span>runID<span style=color:#e6db74>}</span><span style=color:#e6db74> and experiment id </span><span style=color:#e6db74>{</span>experimentID<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    fig, ax <span style=color:#f92672>=</span> plt<span style=color:#f92672>.</span>subplots()
+</span></span><span style=display:flex><span>    sns<span style=color:#f92672>.</span>residplot(predictions, y_test, lowess<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>)
+</span></span><span style=display:flex><span>    plt<span style=color:#f92672>.</span>xlabel(<span style=color:#e6db74>&#34;Preds&#34;</span>)
+</span></span><span style=display:flex><span>    plt<span style=color:#f92672>.</span>ylabel(<span style=color:#e6db74>&#34;Residuals&#34;</span>)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    pylab<span style=color:#f92672>.</span>savefig(<span style=color:#e6db74>&#34;foo_file.png&#34;</span>)  <span style=color:#75715e># saving locally </span>
+</span></span><span style=display:flex><span>    mlflow<span style=color:#f92672>.</span>log_artifacts(<span style=color:#e6db74>&#34;foo_file&#34;</span>, <span style=color:#e6db74>&#34;residuals.png&#34;</span>)  <span style=color:#75715e># and also as an artifact</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    
+</span></span></code></pre></div><h4 id=faster-column-renaming>Faster column renaming</h4><p>For instance if you want to rename multiple columns , instead of , using a for loop like</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> spark.sql.functions <span style=color:#66d9ef>as</span> F
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>cols <span style=color:#f92672>=</span> df<span style=color:#f92672>.</span>columns
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> c <span style=color:#f92672>in</span> cols:
+</span></span><span style=display:flex><span>    df <span style=color:#f92672>=</span> df<span style=color:#f92672>.</span>withColumn(c <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;_blahblah&#34;</span>, F<span style=color:#f92672>.</span>col(c))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>df <span style=color:#f92672>=</span> df<span style=color:#f92672>.</span>select(<span style=color:#f92672>*</span>[c <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;_blahblah&#34;</span> <span style=color:#66d9ef>for</span> c <span style=color:#f92672>in</span> cols])
+</span></span></code></pre></div><ul><li>Slightly cleaner first maybe to use <code>withColumnRenamed</code></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>cols <span style=color:#f92672>=</span> df<span style=color:#f92672>.</span>columns
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> c <span style=color:#f92672>in</span> cols:
+</span></span><span style=display:flex><span>    df <span style=color:#f92672>=</span> df<span style=color:#f92672>.</span>withColumnRenamed(c, c <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;_blahblah&#34;</span>)
+</span></span></code></pre></div><ul><li>And I wonder if the above can be faster if it is chained, <code>df.withColumnRenamed(c1, c2).withColumnRenamed(c2, c3)</code> . But not sure</li><li>But other than that, a list comprehension with <code>.alias()</code> , might be faster too. Have not yet checked..</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>df <span style=color:#f92672>=</span> df<span style=color:#f92672>.</span>select(<span style=color:#f92672>*</span>[F<span style=color:#f92672>.</span>col(c)<span style=color:#f92672>.</span>alias(c <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;_blahblah&#34;</span>) <span style=color:#66d9ef>for</span> c <span style=color:#f92672>in</span> df<span style=color:#f92672>.</span>columns])
+</span></span></code></pre></div><h4 id=comparing-if-two-large-dataframes-are-the-close>Comparing if two large dataframes are the close</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> spark.sql.functions <span style=color:#66d9ef>as</span> F
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> functools <span style=color:#f92672>import</span> reduce
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> operators <span style=color:#f92672>import</span> or_
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Writing some of this from memory, so I think have to fix some parts later...</span>
+</span></span><span style=display:flex><span>double_cols <span style=color:#f92672>=</span> [col <span style=color:#66d9ef>for</span> col <span style=color:#f92672>in</span> df<span style=color:#f92672>.</span>columns <span style=color:#66d9ef>if</span> df<span style=color:#f92672>.</span>getSchema()[col]<span style=color:#f92672>.</span>dataType <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;double&#34;</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># If the mean is &gt; 1 then can round w/ precision=0</span>
+</span></span><span style=display:flex><span>col_means <span style=color:#f92672>=</span> df<span style=color:#f92672>.</span>agg({col: <span style=color:#e6db74>&#34;Mean&#34;</span> <span style=color:#66d9ef>for</span> col <span style=color:#f92672>in</span> double_cols})
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>double_actually_int_cols <span style=color:#f92672>=</span> [col <span style=color:#66d9ef>for</span> col, mean <span style=color:#f92672>in</span> col_means<span style=color:#f92672>.</span>items() <span style=color:#66d9ef>if</span> mean <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>1</span>]
+</span></span><span style=display:flex><span>double_actually_double_cols <span style=color:#f92672>=</span> [col <span style=color:#66d9ef>for</span> col, mean <span style=color:#f92672>in</span> col_means<span style=color:#f92672>.</span>items() <span style=color:#66d9ef>if</span> mean <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>1</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>conditions <span style=color:#f92672>=</span> [
+</span></span><span style=display:flex><span>    F<span style=color:#f92672>.</span>abs(
+</span></span><span style=display:flex><span>        (F<span style=color:#f92672>.</span>col(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;x.</span><span style=color:#e6db74>{</span>col<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>))
+</span></span><span style=display:flex><span>        <span style=color:#f92672>-</span> (F<span style=color:#f92672>.</span>col(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;y.</span><span style=color:#e6db74>{</span>col<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>))
+</span></span><span style=display:flex><span>    ) <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0.01</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> col <span style=color:#f92672>in</span> double_actually_double_cols
+</span></span><span style=display:flex><span>] <span style=color:#f92672>+</span> [
+</span></span><span style=display:flex><span>    F<span style=color:#f92672>.</span>abs(
+</span></span><span style=display:flex><span>        (F<span style=color:#f92672>.</span>col(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;x.</span><span style=color:#e6db74>{</span>col<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>))
+</span></span><span style=display:flex><span>        <span style=color:#f92672>-</span> (F<span style=color:#f92672>.</span>col(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;y.</span><span style=color:#e6db74>{</span>col<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>))
+</span></span><span style=display:flex><span>    ) <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> col <span style=color:#f92672>in</span> double_actually_int_cols
+</span></span><span style=display:flex><span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>condition <span style=color:#f92672>=</span> reduce(or_, conditions)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>index_cols <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;id&#34;</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Here for instance, just selecting the index cols matching the conditions</span>
+</span></span><span style=display:flex><span>diffdf <span style=color:#f92672>=</span> df<span style=color:#f92672>.</span>alias(<span style=color:#e6db74>&#34;x&#34;</span>)<span style=color:#f92672>.</span>join(df<span style=color:#f92672>.</span>alias(<span style=color:#e6db74>&#34;y&#34;</span>), on<span style=color:#f92672>=</span>index_cols)<span style=color:#f92672>.</span>where(
+</span></span><span style=display:flex><span>    condition
+</span></span><span style=display:flex><span>)<span style=color:#f92672>.</span>select(index_cols)
+</span></span></code></pre></div><h3 id=references>References</h3><p>A lot of this was inspired by <a href=https://campus.datacamp.com/courses/machine-learning-with-pyspark>this great DataCamp course</a> .</p><ul class=pa0></ul><div class="mt6 instapaper_ignoref"></div></div><aside class="w-30-l mt6-l"></aside></article></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo><div class="flex justify-between"><a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://michal.piekarczyk.xyz/>&copy; michal.piekarczyk.xyz 2023</a><div></div></div></footer></body></html>

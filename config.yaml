@@ -55,19 +55,19 @@ menu:
   main:
     - identifier: about
       name: about
-      url: /en/about/
+      url: /about/
       weight: 10
     - identifier: handy
       name: handy
-      url: /en/handy/
+      url: /handy/
       weight: 10
     - identifier: posts
       name: posts
-      url: /en/post/
+      url: /post/
       weight: 10
     - identifier: projects
       name: projects
-      url: /en/project/
+      url: /project/
       weight: 10
     - identifier: tags
       name: tags

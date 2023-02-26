@@ -70,7 +70,10 @@ Out[16]: ' William Barr referred to Trump\'s legal team as the "clown car."'
 
 #### indeed
 
-<img src="https://s3.amazonaws.com/my-blog-content/2022-01-29-lang-chain-quick-look/IMG_1033_1675042706821_0.jpg" width="50%">
+
+
+{{< figure align=center src="https://s3.amazonaws.com/my-blog-content/2022-01-29-lang-chain-quick-look/IMG_1033_1675042706821_0.jpg" width="50%" >}}
+
 
 20:24 amazing haha ! Let me try another. 
 

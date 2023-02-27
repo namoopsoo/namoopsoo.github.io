@@ -1,5 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>notes on michal.piekarczyk.xyz</title><link>https://michal.piekarczyk.xyz/categories/notes/</link><description>Recent content in notes on michal.piekarczyk.xyz</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 16 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/categories/notes/index.xml" rel="self" type="application/rss+xml"/><item><title>Notes on hugo</title><link>https://michal.piekarczyk.xyz/post/2021-05-16-hugo-notes/</link><pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate><guid>https://michal.piekarczyk.xyz/post/2021-05-16-hugo-notes/</guid><description>Switched from Jekyll to Hugo</description></item><item><title>Easy Blog Posting ("My Noting Book")</title><link>https://michal.piekarczyk.xyz/post/2020-12-09-dropbox-api-hmm/</link><pubDate>Wed, 09 Dec 2020 00:00:00 +0000</pubDate><guid>https://michal.piekarczyk.xyz/post/2020-12-09-dropbox-api-hmm/</guid><description>For my EasyBlogPosting project.. Testing out the Dropbox API..
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>notes on michal.piekarczyk.xyz</title>
+    <link>https://michal.piekarczyk.xyz/categories/notes/</link>
+    <description>Recent content in notes on michal.piekarczyk.xyz</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 16 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/categories/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Notes on hugo</title>
+      <link>https://michal.piekarczyk.xyz/post/2021-05-16-hugo-notes/</link>
+      <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2021-05-16-hugo-notes/</guid>
+      <description>Switched from Jekyll to Hugo</description>
+    </item>
+    
+    <item>
+      <title>Easy Blog Posting (&#34;My Noting Book&#34;)</title>
+      <link>https://michal.piekarczyk.xyz/post/2020-12-09-dropbox-api-hmm/</link>
+      <pubDate>Wed, 09 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2020-12-09-dropbox-api-hmm/</guid>
+      <description>For my EasyBlogPosting project.. Testing out the Dropbox API..
 2020-12-09 trying this out Per here &amp;hellip; pip install dropbox Went w/ that Getting Started page Through that page, I created a new test app for myself.
 Using the API explorer &amp;hellip; I hit Get Token ..
 https://www.dropbox.com/oauth2/authorize?response_type=token&amp;amp;client_id=xxxxxxxxx&amp;amp;redirect_uri=https%3A%2F%2Fdropbox.github.io%2Fdropbox-api-v2-explorer%2F&amp;amp;state=file_requests_list!39%2B%2Bxxxxxxxx&amp;amp;token_access_type=online&amp;amp;
-That generated a token and I used https://dropbox.github.io/dropbox-api-v2-explorer/#files_list_folder and I was able to see actual folders in my account. That&amp;rsquo;s cool except I thought I had chosen something like &amp;lsquo;single folder access&amp;rsquo; so I&amp;rsquo;m slightly confused why I can see the other folders.</description></item></channel></rss>
+That generated a token and I used https://dropbox.github.io/dropbox-api-v2-explorer/#files_list_folder and I was able to see actual folders in my account. That&amp;rsquo;s cool except I thought I had chosen something like &amp;lsquo;single folder access&amp;rsquo; so I&amp;rsquo;m slightly confused why I can see the other folders.</description>
+    </item>
+    
+  </channel>
+</rss>

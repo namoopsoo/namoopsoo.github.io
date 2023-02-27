@@ -1,1 +1,46 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Side Projects on michal.piekarczyk.xyz</title><link>https://michal.piekarczyk.xyz/project/</link><description>Recent content in Side Projects on michal.piekarczyk.xyz</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 20 Oct 2020 10:00:05 -0400</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/project/index.xml" rel="self" type="application/rss+xml"/><item><title>Bike Share Learn Reboot</title><link>https://michal.piekarczyk.xyz/project/2020-10-20-bike-share-learn-reboot/</link><pubDate>Tue, 20 Oct 2020 10:00:05 -0400</pubDate><guid>https://michal.piekarczyk.xyz/project/2020-10-20-bike-share-learn-reboot/</guid><description>This project is a reboot of an earlier project predicting bicycle ride share riders destinations.</description></item><item><title>Physiological deep learnings</title><link>https://michal.piekarczyk.xyz/project/2020-04-05-aviation-kaggle-low-level/</link><pubDate>Sun, 05 Apr 2020 10:00:00 -0400</pubDate><guid>https://michal.piekarczyk.xyz/project/2020-04-05-aviation-kaggle-low-level/</guid><description>learning physiological state from time series data</description></item><item><title>Time Parser Project</title><link>https://michal.piekarczyk.xyz/project/time-parser/time-parser-project/</link><pubDate>Sun, 11 Feb 2018 19:39:35 -0400</pubDate><guid>https://michal.piekarczyk.xyz/project/time-parser/time-parser-project/</guid><description>This is a simple personal time tracker built with clojure, aws lambda and dynamodb, inspired by Laura Vanderkam&amp;rsquo;s &amp;ldquo;168 Hours&amp;rdquo; book</description></item><item><title>Citibike Learn Project</title><link>https://michal.piekarczyk.xyz/project/2016-12-18-citibike-project/</link><pubDate>Sun, 18 Dec 2016 18:33:28 +0000</pubDate><guid>https://michal.piekarczyk.xyz/project/2016-12-18-citibike-project/</guid><description>Can your Bike Share Destination be Predicted</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Side Projects on michal.piekarczyk.xyz</title>
+    <link>https://michal.piekarczyk.xyz/project/</link>
+    <description>Recent content in Side Projects on michal.piekarczyk.xyz</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 20 Oct 2020 10:00:05 -0400</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/project/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bike Share Learn Reboot</title>
+      <link>https://michal.piekarczyk.xyz/project/2020-10-20-bike-share-learn-reboot/</link>
+      <pubDate>Tue, 20 Oct 2020 10:00:05 -0400</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/project/2020-10-20-bike-share-learn-reboot/</guid>
+      <description>This project is a reboot of an earlier project predicting bicycle ride share riders destinations.</description>
+    </item>
+    
+    <item>
+      <title>Physiological deep learnings</title>
+      <link>https://michal.piekarczyk.xyz/project/2020-04-05-aviation-kaggle-low-level/</link>
+      <pubDate>Sun, 05 Apr 2020 10:00:00 -0400</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/project/2020-04-05-aviation-kaggle-low-level/</guid>
+      <description>learning physiological state from time series data</description>
+    </item>
+    
+    <item>
+      <title>Time Parser Project</title>
+      <link>https://michal.piekarczyk.xyz/project/time-parser/time-parser-project/</link>
+      <pubDate>Sun, 11 Feb 2018 19:39:35 -0400</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/project/time-parser/time-parser-project/</guid>
+      <description>This is a simple personal time tracker built with clojure, aws lambda and dynamodb,  inspired by Laura Vanderkam&amp;rsquo;s &amp;ldquo;168 Hours&amp;rdquo; book</description>
+    </item>
+    
+    <item>
+      <title>Citibike Learn Project</title>
+      <link>https://michal.piekarczyk.xyz/project/2016-12-18-citibike-project/</link>
+      <pubDate>Sun, 18 Dec 2016 18:33:28 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/project/2016-12-18-citibike-project/</guid>
+      <description>Can your Bike Share Destination be Predicted</description>
+    </item>
+    
+  </channel>
+</rss>

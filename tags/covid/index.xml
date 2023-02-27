@@ -1,2 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>covid on michal.piekarczyk.xyz</title><link>https://michal.piekarczyk.xyz/tags/covid/</link><description>Recent content in covid on michal.piekarczyk.xyz</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/tags/covid/index.xml" rel="self" type="application/rss+xml"/><item><title>Trying Databricks</title><link>https://michal.piekarczyk.xyz/post/2021-03-20-databricks/</link><pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate><guid>https://michal.piekarczyk.xyz/post/2021-03-20-databricks/</guid><description>https://databricks.com/try-databricks
-2021-03-21 Running A quick start notebook Based on the notes here, it is pretty easy to create an auto-scaling cluster. Not sure yet what events prompt the cluster to get more workers. But I would be curious to try a job that uses fewer workers and more workers, to see how the outcomes compare. I also like ethat this notebook supports SQL and also python , using what looks like first line as %python to indicate the language.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>covid on michal.piekarczyk.xyz</title>
+    <link>https://michal.piekarczyk.xyz/tags/covid/</link>
+    <description>Recent content in covid on michal.piekarczyk.xyz</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/tags/covid/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Trying Databricks</title>
+      <link>https://michal.piekarczyk.xyz/post/2021-03-20-databricks/</link>
+      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2021-03-20-databricks/</guid>
+      <description>https://databricks.com/try-databricks
+2021-03-21 Running A quick start notebook Based on the notes here, it is pretty easy to create an auto-scaling cluster. Not sure yet what events prompt the cluster to get more workers. But I would be curious to try a job that uses fewer workers and more workers, to see how the outcomes compare. I also like ethat this notebook supports SQL and also python , using what looks like first line as %python to indicate the language.</description>
+    </item>
+    
+  </channel>
+</rss>

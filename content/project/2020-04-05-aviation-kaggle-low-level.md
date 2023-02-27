@@ -1,8 +1,10 @@
 ---
 title:  "Physiological deep learnings"
 date:   2020-04-05 10:00:00 -0400
-featured_image: "https://my-blog-content.s3.amazonaws.com/2019/2019-07-28+14.27.08-airplane.jpg"
 summary: learning physiological state from time series data
+cover:
+  image: "https://my-blog-content.s3.amazonaws.com/2019/2019-07-28+14.27.08-airplane.jpg"
+ 
 ---
 
 

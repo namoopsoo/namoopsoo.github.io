@@ -1,8 +1,9 @@
 ---
 title: "Citibike Learn Project"
 date: 2016-12-18 18:33:28
-featured_image: "https://my-blog-content.s3.amazonaws.com/2020/CartShare.jpeg"
 summary: Can your Bike Share Destination be Predicted
+cover:
+  image: "https://my-blog-content.s3.amazonaws.com/2020/CartShare.jpeg"
 ---
 
 

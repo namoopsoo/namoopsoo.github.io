@@ -8,7 +8,7 @@ buildDrafts: false
 buildFuture: false
 buildExpired: true
 
-# googleAnalytics: UA-123-45
+googleAnalytics: G-86TSXEXWB5
 
 minify:
   disableXML: true
@@ -56,11 +56,7 @@ menu:
     - identifier: about
       name: about
       url: /about/
-      weight: 10
-    - identifier: handy
-      name: handy
-      url: /handy/
-      weight: 10
+      weight: 50
     - identifier: posts
       name: posts
       url: /post/
@@ -68,12 +64,16 @@ menu:
     - identifier: projects
       name: projects
       url: /project/
-      weight: 10
+      weight: 20
+    - identifier: handy
+      name: handy
+      url: /handy/
+      weight: 30
     - identifier: tags
       name: tags
       url: /tags/
-      weight: 20
-    - identifier: example
-      name: example.org
-      url: https://example.org
-      weight: 30
+      weight: 40
+    - identifier: frivolity
+      name: frivolity
+      url: https://world.hey.com/michal.piekarczyk
+      weight: 100

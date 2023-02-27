@@ -1,6 +1,7 @@
 ---
 title: Quick lang chain test drive
-date: 2023-01-29
+date: 2023-01-29T21:02:57+00:00
+weight: 1
 ---
 
 

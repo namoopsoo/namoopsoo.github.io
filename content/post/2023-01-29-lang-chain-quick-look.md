@@ -88,7 +88,7 @@ Out[19]: ' No, Cheney lost her bid for reelection.'
 
 wow !
 
-<img src="https://s3.amazonaws.com/my-blog-content/2022-01-29-lang-chain-quick-look/IMG_1034_1675042979259_0.jpg" width="50%">
+{{< figure align=center src="https://s3.amazonaws.com/my-blog-content/2022-01-29-lang-chain-quick-look/IMG_1034_1675042979259_0.jpg" width="50%">}}
 
 #### okay one more 
 
@@ -103,7 +103,7 @@ Out[20]: ' No, the January 6th Report found no evidence of election fraud.'
 
 Wow this is really cool! I'm not sure which section was used for this answer. I wonder if it was this one? 
 
-<img src="https://s3.amazonaws.com/my-blog-content/2022-01-29-lang-chain-quick-look/IMG_1035_1675043012989_0.jpg" width="50%">
+{{< figure align=center src="https://s3.amazonaws.com/my-blog-content/2022-01-29-lang-chain-quick-look/IMG_1035_1675043012989_0.jpg" width="50%">}}
 
 #### I want to check out the section
 here which says you can get a precise link to how the answer to your question was constructed, with the evidence basically.

@@ -29,7 +29,7 @@ params:
   ShowShareButtons: false
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
-  ShowCodeCopyButtons: false
+  ShowCodeCopyButtons: true
   ShowWordCount: true
   ShowRssButtonInSectionTermList: false
   UseHugoToc: true
@@ -38,12 +38,20 @@ params:
   comments: false
   hidemeta: false
   hideSummary: false
-  showtoc: false
+  ShowToc: true
   tocopen: false
 
   mainSections:
     - post
     - project
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1_000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: [ "title", "permalink", "summary", "content" ]
 
 
   # assets:
@@ -81,3 +89,9 @@ menu:
       name: frivolity
       url: https://world.hey.com/michal.piekarczyk
       weight: 100
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON

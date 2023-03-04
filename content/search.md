@@ -1,4 +1,5 @@
 ---
-title: "Search"
+title: Search Page
 layout: "search"
 ---
+

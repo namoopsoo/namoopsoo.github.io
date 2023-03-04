@@ -73,9 +73,9 @@ menu:
       name: handy
       url: /handy/
       weight: 30
-    - identifier: tags
-      name: tags
-      url: /tags/
+    - identifier: Search
+      name: search
+      url: search/
       weight: 40
     - identifier: frivolity
       name: frivolity

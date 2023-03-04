@@ -88,10 +88,19 @@ def write_post_file(path, content, append):
     print('wrote to ', path)
 
 
-def make_image_html(s3fn_vec):
-    return '\n'.join([
-        (f'<img src="{make_s3_image_url(x)}" width="50%">')
-        for x in s3fn_vec])
+def make_image_html(s3fn_vec, hugo_format=True):
+    """
+    Note, here is what the hugo format looks like
+    {{< figure src="{url}" width="50%">}}
+    """
+    if hugo_format:
+        return "\n".join([
+            (f'{{{{< figure src="{make_s3_image_url(x)}" width="50%">}}}}') 
+            for x in s3fn_vec])
+    else:
+        return '\n'.join([
+            (f'<img src="{make_s3_image_url(x)}" width="50%">')
+            for x in s3fn_vec])
 
 
 def make_s3_image_url(loc):
@@ -122,7 +131,8 @@ def make_prefix(date, title):
 
 def check_env_vars():
     deploy_bucket = os.getenv('S3_DEPLOY_BUCKET')
-    assert deploy_bucket
+    
+    return bool(deploy_bucket)
 
 def convert_local_images_to_s3_assets(content_file_path, absolute_asset_dir, replace=True):
     """
@@ -208,13 +218,18 @@ def do():
 
     # Collect args from user.
     args = vars(parser.parse_args())
+
+    if not check_env_vars():
+        print("Oops need to set S3_DEPLOY_BUCKET")
+        return
+
+    existing_file = args.get("existing_file")
     if args.get("only_convert_images_to_s3_assets"):
 
-        content_file_path = args.get("existing_file")
         assert existing_file and Path(existing_file).is_file()
         local_asset_dir = args.get("local_asset_dir")
         assert local_asset_dir and Path(local_asset_dir).is_dir()
-        convert_local_images_to_s3_assets(content_file_path, local_asset_dir)
+        convert_local_images_to_s3_assets(existing_file, local_asset_dir)
         print("Done.")
         return
 
@@ -224,7 +239,6 @@ def do():
     dry_run = args.get("dry_run")
     title = args.get("title")
     date = args.get("date")
-    existing_file = args.get("existing_file")
     out_dir = args.get("out_dir")
     assert existing_file or out_dir
 
@@ -236,7 +250,6 @@ def do():
     else:
         prefix = make_prefix(date=date, title=title)
     print('prefix', prefix)
-    check_env_vars()
     s3fn_vec = upload_images_s3(images, prefix, dry_run=dry_run)
 
     image_html = make_image_html(s3fn_vec)

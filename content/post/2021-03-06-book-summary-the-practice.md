@@ -1,4 +1,8 @@
-
+---
+title: Book Summary of The Practice
+date: 2021-03-06
+tags: ["book-summary"]
+---
 
 ### Reference
 * Title "The Practice"

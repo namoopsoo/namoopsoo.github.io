@@ -1,5 +1,5 @@
 
-#### Tryingo to figure out whether Calories specified typically include grams from Fiber
+#### Trying to figure out whether Calories specified typically include grams from Fiber
 
 * Managed to find some documentation , [here](https://fdc.nal.usda.gov/docs/Foundation_Foods_Documentation_Oct2020.pdf) on "proximates" ,
 

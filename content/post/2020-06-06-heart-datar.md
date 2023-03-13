@@ -8,27 +8,14 @@ Not sure yet. There are a fitness trackers out there, but I am curious if my che
 
 
 {{< row >}}
-{{< column >}}
- {{< figure src="https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.39.42.png" width="30%" >}}
-{{< /column >}}
+{{< column >}} {{< figure src="https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.39.42.png" width="30%" >}} {{< /column >}}
 
-{{< column >}}
- {{< figure src="https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.39.49.png" width="30%" >}}
-{{< /column >}}
+{{< column >}} {{< figure src="https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.39.49.png" width="30%" >}} {{< /column >}}
 
-{{< column >}}
- {{< figure src="https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.44.39.png" width="30%" >}} 
-{{< /column >}}
+{{< column >}} {{< figure src="https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.44.39.png" width="30%" >}} {{< /column >}}
 {{< /row >}}
 
 
-<table>
-<tr>
-<td> {{< figure src="https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.39.42.png" width="30%" >}} </td>
-<td> {{< figure src="https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.39.49.png" width="30%" >}} </td>
-<td> {{< figure src="https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.44.39.png" width="30%" >}} </td>
-</tr>
-</table>
 
 #### Didnt finish this but I tried parsing the raw fit file
 * Making a note for later I suppose. I git cloned [fit_processing](https://github.com/mcandocia/fit_processing) , which requires installing [fitparse](https://github.com/dtcooper/python-fitparse)

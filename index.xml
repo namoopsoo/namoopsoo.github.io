@@ -256,6 +256,17 @@ Anyway, turns out they are glued to the inside and you need some kind of epoxy l
     </item>
     
     <item>
+      <title>book How to Take Smart Notes</title>
+      <link>https://michal.piekarczyk.xyz/post/2021-04-10-book-summary-how-to-take-smart-notes/</link>
+      <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2021-04-10-book-summary-how-to-take-smart-notes/</guid>
+      <description>Reference
+started reading [[February 2nd, 2021]] finished [[April 3rd, 2021]] Author [[Sonke Ahrens]] These are my [[literature notes]] I suppose. Book in three sentences
+When (not if) you take notes, less is more and you achieve this by writing like the git diff building on what you already know; you write what you have learned You write in your own words, distilling the gist, to make retention more likely. The [[slip box]] can make writing easier by replacing planning with the execution of small incremental well defined tasks, &amp;ldquo;Read with a pen and make fleeting notes&amp;rdquo;, &amp;ldquo;write literature notes from fleeting notes&amp;rdquo;, &amp;ldquo;create permanent notes around topics that tug at your interests as you go along&amp;rdquo;, &amp;ldquo;have interactive discussions with your slip box, making connections between your permanent notes as you go along&amp;rdquo;, &amp;ldquo;dump your permanent notes as outlines for manuscripts you can work on and edit until you are satisfied.</description>
+    </item>
+    
+    <item>
       <title>Pumpkin Pie Note</title>
       <link>https://michal.piekarczyk.xyz/post/2021-04-10-pumpkin-pie-cheat-sheet/</link>
       <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
@@ -294,6 +305,15 @@ Any error messages after starting the upload? An error I see when I go to look m
       <guid>https://michal.piekarczyk.xyz/post/2021-03-20-databricks/</guid>
       <description>https://databricks.com/try-databricks
 2021-03-21 Running A quick start notebook Based on the notes here, it is pretty easy to create an auto-scaling cluster. Not sure yet what events prompt the cluster to get more workers. But I would be curious to try a job that uses fewer workers and more workers, to see how the outcomes compare. I also like ethat this notebook supports SQL and also python , using what looks like first line as %python to indicate the language.</description>
+    </item>
+    
+    <item>
+      <title>Book Summary of The Practice</title>
+      <link>https://michal.piekarczyk.xyz/post/2021-03-06-book-summary-the-practice/</link>
+      <pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2021-03-06-book-summary-the-practice/</guid>
+      <description>Reference Title &amp;ldquo;The Practice&amp;rdquo; Author [[Seth Godin]] Book in three Sentences (almost) ( Here&amp;rsquo;s my first stab at this, on [[February 1st, 2021]] ) If you&amp;rsquo;re not on the hook, then you are working as an #amateur or as a #hack Your daily practice is not about doing what you love but loving what you do. Author says if you are not doing for someone other than yourself, then that is also #amateur status.</description>
     </item>
     
     <item>
@@ -437,6 +457,16 @@ I have picked up my bike share data learning project from earlier, to try to red
 This is mainly around navigating XGBoost.
 There are two XGBoost APIs With the sklearn API you can
 import xgboost as xgb from xgboost import XGBClassifier import numpy as np from sklearn.</description>
+    </item>
+    
+    <item>
+      <title>Does the Wahoo TIKR measure intervals that can be used for Heart Rate Variability measurements?</title>
+      <link>https://michal.piekarczyk.xyz/post/2020-06-06-heart-datar/</link>
+      <pubDate>Sat, 06 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2020-06-06-heart-datar/</guid>
+      <description>Not sure yet. There are a fitness trackers out there, but I am curious if my chest band can help. I took a quick look at one of my recordings on the Wahoo app, but I don&amp;rsquo;t see anything more granular than just beats per minute. The app indeed has pushed to Apple Health, but I only see the bpm data and no HRV data.
+Didnt finish this but I tried parsing the raw fit file Making a note for later I suppose.</description>
     </item>
     
     <item>
@@ -1182,15 +1212,6 @@ Also saw this message
     
     <item>
       <title></title>
-      <link>https://michal.piekarczyk.xyz/post/2020-06-06-heart-datar/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://michal.piekarczyk.xyz/post/2020-06-06-heart-datar/</guid>
-      <description>Does the Wahoo TIKR measure intervals that can be used for Heart Rate Variability measurements? Not sure yet. There are a fitness trackers out there, but I am curious if my chest band can help. I took a quick look at one of my recordings on the Wahoo app, but I don&amp;rsquo;t see anything more granular than just beats per minute. The app indeed has pushed to Apple Health, but I only see the bpm data and no HRV data.</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>https://michal.piekarczyk.xyz/post/2020-10-20--build-issues-again/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -1222,20 +1243,11 @@ B, T = 2472182, 2458010 p_observed = B*1./(B + T) # 0.501437 For now just starti
     
     <item>
       <title></title>
-      <link>https://michal.piekarczyk.xyz/post/2021-03-06-book-summary-the-practice/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://michal.piekarczyk.xyz/post/2021-03-06-book-summary-the-practice/</guid>
-      <description>Reference Title &amp;ldquo;The Practice&amp;rdquo; Author [[Seth Godin]] Book in three Sentences (almost) ( Here&amp;rsquo;s my first stab at this, on [[February 1st, 2021]] ) If you&amp;rsquo;re not on the hook, then you are working as an #amateur or as a #hack Your daily practice is not about doing what you love but loving what you do. Author says if you are not doing for someone other than yourself, then that is also #amateur status.</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>https://michal.piekarczyk.xyz/post/2021-03-27-nutrition-calcs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://michal.piekarczyk.xyz/post/2021-03-27-nutrition-calcs/</guid>
-      <description>Tryingo to figure out whether Calories specified typically include grams from Fiber Managed to find some documentation , here on &amp;ldquo;proximates&amp;rdquo; , &amp;ldquo;Carbohydrate content, referred to as “carbohydrate by difference” in the tables, is expressed as the difference between 100 and the sum of the percentages of water, protein, total lipid (fat), ash, and alcohol (when present). Values for carbohydrate by difference include total dietary fiber content. “Sugars, total NLEA” refers to the sum of the values for individual monosaccharides (galactose, glucose, and fructose) and disaccharides (sucrose, lactose, and maltose), which are those sugars analyzed for nutrition labelling.</description>
+      <description>Trying to figure out whether Calories specified typically include grams from Fiber Managed to find some documentation , here on &amp;ldquo;proximates&amp;rdquo; , &amp;ldquo;Carbohydrate content, referred to as “carbohydrate by difference” in the tables, is expressed as the difference between 100 and the sum of the percentages of water, protein, total lipid (fat), ash, and alcohol (when present). Values for carbohydrate by difference include total dietary fiber content. “Sugars, total NLEA” refers to the sum of the values for individual monosaccharides (galactose, glucose, and fructose) and disaccharides (sucrose, lactose, and maltose), which are those sugars analyzed for nutrition labelling.</description>
     </item>
     
     <item>

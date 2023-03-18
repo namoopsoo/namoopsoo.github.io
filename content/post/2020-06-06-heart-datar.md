@@ -8,11 +8,11 @@ Not sure yet. There are a fitness trackers out there, but I am curious if my che
 
 
 {{< row >}}
-{{< column >}} {{< figure src="https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.39.42.png" width="30%" >}} {{< /column >}}
+{{< column >}} {{< figure src="https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.39.42.png" width="100%" >}} {{< /column >}}
 
-{{< column >}} {{< figure src="https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.39.49.png" width="30%" >}} {{< /column >}}
+{{< column >}} {{< figure src="https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.39.49.png" width="100%" >}} {{< /column >}}
 
-{{< column >}} {{< figure src="https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.44.39.png" width="30%" >}} {{< /column >}}
+{{< column >}} {{< figure src="https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.44.39.png" width="100%" >}} {{< /column >}}
 {{< /row >}}
 
 

@@ -21,9 +21,9 @@ and I had to change them to be using the hugo language, below, then I saw the im
 ```html
  <table>
  <tr>
-    <td> {{< figure src="https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.39.42.png" width="30%" >}} </td>
-    <td> {{< figure src="https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.39.49.png" width="30%" >}} </td>
-    <td> {{< figure src="https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.44.39.png" width="30%" >}} </td>
+    <td> {{</* figure src="https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.39.42.png" width="30%"  */>}} </td>
+    <td> {{</* figure src="https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.39.49.png" width="30%"  */>}} </td>
+    <td> {{</* figure src="https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.44.39.png" width="30%"  */>}} </td>
  </tr>
  </table>
 ```
@@ -44,11 +44,11 @@ layouts/shortcodes/row.html
 
 and 
 ```
-{{< row >}}
-{{< column>}}something1{{< /column>}}
-{{< column>}}something1{{< /column>}}
-{{< column>}}something1 {{< /column>}}
-{{< /row >}} 
+{{</* row */>}}
+{{</* column */>}} something1 {{</* /column */>}}
+{{</* column */>}} something1 {{</* /column */>}}
+{{</* column */>}} something1 {{</* /column */>}}
+{{</* /row */>}} 
 ```
 
 to do this job, but that did not work. And I suspected it was because I did not have `row` and `col-md` css classes defined anywhere. So I copied some interesting looking css from [here](https://getbootstrap.com/docs/4.0/layout/grid/) , 
@@ -70,7 +70,7 @@ to do this job, but that did not work. And I suspected it was because I did not 
 ```
 I tested this locally and it worked nicely. 
 
-### But how to persis the style?
+### But how to persist the style?
 So Hugo uses git submodules for themes. Before, I was using the ananke theme, but I did not make any customizations to the css.
 
 And now I `git clone` -d from [here](https://github.com/adityatelange/hugo-PaperMod) and according to 

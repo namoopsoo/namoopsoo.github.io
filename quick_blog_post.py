@@ -23,7 +23,7 @@ def bake_options():
                     'help': 'Append instead of creating a new file. (If the file already exists, you will get an error.)'},],
             [['--images'],
                 {'action': 'store',
-                    'help': 'List of images to include'},],
+                    'help': 'List of images to include, separated by a "," comma without spaces surrounding the comma'},],
             [['--out-dir'],
                 {'action': 'store',
                     'help': 'Target directory. Optional if providing "--existing-file"'},],
@@ -232,7 +232,7 @@ def do():
         convert_local_images_to_s3_assets(existing_file, local_asset_dir)
         print("Done.")
         return
-
+    import ipdb;ipdb.set_trace()
 
     images = [x.replace("\\", "").strip() for x in args.get("images").split(",")]
     print("images", images)

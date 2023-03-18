@@ -5,7 +5,7 @@
     <link>https://michal.piekarczyk.xyz/</link>
     <description>Recent content on michal.piekarczyk.xyz</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 18 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Quick lang chain test drive</title>
       <link>https://michal.piekarczyk.xyz/post/2023-01-29-lang-chain-quick-look/</link>
@@ -14,6 +14,16 @@
       <guid>https://michal.piekarczyk.xyz/post/2023-01-29-lang-chain-quick-look/</guid>
       <description>okay let me try that lang chain demo 19:23 ok yea looking at https://beta.openai.com/account/api-keys I did not have an api key yet, so lets try that out. how can one use https://github.com/hwchase17/langchain for [[question-answer-task]] over documentation ? https://langchain.readthedocs.io/en/latest/use_cases/question_answering.html 19:33 wow really cool so https://langchain.readthedocs.io/en/latest/use_cases/question_answering.html#adding-in-sources this says this can provide the sources used in answering a question ! nice 19:37 ok so first per https://langchain.readthedocs.io/en/latest/getting_started/getting_started.html here, installing this stuff,
 creating a new environment on my laptop pip install langchain pip install openai pip install faiss-cpu # adding this here after the fact after getting below error 20:11 got one error, ValueError: Could not import faiss python package.</description>
+    </item>
+    
+    <item>
+      <title>adjustments when migrating to hugo paper mod theme</title>
+      <link>https://michal.piekarczyk.xyz/post/2023-03-18-hugo-columns-papermod-migrate-theme/</link>
+      <pubDate>Fri, 17 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2023-03-18-hugo-columns-papermod-migrate-theme/</guid>
+      <description>Quick note, I had moved to the PaperMod theme last month and have been slowly fixing a few things that borked. Images disappeared? So first, my images disappeared all together , from this post I had them like
+&amp;lt;table&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td&amp;gt;&amp;lt;img src=&amp;#34;https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.39.42.png&amp;#34; width=&amp;#34;30%&amp;#34;/&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;&amp;lt;img src=&amp;#34;https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.39.49.png&amp;#34; width=&amp;#34;30%&amp;#34; /&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;&amp;lt;img src=&amp;#34;https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.44.39.png&amp;#34; width=&amp;#34;30%&amp;#34; /&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;/table&amp;gt; and I had to change them to be using the hugo language, below, then I saw the images again.</description>
     </item>
     
     <item>

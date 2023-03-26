@@ -10,7 +10,7 @@ cover:
 ### First Stab at Alternate Day Feasting
 
 #### Wait Don't you mean Alternate Day Fasting?
-Haha yes but I am still working up to the level of stoicism required to do proper Alternate Day Fasting and a low stress life also helps especially if you rely on snacks to counter the stress of the daily Work-From-Home-Wake-Up-Surprise-You-Are-At-Work-And-Work-Throughout-The-Entire-Day-Life haha!
+Haha yes but I am still working up to the level of stoicism required to do proper [Alternate Day Fasting](https://www.dietdoctor.com/weight-loss/alternate-day-fasting) and a low stress life also helps especially if you rely on snacks to counter the stress of the daily Work-From-Home-Wake-Up-Surprise-You-Are-At-Work-And-Work-Throughout-The-Entire-Day-Life haha!
       
 But having already been doing Time Restricted Feeding for several years now, I think I have the stoicism requirements to at least give Alternate Day Feasting a go, which is basically aiming at calorie restriction every other day.
 

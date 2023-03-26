@@ -46,6 +46,9 @@ def bake_options():
             [['--local-asset-dir'],
                 {'action': 'store',
                     'help': 'Where to find local relative mentioned assets like images mentioned in the content (e.g. md ) file '},],
+            [['--convert-img-to-hugo'],
+             {"action": "store",
+              "help": "<img> to hugo stuff."}]
 
                 ]
 
@@ -88,14 +91,21 @@ def write_post_file(path, content, append):
     print('wrote to ', path)
 
 
-def make_image_html(s3fn_vec, hugo_format=True):
+def make_image_html(blah, hugo_format=True):
     """
     Note, here is what the hugo format looks like
     {{< figure src="{url}" width="50%">}}
     """
+    if isinstance(blah, str):
+        s3fn_vec = [blah]
+    elif isinstance(blah, list):
+        s3fn_vec = blah
+    else:
+        raise Exception("oops")
+
     if hugo_format:
         return "\n".join([
-            (f'{{{{< figure src="{make_s3_image_url(x)}" width="50%">}}}}') 
+            (f'{{{{< figure src="{make_s3_image_url(x)}" width="50%">}}}}')
             for x in s3fn_vec])
     else:
         return '\n'.join([
@@ -156,7 +166,7 @@ def convert_local_images_to_s3_assets(content_file_path, absolute_asset_dir, rep
             relative_path = Path(match_img_md.groups()[0])
         else:
             relative_path = ""
-        if relative_path:
+        if relative_path and not str(relative_path).startswith("http"):
             assert " " not in str(relative_path), relative_path
             image_path = asset_dir / relative_path
             assert image_path.exists(), image_path
@@ -183,21 +193,27 @@ def convert_local_images_to_s3_assets(content_file_path, absolute_asset_dir, rep
 
     # second pass
     for line in lines:
-        match_img_src = re.search(r"<img\s+src=\"([^\"]+)\"", line)
-        match_img_md = re.search(r"!\[[^\[\]]+\]\(([^\(\)]+)\)", line)
+        match_img_src = re.search(r"(?P<all><img\s+src=\"(?P<path>[^\"]+)\"[^>]+>)", line)
+        match_img_md = re.search(r"(?P<all>!\[[^\[\]]+\]\((?P<path>[^\(\)]+)\))", line)
         if match_img_src:
-            relative_path = Path(match_img_src.groups()[0])
+            relative_path = Path(match_img_src.groupdict()["path"])
+            all_match = Path(match_img_src.groupdict()["all"])
         elif match_img_md:
-            relative_path = Path(match_img_md.groups()[0])
+            relative_path = Path(match_img_md.groupdict()["path"])
+            all_match = Path(match_img_md.groupdict()["all"])
         else:
             relative_path = ""
         if relative_path:
             image_path = asset_dir / relative_path
             assert image_path.exists(), image_path
+            import ipdb;ipdb.set_trace()
 
             updated_line = line.replace(
-                str(relative_path),
-                make_s3_image_url(str(Path(prefix) / relative_path.name))
+                str(all_match), 
+                make_image_html(
+                    # make_s3_image_url(str(Path(prefix) / relative_path.name))
+                    (str(Path(prefix) / relative_path.name))
+                ),
             )
             if line == updated_line:
                 print("Hmm, line and updated_line are both ", line, ", that is weird")
@@ -208,6 +224,30 @@ def convert_local_images_to_s3_assets(content_file_path, absolute_asset_dir, rep
         out = Path(content_file_path).write_text("\n".join(output_lines))
         print("write out", out)
         
+
+def update_this_file(loc, update_in_place=True):
+    """
+    Update <img src=..> to {{<figure src="">}} hugo style 
+    """
+    lines = Path(loc).read_text().splitlines()
+    vec = []
+    for line in lines:
+            if m := re.search(r'(?P<line><img\s+src="(?P<url>[^"]+)"\s+(width="(?P<width>\d+%)")?\s*(/)?>)', line):
+                    url = m.groupdict()["url"]
+                    if width := m.groupdict()["width"]:
+                            width_part = f'width="{width}"'
+                    else:
+                            width_part = ""
+                    updated = f'{{{{< figure src="{url}" {width_part} >}}}}'
+                    updated_line = line.replace(m.groupdict()["line"], updated)
+                    print("replacing: ", line, updated_line)
+                    vec.append(updated_line)
+            else:
+                    vec.append(line)
+    if update_in_place:
+            Path(loc).write_text("\n".join(vec))    
+    else:
+            print("done")
 
 
 def do():

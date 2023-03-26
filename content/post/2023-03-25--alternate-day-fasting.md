@@ -4,6 +4,8 @@ date: 2023-03-25
 tags:
   - fasting
   - nutrition
+cover:
+  image: "https://s3.amazonaws.com/my-blog-content/2023/2023-03-25-Alternate-Day-Feasting/2023-03-26T191146-figure_1679859645507_0.png"
 ---
 ### First Stab at Alternate Day Feasting
 
@@ -20,8 +22,14 @@ The first plot I did looks like
 
       
 but maybe it is a bit noisy since it has all the data for each day, so trying also a 7 day average too,
-{{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-03-25-Alternate-Day-Feasting/2023-03-26T031646-figure_1679801859234_0.png" width="90%">}}
       
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-03-25-Alternate-Day-Feasting/2023-03-26T191146-figure_1679859645507_0.png" width="90%">}}
+
+
+![2023-03-26T204315-figure.png](../assets/2023-03-26T204315-figure_1679863701207_0.png)
+![2023-03-26T204150-figure.png](../assets/2023-03-26T204150-figure_1679863710325_0.png)
+
+
 
 #### So What happened?
 Well the whole reason I started looking at all this was that I started a Work From Home job in December 2021 and although prior to that, I used to bike-commute to work every day, now bike rides in 2022 I admit have been way shorter, say, 3 to 6 miles a day as opposed to 12+ miles a day. 
@@ -36,6 +44,7 @@ The first plot above does not show this very well, but the second chart, which t
 There was a bit of trial and error I can describe later, but basically, 
 ```python
 import os
+import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 import pylab
@@ -43,6 +52,7 @@ from pathlib import Path
 from datetime import datetime, date, timedelta
 
 from core.date_utils import utc_ts
+
 
 def make_xtick_labels(x, step=5):
     '''Given x, step the labels every <step>
@@ -52,7 +62,9 @@ def make_xtick_labels(x, step=5):
     x_labels = [x[i] for i in x_ticks]
     return x_ticks, x_labels
 
-def get_data(root_dir):
+root_dir = Path(os.getenv("ROOT_DIR"))
+
+def get_data():
     # Prepare food df
     food_logs_loc = (root_dir / "CarbManager/daily_logs_20210312-20230318_fe628b90-9859-4259-ab49-1ba3ce95b90c.csv")
     food_df = pd.read_csv(food_logs_loc)
@@ -72,13 +84,47 @@ def get_data(root_dir):
     weight_agg_df = weight_df[cols].groupby(by="RawDate").min().reset_index()
     return food_agg_df, weight_agg_df
 
-def plot_data(food_agg_df, weight_agg_df, start_date, end_date):
+def find_closest_date(dates, date):
+    """
+    Examples 
+    In [13]: from datetime import datetime, timedelta
+        ...: 
+        ...: start_date = datetime(2022, 1, 1)
+        ...: dates = [start_date + timedelta(days=x) for x in range(1000)]
+
+    In [14]: find_closest_date(dates, datetime(2023, 1, 1))
+    Out[14]: datetime.datetime(2023, 1, 1, 0, 0)
+
+    In [15]: start_date = datetime(2022, 1, 1)
+        ...: dates = [start_date + timedelta(days=7) for x in range(1000)]
+
+    In [16]: find_closest_date(dates, datetime(2023, 1, 1))
+    Out[16]: datetime.datetime(2022, 1, 8, 0, 0)
+
+        
+    """
+    assert dates
+    smallest = np.inf
+    closest_date = None
+    for x in sorted(dates):
+        if delta := (x - date).total_seconds() < smallest:
+            closest_date = x
+            smallest = delta
+        else:
+            break
+    assert closest_date
+    return closest_date
+
+
+def plot_data(food_agg_df, weight_agg_df, start_date, end_date, labels=None):
 
     fig = plt.figure(figsize=(12, 4))
     ax1 = fig.add_subplot(111)
 
     color = "tab:blue"
-    ax1.set_ylabel("Weight (lb)", color=color)
+    weight_label = labels.get("weight_label", "Weight (lb)")
+    food_label = labels.get("food_label", "Calories")
+    ax1.set_ylabel(weight_label, color=color)
     narrowed_df1 = weight_agg_df[
         weight_agg_df["RawDate"] >= start_date.strftime("%Y-%m-%d")
     ]
@@ -93,6 +139,17 @@ def plot_data(food_agg_df, weight_agg_df, start_date, end_date):
 
     ax1.plot(x1, y1, color=color)
 
+    # vertical labels
+    if labels:
+        if v_labels := labels.get("v_labels"):
+            for (k, v) in v_labels.items():
+                # Find closest value to k, in x_labels,
+                closeset = find_closest_date(
+                    [datetime.strptime(x, "%Y-%m-%d") for x in x_labels],
+                    datetime.strptime(k, "%Y-%m-%d")
+                )
+                ax1.axvline(closeset.strftime("%Y-%m-%d"), label=v)
+
     # Flip,
     ax2 = ax1.twinx()
 
@@ -103,36 +160,76 @@ def plot_data(food_agg_df, weight_agg_df, start_date, end_date):
     x2, y2 = data2["RawDate"], data2["Calories"]
     ax2.plot(x2, y2, color=color)
     ax2.set_xlabel("Date")
-    ax2.set_ylabel("Calories", color=color)
+    ax2.set_ylabel(food_label, color=color)
     out_loc = f"output-data/{utc_ts()}-figure.png"
+    ax1.legend()
+    ax1.grid(True)
     print("out_loc", out_loc)
     pylab.savefig(out_loc, bbox_inches="tight")
 
-def bucket_n_days(df, days):
-    df["timestamp"] = pd.to_datetime(df["RawDate"])
-    agg_df = df.groupby(pd.Grouper(key="timestamp", freq=f"{days}D")).mean().reset_index()
-    agg_df["RawDate"] = agg_df["timestamp"].map(lambda x:x.strftime("%Y-%m-%d"))
-    return agg_df
-  
-# Plot day by day data,
 
-root_dir = Path(os.getenv("ROOT_DIR"))
-food_agg_df, weight_agg_df = get_data(root_dir)
-start_date = date(2022, 1, 1) 
+def bucket_n_days(df, days, aggregate_type):
+    """ Aggregate days with mean or sum.
+    """
+    df["timestamp"] = pd.to_datetime(df["RawDate"])
+    if aggregate_type == "mean":
+        agg_df = df.groupby(pd.Grouper(key="timestamp", freq=f"{days}D")).mean().reset_index()
+    elif aggregate_type == "sum":
+        agg_df = df.groupby(pd.Grouper(key="timestamp", freq=f"{days}D")).sum().reset_index()
+
+    agg_df["RawDate"] = agg_df["timestamp"].map(lambda x: x.strftime("%Y-%m-%d"))
+    return agg_df
+
+# Plot day by day data,
+food_agg_df, weight_agg_df = get_data()
+start_date = date(2022, 1, 1) # "2023-01-01"
 end_date = date(2023, 3, 17)
 
-plot_data(food_agg_df, weight_agg_df, start_date, end_date)
+plot_data(
+    food_agg_df, weight_agg_df, start_date, end_date,
+    labels={
+        "vlabels": {"2023-01-01": "ADF starts"},
+        "food_label": "Calories",
+        "weight_label": "Weight (lb)",
+    },
+)
+
+
 
 # Try 3 day average of weight, and 3 day total, for calories, 
-weight_agg_3day_df = bucket_n_days(weight_agg_df, 3)
-food_agg_3day_df  = bucket_n_days(food_agg_df, 3)
-plot_data(food_agg_3day_df, weight_agg_3day_df, start_date, end_date)
+# weight_agg_3day_df = bucket_n_days(weight_agg_df, 3)
+# food_agg_3day_df  = bucket_n_days(food_agg_df, 3)
+# plot_data(food_agg_3day_df, weight_agg_3day_df, start_date, end_date)
 
 # Try 7 days
-weight_agg_7day_df = bucket_n_days(weight_agg_df, 7)
-food_agg_7day_df  = bucket_n_days(food_agg_df, 7)
-plot_data(food_agg_7day_df, weight_agg_7day_df, start_date, end_date)
+weight_agg_7day_df = bucket_n_days(weight_agg_df, 7, aggregate_type="mean")
+food_agg_7day_df  = bucket_n_days(food_agg_df, 7, aggregate_type="mean")
+plot_data(
+    food_agg_7day_df,
+     weight_agg_7day_df,
+     start_date,
+     end_date,
+     labels={
+         "v_labels": {"2023-01-01": "ADF starts"},
+         "food_label": "Calories 7 day mean",
+         "weight_label": "Weight (lb) 7 day mean",
+     },
+)
 
+
+# Sum agg instead
+food_agg_7day_df  = bucket_n_days(food_agg_df, 7, aggregate_type="sum")
+plot_data(
+    food_agg_7day_df,
+     weight_agg_7day_df,
+     start_date,
+     end_date,
+     labels={
+         "v_labels": {"2023-01-01": "ADF starts"},
+         "food_label": "Calories 7 day sum",
+         "weight_label": "Weight (lb) 7 day mean",
+     },
+)
 ```
       
 I am doing the version control on [github](https://github.com/namoopsoo/fasting-analyze/blob/main/2023-03-18-notebook.py), too.

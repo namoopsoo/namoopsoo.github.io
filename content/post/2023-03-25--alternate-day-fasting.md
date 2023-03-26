@@ -8,28 +8,29 @@ tags:
 ### First Stab at Alternate Day Feasting
 
 #### Wait Don't you mean Alternate Day Fasting?
-      Haha yea but I am still working up to the stoicism and pre-requisite skill to do proper Alternate Day Fasting and this also requires a low stress life especially if you rely on snacks to counter the stress of the daily Work-From-Home-Wake-Up-Surprise-You-Are-At-Work-And-Work-Throughout-The-Entire-Day-Life haha!
+Haha yea but I am still working up to the stoicism and pre-requisite skill to do proper Alternate Day Fasting and this also requires a low stress life especially if you rely on snacks to counter the stress of the daily Work-From-Home-Wake-Up-Surprise-You-Are-At-Work-And-Work-Throughout-The-Entire-Day-Life haha!
       
 But having already been doing Time Restricted Feeding for several years now, I think I have the stoicism requirements to at least give Alternate Day Feasting a go, which is basically aiming at calorie restriction every other day.
 
 #### I have pulled my daily calorie data from Carb Manager and electronic weigh-in data from a Withings scale I have.
       
-      The first plot I did looks like 
+The first plot I did looks like 
       
-      ![2023-03-25T175301-figure-flip-the-order.png](../assets/2023-03-25T175301-figure-flip-the-order_1679801795782_0.png)
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-03-25-Alternate-Day-Feasting/2023-03-25T175301-figure-flip-the-order_1679801795782_0.png" width="90%">}}
+
       
-      but maybe it is a bit noisy since it has all the data for each day, so trying also a 7 day average too,
+but maybe it is a bit noisy since it has all the data for each day, so trying also a 7 day average too,
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-03-25-Alternate-Day-Feasting/2023-03-26T031646-figure_1679801859234_0.png" width="90%">}}
       
-      ![2023-03-26T031646-figure.png](../assets/2023-03-26T031646-figure_1679801859234_0.png)
 
 #### So What happened?
-      Well the whole reason I started looking at all this was that I started a Work From Home job in December 2021 and although prior to that, I used to bike-commute to work every day, now bike rides in 2022 I admit have been way shorter, say, 3 to 6 miles a day as opposed to 12+ miles a day. 
+Well the whole reason I started looking at all this was that I started a Work From Home job in December 2021 and although prior to that, I used to bike-commute to work every day, now bike rides in 2022 I admit have been way shorter, say, 3 to 6 miles a day as opposed to 12+ miles a day. 
       
-      And alarmingly I saw my weight go up in 2022, perhaps similar to what I recall Iñigo San-Millán described in this interview, https://peterattiamd.com/inigosanmillan/ with Peter Attia , about cyclists who reduce their cycling without reducing their calorie intake.
+And alarmingly I saw my weight go up in 2022, perhaps similar to what I recall Iñigo San-Millán described in this interview, https://peterattiamd.com/inigosanmillan/ with Peter Attia , about cyclists who reduce their cycling without reducing their calorie intake.
       
-      Of course I was not a professional cyclist and I'm sure the weight gain is related to stress management to a large extent, but nevertheless, basically starting 2023, every other day, I aimed for a lower amount of calories.
+Of course I was not a professional cyclist and I'm sure the weight gain is related to stress management to a large extent, but nevertheless, basically starting 2023, every other day, I aimed for a lower amount of calories.
       
-      The first plot above does not show this very well, but the second chart, which takes 7-day averages, hopefully does a better job.
+The first plot above does not show this very well, but the second chart, which takes 7-day averages, hopefully does a better job.
 
 #### How to generate these plots?
 There was a bit of trial and error I can describe later, but basically, 

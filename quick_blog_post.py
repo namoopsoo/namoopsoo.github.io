@@ -272,7 +272,6 @@ def do():
         convert_local_images_to_s3_assets(existing_file, local_asset_dir)
         print("Done.")
         return
-    import ipdb;ipdb.set_trace()
 
     images = [x.replace("\\", "").strip() for x in args.get("images").split(",")]
     print("images", images)

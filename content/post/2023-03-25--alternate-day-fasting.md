@@ -10,7 +10,7 @@ cover:
 ### First Stab at Alternate Day Feasting
 
 #### Wait Don't you mean Alternate Day Fasting?
-Haha yea but I am still working up to the stoicism and pre-requisite skill to do proper Alternate Day Fasting and this also requires a low stress life especially if you rely on snacks to counter the stress of the daily Work-From-Home-Wake-Up-Surprise-You-Are-At-Work-And-Work-Throughout-The-Entire-Day-Life haha!
+Haha yes but I am still working up to the level of stoicism required to do proper Alternate Day Fasting and a low stress life also helps especially if you rely on snacks to counter the stress of the daily Work-From-Home-Wake-Up-Surprise-You-Are-At-Work-And-Work-Throughout-The-Entire-Day-Life haha!
       
 But having already been doing Time Restricted Feeding for several years now, I think I have the stoicism requirements to at least give Alternate Day Feasting a go, which is basically aiming at calorie restriction every other day.
 
@@ -23,11 +23,10 @@ The first plot I did looks like
       
 but maybe it is a bit noisy since it has all the data for each day, so trying also a 7 day average too,
       
-{{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-03-25-Alternate-Day-Feasting/2023-03-26T191146-figure_1679859645507_0.png" width="90%">}}
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-03-25-Alternate-Day-Feasting/2023-03-26T204315-figure_1679863701207_0.png" width="90%">}}
 
-
-![2023-03-26T204315-figure.png](../assets/2023-03-26T204315-figure_1679863701207_0.png)
-![2023-03-26T204150-figure.png](../assets/2023-03-26T204150-figure_1679863710325_0.png)
+Also tried , 7 day sum too, 
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-03-25-Alternate-Day-Feasting/2023-03-26T204150-figure_1679863710325_0.png" width="90%">}}
 
 
 
@@ -36,9 +35,11 @@ Well the whole reason I started looking at all this was that I started a Work Fr
       
 And alarmingly I saw my weight go up in 2022, perhaps similar to what I recall Iñigo San-Millán described in this interview, https://peterattiamd.com/inigosanmillan/ with Peter Attia , about cyclists who reduce their cycling without reducing their calorie intake.
       
-Of course I was not a professional cyclist and I'm sure the weight gain is related to stress management to a large extent, but nevertheless, basically starting 2023, every other day, I aimed for a lower amount of calories.
+Of course I was nowhere near a professional cyclist and I'm sure the weight gain is related to a lack of stress management to a large extent, but nevertheless, basically starting 2023, every other day, I aimed for a lower amount of calories.
       
 The first plot above does not show this very well, but the second chart, which takes 7-day averages, hopefully does a better job.
+
+There are also other behavior changes I'm trying too that are not being plotted here, including the replacement of highly processed food with slightly less processed food and also improving the overall [protein to energy ratio](https://www.dietdoctor.com/high-protein/eat-more-protein).
 
 #### How to generate these plots?
 There was a bit of trial and error I can describe later, but basically, 

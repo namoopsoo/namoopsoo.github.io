@@ -5,7 +5,7 @@
     <link>https://michal.piekarczyk.xyz/</link>
     <description>Recent content on michal.piekarczyk.xyz</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 25 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Quick lang chain test drive</title>
       <link>https://michal.piekarczyk.xyz/post/2023-01-29-lang-chain-quick-look/</link>
@@ -14,6 +14,16 @@
       <guid>https://michal.piekarczyk.xyz/post/2023-01-29-lang-chain-quick-look/</guid>
       <description>okay let me try that lang chain demo 19:23 ok yea looking at https://beta.openai.com/account/api-keys I did not have an api key yet, so lets try that out. how can one use https://github.com/hwchase17/langchain for [[question-answer-task]] over documentation ? https://langchain.readthedocs.io/en/latest/use_cases/question_answering.html 19:33 wow really cool so https://langchain.readthedocs.io/en/latest/use_cases/question_answering.html#adding-in-sources this says this can provide the sources used in answering a question ! nice 19:37 ok so first per https://langchain.readthedocs.io/en/latest/getting_started/getting_started.html here, installing this stuff,
 creating a new environment on my laptop pip install langchain pip install openai pip install faiss-cpu # adding this here after the fact after getting below error 20:11 got one error, ValueError: Could not import faiss python package.</description>
+    </item>
+    
+    <item>
+      <title>Merge log-seq journal forks</title>
+      <link>https://michal.piekarczyk.xyz/post/2023-04-01--merge-log-seq-journal-forks/</link>
+      <pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2023-04-01--merge-log-seq-journal-forks/</guid>
+      <description>This is what happens to me When editing with https://logseq.com , on my phone, laptop and ipad, I end up seeing this
+$ fd &amp;#39; &amp;#39; journals/ journals/2021_03_13 2.md journals/2021_05_30 2.md journals/2021_10_17 2.md journals/2022_01_23 2.md journals/2022_05_15 2.md journals/2022_06_11 2.md journals/2022_07_16 2.md journals/2022_08_21 2.md journals/2022_09_01 2.md journals/2022_09_07 2.md journals/2022_09_07 3.md journals/2022_09_10 2.md journals/2022_09_26 2.md journals/2022_10_22 2.md journals/2022_10_22 3.md journals/2022_12_14 2.md journals/2023_01_12 2.md journals/2023_02_04 2.md journals/2023_03_10 2.md journals/2023_03_21 2.md I think this is mostly happening when you start editing a file before a icloud sync has had a chance to take place.</description>
     </item>
     
     <item>

@@ -25,6 +25,15 @@
     </item>
     
     <item>
+      <title>book-summary</title>
+      <link>https://michal.piekarczyk.xyz/tags/book-summary/</link>
+      <pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/tags/book-summary/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>fasting</title>
       <link>https://michal.piekarczyk.xyz/tags/fasting/</link>
       <pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate>
@@ -129,15 +138,6 @@
       <pubDate>Sun, 27 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>https://michal.piekarczyk.xyz/tags/time-series/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>book-summary</title>
-      <link>https://michal.piekarczyk.xyz/tags/book-summary/</link>
-      <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://michal.piekarczyk.xyz/tags/book-summary/</guid>
       <description></description>
     </item>
     

@@ -1,6 +1,6 @@
 ---
 title: Indistractable book summary
-date: 2023-04-01T21:56:00-05:00
+date: 2023-04-01
 tags: ["book-summary"]
 ---
 ## Draft status

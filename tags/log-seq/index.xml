@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>log-seq on michal.piekarczyk.xyz</title>
+    <link>https://michal.piekarczyk.xyz/tags/log-seq/</link>
+    <description>Recent content in log-seq on michal.piekarczyk.xyz</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 01 Apr 2023 16:24:51 -0500</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/tags/log-seq/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Merge log-seq journal forks</title>
+      <link>https://michal.piekarczyk.xyz/post/2023-04-01--merge-log-seq-journal-forks/</link>
+      <pubDate>Sat, 01 Apr 2023 16:24:51 -0500</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2023-04-01--merge-log-seq-journal-forks/</guid>
+      <description>This is what happens to me When editing with https://logseq.com , on my phone, laptop and ipad, I end up seeing this
+$ fd &amp;#39; &amp;#39; journals/ journals/2021_03_13 2.md journals/2021_05_30 2.md journals/2021_10_17 2.md journals/2022_01_23 2.md journals/2022_05_15 2.md journals/2022_06_11 2.md journals/2022_07_16 2.md journals/2022_08_21 2.md journals/2022_09_01 2.md journals/2022_09_07 2.md journals/2022_09_07 3.md journals/2022_09_10 2.md journals/2022_09_26 2.md journals/2022_10_22 2.md journals/2022_10_22 3.md journals/2022_12_14 2.md journals/2023_01_12 2.md journals/2023_02_04 2.md journals/2023_03_10 2.md journals/2023_03_21 2.md I think this is mostly happening when you start editing a file before a icloud sync has had a chance to take place.</description>
+    </item>
+    
+  </channel>
+</rss>

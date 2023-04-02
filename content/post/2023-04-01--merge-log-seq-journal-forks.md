@@ -1,6 +1,9 @@
 ---
 title: Merge log-seq journal forks
-date: 2023-04-01
+date: 2023-04-01T16:24:51-05:00
+tags:
+  - log-seq
+  - bash
 ---
 
 ### This is what happens to me 

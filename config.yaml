@@ -21,8 +21,7 @@ params:
   description: "because why not"
   keywords: [Blog, Portfolio, PaperMod]
   author: Michal Piekarczyk
-  DateFormat: "2022-02-23"
-  dateFormat: "2022-02-23"
+  # dateFormat: "2022-02-23"
   date_format: "2022-02-23"
   defaultTheme: dark  # auto, light
   disableThemeToggle: false

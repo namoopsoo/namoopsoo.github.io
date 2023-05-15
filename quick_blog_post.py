@@ -206,7 +206,6 @@ def convert_local_images_to_s3_assets(content_file_path, absolute_asset_dir, rep
         if relative_path:
             image_path = asset_dir / relative_path
             assert image_path.exists(), image_path
-            import ipdb;ipdb.set_trace()
 
             updated_line = line.replace(
                 str(all_match), 

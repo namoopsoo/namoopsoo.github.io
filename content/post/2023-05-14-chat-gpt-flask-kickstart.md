@@ -13,9 +13,9 @@ Here was my prompt
 
 And the response was pretty cool, with an `app.py` and `choose_front_end.html` like I asked, 
 
-              {{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-05-04-Using-ChatGPT-to-kickstart-a-flask-app?/image_1684112637599_0.png" width="50%">}}
+              {{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-05-04-Using-ChatGPT-to-kickstart-a-flask-app%3F/image_1684112637599_0.png" width="150%">}}
 
-              {{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-05-04-Using-ChatGPT-to-kickstart-a-flask-app?/image_1684112678401_0.png" width="50%">}}
+              {{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-05-04-Using-ChatGPT-to-kickstart-a-flask-app%3F/image_1684112678401_0.png" width="150%">}}
 
 along with some helpful instructions on how to use this more or less.
 
@@ -25,7 +25,7 @@ First I noticed actually perhaps because of the output size limitations of the f
 ## I also started testing out just the `GET` part since I did have the full `app.py` of the flask app, however this did not run because yea of course CORS was not setup here. 
 And CORS is one of those notoriously difficult pieces of boilerplate to setup in any client server application communication even if you are just debugging something locally on your laptop.
 
-{{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-05-04-Using-ChatGPT-to-kickstart-a-flask-app?/image_1681606890326_0.png" width="50%">}}
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-05-04-Using-ChatGPT-to-kickstart-a-flask-app%3F/image_1681606890326_0.png" width="100%">}}
 
 ```sh
   Access to fetch at 'http://127.0.0.1:5000/' from origin 'null' has been blocked 
@@ -63,7 +63,7 @@ def make_response(data):
 
 ## Ultimately after building out a good bit of functionality additional I did not realize I also wanted, I ended up with a solution I was able to run from my laptop and access from my ipad, for convenience,
               
-{{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-05-04-Using-ChatGPT-to-kickstart-a-flask-app?/IMG_2585_1684089122525_0.jpeg" width="50%">}}
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-05-04-Using-ChatGPT-to-kickstart-a-flask-app%3F/IMG_2585_1684089122525_0.jpeg" width="70%">}}
 
 Definitely skipped a lot of details here! But will update more here later.
 

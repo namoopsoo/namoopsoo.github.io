@@ -1,11 +1,12 @@
 ---
 title: Quick lang chain test drive
 date: 2023-01-29T21:02:57+00:00
-weight: 1
+tags:
+  - langchain
 ---
 
 
-# okay let me try that lang chain demo
+# Okay let me try that lang chain demo
 - 19:23 ok yea looking at https://beta.openai.com/account/api-keys I did not have an api key yet, so lets try that out.
 - how can one use https://github.com/hwchase17/langchain  for [[question-answer-task]] over documentation ?
     - https://langchain.readthedocs.io/en/latest/use_cases/question_answering.html

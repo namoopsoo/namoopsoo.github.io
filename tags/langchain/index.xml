@@ -17,5 +17,15 @@ So I&amp;rsquo;m going to throw a bunch of my source material together, language
 Ok, so for accumulating my information, import yaml import tempfile from pathlib import Path from datetime import datetime import pytz def utc_now(): return datetime.</description>
     </item>
     
+    <item>
+      <title>Quick lang chain test drive</title>
+      <link>https://michal.piekarczyk.xyz/post/2023-01-29-lang-chain-quick-look/</link>
+      <pubDate>Sun, 29 Jan 2023 21:02:57 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2023-01-29-lang-chain-quick-look/</guid>
+      <description>Okay let me try that lang chain demo 19:23 ok yea looking at https://beta.openai.com/account/api-keys I did not have an api key yet, so lets try that out. how can one use https://github.com/hwchase17/langchain for [[question-answer-task]] over documentation ? https://langchain.readthedocs.io/en/latest/use_cases/question_answering.html 19:33 wow really cool so https://langchain.readthedocs.io/en/latest/use_cases/question_answering.html#adding-in-sources this says this can provide the sources used in answering a question ! nice 19:37 ok so first per https://langchain.readthedocs.io/en/latest/getting_started/getting_started.html here, installing this stuff,
+creating a new environment on my laptop pip install langchain pip install openai pip install faiss-cpu # adding this here after the fact after getting below error 20:11 got one error, ValueError: Could not import faiss python package.</description>
+    </item>
+    
   </channel>
 </rss>

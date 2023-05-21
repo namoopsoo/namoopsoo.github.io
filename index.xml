@@ -5,15 +5,14 @@
     <link>https://michal.piekarczyk.xyz/</link>
     <description>Recent content on michal.piekarczyk.xyz</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 04 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Quick lang chain test drive</title>
-      <link>https://michal.piekarczyk.xyz/post/2023-01-29-lang-chain-quick-look/</link>
-      <pubDate>Sun, 29 Jan 2023 21:02:57 +0000</pubDate>
+      <title>A diabetes summary (draft)</title>
+      <link>https://michal.piekarczyk.xyz/post/2023-05-20-diabetes/</link>
+      <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://michal.piekarczyk.xyz/post/2023-01-29-lang-chain-quick-look/</guid>
-      <description>okay let me try that lang chain demo 19:23 ok yea looking at https://beta.openai.com/account/api-keys I did not have an api key yet, so lets try that out. how can one use https://github.com/hwchase17/langchain for [[question-answer-task]] over documentation ? https://langchain.readthedocs.io/en/latest/use_cases/question_answering.html 19:33 wow really cool so https://langchain.readthedocs.io/en/latest/use_cases/question_answering.html#adding-in-sources this says this can provide the sources used in answering a question ! nice 19:37 ok so first per https://langchain.readthedocs.io/en/latest/getting_started/getting_started.html here, installing this stuff,
-creating a new environment on my laptop pip install langchain pip install openai pip install faiss-cpu # adding this here after the fact after getting below error 20:11 got one error, ValueError: Could not import faiss python package.</description>
+      <guid>https://michal.piekarczyk.xyz/post/2023-05-20-diabetes/</guid>
+      <description>TLDR Diabetes is what happens when high blood sugar wreaks havoc on the body because either with type I diabetes, the pancreas cannot produce insulin for various reasons or with type II diabetes, no matter how much insulin the pancreas produces, it is not enough insulin to meet the high levels of blood sugar because of insulin resistance (insulin is ignored by cells and blood sugar is not taken up). But fortunately dietary carbohydrate is the main lever here.</description>
     </item>
     
     <item>
@@ -127,6 +126,16 @@ Plan of action So We settled to constrain our problem space to apply langchain, 
       <description>So I wonder would you use a prompt template with the name of the person maybe as an input variable, prior to a free chat open ended conversation?
 I am particularly super curious can we use prompt engineering to convey that the person on the other end is a customer say, so they might use personal pronouns like &amp;ldquo;my&amp;rdquo;, &amp;ldquo;me&amp;rdquo;, etc ? Using https://langchain.readthedocs.io/en/latest/modules/memory/examples/chatgpt_clone.html to help try this.
 from langchain import OpenAI, ConversationChain, LLMChain, PromptTemplate from langchain.</description>
+    </item>
+    
+    <item>
+      <title>Quick lang chain test drive</title>
+      <link>https://michal.piekarczyk.xyz/post/2023-01-29-lang-chain-quick-look/</link>
+      <pubDate>Sun, 29 Jan 2023 21:02:57 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2023-01-29-lang-chain-quick-look/</guid>
+      <description>Okay let me try that lang chain demo 19:23 ok yea looking at https://beta.openai.com/account/api-keys I did not have an api key yet, so lets try that out. how can one use https://github.com/hwchase17/langchain for [[question-answer-task]] over documentation ? https://langchain.readthedocs.io/en/latest/use_cases/question_answering.html 19:33 wow really cool so https://langchain.readthedocs.io/en/latest/use_cases/question_answering.html#adding-in-sources this says this can provide the sources used in answering a question ! nice 19:37 ok so first per https://langchain.readthedocs.io/en/latest/getting_started/getting_started.html here, installing this stuff,
+creating a new environment on my laptop pip install langchain pip install openai pip install faiss-cpu # adding this here after the fact after getting below error 20:11 got one error, ValueError: Could not import faiss python package.</description>
     </item>
     
     <item>

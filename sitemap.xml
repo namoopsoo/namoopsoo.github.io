@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://michal.piekarczyk.xyz/project/2023-photo-unchaos/</loc>
+    <lastmod>2023-05-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/</loc>
+    <lastmod>2023-05-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/project/</loc>
+    <lastmod>2023-05-29T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://michal.piekarczyk.xyz/post/2023-05-20-diabetes/</loc>
     <lastmod>2023-05-20T00:00:00+00:00</lastmod>
   </url><url>
@@ -9,9 +18,6 @@
     <lastmod>2023-05-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/tags/hmm/</loc>
-    <lastmod>2023-05-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://michal.piekarczyk.xyz/</loc>
     <lastmod>2023-05-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/post/</loc>
@@ -273,9 +279,6 @@
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/project/2020-10-20-bike-share-learn-reboot/</loc>
-    <lastmod>2020-10-20T10:00:05-04:00</lastmod>
-  </url><url>
-    <loc>https://michal.piekarczyk.xyz/project/</loc>
     <lastmod>2020-10-20T10:00:05-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/post/2020-07-24-understanding-tuning-results/</loc>

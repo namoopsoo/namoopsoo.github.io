@@ -6,9 +6,9 @@ tags:
   - vimeo
 ---
 
-This is a school English class project on philosoph from around 2004 where I recruited friends and family to do the voice acting of Spinoza and Descartes 😂. Glad this did not get lost.
+This is a school English class project on philosophy from around 2004 where I recruited friends and family to do the voice acting of Spinoza and Descartes 😂. Glad this did not get lost.
 
-## My brother and uncle here
+## My brother and uncle are voicing here
 
 ### Scene 1
 {{<vimeo 835025560>}}

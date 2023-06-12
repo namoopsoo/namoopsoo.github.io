@@ -46,7 +46,7 @@ def get_page_blocks_tree(name):
     return response
   
 
-def build_markdown_from_page_blocks(blocks):
+def build_markdown_from_page_blocks(blocks, level_offset=0):
     print("DEBUG", [x["level"] for x in blocks])
     time.sleep(1)
 
@@ -58,8 +58,8 @@ def build_markdown_from_page_blocks(blocks):
             r"^{{embed \(\(([a-zA-Z0-9-]+)\)\)}}$",
             block["content"]
         ):
-            print("yes", block_uuid)
             block_uuid = match.groups()[0]
+            print("yes", block_uuid)
 
             response = get_block(block_uuid)
             assert response.status_code == 200
@@ -72,11 +72,20 @@ def build_markdown_from_page_blocks(blocks):
 
             stuff.append({"level": new_block["level"], "content": new_block["content"]})
             if new_block["children"]:
-                stuff.extend(build_markdown_from_page_blocks(new_block["children"]))
+                stuff.extend(
+                    build_markdown_from_page_blocks(
+                        new_block["children"],
+                        level_offset=(level_offset + new_block["level"])
+                    ))
 
         else:
-            stuff.append({"level": block["level"], "content": block["content"]})
+            stuff.append(
+                {"level": block["level"] + level_offset,
+                 "content": block["content"]})
             if block["children"]:
-                stuff.extend(build_markdown_from_page_blocks(block["children"]))
+                stuff.extend(
+                    build_markdown_from_page_blocks(
+                        block["children"], level_offset=level_offset)
+                )
 
     return stuff

@@ -1,6 +1,6 @@
 ---
 date: 2023-06-11
-title: Semantic code search first stab
+title: 2023 06 11 semantic code search first stab
 ---
 public:: true
 blog_date:: 2023-06-11
@@ -11,8 +11,9 @@ The documentation at  https://www.sbert.net/examples/applications/semantic-searc
 Also, the test results here look pretty decent, but the next step will be to create a reference set of the line numbers that were expected to be found, to get a good precision/recall score for this.
 # Initial Learnings
 ## Learned about [[symmetric vs asymmetric semantic search]]
+Here is the explanation, https://www.sbert.net/examples/applications/semantic-search/README.html#symmetric-vs-asymmetric-semantic-search .
 This distinction refers to #[[sentence similarity task]] where the query is of the same size or asymmetrically, smaller size, such as a one or two word query.
-And wow that is exactly what. Iwas looking for !
+And wow that is exactly what I was looking for !
 So apparently this includes the "msmarco" models.
 
 # Final test run

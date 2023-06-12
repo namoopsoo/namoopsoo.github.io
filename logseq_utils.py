@@ -103,7 +103,7 @@ def build_markdown(page_name, target_loc):
 
     stuff = build_markdown_from_page_blocks(blocks)
 
-    page_title = page_name.split("/")[1]
+    page_title = page_name.split("/")[1].replace("-", " ")
     text = [
         "---",
         f"date: {blog_date}",

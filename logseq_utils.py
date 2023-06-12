@@ -1,4 +1,5 @@
 import requests
+import re
 import os
 import time
 
@@ -51,8 +52,31 @@ def build_markdown_from_page_blocks(blocks):
 
     stuff = []
     for block in blocks:
-        stuff.append({"level": block["level"], "content": block["content"]})
-        if block["children"]:
-            stuff.extend(build_markdown_from_page_blocks(block["children"]))
+
+        # Replace embed
+        if match := re.match(
+            r"^{{embed \(\(([a-zA-Z0-9-]+)\)\)}}$",
+            block["content"]
+        ):
+            print("yes", block_uuid)
+            block_uuid = match.groups()[0]
+
+            response = get_block(block_uuid)
+            assert response.status_code == 200
+
+            new_block = response.json()
+            new_block["level"] = block["level"]
+
+            # TODO need to fix the levels of the child blocks too.
+
+
+            stuff.append({"level": new_block["level"], "content": new_block["content"]})
+            if new_block["children"]:
+                stuff.extend(build_markdown_from_page_blocks(new_block["children"]))
+
+        else:
+            stuff.append({"level": block["level"], "content": block["content"]})
+            if block["children"]:
+                stuff.extend(build_markdown_from_page_blocks(block["children"]))
 
     return stuff

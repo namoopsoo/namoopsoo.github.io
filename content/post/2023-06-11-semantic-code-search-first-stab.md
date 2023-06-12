@@ -1,6 +1,8 @@
 ---
 date: 2023-06-11
 title: semantic code search first stab
+tags:
+  - transformers
 ---
 
 The idea here was to try out Sentence Transformers , https://sbert.net , on source code search. And as a first stab, a corpus was built with, hey why not, the code from the #sentence-transformers repo. 

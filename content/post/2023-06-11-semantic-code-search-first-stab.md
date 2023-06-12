@@ -1,9 +1,8 @@
 ---
 date: 2023-06-11
-title: 2023 06 11 semantic code search first stab
+title: semantic code search first stab
 ---
-public:: true
-blog_date:: 2023-06-11
+
 The idea here was to try out Sentence Transformers , https://sbert.net , on source code search. And as a first stab, a corpus was built with, hey why not, the code from the #sentence-transformers repo. 
 
 The documentation at  https://www.sbert.net/examples/applications/semantic-search/README.html#python was used for the basic test here. And a small bit of code at the bottom here, shows how the lines from the python source files were written to a python list first. 

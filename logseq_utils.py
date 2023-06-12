@@ -2,6 +2,8 @@ import requests
 import re
 import os
 import time
+from pathlib import Path
+
 
 def get_block(block_uuid):
     token = os.getenv("LOGSEQ_TOKEN")
@@ -48,7 +50,6 @@ def get_page_blocks_tree(name):
 
 def build_markdown_from_page_blocks(blocks, level_offset=0):
     print("DEBUG", [x["level"] for x in blocks])
-    time.sleep(1)
 
     stuff = []
     for block in blocks:
@@ -89,3 +90,28 @@ def build_markdown_from_page_blocks(blocks, level_offset=0):
                 )
 
     return stuff
+
+def build_markdown(page_name, target_loc):
+    response = get_page(page_name)
+    assert response.status_code == 200 and response.json()
+
+    response = get_page_blocks_tree(page_name)
+    assert response.status_code == 200 and response.json()
+    blocks = response.json()
+
+    blog_date = blocks[0]["properties"]["blogDate"]
+
+    stuff = build_markdown_from_page_blocks(blocks)
+
+    page_title = page_name.split("/")[1]
+    text = [
+        "---",
+        f"date: {blog_date}",
+        f"title: {page_title}",
+        "---",
+    ] + [x["content"] for x in stuff]
+    path = Path(target_loc)
+    assert path.parent.is_dir()
+
+    path.write_text("\n".join(text))
+    ...

@@ -6,7 +6,17 @@
     <description>Recent content in Posts on michal.piekarczyk.xyz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 10 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>semantic code search first stab</title>
+      <link>https://michal.piekarczyk.xyz/post/2023-06-11-semantic-code-search-first-stab/</link>
+      <pubDate>Sun, 11 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2023-06-11-semantic-code-search-first-stab/</guid>
+      <description>The idea here was to try out Sentence Transformers , https://sbert.net , on source code search. And as a first stab, a corpus was built with, hey why not, the code from the #sentence-transformers repo.
+The documentation at https://www.sbert.net/examples/applications/semantic-search/README.html#python was used for the basic test here. And a small bit of code at the bottom here, shows how the lines from the python source files were written to a python list first.</description>
+    </item>
+    
     <item>
       <title>Decartes vs Spinoza</title>
       <link>https://michal.piekarczyk.xyz/post/2023-06-10-spinoza-vs-descartes/</link>

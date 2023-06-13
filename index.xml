@@ -6,7 +6,18 @@
     <description>Recent content on michal.piekarczyk.xyz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 11 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>logseq publish hugo with python</title>
+      <link>https://michal.piekarczyk.xyz/post/2023-06-12-logseq-publish-hugo-with-python/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2023-06-12-logseq-publish-hugo-with-python/</guid>
+      <description>public:: true blog-date:: 2023-06-12
+briefly Inspired by the super popular #[[schrodinger logseq plugin]], I wrote up something in #python today, to publish to #Hugo like https://github.com/sawhney17/logseq-schrodinger but also with support for block embeds.
+In particular, I was also really inspired by [[Bas Grolleman]]&amp;rsquo;s concept here around how to be able to use #interstitial-journaling and be able to nicely coalesce selected sources through their block embeds, into a target logseq concept they all refer to.</description>
+    </item>
+    
     <item>
       <title>semantic code search first stab</title>
       <link>https://michal.piekarczyk.xyz/post/2023-06-11-semantic-code-search-first-stab/</link>

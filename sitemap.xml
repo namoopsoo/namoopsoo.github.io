@@ -2,11 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://michal.piekarczyk.xyz/post/2023-06-12-logseq-publish-hugo-with-python/</loc>
+    <lastmod>2023-06-12T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://michal.piekarczyk.xyz/</loc>
-    <lastmod>2023-06-11T00:00:00+00:00</lastmod>
+    <lastmod>2023-06-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/post/</loc>
-    <lastmod>2023-06-11T00:00:00+00:00</lastmod>
+    <lastmod>2023-06-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/post/2023-06-11-semantic-code-search-first-stab/</loc>
     <lastmod>2023-06-11T00:00:00+00:00</lastmod>

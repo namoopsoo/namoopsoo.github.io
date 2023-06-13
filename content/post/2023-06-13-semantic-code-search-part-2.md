@@ -11,7 +11,7 @@ This time, I wanted to write some code around measuring the successful hits from
 I expanded the set of queries slightly, but not that much yet so I could focus on the evaluation code.
 ## Initially building a dataset, had a snag with reproducibility
 So take earlier queries, adding some more manually, and building dataset from them, 
-id:: 6488874f-9a6d-4309-a321-48eb30d4a8eb
+
 ```python
 queries = [
     "snapshot_download",
@@ -103,7 +103,7 @@ def build_texts_from_repository(repo_dir):
 
 ```
 12:52 slightly updated my func, `"build_texts_from_repository"` to not include the blank lines or lines with just whitespace also !
-id:: 64889eba-39a0-471c-9010-3d652a9a08ac
+
 ok trying again, 
 ```python
 
@@ -156,7 +156,7 @@ print("read equals", df.equals(pd.read_csv(path)))  # read equals True
 
 ## The query set
 13:37 ok lets run the simplistic search first,
-id:: 6488a947-a217-4062-bce9-cacfc9cb0336
+
 ```python
 def build_query_dataset(queries, dataset):
     """
@@ -250,7 +250,7 @@ Maybe this is a bit unbalanced, but this is good enough for now.
 # And running the query
 ## semantic search
 And again using the use of semantic_search as nicely described in https://www.sbert.net/examples/applications/semantic-search/README.html#python ,
-id:: 6488b423-40b9-4e64-8582-0ed4d62dd174
+
 14:55 For now let's use the number `20` from above, as the number of results to retrieve for each query, since that is the max number of  results we get for any query.
 ```python
 import torch
@@ -299,7 +299,7 @@ resultsdf = cs.run_semantic_search(embedder, dataset, queries, top_k)
 ```
 ## Merge results
 16:46 merging results and initial dataset, the results are pytorch tensors which looks like they are treated as objects in pandas land ,
-id:: 6488b029-9fa3-46ec-a155-5e5ee6b97d3a
+
 ```python
 ipdb> p resultsdf.head()
             score          idx              query
@@ -346,7 +346,7 @@ Out[26]:
 
 ## Evaluate
 17:11 ok so how to evaluate truth against the results now
-id:: 6488d738-3067-4116-b84e-a16ac13b25dc
+
 Maybe, given a threshold, like `0.5` , how many hits and misses.
 Perhaps one way to evaluate , would be to left join `truthdf` with `resultsdf` in order to count the hits at least. And misses are the left anti-join then.
 ```python

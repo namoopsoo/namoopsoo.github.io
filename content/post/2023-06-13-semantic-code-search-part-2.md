@@ -154,7 +154,7 @@ print("read equals", df.equals(pd.read_csv(path)))  # read equals True
 ```
 
 
-## The query set
+## First let's build a query set
 13:37 ok lets run the simplistic search first,
 
 ```python
@@ -420,6 +420,58 @@ Out[46]:
 40                                torch.cuda          216                  target_devices = ['cuda:{}'.fo...       sentence_transformers/SentenceTransformer.py  0.616090
 41                                torch.cuda          637                from torch.cuda.amp import autocast       sentence_transformers/SentenceTransformer.py  0.695091
 42                                torch.cuda          638               scaler = torch.cuda.amp.GradScaler()       sentence_transformers/SentenceTransformer.py  0.645202
+```
+see the results slightly better perhaps, 
+```python
+In [58]: eval_df["line"] = eval_df["line"].map(lambda x:x.strip())
+
+In [63]: eval_df[["query", "line", "score"]]
+Out[63]: 
+                                       query                                                                                                 line     score
+0                          snapshot_download                   from .util import import_from_string, batch_to_device, fullname, snapshot_download  0.515324
+1                          snapshot_download                                                                snapshot_download(model_name_or_path,  0.680669
+2                          SentenceEvaluator                                                            from .evaluation import SentenceEvaluator  0.700384
+3                          SentenceEvaluator                                                                 evaluator: SentenceEvaluator = None,  0.749687
+4                          SentenceEvaluator                           def evaluate(self, evaluator: SentenceEvaluator, output_path: str = None):  0.403172
+5                          SentenceEvaluator                                                                             class SentenceEvaluator:  0.818287
+6                             get_torch_home                                                                from torch.hub import _get_torch_home  0.865429
+7                             get_torch_home                                                                 torch_cache_home = _get_torch_home()  0.859171
+8                               os.path.join  torch_cache_home = os.path.expanduser(os.getenv('TORCH_HOME', os.path.join(os.getenv('XDG_CACHE_...       NaN
+9                               os.path.join                               cache_folder = os.path.join(torch_cache_home, 'sentence_transformers')       NaN
+10                              os.path.join                        model_path = os.path.join(cache_folder, model_name_or_path.replace("/", "_"))  0.662760
+11                              os.path.join                                     if not os.path.exists(os.path.join(model_path, 'modules.json')):  0.737865
+12                              os.path.join   if os.path.exists(os.path.join(model_path, 'modules.json')):    #Load as SentenceTransformer model  0.704441
+13                              os.path.join                     with open(os.path.join(path, 'config_sentence_transformers.json'), 'w') as fOut:       NaN
+14                              os.path.join                                  model_path = os.path.join(path, str(idx)+"_"+type(module).__name__)  0.666143
+15                              os.path.join                                          with open(os.path.join(path, 'modules.json'), 'w') as fOut:  0.623291
+16                              os.path.join                            with open(os.path.join(path, "README.md"), "w", encoding='utf8') as fOut:  0.619979
+17                              os.path.join     create_model_card = replace_model_card or not os.path.exists(os.path.join(tmp_dir, 'README.md'))       NaN
+18                              os.path.join                                                             file_path = os.path.join(root, filename)  0.800986
+19                              os.path.join                                         shutil.rmtree(os.path.join(tmp_dir, f), onerror=on_rm_error)       NaN
+20                              os.path.join                                                        eval_path = os.path.join(output_path, "eval")  0.621379
+21                              os.path.join                                                  self.save(os.path.join(checkpoint_path, str(step)))  0.598843
+22                              os.path.join         old_checkpoints.append({'step': int(subdir), 'path': os.path.join(checkpoint_path, subdir)})       NaN
+23                              os.path.join  config_sentence_transformers_json_path = os.path.join(model_path, 'config_sentence_transformers....       NaN
+24                              os.path.join                                              model_card_path = os.path.join(model_path, 'README.md')  0.637539
+25                              os.path.join                                         modules_json_path = os.path.join(model_path, 'modules.json')  0.627189
+26                              os.path.join                          module = module_class.load(os.path.join(model_path, module_config['path']))       NaN
+27                              os.path.join                             for line in open(os.path.join(self.folder, filename), encoding="utf-8"):  0.568704
+28                        flax_model.msgpack                                 ignore_files=['flax_model.msgpack', 'rust_model.ot', 'tf_model.h5'],  0.427975
+29             torch.nn.functional.normalize                                   embeddings = torch.nn.functional.normalize(embeddings, p=2, dim=1)  0.624402
+30                   BATCH_HARD_TRIPLET_LOSS  This dataset can be used for some specific Triplet Losses like BATCH_HARD_TRIPLET_LOSS which req...  0.738400
+31         SentenceTransformer('model-name')                                                            model = SentenceTransformer('model-name')  0.909370
+32  DEPRECATED: This class is no longer used  DEPRECATED: This class is no longer used. Instead of wrapping your List of InputExamples in a Se...  0.766369
+33                     module_config['path']                          module = module_class.load(os.path.join(model_path, module_config['path']))  0.627141
+34         config_sentence_transformers.json                     with open(os.path.join(path, 'config_sentence_transformers.json'), 'w') as fOut:  0.548365
+35         config_sentence_transformers.json      # Check if the config_sentence_transformers.json file exists (exists since v2 of the framework)  0.662415
+36         config_sentence_transformers.json  config_sentence_transformers_json_path = os.path.join(model_path, 'config_sentence_transformers....  0.760809
+37                         getEffectiveLevel  show_progress_bar = (logger.getEffectiveLevel()==logging.INFO or logger.getEffectiveLevel()==log...  0.428602
+38                                torch.cuda                                              device = "cuda" if torch.cuda.is_available() else "cpu"  0.779811
+39                                torch.cuda                                                                        if torch.cuda.is_available():  0.835975
+40                                torch.cuda                     target_devices = ['cuda:{}'.format(i) for i in range(torch.cuda.device_count())]  0.616090
+41                                torch.cuda                                                                  from torch.cuda.amp import autocast  0.695091
+42                                torch.cuda                                                                 scaler = torch.cuda.amp.GradScaler()  0.645202
+
 ```
 17:40 ok cool , although wonder how not all the "os.path.join" lines were matched. Maybe some debugging to do.
 Also should still built the [[anti join]] to get the misses aka [[false-positive]] too.

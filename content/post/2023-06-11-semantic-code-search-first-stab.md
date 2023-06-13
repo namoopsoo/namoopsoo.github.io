@@ -1,10 +1,9 @@
 ---
 date: 2023-06-11
 title: semantic code search first stab
-tags:
-  - transformers
 ---
-
+public:: true
+blog_date:: 2023-06-11
 The idea here was to try out Sentence Transformers , https://sbert.net , on source code search. And as a first stab, a corpus was built with, hey why not, the code from the #sentence-transformers repo. 
 
 The documentation at  https://www.sbert.net/examples/applications/semantic-search/README.html#python was used for the basic test here. And a small bit of code at the bottom here, shows how the lines from the python source files were written to a python list first. 
@@ -25,6 +24,9 @@ But here is the last run for today.
 id:: 64864e08-de92-4127-9162-8b5b946b021b
 id:: 6486561e-d050-4bca-bc74-64fa5b475ab4
 ```python
+import torch
+from sentence_transformers import SentenceTransformer, util
+from sentence_transformers.util import semantic_search
 corpus = [x["line"] for x in dataset if "Sentence" in x["path"]]
 
 embedder = SentenceTransformer(

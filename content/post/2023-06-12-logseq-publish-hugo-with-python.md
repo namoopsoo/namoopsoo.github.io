@@ -8,6 +8,29 @@ blog-date:: 2023-06-12
 Inspired by the super popular #[[schrodinger logseq plugin]], I wrote up something in #python today, to publish to #Hugo like https://github.com/sawhney17/logseq-schrodinger but also with support for block embeds.
 
 In particular, I was also really inspired by [[Bas Grolleman]]'s concept [here](https://youtu.be/CPMuGn2d8po)  around how to be able to use #interstitial-journaling and be able to nicely coalesce selected sources through their block embeds, into a target logseq concept they all refer to.
+## Full code from this blog post
+By the way, this code is still just at the "first stab" / #proof-of-concept stage, but it is here, 
+https://github.com/namoopsoo/logseq_utils
+### And usage is just below
+Say you have a page "blogpost/2023-06-12-name-of-your-logseq-page" , where you happen to use embeds like, 
+```
+{{embed ((64864e08-de92-4127-9162-8b5b946b021b))}}
+```
+then to create a markdown file like "content/post/2023-06-12-name-of-your-logseq-page.md" , locating it in "content/post/" say if that is your Hugo post location, then use,
+```python
+from pathlib import Path
+import logseq_utils as lu
+
+page = "blogpost/2023-06-12-name-of-your-logseq-page"
+filename = page.split("/")[1] + ".md"
+target_dir = "content/post/"
+target_loc = str(Path(target_dir) / filename)
+print("target_loc", target_loc)
+# target_loc content/post/2023-06-12-logseq-publish-hugo-with-python.md
+
+lu.build_markdown(page, target_loc)
+```
+
 # The logseq REST API
 ## Would have loved to help w/ logseq-schrodinger but
 Ideally I would love to attempt a pull request on https://github.com/sawhney17/logseq-schrodinger  , and I have left the block embed as a feature idea  [here](https://github.com/sawhney17/logseq-schrodinger/issues/35), but my knowledge of the logseq [dev setup](https://github.com/logseq/logseq/blob/master/docs/develop-logseq.md) , including Clojure Script and react is smaller than my desire to first get something working to help solve my immediate problem hah 😅.

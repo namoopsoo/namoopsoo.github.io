@@ -24,7 +24,7 @@ In particular, I was also really inspired by [[Bas Grolleman]]&amp;rsquo;s conce
       <pubDate>Sun, 11 Jun 2023 00:00:00 +0000</pubDate>
       
       <guid>https://michal.piekarczyk.xyz/post/2023-06-11-semantic-code-search-first-stab/</guid>
-      <description>The idea here was to try out Sentence Transformers , https://sbert.net , on source code search. And as a first stab, a corpus was built with, hey why not, the code from the #sentence-transformers repo.
+      <description>public:: true blog_date:: 2023-06-11 The idea here was to try out Sentence Transformers , https://sbert.net , on source code search. And as a first stab, a corpus was built with, hey why not, the code from the #sentence-transformers repo.
 The documentation at https://www.sbert.net/examples/applications/semantic-search/README.html#python was used for the basic test here. And a small bit of code at the bottom here, shows how the lines from the python source files were written to a python list first.</description>
     </item>
     

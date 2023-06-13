@@ -68,9 +68,6 @@ def build_markdown_from_page_blocks(blocks, level_offset=0):
             new_block = response.json()
             new_block["level"] = block["level"]
 
-            # TODO need to fix the levels of the child blocks too.
-
-
             stuff.append({"level": new_block["level"], "content": new_block["content"]})
             if new_block["children"]:
                 stuff.extend(
@@ -103,9 +100,14 @@ def build_markdown(page_name, target_loc):
 
     stuff = build_markdown_from_page_blocks(blocks)
 
-    page_title = page_name.split("/")[1].replace("-", " ")
+    page_title = page_name.split("/")[1]  # 
     if match := re.match(r"(\d{4}-\d{2}-\d{2})-(.*)", page_title):
         date_from_title, page_title = match.groups()
+    print("page_title", page_title)
+
+    page_title = page_title.replace("-", " ")
+    print("page_title", page_title)
+
     text = [
         "---",
         f"date: {date_from_title}",

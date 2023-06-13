@@ -6,7 +6,18 @@
     <description>Recent content in Posts on michal.piekarczyk.xyz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 12 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>semantic code search part 2</title>
+      <link>https://michal.piekarczyk.xyz/post/2023-06-13-semantic-code-search-part-2/</link>
+      <pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2023-06-13-semantic-code-search-part-2/</guid>
+      <description>public:: true blog-date:: 2023-06-13 Ok continuing from last time, where I ran sentence_transformers model &#39;msmarco-MiniLM-L-6-v3&#39; against a code search problem of comparing query lines against a source code corpus actually from the sentence_transformers github
+This time, I wanted to write some code around measuring the successful hits from a model run using cosine similarity from sentence_transformers
+Query set choice I expanded the set of queries slightly, but not that much yet so I could focus on the evaluation code.</description>
+    </item>
+    
     <item>
       <title>logseq publish hugo with python</title>
       <link>https://michal.piekarczyk.xyz/post/2023-06-12-logseq-publish-hugo-with-python/</link>

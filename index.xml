@@ -6,7 +6,18 @@
     <description>Recent content on michal.piekarczyk.xyz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 13 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>everybody loves reynauds</title>
+      <link>https://michal.piekarczyk.xyz/post/2023-06-25-everybody-loves-reynauds/</link>
+      <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2023-06-25-everybody-loves-reynauds/</guid>
+      <description>Inspiration Haha so per the joke of a friend about &amp;ldquo;Reynaud&amp;rsquo;s&amp;rdquo; sounds like &amp;ldquo;Raymond&amp;rdquo; as in &amp;ldquo;Everyone loves Raymond&amp;rdquo; , I was wondering, can sentence transformers tell the difference? But haha spoiler alert sort is is that if a model finds this funny then that might also not really understand the medical condition at play here , haha nervous laughter, 😅
+Quick look let&amp;rsquo;s compare this first embedding model
+import os from sentence_transformers.</description>
+    </item>
+    
     <item>
       <title>semantic code search part 2</title>
       <link>https://michal.piekarczyk.xyz/post/2023-06-13-semantic-code-search-part-2/</link>

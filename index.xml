@@ -6,7 +6,19 @@
     <description>Recent content on michal.piekarczyk.xyz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 25 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>langchain interview me 2023 feb</title>
+      <link>https://michal.piekarczyk.xyz/post/2023-06-18-my-projects-langchain-interview-me-2023-feb/</link>
+      <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2023-06-18-my-projects-langchain-interview-me-2023-feb/</guid>
+      <description>type:: #project-type status:: #in-progress-status
+Note This is not a blog post but kind of a landing page I&amp;rsquo;m using to aggregate on-going project notes here
+Vision Broadly would like to do here something like the following
+compare against arbitrary #job-listings , #job-description , And [[my projects/personal/langchain-interview-me-2023-feb]] , also now the repo usable by anyone who wants to compare their #brag-document to #job-listings [[job-description]] out there , get a delta , and more broadly , understand say , their industry posture , since that’s a moving target .</description>
+    </item>
+    
     <item>
       <title>everybody loves reynauds</title>
       <link>https://michal.piekarczyk.xyz/post/2023-06-25-everybody-loves-reynauds/</link>

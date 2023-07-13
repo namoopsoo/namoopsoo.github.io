@@ -1,5 +1,5 @@
 ---
-date: 2023-07-12
+date: 2023-07-13
 title: langchain interview me 2023 feb
 ---
 type:: #project-type
@@ -665,3 +665,30 @@ I was reading the documentation of that tokenizer and found this section,
 which I think is pretty cool, referring to #[[Named Entity Recognition NER]] , used with this,
 09:41 next ok yea thinking would love to inform this model of the entities, vocabulary t hat is missing.
 
+
+### [[Jul 12th, 2023]] ok started building up code to capture a mini corpus, of the sentences, which have words that are not part of the vocabulary,
+08:17 [[my projects/personal/langchain-interview-me-2023-feb]]
+
+09:05 ok wow organized earlier notes a bit !
+So should I therefore, collect the sentences that have the no hits and at least see what happens if I fine tune with those, if the new #sentence-transformers model has the new vocabulary ?
+ok, so to build a corpus, thinking for each sentence in this dataset I am working with right now, if I tokenize it using the AutoTokenizer from `'sentence-transformers/all-MiniLM-L6-v2'` , and the output does not include my desired tokens or tokens prefixed with `##` but the sentence does have the words in question visible in plain text, then that sentence is a candidate for the fine tuning set I think !
+09:16 Also I just glanced through what this out put, looks like,
+```python
+from transformers import AutoTokenizer, AutoModel
+tokenizer = AutoTokenizer.from_pretrained('sentence-transformers/all-MiniLM-L6-v2')
+vocabulary = tokenizer.get_vocab()
+print(vocabulary.keys())
+```
+And I don't see anything upper case so pretty sure I can stick to lower case !
+So first the slower way, and maybe I can find a faster #PyTorch way later,
+09:34 ok drafting this on the side still. but high level concept yea,
+find sentences that have the one or more of the desired terms in plain text,
+that actually might be good enough, as long as I have checked indeed the words are no hits against the model vocabulary
+but can also tokenize such sentences and verify that the expected tokens do not exist
+09:36 have a high level #question though, per #subword-tokenization how do you contain #[[Named Entity Recognition NER]] concepts if they can end up being broken up? #card
+Like even in the example in https://huggingface.co/learn/nlp-course/chapter2/4?fw=pt#tokenization , somehow "transformer" is not in
+
+```
+"bert-base-cased"
+```
+isn't that kind of silly?

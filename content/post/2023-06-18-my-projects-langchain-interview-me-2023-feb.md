@@ -1,11 +1,10 @@
 ---
-date: 2023-07-13
+date: 2023-02-18
 title: langchain interview me 2023 feb
 ---
 type:: #project-type
 status:: #in-progress-status
-
-
+blogDate:: 2023-02-18
 ## Note
 This is not a blog post but kind of a landing page I'm using to aggregate on-going project notes here
 
@@ -692,3 +691,295 @@ Like even in the example in https://huggingface.co/learn/nlp-course/chapter2/4?f
 "bert-base-cased"
 ```
 isn't that kind of silly?
+
+and [[Jul 13th, 2023]] , got a bunch of the no hit sentences, at least for some definition,
+08:41 [[my projects/personal/langchain-interview-me-2023-feb]]
+
+hm ok, 
+```python
+import utils as ut
+nohit_list = ut.current_nohit_list("sentence-transformers/all-MiniLM-L6-v2")
+
+raw_sentences = ut.extract_raw_sentences(jobsdf, columns)
+
+```
+09:02 ok will filter oov words like this
+```python
+In [191]: for x in raw_sentences[:4]:
+     ...:     print("=============")
+     ...:     print(x, "\n", ut.sequence_from_sentence(x), "\n")
+     ...: 
+=============
+lead projects from start to finish and manage all issues that impact design 
+ ['lead', 'projects', 'from', 'start', 'to', 'finish', 'and', 'manage', 'all', 'issues', 'that', 'impact', 'design'] 
+
+=============
+break the mold, and bring creativity and innovation in strategy and tactics 
+ ['break', 'the', 'mold', 'and', 'bring', 'creativity', 'and', 'innovation', 'in', 'strategy', 'and', 'tactics'] 
+
+=============
+become a brand advocate; engage and influence internal and external relationships; build, customize and deliver solutions through forums to achieve outcomes in support of the brand advertising annual plan 
+ ['become', 'a', 'brand', 'advocate', 'engage', 'and', 'influence', 'internal', 'and', 'external', 'relationships', 'build', 'customize', 'and', 'deliver', 'solutions', 'through', 'forums', 'to', 'achieve', 'outcomes', 'in', 'support', 'of', 'the', 'brand', 'advertising', 'annual', 'plan'] 
+
+=============
+experience in java and/or python development 
+ ['experience', 'in', 'java', 'and', 'or', 'python', 'development'] 
+
+
+```
+09:08 only search some of the technical roles maybe, to try to get faster results, 
+```python
+raw_titles = ut.extract_raw_sentences(jobsdf, ["Title"])
+title_vocab = reduce(lambda x, y: x + y, 
+                     [ut.sequence_from_sentence(x) for x in raw_titles]
+)
+print(Counter(title_vocab).most_common(25))
+
+[('manager', 300), ('google', 237), ('cloud', 167), ('and', 127), ('sales', 89), ('marketing', 87), ('engineer', 79), ('technical', 71), ('account', 64), ('lead', 64), ('business', 63), ('partner', 62), ('solutions', 61), ('operations', 59), ('product', 57), ('specialist', 57), ('services', 53), ('english', 52), ('analyst', 52), ('hardware', 51), ('associate', 48), ('global', 46), ('program', 44), ('customer', 43), ('development', 42)]
+
+
+```
+ok based off of that, "engineer" feels like a safe assumption here,
+09:17 ok so just the engineer sentences then, 
+```python
+In [203]: jobsdf[jobsdf["Title"].str.contains("engineer")].shape
+Out[203]: (0, 7)
+
+In [204]: jobsdf[jobsdf["Title"].str.contains("Engineer")].shape
+Out[204]: (140, 7)
+
+In [205]: jobsdf.shape
+Out[205]: (1250, 7)
+
+columns = ["Responsibilities", 
+                            'Minimum Qualifications', 
+                            'Preferred Qualifications']
+engineer_df = jobsdf[jobsdf["Title"].str.contains("Engineer")].copy()
+raw_sentences = ut.extract_raw_sentences(engineer_df, columns)
+
+nohit_sentences = ut.find_nohit_sentences(raw_sentences, nohit_list)
+```
+```python
+In [211]: len(raw_sentences), len(nohit_sentences)
+Out[211]: (1217, 38)
+
+  
+In [212]: nohit_sentences
+Out[212]: 
+[['programming experience in one or more of the following: java, python, javascript, nodejs, c#, net, ruby',
+  ['javascript']],
+ ['experience with java, javascript, html5, and sap technologies like sap hana, sap fiori, netweaver',
+  ['javascript']],
+ ['experience with java for android, objective-c for ios, html, javascript',
+  ['javascript']],
+ ['experience building multi-tier high availability applications with modern web technologies (such as nosql, mongodb, sparkml, tensorflow)',
+  ['tensorflow']],
+ ['software development platforms and solutions experience (java servlets, javascript, php, asp, cgi, ajax, flash, cookies and xml)',
+  ['javascript']],
+ ['familiarity in one or more common web or mobile development language such as java, python, go, php, javascript, etc',
+  ['javascript']],
+ ['experience with front-end web technologies (html5, css3, and javascript)',
+  ['javascript']],
+ ['technical experience in web technologies such as html, xml, json, oauth 2 along with experience in analysis of relational data in mysql, google bigquery or similar',
+  ['mysql']],
+ ['familiarity with architecture and operational aspects of large scale distributed systems; familiarity with the popular technologies in the machine learning/big data ecosystem (tensorflow, spark, etc)',
+  ['tensorflow']],
+ ['html5, css3, and javascript development experience', ['javascript']],
+ ['java, c/c++, c#, python, javascript, or go)', ['javascript']],
+ ['experience with web technologies (object-oriented javascript, html, css), and experience with the latest web standards including html5 and css3',
+  ['javascript', 'css']],
+ ['experience programming in one of the following: java, javascript and/or c++',
+  ['javascript']],
+ ['4 years of relevant work experience, including web application experience or skills using ajax, html, css or javascript',
+  ['javascript', 'css']],
+ [', sql, mysql, mapreduce, hadoop)', ['mysql']],
+ ['experience working with deployment and orchestration technologies (such as pxe, docker, kubernetes, puppet, chef, salt, ansible, jenkins)',
+  ['docker']],
+ ['development experience in c, c++ or java and experience designing modular, object-oriented javascript',
+  ['javascript']],
+ ['expert html and css skills', ['css']],
+ [', unit, functional, integration, stress testing) for your code, using one or more of the following: c, c++, c#, java, javascript, go, or python',
+  ['javascript']],
+ ['experience in writing software in one or more languages such as java, c++, python, go, javascript',
+  ['javascript']],
+ ['experience with one or more general purpose programming languages including but not limited to: c/c++, c#, python, javascript, go, objective-c, swift',
+  ['javascript']],
+ ['fluency in one or more of the following: python, javascript, java, php, perl, or c++',
+  ['javascript']],
+ ['previous tech internships or relevant work experience programming in c, c++, c#, java, javascript, go or python',
+  ['javascript']],
+ [', object-oriented javascript, html, css)', ['javascript', 'css']],
+ ['restful, soap, etc), and javascript', ['javascript']],
+ ['experience in backend development and using one or more cloud platform services (aws, azure, gcp)',
+  ['aws']],
+ ['1 year of experience in software engineering and coding, working with two or more of the following languages: java, c/c++, c#, objective-c, python, javascript, php, ruby and/or go',
+  ['javascript']],
+ ['4 years of experience working with front end languages such as html5, css, javascript (angularjs)',
+  ['javascript', 'css']],
+ ['experience with web technologies such as html, css, javascript, and http',
+  ['javascript', 'css']],
+ ['software development platforms and solutions to include j2ee, java servlets, javascript, python, go, php, asp, cgi, ajax',
+  ['javascript']],
+ [', r, python, matlab, pandas) and database languages (e', ['pandas']],
+ ['experience with modern javascript frameworks (such as backbone, angular, or ember) and css pre-processing frameworks (such as sass or less)',
+  ['javascript', 'css']],
+ ['experience in writing code fixes and tools to solve problems in c, c++, c#, java, javascript, go or python (e',
+  ['javascript']],
+ ['net, python, shell, perl, javascript)', ['javascript']],
+ ['programming experience in one or more of the following languages/platforms: android, java, kotlin, ios, javascript',
+  ['javascript']],
+ ['experience with one or more general purpose programming languages including but not limited to: java, c/c++, c#, objective c, python, javascript, or go',
+  ['javascript']],
+ ['experience in writing software in one or more languages such as java, python, go, javascript, c++, or similar',
+  ['javascript']],
+ ['experience with java for android, and objective-c for ios, html and javascript',
+  ['javascript']]]
+```
+09:25 hmm also actually seeing sometimes splitting on a `"."` is not quite accurate.
+okay so next, since this is not looking terribly like a whole lot of sentences, can manually assign the ones that are similar, say, and try a fit.
+
+### [[Jul 15th, 2023]] finally tried the [[supervised fine-tuning]] but didn't seem to add to the vocabulary
+#### created clusters manually, by looking at my no hit list from earlier, of sentences containing words that were not in the vocabulary,
+20:07 going to just manually create some groups, 
+
+```python
+# web stuff, front end leaning
+group1 = [
+  'programming experience in one or more of the following: java, python, javascript, nodejs, c#, net, ruby',
+  'experience with java, javascript, html5, and sap technologies like sap hana, sap fiori, netweaver',
+  'software development platforms and solutions experience (java servlets, javascript, php, asp, cgi, ajax, flash, cookies and xml)',
+  'experience with front-end web technologies (html5, css3, and javascript)',
+  'html5, css3, and javascript development experience',
+  'experience with web technologies (object-oriented javascript, html, css), and experience with the latest web standards including html5 and css3',
+  '4 years of relevant work experience, including web application experience or skills using ajax, html, css or javascript',
+  'expert html and css skills',
+  'restful, soap, etc), and javascript',
+  '4 years of experience working with front end languages such as html5, css, javascript (angularjs)',
+  'experience with web technologies such as html, css, javascript, and http',
+  'software development platforms and solutions to include j2ee, java servlets, javascript, python, go, php, asp, cgi, ajax',
+  'experience with modern javascript frameworks (such as backbone, angular, or ember) and css pre-processing frameworks (such as sass or less)',
+  
+]
+
+# feeling more back end mle ish, 
+group3 = [
+  'experience building multi-tier high availability applications with modern web technologies (such as nosql, mongodb, sparkml, tensorflow)',
+  'technical experience in web technologies such as html, xml, json, oauth 2 along with experience in analysis of relational data in mysql, google bigquery or similar',
+  'familiarity with architecture and operational aspects of large scale distributed systems; familiarity with the popular technologies in the machine learning/big data ecosystem (tensorflow, spark, etc)',
+  ', sql, mysql, mapreduce, hadoop)',
+  'experience working with deployment and orchestration technologies (such as pxe, docker, kubernetes, puppet, chef, salt, ansible, jenkins)',
+  'experience in backend development and using one or more cloud platform services (aws, azure, gcp)',
+  ', r, python, matlab, pandas) and database languages ',
+  
+]
+
+# mobile dev 
+group2 = [
+  'experience with java for android, objective-c for ios, html, javascript',
+  'familiarity in one or more common web or mobile development language such as java, python, go, php, javascript, etc',
+  'java, c/c++, c#, python, javascript, or go)',
+  'experience programming in one of the following: java, javascript and/or c++',
+  'development experience in c, c++ or java and experience designing modular, object-oriented javascript',
+  ', unit, functional, integration, stress testing) for your code, using one or more of the following: c, c++, c#, java, javascript, go, or python',
+  'experience in writing software in one or more languages such as java, c++, python, go, javascript',
+  'experience with one or more general purpose programming languages including but not limited to: c/c++, c#, python, javascript, go, objective-c, swift',
+  'fluency in one or more of the following: python, javascript, java, php, perl, or c++',
+  '1 year of experience in software engineering and coding, working with two or more of the following languages: java, c/c++, c#, objective-c, python, javascript, php, ruby and/or go',
+  'experience in writing code fixes and tools to solve problems in c, c++, c#, java, javascript, go or python ',
+  'programming experience in one or more of the following languages/platforms: android, java, kotlin, ios, javascript',
+  'experience with one or more general purpose programming languages including but not limited to: java, c/c++, c#, objective c, python, javascript, or go',
+  'experience in writing software in one or more languages such as java, python, go, javascript, c++, or similar',
+  'experience with java for android, and objective-c for ios, html and javascript',
+]
+```
+### Then created a dataset from that, and ran fit with the out of the box 'all-MiniLM-L6-v2' sentence transformer model
+20:36 since https://huggingface.co/datasets/embedding-data/sentence-compression/tree/main is given as the example and since I see those [[json lines]] , but it is with [[git-lfs]] , let me try pull it as appropriate,
+
+ok file was "sentence-compression_compressed.jsonl.gz", internally looks like this
+```
+$ head data/kaggle-google-job-skills/sentence-compression_compressed.jsonl 
+{"set": ["The USHL completed an expansion draft on Monday as 10 players who were on the rosters of USHL teams during the 2009-10 season were selected by the League's two newest entries, the Muskegon Lumberjacks and Dubuque Fighting Saints.", "USHL completes expansion draft"]}
+{"set": ["Major League Baseball Commissioner Bud Selig will be speaking at St. Norbert College next month.", "Bud Selig to speak at St. Norbert College"]}
+{"set": ["It's fresh cherry time in Michigan and the best time to enjoy this delicious and nutritious fruit.", "It's cherry time"]}
+{"set": ["An Evesham man is facing charges in Pennsylvania after he allegedly dragged his girlfriend from the side of his pickup truck on the campus of Kutztown University in the early morning hours of Dec. 5, police said.", "Evesham man faces charges for Pa."]}
+{"set": ["NRT LLC, one of the nation's largest residential real estate brokerage companies, announced several executive appointments within its Coldwell Banker Residential Brokerage operations in Southern California.", "NRT announces executive appointments at its Coldwell Banker operations in Southern California"]}
+{"set": ["THE JSE kept toying with an all time high by midday today as resources continued to fuel the bourse.", "JSE keeps toying with all time high"]}
+{"set": ["The government is defending the latest police crime statistics despite a worrying rise in the recorded amount of violent offending.", "Government defends crime statistics"]}
+{"set": ["The renovated Marappalam bridge, which had been opened for two-wheelers last week, was opened for other vehicles also on Friday.", "Marappalam bridge opened"]}
+{"set": ["A new survey shows 30 percent of Californians use Twitter, and more and more of us are using our smart phones to go online.", "Survey: 30 percent of Californians use Twitter"]}
+{"set": ["Brightpoint ,a provider of logistic services to the mobile industry, has started operations in the Turkish market.", "Brightpoint starts operations on Turkish market"]}
+
+```
+20:50 ah ok the literal word "set" really is in there okay ! 
+```python
+import os
+import utils as u
+from pathlib import Path
+
+path = (Path(os.getenv("REPOS_DIR")) 
+            / "data" 
+            / "kaggle-google-job-skills/2023-07-15-positive-pairs.jsonl")
+
+dataset = u.make_positive_pairs_from_groups(group1, group2, group3)
+path.write_text("\n".join([json.dumps(x) for x in dataset]))
+
+
+from sentence_transformers import InputExample
+from torch.utils.data import DataLoader
+
+train_examples = []
+for i, x in enumerate(dataset):
+    train_examples.append(
+        InputExample(texts=[x["set"][0], x["set"][1]])
+    )
+train_dataloader = DataLoader(train_examples, shuffle=True, batch_size=16)
+
+# MultipleNegativesRankingLoss 
+from sentence_transformers import losses
+
+model = SentenceTransformer('all-MiniLM-L6-v2')
+train_loss = losses.MultipleNegativesRankingLoss(model=model)
+
+
+model.fit(train_objectives=[(train_dataloader, train_loss)], epochs=10) 
+```
+21:31 ok started that . Actually going pretty fast as I expected since yea my dataset is small for a proof of concept , 
+```
+Iteration: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 13/13 [00:16<00:00,  1.26s/it]
+Epoch:  10%|████████████                                                                                                             | 1/10 [00:16<02:27, 16.36s/it]
+Iteration:  92%|███████████████████████████████████████████████████████████████████████████████████████████████████████████         | 12/13 [00:19<00:01,  1.64s/it]
+...
+...
+CPU times: user 4min 8s, sys: 38.8 s, total: 4min 47s
+Wall time: 2min 43s
+```
+### hmm but new vocabulary does not seem to reflect new terms somehow
+And yea curious if I can see the vocabulary now as different, 
+
+```python
+
+path = (Path(os.getenv("REPOS_DIR")) 
+            / "data" 
+            / "kaggle-google-job-skills/2023-07-15-fine-tuned-on-pairs.foo")
+model.save(path)
+```
+21:42 oh nice, I see the vocab.txt got saved, in that folder, 
+```python
+# 2023-07-15-fine-tuned-on-pairs.foo/vocab.txt"
+path = (Path(os.getenv("REPOS_DIR")) 
+            / "data" 
+            / "kaggle-google-job-skills/2023-07-15-fine-tuned-on-pairs.foo"
+            / "vocab.txt")
+vocab = path.read_text()
+
+
+In [250]: set(nohit_list) & set(vocab)
+Out[250]: set()
+
+In [251]: set([f"##{x}" for x in nohit_list]) & set(vocab)
+Out[251]: set()
+
+```
+21:48 hmm not seeing any words from the nohit list in the dumped out vocab though. hmm ok back to the drawing board then? haha
+
+

@@ -983,3 +983,119 @@ Out[251]: set()
 21:48 hmm not seeing any words from the nohit list in the dumped out vocab though. hmm ok back to the drawing board then? haha
 
 
+### [[Jul 16th, 2023]] yea tried a different take on adding tokens to a tokenizer and that seemed to do it.
+#### yea it was not "tokenizer.json"
+11:17 ok so next though,
+
+11:23 hmm interesting, I also looked at the "tokenizer.json" file that got created when doing `model.save()`, next to the "vocab.txt". They have the same tokens looks like except "tokenizer.json" also refers to the input ids [[tokenized-input-ids]] ,
+11:30 hmm but maybe fine tuning simply does not update the vocabulary?
+#### but "add_tokens"
+12:01 ok super interesting, reading [here on medium](https://angelina-yang.medium.com/how-to-add-new-tokens-to-a-transformer-model-vocabulary-da778f99f910) someone kind of confirming that to expand the vocabulary [[add to transformer vocabulary]], and prevent [[out-of-vocabulary-words-OOV]], you need another approach,
+
+12:32 lets try their recommendation,  just took out the for-loop since yea looking at current documentation for `add_tokens` function, you can add a list instead. Incorporating w/ a check of what is my hit list and no hit list ,
+```python
+from transformers import AutoTokenizer, AutoModel
+
+model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+tokenizer = AutoTokenizer.from_pretrained('sentence-transformers/all-MiniLM-L6-v2')
+
+nohit_list = ut.current_nohit_list("sentence-transformers/all-MiniLM-L6-v2")
+
+# Before
+vocabulary_before = list(tokenizer.get_vocab().keys())
+
+tokenizer.add_tokens(nohit_list)
+
+# add new embeddings to the embedding matrix of the transformer model
+model.resize_token_embeddings(len(tokenizer))
+
+# After 
+vocabulary_after = list(tokenizer.get_vocab().keys())
+
+# Did it work?
+```
+14:09 hmm got an error, 
+```python
+AttributeError: 'SentenceTransformer' object has no attribute 'resize_token_embeddings'
+```
+when trying to resize .
+Maybe need to go one level down, to the lower layer.
+```python
+for child in model.children():
+    print(child, hasattr(child, "resize_token_embeddings"), "\n")
+
+Transformer({'max_seq_length': 256, 'do_lower_case': False}) with Transformer model: BertModel  False 
+
+Pooling({'word_embedding_dimension': 384, 'pooling_mode_cls_token': False, 'pooling_mode_mean_tokens': True, 'pooling_mode_max_tokens': False, 'pooling_mode_mean_sqrt_len_tokens': False}) False 
+
+Normalize() False 
+```
+14:13 hmm nope, weird.
+But ok looks like this part worked, 
+```python
+In [263]: print(set(vocabulary_after) - set(vocabulary_before))
+{'github', 'databricks', 'nlp', 'ecs', 'pytorch', 'pyspark', 'sklearn', 'auc', 'aws', 'postgresql', 'docker', 'nginx', 'idempotent', 'sagemaker', 'xgboost', 'cli', 'css', 'clojure', 'spacy', 'ipython', 'dbutils', 'tensorflow', 'asyncio', 'redis', 'pandas', 'numpy', 'ec2', 'mysql', 'javascript'}
+
+
+```
+How about the tokenize command?
+```python
+sentence = "familiar with xgboost pandas and tensorflow including docker and other technologies"
+print(tokenizer.tokenize(sentence))
+
+['familiar', 'with', 'xgboost', 'pandas', 'and', 'tensorflow', 'including', 'docker', 'and', 'other', 'technologies']
+
+```
+14:18 ok nice #moment/satisfaction well that does seem to work.
+so next, question is then, I should attempt to do some #[[cosine similarity]] , before and after, to understand did this really help 😀
+
+
+
+### [[Jul 17th, 2023]] Reading more, I learn you do likely need to train a new tokenizer and you can't just simply update its vocabulary
+#### Quick side question I had about this last tokenizer and its case awareness,
+out of curiosity, does tokenize now show this for upper case too now? Should be yes right since this is a uncased model
+
+```python
+sentence = "familiar with XGBoost pandas and TensorFlow including Docker and other technologies"
+print(tokenizer.tokenize(sentence))
+
+['familiar', 'with', 'xgboost', 'pandas', 'and', 'tensorflow', 'including', 'docker', 'and', 'other', 'technologies']
+
+```
+08:47 nice . answer is yes.
+#### yea hugging face docs,
+So I suppose that now okay this is how you add tokens to this tokenizer, but two problems still.
+
+Well one obvious problem is the tokenizer now needs to be thrown back into the model,
+But also, so what if the tokenizer now has this vocabulary, I think now the [[supervised fine-tuning]] step next can help tell this model what is the association of these new tokens in the [[embedding space]] right?
+Otherwise, without that, I'm curious what would the output vector , embedding, even look like for sentences with those new words? Like a undefined error? or like a equivalent of a zero vector ?
+09:03 ok wow so the answer is in their nice course here, [chapter 6 ](https://huggingface.co/learn/nlp-course/chapter6/2?fw=pt), on training [[tokenizer]] [[train new tokenizer from an old one]]
+So funny enough, the example being used here is [[code understanding]] , [[source code embedding]]
+and so this dataset is used, to update the tokenizer of `gpt-2`, 
+```python
+raw_datasets = load_dataset("code_search_net", "python")
+```
+```python
+from transformers import AutoTokenizer
+
+old_tokenizer = AutoTokenizer.from_pretrained("gpt2")
+```
+```python
+tokenizer = old_tokenizer.train_new_from_iterator(training_corpus, 52000)
+```
+fastinating side note mentioned here is that there are tokenizers that can be written in python, which are slow and also can be written in #Rust-lang and also #cuda .
+hmm so ok then you can save that tokenizer, 
+```python
+tokenizer.save_pretrained("code-search-net-tokenizer")
+```
+but how about updating the original model then ?
+09:21 ok well conceptually, skipping ahead in the [[hugging face]] course there, I see [here in chapter 7](https://huggingface.co/learn/nlp-course/chapter7/2?fw=pt#fine-tuning-the-model), that you can use a `Trainer` from 
+````
+from transformers import Trainer
+````
+in order to fine tune a model and pass a tokenizer as an input,
+So per above I suspect that is the answer to my question!
+#### So thinking about next steps
+Ok so a conceptual update here, I think maybe I need to hunt down some datasets or build a dataset which has additional technical language, and then use that to fine tune a tokenizer, and not just add vocabulary to it with `tokenizer.add_tokens` haha that was not a full answer. Yea and then I would need to use some of the tips in chapter 6 and 7 of the [[hugging face]] course to fine tune a model but a sentence transformer model say, with the tokenizer that I updated.
+
+

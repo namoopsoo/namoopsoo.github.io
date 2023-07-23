@@ -150,7 +150,7 @@ At this point my friend introduced some dark humor, citing this link with an act
       <description>type:: #project-type status:: #in-progress-status blogDate:: 2023-02-18
 Note This is not a blog post but kind of a landing page I&amp;rsquo;m using to aggregate on-going project notes here
 Vision Broadly would like to do here something like the following
-compare against arbitrary #job-listings , #job-description , And [[my projects/personal/langchain-interview-me-2023-feb]] , also now the repo usable by anyone who wants to compare their #brag-document to #job-listings [[job-description]] out there , get a delta , and more broadly , understand say , their industry posture , since that’s a moving target .</description>
+compare against arbitrary #job-listings , #job-description , collapsed:: true And [[my projects/personal/langchain-interview-me-2023-feb]] , also now the repo usable by anyone who wants to compare their #brag-document to #job-listings [[job-description]] out there , get a delta , and more broadly , understand say , their industry posture , since that’s a moving target .</description>
     </item>
     
     <item>

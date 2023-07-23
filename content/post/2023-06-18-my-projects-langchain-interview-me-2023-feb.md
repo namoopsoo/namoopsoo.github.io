@@ -5,12 +5,15 @@ title: langchain interview me 2023 feb
 type:: #project-type
 status:: #in-progress-status
 blogDate:: 2023-02-18
+
+
 ## Note
 This is not a blog post but kind of a landing page I'm using to aggregate on-going project notes here
 
 ## Vision
 Broadly would like to do here something like the following
 ### compare against arbitrary #job-listings , #job-description ,
+collapsed:: true
 And [[my projects/personal/langchain-interview-me-2023-feb]] , also now the repo usable by anyone who wants to compare their #brag-document to #job-listings [[job-description]] out there , get a delta , and more broadly , understand say , their industry posture , since that’s a moving target . And you can interview yourself too haha .
 
 I can use the [[my projects/personal/langchain-interview-me-2023-feb]] stuff concepts to see , what roles online do I align with and am I progressing towards them at #Humana or stagnating?
@@ -18,6 +21,7 @@ I can use the [[my projects/personal/langchain-interview-me-2023-feb]] stuff con
 ### Making updating your #brag-document like a #fun-factor #[[having fun]] experience 😀
 ### And original intent was a UI to actually ask questions
 ### Also better #TellMeAboutYourself , #[[tell a story]] . Since the #brag-document has lots of cool stories, and also #chronological-story , this could be a cool way to weave together the personal story.
+collapsed:: true
 And for [[my projects/personal/langchain-interview-me-2023-feb]] thing, so I was in this [[May 28th, 2023]] too. Would be cool to make it easier for an individual to construct their [[TellMeAboutYourself]] since this is so important and at least to myself cannot rely on my memory haha
 
 
@@ -25,10 +29,14 @@ And for [[my projects/personal/langchain-interview-me-2023-feb]] thing, so I was
 ### initial post with the #question-answer-task
 20:55 So I have the #blog-post from [[Feb 18th, 2023]] [here](https://michal.piekarczyk.xyz/post/2023-02-18-first-stab-langchain-interview-me/), where I put together my technical background , create embeddings from them and run a #question-answer-task #langchain , with one of the chains called "load_qa_with_sources_chain" that gives intermediate source text results too.
 
-## Also this one
+### Also this one
+collapsed:: true
 [[blogpost/2023-06-25-everybody-loves-reynauds]] https://michal.piekarczyk.xyz/post/2023-06-25-everybody-loves-reynauds with a comparison across a few embedding models, to suss out which of them do or do not have medical vocabulary
+### Also  applying sentence transformers to code search
+[part one](https://michal.piekarczyk.xyz/post/2023-06-11-semantic-code-search-first-stab/) and [part two](https://michal.piekarczyk.xyz/post/2023-06-13-semantic-code-search-part-2/)
 ## research
 ### went through that [[article/Getting Started With Embeddings]] , which was useful to start learning about #sentence-transformers library
+collapsed:: true
 And more recently, I went through the #[[hugging face]] example around #Medicare and with the #article-type ,  [[article/Getting Started With Embeddings]] , [link](https://huggingface.co/blog/getting-started-with-embeddings),
 
 And used the  "langchainz" virtual env I have, and I used the https://api-inference.huggingface.co REST API specifying to use the "sentence-transformers/all-MiniLM-L6-v2" model to produce embeddings , and then the   #sentence-transformers library,  `semantic_search` , ( `from sentence_transformers.util import semantic_search` ) , to a question to a set of frequently asked questions
@@ -38,6 +46,14 @@ Maybe help from https://towardsdatascience.com/named-entity-recognition-with-nlt
 
 ## attempts
 ### on [[May 28th, 2023]], I started defining the #job-description comparison concept, and I ran a comparison of my blurb "2023-02-19T011846-the-story-blurb.txt" against "2023-05-28-enigma-mle.txt" . The results were maybe somewhat not easy to read. Perhaps a lot of text. Maybe I need shorter sentences?
+collapsed:: true
+#### Motivation / plan
+So, now , let me create a quick tool, to cross the sentences of a brag document, against like 10 job description embeddings, and help match them,  to understand say, two kinds of problems,
+
+(1) Which job descriptions match the best,
+(2) but then also, for a specific job description, which sentences are  matched and which are not matched.
+(3) So help you know, say even if you are not necessarily looking for something right now, can you know do you align with recent postings in your field?
+#### Outcome
 21:50 okay here's a quick example,
 
 ```python
@@ -46,7 +62,9 @@ import json
 from pathlib import Path 
 import os
 import requests
+from sentence_transformers.util import semantic_search
 
+model_id =  "sentence-transformers/all-MiniLM-L6-v2"
 api_url = f"https://api-inference.huggingface.co/pipeline/feature-extraction/{model_id}"
 headers = {"Authorization": f"Bearer {hf_token}"}
 
@@ -66,10 +84,8 @@ jd1 = Path(folder) / "2023-05-28-enigma-mle.txt"
 
 texts = jd1.read_text().split("\n")
 
-
 output = query(my_story_vec)
 my_story_embeddings = torch.FloatTensor(output)
-
 
 output = query(texts)
 jd_embeddings = torch.FloatTensor(output)
@@ -104,6 +120,7 @@ Okay there is some beginnings of something here. Got to do some more preprocessi
 
 
 ### and on [[Jun 18th, 2023]] , how about #spacy and #[[Named Entity Recognition NER]] ,
+collapsed:: true
 Think because yea I saw that #sentence-transformers #[[cosine similarity]] between my #brag-document sentences and #job-description was super low, so thinking hey how about extract entities and then attempt matches using that instead,
 Initially I saw that the first extraction was pulling only very few entities for this job description for instance,
 19:33 hmm ok but , this is not capturing all the entities, hmm weird, 
@@ -145,6 +162,7 @@ millions 1396 1404 CARDINAL
 ### and on [[Jun 25th, 2023]] the [[blogpost/2023-06-25-everybody-loves-reynauds]]
 So in that mini blogpost, I tried out multiple #[[embedding space]] using different embedding models. And it looked like only `“all-MiniLM-L12-v2”` appeared to have some kind of [[medical-condition]] knowledge .
 ### [[Jul 6th, 2023]] , can I do a #[[supervised fine-tuning]] #[[my first]] ,
+collapsed:: true
 yea so just starting , going through , between https://www.sbert.net/docs/training/overview.html and [[article/Train and Fine-Tune Sentence Transformers Models]]
 
 08:35 so yea if a particular out of the box model uses [[average-pooling]] then for sure that yells at me that [[stop-words]] should be removed hmm
@@ -311,6 +329,7 @@ pairs = [
 ```
 
 ### [[Jul 10th, 2023]] looked at the vocabulary misses and job titles
+collapsed:: true
 #### noticed that the paraphrase mining output is not full
 looks like more or less we get the better matches first
 #### the model I'm testing with does have technical data sources
@@ -319,6 +338,7 @@ looks like more or less we get the better matches first
 Maybe I can look for technical terms which I suspect are not part of the #vocabulary , hmm
 So https://huggingface.co/datasets/code_search_net and [[stack exchange]] duplicate questions and actually many other technical datasets are used per https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2 ,
 #### hmm oh the AutoTokenizer is a way to get tokens and vocabulary in the model
+collapsed:: true
 09:14 tokenizer?
 
 ```python
@@ -513,6 +533,7 @@ Out[140]:
  'javascript']
 ```
 #### and job titles, maybe I could group along that first
+collapsed:: true
 09:36 also another thing for trying next is I should also cut up and do paraphrase mining perhaps within the particular job title, (printing just a sample below )
 
 ```python
@@ -529,6 +550,7 @@ this list of titles is pretty extensive and might have duplicates also
 #### thoughts for later
 use vocabulary misses maybe to figure out what to fine tune with
 ### [[Jul 11th, 2023]] refined the nohits per the vocabulary of the model and used it to tokenize to verify they are unknown
+collapsed:: true
 #### yea no hits
 first let me use more precise way of looking for hits,
 
@@ -666,6 +688,7 @@ which I think is pretty cool, referring to #[[Named Entity Recognition NER]] , u
 
 
 ### [[Jul 12th, 2023]] ok started building up code to capture a mini corpus, of the sentences, which have words that are not part of the vocabulary,
+collapsed:: true
 08:17 [[my projects/personal/langchain-interview-me-2023-feb]]
 
 09:05 ok wow organized earlier notes a bit !
@@ -695,6 +718,7 @@ isn't that kind of silly?
 and [[Jul 13th, 2023]] , got a bunch of the no hit sentences, at least for some definition,
 08:41 [[my projects/personal/langchain-interview-me-2023-feb]]
 
+collapsed:: true
 hm ok, 
 ```python
 import utils as ut
@@ -839,7 +863,9 @@ Out[212]:
 okay so next, since this is not looking terribly like a whole lot of sentences, can manually assign the ones that are similar, say, and try a fit.
 
 ### [[Jul 15th, 2023]] finally tried the [[supervised fine-tuning]] but didn't seem to add to the vocabulary
+collapsed:: true
 #### created clusters manually, by looking at my no hit list from earlier, of sentences containing words that were not in the vocabulary,
+collapsed:: true
 20:07 going to just manually create some groups, 
 
 ```python
@@ -893,6 +919,7 @@ group2 = [
 ]
 ```
 ### Then created a dataset from that, and ran fit with the out of the box 'all-MiniLM-L6-v2' sentence transformer model
+collapsed:: true
 20:36 since https://huggingface.co/datasets/embedding-data/sentence-compression/tree/main is given as the example and since I see those [[json lines]] , but it is with [[git-lfs]] , let me try pull it as appropriate,
 
 ok file was "sentence-compression_compressed.jsonl.gz", internally looks like this
@@ -984,12 +1011,14 @@ Out[251]: set()
 
 
 ### [[Jul 16th, 2023]] yea tried a different take on adding tokens to a tokenizer and that seemed to do it.
+collapsed:: true
 #### yea it was not "tokenizer.json"
 11:17 ok so next though,
 
 11:23 hmm interesting, I also looked at the "tokenizer.json" file that got created when doing `model.save()`, next to the "vocab.txt". They have the same tokens looks like except "tokenizer.json" also refers to the input ids [[tokenized-input-ids]] ,
 11:30 hmm but maybe fine tuning simply does not update the vocabulary?
 #### but "add_tokens"
+collapsed:: true
 12:01 ok super interesting, reading [here on medium](https://angelina-yang.medium.com/how-to-add-new-tokens-to-a-transformer-model-vocabulary-da778f99f910) someone kind of confirming that to expand the vocabulary [[add to transformer vocabulary]], and prevent [[out-of-vocabulary-words-OOV]], you need another approach,
 
 12:32 lets try their recommendation,  just took out the for-loop since yea looking at current documentation for `add_tokens` function, you can add a list instead. Incorporating w/ a check of what is my hit list and no hit list ,
@@ -1052,6 +1081,7 @@ so next, question is then, I should attempt to do some #[[cosine similarity]] , 
 
 
 ### [[Jul 17th, 2023]] Reading more, I learn you do likely need to train a new tokenizer and you can't just simply update its vocabulary
+collapsed:: true
 #### Quick side question I had about this last tokenizer and its case awareness,
 out of curiosity, does tokenize now show this for upper case too now? Should be yes right since this is a uncased model
 
@@ -1064,6 +1094,7 @@ print(tokenizer.tokenize(sentence))
 ```
 08:47 nice . answer is yes.
 #### yea hugging face docs,
+collapsed:: true
 So I suppose that now okay this is how you add tokens to this tokenizer, but two problems still.
 
 Well one obvious problem is the tokenizer now needs to be thrown back into the model,
@@ -1099,3 +1130,560 @@ So per above I suspect that is the answer to my question!
 Ok so a conceptual update here, I think maybe I need to hunt down some datasets or build a dataset which has additional technical language, and then use that to fine tune a tokenizer, and not just add vocabulary to it with `tokenizer.add_tokens` haha that was not a full answer. Yea and then I would need to use some of the tips in chapter 6 and 7 of the [[hugging face]] course to fine tune a model but a sentence transformer model say, with the tokenizer that I updated.
 
 
+### [[Jul 18th, 2023]] reading more about subword tokenization and purpose of tokenizer tuning 
+collapsed:: true
+not sure if my use case where technical terms are lacking from a tokenizer warrants this but maybe
+09:07 So then I'm not sure why the https://huggingface.co/blog/how-to-train-sentence-transformers method I used earlier for fine tuning, earlier [here the other day](https://michal.piekarczyk.xyz/post/2023-06-18-my-projects-langchain-interview-me-2023-feb/#then-created-a-dataset-from-that-and-ran-fit-with-the-out-of-the-box-all-minilm-l6-v2-sentence-transformer-model) , did not update the vocabulary. ,
+
+09:13 Hmm ok maybe the explanation they give up front [here](https://huggingface.co/learn/nlp-course/chapter6/1?fw=pt) helps to confirm that fine tuning a transformer model will not update the tokenizer. My impression is that  fine tuning a transformer model is really just going to update the weights and since we know that many transformer models use [[subword-tokenization]], although you have new words, the fine tuning weight adjustments are made off of the subword tokens that are less meaningful than if they had concepts mapped out for those new words
+Although I am also slightly getting the impression that training a tokenizer is less about vocabulary and more about like #grammar because in their phrasing they refer not to the differences in the vocabulary between #English and #Japanese but to the differences in punctuation .
+And they are fine tuning a tokenizer on [[source code]] which definitely has different #grammar .
+09:26 yea and additionally [here](https://huggingface.co/learn/nlp-course/chapter6/2?fw=pt) they spell out that [[train new tokenizer from an old one]] is really about deciding what are good [[subword-tokenization]] to use, actually what sub-words. hmm
+But a tokenizer does indeed have a vocabulary so hmm, is my problem a tokenizer vocabulary problem or is it really I should be looking at this as a [[Named Entity Recognition NER]] problem ?
+#### but yea next should try,
+09:32 anyway I should still just try this,
+
+so next let me apply the mini corpus I had from last time, to this,  and lets see what the new tokenizer does 
+```python
+tokenizer = old_tokenizer.train_new_from_iterator(training_corpus, 52000)
+```
+
+
+### [[Jul 19th, 2023]] Ran the tokenizer fine tuning with a small dataset
+The vocabulary of the output of `train_new_from_iterator` had only the new data. So "mission accomplished" haha I got the new vocabulary in there but at the cost of missing the original vocabulary 😅
+#### Trying this out
+collapsed:: true
+so let's follow along per [hugging face nlp chapter 6 ](https://huggingface.co/learn/nlp-course/chapter6/2?fw=pt),
+
+09:23 what does the data they are passing in for their use case look like?
+```python
+from datasets import load_dataset
+
+# This can take a few minutes to load, so grab a coffee or tea while you wait!
+raw_datasets = load_dataset("code_search_net", "python")
+
+training_corpus = (
+    raw_datasets["train"][i : i + 1000]["whole_func_string"]
+    for i in range(0, len(raw_datasets["train"]), 1000)
+)
+```
+ok haha I don't want to download the whole thing because I am using a laptop tethered to my phone [[phone-tether]] #moment/haha . But I can just look at it online, https://huggingface.co/datasets/code_search_net  , 
+per the above, each row is a record and "whole_func_string" is a string of the function definition.
+So their training_corpus data would look like a list of strings basically. Ok let me repurpose my mini [[positive pair]] dataset from earlier for this then,
+```python
+import os
+import json
+import utils as u
+from functools import reduce
+from pathlib import Path
+
+path = (Path(os.getenv("REPOS_DIR")) 
+            / "data" 
+            / "kaggle-google-job-skills/2023-07-15-positive-pairs.jsonl")
+
+
+"2023-07-15-positive-pairs.jsonl"
+
+training_corpus = list(set(
+    reduce(
+        lambda x, y: x + y,
+        [json.loads(x)["set"] for x in Path(path).read_text().splitlines()]
+    )
+))
+
+
+```
+09:40 ok so the second argument to 
+```python
+train_new_from_iterator
+```
+is the vocab_size . And currently it is, 
+```python
+from transformers import AutoTokenizer
+old_tokenizer = AutoTokenizer.from_pretrained('sentence-transformers/all-MiniLM-L6-v2')
+
+old_tokenizer.vocab_size
+# Out[275]: 30522
+```
+ok the 52,000 in that doc is a lot more. Curious what happens , 
+```python
+tokenizer = old_tokenizer.train_new_from_iterator(training_corpus, 52000)
+[00:00:00] Pre-processing sequences                 ███████████████████████████████████████████████████████████████████████ 0        /        0
+[00:00:00] Tokenize words                           ███████████████████████████████████████████████████████████████████████ 182      /      182
+[00:00:00] Count pairs                              ███████████████████████████████████████████████████████████████████████ 182      /      182
+[00:00:00] Compute merges                           ███████████████████████████████████████████████████████████████████████ 527      /      527
+
+
+In [278]: tokenizer.vocab_size
+Out[278]: 601
+```
+09:44 hmm interesting, so perhaps for this to work properly, I would have needed all the original data also, concatenated with the new data? Let me just last thing, look at the vocab and hit or no hit with my terms at least, 
+```python
+old_vocabulary = old_tokenizer.get_vocab()
+vocabulary = tokenizer.get_vocab()
+
+len(old_vocabulary), len(vocabulary)
+# Out[281]: (30522, 601)
+
+import utils as ut
+job_terms = ut.get_nohit_job_terms()
+
+print(job_terms)
+# ['html', 'databricks', 'python', 'css', 'api', 'postgresql', 'database', 'mysql', 'clojure', 'java', 'javascript', 'angular', 'idempotent', 'azure', 'github', 'git', 'concurrency', 'asyncio', 'dbutils', 'ipython', 'docker', 'pipeline', 'sklearn', 'tensorflow', 'pytorch', 'numpy', 'pandas', 'ec2', 'ecs', 'aws', 'sagemaker', 'nginx', 'redis', 'cli', 'auc', 'xgboost', 'repository', 'pyspark', 'nlp', 'spacy']
+
+In [285]: set(job_terms) & set(vocabulary)
+Out[285]: 
+{'angular',
+ 'aws',
+ 'azure',
+ 'css',
+ 'database',
+ 'docker',
+ 'html',
+ 'java',
+ 'javascript',
+ 'mysql',
+ 'pandas',
+ 'python',
+ 'tensorflow'}
+```
+ok haha well good to know at least this does indeed update the vocabulary for at least the new stuff. But since vocab is super small, makes me think yea this needs to be built using original and new data , from scratch perhaps.
+#### Thoughts
+summary thinkings here
+
+I think I should go back to the original task of   evaluating how good is a model at matching a brag document to job description texts, perhaps also building my own dataset that can be used for this evaluation on a out of the box model, comparing then to something new
+
+
+
+### [[Jul 20th, 2023]] did bit of reading learning , research mode 
+Think I am now convinced that yes, having new terminology is a good reason for a new tokenizer, because otherwise a tokenizer that does not have the new words, will do excessive splitting and am embedding model will be less likely to get useful signal from them,
+#### main benefit of train_new_from_iterator , is lets you quickly use the same class as an earlier tokenizer, but yea this is not a fine tuning step like I thought before
+Looking at notes from yesterday, and that new tokenizer, yea it has some of the new vocabulary,
+
+Some of it is not sub-worded, remaining intact 
+```python
+print(set(job_terms) & set(vocabulary))
+{'aws', 'tensorflow', 'angular', 'docker', 'pandas', 'database', 'java', 'mysql', 'azure', 'css', 'python', 'html', 'javascript'}
+
+```
+And yea some of it underwent [[subword-tokenization]] 
+```python
+print(set(job_terms) - set(vocabulary))
+{'databricks', 'api', 'nlp', 'ecs', 'concurrency', 'pyspark', 'pytorch', 'sklearn', 'auc', 'pipeline', 'postgresql', 'nginx', 'idempotent', 'sagemaker', 'cli', 'xgboost', 'git', 'repository', 'clojure', 'spacy', 'dbutils', 'asyncio', 'redis', 'numpy', 'ec2', 'ipython', 'github'}
+```
+09:11 So this sentence become, 
+```python
+print(tokenizer.tokenize(
+  "Within databricks, you can use pyspark or scala, but to use tensorflow or pytorch in databricks, you need to stick to pyspark."))
+
+['with', '##i', '##n', 'data', '##b', '##ri', '##ck', '##s', ',', 'yo', '##u', 'c', '##a', '##n', 'us', '##e', 'py', '##s', '##p', '##ark', 'or', 'sca', '##la', ',', 'but', 'to', 'us', '##e', 'tensorflow', 'or', 'py', '##t', '##or', '##ch', 'in', 'data', '##b', '##ri', '##ck', '##s', ',', 'yo', '##u', 'ne', '##e', '##d', 'to', 'st', '##ic', '##k', 'to', 'py', '##s', '##p', '##ark', '[UNK]']
+
+```
+Ok so I suppose the advantage of the form, 
+```python
+tokenizer = old_tokenizer.train_new_from_iterator(training_corpus, 52000)
+```
+is you are using the specific class of that earlier tokenizer, 
+```python
+print(old_tokenizer.__class__.__name__, tokenizer.__class__.__name__)
+BertTokenizerFast BertTokenizerFast
+```
+and training a tokenizer from scratch, I can find, 
+```python
+from tokenizers import BertWordPieceTokenizer
+```
+but I don't see `BertTokenizerFast` in that same namespace
+#### and learned more precisely why , [[why a custom tokenizer]] , and also actually how a typical [[byte-pair encoding]] [[tokenizer]] algorithm relies on sub word frequencies when building a vocabulary
+09:56 ok so then I am missing the primary reason maybe also of the custom tokenizer? [[why a custom tokenizer]]
+
+Person [with this medium post](https://medium.com/analytics-vidhya/create-a-tokenizer-and-train-a-huggingface-roberta-model-from-scratch-f3ed1138180c), is also under the impression that a custom tokenizer [[tokenizer]] is useful as a way of focusing on your unique vocabulary,
+> our domain is very specific, words and concepts about clothes, shapes, 
+colors, … Therefore, we are interested in defining our own tokenizer 
+created from our specific vocabulary, avoiding including more common 
+words from other domains or use cases that are irrelevant for our final 
+purpose.
+10:13 ok reading, [here](https://huggingface.co/docs/transformers/tokenizer_summary) for some more detail,
+So the focus around tokenizing 
+```python
+"Don't you love 🤗 Transformers? We sure do."
+```
+w.r.t. `["Don't", "you",]` versus `["Don", "'", "t"]` versus `["Do", "n't"]`
+does hint that yes you do want to help extract units of meaning,
+And they say that yes you ideally want a smaller vocabulary size to help constrain computation,  but using say [[character tokenization]] although ends up w/ a small vocabulary, will be less expressive and capturing the  meaning of words will be more difficult.
+Feels like in the case of jargon words, like #acronym or just brand new words like "Tensorflow" or "pytorch" , I can see sometimes subword tokenization will be helpful, since say it would be great if the  word "tensor" was tokenized as meaningfully related to "tensorflow", similarly between "pytorch" and "python". And I get that if you are using a subword tokenizer with a good bit of language as a input, then you should have enough to prevent the [[out-of-vocabulary-words-OOV]] misses ,
+10:51 Also they describe the example of `BertTokenizer` tokenizing an acronym it has not seen,
+```python
+from transformers import BertTokenizer
+tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
+tokenizer.tokenize("I have a new GPU!")
+["i", "have", "a", "new", "gp", "##u", "!"]
+```
+And they only mention the benefit, of not having the vocabulary miss, but no mention of the meaning of the concept of #GPU getting missed .
+Oh and they explain that the #double-hashtag  allows tokenization to be reversible since now you know to re-attach the subwords. But not every tokenizer is reversible I think. Or at least not every tokenizer has the same syntax, since they point out , the use of the underscore `_` instead, in `XLNetTokenizer`
+
+```python
+from transformers import XLNetTokenizer
+
+tokenizer = XLNetTokenizer.from_pretrained("xlnet-base-cased")
+
+tokenizer.tokenize("Don't you love 🤗 Transformers? We sure do.")
+["▁Don", "'", "t", "▁you", "▁love", "▁", "🤗", "▁", "Transform", "ers", "?", "▁We", "▁sure", "▁do", "."]
+```
+11:10 going back to [chapter 6 here](https://huggingface.co/learn/nlp-course/chapter6/2), their statement helps with [[why a custom tokenizer]] ,
+They highlight extreme reasons like your language is different than the original languages used in a model, or that your corpus is "very different" 😀.
+So I am leaning more that this is about the statistics of your text data as it relates to allowing language models to extract meaning , but without being a performance burden.
+12:36 continue reading there, see if I missed something,
+collapsed:: true
+Ah interesting so per [here](https://huggingface.co/docs/transformers/tokenizer_summary#bytepair-encoding-bpe), the [[vocabulary size]] is a hyper parameter, that is like a ceiling for splitting words, so if when just say space-splitting, we have too many words, then we split until the vocabulary size is under the input there.
+collapsed:: true
+But I know per my earlier attempt, yesterday, where I provided ,
+```python
+tokenizer = old_tokenizer.train_new_from_iterator(training_corpus, 52000)
+```
+I ended up with 
+``python
+In [278]: tokenizer.vocab_size
+Out[278]: 601
+``
+and still I had quite a lot of [[subword-tokenization]] going on, so there are other details looks like.
+So at least the [[byte-pair encoding]] #algorithm-type , will start with a base vocabulary which consists of just the characters.
+collapsed:: true
+12:51 ok actually glad I kept reading this is interesting, so this algo, will iteratively, find the most frequent symbol pair, adding the merger to its vocabulary, then finding the next most frequent symbol pair after that.
+So symbols start out as just letters, but after one iteration, a symbol would consist of two characters together. And larger clumps can form after that.
+So their example, started out with space split words with frequencies, 
+```python
+("hug", 10), ("pug", 5), ("pun", 12), ("bun", 4), ("hugs", 5)
+```
+and starting with a base vocabulary of 
+```python
+["b", "g", "h", "n", "p", "s", "u"]
+```
+and after performing three merges, having a vocabulary of 
+```python
+["b", "g", "h", "n", "p", "s", "u", "ug", "un", "hug"]
+```
+and at that point they showed that the original set of words and their frequencies would be represented as 
+```python
+("hug", 10), ("p", "ug", 5), ("p", "un", 12), ("b", "un", 4), 
+("hug", "s", 5)  
+```
+and that a new test word like `"mug"` say would end up getting represented as `["<unk>", "ug"]`, since for this case `"m"` just was not part of the initial vocabulary.
+13:10 and ultimately the size of the vocabulary for a tokenizer, [[vocabulary size]] will be the size of the base vocabulary plus the number of merges before it was decided to stop .
+And clearly, haha we can have some absurd algorithm implementation that never stops and we end up with a vocabulary that includes  all the full words that were encountered, and then therefore we would get fewer computational benefits .
+13:21 ok so [[why a custom tokenizer]], in the [video link](https://youtu.be/DJimQynXZsQ) #video-type, embedded in [chapter 6 link](https://huggingface.co/learn/nlp-course/chapter6/2?fw=pt), the lean is now to yes train a tokenizer from scratch if there is new jargon yes as in a new "domain" , #card
+So high level four good reasons, for [[why a custom tokenizer]] [[derive-from-scratch]] #card
+![image.png](../assets/image_1689873985593_0.png)
+new language,
+new characters ( with accents)
+new domain (medical, technical, legal)
+new style (haha like [[Old English]] or [[Old French]] )
+#take-away ohhh and #moment/aha a really good example is explained that a tokenizer unfamiliar with a #corpus  will excessively split and that is not good because #[[input sequence]] is limited [[context-window]] [[maximum-context-size]] !
+And so you will risk not capturing the full sentence you want to pass to a #LLM . Nice.
+Excessive tokenizer splitting, can impact model performance, too, #question #card , why though?
+Maybe the argument is similar to like "<UNK>" those unknowns, in that there is less information being captured. My intuitive reasoning is that tiny subwords embedding representations will be likely meaningless . The #attention will get thrown off by basically letter chunks that will end up being as common as the word "the" , so perhaps you will have just #stop-words at that point with low information.
+Example of this particular model tokenizer missing a lot of #unicode characters from [[Bangla]] #language-type . 
+![image.png](../assets/image_1689874273026_0.png)
+And yea [[out-of-vocabulary-words-OOV]] "<UNK>" , has no useful information for the model to use there.
+And [[excessive splitting by tokenizer]] , for say #[[biomedical Glossary]]
+![image.png](../assets/image_1689875286166_0.png)
+And for the other example given, of using `code-search-net` python dataset to train a tokenizer, I like the question that gets asked is [[performance-lift]] at least eye-balling. And in below example, she does show it is desirable to capture a concept as one token, but I think this will ultimately only happen if that example is more frequent , relative to other patterns when doing merges per  [[byte-pair encoding]]
+![image.png](../assets/image_1689875776287_0.png)
+![image.png](../assets/image_1689875808385_0.png)
+
+
+
+### [[Jul 21st, 2023]] mainly just brief thoughts about building a new dataset
+Thinking next I should look through various datasets out there , and choose which would have good english language breadth but also depth into the technical jargon world.
+
+So for sure a dataset from job descriptions from that nice #Kaggle data. , https://www.kaggle.com/datasets/niyamatalmass/google-job-skills?resource=download
+maybe there are others like that , but for sure I think this is something that would need to be updated at least once or twice a year because technical terms change frequently
+09:29 side note this very much feels like a [[data-drift]] problem but feels like [[nlp-drift]]
+
+### [[Jul 22nd, 2023]] one   brief look model card for, `'sentence-transformers/all-MiniLM-L6-v2'`
+Think I am seeing that this model did not update the tokenizer of the pretrained model that it fine tuned.
+So what are the dataset sources in `'sentence-transformers/all-MiniLM-L6-v2'` which has been my goto model recently.
+
+So per https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2 here,  haha there are a billion sentence tuples in there haha. Not sure how easy it will be to perform the same fine tuning steps, but maybe the tokenizer step requires way less data.
+13:31 So next want to answer yea what data was used for the tokenizer there.
+Ok so looking at https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/blob/main/train_script.py the `train_script.py` in there, it doesn't look like they modified the tokenizer that was from the pre-trained model, given as an input at the bottom, 
+```
+#python train_many_data_files_v2.py --steps 1000000 --batch_size 128 \
+    --model nreimers/MiniLM-L6-H384-uncased train_data_configs/all_datasets_v4.json output/all_datasets_v4_MiniLM-L6-H384-uncased-batch128
+```
+ok so then perhaps I should look up the card for that then.
+### [[Jul 23rd, 2023]] More practical dive today
+Refreshed my story blurb texts after several months. Pulled another kaggle job description dataset for analysis. And another run of cosine similarity for the corpori corpi (what is plural of corpus haha )
+#### wrapping up thoughts on tokenizers from other day
+09:53 ok two thoughts, so
+
+I can look at `nreimers/MiniLM-L6-H384-uncased` and if a tokenizer is described there,
+And I can also look at that [chapter 7 fine tuning link](https://huggingface.co/learn/nlp-course/chapter7/2?fw=pt#fine-tuning-the-model) that takes a tokenizer passed in .
+10:07 I also do want to think more high level, about the overall goal , task and reevaluate approaches.
+But ok, quick look, of possible, at https://huggingface.co/nreimers/MiniLM-L6-H384-uncased ,
+10:13 only points to https://huggingface.co/microsoft/MiniLM-L12-H384-uncased but not much else to go on
+10:18 and that points to this paper, https://arxiv.org/abs/2002.10957 , hmm [[LLM distillation]] with a [[LLM distillation/teacher model and teacher assistant]]
+10:28 well looking at their [train code in github](https://github.com/microsoft/unilm/blob/master/minilm/examples/run_xnli.py) , it looks like for each teacher assistant model (where the MiniLM on hugging face is one of them) , they appear to use these tokenizers directly, 
+```python
+from transformers import (
+    BertTokenizer,
+    DistilBertTokenizer,
+    XLMTokenizer,
+    XLMRobertaTokenizer,
+)
+```
+without modification.
+#### Datasets
+10:31 ok hmm think I should define dataset and problem bit more now
+
+ok going back to a core early example,  from [here](https://michal.piekarczyk.xyz/post/2023-06-18-my-projects-langchain-interview-me-2023-feb/#on-may-28th-2023-i-started-defining-the-job-description-comparison-concept-and-i-ran-a-comparison-of-my-blurb-2023-02-19t011846-the-story-blurbtxt-against-2023-05-28-enigma-mletxt--the-results-were-maybe-somewhat-not-easy-to-read-perhaps-a-lot-of-text-maybe-i-need-shorter-sentences) , I ran [[cosine similarity]] per [[sentence-transformers]] , let me try it again , ( [[May 28th, 2023]] )
+This time with  the new dataset I have and maybe I will add another one too.
+So look at that dataset job titles again,
+```python
+from sentence_transformers.util import semantic_search
+
+import pandas as pd
+import os
+from functools import reduce
+from collections import Counter
+from pathlib import Path
+import utils as ut
+
+loc = (Path(os.getenv("REPOS_DIR")) 
+            / "data" 
+            / "kaggle-google-job-skills/job_skills.csv")
+jobsdf = pd.read_csv(loc)
+
+import utils as ut
+columns = ["Responsibilities", 
+                            'Minimum Qualifications', 
+                            'Preferred Qualifications']
+
+raw_titles = ut.extract_raw_sentences(jobsdf, ["Title"])
+title_vocab = reduce(lambda x, y: x + y, 
+                     [ut.sequence_from_sentence(x) for x in raw_titles]
+)
+
+print(Counter(title_vocab).most_common(25))
+print("total", len(set(title_vocab)))
+```
+```python
+[('manager', 300), ('google', 237), ('cloud', 167), ('and', 127), ('sales', 89), ('marketing', 87), ('engineer', 79), ('technical', 71), ('account', 64), ('lead', 64), ('business', 63), ('partner', 62), ('solutions', 61), ('operations', 59), ('product', 57), ('specialist', 57), ('services', 53), ('english', 52), ('analyst', 52), ('hardware', 51), ('associate', 48), ('global', 46), ('program', 44), ('customer', 43), ('development', 42)]
+total 624
+```
+Picking a few more that stand out, 
+```python
+technical_job_title_terms = [
+  "engineer", "developer", "research", "technical", "analyst", "engineering",
+  "data", "sciences", "ux", "analytics", "systems", "architect", "researcher", "web",
+  "infrastructure", "intelligence", "quantitative", "learning", "software",
+  "scientist",
+        ]
+```
+
+11:48 Maybe can see if more #MLE jobs in [this kaggle dataset](https://www.kaggle.com/datasets/atahmasb/amazon-job-skills) of #Amazon job descriptions.
+12:47 ok so lets run cosine similarity, ranked, between my corpus and these, descriptions,
+14:36 my last blurb was a few months ago, [here](https://michal.piekarczyk.xyz/post/2023-02-18-first-stab-langchain-interview-me/) ,  so refreshing slightly, 
+```python
+import yaml
+import tempfile
+from pathlib import Path
+from datetime import datetime
+import pytz
+import os
+import utils as ut
+
+def utc_now():
+    return datetime.utcnow().replace(tzinfo=pytz.UTC)
+
+def utc_ts(dt):
+    return dt.strftime("%Y-%m-%dT%H%M%S")
+
+def read_yaml(loc):
+    with open(loc) as fd:
+        return yaml.safe_load(fd)
+
+repos_dir = Path(os.getenv("REPOS_DIR"))
+assert repos_dir.is_dir()      
+experience_loc = repos_dir / "my-challenges-and-accomplishments/experience.yaml"
+
+experiences_dict = read_yaml(experience_loc)["Descriptions"]
+my_sentences = ut.build_my_blurb(experiences_dict)
+
+
+```
+15:44 ok and compare with those datasets,
+Mini filter example, 
+```python
+import pandas as pd
+
+vec = [
+{"title": "Software Engineer yea"},
+{"title": "Some Scientist"},
+{"title": "Product Manager"},
+{"title": "Industrial Designer"}
+]
+df = pd.DataFrame.from_records(vec)
+
+In [31]: df
+Out[31]: 
+                   title
+0  Software Engineer yea
+1         Some Scientist
+2        Product Manager
+3    Industrial Designer
+
+In [32]: df.query("title.str.contains('software', case=False) or title.str.contains('scientist', case=False)")
+Out[32]: 
+                   title
+0  Software Engineer yea
+1         Some Scientist
+
+```
+16:16 ok put that into a func,  ( putting it [here](https://github.com/namoopsoo/interview-me/blob/main/utils.py) )
+```python
+def filter_pandas_multiple_contains(df, column, vec, case=False):
+    """filter dataframe for column containing any string from list vec given.
+
+    Example
+    >>> vec = [
+    ... {"title": "Software Engineer yea"},
+    ... {"title": "Some Scientist"},
+    ... {"title": "Product Manager"},
+    ... {"title": "Industrial Designer"}
+    ]
+    >>> df = pd.DataFrame.from_records(vec)
+    >>> df
+                       title
+    0  Software Engineer yea
+    1         Some Scientist
+    2        Product Manager
+    3    Industrial Designer
+    >>> import utils as ut
+    >>> ut.filter_pandas_multiple_contains(df, "title", ["engineer", "scientist"])
+                       title
+    0  Software Engineer yea
+    1         Some Scientist
+    """
+    query = " or ".join(
+            [f"{column}.str.contains('{x}', case={case})"
+             for x in vec])
+    return df.query(query)
+
+```
+
+```python
+In [39]: ut.filter_pandas_multiple_contains(df, "title", ["engineer", "scientist"])
+Out[39]: 
+                   title
+0  Software Engineer yea
+1         Some Scientist
+
+```
+
+```python
+
+import pandas as pd
+import os
+from pathlib import Path
+import utils as ut
+
+raw_sentences = []
+
+technical_job_title_terms = [
+  "engineer", "developer", "research", "technical", "analyst", "engineering",
+  "data", "sciences", "ux", "analytics", "systems", "architect", "researcher", "web",
+  "infrastructure", "intelligence", "quantitative", "learning", "software",
+  "scientist",
+        ]
+
+loc = (Path(os.getenv("REPOS_DIR")) 
+            / "data" 
+            / "kaggle-google-job-skills/job_skills.csv")
+jobsdf = ut.filter_pandas_multiple_contains(
+    pd.read_csv(loc), "Title", technical_job_title_terms)
+columns = ["Responsibilities", 
+                            'Minimum Qualifications', 
+                            'Preferred Qualifications']
+raw_sentences.extend(ut.extract_raw_sentences(
+  jobsdf, columns))
+print("len raw_sentences after ingestion", len(raw_sentences))
+
+loc = (Path(os.getenv("REPOS_DIR")) 
+            / "data" 
+			/ "kaggle-amazon-job-skills/amazon_jobs_dataset.csv")
+jobsdf = ut.filter_pandas_multiple_contains(
+    pd.read_csv(loc), "Title", technical_job_title_terms)
+columns = [
+    'DESCRIPTION',
+    'BASIC QUALIFICATIONS',
+    'PREFERRED QUALIFICATIONS']
+raw_sentences.extend(ut.extract_raw_sentences(
+  jobsdf, columns))
+print("len raw_sentences after ingestion", len(raw_sentences))
+```
+17:44 ok yea and doing that top k cosine similarity then 
+```python
+
+import json
+from pathlib import Path 
+import os
+import requests
+from sentence_transformers.util import semantic_search
+
+model_id =  "sentence-transformers/all-MiniLM-L6-v2"
+hf_token = os.getenv("HF_TOKEN")
+
+my_story_embeddings = ut.vec_to_embeddings(model_id, hf_token, my_sentences)
+
+jd_embeddings = ut.vec_to_embeddings(model_id, hf_token, raw_sentences[:1000])
+
+hits = semantic_search(my_story_embeddings, jd_embeddings, top_k=100)
+
+for i, row in enumerate(hits[:5]):
+    print(f"({i})", "matching,", my_sentences[i], ":")
+    hmm = [[raw_sentences[x["corpus_id"]], x["corpus_id"], x["score"]] for x in row[:3] ]
+    print(hmm, "\n\n")
+
+```
+18:07
+```python
+In [20]: for i, row in enumerate(hits[:5]):
+    ...:     print(f"({i})", "matching,", my_sentences[i], ":")
+    ...:     hmm = [[raw_sentences[x["corpus_id"]], x["corpus_id"], x["score"]] for x in row[:3] ]
+    ...:     print(hmm, "\n\n")
+    ...: 
+(0) matching, Built our initial method for model hosting, transitioning from a purely business rule based flow :
+[['experience in practical business modeling or financial modeling\ndistinctive problem solving and analytical skills, combined with impeccable business judgment', 740, 0.45160090923309326], ['review and fulfill managed software requests to ensure products meet business needs, while overseeing programmatic compliance with associated software licenses/other agreements, contractual terms, and policies', 394, 0.433631956577301], ['experience in business planning and/or financial modeling', 425, 0.4310281574726105]] 
+
+
+(1) matching, Created a Vagrant virtual machine based staging environment that developers can quickly use to stage code, to help us transition from personalized AWS staging environments which can potentially help us save several hundreds of dollars a month. :
+[['experience architecting, developing software, or internet scale production-grade big data solutions in virtualized environments such as google cloud platform', 753, 0.4532877206802368], ['establish and drive planning and execution steps towards production deployments', 959, 0.4100092053413391], ['experience in designing and implementing build automation, and configuration management for operating system platforms.', 859, 0.3592562973499298]] 
+
+
+(2) matching, 
+Implemented the retailer lead list reporting, so that big data heavy retailers like Sears could finally be more involved in following up with customers who were not originating their preapprovals. :
+[['create effective, scalable, and easy to understand reporting solutions (e.g', 262, 0.45110809803009033], ['lead global analysis of in-store demo device analytics', 833, 0.4380985200405121], ['demonstrated understanding of customer support verticals', 961, 0.42506536841392517]] 
+
+
+(3) matching, 
+Troubleshooted and fixed rare and difficult to detect buyout bugs. When customers had multiple payments being taken on a day when they also did a buyout, for example, there was a bug where we were incorrectly discounting the additional payments that they made that day. :
+[['serve as a central coordination point for customer bugs and issues escalated by internal sales teams', 941, 0.4794199466705322], ['author test plans with the goal of catching issues and fixing them at early design stage to improve the overall product quality and meet aggressive schedule', 313, 0.39714837074279785], ['support product implementation and help partners in their day to day challenges by delivering innovative and scalable solutions to their problems and troubleshooting their issues', 796, 0.3908129930496216]] 
+
+
+(4) matching, 
+Refactored payment processing to reflect a better interpretation of the law around customer suspense dollars. Previously, customers would pay down their next months payment. In the change, any payments that are made outside of the due date count towards the suspense account. This change required splitting out the plan shifting, away from the payment processing, into its own separate task, to simplify the new implementation of the payment law. :
+[['work with partner teams to re-engineer process workflows around demand planning, supply planning, ordering, and fulfillment', 219, 0.32384926080703735], ['experience in devising and implementing strategies and business improvements.', 863, 0.31515663862228394], ['consult with internal account management teams and customers to track the progress and impact', 621, 0.30947157740592957]] 
+
+```
+Ok so definitely still not impressed with the hits I'm getting here.
+#### Thoughts
+A few follow up items coming to mind,
+
+I think per above experiment I ran, I want to find a few false negative matches , look at the scores they are producing, and then probably take a closer dive into the [[average-pooling]] . I want to really answer the question, do I need to do pre-processing, removing [[stop-words]] so the [[sentence-transformers]] [[cosine similarity]] after average pooling does not suffer?
+And then after doing the preprocessing if necessary , excluding it as an issue or acting to remove stop words or fluff words, then lets run cosine similarity like that.
+And then maybe a refined , more granular approach would be to think about using [[Named Entity Recognition NER]] maybe to better remove stop words , especially if I do not perhaps have the luxury of  fine tuning.
+but yea side note I think fine tuning would be really helpful to help with embedding these interesting jargon words close to each other if they are indeed related
+And as a visual debugging I really should plot out or at least someone must have some nice tool to visualize embeddings
+
+
+ok

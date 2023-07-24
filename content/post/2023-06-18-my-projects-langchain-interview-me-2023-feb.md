@@ -24,6 +24,10 @@ I can use the [[my projects/personal/langchain-interview-me-2023-feb]] stuff con
 collapsed:: true
 And for [[my projects/personal/langchain-interview-me-2023-feb]] thing, so I was in this [[May 28th, 2023]] too. Would be cool to make it easier for an individual to construct their [[TellMeAboutYourself]] since this is so important and at least to myself cannot rely on my memory haha
 
+### Getting feedback about your text corpus of your experience
+Maybe the documents out there can help inform you, of other relevant terms that you forgot to discuss.
+Also maybe there is low-information density in your corpus. Take out the stop words haha.
+
 
 ## my blog posts
 ### initial post with the #question-answer-task
@@ -1416,6 +1420,7 @@ Refreshed my story blurb texts after several months. Pulled another kaggle job d
 #### wrapping up thoughts on tokenizers from other day
 09:53 ok two thoughts, so
 
+collapsed:: true
 I can look at `nreimers/MiniLM-L6-H384-uncased` and if a tokenizer is described there,
 And I can also look at that [chapter 7 fine tuning link](https://huggingface.co/learn/nlp-course/chapter7/2?fw=pt#fine-tuning-the-model) that takes a tokenizer passed in .
 10:07 I also do want to think more high level, about the overall goal , task and reevaluate approaches.
@@ -1435,6 +1440,7 @@ without modification.
 #### Datasets
 10:31 ok hmm think I should define dataset and problem bit more now
 
+collapsed:: true
 ok going back to a core early example,  from [here](https://michal.piekarczyk.xyz/post/2023-06-18-my-projects-langchain-interview-me-2023-feb/#on-may-28th-2023-i-started-defining-the-job-description-comparison-concept-and-i-ran-a-comparison-of-my-blurb-2023-02-19t011846-the-story-blurbtxt-against-2023-05-28-enigma-mletxt--the-results-were-maybe-somewhat-not-easy-to-read-perhaps-a-lot-of-text-maybe-i-need-shorter-sentences) , I ran [[cosine similarity]] per [[sentence-transformers]] , let me try it again , ( [[May 28th, 2023]] )
 This time with  the new dataset I have and maybe I will add another one too.
 So look at that dataset job titles again,
@@ -1621,6 +1627,10 @@ raw_sentences.extend(ut.extract_raw_sentences(
   jobsdf, columns))
 print("len raw_sentences after ingestion", len(raw_sentences))
 ```
+```python
+len raw_sentences after ingestion 3259
+len raw_sentences after ingestion 33081
+```
 17:44 ok yea and doing that top k cosine similarity then 
 ```python
 
@@ -1636,6 +1646,8 @@ hf_token = os.getenv("HF_TOKEN")
 my_story_embeddings = ut.vec_to_embeddings(model_id, hf_token, my_sentences)
 
 jd_embeddings = ut.vec_to_embeddings(model_id, hf_token, raw_sentences[:1000])
+# this line took 
+# Wall time: 7.05 s
 
 hits = semantic_search(my_story_embeddings, jd_embeddings, top_k=100)
 
@@ -1679,11 +1691,123 @@ Ok so definitely still not impressed with the hits I'm getting here.
 #### Thoughts
 A few follow up items coming to mind,
 
+collapsed:: true
 I think per above experiment I ran, I want to find a few false negative matches , look at the scores they are producing, and then probably take a closer dive into the [[average-pooling]] . I want to really answer the question, do I need to do pre-processing, removing [[stop-words]] so the [[sentence-transformers]] [[cosine similarity]] after average pooling does not suffer?
 And then after doing the preprocessing if necessary , excluding it as an issue or acting to remove stop words or fluff words, then lets run cosine similarity like that.
 And then maybe a refined , more granular approach would be to think about using [[Named Entity Recognition NER]] maybe to better remove stop words , especially if I do not perhaps have the luxury of  fine tuning.
 but yea side note I think fine tuning would be really helpful to help with embedding these interesting jargon words close to each other if they are indeed related
 And as a visual debugging I really should plot out or at least someone must have some nice tool to visualize embeddings
+
+
+### [[Jul 24th, 2023]] started a nice debug session today , false negative analysis here,
+Ok per my notes from [[Jul 23rd, 2023]], let me hunt down one good [[false negative]],
+
+For sure I am realizing yes a lot of my sentences in my personal corpus are lacking a succinctness and there is a lot of filler in there ideally I should cut out.
+Actually it would be cool to have that kind of feedback actually as a tool, ranking sentences by fluff haha that should be improved. And even, how many sentences are used in describing each individual project/story, can be helpful to see analyzed too.
+```python
+import random
+
+# Using "my_sentences" defined last time
+
+for i, x in enumerate(random.choices(my_sentences, k=4)):
+    print(i, x)
+    
+0 So the behavior was changed and I had this now, erroneously haha, so I needed to now remove it
+1 Took Databricks Spark cluster and pyspark to answer a question about a CDC Covid dataset, what is the asymptomatic rate by age bin as well as hospitalization rate by presence of prior medical conditions
+2 Improved our sklearn  model training that was crashing on a laptop, by cutting up the data into chunks and using python multiprocessing
+3 (7) "humana hackathon exploration of langchain against health plan documents" ( I have described this in more detail earlier above )
+
+```
+Ok in any case, so let me search the corpus I have, for terms, say, spark, cluster pyspark, databricks . Of course I am realizing Google and Amazon have their own options for clustering and these job descriptions might not mention pyspark, but let's see, 
+```python
+import pandas as pd
+import utils as ut
+
+# Using "raw_sentences" defined last time
+df = pd.DataFrame({"description": raw_sentences})
+
+In [29]: df.iloc[:5]
+Out[29]: 
+                                         description
+0            app scripts, spreadsheet software, etc)
+1  leadership, problem solving and analysis exper...
+2  hands-on experience using and/or managing data...
+3  background in solving complex challenges and d...
+4  travel frequently around emea for meetings, te...
+
+terms = ["pyspark", "spark", "databricks", "multiprocessing", "cluster"]
+resultsdf = ut.filter_pandas_multiple_contains(df, "description", terms)
+
+In [34]: resultsdf.shape
+Out[34]: (154, 1)
+
+In [36]: resultsdf.iloc[:10]["description"].tolist()
+Out[36]: 
+['hands-on experience using and/or managing databases, or cloud technologies such as sql, nosql, hadoop or spark',
+ 'familiarity with architecture and operational aspects of large scale distributed systems; familiarity with the popular technologies in the machine learning/big data ecosystem (tensorflow, spark, etc)\ntechnical experience in web technologies such as html, xml, json, oauth 2 along with experience in analysis of relational data in mysql, google bigquery or similar',
+ 'regression, classification, clustering, etc)',
+ 'know your way around map reduce, hadoop, spark, flume, hive, impala, sparksql, bigquery',
+ 'experience using and/or managing databases, and with one or all of the following: mapreduce, hadoop, spark, flume, hive, impala, spark sql and/or bigquery',
+ 'experience building multi-tier high availability applications with modern web technologies (such as nosql, mongodb, sparkml, tensorflow)',
+ 'experience with data processing software (such as hadoop, spark, pig, hive) and data processing algorithms (mapreduce, flume)',
+ 'technologies you will employ to solve these complex real-world business problems include natural language processing, machine learning, image recognition, elastic computing, spark, and a host of other state of the art aws technologies',
+ 'in order to drive expansion of the amazon catalog, we use cluster-computing technologies like mapreduce, spark and hive to process billions of products and algorithmically find products not already sold on amazon',
+ 'experience working with scala/python/java on spark to build and deploy ml models in production']
+
+
+```
+09:19 Ok cool, so there are a few meaty sentences here that would be good to compare more directly with debugging eyes .
+for example,
+```python 
+from sentence_transformers.util import semantic_search, cos_sim
+from transformers import AutoTokenizer, AutoModel
+tokenizer = AutoTokenizer.from_pretrained('sentence-transformers/all-MiniLM-L6-v2')
+
+model_id =  "sentence-transformers/all-MiniLM-L6-v2"
+hf_token = os.getenv("HF_TOKEN")
+
+s1 = "Took Databricks Spark cluster and pyspark to answer a question about a CDC Covid dataset, what is the asymptomatic rate by age bin as well as hospitalization rate by presence of prior medical conditions"
+s2 = 'know your way around map reduce, hadoop, spark, flume, hive, impala, sparksql, bigquery'
+s3 = 'experience working with scala/python/java on spark to build and deploy ml models in production'
+
+
+for s in [s1, s2, s3]:
+    print(s, tokenizer.tokenize(s), "\n\n")
+
+
+embeddings = ut.vec_to_embeddings(model_id, hf_token, [s1, s2, s3])
+
+In [45]: cos_sim(embeddings[0,:], embeddings[1, :])
+Out[45]: tensor([[0.2323]])
+
+In [46]: cos_sim(embeddings[0,:], embeddings[2, :])
+Out[46]: tensor([[0.2320]])
+
+```
+also try the other way too , 
+```python
+In [43]: sentences = [s1, s2, s3]
+    ...: hits = semantic_search(embeddings, embeddings, top_k=3)
+    ...: for i, row in enumerate(hits[:5]):
+    ...:     print(f"({i})", "matching,", sentences[i], ":")
+    ...:     hmm = [[sentences[x["corpus_id"]], x["corpus_id"], x["score"]] for x in row[:3] ]
+    ...:     print(hmm, "\n\n")
+    ...: 
+(0) matching, Took Databricks Spark cluster and pyspark to answer a question about a CDC Covid dataset, what is the asymptomatic rate by age bin as well as hospitalization rate by presence of prior medical conditions :
+[['Took Databricks Spark cluster and pyspark to answer a question about a CDC Covid dataset, what is the asymptomatic rate by age bin as well as hospitalization rate by presence of prior medical conditions', 0, 1.0], ['know your way around map reduce, hadoop, spark, flume, hive, impala, sparksql, bigquery', 1, 0.23231448233127594], ['experience working with scala/python/java on spark to build and deploy ml models in production', 2, 0.2320040762424469]] 
+
+
+(1) matching, know your way around map reduce, hadoop, spark, flume, hive, impala, sparksql, bigquery :
+[['know your way around map reduce, hadoop, spark, flume, hive, impala, sparksql, bigquery', 1, 0.9999999403953552], ['experience working with scala/python/java on spark to build and deploy ml models in production', 2, 0.4644332528114319], ['Took Databricks Spark cluster and pyspark to answer a question about a CDC Covid dataset, what is the asymptomatic rate by age bin as well as hospitalization rate by presence of prior medical conditions', 0, 0.23231443762779236]] 
+
+
+(2) matching, experience working with scala/python/java on spark to build and deploy ml models in production :
+[['experience working with scala/python/java on spark to build and deploy ml models in production', 2, 1.000000238418579], ['know your way around map reduce, hadoop, spark, flume, hive, impala, sparksql, bigquery', 1, 0.4644332826137543], ['Took Databricks Spark cluster and pyspark to answer a question about a CDC Covid dataset, what is the asymptomatic rate by age bin as well as hospitalization rate by presence of prior medical conditions', 0, 0.2320040762424469]] 
+
+
+```
+Ok so that gave around same result. Ok cool, no matter which func was used,
+Ok cool, so next want to keep diving deeper, probably ultimately looking at [[average-pooling]] here.
 
 
 ok

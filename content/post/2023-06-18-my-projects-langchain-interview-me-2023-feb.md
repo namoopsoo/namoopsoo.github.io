@@ -1810,4 +1810,96 @@ Ok so that gave around same result. Ok cool, no matter which func was used,
 Ok cool, so next want to keep diving deeper, probably ultimately looking at [[average-pooling]] here.
 
 
+### [[Jul 25th, 2023]] Stop word removal experiment
+So for the question yesterday, why was it that two cosine similarity comparisons had basically same score, `0.2323` and `0.2320`, maybe that is a clue.
+
+I think I have seen that completely unrelated sentences can have a zero score comparison right? 
+```python
+
+s1 = "If a tree falls in the forest and there is no one there to hear it, then does it make a sound?"
+s2 = "A bagel with cream cheese with some lox and some capers would go great with coffee."
+
+for s in [s1, s2]:
+    print(s, tokenizer.tokenize(s), "\n\n")
+    
+set(tokenizer.tokenize(s1)) & set(tokenizer.tokenize(s2))
+# {'a', 'and'}
+
+embeddings = ut.vec_to_embeddings(model_id, hf_token, [s1, s2])
+
+cos_sim(embeddings[0,:], embeddings[1, :])
+# tensor([[0.0240]])
+```
+09:03 ok cool
+So for example from yesterday, lets see what happens if we remove [[stop-words]] . ( Side note [stacko link](https://datascience.stackexchange.com/questions/86252/effect-of-stop-word-removal-on-transformers-for-text-classification) someone suggests also trying to mask stop words ) .
+
+```python
+import nltk
+from sentence_transformers.util import semantic_search, cos_sim
+from transformers import AutoTokenizer, AutoModel
+tokenizer = AutoTokenizer.from_pretrained('sentence-transformers/all-MiniLM-L6-v2')
+
+model_id =  "sentence-transformers/all-MiniLM-L6-v2"
+hf_token = os.getenv("HF_TOKEN")
+
+from nltk.corpus import stopwords
+
+
+s1 = "Took Databricks Spark cluster and pyspark to answer a question about a CDC Covid dataset, what is the asymptomatic rate by age bin as well as hospitalization rate by presence of prior medical conditions"
+s2 = 'know your way around map reduce, hadoop, spark, flume, hive, impala, sparksql, bigquery'
+s3 = 'experience working with scala/python/java on spark to build and deploy ml models in production'
+
+def dont_stop(s):
+    stop_words = stopwords.words('english')
+    return " ".join([x for x in s.split() if x.lower() not in stop_words])
+    
+
+for s in [s1, s2, s3]:
+    print(s, "\n", dont_stop(s), "\n\n")
+```
+```python
+Took Databricks Spark cluster and pyspark to answer a question about a CDC Covid dataset, what is the asymptomatic rate by age bin as well as hospitalization rate by presence of prior medical conditions 
+ Took Databricks Spark cluster pyspark answer question CDC Covid dataset, asymptomatic rate age bin well hospitalization rate presence prior medical conditions 
+
+
+know your way around map reduce, hadoop, spark, flume, hive, impala, sparksql, bigquery 
+ know way around map reduce, hadoop, spark, flume, hive, impala, sparksql, bigquery 
+
+
+experience working with scala/python/java on spark to build and deploy ml models in production 
+ experience working scala/python/java spark build deploy ml models production 
+```
+09:23 hmm not a whole lot of stop words there but lets try anyway, 
+```python
+sentences = [s1, s2, s3]
+stopped = [dont_stop(x) for x in sentences]
+embeddings = ut.vec_to_embeddings(model_id, hf_token, stopped)
+
+hits = semantic_search(embeddings, embeddings, top_k=3)
+for i, row in enumerate(hits[:5]):
+    print(f"({i})", "matching,", stopped[i], ":")
+    hmm = [[stopped[x["corpus_id"]], x["corpus_id"], x["score"]] for x in row[:3] ]
+    print(hmm, "\n\n")
+```
+```python
+(0) matching, Took Databricks Spark cluster pyspark answer question CDC Covid dataset, asymptomatic rate age bin well hospitalization rate presence prior medical conditions :
+[['Took Databricks Spark cluster pyspark answer question CDC Covid dataset, asymptomatic rate age bin well hospitalization rate presence prior medical conditions', 0, 1.0], ['know way around map reduce, hadoop, spark, flume, hive, impala, sparksql, bigquery', 1, 0.3553411066532135], ['experience working scala/python/java spark build deploy ml models production', 2, 0.25089341402053833]] 
+
+
+(1) matching, know way around map reduce, hadoop, spark, flume, hive, impala, sparksql, bigquery :
+[['know way around map reduce, hadoop, spark, flume, hive, impala, sparksql, bigquery', 1, 1.0000001192092896], ['experience working scala/python/java spark build deploy ml models production', 2, 0.37388813495635986], ['Took Databricks Spark cluster pyspark answer question CDC Covid dataset, asymptomatic rate age bin well hospitalization rate presence prior medical conditions', 0, 0.3553411364555359]] 
+
+
+(2) matching, experience working scala/python/java spark build deploy ml models production :
+[['experience working scala/python/java spark build deploy ml models production', 2, 1.0000001192092896], ['know way around map reduce, hadoop, spark, flume, hive, impala, sparksql, bigquery', 1, 0.3738881051540375], ['Took Databricks Spark cluster pyspark answer question CDC Covid dataset, asymptomatic rate age bin well hospitalization rate presence prior medical conditions', 0, 0.25089341402053833]] 
+
+```
+09:33 ok well I am seeing improvements undeniably here, 
+```
+0.3553 vs 0.2323
+0.25089 vs 0.23200
+```
+so therefore [[sentence-transformers]] #take-away is not internally penalizing stop words as I had thought a bit that it might before.
+Ok I think next I still want to just dissect the way [[sentence-transformers]] [[cosine similarity]] gets the result and reproduce it manually see if I get the same thing
+
 ok

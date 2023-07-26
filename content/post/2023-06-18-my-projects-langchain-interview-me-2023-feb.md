@@ -1902,4 +1902,129 @@ for i, row in enumerate(hits[:5]):
 so therefore [[sentence-transformers]] #take-away is not internally penalizing stop words as I had thought a bit that it might before.
 Ok I think next I still want to just dissect the way [[sentence-transformers]] [[cosine similarity]] gets the result and reproduce it manually see if I get the same thing
 
+### [[Jul 26th, 2023]] some more experimentation, cosine similarity and stop words
+
+ok next, yea let's try reproducing that [[cosine similarity]] ,
+
+from last time, yea this model produces embeddings with this size, 
+```python
+In [63]: embeddings[0,:].shape
+Out[63]: torch.Size([384])
+```
+08:36 just double checking, 
+```python
+n [68]: np.dot(embeddings[0, :], embeddings[1, :]), cos_sim(embeddings[0, :], embeddings[1, :])
+Out[68]: (0.35534108, tensor([[0.3553]]))
+```
+Ok next,  just out of curiosity, since [blog post](https://towardsdatascience.com/text-pre-processing-stop-words-removal-using-different-libraries-f20bac19929a) also mentions that #spacy has a longer #stop-words list,
+
+```python
+from nltk.corpus import stopwords as sw_nltk
+import spacy
+en = spacy.load('en_core_web_sm')
+sw_spacy = en.Defaults.stop_words
+
+
+def dont_stop_both(s):
+    en = spacy.load('en_core_web_sm')
+    sw_spacy = en.Defaults.stop_words
+    stop_words = set(sw_nltk.words('english') ) | set(sw_spacy)
+    
+    return " ".join([x for x in s.split() if x.lower() not in stop_words])
+
+
+sentences = [s1, s2, s3]
+stopped = [dont_stop(x) for x in sentences]
+stopped_both = [dont_stop_both(x) for x in sentences]
+
+[len(x) for x in stopped], [len(x) for x in stopped_both]
+# ([158, 82, 76], [153, 75, 76])
+
+```
+08:57 ok so compare all three ways, for completeness
+```python
+results = []
+for name, a_list in [("original", sentences), ("nltk", stopped), ("nltk+spacy", stopped_both)]:
+    embeddings = ut.vec_to_embeddings(model_id, hf_token, a_list)
+    results.append({"what": name, 
+                    "one": cos_sim(embeddings[0, :], embeddings[1, :]),
+                    "two": cos_sim(embeddings[0, :], embeddings[2, :]),
+                   })
+pd.DataFrame.from_records(results)
+
+         what                 one                 two
+0    original  [[tensor(0.2323)]]  [[tensor(0.2320)]]
+1        nltk  [[tensor(0.3553)]]  [[tensor(0.2509)]]
+2  nltk+spacy  [[tensor(0.3329)]]  [[tensor(0.2501)]]
+```
+09:08 Ok haha can be slightly hit or miss then .
+But if I did this other extreme stop removal, say specifically with information I know about these sentences,
+
+```python
+jargon = ["python", "databricks", "cluster", "pyspark", "scala", 
+          "answer", "question", "dataset", "map", "reduce", 
+         "hadoop", "spark", "flume", "hive", "impala", "sparksql", "bigquery",
+         "java", "build", "deploy", "ml", "models", "production"]
+
+def talk_jargon_to_me(jargon, s):
+    return " ".join([
+      (x if x.lower() in jargon else "blah") 
+      for x in s.split()])
+
+only_jargon_sentences = [talk_jargon_to_me(jargon, x) for x in sentences]
+
+results = []
+for name, a_list in [
+  ("original", sentences), ("nltk", stopped), ("nltk+spacy", stopped_both),
+  ("only_jargon", only_jargon_sentences)
+]:
+    embeddings = ut.vec_to_embeddings(model_id, hf_token, a_list)
+    results.append({"what": name, 
+                    "one": cos_sim(embeddings[0, :], embeddings[1, :]),
+                    "two": cos_sim(embeddings[0, :], embeddings[2, :]),
+                   })
+pd.DataFrame.from_records(results)
+
+          what                 one                 two
+0     original  [[tensor(0.2323)]]  [[tensor(0.2320)]]
+1         nltk  [[tensor(0.3553)]]  [[tensor(0.2509)]]
+2   nltk+spacy  [[tensor(0.3329)]]  [[tensor(0.2501)]]
+3  only_jargon  [[tensor(0.3406)]]  [[tensor(0.5675)]]
+
+
+```
+09:36 Ok so sentence transformers can be a bit of a blunt tool for sure but I think I am verifying that with some pre-processing , I can get better use from them . And improving the jargon game can be helpful too.
+
+One more thing out of curiosity,
+
+```python
+model_id =  "sentence-transformers/all-MiniLM-L6-v2"
+vocabulary = ut.vocabulary_of_model(model_id)
+[(x, x in vocabulary) for x in ["spark", "pyspark", "python"]]
+# [('spark', True), ('pyspark', False), ('python', True)]
+
+[(x, tokenizer.tokenize(x)) for x in ["spark", "pyspark", "python"]]
+```
+```python
+[('spark', ['spark']),
+ ('pyspark', ['p', '##ys', '##park']),
+ ('python', ['python'])]
+```
+```python
+terms = ["spark", "pyspark", "python"]
+embeddings = ut.vec_to_embeddings(model_id, hf_token, terms)
+[
+  ["spark, pyspark", cos_sim(embeddings[0, :], embeddings[1, :])], 
+  ["spark, python", cos_sim(embeddings[0, :], embeddings[2, :])],
+  ["pyspark, python", cos_sim(embeddings[1, :], embeddings[2, :])],
+]
+```
+```python
+[['spark, pyspark', tensor([[0.5201]])],
+ ['spark, python', tensor([[0.2316]])],
+ ['pyspark, python', tensor([[0.4150]])]]
+```
+09:47 might be worth poking at this a bit more, so if "pyspark" is not in the vocabulary here, but hmm maybe through all the fine tuning, on a billion sentences, maybe the embeddings still ended up being meaningfully close? Want to better understand this
+
+
 ok

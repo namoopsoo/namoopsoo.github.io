@@ -2027,4 +2027,219 @@ embeddings = ut.vec_to_embeddings(model_id, hf_token, terms)
 09:47 might be worth poking at this a bit more, so if "pyspark" is not in the vocabulary here, but hmm maybe through all the fine tuning, on a billion sentences, maybe the embeddings still ended up being meaningfully close? Want to better understand this
 
 
+### [[Jul 27th, 2023]] hmm what is the subword tokenization  multiple , when thinking about truncation
+
+So it was cool to see you can get a better #[[cosine similarity]] score when taking out stop words and also when replacing the non-jargon words with blah words. Although that second part hmm might have actually artificially increased the score thre now that I think about it, 🤔
+
+Maybe thinking about sentences is hmm not going to be as useful as thinking about the entire job description itself maybe.
+
+So we have space only for 384 tokens but that can still be a good number of sentences, 10 mmaybe .
+Ah yea and that is another good reason to get rid of the stop words
+Like from my example from yesterday and day before, how many word-pieces in those?
+```python
+tokenizer = AutoTokenizer.from_pretrained('sentence-transformers/all-MiniLM-L6-v2')
+
+[{"num_words": len(x.split(" ")), "num_tokens": len(tokenizer.tokenize(x)), 
+ "token_inflation_factor": len(tokenizer.tokenize(x))/len(x.split(" "))} 
+ for x in [s1, s2, s3]]
+
+[{'num_words': 34,
+  'num_tokens': 46,
+  'token_inflation_factor': 1.3529411764705883},
+ {'num_words': 13,
+  'num_tokens': 27,
+  'token_inflation_factor': 2.076923076923077},
+ {'num_words': 14,
+  'num_tokens': 18,
+  'token_inflation_factor': 1.2857142857142858}]
+
+```
+So yea if we have a 384 length input window then yea maybe 10 sentences or so on a good day. Not bad.
+09:09 yea side note about that [[average-pooling]],
+
+Reading the https://www.sbert.net/examples/applications/computing-embeddings/README.html section here again for insight.
+This is a good page
+Interesting looking at that `mean_pooling` function, it takes the attention mask into accoount. kinda cool,
+### [[Jul 28th, 2023]] looking more closely on how sentence transformer model pools
+ok thing I got it this time, per https://www.sbert.net/examples/applications/computing-embeddings/README.html
+
+```python
+In [109]: #Sentences we want sentence embeddings for
+     ...: sentences = ['This framework generates embeddings for each input sentence',
+     ...:              'Sentences are passed as a list of string.',
+     ...:              'The quick brown fox jumps over the lazy dog.']
+     ...: 
+     ...: #Load AutoModel from huggingface model repository
+     ...: tokenizer = AutoTokenizer.from_pretrained("sentence-transformers/all-MiniLM-L6-v2")
+     ...: model = AutoModel.from_pretrained("sentence-transformers/all-MiniLM-L6-v2")
+     ...: 
+     ...: #Tokenize sentences
+     ...: encoded_input = tokenizer(sentences, padding=True, truncation=True, max_length=128, return_tensors='pt')
+     ...: 
+     ...: #Compute token embeddings
+     ...: with torch.no_grad():
+     ...:     model_output = model(**encoded_input)
+     ...: 
+
+Downloading (…)"pytorch_model.bin";: 100%|████████████████████████████████████████████████████████████████| 90.9M/90.9M [00:56<00:00, 1.61MB/s]
+Downloading (…)"pytorch_model.bin";: 100%|████████████████████████████████████████████████████████████████| 90.9M/90.9M [00:56<00:00, 1.93MB/s]
+In [110]: 
+```
+08:53 ok let's try to understand the function they show there,
+So model_output, 
+```python
+In [123]: type(encoded_input)
+Out[123]: transformers.tokenization_utils_base.BatchEncoding
+
+In [124]: vars(encoded_input)
+Out[124]: 
+{'data': {'input_ids': tensor([[  101,  2023,  7705, 19421,  7861,  8270,  4667,  2015,  2005,  2169,
+            7953,  6251,   102],
+          [  101, 11746,  2024,  2979,  2004,  1037,  2862,  1997,  5164,  1012,
+             102,     0,     0],
+          [  101,  1996,  4248,  2829,  4419, 14523,  2058,  1996, 13971,  3899,
+            1012,   102,     0]]),
+  'token_type_ids': tensor([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]),
+  'attention_mask': tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+          [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+          [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0]])},
+ '_encodings': [Encoding(num_tokens=13, attributes=[ids, type_ids, tokens, offsets, attention_mask, special_tokens_mask, overflowing]),
+  Encoding(num_tokens=13, attributes=[ids, type_ids, tokens, offsets, attention_mask, special_tokens_mask, overflowing]),
+  Encoding(num_tokens=13, attributes=[ids, type_ids, tokens, offsets, attention_mask, special_tokens_mask, overflowing])],
+ '_n_sequences': 1}
+ 
+ ```
+09:16 ok so looks somewhat close, to doing it manually, below,
+```python
+print("what was encoded,", encoded_input.data["input_ids"][0], )
+print("back to tokens though,", tokenizer.convert_ids_to_tokens(encoded_input.data["input_ids"][0]))
+print("original sentence,", sentences[0])
+tokens = tokenizer.tokenize(sentences[0])
+print("sentence to tokens", tokens)
+print("tokens to ids", tokenizer.convert_tokens_to_ids(tokens))
+
+```
+```python
+what was encoded, tensor([  101,  2023,  7705, 19421,  7861,  8270,  4667,  2015,  2005,  2169,
+         7953,  6251,   102])
+back to tokens though, ['[CLS]', 'this', 'framework', 'generates', 'em', '##bed', '##ding', '##s', 'for', 'each', 'input', 'sentence', '[SEP]']
+original sentence, This framework generates embeddings for each input sentence
+sentence to tokens ['this', 'framework', 'generates', 'em', '##bed', '##ding', '##s', 'for', 'each', 'input', 'sentence']
+tokens to ids [2023, 7705, 19421, 7861, 8270, 4667, 2015, 2005, 2169, 7953, 6251]
+```
+Only difference is I see when going back from input ids to tokens , there is an additional `[CLS]` at the start and a `[SEP]` at the end.
+no pad ?
+```python
+encoded_input_no_pad = tokenizer(sentences, padding=False, truncation=True, max_length=128, return_tensors='pt')
+print("without pad, tokens, ", tokenizer.convert_ids_to_tokens(
+    encoded_input_no_pad.data["input_ids"][0]))
+
+ValueError: Unable to create tensor, you should probably activate truncation and/or padding with 'padding=True' 'truncation=True' to have batched tensors with the same length. Perhaps your features (`input_ids` in this case) have excessive nesting (inputs type `list` where type `int` is expected).
+
+```
+Ah ok so that doesn't even work then so padding required.
+```python
+([[{"num_words": len(x.split(" ")), 
+    "len_tokens": len(tokenizer.convert_ids_to_tokens(encoded_input.data["input_ids"][i])),
+    "len_input_ids": encoded_input.data["input_ids"][i,:].shape,
+    "len_mask": encoded_input.data["attention_mask"][i,:].shape,
+   }, x, 
+   tokenizer.convert_ids_to_tokens(encoded_input.data["input_ids"][i]),
+   encoded_input.data["input_ids"][i,:], 
+   encoded_input.data["attention_mask"][i,:]
+  ] 
+  for i, x in enumerate(sentences)])
+```
+```python
+[[{'num_words': 8,
+   'len_tokens': 13,
+   'len_input_ids': torch.Size([13]),
+   'len_mask': torch.Size([13])},
+  'This framework generates embeddings for each input sentence',
+  ['[CLS]',
+   'this',
+   'framework',
+   'generates',
+   'em',
+   '##bed',
+   '##ding',
+   '##s',
+   'for',
+   'each',
+   'input',
+   'sentence',
+   '[SEP]'],
+  tensor([  101,  2023,  7705, 19421,  7861,  8270,  4667,  2015,  2005,  2169,
+           7953,  6251,   102]),
+  tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])],
+ [{'num_words': 8,
+   'len_tokens': 13,
+   'len_input_ids': torch.Size([13]),
+   'len_mask': torch.Size([13])},
+  'Sentences are passed as a list of string.',
+  ['[CLS]',
+   'sentences',
+   'are',
+   'passed',
+   'as',
+   'a',
+   'list',
+   'of',
+   'string',
+   '.',
+   '[SEP]',
+   '[PAD]',
+   '[PAD]'],
+  tensor([  101, 11746,  2024,  2979,  2004,  1037,  2862,  1997,  5164,  1012,
+            102,     0,     0]),
+  tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0])],
+ [{'num_words': 9,
+   'len_tokens': 13,
+   'len_input_ids': torch.Size([13]),
+   'len_mask': torch.Size([13])},
+  'The quick brown fox jumps over the lazy dog.',
+  ['[CLS]',
+   'len_tokens': 13,
+   'len_input_ids': torch.Size([13]),
+   'len_mask': torch.Size([13])},
+  'The quick brown fox jumps over the lazy dog.',
+  ['[CLS]',
+   'the',
+   'quick',
+   'brown',
+   'fox',
+   'jumps',
+   'over',
+  tensor([  101, 11746,  2024,  2979,  2004,  1037,  2862,  1997,  5164,  1012,
+            102,     0,     0]),
+  tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0])],
+ [{'num_words': 9,
+   'len_tokens': 13,
+   'len_input_ids': torch.Size([13]),
+   'len_mask': torch.Size([13])},
+  'The quick brown fox jumps over the lazy dog.',
+  ['[CLS]',
+   'the',
+   'quick',
+   'brown',
+   'fox',
+   'jumps',
+   'over',
+   'the',
+   'lazy',
+   'dog',
+   '.',
+   '[SEP]',
+   '[PAD]'],
+  tensor([  101,  1996,  4248,  2829,  4419, 14523,  2058,  1996, 13971,  3899,
+           1012,   102,     0]),
+  tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0])]]
+
+
+```
+09:36 ah interesting so the `[PAD]` is separate actually, and that corresponds to the additional `0` in the [[attention-mask]]          
+
+
 ok

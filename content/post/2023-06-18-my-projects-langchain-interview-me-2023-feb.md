@@ -2242,4 +2242,310 @@ Ah ok so that doesn't even work then so padding required.
 09:36 ah interesting so the `[PAD]` is separate actually, and that corresponds to the additional `0` in the [[attention-mask]]          
 
 
+### [[Jul 29th, 2023]] hmm
+so back to that cool document, https://www.sbert.net/examples/applications/computing-embeddings/README.html
+
+it was cool I saw you can easily do `tokenizer.convert_ids_to_tokens` and `tokenizer.convert_tokens_to_ids`, because I was able to veriffy that running
+```python
+encoded_input = tokenizer(
+  sentences, padding=True, truncation=True, return_tensors='pt')
+```
+will add some additional `'[CLS]'` and `'[SEP]'` tokens at the beginning and end. I noticed since the length of the output was weird especially looking at the [[attention-mask]] . So that attention mask basically was showing that the three sentences being encoded had a final length that was the same number of ids and tokens , both 13, but there were some 0s at the end of some of the sentences. So that ended up being just yet another `[PAD]` token.
+Ok so `'[CLS]` means special #BERT token for start of sequence and `[SEP]` is the separator  between sequences . Yea and `[PAD]` just says, nothing to do here.
+And the `padding=True` option is not about padding up to like [[context-window]] limit, it just says if you are passing multiple sentences to be encoded, to make them all equal length.
+Anyway `384` is the size of the embedding, in this case, and it is not yet clear to me what is the [[what is relationship between size of input token sequence and dimension of embedding]] , there might be some [[dimensionality reduction]] right.
+12:58 so continuing along then, next step was
+```python
+#Compute token embeddings
+with torch.no_grad():
+    model_output = model(**encoded_input)
+    
+In [143]: vars(model_output)
+Out[143]: 
+{'last_hidden_state': tensor([[[ 0.2913, -0.2685, -0.2250,  ...,  0.4261,  0.0493, -0.2095],
+          [-0.6272, -0.0421, -0.2452,  ...,  0.5336,  1.3115,  0.5999],
+          [ 0.0023, -0.2805, -0.4198,  ..., -0.2900,  1.5808, -0.4912],
+          ...,
+          [ 0.1802, -0.5567,  0.0146,  ...,  0.9311,  0.5940, -0.3536],
+          [ 0.0603, -0.2502,  0.5959,  ...,  0.9435,  0.9465, -1.0680],
+          [-0.3356,  0.0650,  0.1109,  ...,  1.0801,  0.2653, -0.2762]],
+ 
+         [[ 0.0856,  0.1876,  0.0488,  ...,  0.1204, -0.0907, -0.1662],
+          [ 0.1291, -0.0266,  0.6318,  ...,  0.7958,  0.1555, -1.2737],
+          [ 0.0062,  0.2263,  0.1851,  ...,  0.3981,  0.6461, -0.2192],
+          ...,
+          [ 0.3036,  0.3740,  0.2523,  ...,  0.6319,  0.5731, -0.2901],
+          [-0.2124,  0.2626,  0.6867,  ...,  0.5504,  0.7065, -0.4728],
+          [-0.2220,  0.2086,  0.6693,  ...,  0.5410,  0.5683, -0.3963]],
+ 
+         [[ 0.0464,  0.3381,  0.2082,  ...,  0.2766, -0.0861, -0.0358],
+          [ 0.1162,  0.2264,  0.1021,  ...,  0.1858,  0.4895,  1.2175],
+          [ 0.1537,  0.1730,  0.5151,  ...,  1.3720,  0.3621,  0.5758],
+          ...,
+          [ 0.3883,  0.2813,  0.0309,  ...,  0.3264, -0.1039,  0.5856],
+          [ 0.3477,  0.0940,  0.2564,  ...,  0.1463,  0.1743,  0.5586],
+          [ 0.1911, -0.0142,  0.3021,  ...,  0.1814,  0.2111,  0.2329]]]),
+ 'pooler_output': tensor([[-0.0417, -0.0041,  0.0332,  ...,  0.0117, -0.0634, -0.0058],
+         [-0.0227, -0.0248, -0.0112,  ...,  0.0482, -0.1108,  0.0122],
+         [-0.0663,  0.0281,  0.0706,  ...,  0.0258, -0.0222, -0.0608]]),
+ 'hidden_states': None,
+ 'past_key_values': None,
+ 'attentions': None,
+ 'cross_attentions': None}
+```
+Ok cool, so seeing each input is embedded separately, we have size of 3 rows here, like 3 input encodings , 
+```python
+In [146]: [model_output.last_hidden_state.shape, model_output.pooler_output.shape]
+Out[146]: [torch.Size([3, 13, 384]), torch.Size([3, 384])]
+
+```
+Hmm and last hidden state, with the 13 wonder if those are 13 [[attention-head]] ? And then the `pooler_output` what combines these then ?
+13:29 oh never mind #moment/doh #moment/duh that is 13 because thre are 13 tokens in each sentence ! [[moment/haha]] . 😀
+
+13:14 ok so final [[average-pooling]] mean pooling step
+```python
+#Perform pooling. In this case, mean pooling
+sentence_embeddings = mean_pooling(model_output, encoded_input['attention_mask'])
+```
+Ok so you can use key or index to access these, 
+```python
+In [155]: np.allclose(model_output.last_hidden_state, model_output[0]), np.allclose(model_output.pooler_output, model_output[1])
+Out[155]: (True, True)
+```
+
+13:24 Not yet clear why this additional unsqueeze [[numpy unsqueeze ]] step is done 
+```python
+In [163]: attention_mask = encoded_input['attention_mask']
+     ...: attention_mask.shape, attention_mask.unsqueeze(-1).shape
+Out[163]: (torch.Size([3, 13]), torch.Size([3, 13, 1]))
+
+
+```
+Ah ok interesting,
+```python
+In [166]: token_embeddings = model_output[0]
+
+In [167]:     input_mask_expanded = attention_mask.unsqueeze(-1).expand(token_embeddings.size()).float()
+
+In [168]: input_mask_expanded
+Out[168]: 
+tensor([[[1., 1., 1.,  ..., 1., 1., 1.],
+         [1., 1., 1.,  ..., 1., 1., 1.],
+         [1., 1., 1.,  ..., 1., 1., 1.],
+         ...,
+         [1., 1., 1.,  ..., 1., 1., 1.],
+         [1., 1., 1.,  ..., 1., 1., 1.],
+         [1., 1., 1.,  ..., 1., 1., 1.]],
+
+        [[1., 1., 1.,  ..., 1., 1., 1.],
+         [1., 1., 1.,  ..., 1., 1., 1.],
+         [1., 1., 1.,  ..., 1., 1., 1.],
+         ...,
+         [1., 1., 1.,  ..., 1., 1., 1.],
+         [0., 0., 0.,  ..., 0., 0., 0.],
+         [0., 0., 0.,  ..., 0., 0., 0.]],
+
+
+        [[1., 1., 1.,  ..., 1., 1., 1.],
+         [1., 1., 1.,  ..., 1., 1., 1.],
+         [1., 1., 1.,  ..., 1., 1., 1.],
+         ...,
+         [1., 1., 1.,  ..., 1., 1., 1.],
+         [1., 1., 1.,  ..., 1., 1., 1.],
+         [0., 0., 0.,  ..., 0., 0., 0.]]])
+
+In [169]: input_mask_expanded.shape
+Out[169]: torch.Size([3, 13, 384])
+
+In [170]: (token_embeddings.size())
+Out[170]: torch.Size([3, 13, 384])
+
+In [171]: input_mask_expanded[0,0,:]
+Out[171]: 
+tensor([1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+        1., 1., 1., 1., 1., 1.])
+
+```
+So this interesting unsqueeze then expand pattern , to the 384 size of the embedding dimension,
+13:30 so yea literally the output is
+```python
+In [172]: token_embeddings.shape
+Out[172]: torch.Size([3, 13, 384])
+
+In [173]: token_embeddings
+Out[173]: 
+tensor([[[ 0.2913, -0.2685, -0.2250,  ...,  0.4261,  0.0493, -0.2095],
+         [-0.6272, -0.0421, -0.2452,  ...,  0.5336,  1.3115,  0.5999],
+         [ 0.0023, -0.2805, -0.4198,  ..., -0.2900,  1.5808, -0.4912],
+         ...,
+         [ 0.1802, -0.5567,  0.0146,  ...,  0.9311,  0.5940, -0.3536],
+         [ 0.0603, -0.2502,  0.5959,  ...,  0.9435,  0.9465, -1.0680],
+         [-0.3356,  0.0650,  0.1109,  ...,  1.0801,  0.2653, -0.2762]],
+
+        [[ 0.0856,  0.1876,  0.0488,  ...,  0.1204, -0.0907, -0.1662],
+         [ 0.1291, -0.0266,  0.6318,  ...,  0.7958,  0.1555, -1.2737],
+         [ 0.0062,  0.2263,  0.1851,  ...,  0.3981,  0.6461, -0.2192],
+         ...,
+         [ 0.3036,  0.3740,  0.2523,  ...,  0.6319,  0.5731, -0.2901],
+         [-0.2124,  0.2626,  0.6867,  ...,  0.5504,  0.7065, -0.4728],
+         [-0.2220,  0.2086,  0.6693,  ...,  0.5410,  0.5683, -0.3963]],
+
+        [[ 0.0464,  0.3381,  0.2082,  ...,  0.2766, -0.0861, -0.0358],
+         [ 0.1162,  0.2264,  0.1021,  ...,  0.1858,  0.4895,  1.2175],
+         [ 0.1537,  0.1730,  0.5151,  ...,  1.3720,  0.3621,  0.5758],
+         ...,
+         [ 0.3883,  0.2813,  0.0309,  ...,  0.3264, -0.1039,  0.5856],
+         [ 0.3477,  0.0940,  0.2564,  ...,  0.1463,  0.1743,  0.5586],
+         [ 0.1911, -0.0142,  0.3021,  ...,  0.1814,  0.2111,  0.2329]]])
+```
+at does the model_output.pooler_output mean then? Is that also doing a average of the 13 tokens?
+13:33 The final step makes a bit more sense now 
+```python
+    sum_embeddings = torch.sum(token_embeddings * input_mask_expanded, 1)
+```
+because it is just saying, dont take into account the stuff that the mask masked away. 
+And we add them, and divide by length for each sentence, 
+```python
+In [178]:     sum_embeddings = torch.sum(token_embeddings * input_mask_expanded, 1)
+     ...:     sum_mask = torch.clamp(input_mask_expanded.sum(1), min=1e-9)
+
+In [179]: pooled = sum_embeddings / sum_mask
+
+In [180]: pooled.shape
+Out[180]: torch.Size([3, 384])
+```
+too of course.
+16:34 Ok so since I now basically know, the [[average-pooling]] of [[sentence-transformers]] indeed is just literally averaging each word, yes in the 384 dimensions but yea any unimportant word should most certainly be removed before average pooling
+
+And I still have that pretty critical two-part question, so if we are using [[subword-tokenization]] , and  therefore a concept is going to be spread apart to multiple tokens, does that mean we are relying on this multi-dimensional averaging to somehow maintain the meaning of a word that was broken up into pieces?
+So the [[subword-tokenization]]  clearly I now understand is a statistical procedure unrelated to the #[[supervised fine-tuning]] step and yea likely that the more common sub-words will end up being longer subwords after [[why a custom tokenizer]] , but most likely a concept still gets broken apart, into multiple sub-words, so then ultimately does that not really matter, because upon computing [[cosine similarity]], another sentence which has the same exact [[jargon]] word will be split up in the same way.
+And maybe even if a model is not #[[supervised fine-tuning]] with a new corpus, we may still benefit from at least words with a common word parts being close dimensionally, right,
+18:20 hmm so a dead super simple test, of above sub-word theory,
+
+```python
+model_id =  "sentence-transformers/all-MiniLM-L6-v2"
+sentences = [
+    "python",
+    "pyspark",
+]
+embeddings = ut.vec_to_embeddings(model_id, sentences)
+
+In [189]: cos_sim(embeddings[0, :], embeddings[1,:])
+Out[189]: tensor([[0.4150]])
+```
+Ok kind of thought so.
+18:47 added one more option for myself there,
+
+```python
+reload(ut)
+model_id =  "sentence-transformers/all-MiniLM-L6-v2"
+sentences = [
+    "python",
+    "pyspark",
+]
+encoded_input, embeddings = ut.vec_to_embeddings(
+    model_id, sentences, return_tokenizer_output=True)
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+print(tokenizer.convert_ids_to_tokens(encoded_input.data["input_ids"][0, :]))
+print(tokenizer.convert_ids_to_tokens(encoded_input.data["input_ids"][1, :]))
+```
+```python
+['[CLS]', 'python', '[SEP]', '[PAD]', '[PAD]']
+['[CLS]', 'p', '##ys', '##park', '[SEP]']
+```
+That's terrible haha ok no wonder the cosine similarity is so low, `0.415` haha.
+18:51 one more example to try, hmm, this one should be obvious ,
+
+```python
+sentences = ["postgresql", "database"]
+encoded_input, embeddings = ut.vec_to_embeddings(
+    model_id, sentences, return_tokenizer_output=True)
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+print(tokenizer.convert_ids_to_tokens(encoded_input.data["input_ids"][0, :]))
+print(tokenizer.convert_ids_to_tokens(encoded_input.data["input_ids"][1, :]))
+print("cosine similarity", cos_sim(embeddings[0, :], embeddings[1,:]))
+
+['[CLS]', 'post', '##gre', '##s', '##q', '##l', '[SEP]']
+['[CLS]', 'database', '[SEP]', '[PAD]', '[PAD]', '[PAD]', '[PAD]']
+cosine similarity tensor([[0.5301]])
+```
+hmm haha thats really bad I think
+One more
+```python
+sentences = ["postgresql", "sql"]
+encoded_input, embeddings = ut.vec_to_embeddings(
+    model_id, sentences, return_tokenizer_output=True)
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+print(tokenizer.convert_ids_to_tokens(encoded_input.data["input_ids"][0, :]))
+print(tokenizer.convert_ids_to_tokens(encoded_input.data["input_ids"][1, :]))
+print("cosine similarity", cos_sim(embeddings[0, :], embeddings[1,:]))
+
+['[CLS]', 'post', '##gre', '##s', '##q', '##l', '[SEP]']
+['[CLS]', 'sql', '[SEP]', '[PAD]', '[PAD]', '[PAD]', '[PAD]']
+cosine similarity tensor([[0.5085]])
+```
+hmm yea this is no good. Whatever this is, it is terrible I think
+It should be as good as this, 
+```python
+In [200]: sentences = ["banana", "apple"]
+     ...: encoded_input, embeddings = ut.vec_to_embeddings(
+     ...:     model_id, sentences, return_tokenizer_output=True)
+     ...: tokenizer = AutoTokenizer.from_pretrained(model_id)
+     ...: print(tokenizer.convert_ids_to_tokens(encoded_input.data["input_ids"][0, :]))
+     ...: print(tokenizer.convert_ids_to_tokens(encoded_input.data["input_ids"][1, :]))
+     ...: print("cosine similarity", cos_sim(embeddings[0, :], embeddings[1,:]))
+     ...: 
+['[CLS]', 'banana', '[SEP]']
+['[CLS]', 'apple', '[SEP]']
+cosine similarity tensor([[0.4240]])
+
+In [201]: sentences = ["fruit", "apple"]
+     ...: encoded_input, embeddings = ut.vec_to_embeddings(
+     ...:     model_id, sentences, return_tokenizer_output=True)
+     ...: tokenizer = AutoTokenizer.from_pretrained(model_id)
+     ...: print(tokenizer.convert_ids_to_tokens(encoded_input.data["input_ids"][0, :]))
+     ...: print(tokenizer.convert_ids_to_tokens(encoded_input.data["input_ids"][1, :]))
+     ...: print("cosine similarity", cos_sim(embeddings[0, :], embeddings[1,:]))
+['[CLS]', 'fruit', '[SEP]']
+['[CLS]', 'apple', '[SEP]']
+cosine similarity tensor([[0.5372]])
+
+In [202]: 
+
+In [202]: sentences = ["macintosh", "apple"]
+     ...: encoded_input, embeddings = ut.vec_to_embeddings(
+     ...:     model_id, sentences, return_tokenizer_output=True)
+     ...: tokenizer = AutoTokenizer.from_pretrained(model_id)
+     ...: print(tokenizer.convert_ids_to_tokens(encoded_input.data["input_ids"][0, :]))
+     ...: print(tokenizer.convert_ids_to_tokens(encoded_input.data["input_ids"][1, :]))
+     ...: print("cosine similarity", cos_sim(embeddings[0, :], embeddings[1,:]))
+['[CLS]', 'macintosh', '[SEP]']
+['[CLS]', 'apple', '[SEP]']
+cosine similarity tensor([[0.7044]])
+
+
+```
+18:57 ok haha I'm confused. these are also kind of bad.
+
+
 ok

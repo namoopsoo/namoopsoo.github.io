@@ -2548,4 +2548,212 @@ cosine similarity tensor([[0.7044]])
 18:57 ok haha I'm confused. these are also kind of bad.
 
 
+### [[Jul 31st, 2023]] ok interesting, removing the special tokens has no effect on the cosine similarity
+so following from [[Jul 29th, 2023]] I was going to remove the special tokens try again,
+
+```python
+texts = ["macintosh", "apple"]
+encoded_input = tokenizer(
+    texts, padding=True, truncation=True, max_length=128, 
+    cls_token=None,
+    sep_token=None,
+    return_tensors='pt')
+
+```
+hmm that didn't work, 
+```python
+TypeError: _batch_encode_plus() got an unexpected keyword argument 'cls_token'
+
+```
+how about,
+```python
+
+texts = ["macintosh", "apple"]
+encoded_input = tokenizer(
+    texts, padding=True, truncation=True, max_length=128, 
+    add_special_tokens=False,
+    return_tensors='pt')
+```
+09:14 ok nice yes that did it !
+```python
+In [206]: encoded_input
+Out[206]: 
+{'input_ids': tensor([[22228],
+        [ 6207]]), 'token_type_ids': tensor([[0],
+        [0]]), 'attention_mask': tensor([[1],
+        [1]])}
+```
+Let's then compare cosine similarity between these, with and without the special tokens present.
+```python
+model_id =  "sentence-transformers/all-MiniLM-L6-v2"
+embeddings = ut.encoded_to_embeddings(encoded_input, model_id)
+print("cosine similarity", cos_sim(embeddings[0, :], embeddings[1,:]))
+
+cosine similarity tensor([[0.7044]])
+```
+09:27 ok looks like didn't make a difference. Try one more, 
+```python
+sentences = ["fruit", "apple"]
+model_id =  "sentence-transformers/all-MiniLM-L6-v2"
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+
+for add_special_tokens in [True, False]:
+    encoded_input = tokenizer(
+        sentences, padding=True, truncation=True, max_length=128, 
+        add_special_tokens=add_special_tokens,
+        return_tensors='pt')
+
+    embeddings = ut.encoded_to_embeddings(encoded_input, model_id)
+    print("add_special_tokens:", add_special_tokens, "cosine similarity", cos_sim(embeddings[0, :], embeddings[1,:]))
+
+    
+add_special_tokens: True cosine similarity tensor([[0.2258]])
+add_special_tokens: False cosine similarity tensor([[1.0000]])
+```
+09:34 oops, have some kind of bug in the mean pooling code I think.
+### [[Aug 1st, 2023]] trying a few more things wondering why weird cosine similarity 1 w/ single words encoded but different words
+ok what is bug from yesterday then ?
+
+```python
+sentences = ["fruit", "apple"]
+model_id =  "sentence-transformers/all-MiniLM-L6-v2"
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+
+for add_special_tokens in [True, False]:
+    encoded_input = tokenizer(
+        sentences, padding=True, truncation=True, max_length=128, 
+        add_special_tokens=add_special_tokens,
+        return_tensors='pt')
+
+    embeddings = ut.encoded_to_embeddings(encoded_input, model_id)
+    print("add_special_tokens:", add_special_tokens, "cosine similarity", 
+          cos_sim(embeddings[0, :], embeddings[1,:]))
+    print("all close", np.allclose(embeddings[0, :], embeddings[1,:]))
+    
+```
+```python
+add_special_tokens: True cosine similarity tensor([[0.5372]])
+all close False
+add_special_tokens: False cosine similarity tensor([[1.0000]])
+all close False
+
+In [217]: embeddings.shape
+Out[217]: torch.Size([2, 384])
+```
+hmm weird, yea spot checked, they don't look identical actually, but similar, 
+```python
+In [218]: np.transpose(embeddings).shape
+Out[218]: torch.Size([384, 2])
+
+In [219]: np.transpose(embeddings)[:5]
+Out[219]: 
+tensor([[ 0.0025,  0.0021],
+        [ 0.0335,  0.0337],
+        [ 0.0014,  0.0013],
+        [-0.0084, -0.0081],
+        [-0.0206, -0.0208]])
+
+n [220]: np.transpose(embeddings)[-5:]
+Out[220]: 
+tensor([[ 0.0678,  0.0675],
+        [ 0.1426,  0.1423],
+        [-0.0018, -0.0016],
+        [-0.1755, -0.1752],
+        [-0.0967, -0.0969]])
+```
+but it is for sure a bug since, this happens for absurd cases,
+```python
+sentences = ["fruit", "couch"]
+model_id =  "sentence-transformers/all-MiniLM-L6-v2"
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+
+for add_special_tokens in [True, False]:
+    encoded_input = tokenizer(
+        sentences, padding=True, truncation=True, max_length=128, 
+        add_special_tokens=add_special_tokens,
+        return_tensors='pt')
+
+    embeddings = ut.encoded_to_embeddings(encoded_input, model_id)
+    print("add_special_tokens:", add_special_tokens, "cosine similarity", 
+          cos_sim(embeddings[0, :], embeddings[1,:]))
+    print("all close", np.allclose(embeddings[0, :], embeddings[1,:]))
+    
+```
+```python
+add_special_tokens: True cosine similarity tensor([[0.2795]])
+all close False
+add_special_tokens: False cosine similarity tensor([[1.0000]])
+all close False
+```
+pdb trace, 
+```python
+In [224]: ipdb.runcall(ut.encoded_to_embeddings, encoded_input, model_id)
+
+ipdb> p encoded_input
+{'input_ids': tensor([[5909],
+        [6411]]), 'token_type_ids': tensor([[0],
+        [0]]), 'attention_mask': tensor([[1],
+        [1]])}
+  
+ipdb> p model_output.last_hidden_state.shape, model_output.pooler_output.shape
+(torch.Size([2, 1, 384]), torch.Size([2, 384]))
+
+cos_sim(model_output.last_hidden_state[0,:,:], model_output.last_hidden_state[1,:,:])
+tensor([[1.0000]])
+
+cos_sim(model_output.pooler_output[0, :], model_output.pooler_output[1, :])
+tensor([[1.0000]])
+
+np.allclose(model_output.pooler_output[0, :], model_output.pooler_output[1, :])
+False
+```
+weird ok so this happens before the `mean_pooling` func gets called. weird.
+```python
+sentences = ["the fruit is edible", "this couch is on sale"]
+model_id =  "sentence-transformers/all-MiniLM-L6-v2"
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+
+for add_special_tokens in [True, False]:
+    encoded_input = tokenizer(
+        sentences, padding=True, truncation=True, max_length=128, 
+        add_special_tokens=add_special_tokens,
+        return_tensors='pt')
+
+    embeddings = ut.encoded_to_embeddings(encoded_input, model_id)
+    print("add_special_tokens:", add_special_tokens, "cosine similarity", 
+          cos_sim(embeddings[0, :], embeddings[1,:]))
+    print("all close", np.allclose(embeddings[0, :], embeddings[1,:]))
+    
+add_special_tokens: True cosine similarity tensor([[0.0687]])
+all close False
+add_special_tokens: False cosine similarity tensor([[0.0756]])
+all close False
+```
+ok so then something weird going on w/ a single token hmm?
+```python
+sentences = ["there is fruit on the table", "look at the table there is fruit"]
+model_id =  "sentence-transformers/all-MiniLM-L6-v2"
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+
+for add_special_tokens in [True, False]:
+    encoded_input = tokenizer(
+        sentences, padding=True, truncation=True, max_length=128, 
+        add_special_tokens=add_special_tokens,
+        return_tensors='pt')
+
+    embeddings = ut.encoded_to_embeddings(encoded_input, model_id)
+    print("add_special_tokens:", add_special_tokens, "cosine similarity", 
+          cos_sim(embeddings[0, :], embeddings[1,:]))
+    print("all close", np.allclose(embeddings[0, :], embeddings[1,:]))
+    
+add_special_tokens: True cosine similarity tensor([[0.9155]])
+all close False
+add_special_tokens: False cosine similarity tensor([[0.9066]])
+all close False
+
+
+```
+09:34 dont know why the output from the model produces nearly same embedding, for a single word encoded, but multiple words, it seems to be working fine.
+guess more multi-word experiments then next .
+
 ok

@@ -2756,4 +2756,151 @@ all close False
 09:34 dont know why the output from the model produces nearly same embedding, for a single word encoded, but multiple words, it seems to be working fine.
 guess more multi-word experiments then next .
 
+### [[Aug 2nd, 2023]] interesting attempts around single and multiword embeddings
+Since like I saw yesterday, I can get high `0.90s` score if I have a longer sentence, and for a single word, there is some kind of weird bug
+
+So for just `["fruit", "apple"]` I had 
+```python
+sentences = ["fruit", "apple"]
+model_id =  "sentence-transformers/all-MiniLM-L6-v2"
+embeddings = ut.vec_to_embeddings(model_id, sentences)
+cos_sim(embeddings[0, :], embeddings[1,:])
+```
+```python
+In [229]: sentences = ["fruit", "apple"]
+     ...: model_id =  "sentence-transformers/all-MiniLM-L6-v2"
+     ...: embeddings = ut.vec_to_embeddings(model_id, sentences)
+     ...: cos_sim(embeddings[0, :], embeddings[1,:])
+     ...: 
+Out[229]: tensor([[0.5372]])
+
+In [230]: sentences = ["a fruit", "my apple"]
+     ...: model_id =  "sentence-transformers/all-MiniLM-L6-v2"
+     ...: embeddings = ut.vec_to_embeddings(model_id, sentences)
+     ...: cos_sim(embeddings[0, :], embeddings[1,:])
+Out[230]: tensor([[0.4532]])
+
+In [231]: sentences = ["its some fruit", "here my apple"]
+     ...: model_id =  "sentence-transformers/all-MiniLM-L6-v2"
+     ...: embeddings = ut.vec_to_embeddings(model_id, sentences)
+     ...: cos_sim(embeddings[0, :], embeddings[1,:])
+Out[231]: tensor([[0.3700]])
+
+In [232]: sentences = ["its some fruit juice", "here my apple sauce"]
+     ...: model_id =  "sentence-transformers/all-MiniLM-L6-v2"
+     ...: embeddings = ut.vec_to_embeddings(model_id, sentences)
+     ...: cos_sim(embeddings[0, :], embeddings[1,:])
+Out[232]: tensor([[0.4277]])
+
+In [233]: sentences = ["its some fruit juice home made", "here my apple sauce custom recipe"]
+     ...: model_id =  "sentence-transformers/all-MiniLM-L6-v2"
+     ...: embeddings = ut.vec_to_embeddings(model_id, sentences)
+     ...: cos_sim(embeddings[0, :], embeddings[1,:])
+Out[233]: tensor([[0.3862]])
+```
+Ok I don't know haha, might not solve this mystery right now.
+It might also be that hmm not all words are as close together as I thought?
+09:05 ok yea haha, indeed I found some better single-word examples. 
+```python
+In [234]: sentences = ["couch", "sofa"]
+     ...: model_id =  "sentence-transformers/all-MiniLM-L6-v2"
+     ...: embeddings = ut.vec_to_embeddings(model_id, sentences)
+     ...: cos_sim(embeddings[0, :], embeddings[1,:])
+Out[234]: tensor([[0.8564]])
+
+In [235]: sentences = ["hammock", "bed"]
+     ...: model_id =  "sentence-transformers/all-MiniLM-L6-v2"
+     ...: embeddings = ut.vec_to_embeddings(model_id, sentences)
+     ...: cos_sim(embeddings[0, :], embeddings[1,:])
+Out[235]: tensor([[0.2903]])
+
+In [236]: sentences = ["mattress", "bed"]
+     ...: model_id =  "sentence-transformers/all-MiniLM-L6-v2"
+     ...: embeddings = ut.vec_to_embeddings(model_id, sentences)
+     ...: cos_sim(embeddings[0, :], embeddings[1,:])
+Out[236]: tensor([[0.6860]])
+```
+So yea putting the single-word-bug theory to rest, at least when using CLS, SEP `add_special_tokens=True` there is no problem. And without CLS, SEP, using `add_special_tokens=False` then yea, the embeddings for both inputs are nearly the same producing cosine similarity of 1. That's really weird. So I should stick to using `add_special_tokens=True` for now at least for this model.
+Ok back to big picture then,
+
+So I have observed this model has bad performance when I try throwing technical [[jargon]] at it,
+```python
+reload(ut)
+model_id =  "sentence-transformers/all-MiniLM-L6-v2"
+sentences = [
+    "python",
+    "pyspark",
+]
+encoded_input, embeddings = ut.vec_to_embeddings(
+    model_id, sentences, return_tokenizer_output=True)
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+print(tokenizer.convert_ids_to_tokens(encoded_input.data["input_ids"][0, :]))
+print(tokenizer.convert_ids_to_tokens(encoded_input.data["input_ids"][1, :]))
+```
+```python
+['[CLS]', 'python', '[SEP]', '[PAD]', '[PAD]']
+['[CLS]', 'p', '##ys', '##park', '[SEP]']
+```
+```python
+sentences = ["postgresql", "database"]
+encoded_input, embeddings = ut.vec_to_embeddings(
+    model_id, sentences, return_tokenizer_output=True)
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+print(tokenizer.convert_ids_to_tokens(encoded_input.data["input_ids"][0, :]))
+print(tokenizer.convert_ids_to_tokens(encoded_input.data["input_ids"][1, :]))
+print("cosine similarity", cos_sim(embeddings[0, :], embeddings[1,:]))
+
+['[CLS]', 'post', '##gre', '##s', '##q', '##l', '[SEP]']
+['[CLS]', 'database', '[SEP]', '[PAD]', '[PAD]', '[PAD]', '[PAD]']
+cosine similarity tensor([[0.5301]])
+```
+```python
+sentences = ["postgresql", "sql"]
+encoded_input, embeddings = ut.vec_to_embeddings(
+    model_id, sentences, return_tokenizer_output=True)
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+print(tokenizer.convert_ids_to_tokens(encoded_input.data["input_ids"][0, :]))
+print(tokenizer.convert_ids_to_tokens(encoded_input.data["input_ids"][1, :]))
+print("cosine similarity", cos_sim(embeddings[0, :], embeddings[1,:]))
+
+['[CLS]', 'post', '##gre', '##s', '##q', '##l', '[SEP]']
+['[CLS]', 'sql', '[SEP]', '[PAD]', '[PAD]', '[PAD]', '[PAD]']
+cosine similarity tensor([[0.5085]])
+```
+I have tried building a tokenizer from this model's tokenizer, but that was problematic because it is not tokenizer fine tuning like model fine tuning, it just uses the same class.
+So initially I was thinking building a new tokenizer means I need all billion examples earlier, hmm but that's just what went in to fine tuning the model. Maybe for a tokenizer, perhaps I just need to build a dataset that has a good sampling mix of English language and a healthy proportion of technical language.
+But I think before doing that, I would like to take another stab at understanding, how to answer the more general question, about [[subword-tokenization]] , so for non jargon language, any tokenizer will still end up having plenty of subwords, but they will still end up with good embeddings right? So since subwords are split up into multiple embeddings, then maybe is it that the model just associates those subword embeddings appropriately then? So is it like you identify that multi-syllable words have the same #etymology roots perhaps, like
+like, "charismatic" , "charisma" and "character" and "characterization" ,
+```python
+In [242]: sentences = [
+     ...:     "charismatic" , "charisma", "character", "characterization"
+     ...: ]
+
+In [243]: encoded_input, embeddings = ut.vec_to_embeddings(
+     ...:     model_id, sentences, return_tokenizer_output=True)
+     ...: tokenizer = AutoTokenizer.from_pretrained(model_id)
+     ...: print(tokenizer.convert_ids_to_tokens(encoded_input.data["input_ids"][0, :]))
+     ...: print(tokenizer.convert_ids_to_tokens(encoded_input.data["input_ids"][1, :]))
+     ...: print(tokenizer.convert_ids_to_tokens(encoded_input.data["input_ids"][2, :]))
+     ...: print(tokenizer.convert_ids_to_tokens(encoded_input.data["input_ids"][3, :]))
+     ...: 
+['[CLS]', 'charismatic', '[SEP]', '[PAD]', '[PAD]']
+['[CLS]', 'char', '##ism', '##a', '[SEP]']
+['[CLS]', 'character', '[SEP]', '[PAD]', '[PAD]']
+['[CLS]', 'characterization', '[SEP]', '[PAD]', '[PAD]']
+
+In [244]: cos_sim(embeddings[0, :], embeddings[1,:])
+Out[244]: tensor([[0.5882]])
+
+In [245]: cos_sim(embeddings[0, :], embeddings[2,:])
+Out[245]: tensor([[0.4623]])
+
+In [246]: cos_sim(embeddings[1, :], embeddings[2,:])
+Out[246]: tensor([[0.6060]])
+
+
+```
+yea maybe something like that happens with an embedding model then, it can still embed subwords well. Should try to do some reading on this .
+
+
 ok

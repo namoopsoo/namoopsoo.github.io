@@ -2824,6 +2824,7 @@ So yea putting the single-word-bug theory to rest, at least when using CLS, SEP 
 Ok back to big picture then,
 
 So I have observed this model has bad performance when I try throwing technical [[jargon]] at it,
+collapsed:: true
 ```python
 reload(ut)
 model_id =  "sentence-transformers/all-MiniLM-L6-v2"
@@ -2868,6 +2869,7 @@ print("cosine similarity", cos_sim(embeddings[0, :], embeddings[1,:]))
 cosine similarity tensor([[0.5085]])
 ```
 I have tried building a tokenizer from this model's tokenizer, but that was problematic because it is not tokenizer fine tuning like model fine tuning, it just uses the same class.
+collapsed:: true
 So initially I was thinking building a new tokenizer means I need all billion examples earlier, hmm but that's just what went in to fine tuning the model. Maybe for a tokenizer, perhaps I just need to build a dataset that has a good sampling mix of English language and a healthy proportion of technical language.
 But I think before doing that, I would like to take another stab at understanding, how to answer the more general question, about [[subword-tokenization]] , so for non jargon language, any tokenizer will still end up having plenty of subwords, but they will still end up with good embeddings right? So since subwords are split up into multiple embeddings, then maybe is it that the model just associates those subword embeddings appropriately then? So is it like you identify that multi-syllable words have the same #etymology roots perhaps, like
 like, "charismatic" , "charisma" and "character" and "characterization" ,
@@ -2903,4 +2905,125 @@ Out[246]: tensor([[0.6060]])
 yea maybe something like that happens with an embedding model then, it can still embed subwords well. Should try to do some reading on this .
 
 
+### [[Aug 3rd, 2023]] trying to do some more research on subword tokenization embedding
+#### are sub word token embeddings meaningful? 
+Don't have a definitive answer yet , but played around with the idea
+So what I wrote down yesterday, let's try to phrase this question , how do subword embedding models capture meaning of concepts that are broken up into parts? [[are sub word token embeddings meaningful?]]
+
+so any tokenizer that uses [[subword-tokenization]], has the benefit of representing a large vocabulary with a subword vocabulary taht is smaller. Not remembering precisely but there are computational benefits to a smaller  [[vocabulary size]] . But also with [[byte-pair encoding]] and similar algos, you have fewer [[out-of-vocabulary-words-OOV]] , and that is important since that can have performance degradations, an embedding model literally doesn't know what those inputs mean. 
+collapsed:: true
+Other benefits of course are it is more resilient to #misspelling , #typographical-error
+Related question is probably, [[Named Entity Recognition NER]] , [[Named Entity Recognition NER/how does it work across sub word tokenization]]
+Well realized it is build for this since entities are already often defined across multiple words, so multiple sub-words doesn't sound like a huge stretch .
+12:49 I'm reading the [[book/Natural Language Processing with Transformers]] chapter 4 , skimming,
+collapsed:: true
+one note I had from earlier, building a dataset in this chapter they chose representative sampling by percent data about languages spoken in #switzerland . Kind of cool
+Cool how on page 89, there is a custom dataset created based on the proportion of languages that are in #switzerland , in this case ,
+
+```python
+langs = ["de", "fr", "it", "en"]
+fracs = [0.629, 0.229, 0.084, 0.059]
+
+```
+So I can borrow above technique if I would need a dataset that is more jargon heavy.
+13:28 hmm but a note on [[why a custom tokenizer]] ,
+collapsed:: true
+reading on page 35 in [[book/Natural Language Processing with Transformers]] , they are stressing, to use same tokenizer a model was trained with, so yea when creating a new tokenizer, therefore a new model is necessary too, otherwise the token id mappings will be completely off .
+
+13:38 ultimately, maybe [[are sub word token embeddings meaningful?]]
+
+maybe answer is yes if the [[average-pooling]] of the embeddings of those sub words is meaningful, which is precisely what that `mean_pooling` function of the [[sentence-transformers]] is doing. uniformly averages all the embeddings. So yea I wouldn't be surprised if meaning did have a chance of getting a bit lost.
+#### Some more reading
+14:24 I do want to continue reading some of the tokenizer sections in that book, but let me try to some quick research first.
+
+[[hugging face Datasets]] , a custom dataset, hmm so warming up to this ,
+reading [here](https://huggingface.co/learn/nlp-course/chapter5/4?fw=pt), for use on a laptop, they support streaming operations, yay so don't have to be a huge memory burden . Nice, they use [[memory mapped file]], wow, so can have like unlimited size then hmm , like magic
+15:22 ok stumbled on [link](https://huggingface.co/learn/nlp-course/chapter5/6?fw=pt) this section of the [[hugging face]] nlp course , on  [[semantic search]],
+covering [[average-pooling]] yea. But also [[faiss.ai]] which is the [[Facebook AI Similarity Search FAISS]] which maybe is an alternative library to [[sentence-transformers]]?
+collapsed:: true
+15:30 hmm [article link](https://towardsdatascience.com/master-semantic-search-at-scale-index-millions-of-documents-with-lightning-fast-inference-times-fa395e4efd88) someone hinting that [[Facebook AI Similarity Search FAISS]] is more about indexing and [[sentence-transformers]] more about the embeddings themselves perhaps.
+So faster lookup, faster search,
+15:48 ok what can I learn here then
+Really not sure though why they are not concerned about removing the [[stop-words]] since they pollute that average .
+Think I will steal their nice technique for more quickly visualizing similarity though, 
+![image.png](../assets/image_1691092410135_0.png)
+In video at head of the page , presenter here, characterizes `0.83` as a strong relationship between these sentences.
+17:15 I had a sentence here wrote on #ipad but #[[logseq sync]] deleted it [[moment/grr]] [[data loss]]. I wrote that [[hugging face Datasets]] seems to be a #pandas alternative since it has filtering , has maps, and especially w/ the [[memory mapped file]] would be way better than a memory bound pandas dataframe
+17:17 seeing a note that the [[symmetric vs asymmetric semantic search]] idea is being discussed here,  
+```python
+model_ckpt = "sentence-transformers/multi-qa-mpnet-base-dot-v1"
+```
+but honestly I thought since now I know it is all just [[average-pooling]] then what's the point?
+17:35 in any case this article uses a new kind of pooling , cls pooling, maybe worth seeing if that is better than average pooling?
+```python
+def cls_pooling(model_output):
+    return model_output.last_hidden_state[:, 0]
+```
+
+When I look at this function though, does not make sense because it is just returning the embedding of the `[CLS]` token, isn't that weird? Wouldn't that be the same vector each time, for the `[CLS]` token?
+Ok, try this, so for a bunch of sentences, let's just compare the cosine similarity between the two pooling methods, out of curiosity,
+```python
+sentences = [
+    "postgresql",
+    "pyspark",
+    "this couch is for sale",
+    "docker",
+    "kubernetes",
+    "tensorflow",
+    "pytorch",
+]
+tokenizer = AutoTokenizer.from_pretrained("sentence-transformers/all-MiniLM-L6-v2")
+model = AutoModel.from_pretrained("sentence-transformers/all-MiniLM-L6-v2")
+
+# for sentence in sentences:
+encoded_input = tokenizer(sentences, padding=True, truncation=True, max_length=128, return_tensors='pt')
+
+with torch.no_grad():
+    model_output = model(**encoded_input)
+    
+[model_output.last_hidden_state.shape, model_output.pooler_output.shape]
+```
+```python
+[torch.Size([7, 7, 384]), torch.Size([7, 384])]
+```
+```python
+sentence_embeddings = mean_pooling(model_output, encoded_input['attention_mask'])
+
+sentence_embeddings.shape
+# torch.Size([7, 384])
+
+cls_pooled = ut.cls_pooling(model_output)
+
+cls_pooled.shape
+# torch.Size([7, 384])
+```
+```python
+extract_scalar = lambda x: round(float(x[0][0]), 3)
+for i, _ in enumerate(sentence_embeddings):
+    print(sentences[i], 
+          "cos_sim,",
+          extract_scalar(cos_sim(sentence_embeddings[i, :], cls_pooled[i, :])),
+          extract_scalar(cos_sim(sentence_embeddings[i, :], model_output.pooler_output[i, :])),
+          extract_scalar(cos_sim(cls_pooled[i, :], model_output.pooler_output[i, :])),
+    )  
+```
+```python
+postgresql cos_sim, 0.581 0.008 -0.02
+pyspark cos_sim, 0.63 0.04 -0.008
+this couch is for sale cos_sim, 0.572 -0.041 -0.044
+docker cos_sim, 0.686 0.018 -0.066
+kubernetes cos_sim, 0.594 -0.068 -0.042
+tensorflow cos_sim, 0.563 0.068 -0.016
+pytorch cos_sim, 0.567 0.022 0.017
+```
+Ok yea so this cls pooling approach, there is some similarity to the average pooling. interesting. But haha the final `model_output.pooler_output`, yea that is unrelated to anything even though the dimension is the same. Wonder what that is, haha.
+
+
+
+
+
+#### thoughts on a custom dataset
+16:09 building my own custom dataset, for the [[supervised fine-tuning]] and for the measuring , can really be the same dataset,
+
+Just train a test split, so build the [[positive pair]] with lots and lots of organic sentences , that use jargon, yea maybe using the cluster approach I was thinking about earlier, clustering by similar job titles, and maybe at some point  I can mix in [[positive pair]] constructed along with my own personal examples.
 ok

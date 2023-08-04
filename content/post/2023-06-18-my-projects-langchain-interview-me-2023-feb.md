@@ -2910,6 +2910,7 @@ yea maybe something like that happens with an embedding model then, it can still
 Don't have a definitive answer yet , but played around with the idea
 So what I wrote down yesterday, let's try to phrase this question , how do subword embedding models capture meaning of concepts that are broken up into parts? [[are sub word token embeddings meaningful?]]
 
+collapsed:: true
 so any tokenizer that uses [[subword-tokenization]], has the benefit of representing a large vocabulary with a subword vocabulary taht is smaller. Not remembering precisely but there are computational benefits to a smaller  [[vocabulary size]] . But also with [[byte-pair encoding]] and similar algos, you have fewer [[out-of-vocabulary-words-OOV]] , and that is important since that can have performance degradations, an embedding model literally doesn't know what those inputs mean. 
 collapsed:: true
 Other benefits of course are it is more resilient to #misspelling , #typographical-error
@@ -2932,10 +2933,12 @@ reading on page 35 in [[book/Natural Language Processing with Transformers]] , t
 
 13:38 ultimately, maybe [[are sub word token embeddings meaningful?]]
 
+collapsed:: true
 maybe answer is yes if the [[average-pooling]] of the embeddings of those sub words is meaningful, which is precisely what that `mean_pooling` function of the [[sentence-transformers]] is doing. uniformly averages all the embeddings. So yea I wouldn't be surprised if meaning did have a chance of getting a bit lost.
 #### Some more reading
 14:24 I do want to continue reading some of the tokenizer sections in that book, but let me try to some quick research first.
 
+collapsed:: true
 [[hugging face Datasets]] , a custom dataset, hmm so warming up to this ,
 reading [here](https://huggingface.co/learn/nlp-course/chapter5/4?fw=pt), for use on a laptop, they support streaming operations, yay so don't have to be a huge memory burden . Nice, they use [[memory mapped file]], wow, so can have like unlimited size then hmm , like magic
 15:22 ok stumbled on [link](https://huggingface.co/learn/nlp-course/chapter5/6?fw=pt) this section of the [[hugging face]] nlp course , on  [[semantic search]],
@@ -3026,4 +3029,14 @@ Ok yea so this cls pooling approach, there is some similarity to the average poo
 16:09 building my own custom dataset, for the [[supervised fine-tuning]] and for the measuring , can really be the same dataset,
 
 Just train a test split, so build the [[positive pair]] with lots and lots of organic sentences , that use jargon, yea maybe using the cluster approach I was thinking about earlier, clustering by similar job titles, and maybe at some point  I can mix in [[positive pair]] constructed along with my own personal examples.
+### [[Aug 4th, 2023]] reading and musing some more on meaning or no meaning with fertile sub-wording tokenization
+[[are sub word token embeddings meaningful?]]
+
+So thinking in context of [[Named Entity Recognition NER/how does it work across sub word tokenization]], I think it is the core #BERT #[[NLP Transformers]] model that is build for understanding #[[input sequence]] and so probably it picks up some cues about multi-token sequences that are entities. But [[sentence-transformers]] is a [[bag-of-words]] so yea it is not tuning anything here right?
+Because reading , [[book/Natural Language Processing with Transformers]] page 97 , my notes I underlined that yea the [[Named Entity Recognition NER]] task is a [[token classification task]]
+Wait but then what is happening in the [[article/Train and Fine-Tune Sentence Transformers Models]] ?
+Yea also reading , page 313, that yes there are metrics specific to tokenizers like [[subword fertility]] which measures average number of subwords coming out of  [[subword-tokenization]], but that these are like [[end-to-end-vs-proxy-ML-training]] proxy metrics and instead [[end to end test]] of performance is best. Most direct .
+Hmm so perhaps yea my focus on things like [[cosine similarity]] is good since it is an end to end measure, but it gives me more reason to build that nice dataset of my own 😀 , [[moment/anticipation]] , [[moment/curiosity]] ,
+09:29 so yea think would be a useful next mini thing to look at, per [link](https://huggingface.co/blog/how-to-train-sentence-transformers), [[article/Train and Fine-Tune Sentence Transformers Models]], is this fine tuning changing weights actually, somehow helping to build associations around the tokens regardless of whether they are haha highly fertile and possibly meaningless looking [[subword-tokenization]] ? haha
+Yea and should continue to build out my dataset [[positive pair]] , aspiration, to train test, build and measure !
 ok

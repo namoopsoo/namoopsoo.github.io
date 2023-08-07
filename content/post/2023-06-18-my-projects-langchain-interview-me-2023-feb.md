@@ -3039,4 +3039,199 @@ Yea also reading , page 313, that yes there are metrics specific to tokenizers l
 Hmm so perhaps yea my focus on things like [[cosine similarity]] is good since it is an end to end measure, but it gives me more reason to build that nice dataset of my own 😀 , [[moment/anticipation]] , [[moment/curiosity]] ,
 09:29 so yea think would be a useful next mini thing to look at, per [link](https://huggingface.co/blog/how-to-train-sentence-transformers), [[article/Train and Fine-Tune Sentence Transformers Models]], is this fine tuning changing weights actually, somehow helping to build associations around the tokens regardless of whether they are haha highly fertile and possibly meaningless looking [[subword-tokenization]] ? haha
 Yea and should continue to build out my dataset [[positive pair]] , aspiration, to train test, build and measure !
+### [[Aug 6th, 2023]] debugging does fine tuning update model weights?
+Looks like yes. But a small dataset appears to minimally update weights, which makes sense.
+10:06 yea so question from last time, [[article/Train and Fine-Tune Sentence Transformers Models]], what is this actually changing?
+
+So earlier I tried this, on [[Jul 15th, 2023]] , [here](https://michal.piekarczyk.xyz/post/2023-06-18-my-projects-langchain-interview-me-2023-feb/#jul-15th-2023-finally-tried-the-supervised-fine-tuning-but-didnt-seem-to-add-to-the-vocabulary), with this `data/kaggle-google-job-skills/2023-07-15-positive-pairs.jsonl` mini first stab at a dataset w/ [[positive pair]],
+collapsed:: true
+But the only thing I did as a test was that I inspected whether the internal "vocab.txt" [[vocabulary]] had changed before and after and it did not. However I know better now that this #[[supervised fine-tuning]] does not change the vocabulary since that is fixed in the #tokenizer .
+So instead, I should have checked, did the weights of the model change and I could have run some #[[cosine similarity]] tests to spot check or also to actually have a #holdout-set , built from my data, to see did the sentences I would have expected get ranked better than before the fine tuning ?
+11:12 ok so let me do that one more time and lets check , of all the layers I see in this model, at least the before and after weights of the pooling layer,
+```python
+model = AutoModel.from_pretrained("sentence-transformers/all-MiniLM-L6-v2")
+
+print("how many layers: ", len([x for x in model.modules()]))
+how many layers:  120
+
+```
+120 layers, oh my, ok lets look at pooler at end, 
+```python
+[x for x in model.modules()][-5:]
+# Out[299]: 
+[LayerNorm((384,), eps=1e-12, elementwise_affine=True),
+ Dropout(p=0.1, inplace=False),
+ BertPooler(
+   (dense): Linear(in_features=384, out_features=384, bias=True)
+   (activation): Tanh()
+ ),
+ Linear(in_features=384, out_features=384, bias=True),
+ Tanh()]
+
+
+pooler = [x for x in model.modules()][-3]
+pooler.dense.weight.shape, pooler.dense.bias.shape
+# Out[309]: (torch.Size([384, 384]), torch.Size([384]))
+```
+Ok let me make a deep copy of that, and lets see if that changes w/ my mini mini dataset fine tuning,
+```python
+weights_before, bias_before = deepcopy(pooler.dense.weight), deepcopy(pooler.dense.bias)
+In [312]: weights_before[:, :5]
+Out[312]: 
+tensor([[-0.0151, -0.0224, -0.0046, -0.0199,  0.0064],
+        [ 0.0083, -0.0186, -0.0132, -0.0009, -0.0157],
+        [-0.0030,  0.0108, -0.0102,  0.0023, -0.0006],
+        ...,
+        [-0.0049, -0.0010, -0.0043, -0.0035,  0.0108],
+        [-0.0089,  0.0108,  0.0011,  0.0227, -0.0051],
+        [ 0.0049,  0.0070, -0.0065, -0.0034,  0.0024]],
+       grad_fn=<SliceBackward0>)
+
+In [314]: bias_before[:5]
+Out[314]: tensor([0., 0., 0., 0., 0.], grad_fn=<SliceBackward0>)
+```
+ok
+```python
+import os
+import utils as u
+from pathlib import Path
+
+path = (Path(os.getenv("REPOS_DIR")) 
+            / "data" 
+            / "kaggle-google-job-skills/2023-07-15-positive-pairs.jsonl")
+
+# path.write_text("\n".join([json.dumps(x) for x in dataset]))
+
+dataset = [json.loads(x) for x in path.read_text().splitlines()]
+
+dataset[:4]
+# Out[319]: 
+# [{'set': ['programming experience in one or more of the following: java, python, javascript, nodejs, c#, net, ruby',
+#    'experience with java, javascript, html5, and sap technologies like sap hana, sap fiori, netweaver']},
+#  {'set': ['programming experience in one or more of the following: java, python, javascript, nodejs, c#, net, ruby',
+#    'software development platforms and solutions experience (java servlets, javascript, php, asp, cgi, ajax, flash, cookies and xml)']},
+#  {'set': ['programming experience in one or more of the following: java, python, javascript, nodejs, c#, net, ruby',
+#    'experience with front-end web technologies (html5, css3, and javascript)']},
+#  {'set': ['programming experience in one or more of the following: java, python, javascript, nodejs, c#, net, ruby',
+#    'html5, css3, and javascript development experience']}]
+
+
+from sentence_transformers import InputExample
+from torch.utils.data import DataLoader
+
+train_examples = []
+for i, x in enumerate(dataset):
+    train_examples.append(
+        InputExample(texts=[x["set"][0], x["set"][1]])
+    )
+train_dataloader = DataLoader(train_examples, shuffle=True, batch_size=16)
+
+# MultipleNegativesRankingLoss 
+from sentence_transformers import losses
+
+model = SentenceTransformer('all-MiniLM-L6-v2')
+train_loss = losses.MultipleNegativesRankingLoss(model=model)
+
+
+model.fit(train_objectives=[(train_dataloader, train_loss)], epochs=10) 
+```
+```python
+Iteration: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████| 13/13 [00:14<00:00,  1.09s/it]
+Iteration: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████| 13/13 [00:16<00:00,  1.23s/it]
+Iteration: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████| 13/13 [00:15<00:00,  1.18s/it]
+Iteration: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████| 13/13 [00:15<00:00,  1.20s/it]
+Iteration: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████| 13/13 [00:15<00:00,  1.20s/it]
+Iteration: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████| 13/13 [00:15<00:00,  1.16s/it]
+Iteration: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████| 13/13 [00:15<00:00,  1.20s/it]
+Iteration: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████| 13/13 [00:14<00:00,  1.14s/it]
+Iteration: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████| 13/13 [00:14<00:00,  1.11s/it]
+Iteration: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████| 13/13 [00:14<00:00,  1.14s/it]
+Epoch: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [02:31<00:00, 15.13s/it]
+```
+
+same? Well one interesting thing, now there are 124 layers instead of 125, 
+```python 
+In [322]: len([x for x in model.modules()])
+Out[322]: 124
+  
+
+In [323]: [x for x in model.modules()][-5:]
+Out[323]: 
+[BertPooler(
+   (dense): Linear(in_features=384, out_features=384, bias=True)
+   (activation): Tanh()
+ ),
+ Linear(in_features=384, out_features=384, bias=True),
+ Tanh(),
+ Pooling({'word_embedding_dimension': 384, 'pooling_mode_cls_token': False, 'pooling_mode_mean_tokens': True, 'pooling_mode_max_tokens': False, 'pooling_mode_mean_sqrt_len_tokens': False}),
+ Normalize()]
+
+```
+```python
+pooler = [x for x in model.modules()][-5]
+print("pooler weights all close?", 
+      np.allclose(
+        weights_before.detach().numpy(), pooler.dense.weight.detach().numpy()))
+
+# True
+```
+Ok so that is True within the default tolerance and per below, I see indeed the changes are quite minimal. 
+```python
+In [336]: weights_before[:, :5]
+Out[336]: 
+tensor([[-0.0151, -0.0224, -0.0046, -0.0199,  0.0064],
+        [ 0.0083, -0.0186, -0.0132, -0.0009, -0.0157],
+        [-0.0030,  0.0108, -0.0102,  0.0023, -0.0006],
+        ...,
+        [-0.0049, -0.0010, -0.0043, -0.0035,  0.0108],
+        [-0.0089,  0.0108,  0.0011,  0.0227, -0.0051],
+        [ 0.0049,  0.0070, -0.0065, -0.0034,  0.0024]],
+       grad_fn=<SliceBackward0>)
+
+
+In [330]: pooler.dense.weight.detach().numpy()[:, :5]
+Out[330]: 
+array([[-0.01512909, -0.02244568, -0.00457382, -0.01985168,  0.00641632],
+       [ 0.0083313 , -0.01863098, -0.01322937, -0.00087643, -0.01565552],
+       [-0.00302696,  0.01076508, -0.0102005 ,  0.00234985, -0.00063133],
+       ...,
+       [-0.00487518, -0.00100899, -0.00428391, -0.00347328,  0.01079559],
+       [-0.00886536,  0.01075745,  0.00112629,  0.02267456, -0.00512314],
+       [ 0.00490952,  0.00695419, -0.00653076, -0.00342751,  0.00236511]],
+      dtype=float32)
+```
+Well definitely different weights on the `BertPooler` there for sure. And now there is some kind of new `Pooling` layer I did not see before too.
+Ok so since the changes are super minimal, I don't think it is worth additional testing.
+So instead, I need a bigger dataset to try this out. But at least I can see that yes, fine tuning does do something haha.
+
+Custom dataset thought,
+might be that instead of sticking to one engineering slice of that jobs dataset, I might try pulling out multiple slices, at least to attempt to see, with a train test split, does the fine tuning help .
+12:41 going to look at my personal dataset one more time ,
+One question I have, what percent of the text in my "my-challenges-and-accomplishments/experience.yaml" am I capturing into my blurb? Simple question ,
+```python
+import utils as ut
+
+repos_dir = Path(os.getenv("REPOS_DIR"))
+assert repos_dir.is_dir()      
+experience_loc = repos_dir / "my-challenges-and-accomplishments/experience.yaml"
+total_length = len(experience_loc.read_text())
+
+experiences_dict = ut.read_yaml(experience_loc)["Descriptions"]
+my_sentences = ut.build_my_blurb(experiences_dict)
+print("proportion used:", len(" ".join(my_sentences)) / total_length)
+```
+```python
+proportion used: 0.3994211783644008
+```
+Ok wow haha I did not expect that to be that low haha.
+13:14 The reason it is not 100% is that I write initial drafts of work I did first which is not pulled by the `"build_my_blurb"` function and then when I have spare time I will to to better phrase those drafts, I put them into `one-liners` and `stories`, hopefully more succinctly, which is pulled by `"build_my_blurb"`.
+Ok then perhaps a slight twist of what I would like to do next,
+(1) Use the two raw job description dumps from earlier, to build a corpus not of individual sentences, as I had prior, but of job descriptions, attempting to also create a label column that tries to generalize the job titles they have, to hopefully around 5. I can keep "amazon" or "google" as an additional column for alter too .
+(2) Create a [[positive pair]] dataset from that , clustering by job title so  this time not doing it by hand as much.
+(3) Split that into a train test .
+(4) Fine tune train , and then use test , also w/ the [[Multiple negatives ranking loss]] . Maybe I can test before and after the fine tuning.
+(5) apply to my blurb dataset, and hand inspect what comes up for me.
+
+
+
 ok

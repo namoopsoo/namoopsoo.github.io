@@ -3234,4 +3234,127 @@ Ok then perhaps a slight twist of what I would like to do next,
 
 
 
+### [[Aug 7th, 2023]] and [[Aug 8th, 2023]] approaching build a dataset of larger chunks perhaps 
+Started looking at how big that would be
+So , how long are these job descriptions then if I take them raw instead of splitting into sentences like I had done before?
+
+```python
+
+technical_job_title_terms = [
+  "engineer", "developer", "research", "technical", "analyst", "engineering",
+  "data", "sciences", "ux", "analytics", "systems", "architect", "researcher", "web",
+  "infrastructure", "intelligence", "quantitative", "learning", "software",
+  "scientist",
+        ]
+
+loc = (Path(os.getenv("REPOS_DIR")) 
+            / "data" 
+            / "kaggle-google-job-skills/job_skills.csv")
+columns_map = {"Responsibilities": "description", 
+                            'Minimum Qualifications': "minimum qualifications", 
+                            'Preferred Qualifications': "preferred qualifications"
+          }
+columns = list(columns_map.keys())
+google_jobsdf = ut.filter_pandas_multiple_contains(
+    pd.read_csv(loc), "Title", technical_job_title_terms
+)[["Title"] + columns]
+print("google_jobsdf", google_jobsdf.shape)
+
+loc = (Path(os.getenv("REPOS_DIR")) 
+            / "data" 
+			/ "kaggle-amazon-job-skills/amazon_jobs_dataset.csv")
+columns_map = {
+    'DESCRIPTION': "description",
+    'BASIC QUALIFICATIONS': "minimum qualifications",
+    'PREFERRED QUALIFICATIONS': "preferred qualifications"}
+columns = list(columns_map.keys())
+amazon_jobsdf = ut.filter_pandas_multiple_contains(
+    pd.read_csv(loc), "Title", technical_job_title_terms
+)[["Title"] + columns]
+print("amazon_jobsdf", amazon_jobsdf.shape)
+
+google_jobsdf["Responsibilities"].map(lambda x: len(x)).describe()
+
+
+```
+```python
+
+In [346]: google_jobsdf[google_jobsdf["Responsibilities"].notnull()]["Responsibilities"].map(lambda x: len(x)).describe()
+Out[346]: 
+count     375.000000
+mean      677.290667
+std       272.640256
+min        47.000000
+25%       518.500000
+50%       664.000000
+75%       858.000000
+max      1654.000000
+Name: Responsibilities, dtype: float64
+```
+09:41 ok well getting a basic sense here, yea 1654  character length, don't know how many tokens that might map to, but feels like should be fine with the  "384" [[context-window]] I think, 
+```python
+1654/384 ~ 4.3 
+```
+and without spaces then this is better. so yea might be worth a shot to try this out.
+### [[Aug 9th, 2023]] quick stab count max tokens then
+ok so lets combine the three relevant columns, and see how many tokens that seems to produce
+
+```python
+from transformers import AutoTokenizer, AutoModel
+tokenizer = AutoTokenizer.from_pretrained('sentence-transformers/all-MiniLM-L6-v2')
+
+
+technical_job_title_terms = [
+  "engineer", "developer", "research", "technical", "analyst", "engineering",
+  "data", "sciences", "ux", "analytics", "systems", "architect", "researcher", "web",
+  "infrastructure", "intelligence", "quantitative", "learning", "software",
+  "scientist",
+        ]
+
+loc = (Path(os.getenv("REPOS_DIR")) 
+            / "data" 
+            / "kaggle-google-job-skills/job_skills.csv")
+columns_map = {"Responsibilities": "description", 
+                            'Minimum Qualifications': "minimum qualifications", 
+                            'Preferred Qualifications': "preferred qualifications"
+          }
+columns = list(columns_map.keys())
+google_jobsdf = pd.read_csv(loc).rename(columns=columns_map).dropna()
+print("google_jobsdf", google_jobsdf.shape)
+google_jobsdf["all"] = google_jobsdf.apply(
+    lambda x: ". ".join([x["Title"],
+                         x["description"], 
+                         x["minimum qualifications"],
+                         x["preferred qualifications"]
+                        ]),
+    axis=1
+)
+google_jobsdf["tokens"] = google_jobsdf["all"].map(
+    lambda x: tokenizer.tokenize(x)
+)
+google_jobsdf["num_tokens"] = google_jobsdf["tokens"].map(
+    lambda x: len(x)
+)
+google_jobsdf["num_tokens"].describe()
+```
+```python
+google_jobsdf (1235, 7)
+Token indices sequence length is longer than the specified maximum sequence length for this model (575 > 512). Running this sequence through the model will result in indexing errors
+Out[362]: 
+count    1235.000000
+mean      253.638057
+std        83.005630
+min        65.000000
+25%       198.000000
+50%       245.000000
+75%       298.000000
+max       692.000000
+Name: num_tokens, dtype: float64
+```
+ok indeed we hit some of the longer sequences and that error, 
+```python
+Token indices sequence length is longer than the specified maximum sequence length for this model (575 > 512). Running this sequence through the model will result in indexing errors
+```
+interesting says 512. Ok anyway, max is 692 I am seeing here.
+Might as well also try with removing stop words at some point but maybe initial stab just truncate and go end to end, train test, positive pair dataset using the job titles for clustering and run full fine tuning and see does that change the weights, and does it improve sentence similarity for this jobs dataset itself. just as a POC .
 ok

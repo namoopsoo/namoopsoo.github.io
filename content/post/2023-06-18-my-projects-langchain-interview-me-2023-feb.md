@@ -3225,7 +3225,7 @@ proportion used: 0.3994211783644008
 ```
 Ok wow haha I did not expect that to be that low haha.
 13:14 The reason it is not 100% is that I write initial drafts of work I did first which is not pulled by the `"build_my_blurb"` function and then when I have spare time I will to to better phrase those drafts, I put them into `one-liners` and `stories`, hopefully more succinctly, which is pulled by `"build_my_blurb"`.
-Ok then perhaps a slight twist of what I would like to do next,
+#### Ok then perhaps a slight twist of what I would like to do next,
 (1) Use the two raw job description dumps from earlier, to build a corpus not of individual sentences, as I had prior, but of job descriptions, attempting to also create a label column that tries to generalize the job titles they have, to hopefully around 5. I can keep "amazon" or "google" as an additional column for alter too .
 (2) Create a [[positive pair]] dataset from that , clustering by job title so  this time not doing it by hand as much.
 (3) Split that into a train test .
@@ -3299,6 +3299,7 @@ and without spaces then this is better. so yea might be worth a shot to try this
 ### [[Aug 9th, 2023]] quick stab count max tokens then
 ok so lets combine the three relevant columns, and see how many tokens that seems to produce
 
+collapsed:: true
 ```python
 from transformers import AutoTokenizer, AutoModel
 tokenizer = AutoTokenizer.from_pretrained('sentence-transformers/all-MiniLM-L6-v2')
@@ -3357,4 +3358,228 @@ Token indices sequence length is longer than the specified maximum sequence leng
 ```
 interesting says 512. Ok anyway, max is 692 I am seeing here.
 Might as well also try with removing stop words at some point but maybe initial stab just truncate and go end to end, train test, positive pair dataset using the job titles for clustering and run full fine tuning and see does that change the weights, and does it improve sentence similarity for this jobs dataset itself. just as a POC .
+### [[Aug 13th, 2023]] reading more about [[Multiple negatives ranking loss]] , researching how to bake that cake . Looking into clustering to maybe help create a dataset.
+hmm I had encountered [this video](https://www.youtube.com/watch?v=b_2v9Hpfnbw) from [[Nicholas Broad]] on [[Multiple negatives ranking loss]] , let me continue that ,
+
+interesting I did not get a negative cosine similarity yet
+softmax is used too. so it is single label multi class classification hm m
+hmm ok , so for two vectors of embeddings, of [[positive pair]] , we want high similarity pairwise `i == j` and low similarity otherwise `i != j` ,  
+![image.png](../assets/image_1691932507190_0.png)
+ok yea he's driving the point home here that this loss, tries to minimize distance between the pairs and maximize distance between the non-pairs , 
+> The model is rewarded for
+reducing the angle between the
+embeddings of positive pairs
+maximizing the angle between
+non-pair embeddings.
+
+09:33 yea this [[Multiple negatives ranking loss]] is kind of elusive. It is basically saying each row in your dataset can have two  sentence embeddings  that are really close but when compared with any other row they should not be and therefore it is like you need to have as many unique concepts as rows and that sounds kind of hard to do, at least automatically.
+
+Very much getting the [[Russel Peters]] #joke [[joke/How do you make a cake ]] , I think I have not seen a good explanation of how to do this ,
+Case in point, [this article](https://www.pinecone.io/learn/series/nlp/fine-tune-sentence-transformers-mnr/) is another nice explanation but the actual dataset used again is a freebie, already given , the Stanford Natural Language Inference (SNLI) and Multi-Genre NLI (MNLI) corpora , they already have labels which nicely define tons of sentence pairs explicitly stating whether they are related.
+Think you must just focus on the positive pairs and hopefully try not to put positives in the  non pairs somehow
+Hmm perhaps perhaps that's why generating [[average-pooling]] embeddings from larger sentences then is important because thinking if you were to use say embeddings from just single words, say you are trying to fine tune a model around sentiment, you first of all have fewer examples you can come up with of single-word embeddings, since just combinatorially [[combinatorics]] , but in general, maybe you can convey more complicated emotions with multiple words also because they have some interesting context.
+collapsed:: true
+We are still dealing with a kind of [[bag-of-words]] here but, it feels kind of like how that [[course/Rethinking Stress]] put it, that yes you can let your response to stress stay in your #amygdala , where perhaps emotions have undergone  [[dimensionality reduction]] haha the model is very [[bias]] very #primal very basic , but alternatively you can process your stress in your [[prefrontal cortex]] and get more nuance that way.
+For example, I am on a #roof-top right now and I brought my #sunscreen with me because last time I got pretty burnt with the diffuse sunlight, so the emotion might be a few different levels,
+lowest level: "Oh no"
+medium level: "darn I got sun-burnt "
+higher level: "I know I get burnt easily but I was excited to work on my project in an outdoor area for a change and I forgot that light can diffract and be diffuse sometimes and I ended up not using sunsccreen because I thought I was in the shade but it was a lot of diffuse sunlight so I got pretty burnt. And on top of that, I   already had plans to spend several hours in the sun a week from then, on the water, so I realized I had about a week to try to hopefully get cured from the sun exposure."
+Haha so in my examples there, I think the hypothesis I have now is that when building a [[positive pair]] dataset, one should attempt to use [[high dimensionality]] sentences to come up with their embeddings, to try to have a good dataset that doesn't have too many non-pairs which are also close.
+10:38  One more thought enters my mind hmm that since the example earlier in that [[article/Train and Fine-Tune Sentence Transformers Models]] made reference to a positive pair dataset of sentence compression, it makes sense that a "transformation" would be a good way to build a dataset of this kind , so, 
+```
+X = some sentences, 
+Z = f(X)  # where f() is some kind of transformation 
+```
+
+10:50 seeking some additional advice on this , lets see [this article](https://www.pinecone.io/learn/series/nlp/fine-tune-sentence-transformers-mnr/) ,
+
+10:55 oh wow, this is a cool idea, they mention there is a `NoDuplicatesDataLoader` class in the [[sentence-transformers]] library. hmm this is handy although I think this is purely handling the duplicates case which is kind of easy to do anyway though haha. But probably a good idea to create a similar data loader like "NoAlmostDuplicateDataLoader" that helps you from shooting yourself in the foot with near-duplicates in there.
+11:05 also interesting they are saying the evaluator there, uses [[Spearmans rank correlation]] [[correlation]] as a metric to evaluate.
+```python
+from sentence_transformers import InputExample
+
+samples = []
+for sample in sts:
+    samples.append(InputExample(
+        texts=[sample['sentence1'], sample['sentence2']],
+        label=sample['label']
+    ))
+
+from sentence_transformers.evaluation import EmbeddingSimilarityEvaluator
+evaluator = EmbeddingSimilarityEvaluator.from_input_examples(
+    samples, write_csv=False
+)
+```
+Kind of interesting, not to use like #RMSE say. Maybe more direct?
+11:44 ok lets try something
+
+referring to my [note from earlier](https://michal.piekarczyk.xyz/post/2023-06-18-my-projects-langchain-interview-me-2023-feb/#ok-then-perhaps-a-slight-twist-of-what-i-would-like-to-do-next), I see, yea if I had a base model, and say that train test split of a positive pair embeddings dataset, I can yea say, measure for that test set, say, the similarity for each pair, and likely, they would be lower than doing this with a tuned model.
+```python
+
+loc = (Path(os.getenv("REPOS_DIR")) 
+            / "data" 
+			/ "kaggle-amazon-job-skills/amazon_jobs_dataset.csv")
+columns_map = {
+    'DESCRIPTION': "description",
+    'BASIC QUALIFICATIONS': "minimum qualifications",
+    'PREFERRED QUALIFICATIONS': "preferred qualifications"}
+columns = list(columns_map.keys())
+amazon_jobsdf = pd.read_csv(loc).rename(columns=columns_map).dropna()
+# [["Title"] + columns]
+print("amazon_jobsdf", amazon_jobsdf.shape)
+```
+12:49 So the amazon dataset doesn't have a "Category" column like the google jobs dataset does, but I think if anything, this might be a good opportunity to try to cluster them in a sense, w/ similarity, to see if the clusters appear to align somewhat, along the job titles.
+```python
+from transformers import AutoTokenizer, AutoModel
+tokenizer = AutoTokenizer.from_pretrained('sentence-transformers/all-MiniLM-L6-v2')
+
+print("amazon_jobsdf", amazon_jobsdf.shape) # amazon_jobsdf (3484, 7)
+amazon_jobsdf["all"] = amazon_jobsdf.apply(
+    lambda x: ". ".join([x["Title"],
+                         x["description"], 
+                         x["minimum qualifications"],
+                         x["preferred qualifications"]
+                        ]),
+    axis=1
+)
+amazon_jobsdf["tokens"] = amazon_jobsdf["all"].map(
+    lambda x: tokenizer.tokenize(x)
+)
+amazon_jobsdf["num_tokens"] = amazon_jobsdf["tokens"].map(
+    lambda x: len(x)
+)
+amazon_jobsdf["num_tokens"].describe()
+
+```
+```python
+Token indices sequence length is longer than the specified maximum sequence length for this model (785 > 512). Running this sequence through the model will result in indexing errors
+Out[377]: 
+count    3484.000000
+mean      549.493972
+std       182.492633
+min        88.000000
+25%       429.000000
+50%       518.000000
+75%       628.250000
+max      1764.000000
+Name: num_tokens, dtype: float64
+
+```
+hmm side note looks like the mean and median token counts are `549` and `518` here whereas it was `253` and `245` for that google dataset hmm. interesting. Haha more fluff or boilerplate in the amazon one? Maybe an interesting corollary to [[stop-words]] is like fluff words, oh haha kind of like I should use the vocabulary from that tool [[Bullshit.js]] [[bullshit]] tool haha, that would be funny
+https://github.com/mourner/bullshit.js?ref=alian.info
+The terms are in https://github.com/mourner/bullshit.js/blob/master/src/terms.js , using regex syntax
+#### ok lets try to make some clusters
+```python
+raw_sentences = make_into_raw_sentences(amazon_jobsdf)
+
+# take out the stop words , because of the long lengths
+without_stop_words = take_out_stop_words(raw_sentences)
+
+# Then run something like  this, 
+hits = semantic_search(my_story_embeddings, jd_embeddings, top_k=10)
+
+use that above to identify clusters that are of close similarity, maybe for some threshold
+clusters = union_find(hits)
+```
+```python
+amazon_jobsdf["raw"] = amazon_jobsdf["all"].map(ut.dont_stop)
+
+amazon_jobsdf["tokens"] = amazon_jobsdf["raw"].map(
+    lambda x: tokenizer.tokenize(x)
+)
+amazon_jobsdf["num_tokens"] = amazon_jobsdf["tokens"].map(
+    lambda x: len(x)
+)
+amazon_jobsdf["num_tokens"].describe()
+```
+```python
+count    3484.000000
+mean      402.791619
+std       131.850287
+min        55.000000
+25%       317.000000
+50%       380.000000
+75%       460.000000
+max      1623.000000
+Name: num_tokens, dtype: float64
+```
+14:31 ok that's a taken the median down by about 200 tokens, nice.
+let me just get rid of the punctuation too since saw that is 18% of the tokens in the first sentence ,
+```python
+In [389]: punctuation_tokens = [",", '.', '·', "'", ":" ]
+     ...: print(len([x for x in (amazon_jobsdf.iloc[0]["tokens"]) if x in punctuation_tokens])/len(amazon_jobsdf.iloc[0]["tokens"]))
+0.18149466192170818
+```
+```python
+amazon_jobsdf["raw1"] = amazon_jobsdf["all"].map(ut.dont_stop)
+amazon_jobsdf["raw"] = amazon_jobsdf["raw1"].map(ut.remove_punctuation)
+amazon_jobsdf["tokens"] = amazon_jobsdf["raw"].map(
+    lambda x: tokenizer.tokenize(x)
+)
+amazon_jobsdf["num_tokens"] = amazon_jobsdf["tokens"].map(
+    lambda x: len(x)
+)
+amazon_jobsdf["num_tokens"].describe()
+```
+```python
+count    3484.000000
+mean      329.933410
+std       108.949385
+min        46.000000
+25%       259.000000
+50%       311.000000
+75%       377.000000
+max      1511.000000
+Name: num_tokens, dtype: float64
+
+
+```
+14:51 ok nice got lower by another 80 tokens wow.
+So proceed with the comparisons then,
+15:22 ok,
+```python
+raw_sentences = amazon_jobsdf["raw"].tolist()
+model_id =  "sentence-transformers/all-MiniLM-L6-v2"
+# some = random.choices(raw_sentences, k=1000)
+embeddings = ut.vec_to_embeddings(model_id, raw_sentences)
+
+hits = semantic_search(embeddings, embeddings, top_k=10)
+
+```
+15:29 hmm [[Union Find graph algo]] vs [[k means]]
+oh https://www.sbert.net/examples/applications/clustering/README.html they have a page and they dont mention union find somehow . interesting.
+16:12 quick look at the hits results,
+```python
+
+In [396]: hits[0]
+Out[396]: 
+[{'corpus_id': 0, 'score': 1.000000238418579},
+ {'corpus_id': 529, 'score': 0.9883664846420288},
+ {'corpus_id': 2052, 'score': 0.8829057216644287},
+ {'corpus_id': 3377, 'score': 0.88020920753479},
+ {'corpus_id': 376, 'score': 0.8609091639518738},
+ {'corpus_id': 320, 'score': 0.859550416469574},
+ {'corpus_id': 679, 'score': 0.8540301322937012},
+ {'corpus_id': 958, 'score': 0.8538450598716736},
+ {'corpus_id': 1692, 'score': 0.8538450598716736},
+ {'corpus_id': 1352, 'score': 0.8520417213439941}]
+
+In [397]: len(raw_sentences), len(some), len(hits), amazon_jobsdf.shape[0]
+Out[397]: (3484, 1000, 3484, 3484)
+
+In [398]: from collections import Counter
+
+In [400]: amazon_jobsdf.iloc[0]["Title"]
+Out[400]: 'Software Development Manager'
+
+In [401]: Counter([amazon_jobsdf.iloc[i]["Title"] for i in [x["corpus_id"] for x in hits[0]]])
+Out[401]: 
+Counter({'Software Development Manager': 7,
+         'Software Developer Manager': 1,
+         'Software Development Engineer': 2})
+
+```
+interesting
+next , ok I can continue this cluster analysis, and then perhaps I can use the clusters, to try to create at least some positive pairs that don't overlap too much , so the [[Multiple negatives ranking loss]] is not too diluted
+
 ok

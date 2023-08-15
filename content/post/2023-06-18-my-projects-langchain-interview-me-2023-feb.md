@@ -3361,6 +3361,7 @@ Might as well also try with removing stop words at some point but maybe initial 
 ### [[Aug 13th, 2023]] reading more about [[Multiple negatives ranking loss]] , researching how to bake that cake . Looking into clustering to maybe help create a dataset.
 hmm I had encountered [this video](https://www.youtube.com/watch?v=b_2v9Hpfnbw) from [[Nicholas Broad]] on [[Multiple negatives ranking loss]] , let me continue that ,
 
+collapsed:: true
 interesting I did not get a negative cosine similarity yet
 softmax is used too. so it is single label multi class classification hm m
 hmm ok , so for two vectors of embeddings, of [[positive pair]] , we want high similarity pairwise `i == j` and low similarity otherwise `i != j` ,  
@@ -3374,6 +3375,7 @@ non-pair embeddings.
 
 09:33 yea this [[Multiple negatives ranking loss]] is kind of elusive. It is basically saying each row in your dataset can have two  sentence embeddings  that are really close but when compared with any other row they should not be and therefore it is like you need to have as many unique concepts as rows and that sounds kind of hard to do, at least automatically.
 
+collapsed:: true
 Very much getting the [[Russel Peters]] #joke [[joke/How do you make a cake ]] , I think I have not seen a good explanation of how to do this ,
 Case in point, [this article](https://www.pinecone.io/learn/series/nlp/fine-tune-sentence-transformers-mnr/) is another nice explanation but the actual dataset used again is a freebie, already given , the Stanford Natural Language Inference (SNLI) and Multi-Genre NLI (MNLI) corpora , they already have labels which nicely define tons of sentence pairs explicitly stating whether they are related.
 Think you must just focus on the positive pairs and hopefully try not to put positives in the  non pairs somehow
@@ -3393,6 +3395,7 @@ Z = f(X)  # where f() is some kind of transformation
 
 10:50 seeking some additional advice on this , lets see [this article](https://www.pinecone.io/learn/series/nlp/fine-tune-sentence-transformers-mnr/) ,
 
+collapsed:: true
 10:55 oh wow, this is a cool idea, they mention there is a `NoDuplicatesDataLoader` class in the [[sentence-transformers]] library. hmm this is handy although I think this is purely handling the duplicates case which is kind of easy to do anyway though haha. But probably a good idea to create a similar data loader like "NoAlmostDuplicateDataLoader" that helps you from shooting yourself in the foot with near-duplicates in there.
 11:05 also interesting they are saying the evaluator there, uses [[Spearmans rank correlation]] [[correlation]] as a metric to evaluate.
 ```python
@@ -3582,4 +3585,139 @@ Counter({'Software Development Manager': 7,
 interesting
 next , ok I can continue this cluster analysis, and then perhaps I can use the clusters, to try to create at least some positive pairs that don't overlap too much , so the [[Multiple negatives ranking loss]] is not too diluted
 
+### [[Aug 14th, 2023]] tried the clustering 
+However there is a lot of information here so haha , not simple to verify it
+continue from last time , I have `embeddings` , lets try with `10` clusters, see wht happens, following example from [here](https://github.com/UKPLab/sentence-transformers/blob/master/examples/applications/clustering/kmeans.py),
+
+```python
+from sklearn.cluster import KMeans
+
+embeddings.shape  # torch.Size([3484, 384])
+
+
+# Perform kmean clustering
+num_clusters = 10
+clustering_model = KMeans(n_clusters=num_clusters)
+clustering_model.fit(embeddings)
+cluster_assignment = clustering_model.labels_
+
+cluster_assignment.shape  # Out[406]: (3484,)
+
+print(Counter(cluster_assignment))
+Counter({6: 798, 9: 597, 8: 406, 7: 349, 5: 327, 3: 309, 1: 206, 2: 194, 4: 162, 0: 136})
+```
+look at what job titles have been clustered togethe,
+```python
+amazon_jobsdf["cluster"] = cluster_assignment.tolist()
+for cluster_id in set(cluster_assignment):
+    print("cluster", cluster_id)
+    print(set(amazon_jobsdf[amazon_jobsdf["cluster"] == cluster_id]["Title"].tolist()))
+    print("\n", "=" * 80)
+```
+09:22 ok wow , there are so many titles, the output is not easy to read.
+```python
+
+for cluster_id in set(cluster_assignment):
+    print("cluster", cluster_id)
+    print(list(
+        set(amazon_jobsdf[amazon_jobsdf["cluster"] == cluster_id]["Title"].tolist())
+    )[:5])
+    print("\n", "=" * 80)
+```
+```python
+
+cluster 0
+['Development Manager – AWS AI: Backend Engine', 'Frontend/UI Engineer, AWS AmazonAI Machine Learning Platform', 'Software Development Engineer - AWS AI Deep Learning', 'Senior Software Development Engineer - AWS AI Deep Learning', 'Software Development Engineer, Browse Classification']
+
+ ================================================================================
+cluster 1
+['Technical Program Manager - Speech technologies on devices', 'AMAZON ALEXA IoT in Boston - Software Developer on Alexa Machine Learning Team', 'Senior Software Development Engineer', 'ML Research/Software Engineer, Alexa ', 'Software Development Engineer - Alexa Machine Learning  - Boston or Seattle']
+
+ ================================================================================
+cluster 2
+['Software Dev Engineer', 'Mobile Applications Engineer - Android', 'Senior Software Development Engineer', 'Principle SW Dev Engineer', 'Wireless Software Engineer Intern']
+
+ ================================================================================
+cluster 3
+['Software Dev Engineer', 'S3 Software Development Manager', 'Senior Software Development Engineer - AWS Commerce Platform- Berlin (m/f)', 'Software Development Engineer - S3 Webserver', 'Senior Software Development Engineer']
+
+ ================================================================================
+cluster 4
+['Game Server Engineer', 'Live Services Engineer', 'Senior Software Development Engineer', 'Senior Mobile Engineer', 'Software Development Engineer (Level 5)']
+
+ ================================================================================
+cluster 5
+['Verification Engineer', 'Front-end Engineer, AWS', 'Software Development Engineer - Belgrade Hiring Event, February 2018', 'SW Development Engineer in Test', 'Senior Software Development Engineer']
+
+ ================================================================================
+cluster 6
+['Senior Software Development Engineer, EC2 Virtual Private Cloud', 'Software Development Engineer - TEST', 'Senior Software Development Engineer', ' Software Development Engineer - Analytics', 'Senior Software Development Engineer, EC2 Cloud Manager Team']
+
+ ================================================================================
+cluster 7
+['WDE', 'Software Development Engineer - Amazon FreeTime', 'Senior Software Development Engineer', 'Software Development Engineer (Level 5)', 'Sr.Android Software Development Engineer ']
+
+ ================================================================================
+cluster 8
+['Alexa Software Development Engineer', 'Software Development Engineer in Test - Alexa New initiative!', 'Senior Software Development Engineer, Alexa Voice Services, Automotive', 'Quality Assurance Engineer, Alexa Voice Services, Automotive', 'Senior Software Development Engineer']
+
+ ================================================================================
+cluster 9
+['Blitz pooling req -Software Development Engineer', 'Senior Software Development Engineer – Amazon Global Catalog Systems', 'Software Development Engineer - AWS Marketplace', 'Software Dev Engineer', 'Senior Software Development Engineer: Internationalization Core']
+
+ ================================================================================
+
+
+```
+This is still difficult to interpret. I feel like there is still a lot of background noise in these job postings. Probably would help to get rid of that . This is like boiler plate speak looks like this, 
+```
+ “the world’s customer centric company "
+
+Amazon Equal Opportunity-Affirmative Action Employer - Minority   Female   Disability   Veteran   Gender Identity   Sexual Orientation
+```
+So thinking either should go back to that idea of just entity extraction which would be the inverse of fluff extraction
+
+### [[Aug 15th, 2023]] tried one fluff analytics approach
+Not so simple hmm
+The issue here is I think partly, there is a lot of information in these postings I suspect is noise that is confusing the [[average-pooling]] , so I am tempted to do some preprocessing to remove that
+
+[[common sub sequence]] ? I feel like I have seen before, like features, that are embeddings specific to some kind of attribute of the full raw text.
+```python
+fluff_phrases = [
+  ut.remove_punctuation(x) for x in
+  [  "Amazon is an Equal Opportunity-Affirmative Action Employer - Minority / Female / Disability / Veteran / Gender Identity / Sexual Orientation"
+    'Amazon is driven by being “the world’s most customer centric company."',
+    'In the Health, Safety, Sustainability, Security, and Compliance (HS3C) organization, we own ensuring that all products at Amazon are 100% complaint with all legal, trade, product safety, and food safety requirements.',
+    'We’re obsessed with the safety of all our customers and workers, creating a world-class experience for our millions of vendors and sellers world-wide, and inventing the best business and regulatory models for safe and sustainable supply chains in our industries.',
+  ]
+]
+
+amazon_jobsdf["all"] = amazon_jobsdf.apply(
+    lambda x: ". ".join([x["Title"],
+                         x["description"], 
+                         x["minimum qualifications"],
+                         x["preferred qualifications"]
+                        ]),
+    axis=1
+)
+
+amazon_jobsdf["all_no_punctuation"] = amazon_jobsdf["all"].map(
+    ut.remove_punctuation
+)
+
+amazon_jobsdf["fluff_count"] = amazon_jobsdf["all_no_punctuation"].map(
+    lambda s: sum([
+      1 if x in s else 0
+      for x in fluff_phrases
+    ])
+)
+```
+```python
+In [433]: amazon_jobsdf["fluff_count"].value_counts()
+Out[433]: 
+0    3477
+2       7
+Name: fluff_count, dtype: int64
+```
+Hmm maybe need to try this differently.
 ok

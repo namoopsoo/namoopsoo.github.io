@@ -8,6 +8,7 @@ In my day job, I data science at [Katapult.com](https://katapult.com), solving p
 
 And I also like to [tell jokes](http://dadjests.com). Sometimes I [build chair](https://my-blog-content.s3.amazonaws.com/2018/chair/2017-06-01+22.15.02-chair.jpg) (singular). In high school, my teammates and I built robots for [FIRST Robotics](https://en.wikipedia.org/wiki/FIRST_Robotics_Competition)
 
+Sometimes [make](https://michal.piekarczyk.xyz/manhattan/) some [games](https://michal.piekarczyk.xyz/red-hat/)
 ### To Reach out,
 you can send a mail to my first name dot my last name at gmail.com.
 

@@ -3720,4 +3720,137 @@ Out[433]:
 Name: fluff_count, dtype: int64
 ```
 Hmm maybe need to try this differently.
+### [[Aug 17th, 2023]] detect fluff with cosine similarity
+continuing w/ fluff analytics, out of curiosity, let me search for the fluff phrases by cosine similarity, maybe stuff is re-worded
+
+```python
+model_id =  "sentence-transformers/all-MiniLM-L6-v2"
+
+fluff_phrases = [
+  ut.remove_punctuation(x) for x in
+  [  "Amazon is an Equal Opportunity-Affirmative Action Employer - Minority / Female / Disability / Veteran / Gender Identity / Sexual Orientation"
+    'Amazon is driven by being “the world’s most customer centric company."',
+    'In the Health, Safety, Sustainability, Security, and Compliance (HS3C) organization, we own ensuring that all products at Amazon are 100% complaint with all legal, trade, product safety, and food safety requirements.',
+    'We’re obsessed with the safety of all our customers and workers, creating a world-class experience for our millions of vendors and sellers world-wide, and inventing the best business and regulatory models for safe and sustainable supply chains in our industries.',
+  ]
+]
+
+raw_sentences = amazon_jobsdf["all_no_punctuation"].tolist()
+
+hits = ut.search(model_id, fluff_phrases, raw_sentences)
+
+
+```
+```python
+for i, row in enumerate(hits):
+    print(f"({i})", "matching,", fluff_phrases[i][:20], ":")
+    hmm = [
+      [raw_sentences[x["corpus_id"]][:20], x["corpus_id"], x["score"]] for x in row ]
+    print(hmm, "\n\n")
+```
+```python
+(0) matching, Amazon is an Equal O :
+[['Manager of Applicati', 11, 0.5805604457855225], ['Software Development', 774, 0.5495573282241821], ['Senior Manager Softw', 3221, 0.5386903882026672], ['Software Development', 1111, 0.5257833003997803], ['Software Development', 1110, 0.5257833003997803], ['Software Development', 2346, 0.5253446698188782], ['Software Development', 1957, 0.5253446698188782], ['Software Development', 2942, 0.5167820453643799], ['Software Development', 2896, 0.5167820453643799], ['Software Development', 2550, 0.5115794539451599]] 
+
+
+(1) matching, In the Health Safety :
+[['Software Development', 2167, 0.6412075161933899], ['Sr Software Developm', 2093, 0.6237956285476685], ['Software Development', 2, 0.6191249489784241], ['Software Development', 30, 0.6191249489784241], ['Software Development', 1, 0.6191249489784241], ['Software Development', 31, 0.6191249489784241], ['Senior Software Deve', 332, 0.6013069152832031], ['Software Development', 3161, 0.5426405668258667], ['Software Development', 83, 0.5362498760223389], ['Senior Software Deve', 191, 0.4951627850532532]] 
+
+
+(2) matching, We re obsessed with  :
+[['Software Development', 2167, 0.5930458903312683], ['Sr Software Developm', 2093, 0.5782648324966431], ['Software Development', 2, 0.5531834363937378], ['Software Development', 31, 0.5531834363937378], ['Software Development', 30, 0.5531834363937378], ['Software Development', 1, 0.5531834363937378], ['Software Development', 3161, 0.5344783663749695], ['Senior Software Deve', 332, 0.5275624990463257], ['Software Development', 1098, 0.5085136890411377], ['Software Development', 2302, 0.5051045417785645]] 
+
+
+
+```
+ok will look at the hits more next time. Interesting to see the scores greater than 0.5 though, even though those raw texts are really much longer than the phrases I'm searching for . This is an interesting mini #take-away . [[symmetric vs asymmetric semantic search]]
+
+### [[Aug 18th, 2023]] briefly, fluff hits one ore time, but more so
+try query again but dont cut just top 10 hmm
+
+```python
+vec = []
+for i, row in enumerate(hits):
+    print(f"({i})", "matching,", fluff_phrases[i][:20], ":")
+    hmm = [
+      [raw_sentences[x["corpus_id"]][:20], x["corpus_id"], x["score"]] for x in row ]
+    print(hmm, "\n\n")
+    vec.extend([{
+      "query": fluff_phrases[i],
+      "result": raw_sentences[x["corpus_id"]],
+      "score": x["score"],
+    } for x in row])
+
+    
+loc = (Path(workdir) / f"{utc_ts(utc_now())}-search-result.csv")
+print(loc.name)  # 2023-08-18T130750-search-result.csv
+pd.DataFrame.from_records(vec).to_csv(loc)
+
+```
+let me look at results. forgot to save score though.
+```python
+%%time
+hits = ut.search(model_id, fluff_phrases, raw_sentences, top_k=4000)
+Wall time: 5min 42s
+
+loc = (Path(workdir) / f"{utc_ts(utc_now())}-search-result.csv")
+print(loc.name)  # 2023-08-18T132229-search-result.csv
+df = ut.search_results_to_pdf(hits, fluff_phrases, raw_sentences, preview=False)
+df.to_csv(loc)
+
+
+In [466]: df.iloc[0]
+Out[466]: 
+query     Amazon is an Equal Opportunity-Affirmative Act...
+result    Manager of Application Development and Enginee...
+score                                               0.58056
+Name: 0, dtype: object
+
+In [467]: df.score.describe()
+Out[467]: 
+count    10452.000000
+mean         0.275819
+std          0.082075
+min         -0.011822
+25%          0.218657
+50%          0.274074
+75%          0.329111
+max          0.641208
+Name: score, dtype: float64
+```
+ok next, can look at the more fuller results, scores,
+
+
+### [[Aug 19th, 2023]] Looked at histogram of cosine similarity scores from the fluff phrase hits
+what are scores like, quick histogram, they are in `df.score` from yesterday
+
+```python
+import matplotlib.pyplot as plt
+import pylab
+
+scores = df.score.tolist()
+
+fig = plt.figure(figsize=(10, 10/1.6))
+ax = fig.add_subplot(111)
+
+with plt.style.context('fivethirtyeight'):
+    ax.hist(scores, bins=10)
+    loc = (Path(workdir) / f"{utc_ts(utc_now())}-scores-hist.png")
+    print(loc, loc.name)
+    pylab.savefig(loc)
+    pylab.close()
+
+
+```
+![2023-08-19T151019-scores-hist.png](../assets/2023-08-19T151019-scores-hist_1692457964293_0.png)
+11:16 That's interesting, so , interesting how it looks pretty normal. and very few over `0.5` .
+So are the ones over `0.5` good ones ?
+```python
+In [473]: df[df.score >= 0.5].shape, df.shape[0]
+Out[473]: ((47, 3), 10452)
+```
+
+
+
+
 ok

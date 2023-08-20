@@ -144,7 +144,7 @@ def check_env_vars():
     
     return bool(deploy_bucket)
 
-def convert_local_images_to_s3_assets(content_file_path, absolute_asset_dir, replace=True):
+def convert_local_images_to_s3_assets(content_file_path, absolute_asset_dir, replace=True, only_preview_changes=False):
     """
     Args:
         content_file: the html or md file
@@ -191,6 +191,9 @@ def convert_local_images_to_s3_assets(content_file_path, absolute_asset_dir, rep
 
     print("Pass two now")
 
+
+    updates = []
+
     # second pass
     for line in lines:
         match_img_src = re.search(r"(?P<all><img\s+src=\"(?P<path>[^\"]+)\"[^>]+>)", line)
@@ -216,6 +219,7 @@ def convert_local_images_to_s3_assets(content_file_path, absolute_asset_dir, rep
             )
             if line == updated_line:
                 print("Hmm, line and updated_line are both ", line, ", that is weird")
+            updates.append({"before": line, "after": updated_line})
             output_lines.append(updated_line)
         else:
             output_lines.append(line)
@@ -223,6 +227,8 @@ def convert_local_images_to_s3_assets(content_file_path, absolute_asset_dir, rep
         out = Path(content_file_path).write_text("\n".join(output_lines))
         print("write out", out)
         
+    else:
+        print("updates", updates)
 
 def update_this_file(loc, update_in_place=True):
     """

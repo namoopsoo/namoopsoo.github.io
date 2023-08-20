@@ -1376,7 +1376,7 @@ and that a new test word like `"mug"` say would end up getting represented as `[
 And clearly, haha we can have some absurd algorithm implementation that never stops and we end up with a vocabulary that includes  all the full words that were encountered, and then therefore we would get fewer computational benefits .
 13:21 ok so [[why a custom tokenizer]], in the [video link](https://youtu.be/DJimQynXZsQ) #video-type, embedded in [chapter 6 link](https://huggingface.co/learn/nlp-course/chapter6/2?fw=pt), the lean is now to yes train a tokenizer from scratch if there is new jargon yes as in a new "domain" , #card
 So high level four good reasons, for [[why a custom tokenizer]] [[derive-from-scratch]] #card
-![image.png](../assets/image_1689873985593_0.png)
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-02-18-langchain-interview-me-2023-feb/image_1689873985593_0.png" width="50%">}}
 new language,
 new characters ( with accents)
 new domain (medical, technical, legal)
@@ -1386,13 +1386,13 @@ And so you will risk not capturing the full sentence you want to pass to a #LLM 
 Excessive tokenizer splitting, can impact model performance, too, #question #card , why though?
 Maybe the argument is similar to like "<UNK>" those unknowns, in that there is less information being captured. My intuitive reasoning is that tiny subwords embedding representations will be likely meaningless . The #attention will get thrown off by basically letter chunks that will end up being as common as the word "the" , so perhaps you will have just #stop-words at that point with low information.
 Example of this particular model tokenizer missing a lot of #unicode characters from [[Bangla]] #language-type . 
-![image.png](../assets/image_1689874273026_0.png)
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-02-18-langchain-interview-me-2023-feb/image_1689874273026_0.png" width="50%">}}
 And yea [[out-of-vocabulary-words-OOV]] "<UNK>" , has no useful information for the model to use there.
 And [[excessive splitting by tokenizer]] , for say #[[biomedical Glossary]]
-![image.png](../assets/image_1689875286166_0.png)
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-02-18-langchain-interview-me-2023-feb/image_1689875286166_0.png" width="50%">}}
 And for the other example given, of using `code-search-net` python dataset to train a tokenizer, I like the question that gets asked is [[performance-lift]] at least eye-balling. And in below example, she does show it is desirable to capture a concept as one token, but I think this will ultimately only happen if that example is more frequent , relative to other patterns when doing merges per  [[byte-pair encoding]]
-![image.png](../assets/image_1689875776287_0.png)
-![image.png](../assets/image_1689875808385_0.png)
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-02-18-langchain-interview-me-2023-feb/image_1689875776287_0.png" width="50%">}}
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-02-18-langchain-interview-me-2023-feb/image_1689875808385_0.png" width="50%">}}
 
 
 
@@ -2949,7 +2949,7 @@ So faster lookup, faster search,
 15:48 ok what can I learn here then
 Really not sure though why they are not concerned about removing the [[stop-words]] since they pollute that average .
 Think I will steal their nice technique for more quickly visualizing similarity though, 
-![image.png](../assets/image_1691092410135_0.png)
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-02-18-langchain-interview-me-2023-feb/image_1691092410135_0.png" width="50%">}}
 In video at head of the page , presenter here, characterizes `0.83` as a strong relationship between these sentences.
 17:15 I had a sentence here wrote on #ipad but #[[logseq sync]] deleted it [[moment/grr]] [[data loss]]. I wrote that [[hugging face Datasets]] seems to be a #pandas alternative since it has filtering , has maps, and especially w/ the [[memory mapped file]] would be way better than a memory bound pandas dataframe
 17:17 seeing a note that the [[symmetric vs asymmetric semantic search]] idea is being discussed here,  
@@ -3365,7 +3365,7 @@ collapsed:: true
 interesting I did not get a negative cosine similarity yet
 softmax is used too. so it is single label multi class classification hm m
 hmm ok , so for two vectors of embeddings, of [[positive pair]] , we want high similarity pairwise `i == j` and low similarity otherwise `i != j` ,  
-![image.png](../assets/image_1691932507190_0.png)
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-02-18-langchain-interview-me-2023-feb/image_1691932507190_0.png" width="50%">}}
 ok yea he's driving the point home here that this loss, tries to minimize distance between the pairs and maximize distance between the non-pairs , 
 > The model is rewarded for
 reducing the angle between the
@@ -3842,7 +3842,7 @@ with plt.style.context('fivethirtyeight'):
 
 
 ```
-![2023-08-19T151019-scores-hist.png](../assets/2023-08-19T151019-scores-hist_1692457964293_0.png)
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-02-18-langchain-interview-me-2023-feb/2023-08-19T151019-scores-hist_1692457964293_0.png" width="50%">}}
 11:16 That's interesting, so , interesting how it looks pretty normal. and very few over `0.5` .
 So are the ones over `0.5` good ones ?
 ```python

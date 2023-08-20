@@ -3853,4 +3853,52 @@ Out[473]: ((47, 3), 10452)
 
 
 
+
+ok
+
+### [[Aug 20th, 2023]] using one hot encoding to try to confirm those results
+12:06 so what are those `47` job descriptions I saw there
+
+```python
+loc = (Path(workdir) / f"{utc_ts(utc_now())}-search-result.csv") 
+print(loc.name)  # '2023-08-20T161939-search-result.csv'
+df_highest = df[df.score >= 0.5]
+df_highest.to_csv(loc)
+
+for phrase in fluff_phrases:
+    print(phrase, df_highest[df_highest["query"] == phrase].shape)
+```
+```python
+Amazon is an Equal Opportunity-Affirmative Action Employer - Minority Female Disability Veteran Gender Identity Sexual OrientationAmazon is driven by being “the world s most customer centric company " (27, 3)
+In the Health Safety Sustainability Security and Compliance HS3C organization we own ensuring that all products at Amazon are 100% complaint with all legal trade product safety and food safety requirements (9, 3)
+We re obsessed with the safety of all our customers and workers creating a world-class experience for our millions of vendors and sellers world-wide and inventing the best business and regulatory models for safe and sustainable supply chains in our industries (11, 3)
+```
+The only way to know false positive, false negatives perhaps, is to create some one hot features for the substrings I think
+```python
+one_hot_sub_phrases = [
+  " ".join(x[i:i + 3]).lower() for i in range(len(x.split(" ")) - 3)
+  for x in fluff_phrases
+]
+```
+```python
+
+df_highest = df[df.score >= 0.5].copy()
+for sub_phrase in one_hot_sub_phrases:
+    df_highest["OHE_" + sub_phrase] = df_highest["result"].map(lambda x: int(sub_phrase in x))
+
+      
+cols = df_highest.columns.tolist()
+ohe_cols = [x for x in cols if x.startswith("OHE_")]
+
+df_highest["sub_phrase_sum"] = df_highest.apply(lambda x: sum([x[col] for col in ohe_cols]), axis=1)
+
+loc = (Path(workdir) / f"{utc_ts(utc_now())}-search-result-ohe.csv")
+print(loc.name)  # 2023-08-20T172224-search-result-ohe.csv
+df_highest[["query", "sub_phrase_sum"] + ohe_cols].to_csv(loc)
+
+```
+
+hmm not looking great, think I'm seeing lots of 0s which feels like false positives?
+![image.png](../assets/image_1692552249125_0.png)
+can continue this #[[one hot encoding]]
 ok

@@ -144,7 +144,7 @@ def check_env_vars():
     
     return bool(deploy_bucket)
 
-def convert_local_images_to_s3_assets(content_file_path, absolute_asset_dir, replace=True, only_preview_changes=False):
+def convert_local_images_to_s3_assets(content_file_path, absolute_asset_dir, replace=True):
     """
     Args:
         content_file: the html or md file

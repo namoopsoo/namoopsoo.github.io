@@ -3859,6 +3859,7 @@ ok
 ### [[Aug 20th, 2023]] using one hot encoding to try to confirm those results
 12:06 so what are those `47` job descriptions I saw there
 
+collapsed:: true
 ```python
 loc = (Path(workdir) / f"{utc_ts(utc_now())}-search-result.csv") 
 print(loc.name)  # '2023-08-20T161939-search-result.csv'
@@ -3898,7 +3899,85 @@ df_highest[["query", "sub_phrase_sum"] + ohe_cols].to_csv(loc)
 
 ```
 
-hmm not looking great, think I'm seeing lots of 0s which feels like false positives?
-![image.png](../assets/image_1692552249125_0.png)
+hmm not looking great, think I'm seeing lots of rows where the query has `sub_phrase_sum=0`  which feels like false positives?
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-02-18-langchain-interview-me-2023-feb/image_1692552249125_0.png" width="50%">}}
 can continue this #[[one hot encoding]]
+### [[Aug 21st, 2023]] debugging some one hot encoding results
+ok so last time, yea saw yea oddly, lots of cases where the one hot columns not yet showing why the sentence matched more than `0.5` to that query. [[false-positive]] ?
+
+Let's look at one, hmm nevermind, looking at the first one
+```python
+In [498]: df_highest.iloc[0]
+Out[498]: 
+query                                          Amazon is an Equal Opportunity-Affirmative Act...
+result                                         Manager of Application Development and Enginee...
+score                                                                                    0.58056
+OHE_amazon is an                                                                               0
+OHE_is an equal                                                                                0
+OHE_an equal opportunity-affirmative                                                           0
+OHE_equal opportunity-affirmative action                                                       0
+OHE_opportunity-affirmative action employer                                                    0
+OHE_action employer -                                                                          0
+OHE_employer - minority                                                                        0
+OHE_- minority female                                                                          0
+OHE_minority female disability                                                                 0
+OHE_female disability veteran                                                                  0
+OHE_disability veteran gender                                                                  0
+OHE_veteran gender identity                                                                    0
+OHE_gender identity sexual                                                                     0
+OHE_identity sexual orientationamazon                                                          0
+OHE_sexual orientationamazon is                                                                0
+OHE_orientationamazon is driven                                                                0
+OHE_is driven by                                                                               0
+OHE_driven by being                                                                            0
+OHE_by being “the                                                                              0
+OHE_being “the world                                                                           0
+OHE_“the world s                                                                               0
+OHE_world s most                                                                               0
+OHE_s most customer                                                                            0
+OHE_most customer centric                                                                      0
+OHE_customer centric company                                                                   0
+sub_phrase_sum                                                                                 0
+Name: 0, dtype: object
+```
+I looked at the raw `result` and it should have matched the one hot columns here. Let me debug my one hot code.
+Ah damn ok, forgot to lower case, lets try again,
+```python
+df_highest = df[df.score >= 0.5].copy()
+
+for sub_phrase in one_hot_sub_phrases:
+    df_highest["OHE_" + sub_phrase] = df_highest["result"].map(
+      lambda x: int(sub_phrase in x.lower()))
+
+cols = df_highest.columns.tolist()
+ohe_cols = [x for x in cols if x.startswith("OHE_")]      
+
+df_highest["sub_phrase_sum"] = df_highest.apply(lambda x: sum([x[col] for col in ohe_cols]), axis=1)
+
+loc = (Path(workdir) / f"{utc_ts(utc_now())}-search-result-ohe.csv")
+print(loc.name)  # 2023-08-21T131154-search-result-ohe.csv
+
+df_highest[["query", "sub_phrase_sum"] + ohe_cols].to_csv(loc)
+```
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-02-18-langchain-interview-me-2023-feb/image_1692623559125_0.png" width="50%">}}
+ok nice, much better. Way fewer zeros in `sub_phrase_sum` this time. Still have them though.
+Lets look at another,
+```python
+In [502]: df_highest.iloc[1]["query"]
+Out[502]: 'Amazon is an Equal Opportunity-Affirmative Action Employer - Minority Female Disability Veteran Gender Identity Sexual OrientationAmazon is driven by being “the world s most customer centric company "'
+  
+In [507]: Counter(df_highest.iloc[1]["result"].split(" ")).most_common(6)
+Out[507]: 
+[('and', 25),
+ ('the', 12),
+ ('to', 11),
+ ('of', 11),
+ ('Amazon', 9),
+ ('customers', 8)]
+```
+hmm for this one above my guess is that the "Amazon customers" part is what pops out then. So might not be a false positive because of that. Goes to show that [[explainability]] would be nice here.
+Anyway, main motive for going down this path of potentially removing [[noise]] or fluff from the data , improve the [[Signal To Noise Ratio]] hopefully improve the clustering I was attempting earlier, because I was seeing lots of jobs getting clustered that had job titles that looked unrelated.
+
+General hypothesis is that, perhaps there is a lot of boilerplate noisy fluff text in common in many of the job descriptions that is confusing the cosine similarity . Removing it would hopefully improve this , so ultimately I can build a better dataset for fine tuning. Haha. Complicated.
+Maybe go back to the entity extraction if that is more straight forward perhaps .
 ok

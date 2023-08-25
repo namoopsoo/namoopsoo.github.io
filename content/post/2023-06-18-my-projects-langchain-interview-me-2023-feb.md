@@ -4064,4 +4064,99 @@ Out[538]:
 ```
 the magnitudes to seem to be small though.
 
+### [[Aug 25th, 2023]] correlation the one hot sum and the cosine similarities
+So the other day I was focusing on the cosine similarity scores over `0.5`, and there were 47 of these. Recalling this is the output I had,
+
+```
+In [473]: df[df.score >= 0.5].shape, df.shape[0]
+Out[473]: ((47, 3), 10452)
+```
+And I was wondering recently, since I added those one hot encoder sums, how about false negatives?
+So simply, how many do we have , with that `sub_phrase_sum` around `22`, greater versus less than `0.5` the cutoff, ?
+```python
+
+# df.sort_values(by="sub_phrase_sum", ascending=False)[["score", "sub_phrase_sum"]].iloc[:20]
+
+In [542]: df["sub_phrase_sum"].value_counts()
+Out[542]: 
+0     5673
+10    2436
+9     1185
+2      357
+6      129
+3      117
+7      105
+8       96
+5       87
+1       81
+13      66
+11      57
+12      24
+22      18
+4       12
+16       6
+18       3
+Name: sub_phrase_sum, dtype: int64
+```
+Maybe plot correlation for fun,
+```python
+import matplotlib.pyplot as plt
+import pylab
+
+
+# fig = plt.figure(figsize=(10, 10/1.6))
+# ax = fig.add_subplot(111)
+
+# with plt.style.context('fivethirtyeight'):
+
+plt.matshow(df[["score", "sub_phrase_sum"]].corr())
+
+loc = (Path(workdir) / f"{utc_ts(utc_now())}-scores-corr.png")
+print(loc, loc.name)
+pylab.savefig(loc)
+pylab.close()
+
+```
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-02-18-langchain-interview-me-2023-feb/image_1692970612728_0.png" width="50%">}}
+weird not quite working right.
+```python
+In [547]: df[["score", "sub_phrase_sum"]].corr()
+Out[547]: 
+                   score  sub_phrase_sum
+score           1.000000        0.013102
+sub_phrase_sum  0.013102        1.000000
+
+In [548]: df[["score", "sub_phrase_sum"]].shape
+Out[548]: (10452, 2)
+
+In [549]: df[["score", "sub_phrase_sum"]].iloc[:5]
+Out[549]: 
+      score  sub_phrase_sum
+0  0.580560              10
+1  0.549557               0
+2  0.538690              10
+3  0.525783               0
+4  0.525783               0
+
+In [550]: 
+
+In [550]: df["score_100"] = df["score"].map(lambda x:x*100)
+
+In [551]: df[["score_100", "sub_phrase_sum"]].corr()
+Out[551]: 
+                score_100  sub_phrase_sum
+score_100        1.000000        0.013102
+sub_phrase_sum   0.013102        1.000000
+
+In [552]: df[["score", "score_100","sub_phrase_sum"]].iloc[:5]
+Out[552]: 
+      score  score_100  sub_phrase_sum
+0  0.580560  58.056045              10
+1  0.549557  54.955733               0
+2  0.538690  53.869039              10
+3  0.525783  52.578330               0
+4  0.525783  52.578330               0
+```
+not sure what is up yet. but can next, debug this
+
 ok

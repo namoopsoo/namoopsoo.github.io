@@ -3980,4 +3980,88 @@ Anyway, main motive for going down this path of potentially removing [[noise]] o
 
 General hypothesis is that, perhaps there is a lot of boilerplate noisy fluff text in common in many of the job descriptions that is confusing the cosine similarity . Removing it would hopefully improve this , so ultimately I can build a better dataset for fine tuning. Haha. Complicated.
 Maybe go back to the entity extraction if that is more straight forward perhaps .
+### [[Aug 22nd, 2023]] another look at those fluff outputs hmm
+hmm
+
+Maybe cut up those fluff/noise queries more, to be more specific, more surgical?
+Maybe need a more methodical understanding of what is a fluff/noise phrase?
+Wonder if some of my documents are a bit long did they get truncated actually when I was running the search especially if some fluff phrases are at the tail ends?
+Maybe good next thing , look at the one hot encoding results I had for all the data, can I spot the false negatives therefore?
+```python
+for sub_phrase in one_hot_sub_phrases:
+    df["OHE_" + sub_phrase] = df["result"].map(
+            lambda x: int(sub_phrase in x.lower()))
+
+cols = df.columns.tolist()
+ohe_cols = [x for x in cols if x.startswith("OHE_")]
+
+df["sub_phrase_sum"] = df.apply(lambda x: sum([x[col] for col in ohe_cols]), axis=1)
+```
+```python
+In [518]: df.sort_values(by="sub_phrase_sum", ascending=False)[["score", "sub_phrase_sum"]].iloc[:20]
+Out[518]: 
+         score  sub_phrase_sum
+6975  0.527562              22
+14    0.506731              22
+34    0.497934              22
+33    0.497934              22
+32    0.497934              22
+31    0.497934              22
+6970  0.553183              22
+3490  0.601307              22
+3489  0.619125              22
+3488  0.619125              22
+3487  0.619125              22
+3486  0.619125              22
+3484  0.641208              22
+6971  0.553183              22
+6972  0.553183              22
+10    0.509944              22
+6973  0.553183              22
+6968  0.593046              22
+6969  0.578265              18
+36    0.495994              18
+```
+can maybe have a correlation metric here say ,
+
+### [[Aug 24th, 2023]] embeddings are not unit vectors?
+Are #[[embedding space]] vectors all unit vectors ?? Therefore [[cosine similarity]] is being taken between unit vectors so equivalent to [[dot-product]] ?
+
+Using embeddings from an earlier draw,
+```python
+In [522]: np.linalg.norm(embeddings[0,:])
+Out[522]: 1.690175
+```
+weird I guess they are not unit vectors.
+```python
+In [537]: sorted([np.linalg.norm(embeddings[i,:]) for i in range(embeddings.shape[0])])[-10:]
+Out[537]: 
+[2.4754915,
+ 2.4754915,
+ 2.4754915,
+ 2.4868407,
+ 2.548294,
+ 2.5493302,
+ 2.5712116,
+ 2.5787024,
+ 2.5803518,
+ 2.5848124]
+
+In [538]: sorted([np.linalg.norm(embeddings[i,:]) for i in range(embeddings.shape[0])])[:10]
+Out[538]: 
+[1.3734428,
+ 1.3868212,
+ 1.4120256,
+ 1.4284494,
+ 1.4339207,
+ 1.4454004,
+ 1.4503047,
+ 1.4520775,
+ 1.4637629,
+ 1.4657506]
+
+
+```
+the magnitudes to seem to be small though.
+
 ok

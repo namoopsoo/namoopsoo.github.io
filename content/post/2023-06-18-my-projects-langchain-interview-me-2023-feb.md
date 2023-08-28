@@ -4159,4 +4159,78 @@ Out[552]:
 ```
 not sure what is up yet. but can next, debug this
 
+### [[Aug 27th, 2023]]
+Not sure how to add this "2023-08-27.md", will just add inline for now,
+
+Want to revisit from last time, why was that `corr` was super low last time between the cosine similarity hit score, between those fluff phrases and the `sub_phrase_sum`.
+Take two 
+
+Ok so below, ended up removing some additional punctuation, w/ commit `4039167`. Maybe that helped somewhat, because now below, the correlation is better. 
+
+```python 
+import os
+import pandas as pd
+from pathlib import Path
+from functools import reduce
+
+import utils as ut
+
+# from earlier, 
+
+repos_dir = os.getenv("REPOS_DIR")
+workdir = Path(repos_dir) / "2023-interview-me"
+
+# Earlier dataset of hits querying the dataset
+loc = workdir / "2023-08-18T132229-search-result.csv"
+df = pd.read_csv(loc)
+
+# stop word phrases reducing the technical jargon signal to noise ratio hmm
+fluff_phrases = [
+ut.remove_punctuation(x) for x in
+[  "Amazon is an Equal Opportunity-Affirmative Action Employer - Minority / Female / Disability / Veteran / Gender Identity / Sexual Orientation",
+  'Amazon is driven by being “the world’s most customer centric company."',
+  'In the Health, Safety, Sustainability, Security, and Compliance (HS3C) organization, we own ensuring that all products at Amazon are 100% complaint with all legal, trade, product safety, and food safety requirements.',
+  'We’re obsessed with the safety of all our customers and workers, creating a world-class experience for our millions of vendors and sellers world-wide, and inventing the best business and regulatory models for safe and sustainable supply chains in our industries.',
+]
+]
+
+one_hot_sub_phrases = reduce(
+  lambda x, y: x + y, 
+  [
+    [" ".join(x.split(" ")[i:i + 3]).lower() for i in range(len(x.split(" ")) - 3)]
+    for x in fluff_phrases
+  ]
+)
+
+# df_highest = df[df.score >= 0.5].copy()
+for sub_phrase in one_hot_sub_phrases:
+  df["OHE_" + sub_phrase] = df["result"].map(lambda x: int(sub_phrase in x))
+
+
+cols = df.columns.tolist()
+ohe_cols = [x for x in cols if x.startswith("OHE_")]
+
+df["sub_phrase_sum"] = df.apply(lambda x: sum([x[col] for col in ohe_cols]), axis=1)
+
+df[["score", "sub_phrase_sum"]].corr()
+```
+
+```python
+                 score  sub_phrase_sum
+score           1.000000        0.173458
+sub_phrase_sum  0.173458        1.000000
+```
+thinking about knowledge gaps to address hmm
+
+Is building dataset w [[Multiple negatives ranking loss]] as difficult as I am imagining?
+And is [[supervised fine-tuning]] really needed then if [[jargon]] not in the [[vocabulary]], [[add to transformer vocabulary]] [[out-of-vocabulary-words-OOV]] , or is it okay, just good enough to fine tune instead of updating the [[why a custom tokenizer]].
+Is it important to remove [[stop-words]] ?
+When is [[Named Entity Recognition NER]] a better approach than [[sentence-transformers]]?
+
+### [[Aug 28th, 2023]] Hmm
+just musing
+need some kind of mini next challenge here.
+
+Maybe [pine cone article](https://www.pinecone.io/learn/series/nlp/fine-tune-sentence-transformers-mnr/), and basically my thought process from [earlier Aug 13th](#aug-13th-2023-reading-more-about-multiple-negatives-ranking-loss--researching-how-to-bake-that-cake--looking-into-clustering-to-maybe-help-create-a-dataset) around dataset building , was a good train of thought. Should revisit.
+
 ok

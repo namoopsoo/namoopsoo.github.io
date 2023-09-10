@@ -16,7 +16,7 @@ Broadly would like to do here something like the following
 collapsed:: true
 And [[my projects/personal/langchain-interview-me-2023-feb]] , also now the repo usable by anyone who wants to compare their #brag-document to #job-listings [[job-description]] out there , get a delta , and more broadly , understand say , their industry posture , since that’s a moving target . And you can interview yourself too haha .
 
-I can use the [[my projects/personal/langchain-interview-me-2023-feb]] stuff concepts to see , what roles online do I align with and am I progressing towards them at #Humana or stagnating?
+I can use the [[my projects/personal/langchain-interview-me-2023-feb]] stuff concepts to see , what roles online do I align with and am I progressing towards them at my current role or stagnating?
 
 ### Making updating your #brag-document like a #fun-factor #[[having fun]] experience 😀
 ### And original intent was a UI to actually ask questions

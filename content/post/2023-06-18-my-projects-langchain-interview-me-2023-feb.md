@@ -4232,5 +4232,28 @@ just musing
 need some kind of mini next challenge here.
 
 Maybe [pine cone article](https://www.pinecone.io/learn/series/nlp/fine-tune-sentence-transformers-mnr/), and basically my thought process from [earlier Aug 13th](#aug-13th-2023-reading-more-about-multiple-negatives-ranking-loss--researching-how-to-bake-that-cake--looking-into-clustering-to-maybe-help-create-a-dataset) around dataset building , was a good train of thought. Should revisit.
+### [[Sep 7th, 2023]] goal setting
+considering [[goal setting/specificity]] , think I need something tangible here.
+
+So my vision statements has some good meat in there. Considering say the concept of seeing, given my "brag document" , and a corpus of job descriptions, what is the ranked list of the ones that I align with ?
+I think here, the fundamental question I had was, what is the measurable benefit of using a fine tuned transformer model, in obtaining such a ranked list, versus an out-of-the-box [[sentence-transformers]] model?
+In order to answer that above, I would need a dataset to use to measure this performance.
+And that dataset can also incidentally perhaps be used to help with that fine tuning.
+So far I think the challenge has been that building this [[Multiple negatives ranking loss]] dataset sounds really difficult and or tedious.
+Maybe what I need is to see what is the minimal toy example I could run to convince myself this style of loss [[Multiple negatives ranking loss]] applied would do what I expect. How small of an effect can I measure, etc, spending as little time on building such a experiment as possible ?
+Ok I think that's a good phrasing of this so far.
+
+### [[Sep 13th, 2023]] hmm
+I asked about [[stop-words]], this is useful
+
+Answer , [link](https://chat.openai.com/share/fbdc69e2-8747-49ff-b5ce-9d8355650159 ), was well, that yes removing #stop-words can remove noise, but that really I should experiment with both approaches and choose the better one . Haha so [[no free lunch theorem]]
+### [[Sep 14th, 2023]] digging in more
+continuing my conversation with [[chat GPT]] ,
+
+I asked if I should remove #stop-words before and the answer was that can help with computation since there would be fewer tokens to process. Actually yea that was I think the other main reason I was experimenting with this. I was hitting the limit of the [[context-window]] size of this smaller embedding model.
+Actually that being said, if we are saying #[[sentence bert]] is a [[bag-of-words]] [[bag of tokens]], and if the pooling layer simply is an average then the sentence length shouldn't matter,
+However, continuing my conversation, chat gpt insists that [[sentence bert]] is not a simple average pooling approach but it is using meaningful token weighting , actually somehow reducing the weights of the less meaningful words like #stop-words . And chat gpt is insisting that order matters but I don't see it yet. Maybe initially the order plays a role in the embeddings before the averaging is done?
+> "Semantic Composition: SBERT models are pretrained on large corpora and learn to encode the compositional semantics of language. This means that even if words are averaged, the resulting sentence embeddings capture the semantic relationships between words and their context within the sentence. So, the ordering of words does matter, and SBERT is capable of capturing the meaning of the entire sentence."
+So yes the words are averaged but the sentence embeddings still somehow captures the meaning? Hmm this explanation is still a bit fuzzy. Let me do some more refinement. Probably have to see the code again in more detail
 
 ok

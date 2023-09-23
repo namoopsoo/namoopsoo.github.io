@@ -6,7 +6,17 @@
     <description>Recent content in Posts on michal.piekarczyk.xyz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 10 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>odd pyspark window function behavior</title>
+      <link>https://michal.piekarczyk.xyz/post/2023-09-23-pyspark-window-interesting/</link>
+      <pubDate>Sat, 23 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2023-09-23-pyspark-window-interesting/</guid>
+      <description>Working through this odd window function behavior,
+from pyspark.sql.window import Window import pyspark.sql.functions as F toy_df = spark.createDataFrame( [{&amp;#39;feature&amp;#39;: &amp;#39;feat1&amp;#39;, &amp;#39;category&amp;#39;: &amp;#39;cat1&amp;#39;, &amp;#39;Drift score&amp;#39;: 0.0, &amp;#39;group&amp;#39;: &amp;#39;blah&amp;#39;, &amp;#39;baseline_date&amp;#39;: &amp;#39;20191231&amp;#39;, &amp;#39;compare_date&amp;#39;: &amp;#39;20230131&amp;#39;}, {&amp;#39;feature&amp;#39;: &amp;#39;feat1&amp;#39;, &amp;#39;category&amp;#39;: &amp;#39;cat1&amp;#39;, &amp;#39;Drift score&amp;#39;: 0.0, &amp;#39;group&amp;#39;: &amp;#39;blah&amp;#39;, &amp;#39;baseline_date&amp;#39;: &amp;#39;20220131&amp;#39;, &amp;#39;compare_date&amp;#39;: &amp;#39;20230131&amp;#39;}, {&amp;#39;feature&amp;#39;: &amp;#39;feat1&amp;#39;, &amp;#39;category&amp;#39;: &amp;#39;cat1&amp;#39;, &amp;#39;Drift score&amp;#39;: 0.0, &amp;#39;group&amp;#39;: &amp;#39;blah&amp;#39;, &amp;#39;baseline_date&amp;#39;: &amp;#39;20220731&amp;#39;, &amp;#39;compare_date&amp;#39;: &amp;#39;20230131&amp;#39;}, {&amp;#39;feature&amp;#39;: &amp;#39;feat2&amp;#39;, &amp;#39;category&amp;#39;: &amp;#39;cat1&amp;#39;, &amp;#39;Drift score&amp;#39;: 0.16076398135644604, &amp;#39;group&amp;#39;: &amp;#39;blah&amp;#39;, &amp;#39;baseline_date&amp;#39;: &amp;#39;20191231&amp;#39;, &amp;#39;compare_date&amp;#39;: &amp;#39;20230131&amp;#39;}, {&amp;#39;feature&amp;#39;: &amp;#39;feat2&amp;#39;, &amp;#39;category&amp;#39;: &amp;#39;cat1&amp;#39;, &amp;#39;Drift score&amp;#39;: 0.</description>
+    </item>
+    
     <item>
       <title>summary learning how to learn coursera</title>
       <link>https://michal.piekarczyk.xyz/post/2023-09-10-summary-learning-how-to-learn-coursera/</link>

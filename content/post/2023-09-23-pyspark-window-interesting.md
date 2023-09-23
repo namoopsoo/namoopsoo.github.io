@@ -1,11 +1,12 @@
 ---
-title: odd pyspark window function behavior
+title: Odd pyspark window function behavior
 date: 2023-09-23
 ---
 
-
-
-Working through this odd window function behavior, 
+## I was working through some odd window function behavior
+Analyzing some feature drift data, I wanted to obtain min, max and mean drift values for features, partitioning on the `compare_date` here.
+I would have just done a group by, but I also wanted to get the `baseline_date` relevant to the largest drift score and so I went with the below approach. 
+But I ended up with some strange results.
 
 ```python
 from pyspark.sql.window import Window

@@ -719,6 +719,16 @@ $ gem list bundler *** LOCAL GEMS *** bundler (2.</description>
     </item>
     
     <item>
+      <title>petrol car queue question</title>
+      <link>https://michal.piekarczyk.xyz/post/2023-09-30-petrol-car-queue-practice-question/</link>
+      <pubDate>Wed, 30 Sep 1970 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2023-09-30-petrol-car-queue-practice-question/</guid>
+      <description>okay
+Question There is a queue of N cars waiting at the filling station. 3 fuel dispensers, x, y, z. When a car arrives at front of the queue, driver can choose to go to any dispenser not occupied. If all unoccupied dispensers have less than required by the driver he has to wait. if more than one dispenser has the required liter, the driver chooses the one labeled with the smallest letter.</description>
+    </item>
+    
+    <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/aws/athena/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

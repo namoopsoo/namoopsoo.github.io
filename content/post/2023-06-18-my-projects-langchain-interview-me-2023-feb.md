@@ -4250,10 +4250,149 @@ Answer , [link](https://chat.openai.com/share/fbdc69e2-8747-49ff-b5ce-9d83556501
 ### [[Sep 14th, 2023]] digging in more
 continuing my conversation with [[chat GPT]] ,
 
+collapsed:: true
 I asked if I should remove #stop-words before and the answer was that can help with computation since there would be fewer tokens to process. Actually yea that was I think the other main reason I was experimenting with this. I was hitting the limit of the [[context-window]] size of this smaller embedding model.
 Actually that being said, if we are saying #[[sentence bert]] is a [[bag-of-words]] [[bag of tokens]], and if the pooling layer simply is an average then the sentence length shouldn't matter,
 However, continuing my conversation, chat gpt insists that [[sentence bert]] is not a simple average pooling approach but it is using meaningful token weighting , actually somehow reducing the weights of the less meaningful words like #stop-words . And chat gpt is insisting that order matters but I don't see it yet. Maybe initially the order plays a role in the embeddings before the averaging is done?
 > "Semantic Composition: SBERT models are pretrained on large corpora and learn to encode the compositional semantics of language. This means that even if words are averaged, the resulting sentence embeddings capture the semantic relationships between words and their context within the sentence. So, the ordering of words does matter, and SBERT is capable of capturing the meaning of the entire sentence."
 So yes the words are averaged but the sentence embeddings still somehow captures the meaning? Hmm this explanation is still a bit fuzzy. Let me do some more refinement. Probably have to see the code again in more detail
 
+### [[Sep 15th, 2023]]
+hmm discussing more with [[chat GPT]] I asked where in the "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks" paper https://arxiv.org/pdf/1908.10084.pdf , is it described that SBERT understands the compositional semantics of sentences, meaning that the order does matter, but the response I got was that this is not part of the SBERT paper but the BERT paper, https://arxiv.org/abs/1810.04805 . That kind of makes sense, since [[sentence bert]] leverages [[BERT]]
+
+perhaps we can say that [[sentence bert]] fine tunes #BERT , but there is also that additional Siamese network detail.
+But https://www.pinecone.io/learn/series/nlp/sentence-embeddings/ this is a good paper , I should continue grokking this one.
+hmm so in this siamese construction, I suppose when updating weights from [[softmax loss]], we update w.r.t. the concatenated form .
+ok cool
+
+### [[Sep 16th, 2023]]
+ok so here next continuing my question , trying to understand if the ordering used with [[sentence bert]] [[sentence-transformers]] matters since the [[average-pooling]] does not care about order
+
+But mean pooling is not the only kind. There is also max pooling. And [[chat GPT]] agrees that [[average-pooling]] treats #stop-words same as others.
+Yea this is what I saw in the snippet of code on the [[sentence-transformers]] website .
+And the answer says that if the word order is really important , then [[sentence bert]] is not good for this use case .
+So the other pooling approaches take word order into account? [[max pooling]] , "[CLS] token" based pooling ?
+So the [[Nils Reimers]] [[2019]] [[research-paper-type]] [link](https://arxiv.org/pdf/1908.10084.pdf) , saying they tried three pooling approaches, [[average-pooling]] , as well as taking the output of the [[CLS token]], and computing max over time of the output vectors. Hmm confusing .
+According to [[chat GPT]] , [[max pooling]] is simple but what the heck, this makes no sense how can this be useful
+```python
+import numpy as np
+
+# Sample word embeddings for a sentence (replace with your actual word embeddings)
+word_embeddings = [
+    np.array([0.1, 0.5, 0.2]),
+    np.array([0.3, 0.7, 0.9]),
+    np.array([0.4, 0.2, 0.6]),
+    np.array([0.8, 0.4, 0.5]),
+]
+
+# Perform max pooling to obtain sentence embedding
+sentence_embedding = np.max(word_embeddings, axis=0)
+```
+```python
+In [554]: sentence_embedding
+Out[554]: array([0.8, 0.7, 0.9])
+```
+and for [[Multiple negatives ranking loss]]
+
+https://chat.openai.com/share/381f47fb-a1d3-4579-b889-d3441f19fd17 yea there is some random sampling going on hmm
+
+
+### [[Sep 17th, 2023]]
+Okay
+
+ok next would like to briefly reread the [[Multiple negatives ranking loss]] reply from [[chat GPT]] and get some tips on building a dataset then .
+
+yea
+So reading again yes, that for each positive sentence pair of hypothesis premise, several other unrelated  sentences are randomly chosen as negative examples, and the premise-hypothesis pair loss is directed to lower than the distance between the premise and any of those randomly sampled negative sentences.
+Concretely the example I see is ,
+For a given premise `P` and its positive hypothesis `H_pos`,
+Several negative hypotheses (`H_neg1`, `H_neg2`, ... `H_negN`) are sampled from the corpus.
+The loss aims to ensure that the distance between embeddings of `P` and `H_pos` is smaller than the distance between `P` and any of the `H_negX` samples.
+#### I asked this additional follow up question,
+> This helps me understand Multiple Negatives Ranking loss. However this confirms that creating a dataset to use with Multiple Negatives Ranking loss is challenging. Given that for each  premise hypothesis positive sentence pair, several other sentences are randomly chosen as negative examples, what is a good strategy for creating a dataset like this I can use to fine tune a sentence transformer model using Multiple Negatives Ranking loss? It is difficult enough to create a dataset of positive pairs, but how can I make sure that when choosing any two random pairs, that they will not be positively related and instead neutrally related? To give more context, my specific reason for wanting to fine tune a sentence transformer model is that  I would like to have a sentence transformer model that can create good sentence embeddings of sentences with a lot of words which are not present in the original training set of the out of the box sentence transformer model. If I use a base sentence transformer model on my sentences that have not typical jargon words, I think the embeddings that are created are low quality. Is my reasoning correct here? Or is there a better way of approaching this kind of problem?
+#### And here is the response I got,
+Fine-tuning a Sentence Transformer model using Multiple Negatives Ranking loss can indeed be challenging due to the need for positive and negative pairs. However, when executed well, it can lead to embeddings that capture the nuances of domain-specific jargon or less typical words not present in the original training set.
+
+Here's a step-by-step approach to help you create a dataset and fine-tune the model:
+
+1. **Positive Pairs**: Start by collecting positive pairs that represent the type of semantic relationships you're interested in. These can be expert-generated or sourced from domain-specific resources. For example, if you're working on medical jargon, then sentence pairs from medical literature or journals that describe related concepts can be a starting point.
+
+2. **Negative Pairs**: One approach is to randomly sample sentences from your corpus as negatives. However, to ensure that two random sentences are not positively related:
+
+(a) Implement a simple heuristic: Two sentences from totally different contexts or sections are likely to be unrelated.
+(b)  Utilize an existing Sentence Transformer model: Compute the cosine similarity between embeddings of potential negative pairs. If the similarity score is below a threshold, they can be considered as negatives. This way, you're leveraging the existing model to help in dataset creation.
+  
+3. **Augmenting with Out-of-Domain Data**: To make sure the model generalizes well and doesn't lose its capability on general language understanding:
+
+(a)Mix your domain-specific data with a more general dataset.
+(b)For instance, use some percentage of your domain-specific pairs and the rest from general datasets like NLI (Natural Language Inference) datasets.
+
+4. **Model Fine-tuning**:
+
+(a) Start with a pre-trained Sentence Transformer model.
+(b) Fine-tune this model on your created dataset using MNR loss.
+  
+5. **Evaluation**:
+
+(a) Once you've fine-tuned your model, evaluate it on a held-out set of domain-specific sentence pairs to see how well it captures the desired semantic relationships.
+
+6. **Feedback Loop**: Continuously refine and expand your dataset as more data becomes available or as you identify areas where the model needs improvement.
+
+Regarding your concerns about using a base Sentence Transformer model on sentences with non-typical jargon words, your reasoning is generally correct. Pre-trained models might not capture the semantic nuances of domain-specific terms if they weren't exposed to those terms (or their context) during training. Fine-tuning on your specific dataset can address this gap and improve the quality of embeddings for sentences with domain-specific jargon.
+
+If you're solely interested in handling out-of-vocabulary words or rare jargon, you might also consider using subword tokenization methods (like BPE or SentencePiece) that can represent unfamiliar words as compositions of familiar subword units. This can also improve the quality of embeddings for sentences with rare or domain-specific terms.
+#### Some thoughts,
+
+Use of an existing [[sentence bert]] [[sentence-transformers]] model , in building a new dataset
+Ah interesting, also recommendation , when building a dataset, don’t want a base model to lose its general language ability so only make the [[out-of-vocabulary-words-OOV]] [[out of domain]] a percentage and keep the rest as general like from [[natural language inference dataset]]
+Using the [[data-augmentation]] approach is good because I can therefore start with a moderately size dataset from general well known [[positive pair]] dataset and then slowly add in sentence pairs I create from #jargon [[out of domain]] [[out-of-vocabulary-words-OOV]] data
+And I can use that last part for the [[holdout-set]] for evaluation also
+
+
+### [[Sep 28th, 2023]]
+just put into my mind what was before , last
+
+so yea [[Multiple negatives ranking loss]] . dataset , starting from, one of the original datasets,
+was it these ? Stanford Natural Language Inference (SNLI) and Multi-Genre NLI (MNLI) corpora.
+### [[Sep 29th, 2023]]
+ok going back to this [[chat GPT]] conversation earlier, about [[Multiple negatives ranking loss]], I asked about creating  [[datasets]] , a few tips, I got were,
+
+Start curating [[positive pair]], from the domain with the [[jargon]], with sentences that describe related concepts. Again so, this is [[entailment]] where the "premise suggests the hypothesis",
+And for negative pairs, that contradict each other, a good idea I am reading is yes you can randomly sample from unrelated sections , presumably my corpus, and leverage an existing [[sentence-transformers]] model [[cosine similarity]] on this pair, if below a threshold, then programmatically, allow as a negative pair.
+And mix some percentage of my [[domain knowledge]] specific data with the rest as general language examples from a place like [[natural language inference dataset]].
+And evaluating using the specific [[domain knowledge]] portion of the dataset.
+And iteratively add more examples and repeat. I like this [[iterative-development]] point
+This was a really useful answer, here is the full recipe,
+collapsed:: true
+#+BEGIN_QUOTE
+Fine-tuning a Sentence Transformer model using Multiple Negatives Ranking loss can indeed be challenging due to the need for positive and negative pairs. However, when executed well, it can lead to embeddings that capture the nuances of domain-specific jargon or less typical words not present in the original training set.
+
+Here's a step-by-step approach to help you create a dataset and fine-tune the model:
+
+(1) Positive Pairs: Start by collecting positive pairs that represent the type of semantic relationships you're interested in. These can be expert-generated or sourced from domain-specific resources. For example, if you're working on medical jargon, then sentence pairs from medical literature or journals that describe related concepts can be a starting point.
+
+(2) Negative Pairs: One approach is to randomly sample sentences from your corpus as negatives. However, to ensure that two random sentences are not positively related:
+
+Implement a simple heuristic: Two sentences from totally different contexts or sections are likely to be unrelated.
+Utilize an existing Sentence Transformer model: Compute the cosine similarity between embeddings of potential negative pairs. If the similarity score is below a threshold, they can be considered as negatives. This way, you're leveraging the existing model to help in dataset creation.
+(3) Augmenting with Out-of-Domain Data: To make sure the model generalizes well and doesn't lose its capability on general language understanding:
+
+Mix your domain-specific data with a more general dataset.
+For instance, use some percentage of your domain-specific pairs and the rest from general datasets like NLI (Natural Language Inference) datasets.
+(4) Model Fine-tuning:
+
+Start with a pre-trained Sentence Transformer model.
+Fine-tune this model on your created dataset using MNR loss.
+(5) Evaluation:
+
+Once you've fine-tuned your model, evaluate it on a held-out set of domain-specific sentence pairs to see how well it captures the desired semantic relationships.
+Feedback Loop: Continuously refine and expand your dataset as more data becomes available or as you identify areas where the model needs improvement.
+#+END_QUOTE
+[[natural language inference dataset]]?
+09:15 Ok seeing that here, https://huggingface.co/datasets/snli , indeed premise, hypothesis and label.
+So on https://www.pinecone.io/learn/series/nlp/sentence-embeddings/#Sentence-Transformers , they're using
+```
+model = SentenceTransformer('bert-base-nli-mean-tokens')
+```
+ok so let me pick up next time by trying out the mini data I used for tine tuning from [here earlier](https://michal.piekarczyk.xyz/post/2023-06-18-my-projects-langchain-interview-me-2023-feb/#jul-15th-2023-finally-tried-the-supervised-fine-tuning-but-didnt-seem-to-add-to-the-vocabulary).
 ok

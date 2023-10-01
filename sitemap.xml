@@ -2,11 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://michal.piekarczyk.xyz/post/2023-09-23-pyspark-window-interesting/</loc>
-    <lastmod>2023-09-23T12:39:45-04:00</lastmod>
+    <loc>https://michal.piekarczyk.xyz/post/2023-09-24-no-coffee-from-kamira/</loc>
+    <lastmod>2023-09-30T21:16:22-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/post/</loc>
-    <lastmod>2023-09-30T17:07:24-04:00</lastmod>
+    <lastmod>2023-09-30T21:16:22-04:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/post/2023-09-23-pyspark-window-interesting/</loc>
+    <lastmod>2023-09-23T12:39:45-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/post/2023-09-10-summary-learning-how-to-learn-coursera/</loc>
     <lastmod>2023-09-10T18:05:40-04:00</lastmod>

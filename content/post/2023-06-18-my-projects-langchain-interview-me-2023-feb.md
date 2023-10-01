@@ -4311,36 +4311,33 @@ The loss aims to ensure that the distance between embeddings of `P` and `H_pos` 
 #### I asked this additional follow up question,
 > This helps me understand Multiple Negatives Ranking loss. However this confirms that creating a dataset to use with Multiple Negatives Ranking loss is challenging. Given that for each  premise hypothesis positive sentence pair, several other sentences are randomly chosen as negative examples, what is a good strategy for creating a dataset like this I can use to fine tune a sentence transformer model using Multiple Negatives Ranking loss? It is difficult enough to create a dataset of positive pairs, but how can I make sure that when choosing any two random pairs, that they will not be positively related and instead neutrally related? To give more context, my specific reason for wanting to fine tune a sentence transformer model is that  I would like to have a sentence transformer model that can create good sentence embeddings of sentences with a lot of words which are not present in the original training set of the out of the box sentence transformer model. If I use a base sentence transformer model on my sentences that have not typical jargon words, I think the embeddings that are created are low quality. Is my reasoning correct here? Or is there a better way of approaching this kind of problem?
 #### And here is the response I got,
-Fine-tuning a Sentence Transformer model using Multiple Negatives Ranking loss can indeed be challenging due to the need for positive and negative pairs. However, when executed well, it can lead to embeddings that capture the nuances of domain-specific jargon or less typical words not present in the original training set.
+> Fine-tuning a Sentence Transformer model using Multiple Negatives Ranking loss can indeed be challenging due to the need for positive and negative pairs. However, when executed well, it can lead to embeddings that capture the nuances of domain-specific jargon or less typical words not present in the original training set.
 
-Here's a step-by-step approach to help you create a dataset and fine-tune the model:
+> Here's a step-by-step approach to help you create a dataset and fine-tune the model:
 
-1. **Positive Pairs**: Start by collecting positive pairs that represent the type of semantic relationships you're interested in. These can be expert-generated or sourced from domain-specific resources. For example, if you're working on medical jargon, then sentence pairs from medical literature or journals that describe related concepts can be a starting point.
+> 1. **Positive Pairs**: Start by collecting positive pairs that represent the type of semantic relationships you're interested in. These can be expert-generated or sourced from domain-specific resources. For example, if you're working on medical jargon, then sentence pairs from medical literature or journals that describe related concepts can be a starting point.
 
-2. **Negative Pairs**: One approach is to randomly sample sentences from your corpus as negatives. However, to ensure that two random sentences are not positively related:
+> 2. **Negative Pairs**: One approach is to randomly sample sentences from your corpus as negatives. However, to ensure that two random sentences are not positively related:
 
-(a) Implement a simple heuristic: Two sentences from totally different contexts or sections are likely to be unrelated.
+> (a) Implement a simple heuristic: Two sentences from totally different contexts or sections are likely to be unrelated.
 (b)  Utilize an existing Sentence Transformer model: Compute the cosine similarity between embeddings of potential negative pairs. If the similarity score is below a threshold, they can be considered as negatives. This way, you're leveraging the existing model to help in dataset creation.
   
-3. **Augmenting with Out-of-Domain Data**: To make sure the model generalizes well and doesn't lose its capability on general language understanding:
-
+> 3. **Augmenting with Out-of-Domain Data**: To make sure the model generalizes well and doesn't lose its capability on general language understanding:
 (a)Mix your domain-specific data with a more general dataset.
 (b)For instance, use some percentage of your domain-specific pairs and the rest from general datasets like NLI (Natural Language Inference) datasets.
 
-4. **Model Fine-tuning**:
-
+> 4. **Model Fine-tuning**:
 (a) Start with a pre-trained Sentence Transformer model.
 (b) Fine-tune this model on your created dataset using MNR loss.
   
-5. **Evaluation**:
-
+> 5. **Evaluation**:
 (a) Once you've fine-tuned your model, evaluate it on a held-out set of domain-specific sentence pairs to see how well it captures the desired semantic relationships.
 
-6. **Feedback Loop**: Continuously refine and expand your dataset as more data becomes available or as you identify areas where the model needs improvement.
+> 6. **Feedback Loop**: Continuously refine and expand your dataset as more data becomes available or as you identify areas where the model needs improvement.
 
-Regarding your concerns about using a base Sentence Transformer model on sentences with non-typical jargon words, your reasoning is generally correct. Pre-trained models might not capture the semantic nuances of domain-specific terms if they weren't exposed to those terms (or their context) during training. Fine-tuning on your specific dataset can address this gap and improve the quality of embeddings for sentences with domain-specific jargon.
+> Regarding your concerns about using a base Sentence Transformer model on sentences with non-typical jargon words, your reasoning is generally correct. Pre-trained models might not capture the semantic nuances of domain-specific terms if they weren't exposed to those terms (or their context) during training. Fine-tuning on your specific dataset can address this gap and improve the quality of embeddings for sentences with domain-specific jargon.
 
-If you're solely interested in handling out-of-vocabulary words or rare jargon, you might also consider using subword tokenization methods (like BPE or SentencePiece) that can represent unfamiliar words as compositions of familiar subword units. This can also improve the quality of embeddings for sentences with rare or domain-specific terms.
+> If you're solely interested in handling out-of-vocabulary words or rare jargon, you might also consider using subword tokenization methods (like BPE or SentencePiece) that can represent unfamiliar words as compositions of familiar subword units. This can also improve the quality of embeddings for sentences with rare or domain-specific terms.
 #### Some thoughts,
 
 Use of an existing [[sentence bert]] [[sentence-transformers]] model , in building a new dataset

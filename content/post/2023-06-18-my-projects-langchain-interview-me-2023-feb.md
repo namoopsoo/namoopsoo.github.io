@@ -4258,15 +4258,16 @@ However, continuing my conversation, chat gpt insists that [[sentence bert]] is 
 So yes the words are averaged but the sentence embeddings still somehow captures the meaning? Hmm this explanation is still a bit fuzzy. Let me do some more refinement. Probably have to see the code again in more detail
 
 ### [[Sep 15th, 2023]]
-hmm discussing more with [[chat GPT]] I asked where in the "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks" paper https://arxiv.org/pdf/1908.10084.pdf , is it described that SBERT understands the compositional semantics of sentences, meaning that the order does matter, but the response I got was that this is not part of the SBERT paper but the BERT paper, https://arxiv.org/abs/1810.04805 . That kind of makes sense, since [[sentence bert]] leverages [[BERT]]
+#### hmm discussing more with [[chat GPT]] I asked 
 
+where in the "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks" paper https://arxiv.org/pdf/1908.10084.pdf , is it described that SBERT understands the compositional semantics of sentences, meaning that the order does matter, but the response I got was that this is not part of the SBERT paper but the BERT paper, https://arxiv.org/abs/1810.04805 . That kind of makes sense, since [[sentence bert]] leverages [[BERT]]
 perhaps we can say that [[sentence bert]] fine tunes #BERT , but there is also that additional Siamese network detail.
 But https://www.pinecone.io/learn/series/nlp/sentence-embeddings/ this is a good paper , I should continue grokking this one.
 hmm so in this siamese construction, I suppose when updating weights from [[softmax loss]], we update w.r.t. the concatenated form .
 ok cool
 
 ### [[Sep 16th, 2023]]
-ok so here next continuing my question , trying to understand if the ordering used with [[sentence bert]] [[sentence-transformers]] matters since the [[average-pooling]] does not care about order
+#### ok so here next continuing my question , trying to understand if the ordering used with [[sentence bert]] [[sentence-transformers]] matters since the [[average-pooling]] does not care about order
 
 But mean pooling is not the only kind. There is also max pooling. And [[chat GPT]] agrees that [[average-pooling]] treats #stop-words same as others.
 Yea this is what I saw in the snippet of code on the [[sentence-transformers]] website .
@@ -4292,7 +4293,7 @@ sentence_embedding = np.max(word_embeddings, axis=0)
 In [554]: sentence_embedding
 Out[554]: array([0.8, 0.7, 0.9])
 ```
-and for [[Multiple negatives ranking loss]]
+#### and for [[Multiple negatives ranking loss]]
 
 https://chat.openai.com/share/381f47fb-a1d3-4579-b889-d3441f19fd17 yea there is some random sampling going on hmm
 
@@ -4300,7 +4301,7 @@ https://chat.openai.com/share/381f47fb-a1d3-4579-b889-d3441f19fd17 yea there is 
 ### [[Sep 17th, 2023]]
 Okay
 
-ok next would like to briefly reread the [[Multiple negatives ranking loss]] reply from [[chat GPT]] and get some tips on building a dataset then .
+#### ok next would like to briefly reread the [[Multiple negatives ranking loss]] reply from [[chat GPT]] and get some tips on building a dataset then .
 
 yea
 So reading again yes, that for each positive sentence pair of hypothesis premise, several other unrelated  sentences are randomly chosen as negative examples, and the premise-hypothesis pair loss is directed to lower than the distance between the premise and any of those randomly sampled negative sentences.
@@ -4347,20 +4348,19 @@ And I can use that last part for the [[holdout-set]] for evaluation also
 
 
 ### [[Sep 28th, 2023]]
-just put into my mind what was before , last
+#### just put into my mind what was before , last
 
 so yea [[Multiple negatives ranking loss]] . dataset , starting from, one of the original datasets,
 was it these ? Stanford Natural Language Inference (SNLI) and Multi-Genre NLI (MNLI) corpora.
 ### [[Sep 29th, 2023]]
-ok going back to this [[chat GPT]] conversation earlier, about [[Multiple negatives ranking loss]], I asked about creating  [[datasets]] , a few tips, I got were,
+#### ok going back to this [[chat GPT]] conversation earlier, about [[Multiple negatives ranking loss]], I asked about creating  [[datasets]] , a few tips, I got were,
 
 Start curating [[positive pair]], from the domain with the [[jargon]], with sentences that describe related concepts. Again so, this is [[entailment]] where the "premise suggests the hypothesis",
 And for negative pairs, that contradict each other, a good idea I am reading is yes you can randomly sample from unrelated sections , presumably my corpus, and leverage an existing [[sentence-transformers]] model [[cosine similarity]] on this pair, if below a threshold, then programmatically, allow as a negative pair.
 And mix some percentage of my [[domain knowledge]] specific data with the rest as general language examples from a place like [[natural language inference dataset]].
 And evaluating using the specific [[domain knowledge]] portion of the dataset.
 And iteratively add more examples and repeat. I like this [[iterative-development]] point
-This was a really useful answer, here is the full recipe,
-collapsed:: true
+#### This was a really useful answer, here is the full recipe,
 > Fine-tuning a Sentence Transformer model using Multiple Negatives Ranking loss can indeed be challenging due to the need for positive and negative pairs. However, when executed well, it can lead to embeddings that capture the nuances of domain-specific jargon or less typical words not present in the original training set.
 
 > Here's a step-by-step approach to help you create a dataset and fine-tune the model:
@@ -4381,7 +4381,7 @@ Fine-tune this model on your created dataset using MNR loss.
 (5) Evaluation:
 Once you've fine-tuned your model, evaluate it on a held-out set of domain-specific sentence pairs to see how well it captures the desired semantic relationships.
 Feedback Loop: Continuously refine and expand your dataset as more data becomes available or as you identify areas where the model needs improvement.
-[[natural language inference dataset]]?
+#### so [[natural language inference dataset]]?
 09:15 Ok seeing that here, https://huggingface.co/datasets/snli , indeed premise, hypothesis and label.
 So on https://www.pinecone.io/learn/series/nlp/sentence-embeddings/#Sentence-Transformers , they're using
 ```

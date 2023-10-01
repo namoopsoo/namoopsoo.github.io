@@ -4361,30 +4361,26 @@ And evaluating using the specific [[domain knowledge]] portion of the dataset.
 And iteratively add more examples and repeat. I like this [[iterative-development]] point
 This was a really useful answer, here is the full recipe,
 collapsed:: true
-#+BEGIN_QUOTE
-Fine-tuning a Sentence Transformer model using Multiple Negatives Ranking loss can indeed be challenging due to the need for positive and negative pairs. However, when executed well, it can lead to embeddings that capture the nuances of domain-specific jargon or less typical words not present in the original training set.
+> Fine-tuning a Sentence Transformer model using Multiple Negatives Ranking loss can indeed be challenging due to the need for positive and negative pairs. However, when executed well, it can lead to embeddings that capture the nuances of domain-specific jargon or less typical words not present in the original training set.
 
-Here's a step-by-step approach to help you create a dataset and fine-tune the model:
+> Here's a step-by-step approach to help you create a dataset and fine-tune the model:
 
-(1) Positive Pairs: Start by collecting positive pairs that represent the type of semantic relationships you're interested in. These can be expert-generated or sourced from domain-specific resources. For example, if you're working on medical jargon, then sentence pairs from medical literature or journals that describe related concepts can be a starting point.
+> (1) Positive Pairs: Start by collecting positive pairs that represent the type of semantic relationships you're interested in. These can be expert-generated or sourced from domain-specific resources. For example, if you're working on medical jargon, then sentence pairs from medical literature or journals that describe related concepts can be a starting point.
 
-(2) Negative Pairs: One approach is to randomly sample sentences from your corpus as negatives. However, to ensure that two random sentences are not positively related:
+> (2) Negative Pairs: One approach is to randomly sample sentences from your corpus as negatives. However, to ensure that two random sentences are not positively related:
 
-Implement a simple heuristic: Two sentences from totally different contexts or sections are likely to be unrelated.
+> Implement a simple heuristic: Two sentences from totally different contexts or sections are likely to be unrelated.
 Utilize an existing Sentence Transformer model: Compute the cosine similarity between embeddings of potential negative pairs. If the similarity score is below a threshold, they can be considered as negatives. This way, you're leveraging the existing model to help in dataset creation.
-(3) Augmenting with Out-of-Domain Data: To make sure the model generalizes well and doesn't lose its capability on general language understanding:
+> (3) Augmenting with Out-of-Domain Data: To make sure the model generalizes well and doesn't lose its capability on general language understanding:
 
-Mix your domain-specific data with a more general dataset.
+> Mix your domain-specific data with a more general dataset.
 For instance, use some percentage of your domain-specific pairs and the rest from general datasets like NLI (Natural Language Inference) datasets.
 (4) Model Fine-tuning:
-
 Start with a pre-trained Sentence Transformer model.
 Fine-tune this model on your created dataset using MNR loss.
 (5) Evaluation:
-
 Once you've fine-tuned your model, evaluate it on a held-out set of domain-specific sentence pairs to see how well it captures the desired semantic relationships.
 Feedback Loop: Continuously refine and expand your dataset as more data becomes available or as you identify areas where the model needs improvement.
-#+END_QUOTE
 [[natural language inference dataset]]?
 09:15 Ok seeing that here, https://huggingface.co/datasets/snli , indeed premise, hypothesis and label.
 So on https://www.pinecone.io/learn/series/nlp/sentence-embeddings/#Sentence-Transformers , they're using

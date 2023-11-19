@@ -156,8 +156,6 @@ def convert_local_images_to_s3_assets(content_file_path, absolute_asset_dir, rep
     asset_dir = Path(absolute_asset_dir)
     images = []
 
-    import ipdb; ipdb.set_trace()
-
     # first pass
     for line in lines:
         match_img_src = re.search(r"<img\s+src=\"([^\"]+)\"", line)

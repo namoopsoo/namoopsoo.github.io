@@ -7,6 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>test drive chat gpt data analysis</title>
+      <link>https://michal.piekarczyk.xyz/post/2023-11-18-test-drive-chat-gpt-data-analysis/</link>
+      <pubDate>Sat, 18 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2023-11-18-test-drive-chat-gpt-data-analysis/</guid>
+      <description>blog-date:: 2023-11-18
+So lets try out Chat GPT&amp;rsquo;s new Data Analysis functionality I passed in my multi-year data dump from Carb Manager and thought, can I plot the protein data. Here is more or less what transpired ,
+Starting out, me Can you plot the calories per day over time ?
+Data Analysis Sure, I can help with that. I&amp;rsquo;ll start by loading and examining the data from the file you&amp;rsquo;ve uploaded to understand its structure.</description>
+    </item>
+    
+    <item>
       <title>Help diagnose no coffee coming out of your Kamira Espresso Machine</title>
       <link>https://michal.piekarczyk.xyz/post/2023-09-24-no-coffee-from-kamira/</link>
       <pubDate>Sun, 24 Sep 2023 00:00:00 +0000</pubDate>

@@ -4,7 +4,7 @@ date: 2023-12-09
 ---
 
 # The problem
-    Messages have been clogging up my iphone for a while now and at this point, they are taking up maybe 15Gigs. Most of this is photo attchments. I thought an options was to manually go through the phone UI, deleting photo attachments to save space, but I did a bit of this tedium and the storage space did not seem to clear up. Maybe it is delayed? The other alternative is to hit a button that says "only keep messages up to a year old". In reality, I don't need the 15 Gigs of photo attachments, but I don't want to lose the text data. 
+Messages have been clogging up my iphone for a while now and at this point, they are taking up maybe 15Gigs. Most of this is photo attchments. I thought an options was to manually go through the phone UI, deleting photo attachments to save space, but I did a bit of this tedium and the storage space did not seem to clear up. Maybe it is delayed? The other alternative is to hit a button that says "only keep messages up to a year old". In reality, I don't need the 15 Gigs of photo attachments, but I don't want to lose the text data. 
 
 # Mac laptop based export
 Luckily a month or two ago I started syncing imessages through icloud and so I was able to try out [ReagentX's imessage-exporter](https://github.com/ReagentX/imessage-exporter) on github. Looks like this only pulled scattered `1meg` ofconversations, for sure only from this last month or two. 

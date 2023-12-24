@@ -109,6 +109,13 @@ and the line 21 above is the `var s Shape = Rectangle{Width: 10, Height: 5}` , s
 
 And indeed when I fix the types of `Width` and `Height` to `int` in `Rectangle` and comment out that line `21` above, the program actually has no compile error, so then looks like this is a runtime error only.
 
+## Behavior of passing objects into functions
+Ok, we have pass by value behavior and we have pass by reference behavior, depending on the type. 
+
+Wow, i learned that the size of a Go array is part of its type and therefore you must define a different function for different sizes of arrays as inputs. 
+
+But this is not true of slices as function parameters, which   also have a pass by reference behavior as opposed to array pass by value behavior and so overall seems like passing slices to functions is the way to go.
+
 ```go
 ```
 

@@ -5,9 +5,10 @@ title: test drive chat gpt data analysis
 blog-date:: 2023-11-18
 
 # So lets try out Chat GPT's new Data Analysis functionality
-I passed in my multi-year data dump from Carb Manager and thought, can I plot the protein data. Here is more or less what transpired ,
-# Starting out,
-## me
+I passed in my multi-year food log dump from Carb Manager and thought, can I plot the protein data. Here is more or less what transpired.
+
+In the Analysis tool, I upload a csv file that I exported from Carb Manager and I opened with this question below.
+## Me
 > Can you plot the calories per day over time ?
 ## Data Analysis
 > Sure, I can help with that. I'll start by loading and examining the data from the file you've uploaded to understand its structure. Then, I'll plot the calories per day over time. Let's begin by loading the data.
@@ -21,15 +22,15 @@ Here's the plot showing the total calories per day over time. This visualization
 > The column for protein intake in your dataset is labeled as 'Protein (g)'. I'll use this column to calculate the average daily protein intake for each month. Then, I'll plot this information to show how the average protein intake varied over time, grouped by month. Let's proceed with the analysis.
 {{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-11-18-test-drive-chat-gpt-data-analysis/image_1700347773243_0.png" width="70%">}}
 > Here's the plot showing the average daily protein intake per month over time. This visualization illustrates how your protein consumption has varied on a monthly basis. If you have any more specific analysis or different aspects of your data you'd like to explore, please feel free to ask!
-## Hmm
-So I noticed this looked strangely low, as if the summing was not happening somehow.
+## _Commentary_
+So I noticed this looked strangely low, as if the summing was not happening somehow. We should be seeing 100g plus.
 ## Me
 > This is not quite what I meant, this is doing a group by of all the rows in a month and finding the average protein . However I’m interested in the daily average and so I mean let’s get the sum of protein for each day and then group by month to get the average daily sum of protein over time . Sorry I was not precise .
 ## Data Analysis 
 > Thank you for the clarification. To provide the analysis you're looking for, I'll first calculate the total protein intake for each day. Then, I'll group these daily totals by month and calculate the average daily protein intake for each month. This will give us the average of daily sums of protein intake, month by month. Let's proceed with this updated approach.
 {{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-11-18-test-drive-chat-gpt-data-analysis/image_1700348171903_0.png" width="70%">}}
 > Here is the updated plot showing the average of daily sums of protein intake per month over time. This graph provides a view of how the average daily protein consumption has trended on a monthly basis. If there's anything else you'd like to analyze or any other questions, feel free to let me know!
-## Hmmm 
+## _Commentary_
 Still low. These numbers should be in the hundreds to two hundreds.
 ## Me
 > For some reason the average of the daily sums looks really low. Can we   plot a histogram of the daily protein sums for all time ?
@@ -43,6 +44,8 @@ Still low. These numbers should be in the hundreds to two hundreds.
 > Absolutely, focusing on the days with daily protein sums below 50 grams will give us a clearer view of the lower end of the distribution. I'll create a histogram that only includes days where the total protein intake was less than 50 grams. Let's see what that looks like.
 {{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-11-18-test-drive-chat-gpt-data-analysis/image_1700351156591_0.png" width="70%">}}
 > Here's the histogram focusing on days with daily protein sums below 50 grams. This gives a detailed look at the distribution of your lower protein intake days. If you have any further questions or need additional analysis, please let me know!
+## _Commentary_
+Ok I realized that maybe the problem is that since the Carb Manager csv also includes "activity" data, that is interfering with the analysis.
 ## Me 
 > Okay I have a feeling the problem is that this dataset includes rows with two kinds of data , one kind of data does not contain protein data and that missing data must have been filled in as 0. Lets first drop all the rows that have empty or missing values for protein and then let’s plot the histogram of the daily protein sum
 ## Data Analysis
@@ -99,7 +102,6 @@ Fage 5% Milkfat Greek Yogurt: 26.47g of protein
 Nirvana 85% Dark Chocolate: 7.50g of protein
 
 ```
-id:: 655959e6-1004-48b5-b7bd-0355daf216c1
 > If you need further analysis or have other questions regarding this data, feel free to ask!
 ## Me 
 > Let’s start from the original dataset. Rename the date column to “timestamp”.  Let’s filter by rows where the type column is “Food”. 
@@ -111,14 +113,14 @@ Next let’s create a new column, “date”, which has only the date from the �
 > I encountered another issue with executing the code. It seems there might be a specific problem with the dataset or the process I'm using. To ensure we can proceed, I'll try a simplified approach to plot the histogram. Let's see if this works. ​​
 > It appears that the issue persists despite the simplified approach. This could be due to an unexpected characteristic of the data or a technical limitation in the current environment.
 > As an alternative, I can guide you through the steps to perform this analysis on your own system using Python, or we can explore other aspects of your data. Let me know how you'd like to proceed!
-## Hmm 
+## _Commentary_
 I looked at the outputs of code, but I did not see errors actually, so I asked,
 ## Me
 > I don’t see the error, could you please share the error?
 ## Data analysis 
 > I apologize for the inconvenience, but I'm unable to directly view or share specific error messages from the code execution environment. This limitation makes it challenging to diagnose the precise issue causing the repeated failures.
 > If you're familiar with Python, I can provide the code snippet for you to run in your own environment, where you'll be able to see any error messages and potentially troubleshoot the issue more effectively. Alternatively, if there's another way you'd like to proceed with the analysis or a different question, I'm here to assist!
-## Hmm
+## _Commentary_
 Ok at this point I went ahead to my laptop, and I tried out the code that was running into a problem, from a jupyter lab  notebook.
 ```python
 import pandas as pd
@@ -136,7 +138,7 @@ data = pd.read_csv(path)
 ## Ok let's try to rerun the problematic code
 Ok below, I more or less copy-pasted the below from the Chat GPT output, except I just needed to replace the plotting using the `plt` directly, with a `fig, ax = plt.subplots()` style because the axes come out invisible on a dark layout, and I wanted to make use of `fig.patch.set_facecolor('xkcd:mint green')` to make the background there visible.
 
-But other than that, the original code is there.
+But other than that, the original code is below.
 ```python
 # Starting from the original dataset
 data_renamed = data.copy()
@@ -167,8 +169,13 @@ plt.show()
 
 ```
 {{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-11-18-test-drive-chat-gpt-data-analysis/image_1700354931389_0.png" width="70%">}}
+
+### Then it did work?
+I see per my above run that the code that Chat GPT was running into an issue with, was actually correct for me, correctly stripping the hour minute data from the timestamps, helping to group by date and getting rid of the weird 0-skewed  histogram problem.
+
+
 ## So a time plot now
-So finally since the above correction shows the histogram is normal now, then let's use the original time plot code, 
+So finally since the above correction shows the histogram is _normal_ now, then let's use the original time plot code, 
 but let me tweak that slightly with the correction of using the Date derived from the timestamp.
 ```python
 # Starting from the original dataset
@@ -208,7 +215,14 @@ plt.show()
 {{< figure src="https://s3.amazonaws.com/my-blog-content/2023/2023-11-18-test-drive-chat-gpt-data-analysis/image_1700354971317_0.png" width="70%">}}
 Ok above looking much better now. And some weirdness with the very beginning, but hopefully explainable.
 
+## Ok in conclusion
+I am observing that the amount of knowledge I need to have about the problem, was high. I needed to realize there was a separate set of "activity" row data that had no protein information which was likely contributing to imputation and low protein averages.  And it seems that I needed to plug in a lot of theories about what the possible problems were in general. I needed to jump in about casting the timestamps to dates. In the end the code was having some execution issues on the Chat GPT side but that will probably be fixed at some point. The code basically ran fine on my laptop. 
 
+But my impression is that natural language is a kind of approximation to code that is open to interpretation, whereas code is much more precise. I am seeing that natural language to code is a great way to kick start an analysis, but you may need a lot of domain and analytical knowledge to wrangle the problem anyway. And how do you get that domain and analytical knowledge? Well you need to have gotten your hands dirty with the code. 
+
+I think the transformer architecture, this year, has shown me that the output very much mirrors the input and by design. That makes it remind me of the FOIA process otherwise known as the Freedom of Information Act process whereby you can get closed government documents, but only if you know what to ask for. So the current state of Chat GPT Analysis seems like FOIA. If you know what to ask for, it will deliver.
+
+Very likely, with additional rich diagnostic data around debugging and problem solving, we will likely get a much more perceptive set of models soon. And it is likely that the Chat GPT of today actually already has all of that diagnostic information at its disposal, but I just need to better learn 😅 what natural language I should use to cue the debug help better in the future. I am sure to try things like, _so what do you think we should try next?_.
 
 
 

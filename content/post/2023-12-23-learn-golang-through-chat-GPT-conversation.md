@@ -30,3 +30,41 @@ func main() {
 }
 
 ```
+
+## Attaching functions to struct types 
+So there are no classes per se. You can however attach methods to structs, with this additional syntactic sugar, below. 
+
+There is an additional `(r Rectangle)` squished in between `func` and `Area` and the arguments are an empty `()`. 
+
+```go
+package main
+
+import "fmt"
+
+// Define a struct
+type Rectangle struct {
+    Width, Height float64
+}
+
+// Define a method on the struct
+func (r Rectangle) Area() float64 {
+    return r.Width * r.Height
+}
+
+// Define an interface
+type Shape interface {
+    Area() float64
+}
+
+func main() {
+    var s Shape = Rectangle{Width: 10, Height: 5}
+    fmt.Println("Area:", s.Area())
+}
+```
+
+
+
+```go
+```
+
+

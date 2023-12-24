@@ -6,7 +6,17 @@
     <description>Recent content in Posts on michal.piekarczyk.xyz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 09 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Some of my notes through learning Golang by conversing with ChatGPT</title>
+      <link>https://michal.piekarczyk.xyz/post/2023-12-23-learn-golang-through-chat-gpt-conversation/</link>
+      <pubDate>Sat, 23 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2023-12-23-learn-golang-through-chat-gpt-conversation/</guid>
+      <description>I have not messed around with Golang yet and figured why not try to learn this through just chatting with ChatGPT? Not a full conversation below , but just using this to jot down some notes. And most of the code examples I&amp;rsquo;m pasting below are from ChatGPT.
+Error handling is very different in Go So no exceptions like Python. Instead, you can give a return tuple type from a function like this and the second term will be a error code.</description>
+    </item>
+    
     <item>
       <title>Exporting messages from Apple imessages</title>
       <link>https://michal.piekarczyk.xyz/post/2023-12-09-imessage-export/</link>

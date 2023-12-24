@@ -2,10 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://michal.piekarczyk.xyz/post/2023-12-09-imessage-export/</loc>
-    <lastmod>2023-12-10T12:37:43-05:00</lastmod>
-  </url><url>
     <loc>https://michal.piekarczyk.xyz/post/</loc>
+    <lastmod>2023-12-24T10:14:44-05:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/post/2023-12-23-learn-golang-through-chat-gpt-conversation/</loc>
+    <lastmod>2023-12-24T10:14:44-05:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/post/2023-12-09-imessage-export/</loc>
     <lastmod>2023-12-10T12:37:43-05:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/post/2023-11-18-test-drive-chat-gpt-data-analysis/</loc>

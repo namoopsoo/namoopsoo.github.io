@@ -36,6 +36,8 @@ So there are no classes per se. You can however attach methods to structs, with 
 
 There is an additional `(r Rectangle)` squished in between `func` and `Area` and the arguments are an empty `()`. 
 
+In addition , an interface is defined also below, `Shape`, which carries a subset of the methods that are defined on the struct type `Rectangle`.
+
 ```go
 package main
 
@@ -61,6 +63,8 @@ func main() {
     fmt.Println("Area:", s.Area())
 }
 ```
+
+In addition, I was inquiring in the above , why bother specifying that the return of `Area` in the interface `Shape` is `float64` if we already know the type from the earlier definition of `Area` earlier. And the response was that more or less the interface is a contract and that types "might" implement  it or they might not. 
 
 
 

@@ -125,3 +125,6 @@ Discussing this, I was asking , hey if I want to build a web server with Golang,
 
 Chat GPT reminding me that, unbufferes channels block but also buffered channels that are "full" also block. 
 
+But the recommendation was to use a channel with a capacity that is large enough to handle peak loads, and then that would prevent a listener from blocking on a push to the channel.
+
+Yea good point!

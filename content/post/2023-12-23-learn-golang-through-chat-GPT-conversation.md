@@ -169,3 +169,27 @@ func main() {
 ```
 Nice let me see if it runs  !
 
+### Okay that basically worked out of the box
+Only that `"time"` was imported but unused. Other than that worked like here, after putting this into a `serve.go`
+
+```sh
+go run serve.go
+```
+and I used a python repl to call the server, 
+```python
+import requests
+
+In [2]: data = {"some": "data"}
+   ...: r = requests.post("http://localhost:8080", json=data)
+
+In [3]: r.status_code, r.text
+Out[3]: (200, 'Request is being processed\n')
+
+```
+And saw this in my STDOUT logs, 
+```sh
+Received request: &{POST / HTTP/1.1 1 1 map[Accept:[*/*] Accept-Encoding:[gzip, deflate] Connection:[keep-alive] Content-Length:[16] Content-Type:[application/json] User-Agent:[python-requests/2.31.0]] 0xc00012a240 <nil> 16 [] false localhost:8080 map[] map[] <nil> map[] 127.0.0.1:63359 / <nil> <nil> <nil> 0xc000076230}
+Worker 1 processing request: {POST / HTTP/1.1 1 1 map[Accept:[*/*] Accept-Encoding:[gzip, deflate] Connection:[keep-alive] Content-Length:[16] Content-Type:[application/json] User-Agent:[python-requests/2.31.0]] 0xc00012a240 <nil> 16 [] false localhost:8080 map[] map[] <nil> map[] 127.0.0.1:63359 / <nil> <nil> <nil> 0xc000076230}
+
+```
+Nice, so the response is provided by the server, `Request is being processed`. And a cool next step would be, okay probably I should pass the response writer `http.ResponseWriter` to the worker, so that it can send the response? Let me try. 

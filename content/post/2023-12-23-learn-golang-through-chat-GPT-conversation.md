@@ -119,4 +119,9 @@ But this is not true of slices as function parameters, which   also have a pass 
 ```go
 ```
 
+## HTTP server with channels for delegating to  workers
+
+Discussing this, I was asking , hey if I want to build a web server with Golang, with a listener that receives HTTP requests and then pushes them to channels for available workers to consume , are channels good option for this or would this cause the listener go routine to block on channel push operations? 
+
+Chat GPT reminding me that, unbufferes channels block but also buffered channels that are "full" also block. 
 

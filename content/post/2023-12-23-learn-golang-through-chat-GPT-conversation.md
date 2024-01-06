@@ -193,3 +193,105 @@ Worker 1 processing request: {POST / HTTP/1.1 1 1 map[Accept:[*/*] Accept-Encodi
 
 ```
 Nice, so the response is provided by the server, `Request is being processed`. And a cool next step would be, okay probably I should pass the response writer `http.ResponseWriter` to the worker, so that it can send the response? Let me try. 
+
+### First try produced empty responses for the client
+So I created a new struct type, for both the request and the response writer, 
+```go
+
+type Packet struct {
+    request http.Request
+    response_writer http.ResponseWriter
+}
+```
+And I was passing this to the worker through the channel, 
+```go
+    http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+        fmt.Println("Received request:", r)
+        done := make(chan struct{})
+        packet := Packet{
+            request: *r, response_writer: w,
+            }
+        jobs <- packet // Send the request to the channel
+    })
+```
+with worker , like 
+```go
+func worker(id int, jobs <-chan Packet) {
+    for packet := range jobs {
+        req := packet.request
+        response_writer := packet.response_writer
+        fmt.Printf("Worker %d processing request: %v\n", id, req)
+
+        // Process the request...
+        fmt.Fprintln(response_writer, "Request is being processed")
+    }
+}
+```
+So when the response on the client was blank, this was puzzling. I inquired w/ ChatGPT and got the idea that oh wow 😮right, the listener is likely returning a response before the worker writes to the buffer there. So I should have the handler block until the worker is done by using a per request channel, `done`. 
+
+### Ok, so I tried creating adding a channel on which the handler blocks and that worked !
+
+```go
+
+package main
+
+import (
+    "fmt"
+    "net/http"
+    // "time"
+)
+
+
+type Packet struct {
+    request http.Request
+    response_writer http.ResponseWriter
+    done chan struct{}
+}
+
+func worker(id int, jobs <-chan Packet) {
+    for packet := range jobs {
+        req := packet.request
+        response_writer := packet.response_writer
+        fmt.Printf("Worker %d processing request: %v\n", id, req)
+
+
+        // Process the request...
+        fmt.Fprintln(response_writer, "Request is being processed")
+
+        // Signal we are done 
+        packet.done <- struct{}{}
+    }
+}
+
+func main() {
+    fmt.Println("Server has started.")
+    jobs := make(chan Packet, 100) // Buffered channel
+
+    // Start worker goroutines
+    for w := 1; w <= 3; w++ {
+        go worker(w, jobs)
+    }
+
+    // HTTP listener (simplified example)
+    http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+        fmt.Println("Received request:", r)
+        done := make(chan struct{})
+        packet := Packet{
+            request: *r, response_writer: w, done: done,
+            }
+        jobs <- packet // Send the request to the channel
+        <- done
+    })
+
+    http.ListenAndServe(":8080", nil)
+}
+```
+And on client side, 
+```go
+In [10]: data = {"some": "xxxxxxxxxxxxxxxxxxxx"}
+    ...: r = requests.post("http://localhost:8080", json=data)
+    ...: r.status_code, r.text
+Out[10]: (200, 'Request is being processed\n')
+```
+Nice. 
+

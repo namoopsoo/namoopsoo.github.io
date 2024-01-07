@@ -324,6 +324,7 @@ func read_my_csv() {
     defer file.Close()
 
     reader := csv.NewReader(file)
+
     my_dict := make(map[string]float64)
     for {
         record, err := reader.Read()
@@ -349,19 +350,76 @@ But I was getting, oddly,
 Ah duh, the column header is not a number, right, ok then this csv parsing library is pretty do it yourself then haha 😅, if I have to handle reading the header myself. 
 
 
-## Value Receivers 
+#### Looking further, looks like I just need to read the header row myself manually
 
+So header first, then I can  also use `reader.ReadAll()` , a better way I found to iterate through the remaining rows. 
+```go
+header, err := reader.Read()
+if err != nil {
+    fmt.Println(fmt.Sprintf("error %q reading header", err))
+}
+fmt.Println("header", header)
 
-Cool example provided by ChatGPT, so I learned that below, `(s MySteuct)` iz the receiver of tbe method `MyMethod`
-```
-type MyStruct struct {
-    Field int
+records, err := reader.ReadAll()
+if err != nil {
+    fmt.Println(fmt.Sprintf("error %q reading rows", err))
 }
 
-func (s MyStruct) MyMethod() {
-    // s is a copy of the MyStruct instance, so changes here won't affect the original.
+blahMap := make(map[string]float64)
+for _, record in range records {
+    num, err := strconv.ParseFloat(record[1], 64)
+    if err != nil {
+        blahMap[record[0]] = math.NaN()
+    }
+    blahMap[record[0]] = num
+}
+
+```
+
+
+## Mapping receiver functions to types as value receiver or pointer receivers
+Useful to know that you can assign a function to a struct type, with an instance of the type passed as a copy or as a pointer. 
+
+As a copy, a func will not modify the original. 
+
+
+### As a value , 
+```go
+type SomeType struct{
+    blah int
+}
+
+func (s SomeType) SomeFunc(hmm string) {
+    // Here SomeFunc will interact with a copy "s". 
+    s.blah += 1
+    fmt.Println("SomeFunc", s.blah, hmm)
+}
+
+func (s *SomeType) SomeOtherFunc(hmm string) {
+    // Here SomeFunc will interact with the real "s".
+    s.blah += 1
+    fmt.Println("SomeFunc", s.blah, hmm)
+}
+
+func main() {
+    // Example 1
+    s := SomeType{22}
+    fmt.Println("before", s.blah)
+    s.SomeFunc("hi")
+    fmt.Println("after SomeFunc", s.blah)
+
+    // Example 2
+    s.SomeOtherFunc("hi")
+    fmt.Println("after SomeOtherFunc", s.blah)
+
 }
 ```
-And there are two kinds , value receivers and pointer receivers. 
+```
+before 22
+SomeFunc 22 hi
+after SomeFunc 22
+SomeFunc 23 hi
+after SomeOtherFunc 23
+```
 
 

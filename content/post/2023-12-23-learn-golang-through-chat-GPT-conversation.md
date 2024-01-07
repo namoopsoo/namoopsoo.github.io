@@ -422,4 +422,99 @@ SomeFunc 23 hi
 after SomeOtherFunc 23
 ```
 
+## Looking like pointers in Go are very similar to pointers in C++ , 
 
+I had this program, 
+```go
+// You can edit this code!
+// Click here and start typing.
+package main
+
+import (
+	"fmt"
+)
+
+type SomeType struct {
+	blah int
+}
+
+func main() {
+
+	pointerToStruct := &SomeType{}
+	fmt.Println(
+		fmt.Sprintf(
+			"pointer: %q, member: %q, dereferenced: %q, dereferenced member, %q",
+			pointerToStruct, pointerToStruct.blah, (*pointerToStruct), (*pointerToStruct).blah))
+
+	pointerToStruct.blah = 20
+	fmt.Println(
+		fmt.Sprintf(
+			"pointer: %q, member: %q, dereferenced: %q, dereferenced member, %q",
+			pointerToStruct, pointerToStruct.blah, (*pointerToStruct), (*pointerToStruct).blah))
+
+	(*pointerToStruct).blah = 30
+	fmt.Println(
+		fmt.Sprintf(
+			"pointer: %q, member: %q, dereferenced: %q, dereferenced member, %q",
+			pointerToStruct, pointerToStruct.blah, (*pointerToStruct), (*pointerToStruct).blah))
+
+}
+
+```
+and I was seeing the outpu 
+```
+pointer: &{'\x00'}, member: '\x00', dereferenced: {'\x00'}, dereferenced member, '\x00'
+pointer: &{'\x14'}, member: '\x14', dereferenced: {'\x14'}, dereferenced member, '\x14'
+pointer: &{'\x1e'}, member: '\x1e', dereferenced: {'\x1e'}, dereferenced member, '\x1e'
+
+```
+which I think was kind of weird. I was confused why I could not see the integer `blah` member values. 
+
+I asked Chat GPT and got the explanation that the `%q` verb indeed, will attempt to safely escape what it prints. So sounds like when dealing with pointers, even the dereferenced resulting instance member integer is escaped as hex. 
+
+
+And Chat GPT suggested an alternate set of verbs. 
+
+### Take 2, 
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+type SomeType struct {
+	blah int
+}
+func main() {
+
+	pointerToStruct := &SomeType{}
+	fmt.Println(
+		fmt.Sprintf(
+			"pointer: %p, member: %d, dereferenced: %v, dereferenced member, %d",
+			pointerToStruct, pointerToStruct.blah, (*pointerToStruct), (*pointerToStruct).blah))
+
+	pointerToStruct.blah = 20
+	fmt.Println(
+		fmt.Sprintf(
+			"pointer: %p, member: %d, dereferenced: %v, dereferenced member, %d",
+			pointerToStruct, pointerToStruct.blah, (*pointerToStruct), (*pointerToStruct).blah))
+
+	(*pointerToStruct).blah = 30
+	fmt.Println(
+		fmt.Sprintf(
+			"pointer: %p, member: %d, dereferenced: %v, dereferenced member, %d",
+			pointerToStruct, pointerToStruct.blah, (*pointerToStruct), (*pointerToStruct).blah))
+
+}
+```
+
+gave me a cleaner result
+```
+
+pointer: 0xc000012028, member: 0, dereferenced: {0}, dereferenced member, 0
+pointer: 0xc000012028, member: 20, dereferenced: {20}, dereferenced member, 20
+pointer: 0xc000012028, member: 30, dereferenced: {30}, dereferenced member, 30
+
+```

@@ -295,3 +295,55 @@ Out[10]: (200, 'Request is being processed\n')
 ```
 Nice. 
 
+
+## Reading a csv 
+So funny thing happened, I inquired about some simple csv parsing code and ended up with this, since I want to create a dict (aka map) from column 1 to column 2.  With a file like 
+
+```
+stuff,num
+hambuerger,12
+cheesypoofs,.123
+cheesy whizz,0.25
+```
+
+```go 
+import (
+    "os"
+    "fmt"
+    "encoding/csv"
+    "strconv"
+
+)
+func read_my_csv() {
+    file, err := os.Open("blah/balh.csv")
+
+    if err != nil {
+        fmt.Println(fmt.Sprintf(`hmmm %q`, err))
+        return
+    }
+    defer file.Close()
+
+    reader := csv.NewReader(file)
+    my_dict := make(map[string]float64)
+    for {
+        record, err := reader.Read()
+        if err != nil {
+            fmt.Println(fmt.Sprintf("error %q", err))
+        }
+        num, err := strconv.ParseFloat(record[1], 64)
+        if err != nil {
+            fmt.Println(fmt.Sprintf("internal error parsing csv %q", err))
+            return
+        }
+        my_dict[record[0]] = num
+    }
+
+    return my_dict
+}
+
+```
+But I was getting, oddly, 
+```
+"internal error parsing csv "strconv.ParseFloat: parsing \\"num\\": invalid syntax""
+```
+Ah duh, the column header is not a number, right, ok then this csv parsing library is pretty do it yourself then haha 😅, if I have to handle reading the header myself. 

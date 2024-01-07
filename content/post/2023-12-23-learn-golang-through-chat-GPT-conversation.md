@@ -347,3 +347,21 @@ But I was getting, oddly,
 "internal error parsing csv "strconv.ParseFloat: parsing \\"num\\": invalid syntax""
 ```
 Ah duh, the column header is not a number, right, ok then this csv parsing library is pretty do it yourself then haha 😅, if I have to handle reading the header myself. 
+
+
+## Value Receivers 
+
+
+Cool example provided by ChatGPT, so I learned that below, `(s MySteuct)` iz the receiver of tbe method `MyMethod`
+```
+type MyStruct struct {
+    Field int
+}
+
+func (s MyStruct) MyMethod() {
+    // s is a copy of the MyStruct instance, so changes here won't affect the original.
+}
+```
+And there are two kinds , value receivers and pointer receivers. 
+
+

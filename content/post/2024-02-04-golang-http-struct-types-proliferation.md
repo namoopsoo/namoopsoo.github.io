@@ -1,5 +1,7 @@
-
-
+---
+title: Minimizing Golang struct types while observing tyep safety
+date: 2024-02-04
+---
 
 
 ## Asked chat gpt the following conundrum, 

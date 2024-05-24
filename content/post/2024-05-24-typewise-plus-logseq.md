@@ -4,17 +4,11 @@ title: issue experienced in typewise logseq interaction
 ---
 
 An example that is around undo-ing auto-corrections,  when using the Logseq app. 
-This is on on typewise 4.0.9 .
+This is on on typewise 
 
-https://vimeo.com/909485587/55e0b4f639
 
-{{<vimeo 909485587/55e0b4f639>}}
 
-Issue occurs around 00:49:00 .
-
-I write "[[refactoring]]" , which gets changed to "[[refarefactor" , then i hit the blue undo "refactori↩️" and that changes to "[[refarefactori" . Then i shake undo. That brings back the original text.
-
-# one more example 
+#  example 
 https://vimeo.com/948393509
 {{<vimeo 948393509>}}
 

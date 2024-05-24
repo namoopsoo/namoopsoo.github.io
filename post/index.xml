@@ -6,7 +6,20 @@
     <description>Recent content in Posts on michal.piekarczyk.xyz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 04 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>issue experienced in typewise logseq interaction</title>
+      <link>https://michal.piekarczyk.xyz/post/2024-05-24-typewise-plus-logseq/</link>
+      <pubDate>Fri, 24 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2024-05-24-typewise-plus-logseq/</guid>
+      <description>An example that is around undo-ing auto-corrections, when using the Logseq app. This is on on typewise 4.0.9 .
+https://vimeo.com/909485587/55e0b4f639
+Issue occurs around 00:49:00 .
+I write &amp;ldquo;[[refactoring]]&amp;rdquo; , which gets changed to &amp;ldquo;[[refarefactor&amp;rdquo; , then i hit the blue undo &amp;ldquo;refactori↩️&amp;rdquo; and that changes to &amp;ldquo;[[refarefactori&amp;rdquo; . Then i shake undo. That brings back the original text.
+Thoughts as to why The issue I suppose is that when one types some text, on typewise, a buffer of the immediate text is kept, so if typewise auto-corrects, and someone taps the &amp;ldquo;↩️&amp;rdquo; undo , typewise attempts to replace the suggestion with the previous buffer.</description>
+    </item>
+    
     <item>
       <title>Minimizing Golang struct types while observing tyep safety</title>
       <link>https://michal.piekarczyk.xyz/post/2024-02-04-golang-http-struct-types-proliferation/</link>
@@ -778,15 +791,6 @@ B, T = 2472182, 2458010 p_observed = B*1./(B + T) # 0.501437 For now just starti
       <guid>https://michal.piekarczyk.xyz/post/2021-05-23-that-openssl-load-error/</guid>
       <description>TLDR This time, the brew update &amp;amp;&amp;amp; brew upgrade approach resolved my openssl dyld: Library not loaded woes. And brew apparently no longer has the switch command which had been the cornerstone of a popular stackoverflow answer for this problem.
 Trying to run this new ffmpeg usage, but&amp;hellip; $ ffmpeg -i 2021*.jpg -sameq -r 25 outmovie.mp4 dyld: Library not loaded: /usr/local/opt/openssl/lib/libssl.1.0.0.dylib Referenced from: /usr/local/bin/ffmpeg Reason: image not found Abort trap: 6 $ brew update Error: homebrew-core is a shallow clone.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://michal.piekarczyk.xyz/post/2024-05-24-typewise-plus-logseq/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://michal.piekarczyk.xyz/post/2024-05-24-typewise-plus-logseq/</guid>
-      <description>ok</description>
     </item>
     
     <item>

@@ -8,7 +8,7 @@ This is on on typewise 4.0.9 .
 
 https://vimeo.com/909485587/55e0b4f639
 
-{{ vimeo 909485587/55e0b4f639 }}
+{{ <vimeo 909485587/55e0b4f639> }}
 
 Issue occurs around 00:49:00 .
 
@@ -16,7 +16,7 @@ I write "[[refactoring]]" , which gets changed to "[[refarefactor" , then i hit 
 
 # one more example 
 https://vimeo.com/948393509
-{{ vimeo 948393509 }}
+{{<vimeo 948393509>}}
 
 
 # Thoughts as to why 

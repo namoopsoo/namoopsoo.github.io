@@ -8,7 +8,7 @@ This is on on typewise 4.0.9 .
 
 https://vimeo.com/909485587/55e0b4f639
 
-{{ <vimeo 909485587/55e0b4f639> }}
+{{<vimeo 909485587/55e0b4f639>}}
 
 Issue occurs around 00:49:00 .
 

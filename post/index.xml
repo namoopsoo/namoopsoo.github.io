@@ -18,6 +18,36 @@ example https://vimeo.com/948393509 Thoughts as to why The issue I suppose is th
     </item>
     
     <item>
+      <title>Nice pretty printing go slices</title>
+      <link>https://michal.piekarczyk.xyz/post/2024-03-30-pretty-printing-slices-golang/</link>
+      <pubDate>Sat, 30 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2024-03-30-pretty-printing-slices-golang/</guid>
+      <description>package main import ( &amp;#34;encoding/json&amp;#34; &amp;#34;fmt&amp;#34; ) type Foo struct { Blah int Flarg string } func main() { var stuff []Foo = []Foo{ Foo{Blah: 8, Flarg: &amp;#34;sure&amp;#34;}, Foo{Blah: 7, Flarg: &amp;#34;mhm&amp;#34;}, } stuffBytes, err := json.MarshalIndent(stuff, &amp;#34;&amp;#34;, &amp;#34; &amp;#34;) if err != nil { fmt.Println(&amp;#34;Marshaling errors&amp;#34;, err) return } fmt.Println(&amp;#34;harder to read\n&amp;#34;, stuff) fmt.Println(&amp;#34;\nbetter\n&amp;#34;, string(stuffBytes)) } outupt is easy on the eyes
+harder to read [{8 sure} {7 mhm}] better [ { &amp;#34;Blah&amp;#34;: 8, &amp;#34;Flarg&amp;#34;: &amp;#34;sure&amp;#34; }, { &amp;#34;Blah&amp;#34;: 7, &amp;#34;Flarg&amp;#34;: &amp;#34;mhm&amp;#34; } ] </description>
+    </item>
+    
+    <item>
+      <title>Scope trickiness in Go</title>
+      <link>https://michal.piekarczyk.xyz/post/2024-03-30-scope-golang/</link>
+      <pubDate>Sat, 30 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2024-03-30-scope-golang/</guid>
+      <description>Go scope is different for for loops and if blocks than in Python For example, with some code,
+package main import ( &amp;#34;fmt&amp;#34; &amp;#34;slices&amp;#34; ) func main() { var stuff = []string{ &amp;#34;foo&amp;#34;, &amp;#34;bar&amp;#34;, &amp;#34;hmm&amp;#34;, } if idx := slices.IndexFunc(stuff, func(x string) bool { return x == &amp;#34;foo&amp;#34; }); idx == -1 { fmt.Println(&amp;#34;yes&amp;#34;) found := true } else { fmt.Println(&amp;#34;no&amp;#34;) found := false } fmt.Printf(&amp;#34;found %v\n&amp;#34;, found) } But the error is</description>
+    </item>
+    
+    <item>
+      <title>Go Sprinkle reflection on domain driven development</title>
+      <link>https://michal.piekarczyk.xyz/post/2024-02-24-reflection/</link>
+      <pubDate>Sat, 24 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2024-02-24-reflection/</guid>
+      <description>Ok cool, realizing, following on from earlier post, that to nicely test the case when I have a Merchant and I am only making updates to it with UpdateMerchantRequest, I would need a nice generic way to obtain a subset struct instance from the other. Getting ChatGPT to help, here is what I asked,
+Okay I have a strategy I&amp;rsquo;m using, where I have a go struct for a merchant that mirrors a postgresql database table and also another struct for updates to it which is a subset,</description>
+    </item>
+    
+    <item>
       <title>Minimizing Golang struct types while observing tyep safety</title>
       <link>https://michal.piekarczyk.xyz/post/2024-02-04-golang-http-struct-types-proliferation/</link>
       <pubDate>Sun, 04 Feb 2024 00:00:00 +0000</pubDate>

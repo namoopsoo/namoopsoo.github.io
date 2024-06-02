@@ -5,6 +5,7 @@ title: Some quick analysis of prior fasting data
 date: 2024-06-02
 ---
 
+## Ok fasting hours, but how about eating hours?
 
 The data dump from my Zero fasting app highlights the fasting hours. I had used Zero from 2019 to late 2023, and I wanted to look at briefly, well what about the eating hours, other than the fasted hours?
 
@@ -85,3 +86,65 @@ pylab.close()
 
 
 ```
+
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-06-02-quick-fast-analyze/2024-06-02T191017-plot.png" width="100%">}}
+
+So the 7 day rolling average was too tight, so I tried 28 day instead.
+
+```python
+plt.figure(figsize=(12, 6))
+plt.plot(data_sorted['start_timestamp'], data_sorted['rolling_avg_eating_hours'], marker='.', linestyle='-', color='b')
+plt.xlabel('Date')
+plt.ylabel('28-Day Rolling Average Eating Hours')
+plt.title('28-Day Rolling Average of Eating Hours vs Date')
+plt.grid(True)
+plt.xticks(rotation=45)
+plt.tight_layout()
+
+# Display the plot
+
+
+
+out_loc = f"{utc_ts()}-plot.png"
+pylab.savefig(out_loc)
+pylab.close()
+
+
+```
+
+
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-06-02-quick-fast-analyze/2024-06-02T191223-plot.png" width="100%">}}
+
+## And let's use a histogram overlay for comparisons year over year 
+
+So at some point, I started eating earlier in the day after the stricter fasts. Let's look at this data now slightly differently. (I didn't bother with ChatGPT at this point since the analysis was running into some errors and plotting was no longer working, so just went manual.)
+
+
+```python
+comparisons = [[2019, 2020], [2020, 2021], [2021, 2022], [2022, 2023]]
+
+fig, axes = plt.subplots(figsize=(12,6), nrows=len(comparisons), ncols=1)
+fig.patch.set_facecolor("xkcd:mint green")
+plt.tight_layout()
+for i, (year1, year2) in enumerate(comparisons):
+
+    df1 = data_sorted[data_sorted["year"] == year1]
+    df2 = data_sorted[data_sorted["year"] == year2]
+
+    # menusdf[col + "_num_tokens"] = menusdf[col].map(lambda x: len(x.split(" "))) #  if isinstance(x, str) else 0
+    ax = axes[i]
+    ax.hist(df1["eating_hours"], bins=50, alpha=0.2, color="r", density=True)
+    ax.hist(df2["eating_hours"], bins=50, alpha=0.2, color="b", density=True)
+    ax.set(title=f"compare {year1}(red) to {year2}(blue)")
+
+out_loc = f"{utc_ts()}-plot.png"
+pylab.savefig(out_loc)
+pylab.close()
+
+```
+
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-06-02-quick-fast-analyze/2024-06-02T195315-plot.png" width="100%">}}
+
+
+
+Ok I can tell for almost each year over year comparison, the number of eating hours slightly increases.

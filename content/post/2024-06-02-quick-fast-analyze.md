@@ -148,3 +148,15 @@ pylab.close()
 
 
 Ok I can tell for almost each year over year comparison, the number of eating hours slightly increases.
+
+
+## All this sparked per discussing fasting with a friend
+A friend had recently reached the 48 hour mark of a fast and I started reflecting also. I dug up this one time I tried a longer restriction too, 
+
+
+
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-06-02-quick-fast-analyze/2020-10-30%252009.18.29.png" width="50%">}}
+
+Ultimately I think I prefer, as the main character in Blade Runner 2044 says, to _"... keep an empty stomach until the difficult part of the day is done."_  This feel right. Beyond that, I realize this creates some later-day-eating-anti-patterns. 
+
+I know that clinical data (not citing here because I don't recall the exact finding), has found that eating slight earlier, is associated with a lower likelihood of overconsumption of calories. That is where my mind is heading to next 🧐.

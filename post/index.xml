@@ -6,7 +6,17 @@
     <description>Recent content in Posts on michal.piekarczyk.xyz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 24 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Some quick analysis of prior fasting data</title>
+      <link>https://michal.piekarczyk.xyz/post/2024-06-02-quick-fast-analyze/</link>
+      <pubDate>Sun, 02 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2024-06-02-quick-fast-analyze/</guid>
+      <description>Ok fasting hours, but how about eating hours? The data dump from my Zero fasting app highlights the fasting hours. I had used Zero from 2019 to late 2023, and I wanted to look at briefly, well what about the eating hours, other than the fasted hours?
+In an effort to save time, I used ChatGPT to come up with the calculation around the eating hours. Actually the first try was interesting since the outcome was showing daily eating hours that were beyond 40 hours 😅, but coercing ChatGPT to try to correct so this falls within the expected under 10 hours, ChatGPT was able to actually course correct nicely !</description>
+    </item>
+    
     <item>
       <title>issue experienced in typewise logseq interaction</title>
       <link>https://michal.piekarczyk.xyz/post/2024-05-24-typewise-plus-logseq/</link>

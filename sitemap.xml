@@ -2,11 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://michal.piekarczyk.xyz/post/</loc>
+    <lastmod>2024-06-02T16:24:31-04:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/post/2024-06-02-quick-fast-analyze/</loc>
+    <lastmod>2024-06-02T16:24:31-04:00</lastmod>
+  </url><url>
     <loc>https://michal.piekarczyk.xyz/post/2024-05-24-typewise-plus-logseq/</loc>
     <lastmod>2024-05-24T09:33:55-04:00</lastmod>
-  </url><url>
-    <loc>https://michal.piekarczyk.xyz/post/</loc>
-    <lastmod>2024-05-26T12:49:12-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/post/2024-03-30-pretty-printing-slices-golang/</loc>
     <lastmod>2024-05-26T12:49:12-04:00</lastmod>

@@ -155,7 +155,7 @@ A friend had recently reached the 48 hour mark of a fast and I started reflectin
 
 
 
-{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-06-02-quick-fast-analyze/2020-10-30%252009.18.29.png" width="50%">}}
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-06-02-quick-fast-analyze/2020-10-30%25252009.18.29.png" width="50%">}}
 
 Ultimately I think I prefer, as the main character in Blade Runner 2044 says, to _"... keep an empty stomach until the difficult part of the day is done."_  This feel right. Beyond that, I realize this creates some later-day-eating-anti-patterns. 
 

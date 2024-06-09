@@ -1,5 +1,5 @@
 ---
-title: 
+title: Recycling xero shoe diy huarache rubber
 date: 2024-06-09
 ---
 ## What to do with the left over rubber from your Xero DIY haraches?

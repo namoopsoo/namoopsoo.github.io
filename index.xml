@@ -12,8 +12,7 @@
       <pubDate>Sun, 16 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://michal.piekarczyk.xyz/post/2024-06-16-bart-zero-shot-look/</guid>
-      <description>[[TOC]]
-Let&amp;rsquo;s look at what bart-large-mnli has to say on restaurant related labels for food and non food queries The queries here are just arbitrary statements I came up with off the top of my head.
+      <description>Let&amp;rsquo;s look at what bart-large-mnli has to say on restaurant related labels for food and non food queries The queries here are just arbitrary statements I came up with off the top of my head.
 You can skip to the final scoring, but in summary, using a super simplistic evaluation here, I think that the super accessible bart-large-mnli model does pretty well here.
 One observation I am seeing casually, which I believe Jake Tae https://jaketae.</description>
     </item>

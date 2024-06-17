@@ -4,8 +4,6 @@ date: 2024-06-16
 ---
 
 
-[[_TOC_]]
-
 ## Let's look at what bart-large-mnli has to say on restaurant related labels for food and non food queries
 The queries here are just arbitrary statements I came up with off the top of my head. 
 

@@ -2,10 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://michal.piekarczyk.xyz/post/2024-06-16-bart-zero-shot-look/</loc>
-    <lastmod>2024-06-16T21:31:01-04:00</lastmod>
-  </url><url>
     <loc>https://michal.piekarczyk.xyz/post/</loc>
+    <lastmod>2024-06-29T14:22:59-04:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/post/2024-06-29-withings-scale-troubleshoot/</loc>
+    <lastmod>2024-06-29T14:22:59-04:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/post/2024-06-16-bart-zero-shot-look/</loc>
     <lastmod>2024-06-16T21:31:01-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/post/2024-06-09-recycling-xero-diy-huarache-rubber/</loc>

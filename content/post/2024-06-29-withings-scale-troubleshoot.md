@@ -1,7 +1,8 @@
 ---
 title: withings wireless scale infinite loop
-date: 2024-06-29
+date: "2024-06-29 00:01:00 +0000 UTC"
 ---
+
 
 # holding pattern
 Kind of out of the blue, my Withings Body+ screen is on but theres nothing there. After some reseting, also cannot connect by phone. Removed it from the Withings app on my phone, trying to reconnect the scale as a new scale, but searching for the device, I see the Body+ c0 pop up, I select it, but then I am right back to the search for device screen. 

@@ -11,12 +11,12 @@ Briefly describing this Streamlit fronted python app that queries against menus 
 
 ## First query something random
 
-{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-07-20-streamlit-is-lit/image_1722119433724_0.png" width="50%">}}
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-07-20-streamlit-is-lit/image_1722119433724_0.png" width="80%">}}
 It is off topic, so no results 
 
 {{< figure src="https://s3.amazonaws.com/my-blog-content/2024-07-20-streamlit-is-lit/image_1722117019959_0.png" width="80%">}}
 
-Basically, continuing from an earlier post, this is taking advantage of Facebook's BART model. Hits against six food and restaurant related topics are averaged and compared against a threshold of `0.60` to determine if the query is food related.
+Continuing from an [earlier post](https://michal.piekarczyk.xyz/post/2024-06-16-bart-zero-shot-look/), this is taking advantage of Facebook's BART model. Hits against six food and restaurant related topics are averaged and compared against a threshold of `0.60` to determine if the query is food related. We see the topics are displayed with their level of [entailment](https://en.wikipedia.org/wiki/Textual_entailment).
 
 ## Now an on-topic query, 
 
@@ -24,8 +24,8 @@ Basically, continuing from an earlier post, this is taking advantage of Facebook
 {{< figure src="https://s3.amazonaws.com/my-blog-content/2024-07-20-streamlit-is-lit/image_1722117613051_0.png" width="80%">}}
 How about a query about chicken parmesan, which is a dish, so should be on topic. 
 
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-07-20-streamlit-is-lit/image_1722119740136_0.png" width="80%">}}
 
-{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-07-20-streamlit-is-lit/image_1722117136810_0.png" width="80%">}}
 
 And so the next part of the app is therefore run, which is to do a lookup against the local postgreql pgvector vector store, in this case using cohere embeddings.
 
@@ -36,6 +36,7 @@ This is because we have triggered the last step, where we we a second hugging fa
 
 
 If we try a query now that uses location information, that final result looks different.
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-07-20-streamlit-is-lit/image_1722117136810_0.png" width="80%">}}
 {{< figure src="https://s3.amazonaws.com/my-blog-content/2024-07-20-streamlit-is-lit/image_1722117633829_0.png" width="80%">}}
 
 
@@ -44,5 +45,6 @@ If we try a query now that uses location information, that final result looks di
 
 
 {{< vimeoiframe "https://player.vimeo.com/video/988119356?h=dd2ba0d13c" >}}
+
 
 

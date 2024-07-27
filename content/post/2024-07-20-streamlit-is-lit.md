@@ -49,6 +49,7 @@ And we split out the `'I-LOC'` or location related information.
 
 
 
-
+## Source for this mini app
+As a TODO, I should highlight some interesting snippets in this streamlit app, but for now, note, the source also lives here, https://github.com/namoopsoo/restaurant-menu-entities . 
 
 

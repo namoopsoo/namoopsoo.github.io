@@ -6,7 +6,18 @@
     <description>Recent content in Posts on michal.piekarczyk.xyz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 29 Jun 2024 00:01:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Streamlit is lit</title>
+      <link>https://michal.piekarczyk.xyz/post/2024-07-20-streamlit-is-lit/</link>
+      <pubDate>Sat, 20 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2024-07-20-streamlit-is-lit/</guid>
+      <description>Briefly describing this Streamlit fronted python app that queries against menus pulled from a kaggle uber eats dataset found here.
+Mini screencast First query something random It is off topic, so no results
+Continuing from an earlier post, this is taking advantage of Facebook&amp;rsquo;s BART model. A hugging face pipeline is used to hit against six food and restaurant related topics are averaged and compared against a threshold of 0.60 to determine if the query is food related.</description>
+    </item>
+    
     <item>
       <title>withings wireless scale infinite loop</title>
       <link>https://michal.piekarczyk.xyz/post/2024-06-29-withings-scale-troubleshoot/</link>

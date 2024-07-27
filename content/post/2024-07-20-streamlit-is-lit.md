@@ -11,8 +11,10 @@ Briefly describing this Streamlit fronted python app that queries against menus 
 
 ## First query something random
 
-{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-07-20-streamlit-is-lit/image_1722117019959_0.png" width="80%">}}
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-07-20-streamlit-is-lit/image_1722119433724_0.png" width="50%">}}
 It is off topic, so no results 
+
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-07-20-streamlit-is-lit/image_1722117019959_0.png" width="80%">}}
 
 Basically, continuing from an earlier post, this is taking advantage of Facebook's BART model. Hits against six food and restaurant related topics are averaged and compared against a threshold of `0.60` to determine if the query is food related.
 
@@ -42,4 +44,5 @@ If we try a query now that uses location information, that final result looks di
 
 
 {{< vimeoiframe "https://player.vimeo.com/video/988119356?h=dd2ba0d13c" >}}
+
 

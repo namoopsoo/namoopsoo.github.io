@@ -13,8 +13,8 @@
       
       <guid>https://michal.piekarczyk.xyz/post/2024-07-20-streamlit-is-lit/</guid>
       <description>Briefly describing this Streamlit fronted python app that queries against menus pulled from a kaggle uber eats dataset found here.
-Mini screencast First query something random It is off topic, so no results
-Continuing from an earlier post, this is taking advantage of Facebook&amp;rsquo;s BART model. A hugging face pipeline is used to hit against six food and restaurant related topics are averaged and compared against a threshold of 0.60 to determine if the query is food related.</description>
+A Streamlit menu search Mini screencast First query something random It is off topic, so no results
+Continuing from an earlier post, this is taking advantage of Facebook&amp;rsquo;s BART model. A hugging face pipeline is used to hit against six food and restaurant related topics are averaged and compared against a threshold of 0.</description>
     </item>
     
     <item>

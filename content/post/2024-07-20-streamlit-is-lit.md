@@ -9,7 +9,7 @@ Briefly describing this Streamlit fronted python app that queries against menus 
 
 {{< figure src="https://s3.amazonaws.com/my-blog-content/2024-07-20-streamlit-is-lit/image_1722117060822_0.png" width="80%">}}
 
-
+# A Streamlit menu search
 ## Mini screencast
 {{< vimeo id="988119356?h=dd2ba0d13c" >}}
 
@@ -53,3 +53,75 @@ And we split out the `'I-LOC'` or location related information.
 As a TODO, I should highlight some interesting snippets in this streamlit app, but for now, note, the source also lives here, https://github.com/namoopsoo/restaurant-menu-entities . 
 
 
+# Under the hood
+
+## The streamlit app
+There is a simple query box, tied to a function `do_search`, 
+
+```python
+with st.form(key='my_form'):
+    query = st.text_area("Input to search for.", key="my_query")
+    submit_button = st.form_submit_button(label='Search', on_click=do_search)
+```
+
+The first step in `do_search` is to check if the query is about food.
+
+## Topic check with BART
+As described in more detail in an [earlier post](https://michal.piekarczyk.xyz/post/2024-06-16-bart-zero-shot-look/), [bart-large-mnli](https://huggingface.co/facebook/bart-large-mnli) is used as a hugging face pipeline, which means model blobs are cached `~/.cache/huggingface/hub/models--facebook--bart-large-mnli/` and loaded at inference time. This is a NLI (Natural Language Inference) model, meaning that given two sequences, logits for entailment, neutrality and contradiction are final outputs between those two sequences. And in particular, the entailment output is used as a so called zero-short sequence classifier, such that here, given six sequences related to food and dining, we can average these to get some idea about whether an input user query is about this topic, loosely.
+
+```python
+classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnli")
+
+def check_if_on_topic(query, topics):
+    
+    classification = classifier(query, topics, multi_label=True)
+    return classification
+
+def is_this_about_food(query):
+    topics = [
+        "this is about food",
+        "food",
+        "this is about a restaurant",
+        "restaurants",
+        "food places",
+        "this is about food places",
+    ]
+    len_food_topics = len(topics)
+    classifications = check_if_on_topic(query, topics)
+
+    class_df = pl.from_records([classifications["labels"], classifications["scores"]], schema=["label", "score"])
+    
+    food_pred = sum(classifications["scores"]) / len_food_topics
+
+    THRESHOLD = 0.65  # TODO can tune this.
+    on_topic = food_pred >= THRESHOLD
+    return class_df, on_topic, food_pred
+
+```
+If a query is on topic, next we do a vector search against postgresql pgvector
+
+## pg vector search
+In this case, the initial kaggle dataset had been embedded with https://cohere.com embeddings, just since they were used in the [langchain pgvector example](https://python.langchain.com/v0.2/docs/integrations/vectorstores/pgvector/), and they work out of the box with just an API key, but many other embedding models are available. It looks like this particular API, actually, 
+
+```python
+from langchain_cohere import CohereEmbeddings
+```
+, used under
+```python
+from langchain_postgres.vectorstores import PGVector
+```
+, does not appear to cache the model locally as hugging face does. A good follow on step would be to look for a solution that caches the model locally, to reduce the inference latency.
+
+Next, a BERT name entity recognition model is used to try to extract geolocation terms.
+
+## Use of NER
+(TODO Describe this more)
+
+```python
+from transformers import pipeline, BertTokenizer, BertModel
+
+model_name = "dbmdz/bert-large-cased-finetuned-conll03-english"
+
+tokenizer = BertTokenizer.from_pretrained(model_name)
+
+```

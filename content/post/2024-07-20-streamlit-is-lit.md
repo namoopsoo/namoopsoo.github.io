@@ -10,6 +10,7 @@ Briefly describing this Streamlit fronted python app that queries against menus 
 {{< figure src="https://s3.amazonaws.com/my-blog-content/2024-07-20-streamlit-is-lit/image_1722117060822_0.png" width="80%">}}
 
 # A Streamlit menu search
+
 ## Mini screencast
 {{< vimeo id="988119356?h=dd2ba0d13c" >}}
 
@@ -115,13 +116,59 @@ from langchain_postgres.vectorstores import PGVector
 Next, a BERT name entity recognition model is used to try to extract geolocation terms.
 
 ## Use of NER
-(TODO Describe this more)
+The https://huggingface.co/dbmdz/bert-large-cased-finetuned-conll03-english , pretrained to return, given a token sequence, a sequence of token entity labels, `B-LOC/I-LOC, B-ORG/I-ORG, B-PER/I-PER` when tokens are classified as entities and some non entity symbol like `O` when not. In this case, this is super useful in extracting tokens in the sequence correspondoing to locations, `B-LOC/I-LOC` because then this can potentially be used to filter against pgvector with more specific relational side of the input.
 
 ```python
-from transformers import pipeline, BertTokenizer, BertModel
+from transformers import pipeline
+ 
+token_classifier = pipeline("ner")
+print(token_classifier.model.name_or_path)
+```
+```python
+'dbmdz/bert-large-cased-finetuned-conll03-english'
+```
+We can take a peek at what the tokens are that this pipeline extracts,
+```python
+query = (
+  "I'm on the corner of 14th stret and Broadway and I am trying to get to 59th street"
+  " and Central Park West ok how can I travel?"
+)
 
-model_name = "dbmdz/bert-large-cased-finetuned-conll03-english"
+tokens = token_classifier.tokenizer.tokenize(query, return_tensors="pt")
+print(tokens)
+```
+```python
+['I', "'", 'm', 'on', 'the', 'corner', 'of', '14th', 's', '##tre', '##t', 'and', 'Broadway', 'and', 'I', 'am', 'trying', 'to', 'get', 'to', '59', '##th', 'street', 'and', 'Central', 'Park', 'West', 'ok', 'how', 'can', 'I', 'travel', '?']
+```
 
-tokenizer = BertTokenizer.from_pretrained(model_name)
+And here is the classification part, only for the entity tokens,
+```python
+preds = token_classifier(query)
+preds = [
+    {
+
+        "entity": pred["entity"],
+        "score": round(pred["score"], 4),
+        "index": pred["index"],
+        "word": pred["word"],
+        "start": pred["start"],
+        "end": pred["end"],
+    }
+    for pred in preds
+]
+print("DEBUG ner extract.")
+print(*preds, sep="\n")
 
 ```
+```python
+DEBUG ner extract.
+{'entity': 'I-LOC', 'score': 0.8308, 'index': 8, 'word': '14th', 'start': 21, 'end': 25}
+{'entity': 'I-LOC', 'score': 0.9737, 'index': 13, 'word': 'Broadway', 'start': 36, 'end': 44}
+{'entity': 'I-LOC', 'score': 0.7358, 'index': 21, 'word': '59', 'start': 71, 'end': 73}
+{'entity': 'I-LOC', 'score': 0.749, 'index': 22, 'word': '##th', 'start': 73, 'end': 75}
+{'entity': 'I-LOC', 'score': 0.9923, 'index': 25, 'word': 'Central', 'start': 87, 'end': 94}
+{'entity': 'I-LOC', 'score': 0.9966, 'index': 26, 'word': 'Park', 'start': 95, 'end': 99}
+{'entity': 'I-LOC', 'score': 0.9964, 'index': 27, 'word': 'West', 'start': 100, 'end': 104}
+
+```
+So now we know how to split out location tokens from a query.

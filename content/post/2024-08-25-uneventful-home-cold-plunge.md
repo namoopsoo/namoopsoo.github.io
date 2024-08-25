@@ -33,7 +33,33 @@ Back home in the north east, in the form of a tropical depression, Debby said he
 But the idea of the cold plunge followed me home too 😀. Having really enjoyed the experience of the amazing post plunge adrenaline rush, I went online thinking how to recreate the experience.
 
 
+Fantasizing, hmm could we fit an inflatable cold plunge in our small city apartment?
 
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-08-25-uneventful-home-cold-plunge/IMG_0328.PNG" width="70%">}}
+
+Thanks to augmented reality, I surmise probably not haha 😅, but I tried the next best thing, perhaps.
+
+
+### Got some freezer cold packs for a bathtub setup.
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-08-25-uneventful-home-cold-plunge/IMG_0642.jpeg" width="50%">}}
+
+Filling a  bathtub with cold water took about 10 minutes,
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-08-25-uneventful-home-cold-plunge/IMG_0640.jpeg" width="50%">}}
+
+Got a handy floating thermomenter from the same company as the freezer packs. Initial reading, 72 F.
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-08-25-uneventful-home-cold-plunge/IMG_0641.jpeg" width="50%">}}
+
+I tried it out for a test drive without freezer packs. Actually that was still perceivably cold, but I stabilized in this water much faster than in the high 50s F one from before.
+
+After some freezer packs in there, letting them stay until they melted,
+
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-08-25-uneventful-home-cold-plunge/IMG_0643.jpeg" width="50%">}}
+
+Basically they managed to take the temp down to 70.5 F.
+
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-08-25-uneventful-home-cold-plunge/IMG_0646.jpeg" width="50%">}}
+
+I took one more dip. So I suppose it would take much more ice to get the bath down to 60 F ish. But the good news is, 😀 even at the  70-72 F temp, I still experienced a thermic shock of sorts and so I still felt that nice "positive mindset" after and so for the time being this is still probably good enough. Maybe I'll try some basic ice cubes next time.
 
 
 
@@ -41,9 +67,8 @@ But the idea of the cold plunge followed me home too 😀. Having really enjoyed
 Probably should pull this out into a separate post. Two days after, the original flight, leaving Miami for real now, we had additional adventures.
 
 
-
-
 {{< figure src="https://s3.amazonaws.com/my-blog-content/2024-08-25-uneventful-home-cold-plunge/IMG_0243.PNG" width="50%">}}
+
 
 
 

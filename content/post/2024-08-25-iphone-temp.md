@@ -16,7 +16,7 @@ and changed them to `.jsonl` since they look like json lines files.
 ## read that and also noticed , nice polars has a sql read interface?
 Because appeared that the temp key `last_value_AverageTemperature` is nested.
 
-{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-08-25-iphone-temp/Screenshot 2024-08-25 at 11.24.48 AM.jpeg" width="50%">}}
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-08-25-iphone-temp/Screenshot 2024-08-25 at 11.24.48 AM.jpeg" width="75%">}}
 
 
 ```python

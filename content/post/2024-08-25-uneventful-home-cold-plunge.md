@@ -15,6 +15,12 @@ While attempting to leave Miami back, hurricane Debby blocked most flights out i
 
 
 {{< figure src="https://s3.amazonaws.com/my-blog-content/2024-08-25-uneventful-home-cold-plunge/IMG_0116.PNG" width="50%">}}
+
+
+It's ok, got a chance to watch some Olympic coverage from an temporary airbnb stay.
+
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-08-25-uneventful-home-cold-plunge/IMG_0152.jpeg" width="50%">}}
+got some views of Debby right from where we stayed !
 {{< figure src="https://s3.amazonaws.com/my-blog-content/2024-08-25-uneventful-home-cold-plunge/IMG_0126.jpeg" width="50%">}}
 
 
@@ -38,5 +44,6 @@ Probably should pull this out into a separate post. Two days after, the original
 
 
 {{< figure src="https://s3.amazonaws.com/my-blog-content/2024-08-25-uneventful-home-cold-plunge/IMG_0243.PNG" width="50%">}}
+
 
 

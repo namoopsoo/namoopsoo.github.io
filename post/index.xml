@@ -6,7 +6,17 @@
     <description>Recent content in Posts on michal.piekarczyk.xyz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 20 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>read iphone temp</title>
+      <link>https://michal.piekarczyk.xyz/post/2024-08-25-iphone-temp/</link>
+      <pubDate>Sun, 25 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2024-08-25-iphone-temp/</guid>
+      <description>My iphone has been overheating lately, 🤔 Read one good tip, forget where, just try to avoid using your phone while charging it if it is starting to overheat. But also, if it is really heating up, to stop charging it just in case. Makes sense. Going to try that next time.
+But what is the temp anyway? Nice, learned from here, https://www.guidingtech.com/how-to-check-iphone-temperature/, you can access your iphone temp through the Privacy Settings, Analytics data.</description>
+    </item>
+    
     <item>
       <title>Streamlit is lit</title>
       <link>https://michal.piekarczyk.xyz/post/2024-07-20-streamlit-is-lit/</link>

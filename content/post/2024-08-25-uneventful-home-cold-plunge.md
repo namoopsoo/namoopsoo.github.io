@@ -14,6 +14,8 @@ That was amazing and I am glad I had a chance to try it a handful of times while
 While attempting to leave Miami back, hurricane Debby blocked most flights out including ours and we ended up leaving Miami two days later.
 
 
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-08-25-uneventful-home-cold-plunge/IMG_0116.PNG" width="50%">}}
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-08-25-uneventful-home-cold-plunge/IMG_0126.jpeg" width="50%">}}
 
 
 ## Debby was not the only thing that followed us back home!
@@ -27,6 +29,8 @@ But the idea of the cold plunge followed me home too 😀. Having really enjoyed
 
 
 
+
+
 ## Side note about Debby
 Probably should pull this out into a separate post. Two days after, the original flight, leaving Miami for real now, we had additional adventures.
 
@@ -35,4 +39,4 @@ Probably should pull this out into a separate post. Two days after, the original
 
 {{< figure src="https://s3.amazonaws.com/my-blog-content/2024-08-25-uneventful-home-cold-plunge/IMG_0243.PNG" width="50%">}}
 
-{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-08-25-uneventful-home-cold-plunge/IMG_0126.jpeg" width="50%">}}
+

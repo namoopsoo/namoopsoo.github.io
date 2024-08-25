@@ -14,10 +14,12 @@ That was amazing and I am glad I had a chance to try it a handful of times while
 While attempting to leave Miami back, hurricane Debby blocked most flights out including ours and we ended up leaving Miami two days later.
 
 
+
+
 ## Debby was not the only thing that followed us back home!
 Back home in the north east, in the form of a tropical depression, Debby said hello!
 
-{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-08-25-uneventful-home-cold-plunge/IMG_0276.PNG" width="70%">}}
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-08-25-uneventful-home-cold-plunge/IMG_0276.PNG" width="50%">}}
 
 
 But the idea of the cold plunge followed me home too 😀. Having really enjoyed the experience of the amazing post plunge adrenaline rush, I went online thinking how to recreate the experience.
@@ -30,3 +32,7 @@ Probably should pull this out into a separate post. Two days after, the original
 
 
 
+
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-08-25-uneventful-home-cold-plunge/IMG_0243.PNG" width="50%">}}
+
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2024-08-25-uneventful-home-cold-plunge/IMG_0126.jpeg" width="50%">}}

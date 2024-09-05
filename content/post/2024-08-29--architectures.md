@@ -11,7 +11,7 @@ Was wondering hmm, I have used Tensorflow, pytorch on standalone VMs in the past
 (4) Back prop has some parallelization opportunities , but there are lot of dependencies too. wondering, hmm, what are some parallelization methods w.r.t. what us available? 
 (5) are Horovod (and TFJobs) only really for deep learning or how about xgboost? (ah xgboost has its own, not on top of Horovod though)
 ## the dominant architectures/frameworks?
-Somehow I got the impression that, since whenever I opened up a google colab notebook in the past and saw GPU set up for tensorflow, and then later when I started working with Databricks, I got the impression that GPU and clusters were an either or thing.
+Somehow I got the impression that, since whenever I opened up a google colab notebook in the past and saw GPU set up for tensorflow or pytorch, and then later when I started working with Databricks, I got the impression that GPU and clusters were an either or thing.
 
 ### I learned 
 - Not just GPU distributted vs cluster distributed, but also hybrid of these.
@@ -26,7 +26,7 @@ Somehow I got the impression that, since whenever I opened up a google colab not
 ## tensorflow overtaken by pytorch
 
 
-[2023 Article](https://medium.com/@markurtz/2022-state-of-competitive-ml-the-downfall-of-tensorflow-e2577c499a4d) , crediting pytorch's clearer python style.
+[2023 Article](https://medium.com/@markurtz/2022-state-of-competitive-ml-the-downfall-of-tensorflow-e2577c499a4d) , crediting pytorch's clearer python style. Also siloed vs wide-integrated pytorch ecosystem.
 
 
 ### minimal tensorflow
@@ -70,6 +70,8 @@ test_input = None
 out = ExampleNetwork(test_inp)
 ```
 
+![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*dGXV98wgWDM4-L5EURXAcg.png)
+
 
 ### Tensorflow 2
 Yes ther was the TF2 rewrite , but looks like Google 's current answer is JAX.
@@ -80,6 +82,49 @@ Yes ther was the TF2 rewrite , but looks like Google 's current answer is JAX.
 
 ## how do Tensorflow / pytorch actually work on Databricks, or can they even?
 I was wondering , do Horovod, basically abstract away existance of the distributed environment ? Learned that mostly yes. But that TensorFlow , pytorch have some knowledge about the multiple clusters too.
+
+
+How much do you need to change your tensorflow, pytorch code?
+
+According to https://horovod.readthedocs.io/en/stable/spark_include.html , 
+your training code does need to rever to horovod like
+
+```python
+from tensorflow import keras
+import tensorflow as tf
+import horovod.spark.keras as hvd
+
+model = keras.models.Sequential()
+    .add(keras.layers.Dense(8, input_dim=2))
+    .add(keras.layers.Activation('tanh'))
+    .add(keras.layers.Dense(1))
+    .add(keras.layers.Activation('sigmoid'))
+
+# NOTE: unscaled learning rate
+optimizer = keras.optimizers.SGD(lr=0.1)
+loss = 'binary_crossentropy'
+
+store = HDFSStore('/user/username/experiments')
+keras_estimator = hvd.KerasEstimator(
+    num_proc=4,
+    store=store,
+    model=model,
+    optimizer=optimizer,
+    loss=loss,
+    feature_cols=['features'],
+    label_cols=['y'],
+    batch_size=32,
+    epochs=10)
+
+
+keras_model = keras_estimator.fit(train_df) \
+    .setOutputCols(['predict'])
+predict_df = keras_model.transform(test_df)
+```
+
+and I get the impression  that per [the docs](https://horovod.readthedocs.io/en/stable/spark_include.html#horovod-spark-run) , MPI basically just uses spark workers as simple nodes, without rolling out the spark planning, say.
+
+### Horovod based on MPI.
 
 ## Can you theoretically infinitely scale out , therefore , as wide as you wish?
 

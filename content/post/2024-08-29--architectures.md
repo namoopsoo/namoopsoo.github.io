@@ -137,7 +137,7 @@ https://towardsdatascience.com/distributed-deep-learning-training-with-horovod-o
 
 
 ## Keras 3 approach
-Similarly, Keras 3, has extended itself to make underlying JAX, tensorflow, pytorch libraries think they are talking to a single device.
+Similarly, Keras 3, has extended itself to make underlying JAX, tensorflow, pytorch libraries think they are talking to a single GPU device.
 
 https://keras.io/guides/distribution/
 
@@ -151,6 +151,14 @@ https://keras.io/guides/distribution/#dataparallel
 ModelParallel, cutting up the model weights when they are too large to fit on one device.
 https://keras.io/guides/distribution/#modelparallel-and-layoutmap
 
+
+### multi machine?
+However digging into the docs, seeing DeviceMesh , etc but not how to scale to a cluster of nodes with many GPUS.
+
+
+However, hmm tensorflow supports natively?
+tf.distribute.MirroredStrategy vs tf.distribute.MultiWorkerMirroredStrategy
+https://www.tensorflow.org/api_docs/python/tf/distribute/MultiWorkerMirroredStrategy
 
 
 

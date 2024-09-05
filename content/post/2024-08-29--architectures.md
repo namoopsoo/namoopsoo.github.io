@@ -22,7 +22,9 @@ Somehow I got the impression that, since whenever I opened up a google colab not
 - And **Dask**,  though not particularly for deep learning. (but **dask** can extend scikit-learn )
 - **Deep Speed**,  from **Microsoft**,  but hmm not well known I think. 
 - Few years ago Google introduced JAX ([jax](https://github.com/google/jax) ) as a competitor since pytorch ( facebook ) , grew more popular. 
-
+- image
+	- in 2018, it was Tensorflow , Keras, pytorch ( https://towardsdatascience.com/deep-learning-framework-power-scores-2018-23607ddf297a  ) 
+	- but by 2023 this flipped, ( https://medium.com/@markurtz/2022-state-of-competitive-ml-the-downfall-of-tensorflow-e2577c499a4d )
 ## how do Tensorflow / pytorch actually work on Databricks, or can they even?
 I was wondering , do Horovod, basically abstract away existance of the distributed environment ? Learned that mostly yes. But that TensorFlow , pytorch have some knowledge about the multiple clusters too.
 

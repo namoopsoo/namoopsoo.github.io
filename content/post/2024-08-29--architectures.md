@@ -142,6 +142,17 @@ Similarly, Keras 3, has extended itself to make underlying JAX, tensorflow, pyto
 https://keras.io/guides/distribution/
 
 
+different approaches, mapping to the partitioning strategies,
+
+DataParallel, splitting up the data , mini-batches
+Each device has a local copy of model weights.
+https://keras.io/guides/distribution/#dataparallel
+
+ModelParallel, cutting up the model weights when they are too large to fit on one device.
+https://keras.io/guides/distribution/#modelparallel-and-layoutmap
+
+
+
 
 ## Can you theoretically infinitely scale out , therefore , as wide as you wish?
 

@@ -23,6 +23,32 @@ Somehow I got the impression that, since whenever I opened up a google colab not
 - **Deep Speed**,  from **Microsoft**,  but hmm not well known I think. 
 - Few years ago Google introduced JAX ([jax](https://github.com/google/jax) ) as a competitor since pytorch ( facebook ) , grew more popular. 
 
+
+## But how can you scale back prop?
+Stochastic Gradient Descent with back prop. SGD,
+
+
+So with the forward pass, the output of each layer is the input of the next layer.
+
+How about the backwards pass? When do we actually update weights? 
+
+
+how large is a batch in SGD?
+
+
+for GD, each graient step, prediction , compute gradient for the whole dataset. takes long time?
+
+Error is additive, so error of the whole dataset, is sum of predictive , of each row of your dataset.
+
+
+### mini batches
+So if each GPU does calculations to update weights and biases, based on a subset of the data, how do we combine the updates?
+
+Synchronization?
+
+First of all, with a mini batch, itself with multiple examples, do we have to update one example at a time?
+
+
 ## tensorflow overtaken by pytorch
 
 
@@ -160,6 +186,21 @@ However, hmm tensorflow supports natively?
 tf.distribute.MirroredStrategy vs tf.distribute.MultiWorkerMirroredStrategy
 https://www.tensorflow.org/api_docs/python/tf/distribute/MultiWorkerMirroredStrategy
 
+Multiple workers that are a `"worker"`, but one of them is a `"chief"`
+
+
+```sh
+tf_config = {
+    'cluster': {
+        'worker': ['localhost:12345', 'localhost:23456']
+    },
+    'task': {'type': 'worker', 'index': 0}
+}
+
+```
+
+
+[dataset sharding](https://www.tensorflow.org/tutorials/distribute/multi_worker_with_keras#multi-worker_training_in_depth)
 
 
 ## Can you theoretically infinitely scale out , therefore , as wide as you wish?

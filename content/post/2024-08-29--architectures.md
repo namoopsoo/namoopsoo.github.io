@@ -81,7 +81,9 @@ Yes ther was the TF2 rewrite , but looks like Google 's current answer is JAX.
 - but by 2023 this flipped, ( https://medium.com/@markurtz/2022-state-of-competitive-ml-the-downfall-of-tensorflow-e2577c499a4d )
 
 ## how do Tensorflow / pytorch actually work on Databricks, or can they even?
-I was wondering , do Horovod, basically abstract away existance of the distributed environment ? Learned that mostly yes. But that TensorFlow , pytorch have some knowledge about the multiple clusters too.
+I was wondering , do Horovod (from Uber), basically abstract away existance of the distributed environment ? Learned that mostly yes. But that TensorFlow , pytorch have some knowledge about the multiple clusters too.
+
+Some libraries support multi-GPU
 
 
 How much do you need to change your tensorflow, pytorch code?
@@ -125,6 +127,21 @@ predict_df = keras_model.transform(test_df)
 and I get the impression  that per [the docs](https://horovod.readthedocs.io/en/stable/spark_include.html#horovod-spark-run) , MPI basically just uses spark workers as simple nodes, without rolling out the spark planning, say.
 
 ### Horovod based on MPI.
+Message Passing Interface (MPI)
+
+So per https://mpitutorial.com/tutorials/mpi-introduction/ , MPI  is a generic library for using a set of ip addressable hosts as nodes in a network.
+
+
+### Kubernetes too 
+https://towardsdatascience.com/distributed-deep-learning-training-with-horovod-on-kubernetes-6b28ac1d6b5d
+
+
+## Keras 3 approach
+Similarly, Keras 3, has extended itself to make underlying JAX, tensorflow, pytorch libraries think they are talking to a single device.
+
+https://keras.io/guides/distribution/
+
+
 
 ## Can you theoretically infinitely scale out , therefore , as wide as you wish?
 

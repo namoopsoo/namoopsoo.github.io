@@ -22,9 +22,62 @@ Somehow I got the impression that, since whenever I opened up a google colab not
 - And **Dask**,  though not particularly for deep learning. (but **dask** can extend scikit-learn )
 - **Deep Speed**,  from **Microsoft**,  but hmm not well known I think. 
 - Few years ago Google introduced JAX ([jax](https://github.com/google/jax) ) as a competitor since pytorch ( facebook ) , grew more popular. 
-- image
-	- in 2018, it was Tensorflow , Keras, pytorch ( https://towardsdatascience.com/deep-learning-framework-power-scores-2018-23607ddf297a  ) 
-	- but by 2023 this flipped, ( https://medium.com/@markurtz/2022-state-of-competitive-ml-the-downfall-of-tensorflow-e2577c499a4d )
+
+## tensorflow overtaken by pytorch
+
+
+[2023 Article](https://medium.com/@markurtz/2022-state-of-competitive-ml-the-downfall-of-tensorflow-e2577c499a4d) , crediting pytorch's clearer python style.
+
+
+### minimal tensorflow
+```python
+import tensorflow as tf
+
+# Define the model
+inp = tf.placeholder(tf.float32, [None, 784])
+W = tf.Variable(tf.zeros([784, 10]))
+b = tf.Variable(tf.zeros([10]))
+out = tf.nn.softmax(tf.matmul(x, W) + b)
+
+# Initialize the variables and create a session
+init = tf.global_variables_initializer()
+sess = tf.Session()
+sess.run(init)
+
+# Invoke the model
+test_input = None
+out_res = sess.run(out, feed_dict={inp: test_inp})
+```
+
+vs
+### minimal pytorch
+```python
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+# Define and Initialize the model
+class ExampleNetwork(nn.Module):
+    def __init__(self):
+        super(Net, self).__init__()
+        self.fc1 = nn.Linear(784, 10)
+    def forward(self, x):
+        return F.softmax(self.fc1(x), dim=1)
+model = Net()
+
+# Run an inference
+test_input = None
+out = ExampleNetwork(test_inp)
+```
+
+
+### Tensorflow 2
+Yes ther was the TF2 rewrite , but looks like Google 's current answer is JAX.
+
+### references
+- in 2018, it was Tensorflow , Keras, pytorch ( https://towardsdatascience.com/deep-learning-framework-power-scores-2018-23607ddf297a  ) 
+- but by 2023 this flipped, ( https://medium.com/@markurtz/2022-state-of-competitive-ml-the-downfall-of-tensorflow-e2577c499a4d )
+
 ## how do Tensorflow / pytorch actually work on Databricks, or can they even?
 I was wondering , do Horovod, basically abstract away existance of the distributed environment ? Learned that mostly yes. But that TensorFlow , pytorch have some knowledge about the multiple clusters too.
 

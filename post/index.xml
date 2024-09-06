@@ -15,11 +15,11 @@
       <guid>https://michal.piekarczyk.xyz/post/2024-08-29--architectures/</guid>
       <description>&lt;h1 id=&#34;motivation&#34;&gt;motivation&lt;/h1&gt;
 &lt;p&gt;I know more about Databricks for distributed computing. But there is also the Kubernetes world. Let’s read some more on that.&lt;/p&gt;
-&lt;p&gt;Was wondering hmm, I have used Tensorflow, pytorch on standalone VMs in the past and I know that Spark has its own distributed libraries, so do  Tensorflow, pytorch natively support spark, hmm? (Basically learned no)&lt;/p&gt;
+&lt;p&gt;Was wondering hmm, I have used Tensorflow, pytorch on standalone VMs in the past and I know that Spark has its own distributed libraries, so do  Tensorflow, pytorch natively support spark, hmm?&lt;/p&gt;
 &lt;h2 id=&#34;lingering-questions&#34;&gt;lingering questions&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;(1) What are the dominant technologies for distributed computing? (spark, and containerization by K8S)&lt;/li&gt;
-&lt;li&gt;(2) specifically GPU vs cluster based, are these alternatives? (learning hybrid actually common too.)&lt;/li&gt;
+&lt;li&gt;(2) specifically GPU vs cluster based, are these alternatives?&lt;/li&gt;
 &lt;li&gt;(3) Are the typical deep learning options (Tensorflow, pytorch) abstracted by Horovod/ TFJobs or did Tensorflow , pytorch need to be modified to suport multiple clusters ? Wondering about the level of abtraction basically.&lt;/li&gt;
 &lt;li&gt;(4) Back prop has some parallelization opportunities , but there are lot of dependencies too. wondering, hmm, what are some parallelization methods w.r.t. what us available?&lt;/li&gt;
 &lt;li&gt;(5) are Horovod (and TFJobs) only really for deep learning or how about xgboost? (ah xgboost has its own, not on top of Horovod though)&lt;/li&gt;

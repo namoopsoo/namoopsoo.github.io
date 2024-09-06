@@ -181,7 +181,7 @@ So per https://mpitutorial.com/tutorials/mpi-introduction/ , MPI  is a generic l
 ### Kubernetes too 
 https://towardsdatascience.com/distributed-deep-learning-training-with-horovod-on-kubernetes-6b28ac1d6b5d
 
-
+![](https://miro.medium.com/v2/resize:fit:720/format:webp/1*47uOs4jaUiz8cHhks7ZgJQ.png)
 ## Keras 3 approach
 Similarly, Keras 3, has extended itself to make underlying JAX, tensorflow, pytorch libraries think they are talking to a single GPU device.
 

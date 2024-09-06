@@ -44,7 +44,7 @@ and then calculate the gradient of the total error w.r.t. each weight in the net
 And we apply these as one-time updates to the weights of the network.
 
 #### what if the dataset doesn't fit into memory?
-The error is additive, so error of the whole dataset, is sum of predictive , of each row of your dataset.
+The error is additive, so error of the whole dataset, is sum of predictive error, of each row of your dataset.
 
 Consider then mini batches. Randomly split your training set into several smaller sets, find the gradient with respect to all the weights, using the sum squared error of each, 
 
@@ -54,15 +54,22 @@ and add the quantities to the weights, for each mini batch.
 ![](https://editor.analyticsvidhya.com/uploads/58182variations_comparison.png)
 
 
-### mini batches and GPUs
-So if each GPU does calculations to update weights and biases, based on a subset of the data, how do we combine the updates?
+#### furthermore what if all the weights themselves do not fit into memory of a single GPU ?
+This is more complicated.
 
-Synchronization?
+Now, since back prop is a one layer at a time update, you would need some very tight communication between your nodes (or pods) and here, parallelization, is not for speed but simply out of necessity.
 
-First of all, with a mini batch, itself with multiple examples, do we have to update one example at a time?
+(learned there are some frameworks where there is a parameter server even although a bottle neck !; I think TF has a special worker called a "chief" that helps here, to coordinate the work, including weight initialization, saving checkpoints, logging progress, and helping with failure recovery,)
 
 
-## tensorflow overtaken by pytorch
+#### checkpointing
+mainly for recovery from failure, so you can continue from where left off.
+
+
+#### asynchronous vs synchronous parameter updates
+unclear why this matters (TODO)
+
+## tensorflow overtaken by pytorch ?!?
 
 
 [2023 Article](https://medium.com/@markurtz/2022-state-of-competitive-ml-the-downfall-of-tensorflow-e2577c499a4d) , crediting pytorch's clearer python style. Also siloed vs wide-integrated pytorch ecosystem.

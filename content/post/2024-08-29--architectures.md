@@ -12,14 +12,14 @@ Was wondering hmm, I have used Tensorflow, pytorch on standalone VMs in the past
 - (1) What are the dominant technologies for distributed computing? (spark, and containerization by K8S)
 - (2) specifically GPU vs cluster based, are these alternatives? 
 - (3) Are the typical deep learning options (Tensorflow, pytorch) abstracted by Horovod/ TFJobs or did Tensorflow , pytorch need to be modified to suport multiple clusters ? Wondering about the level of abtraction basically.
-- (4) Back prop has some parallelization opportunities , but there are lot of dependencies too. wondering, hmm, what are some parallelization methods w.r.t. what us available? 
-- (5) are Horovod (and TFJobs) only really for deep learning or how about xgboost? (ah xgboost has its own, not on top of Horovod though)
+- (4) Back prop has some parallelization opportunities , but there are lot of dependencies too. wondering, hmm, what are some parallelization methods w.r.t. what is available? 
+- (5) are Horovod (and TFJobs) only really for deep learning or how about xgboost?
 ## the dominant architectures/frameworks?
 Somehow I got the impression that, since whenever I opened up a google colab notebook in the past and saw GPU set up for tensorflow or pytorch, and then later when I started working with Databricks, I got the impression that GPU and clusters were an either or thing.
 
 ### I learned 
 - Not just GPU distributted vs cluster distributed, but also hybrid of these.
-- oh and both Databricks ane Kubernetes can be used for hybrid. 
+- oh and both Databricks and Kubernetes can be used for hybrid. 
 - But interestingly Databricks / spark, stepped away from distributed. Originally had **Spark Deep Learning Libraries**, but today, only Horovod and TFJobs . 
 	- Shifted focus, perhaps because lots already options, market saturated . 
 - Also there are a few others, less widely used,  **Spark on Ray**,  and **BigDL**, 
@@ -27,6 +27,8 @@ Somehow I got the impression that, since whenever I opened up a google colab not
 - **Deep Speed**,  from **Microsoft**,  but hmm not well known I think. 
 - Few years ago Google introduced JAX ([jax](https://github.com/google/jax) ) as a competitor since pytorch ( facebook ) , grew more popular. 
 
+### (theory) But that single big vm multiple GPU approach,
+I think it is possibly a google colab bias because of convenience? (TODO look more into it.)
 
 ## But how can you scale back prop?
 You might train a small neural net with plain Gradient Descent with back propagation, over a few epochs.

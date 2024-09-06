@@ -232,7 +232,7 @@ TODO: go into
 
 
 ## MPI
-interestingly learned MPI , used by Horovod. More low level.
+interestingly learned MPI , used by Horovod. More low level. From 1991.
 
 ## Databricks , Kubernetes?
 Learned the Kubernetes license is Apache, 

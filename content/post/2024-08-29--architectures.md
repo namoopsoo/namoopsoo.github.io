@@ -43,7 +43,7 @@ and then calculate the gradient of the total error w.r.t. each weight in the net
 
 And we apply these as one-time updates to the weights of the network.
 
-#### what if that doesn't fit into memory?
+#### what if the dataset doesn't fit into memory?
 The error is additive, so error of the whole dataset, is sum of predictive , of each row of your dataset.
 
 Consider then mini batches. Randomly split your training set into several smaller sets, find the gradient with respect to all the weights, using the sum squared error of each, 

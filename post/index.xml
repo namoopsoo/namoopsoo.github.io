@@ -21,8 +21,8 @@
 &lt;li&gt;(1) What are the dominant technologies for distributed computing? (spark, and containerization by K8S)&lt;/li&gt;
 &lt;li&gt;(2) specifically GPU vs cluster based, are these alternatives?&lt;/li&gt;
 &lt;li&gt;(3) Are the typical deep learning options (Tensorflow, pytorch) abstracted by Horovod/ TFJobs or did Tensorflow , pytorch need to be modified to suport multiple clusters ? Wondering about the level of abtraction basically.&lt;/li&gt;
-&lt;li&gt;(4) Back prop has some parallelization opportunities , but there are lot of dependencies too. wondering, hmm, what are some parallelization methods w.r.t. what us available?&lt;/li&gt;
-&lt;li&gt;(5) are Horovod (and TFJobs) only really for deep learning or how about xgboost? (ah xgboost has its own, not on top of Horovod though)&lt;/li&gt;
+&lt;li&gt;(4) Back prop has some parallelization opportunities , but there are lot of dependencies too. wondering, hmm, what are some parallelization methods w.r.t. what is available?&lt;/li&gt;
+&lt;li&gt;(5) are Horovod (and TFJobs) only really for deep learning or how about xgboost?&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;the-dominant-architecturesframeworks&#34;&gt;the dominant architectures/frameworks?&lt;/h2&gt;
 &lt;p&gt;Somehow I got the impression that, since whenever I opened up a google colab notebook in the past and saw GPU set up for tensorflow or pytorch, and then later when I started working with Databricks, I got the impression that GPU and clusters were an either or thing.&lt;/p&gt;</description>

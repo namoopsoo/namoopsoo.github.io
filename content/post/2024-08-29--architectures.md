@@ -234,6 +234,11 @@ TODO: go into
 ## MPI
 interestingly learned MPI , used by Horovod. More low level.
 
+## Databricks , Kubernetes?
+Learned the Kubernetes license is Apache, 
+https://github.com/kubernetes/kubernetes/blob/master/LICENSE
+so private use is ok. Although couldn`t find disclosure on Databricks, and what is under the hood.
+
 ## Also interesting comparison, distributed training and distributed inference
 Thinking here since, was using hugging face spaces a bit and noticed ther is no cluster inference, but there is talk of model federation , in the agent space. Wondering abit the biggest of the biggest models.
 

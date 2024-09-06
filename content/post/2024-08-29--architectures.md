@@ -1,4 +1,7 @@
-# Mini survey of some high level deep learning curiosities.
+---
+title: Mini survey of some high level deep learning curiosities.
+date: 2024-09-05
+---
 
 # motivation
 I know more about Databricks for distributed computing. But there is also the Kubernetes world. Let’s read some more on that.

@@ -6,11 +6,11 @@ date: 2024-09-05
 # motivation
 I know more about Databricks for distributed computing. But there is also the Kubernetes world. Let’s read some more on that.
 
-Was wondering hmm, I have used Tensorflow, pytorch on standalone VMs in the past and I know that Spark has its own distributed libraries, so do  Tensorflow, pytorch natively support spark, hmm? (Basically learned no)
+Was wondering hmm, I have used Tensorflow, pytorch on standalone VMs in the past and I know that Spark has its own distributed libraries, so do  Tensorflow, pytorch natively support spark, hmm? 
 
 ## lingering questions
 - (1) What are the dominant technologies for distributed computing? (spark, and containerization by K8S)
-- (2) specifically GPU vs cluster based, are these alternatives? (learning hybrid actually common too.)
+- (2) specifically GPU vs cluster based, are these alternatives? 
 - (3) Are the typical deep learning options (Tensorflow, pytorch) abstracted by Horovod/ TFJobs or did Tensorflow , pytorch need to be modified to suport multiple clusters ? Wondering about the level of abtraction basically.
 - (4) Back prop has some parallelization opportunities , but there are lot of dependencies too. wondering, hmm, what are some parallelization methods w.r.t. what us available? 
 - (5) are Horovod (and TFJobs) only really for deep learning or how about xgboost? (ah xgboost has its own, not on top of Horovod though)

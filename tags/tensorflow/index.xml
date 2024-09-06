@@ -13,9 +13,8 @@
       <pubDate>Sat, 12 Nov 2022 00:00:00 +0000</pubDate>
       
       <guid>https://michal.piekarczyk.xyz/post/2022-11-12-food-not-food/</guid>
-      <description>I have this on-going effort to be able to more easily show off my photos in the context of conversations. (I have a repo here, https://github.com/namoopsoo/manage-my-photos related to my glue code.)
-But I want a nice photo stream and my food diary is not part of that at all haha. So after manually moving food photos out, ultimately I stumbled upon Daniel Bourke&amp;rsquo;s Food Not Food repo, https://github.com/mrdbourke/food-not-food .
-This was great I thought but I had some challenges getting this code off the ground, so here are my notes where ultimately I forked this, https://github.</description>
+      <description>&lt;p&gt;I have this on-going effort to be able to more easily show off my photos in the context of conversations. (I have a repo here, &lt;a href=&#34;https://github.com/namoopsoo/manage-my-photos&#34;&gt;https://github.com/namoopsoo/manage-my-photos&lt;/a&gt; related to my glue code.)&lt;/p&gt;
+&lt;p&gt;But I want a nice photo stream and my food diary is not part of that at all haha. So after manually moving food photos out, ultimately I stumbled upon  Daniel Bourke&amp;rsquo;s Food Not Food repo, &lt;a href=&#34;https://github.com/mrdbourke/food-not-food&#34;&gt;https://github.com/mrdbourke/food-not-food&lt;/a&gt; .&lt;/p&gt;</description>
     </item>
     
   </channel>

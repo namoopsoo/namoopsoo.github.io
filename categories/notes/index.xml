@@ -22,11 +22,24 @@
       <pubDate>Wed, 09 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://michal.piekarczyk.xyz/post/2020-12-09-dropbox-api-hmm/</guid>
-      <description>For my EasyBlogPosting project.. Testing out the Dropbox API..
-2020-12-09 trying this out Per here &amp;hellip; pip install dropbox Went w/ that Getting Started page Through that page, I created a new test app for myself.
-Using the API explorer &amp;hellip; I hit Get Token ..
-https://www.dropbox.com/oauth2/authorize?response_type=token&amp;amp;client_id=xxxxxxxxx&amp;amp;redirect_uri=https%3A%2F%2Fdropbox.github.io%2Fdropbox-api-v2-explorer%2F&amp;amp;state=file_requests_list!39%2B%2Bxxxxxxxx&amp;amp;token_access_type=online&amp;amp;
-That generated a token and I used https://dropbox.github.io/dropbox-api-v2-explorer/#files_list_folder and I was able to see actual folders in my account. That&amp;rsquo;s cool except I thought I had chosen something like &amp;lsquo;single folder access&amp;rsquo; so I&amp;rsquo;m slightly confused why I can see the other folders.</description>
+      <description>&lt;h3 id=&#34;for-my-easyblogposting-project&#34;&gt;For my EasyBlogPosting project..&lt;/h3&gt;
+&lt;p&gt;Testing out the Dropbox API..&lt;/p&gt;
+&lt;h3 id=&#34;2020-12-09&#34;&gt;2020-12-09&lt;/h3&gt;
+&lt;h4 id=&#34;trying-this-out&#34;&gt;trying this out&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Per &lt;a href=&#34;https://www.dropbox.com/developers/reference/getting-started&#34;&gt;here&lt;/a&gt; &amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pip install dropbox
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;went-w-that-getting-started-page&#34;&gt;Went w/ that Getting Started page&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Through that page, I created a new test app for myself.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Using the API explorer &amp;hellip; I hit Get Token ..&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.dropbox.com/oauth2/authorize?response_type=token&amp;amp;client_id=xxxxxxxxx&amp;amp;redirect_uri=https%3A%2F%2Fdropbox.github.io%2Fdropbox-api-v2-explorer%2F&amp;amp;state=file_requests_list!39%2B%2Bxxxxxxxx&amp;amp;token_access_type=online&amp;amp;&#34;&gt;https://www.dropbox.com/oauth2/authorize?response_type=token&amp;amp;client_id=xxxxxxxxx&amp;amp;redirect_uri=https%3A%2F%2Fdropbox.github.io%2Fdropbox-api-v2-explorer%2F&amp;amp;state=file_requests_list!39%2B%2Bxxxxxxxx&amp;amp;token_access_type=online&amp;amp;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

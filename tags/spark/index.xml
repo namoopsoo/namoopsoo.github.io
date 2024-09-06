@@ -13,8 +13,23 @@
       <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://michal.piekarczyk.xyz/post/2021-03-20-databricks/</guid>
-      <description>https://databricks.com/try-databricks
-2021-03-21 Running A quick start notebook Based on the notes here, it is pretty easy to create an auto-scaling cluster. Not sure yet what events prompt the cluster to get more workers. But I would be curious to try a job that uses fewer workers and more workers, to see how the outcomes compare. I also like ethat this notebook supports SQL and also python , using what looks like first line as %python to indicate the language.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://databricks.com/try-databricks&#34;&gt;https://databricks.com/try-databricks&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2021-03-21&#34;&gt;2021-03-21&lt;/h3&gt;
+&lt;h4 id=&#34;running-a-quick-start-notebook&#34;&gt;Running A quick start notebook&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Based on the notes here, it is pretty easy to create an auto-scaling cluster.&lt;/li&gt;
+&lt;li&gt;Not sure yet what events prompt the cluster to get more workers.&lt;/li&gt;
+&lt;li&gt;But I would be curious to try a job that uses fewer workers and more workers, to see how the outcomes compare.&lt;/li&gt;
+&lt;li&gt;I also like ethat this notebook supports &lt;code&gt;SQL&lt;/code&gt; and also &lt;code&gt;python&lt;/code&gt; , using what looks like first line as &lt;code&gt;%python&lt;/code&gt; to indicate the language.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;is-this-spark-sql-or-sql-&#34;&gt;Is this spark sql or sql ?&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;From the quick start notebook&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;CREATE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;TABLE&lt;/span&gt; diamonds
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;USING&lt;/span&gt; csv
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;OPTIONS&lt;/span&gt; (path &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/databricks-datasets/Rdatasets/data-001/csv/ggplot2/diamonds.csv&amp;#34;&lt;/span&gt;, header &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
     </item>
     
     <item>
@@ -23,8 +38,27 @@
       <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://michal.piekarczyk.xyz/post/2021-01-23-spark-weekend/</guid>
-      <description>Trying out Spark this weekend These are just my casual notes from doing that, updating them as I go along.
-Following this post to get kubernetes running in Docker for mac Per this post , I just ticked the &amp;ldquo;Enable Kubernetes&amp;rdquo; option in the docker settings. Kubernetes is taking quite a while to start up though . several minutes. kind of weird? Download spark image From here 2021-01-24 ok backup my docker images Per notes , I backed up local docker images, Like this&amp;hellip; docker save citibike-learn:0.</description>
+      <description>&lt;h3 id=&#34;trying-out-spark-this-weekend&#34;&gt;Trying out Spark this weekend&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;These are just my casual notes from doing that, updating them as I go along.&lt;/em&gt;&lt;/p&gt;
+&lt;h4 id=&#34;following-this-post-to-get-kubernetes-running-in-docker-for-mac&#34;&gt;Following this post to get kubernetes running in Docker for mac&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Per &lt;a href=&#34;https://medium.com/faun/apache-spark-on-kubernetes-docker-for-mac-2501cc72e659&#34;&gt;this post&lt;/a&gt; , I just ticked the  &amp;ldquo;Enable Kubernetes&amp;rdquo; option in the docker settings.&lt;/li&gt;
+&lt;li&gt;Kubernetes is taking quite a while to start up though . several minutes. kind of weird?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;download-spark-image&#34;&gt;Download spark image&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;From &lt;a href=&#34;https://spark.apache.org/downloads.html&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2021-01-24&#34;&gt;2021-01-24&lt;/h3&gt;
+&lt;h4 id=&#34;ok-backup-my-docker-images&#34;&gt;ok backup my docker images&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Per &lt;a href=&#34;https://corgibytes.com/blog/2019/05/13/docker-for-mac-safely-reset-from-factory-defaults/&#34;&gt;notes&lt;/a&gt; , I backed up local docker images,&lt;/li&gt;
+&lt;li&gt;Like this&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker save citibike-learn:0.9
+# image:citibike-learn, tag:latest, image-id:1ff5cd891f00
+# image:citibike-learn, tag:0.9, imageid:c8d430e84654
+&lt;/code&gt;&lt;/pr</description>
     </item>
     
   </channel>

@@ -7,6 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Mini survey of some high level deep learning curiosities.</title>
+      <link>https://michal.piekarczyk.xyz/post/2024-08-29--architectures/</link>
+      <pubDate>Thu, 05 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2024-08-29--architectures/</guid>
+      <description>&lt;h1 id=&#34;motivation&#34;&gt;motivation&lt;/h1&gt;
+&lt;p&gt;I know more about Databricks for distributed computing. But there is also the Kubernetes world. Let’s read some more on that.&lt;/p&gt;
+&lt;p&gt;Was wondering hmm, I have used Tensorflow, pytorch on standalone VMs in the past and I know that Spark has its own distributed libraries, so do  Tensorflow, pytorch natively support spark, hmm? (Basically learned no)&lt;/p&gt;
+&lt;h2 id=&#34;lingering-questions&#34;&gt;lingering questions&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;(1) What are the dominant technologies for distributed computing? (spark, and containerization by K8S)&lt;/li&gt;
+&lt;li&gt;(2) specifically GPU vs cluster based, are these alternatives? (learning hybrid actually common too.)&lt;/li&gt;
+&lt;li&gt;(3) Are the typical deep learning options (Tensorflow, pytorch) abstracted by Horovod/ TFJobs or did Tensorflow , pytorch need to be modified to suport multiple clusters ? Wondering about the level of abtraction basically.&lt;/li&gt;
+&lt;li&gt;(4) Back prop has some parallelization opportunities , but there are lot of dependencies too. wondering, hmm, what are some parallelization methods w.r.t. what us available?&lt;/li&gt;
+&lt;li&gt;(5) are Horovod (and TFJobs) only really for deep learning or how about xgboost? (ah xgboost has its own, not on top of Horovod though)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;the-dominant-architecturesframeworks&#34;&gt;the dominant architectures/frameworks?&lt;/h2&gt;
+&lt;p&gt;Somehow I got the impression that, since whenever I opened up a google colab notebook in the past and saw GPU set up for tensorflow or pytorch, and then later when I started working with Databricks, I got the impression that GPU and clusters were an either or thing.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>read iphone temp</title>
       <link>https://michal.piekarczyk.xyz/post/2024-08-25-iphone-temp/</link>
       <pubDate>Sun, 25 Aug 2024 00:00:00 +0000</pubDate>
@@ -3962,18 +3983,6 @@ Abort trap: 6
 &lt;p&gt;One definition of mindfulness is awareness of pre-thought, that is, to capture rumination, stop it in its tracks and put a magnifying glass over it. Then you can inspect the material, as a thought, and either notice it go away or notice yourself doing something about it.&lt;/p&gt;
 &lt;h2 id=&#34;verbal-or-nonverbal&#34;&gt;verbal or nonverbal?&lt;/h2&gt;
 &lt;p&gt;Some of the pre thoughts, perhaps call them gut feelings or intuitions, can be nonverbal. Perhaps that is along the lines of a bag of words , sort of embedded in a hyperdimensional space? And one where neuralink can one day let us write with them or direct our environment. That’s the stuff of thought.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://michal.piekarczyk.xyz/post/2024-08-29--architectures/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://michal.piekarczyk.xyz/post/2024-08-29--architectures/</guid>
-      <description>&lt;h1 id=&#34;mini-survey-of-some-high-level-deep-learning-curiosities&#34;&gt;Mini survey of some high level deep learning curiosities.&lt;/h1&gt;
-&lt;h1 id=&#34;motivation&#34;&gt;motivation&lt;/h1&gt;
-&lt;p&gt;I know more about Databricks for distributed computing. But there is also the Kubernetes world. Let’s read some more on that.&lt;/p&gt;
-&lt;p&gt;Was wondering hmm, I have used Tensorflow, pytorch on standalone VMs in the past and I know that Spark has its own distributed libraries, so do  Tensorflow, pytorch natively support spark, hmm? (Basically learned no)&lt;/p&gt;</description>
     </item>
     
     <item>

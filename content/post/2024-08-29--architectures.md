@@ -25,23 +25,30 @@ Somehow I got the impression that, since whenever I opened up a google colab not
 
 
 ## But how can you scale back prop?
-Stochastic Gradient Descent with back prop. SGD,
+You might train a small neural net with plain Gradient Descent with back propagation, over a few epochs.
+
+It would fit in memory.
+
+Find the average error for all examples in your dataset,
+```
+error = sum squared (target - output)
+```
+and then calculate the gradient of the total error w.r.t. each weight in the network, working backwards from the final set of weights, through the hidden layers, to the first layer.
+
+And we apply these as one-time updates to the weights of the network.
+
+#### what if that doesn't fit into memory?
+The error is additive, so error of the whole dataset, is sum of predictive , of each row of your dataset.
+
+Consider then mini batches. Randomly split your training set into several smaller sets, find the gradient with respect to all the weights, using the sum squared error of each, 
+
+and add the quantities to the weights, for each mini batch.
 
 
-So with the forward pass, the output of each layer is the input of the next layer.
-
-How about the backwards pass? When do we actually update weights? 
+![](https://editor.analyticsvidhya.com/uploads/58182variations_comparison.png)
 
 
-how large is a batch in SGD?
-
-
-for GD, each graient step, prediction , compute gradient for the whole dataset. takes long time?
-
-Error is additive, so error of the whole dataset, is sum of predictive , of each row of your dataset.
-
-
-### mini batches
+### mini batches and GPUs
 So if each GPU does calculations to update weights and biases, based on a subset of the data, how do we combine the updates?
 
 Synchronization?

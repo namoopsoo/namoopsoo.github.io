@@ -231,6 +231,8 @@ some options:
 
 - compression: quantization of weights, down from high to lower precision floats, validating performance.
 
+- federation: use agent routing across to smaller more specialized models.
+
 ## back prop distributed training approaches
 Apparently there is a kind of distributed training where back prop gradient updates on minibatches are not synchronized. And can cause convergence to take longer or be harder (think lower learning rate suggested for those cases). So this is  synchronous  vs asynchronous. And yea 
 

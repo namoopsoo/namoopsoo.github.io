@@ -223,6 +223,35 @@ tf_config = {
 [dataset sharding](https://www.tensorflow.org/tutorials/distribute/multi_worker_with_keras#multi-worker_training_in_depth)
 
 
+## What are the pyspark analogues for Kubernetes?
+
+Dask, but [reading](https://medium.com/geekculture/dask-or-spark-a-comparison-for-data-scientists-d4cba8ba9ef7) perhaps not for `>1TB` size data.
+
+### example from the one billion row challenge
+(from [2024-01-16 dask submission](https://docs.coiled.io/blog/1brc.html) )
+
+```python
+from dask.distributed import Client
+import dask.dataframe as dd
+
+client = Client()
+
+df = dd.read_csv(
+    "measurements.txt",
+    sep=";",
+    header=None,
+    names=["station", "measure"],
+    engine='pyarrow',
+    dtype_backend='pyarrow'
+)
+df = df.groupby("station").agg(["min", "max", "mean"])
+df.columns = df.columns.droplevel()
+df = df.sort_values("station").compute()
+```
+
+their chart
+![](https://docs.coiled.io/_images/1brc-chart.svg)
+
 ## Can you theoretically infinitely scale out , therefore , as wide as you wish?
 
 ## parallelization strategies

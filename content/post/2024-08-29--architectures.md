@@ -252,6 +252,17 @@ df = df.sort_values("station").compute()
 their chart
 ![](https://docs.coiled.io/_images/1brc-chart.svg)
 
+
+#### however from polars' [website](https://docs.pola.rs/user-guide/misc/comparison/#dask)
+
+> Spark (specifically PySpark) represents a different approach to large-scale data processing. While Polars has an optimised performance for single-node environments, Spark is designed for distributed data processing across clusters, making it suitable for extremely large datasets.
+
+> However, Spark's distributed nature can introduce complexity and overhead, especially for small datasets and tasks that can run on a single machine. Another consideration is collaboration between data scientists and engineers. As they typically work with different tools (Pandas and Pyspark), refactoring is often required by engineers to deploy data scientists' data processing pipelines. Polars offers a single syntax that, due to vertical scaling, works in local environments and on a single machine in the cloud.
+
+> The choice between Polars and Spark often depends on the scale of data and the specific requirements of the processing task. If you need to process TBs of data, Spark is a better choice.
+
+Seems like they make the same argument, w.r.t. the `1 TB` figure.
+
 ## Can you theoretically infinitely scale out , therefore , as wide as you wish?
 
 ## parallelization strategies

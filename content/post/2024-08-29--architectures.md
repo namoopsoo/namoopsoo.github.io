@@ -233,7 +233,10 @@ TODO: go into
 
 ## MPI
 interestingly learned MPI , used by Horovod. More low level. From 1991.
-
+- `MPI_Recv` and `MPI_Send`.
+— Also `MPI_Scatter`, like `map`. And a `MPI_Bcast`, send same message.
+— And `MPI_Gather` opposit of scatter.
+- `MPI_Reduce`, appears to be also do the actual apply, instead of just retrieving.
 ## Databricks , Kubernetes?
 Learned the Kubernetes license is Apache, 
 https://github.com/kubernetes/kubernetes/blob/master/LICENSE

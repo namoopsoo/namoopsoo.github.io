@@ -6,7 +6,20 @@
     <description>Recent content in Posts on michal.piekarczyk.xyz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 05 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>postgresql , pgvector and indexing</title>
+      <link>https://michal.piekarczyk.xyz/post/2024-09-07-pgvector-indexes/</link>
+      <pubDate>Sat, 07 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2024-09-07-pgvector-indexes/</guid>
+      <description>&lt;p&gt;placeholder. didnt get chance to write this up yet, but I had used langchain pgvector, to add embeddings to postgresql , I ran my queries, and noticed they were slow.&lt;/p&gt;
+&lt;p&gt;I read about pgvector indexing, and on psql, noticed my embedding column was missing an index!&lt;/p&gt;
+&lt;p&gt;I tried adding the HNSW index manually.&lt;/p&gt;
+&lt;p&gt;Weird error about no dimensions on the vector column. ok learned need explicit dimension. Added it.
+Nice adding index worked.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Mini survey of some high level deep learning curiosities.</title>
       <link>https://michal.piekarczyk.xyz/post/2024-08-29--architectures/</link>

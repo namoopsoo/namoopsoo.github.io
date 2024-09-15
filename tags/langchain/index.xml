@@ -60,7 +60,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;path &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; workdir &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;utc_ts(utc_now())&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;-the-story-blurb.txt&amp;#34;&lt;/span&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;path&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;write_text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n\n\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join(sections))
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;ok-let-me-run-now-some-of-the-basic-question-answer-chains&#34;&gt;Ok let me run now some of the basic question answer chains&lt;/h3&gt;
+&lt;p&gt;Use my environment from before,&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -83,7 +84,15 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;1937-ok-so-first-per&#34;&gt;19:37 ok so first per&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://langchain.readthedocs.io/en/latest/getting_started/getting_started.html&#34;&gt;https://langchain.readthedocs.io/en/latest/getting_started/getting_started.html&lt;/a&gt; here, installing this stuff,&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://langchain.readthedocs.io/en/latest/getting_started/getting_started.html&#34;&gt;https://langchain.readthedocs.io/en/latest/getting_started/getting_started.html&lt;/a&gt; here, installing this stuff,&lt;/p&gt;
+&lt;h4 id=&#34;creating-a-new-environment-on-my-laptop&#34;&gt;creating a new environment on my laptop&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pip install langchain
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pip install openai
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pip install faiss&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;cpu &lt;span style=&#34;color:#75715e&#34;&gt;# adding this here after the fact after getting below error &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;2011-got-one-error&#34;&gt;20:11 got one error,&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;ValueError&lt;/span&gt;: Could &lt;span style=&#34;color:#f92672&#34;&gt;not&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; faiss python package&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt; Please it install it &lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;`&lt;/span&gt;pip install faiss&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;or&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;`&lt;/span&gt;pip install faiss&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;cpu&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;`&lt;/span&gt; (depending on Python version)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;ok-let-me-query&#34;&gt;Ok let me query&lt;/h3&gt;
+&lt;p&gt;the [[New yorker]] #article I added . I recently read [[The American Beast New Yorker]] this article by [[person Jill Lepore]] about the #report that was commissioned about the #[[January 6th Insurrection]] . I used my #iphone #scan-to-text feature to pull in the first page and a half to a text file, &lt;code&gt;article.txt&lt;/code&gt; to try this out . Let&amp;rsquo;s see how this works.&lt;/p&gt;</description>
     </item>
     
   </channel>

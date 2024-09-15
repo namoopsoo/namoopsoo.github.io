@@ -65,7 +65,8 @@ Nice adding index worked.&lt;/p&gt;</description>
     &lt;img loading=&#34;lazy&#34; src=&#34;https://s3.amazonaws.com/my-blog-content/2024-08-25-uneventful-home-cold-plunge/Screenshot%202024-08-25%20at%203.00.59%20PM.png&#34; width=&#34;70%&#34;/&gt; 
 &lt;/figure&gt;
 
-That was amazing and I am glad I had a chance to try it a handful of times while there.&lt;/p&gt;</description>
+That was amazing and I am glad I had a chance to try it a handful of times while there.&lt;/p&gt;
+&lt;p&gt;While attempting to leave Miami back, hurricane Debby blocked most flights out including ours and we ended up leaving Miami two days later.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -89,7 +90,12 @@ That was amazing and I am glad I had a chance to try it a handful of times while
     &lt;img loading=&#34;lazy&#34; src=&#34;https://s3.amazonaws.com/my-blog-content/2024-07-20-streamlit-is-lit/image_1722119433724_0.png&#34; width=&#34;80%&#34;/&gt; 
 &lt;/figure&gt;
 
-It is off topic, so no results&lt;/p&gt;</description>
+It is off topic, so no results&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://s3.amazonaws.com/my-blog-content/2024-07-20-streamlit-is-lit/image_1722117019959_0.png&#34; width=&#34;80%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;Continuing from an &lt;a href=&#34;https://michal.piekarczyk.xyz/post/2024-06-16-bart-zero-shot-look/&#34;&gt;earlier post&lt;/a&gt;, this is taking advantage of Facebook&amp;rsquo;s BART model. A hugging face pipeline is used to hit against six food and restaurant related topics are averaged and compared against a threshold of &lt;code&gt;0.60&lt;/code&gt; to determine if the query is food related. We see the topics are displayed with their level of &lt;a href=&#34;https://en.wikipedia.org/wiki/Textual_entailment&#34;&gt;entailment&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -192,7 +198,22 @@ This is on on typewise&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;\nbetter\n&amp;#34;&lt;/span&gt;, string(&lt;span style=&#34;color:#a6e22e&#34;&gt;stuffBytes&lt;/span&gt;))
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;outupt is easy on the eyes&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;harder to read
+ [{8 sure} {7 mhm}]
+
+better
+ [
+ {
+  &amp;#34;Blah&amp;#34;: 8,
+  &amp;#34;Flarg&amp;#34;: &amp;#34;sure&amp;#34;
+ },
+ {
+  &amp;#34;Blah&amp;#34;: 7,
+  &amp;#34;Flarg&amp;#34;: &amp;#34;mhm&amp;#34;
+ }
+]
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -226,7 +247,35 @@ This is on on typewise&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;found %v\n&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;found&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;But the error is&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;./prog.go:17:3: found declared and not used
+./prog.go:20:3: found declared and not used
+./prog.go:22:27: undefined: found
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;instead-just-need-to-define-found-outside-the&#34;&gt;Instead just need to define found outside the&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;package&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; (
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;slices&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;stuff&lt;/span&gt; = []&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;foo&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;bar&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hmm&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;found&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;idx&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;slices&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;IndexFunc&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;stuff&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt; { &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;foo&amp;#34;&lt;/span&gt; }); &lt;span style=&#34;color:#a6e22e&#34;&gt;idx&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;yes&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;found&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;} &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;no&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;found&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;found %v\n&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;found&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And get&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -255,7 +304,14 @@ This is on on typewise&lt;/p&gt;
     phone string,
     email string,
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I have the following question, does it make sense that I ended up creating different types also for the HTTP request to create this merchant,&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I have the following question, does it make sense that I ended up creating different types also for the HTTP request to create this merchant,&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;type CreateMerchantRequest struct {
+    name string,
+    phone string,
+    email string,
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;since the &lt;code&gt;id&lt;/code&gt; and &lt;code&gt;created_at&lt;/code&gt; timestamps are populated automatically,
+and also another to update the merchant,&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -320,7 +376,66 @@ This is on on typewise&lt;/p&gt;
       <description>&lt;h2 id=&#34;i-was-working-through-some-odd-window-function-behavior&#34;&gt;I was working through some odd window function behavior&lt;/h2&gt;
 &lt;p&gt;Analyzing some feature drift data, I wanted to obtain min, max and mean drift values for features, partitioning on the &lt;code&gt;compare_date&lt;/code&gt; here.
 I would have just done a group by, but I also wanted to get the &lt;code&gt;baseline_date&lt;/code&gt; relevant to the largest drift score and so I went with the below approach.
-But I ended up with some strange results.&lt;/p&gt;</description>
+But I ended up with some strange results.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; pyspark.sql.window &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; Window
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pyspark.sql.functions &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; F
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;toy_df &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; spark&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;createDataFrame(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    [{&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feature&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feat1&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;category&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;cat1&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Drift score&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;group&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;blah&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;baseline_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20191231&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;compare_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20230131&amp;#39;&lt;/span&gt;}, {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feature&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feat1&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;category&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;cat1&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Drift score&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;group&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;blah&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;baseline_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20220131&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;compare_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20230131&amp;#39;&lt;/span&gt;}, {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feature&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feat1&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;category&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;cat1&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Drift score&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;group&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;blah&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;baseline_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20220731&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;compare_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20230131&amp;#39;&lt;/span&gt;}, {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feature&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feat2&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;category&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;cat1&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Drift score&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0.16076398135644604&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;group&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;blah&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;baseline_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20191231&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;compare_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20230131&amp;#39;&lt;/span&gt;}, {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feature&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feat2&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;category&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;cat1&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Drift score&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0.07818495131083669&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;group&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;blah&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;baseline_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20220131&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;compare_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20230131&amp;#39;&lt;/span&gt;}, {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feature&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feat2&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;category&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;cat1&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Drift score&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0.07164427544566881&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;group&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;blah&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;baseline_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20220731&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;compare_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20230131&amp;#39;&lt;/span&gt;}, {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feature&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feat3&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;category&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;cat1&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Drift score&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0.2018208744775895&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;group&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;blah&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;baseline_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20191231&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;compare_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20230131&amp;#39;&lt;/span&gt;}, {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feature&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feat3&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;category&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;cat1&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Drift score&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0.06897468871439233&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;group&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;blah&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;baseline_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20220131&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;compare_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20230131&amp;#39;&lt;/span&gt;}, {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feature&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feat3&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;category&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;cat1&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Drift score&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0.07111383432227428&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;group&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;blah&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;baseline_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20220731&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;compare_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20230131&amp;#39;&lt;/span&gt;}, {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feature&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feat5&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;category&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;cat1&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Drift score&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0.20151850543660316&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;group&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;blah&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;baseline_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20191231&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;compare_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20230131&amp;#39;&lt;/span&gt;}, {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feature&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feat5&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;category&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;cat1&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Drift score&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0.05584133483840621&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;group&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;blah&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;baseline_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20220131&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;compare_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20230131&amp;#39;&lt;/span&gt;}, {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feature&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feat5&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;category&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;cat1&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Drift score&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0.056223672793567&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;group&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;blah&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;baseline_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20220731&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;compare_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20230131&amp;#39;&lt;/span&gt;}, {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feature&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feat6&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;category&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;cat1&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Drift score&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0.10648175064912868&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;group&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;blah&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;baseline_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20191231&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;compare_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20230131&amp;#39;&lt;/span&gt;}, {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feature&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feat6&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;category&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;cat1&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Drift score&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0.03398787644288803&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;group&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;blah&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;baseline_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20220131&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;compare_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20230131&amp;#39;&lt;/span&gt;}, {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feature&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feat6&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;category&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;cat1&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Drift score&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0.027693531284292805&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;group&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;blah&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;baseline_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20220731&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;compare_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20230131&amp;#39;&lt;/span&gt;}, {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feature&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feat7&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;category&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;cat1&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Drift score&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0.12696742943404185&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;group&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;blah&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;baseline_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20191231&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;compare_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20230131&amp;#39;&lt;/span&gt;}, {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feature&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feat7&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;category&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;cat1&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Drift score&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0.07147622765870758&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;group&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;blah&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;baseline_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20220131&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;compare_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20230131&amp;#39;&lt;/span&gt;}, {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feature&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feat7&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;category&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;cat1&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Drift score&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0.07478091185430771&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;group&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;blah&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;baseline_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20220731&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;compare_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20230131&amp;#39;&lt;/span&gt;}, {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feature&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feat8&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;category&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;cat2&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Drift score&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0.11779958630386245&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;group&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;blah&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;baseline_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20191231&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;compare_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20230131&amp;#39;&lt;/span&gt;}, {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feature&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;feat8&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;category&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;cat2&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Drift score&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0.04240444683921199&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;group&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;blah&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;baseline_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20220131&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;compare_date&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;20230131&amp;#39;&lt;/span&gt;}]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;toy_df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+--------------------+-------------+--------+------------+-------+-----+&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;         Drift score&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;baseline_date&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;category&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;compare_date&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;feature&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;group&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+--------------------+-------------+--------+------------+-------+-----+&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;                 &lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;     &lt;span style=&#34;color:#ae81ff&#34;&gt;20191231&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    cat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;20230131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  feat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; blah&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;                 &lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;     &lt;span style=&#34;color:#ae81ff&#34;&gt;20220131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    cat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;20230131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  feat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; blah&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;                 &lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;     &lt;span style=&#34;color:#ae81ff&#34;&gt;20220731&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    cat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;20230131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  feat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; blah&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.16076398135644604&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;     &lt;span style=&#34;color:#ae81ff&#34;&gt;20191231&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    cat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;20230131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  feat2&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; blah&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.07818495131083669&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;     &lt;span style=&#34;color:#ae81ff&#34;&gt;20220131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    cat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;20230131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  feat2&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; blah&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.07164427544566881&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;     &lt;span style=&#34;color:#ae81ff&#34;&gt;20220731&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    cat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;20230131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  feat2&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; blah&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;0.2018208744775895&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;     &lt;span style=&#34;color:#ae81ff&#34;&gt;20191231&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    cat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;20230131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  feat3&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; blah&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.06897468871439233&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;     &lt;span style=&#34;color:#ae81ff&#34;&gt;20220131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    cat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;20230131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  feat3&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; blah&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.07111383432227428&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;     &lt;span style=&#34;color:#ae81ff&#34;&gt;20220731&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    cat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;20230131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  feat3&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; blah&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.20151850543660316&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;     &lt;span style=&#34;color:#ae81ff&#34;&gt;20191231&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    cat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;20230131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  feat5&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; blah&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.05584133483840621&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;     &lt;span style=&#34;color:#ae81ff&#34;&gt;20220131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    cat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;20230131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  feat5&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; blah&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;   &lt;span style=&#34;color:#ae81ff&#34;&gt;0.056223672793567&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;     &lt;span style=&#34;color:#ae81ff&#34;&gt;20220731&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    cat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;20230131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  feat5&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; blah&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.10648175064912868&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;     &lt;span style=&#34;color:#ae81ff&#34;&gt;20191231&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    cat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;20230131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  feat6&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; blah&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.03398787644288803&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;     &lt;span style=&#34;color:#ae81ff&#34;&gt;20220131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    cat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;20230131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  feat6&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; blah&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0.027693531284292805&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;     &lt;span style=&#34;color:#ae81ff&#34;&gt;20220731&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    cat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;20230131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  feat6&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; blah&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.12696742943404185&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;     &lt;span style=&#34;color:#ae81ff&#34;&gt;20191231&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    cat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;20230131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  feat7&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; blah&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.07147622765870758&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;     &lt;span style=&#34;color:#ae81ff&#34;&gt;20220131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    cat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;20230131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  feat7&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; blah&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.07478091185430771&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;     &lt;span style=&#34;color:#ae81ff&#34;&gt;20220731&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    cat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;20230131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  feat7&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; blah&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.11779958630386245&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;     &lt;span style=&#34;color:#ae81ff&#34;&gt;20191231&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    cat2&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;20230131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  feat8&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; blah&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.04240444683921199&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;     &lt;span style=&#34;color:#ae81ff&#34;&gt;20220131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    cat2&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;20230131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  feat8&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; blah&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+--------------------+-------------+--------+------------+-------+-----+&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;applying-the-window-function-here&#34;&gt;Applying the window function here,&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;w &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Window&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;partitionBy(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;group&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;feature&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;compare_date&amp;#34;&lt;/span&gt;, )&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;orderBy(F&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;col(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Drift score&amp;#34;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;desc())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    toy_df
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;withColumn(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;mean_score&amp;#34;&lt;/span&gt;, F&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;round(F&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;mean(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Drift score&amp;#34;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;over(w), &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;withColumn(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;max_score&amp;#34;&lt;/span&gt;, F&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;round(F&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;max(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Drift score&amp;#34;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;over(w), &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;withColumn(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;min_score&amp;#34;&lt;/span&gt;, F&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;round(F&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;min(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Drift score&amp;#34;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;over(w), &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;withColumn(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;baseline_date_max_score&amp;#34;&lt;/span&gt;, F&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;first(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;baseline_date&amp;#34;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;over(w))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;withColumn(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;row_num&amp;#34;&lt;/span&gt;, F&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;row_number()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;over(w))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;where(F&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;col(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;row_num&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;drop(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;row_num&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;select(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;category&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;feature&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;compare_date&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;mean_score&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;max_score&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;min_score&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;baseline_date_max_score&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+--------+-------+------------+----------+---------+---------+-----------------------+&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;category&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;feature&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;compare_date&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;mean_score&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;max_score&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;min_score&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;baseline_date_max_score&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+--------+-------+------------+----------+---------+---------+-----------------------+&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    cat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  feat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;20230131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;       &lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;      &lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;      &lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;               &lt;span style=&#34;color:#ae81ff&#34;&gt;20191231&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    cat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  feat2&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;20230131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;0.1608&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;   &lt;span style=&#34;color:#ae81ff&#34;&gt;0.1608&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;   &lt;span style=&#34;color:#ae81ff&#34;&gt;0.1608&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;               &lt;span style=&#34;color:#ae81ff&#34;&gt;20191231&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    cat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  feat3&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;20230131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;0.2018&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;   &lt;span style=&#34;color:#ae81ff&#34;&gt;0.2018&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;   &lt;span style=&#34;color:#ae81ff&#34;&gt;0.2018&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;               &lt;span style=&#34;color:#ae81ff&#34;&gt;20191231&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    cat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  feat5&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;20230131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;0.2015&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;   &lt;span style=&#34;color:#ae81ff&#34;&gt;0.2015&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;   &lt;span style=&#34;color:#ae81ff&#34;&gt;0.2015&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;               &lt;span style=&#34;color:#ae81ff&#34;&gt;20191231&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    cat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  feat6&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;20230131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;0.1065&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;   &lt;span style=&#34;color:#ae81ff&#34;&gt;0.1065&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;   &lt;span style=&#34;color:#ae81ff&#34;&gt;0.1065&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;               &lt;span style=&#34;color:#ae81ff&#34;&gt;20191231&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    cat1&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  feat7&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;20230131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;     &lt;span style=&#34;color:#ae81ff&#34;&gt;0.127&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;0.127&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;0.127&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;               &lt;span style=&#34;color:#ae81ff&#34;&gt;20191231&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    cat2&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  feat8&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;20230131&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;0.1178&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;   &lt;span style=&#34;color:#ae81ff&#34;&gt;0.1178&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;   &lt;span style=&#34;color:#ae81ff&#34;&gt;0.1178&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;               &lt;span style=&#34;color:#ae81ff&#34;&gt;20191231&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+--------+-------+------------+----------+---------+---------+-----------------------+&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I was confused why are the min, max and mean all the same. I thought, could it be my data is corrupted and some of my partitions only have one row?&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -346,7 +461,40 @@ Originally, came across by reading a medium post by [[Aleksa Gordić]]. This was
 &lt;p&gt;Haha so per the joke of a friend about &amp;ldquo;Reynaud&amp;rsquo;s&amp;rdquo; sounds like &amp;ldquo;Raymond&amp;rdquo; as in &amp;ldquo;Everyone loves Raymond&amp;rdquo; , I was wondering, can sentence transformers tell the difference?
 But haha spoiler alert sort is is that if a model finds this funny then that might also not really understand the medical condition at play here , haha nervous laughter, 😅&lt;/p&gt;
 &lt;h1 id=&#34;quick-look&#34;&gt;Quick look&lt;/h1&gt;
-&lt;p&gt;let&amp;rsquo;s compare this first  embedding model&lt;/p&gt;</description>
+&lt;p&gt;let&amp;rsquo;s compare this first  embedding model&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; os
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; sentence_transformers.util &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; semantic_search, cos_sim
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; sentence_transformers &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; SentenceTransformer, util
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; torch
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hf_token &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;getenv(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;HF_TOKEN&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;embedder &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SentenceTransformer(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;msmarco-MiniLM-L-6-v3&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    use_auth_token&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;hf_token,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;corpus &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Everybody Loves Raymond&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; blood vessels go into a temporary spasm&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;blocked flow of blood in fingers&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Everybody Loves Numbness&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Everybody Loves cold fingers&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Everybody Loves Reindeer&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Everybody Loves Riynudno&amp;#34;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;corpus_embeddings &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; embedder&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;encode(corpus, convert_to_tensor&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;query &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Everybody Loves Raynaud&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;query_embedding &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; embedder&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;encode(query, convert_to_tensor&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cos_scores &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; cos_sim(query_embedding, corpus_embeddings)[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;top_results &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; torch&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;topk(cos_scores, k&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cos_scores, top_results
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Query:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;, query, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; score, idx &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; zip(top_results[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;], top_results[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    print(corpus[idx]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;strip(), &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;(Score: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{:.4f}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;)&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;format(score))
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;output&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -457,7 +605,8 @@ The idea here was to try out Sentence Transformers , &lt;a href=&#34;https://sbe
 &lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;but-i-was-excited-to-release-a-date-fix&#34;&gt;But I was excited to release a date fix&lt;/h4&gt;
 &lt;p&gt;The dates on hugo posts were funky since switching to PaperMod, like &amp;ldquo;121212-34-7878&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;But I was reading newer hugo uses &lt;code&gt;date_format&lt;/code&gt; instead of &lt;code&gt;dateFormat&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Anyway I had a typo because I had &lt;code&gt;DateFormat&lt;/code&gt; , would not have worked anyway.&lt;/p&gt;</description>
+&lt;p&gt;Anyway I had a typo because I had &lt;code&gt;DateFormat&lt;/code&gt; , would not have worked anyway.&lt;/p&gt;
+&lt;p&gt;But I could not publish this!&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -489,7 +638,7 @@ The idea here was to try out Sentence Transformers , &lt;a href=&#34;https://sbe
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journals/2023_02_04 2.md
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journals/2023_03_10 2.md
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journals/2023_03_21 2.md
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I think this is mostly happening when you start editing a file before a icloud sync has had a chance to take place.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -541,7 +690,7 @@ I had them like&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;td&lt;/span&gt;&amp;gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;img&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.44.39.png&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;width&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;30%&amp;#34;&lt;/span&gt; /&amp;gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;td&lt;/span&gt;&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;tr&lt;/span&gt;&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;table&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;and I had to change them to be using the hugo language, below, then I saw the images again.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -625,7 +774,8 @@ And [[my projects/personal/langchain-interview-me-2023-feb]] , also now the repo
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;path &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; workdir &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;utc_ts(utc_now())&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;-the-story-blurb.txt&amp;#34;&lt;/span&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;path&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;write_text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n\n\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join(sections))
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;ok-let-me-run-now-some-of-the-basic-question-answer-chains&#34;&gt;Ok let me run now some of the basic question answer chains&lt;/h3&gt;
+&lt;p&gt;Use my environment from before,&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -684,7 +834,7 @@ And [[my projects/personal/langchain-interview-me-2023-feb]] , also now the repo
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;output &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; chatgpt_chain&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;predict(
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  human_input&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hi Jennifer. How are you?&amp;#34;&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(output)
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;ok so here is what happened&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -694,7 +844,62 @@ And [[my projects/personal/langchain-interview-me-2023-feb]] , also now the repo
       
       <guid>https://michal.piekarczyk.xyz/post/2023-01-31-lang-chain-try-prompt-engineering/</guid>
       <description>&lt;p&gt;So I wonder would you use a prompt template with the name of the person maybe as an input variable, prior to a free chat open ended conversation?&lt;/p&gt;
-&lt;p&gt;I am particularly super curious can we use prompt engineering to convey that the person on the other end is a customer say, so they might use personal pronouns like &amp;ldquo;my&amp;rdquo;, &amp;ldquo;me&amp;rdquo;, etc ? Using &lt;a href=&#34;https://langchain.readthedocs.io/en/latest/modules/memory/examples/chatgpt_clone.html&#34;&gt;https://langchain.readthedocs.io/en/latest/modules/memory/examples/chatgpt_clone.html&lt;/a&gt; to help try this.&lt;/p&gt;</description>
+&lt;p&gt;I am particularly super curious can we use prompt engineering to convey that the person on the other end is a customer say, so they might use personal pronouns like &amp;ldquo;my&amp;rdquo;, &amp;ldquo;me&amp;rdquo;, etc ? Using &lt;a href=&#34;https://langchain.readthedocs.io/en/latest/modules/memory/examples/chatgpt_clone.html&#34;&gt;https://langchain.readthedocs.io/en/latest/modules/memory/examples/chatgpt_clone.html&lt;/a&gt; to help try this.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; langchain &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; OpenAI, ConversationChain, LLMChain, PromptTemplate
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; langchain.chains.conversation.memory &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; ConversationalBufferWindowMemory
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; langchain &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; PromptTemplate
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;no_input_prompt &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; PromptTemplate(input_variables&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;[], template&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Tell me a joke.&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;no_input_prompt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;format()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;template &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;Assistant is a large language model trained by OpenAI.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Assistant is designed to answer questions about a fictional person named Alfred Jamesmanson. 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Alfred Jamesmanson lives in Dallas Texas. Alfred Jamesmanson was born in Keywest Florida on January 2nd 1990.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Alfred Jamesmanson goes to college. Alfred Jamesmanson studies electrical engineering. 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Alfred Jamesmanson is friends with Kelly Robin, Jesse Lambourghini and Jackson Loggin.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Alfred Jamesmanson has brown hair. 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Assistant is able to process and understand large amounts of text, and can use this knowledge to provide accurate and informative responses to a wide range of questions. Additionally, Assistant is able to generate its own text based on the input it receives, allowing it to engage in discussions and provide explanations and descriptions on a wide range of topics.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Alfred Jamesmanson: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{human_input}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Assistant:
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;prompt &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; PromptTemplate(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    input_variables&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;human_input&amp;#34;&lt;/span&gt;], 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    template&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;template
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chatgpt_chain &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; LLMChain(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    llm&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;OpenAI(temperature&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;), 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    prompt&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;prompt, 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    verbose&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;, 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    memory&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;ConversationalBufferWindowMemory(k&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;output &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; chatgpt_chain&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;predict(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  human_input&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hi my name is Alfred Jamesmanson. I need your help Assistant. What color is my hair?&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(output)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; Entering new LLMChain chain&lt;span style=&#34;color:#f92672&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Prompt after formatting:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Assistant &lt;span style=&#34;color:#f92672&#34;&gt;is&lt;/span&gt; a large language model trained by OpenAI&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Assistant &lt;span style=&#34;color:#f92672&#34;&gt;is&lt;/span&gt; designed to answer questions about a fictional person named Alfred Jamesmanson&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Alfred Jamesmanson lives &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; Dallas Texas&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt; Alfred Jamesmanson was born &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; Keywest Florida on January &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;nd &lt;span style=&#34;color:#ae81ff&#34;&gt;1990.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Alfred Jamesmanson goes to college&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt; Alfred Jamesmanson studies electrical engineering&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Alfred Jamesmanson &lt;span style=&#34;color:#f92672&#34;&gt;is&lt;/span&gt; friends &lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; Kelly Robin, Jesse Lambourghini &lt;span style=&#34;color:#f92672&#34;&gt;and&lt;/span&gt; Jackson Loggin&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Alfred Jamesmanson has brown hair&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Assistant &lt;span style=&#34;color:#f92672&#34;&gt;is&lt;/span&gt; able to process &lt;span style=&#34;color:#f92672&#34;&gt;and&lt;/span&gt; understand large amounts of text, &lt;span style=&#34;color:#f92672&#34;&gt;and&lt;/span&gt; can use this knowledge to provide accurate &lt;span style=&#34;color:#f92672&#34;&gt;and&lt;/span&gt; informative responses to a wide range of questions&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt; Additionally, Assistant &lt;span style=&#34;color:#f92672&#34;&gt;is&lt;/span&gt; able to generate its own text based on the input it receives, allowing it to engage &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; discussions &lt;span style=&#34;color:#f92672&#34;&gt;and&lt;/span&gt; provide explanations &lt;span style=&#34;color:#f92672&#34;&gt;and&lt;/span&gt; descriptions on a wide range of topics&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Alfred Jamesmanson: Hi my name &lt;span style=&#34;color:#f92672&#34;&gt;is&lt;/span&gt; Alfred Jamesmanson&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt; I need your help Assistant&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt; What color &lt;span style=&#34;color:#f92672&#34;&gt;is&lt;/span&gt; my hair&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;?&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Assistant:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; Finished chain&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Hello Alfred Jamesmanson, your hair &lt;span style=&#34;color:#f92672&#34;&gt;is&lt;/span&gt; brown&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ok so when I tried that above, I got one answer so that is nice, but I did not get into a long conversation.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -717,7 +922,15 @@ And [[my projects/personal/langchain-interview-me-2023-feb]] , also now the repo
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;1937-ok-so-first-per&#34;&gt;19:37 ok so first per&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://langchain.readthedocs.io/en/latest/getting_started/getting_started.html&#34;&gt;https://langchain.readthedocs.io/en/latest/getting_started/getting_started.html&lt;/a&gt; here, installing this stuff,&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://langchain.readthedocs.io/en/latest/getting_started/getting_started.html&#34;&gt;https://langchain.readthedocs.io/en/latest/getting_started/getting_started.html&lt;/a&gt; here, installing this stuff,&lt;/p&gt;
+&lt;h4 id=&#34;creating-a-new-environment-on-my-laptop&#34;&gt;creating a new environment on my laptop&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pip install langchain
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pip install openai
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pip install faiss&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;cpu &lt;span style=&#34;color:#75715e&#34;&gt;# adding this here after the fact after getting below error &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;2011-got-one-error&#34;&gt;20:11 got one error,&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;ValueError&lt;/span&gt;: Could &lt;span style=&#34;color:#f92672&#34;&gt;not&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; faiss python package&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt; Please it install it &lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;`&lt;/span&gt;pip install faiss&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;or&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;`&lt;/span&gt;pip install faiss&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;cpu&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;`&lt;/span&gt; (depending on Python version)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;ok-let-me-query&#34;&gt;Ok let me query&lt;/h3&gt;
+&lt;p&gt;the [[New yorker]] #article I added . I recently read [[The American Beast New Yorker]] this article by [[person Jill Lepore]] about the #report that was commissioned about the #[[January 6th Insurrection]] . I used my #iphone #scan-to-text feature to pull in the first page and a half to a text file, &lt;code&gt;article.txt&lt;/code&gt; to try this out . Let&amp;rsquo;s see how this works.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -727,7 +940,9 @@ And [[my projects/personal/langchain-interview-me-2023-feb]] , also now the repo
       
       <guid>https://michal.piekarczyk.xyz/post/2022-11-12-food-not-food/</guid>
       <description>&lt;p&gt;I have this on-going effort to be able to more easily show off my photos in the context of conversations. (I have a repo here, &lt;a href=&#34;https://github.com/namoopsoo/manage-my-photos&#34;&gt;https://github.com/namoopsoo/manage-my-photos&lt;/a&gt; related to my glue code.)&lt;/p&gt;
-&lt;p&gt;But I want a nice photo stream and my food diary is not part of that at all haha. So after manually moving food photos out, ultimately I stumbled upon  Daniel Bourke&amp;rsquo;s Food Not Food repo, &lt;a href=&#34;https://github.com/mrdbourke/food-not-food&#34;&gt;https://github.com/mrdbourke/food-not-food&lt;/a&gt; .&lt;/p&gt;</description>
+&lt;p&gt;But I want a nice photo stream and my food diary is not part of that at all haha. So after manually moving food photos out, ultimately I stumbled upon  Daniel Bourke&amp;rsquo;s Food Not Food repo, &lt;a href=&#34;https://github.com/mrdbourke/food-not-food&#34;&gt;https://github.com/mrdbourke/food-not-food&lt;/a&gt; .&lt;/p&gt;
+&lt;p&gt;This was great I thought but I had some challenges getting this code off the ground, so here are my notes where ultimately I forked this,
+&lt;a href=&#34;https://github.com/namoopsoo/food-not-food&#34;&gt;https://github.com/namoopsoo/food-not-food&lt;/a&gt; and added a &lt;code&gt;Dockerfile&lt;/code&gt; to make this easier. Also putting this into docker eventually helped me to batch process photos as well. I can link to a separate post on that as well.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -763,7 +978,61 @@ And [[my projects/personal/langchain-interview-me-2023-feb]] , also now the repo
         &lt;li&gt;looking over results from last time, indeed so strange how microbatch loss was going back and forth and eventually trending that the plot of my change in loss, is increasing. 
           &lt;pre&gt;&lt;code data-lang=&#34;python&#34; class=&#34;python&#34;&gt;		    deltas = [x[&amp;quot;loss_after&amp;quot;] - x[&amp;quot;loss_before&amp;quot;] for x in metrics[&amp;quot;micro_batch_updates&amp;quot;]]
 
-&lt;/code&gt;&lt;/pr</description>
+&lt;/code&gt;&lt;/pre&gt;
+
+          &lt;p&gt;		  although initially the values were some negatives, as well.
+            &lt;br /&gt;
+&lt;/p&gt;
+
+          &lt;ul&gt;
+            &lt;li&gt;But I wonder does it indeed something is terribly wrong if this number ever goes up at all? I think maybe yes unless this indicates the learning rate is still too high ? I am using &lt;code&gt;0.01&lt;/code&gt; , but maybe it is still too high when using a single example at a time.&lt;/li&gt;
+            &lt;li&gt;Ok let me try even smaller learning rate, 
+              &lt;pre&gt;&lt;code data-lang=&#34;python&#34; class=&#34;python&#34;&gt;			  
+import network as n
+import dataset
+import plot
+import runner
+import ipdb
+import matplotlib.pyplot as plt
+import pylab
+from collections import Counter
+from utils import utc_now, utc_ts
+
+data = dataset.build_dataset_inside_outside_circle(0.5)
+parameters = {&amp;quot;learning_rate&amp;quot;: 0.001,
+              &amp;quot;steps&amp;quot;: 1000,
+              &amp;quot;log_loss_every_k_steps&amp;quot;: 10
+             }
+
+model, artifacts, metrics = runner.train_and_analysis(data, parameters)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+              &lt;pre&gt;&lt;code&gt;			  outer: 100%|█████████████████████████████████████████████████████████████| 1000/1000 [00:11&amp;lt;00:00, 83.82it/s]
+			                                                                                                             saving to 2022-10-12T175402.png                                                                                
+			  2022-10-12T175402.png
+			  2022-10-12T175403-weights.png
+			  2022-10-12T175404-hist.png
+			  saving to 2022-10-12T175404-scatter.png
+			  2022-10-12T175404-scatter.png
+			  saving to 2022-10-12T175404-micro-batch-loss-deltas-over-steps.png
+			  2022-10-12T175404-micro-batch-loss-deltas-over-steps.png
+
+&lt;/code&gt;&lt;/pre&gt;
+
+              &lt;p&gt;			  
+                &lt;br /&gt;
+			  &lt;img src=&#34;https://s3.amazonaws.com/my-blog-content/2022/2022-10-12-Back-prop-from-scratch-2022-10-12/2022-10-12T175402_1665597462150_0.png&#34; title=&#34;2022-10-12T175402.png&#34; /&gt;
+                &lt;br /&gt;
+			  &lt;img src=&#34;https://s3.amazonaws.com/my-blog-content/2022/2022-10-12-Back-prop-from-scratch-2022-10-12/2022-10-12T175403-weights_1665597472123_0.png&#34; title=&#34;2022-10-12T175403-weights.png&#34; /&gt;
+                &lt;br /&gt;
+			  &lt;img src=&#34;https://s3.amazonaws.com/my-blog-content/2022/2022-10-12-Back-prop-from-scratch-2022-10-12/2022-10-12T175404-hist_1665597478395_0.png&#34; title=&#34;2022-10-12T175404-hist.png&#34; /&gt;
+                &lt;br /&gt;
+			  &lt;img src=&#34;https://s3.amazonaws.com/my-blog-content/2022/2022-10-12-Back-prop-from-scratch-2022-10-12/2022-10-12T175404-scatter_1665597484623_0.png&#34; title=&#34;2022-10-12T175404-scatter.png&#34; /&gt;
+                &lt;br /&gt;
+			  &lt;img src=&#34;https://s3.amazonaws.com/my-blog-content/2022/2022-10-12-Back-prop-from-scratch-2022-10-12/2022-10-12T175404-micro-batch-loss-deltas-over-steps_1665597490756_0.png&#34; title=&#34;2022-10-12T175404-micro-batch-loss-deltas-over-steps.png&#34; /&gt;
+                &lt;br /&gt;
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -819,7 +1088,19 @@ And [[my projects/personal/langchain-interview-me-2023-feb]] , also now the repo
               &lt;pre&gt;&lt;code&gt;			  ipdb&amp;gt; p x, y
 			  (array([10.31816265, -8.80044688]), 1)
 
-&lt;/code&gt;&lt;/pr</description>
+&lt;/code&gt;&lt;/pre&gt;
+
+              &lt;p&gt;			  while running the &lt;code&gt;ipdb&lt;/code&gt; debug mode, and inside of &lt;code&gt;train_network()&lt;/code&gt; , ran 
+                &lt;br /&gt;
+&lt;/p&gt;
+
+              &lt;pre&gt;&lt;code data-lang=&#34;python&#34; class=&#34;python&#34;&gt;			  --&amp;gt; 186         y_prob = feed_forward(x, model.layers, verbose=False)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+              &lt;p&gt;			  and got 
+                &lt;br /&gt;
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -847,7 +1128,32 @@ And [[my projects/personal/langchain-interview-me-2023-feb]] , also now the repo
 		    loss_vec, model, artifacts, X_validation, Y_validation, Y_prob
 		  )  = n.train_network(X, Y, model)
 
-&lt;/code&gt;&lt;/pr</description>
+&lt;/code&gt;&lt;/pre&gt;
+
+              &lt;p&gt;		  
+                &lt;br /&gt;
+		  &lt;img src=&#34;https://s3.amazonaws.com/my-blog-content/2022/2022-09-18-Backprop-and-SGD-From-Scratch-Part-4/2022-09-03T204358_1662261891846_0.png&#34; title=&#34;2022-09-03T204358.png&#34; /&gt;
+                &lt;br /&gt;
+&lt;/p&gt;
+            &lt;/li&gt;
+            &lt;li&gt;17:02 wondering if I can inspect the gradient, to see if it is pointing where it should&lt;/li&gt;
+            &lt;li&gt;23:02  so for a random weight initialized network, curious at least here the response should be nonlinear right?
+              &lt;ul&gt;
+                &lt;li&gt;hmm 
+                  &lt;pre&gt;&lt;code data-lang=&#34;python&#34; class=&#34;python&#34;&gt;			  model = n.initialize_model({&amp;quot;learning_rate&amp;quot;: 0.01})
+			  
+			  # X_validation  # from earlier 
+			  Y_prob, total_loss = loss(model.layers, X_validation, Y_validation)
+			  
+			  plot.scatter_plot_by_z(X_validation, Y_prob)  # 2022-09-04T031837-scatter.png
+
+&lt;/code&gt;&lt;/pre&gt;
+
+                  &lt;p&gt;			  
+                    &lt;br /&gt;
+			  &lt;img src=&#34;https://s3.amazonaws.com/my-blog-content/2022/2022-09-18-Backprop-and-SGD-From-Scratch-Part-4/2022-09-04T031837-scatter_1662261630595_0.png&#34; title=&#34;2022-09-04T031837-scatter.png&#34; /&gt;
+                    &lt;br /&gt;
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -887,7 +1193,13 @@ And [[my projects/personal/langchain-interview-me-2023-feb]] , also now the repo
 			  
 			  plot.plot_loss_vec(loss_vec)
 
-&lt;/code&gt;&lt;/pr</description>
+&lt;/code&gt;&lt;/pre&gt;
+
+              &lt;p&gt;			  
+                &lt;br /&gt;
+			  &lt;img src=&#34;https://s3.amazonaws.com/my-blog-content/2022/2022-08-27-Backprop-and-SGD-From-Scratch-Part-3/2022-08-27T211116_1661634782044_0.png&#34; title=&#34;2022-08-27T211116.png&#34; /&gt;
+                &lt;br /&gt;
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -988,7 +1300,7 @@ Done.
 ==&amp;gt; /usr/bin/sudo /usr/bin/xcode-select --switch /Library/Developer/CommandLineTools
 ==&amp;gt; Downloading and installing Homebrew...
 ...
-&lt;/code&gt;&lt;/pr</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;etc.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1058,7 +1370,31 @@ Done.
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;workdir &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;getenv(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;WORKDIR&amp;#34;&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;out_loc &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;workdir&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/data/newdata.small.csv&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;build_my_dataset(sources, out_loc&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;out_loc, head&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Just the sample..&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;!&lt;/span&gt;cat data&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;newdata&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;small&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;csv
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;title,source
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Hacker Cracks Apple&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;s Streaming Technology (AP),news&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;European Download Services Go Mobile (Reuters),news
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Open Source Apps Developer SugarCRM Releases Sugar&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Sales &lt;span style=&#34;color:#ae81ff&#34;&gt;1.1&lt;/span&gt; (TechWeb),news
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Oracle Sales Data Seen Being Released (Reuters),news
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Sun&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;s Looking Glass Provides 3D View (PC World),news&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Chatbots were the next big thing: what happened&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;–&lt;/span&gt; The Startup &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;–&lt;/span&gt; Medium,medium
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Python &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; Data Science: &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt; Concepts You May Have Forgotten,medium
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Automated Feature Engineering &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; Python &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;–&lt;/span&gt; Towards Data Science,medium
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Machine Learning: how to go &lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; Zero to Hero &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;–&lt;/span&gt; freeCodeCamp,medium
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Reinforcement Learning &lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; scratch &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;–&lt;/span&gt; Insight Data,medium
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Java: Repeat Task Every Random Seconds,stackoverflow
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Why are Java Optionals immutable&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;?&lt;/span&gt;,stackoverflow
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Text Overlay Image &lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; Darkened Opacity React Native,stackoverflow
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Why ternary operator &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; swift &lt;span style=&#34;color:#f92672&#34;&gt;is&lt;/span&gt; so picky&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;?&lt;/span&gt;,stackoverflow
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hide&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;show fab &lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; scale animation,stackoverflow
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;out_loc &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;workdir&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/data/newdata.csv&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;build_my_dataset(sources, out_loc&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;out_loc, head&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;next-time&#34;&gt;Next time&lt;/h4&gt;
+&lt;p&gt;Following along here, &lt;a href=&#34;https://madewithml.com/courses/foundations/recurrent-neural-networks/&#34;&gt;https://madewithml.com/courses/foundations/recurrent-neural-networks/&lt;/a&gt;  I think next I should do some preprocessing, so my data is tokenized.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1257,7 +1593,128 @@ Done.
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;CREATE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;TABLE&lt;/span&gt; diamonds
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;USING&lt;/span&gt; csv
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;OPTIONS&lt;/span&gt; (path &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/databricks-datasets/Rdatasets/data-001/csv/ggplot2/diamonds.csv&amp;#34;&lt;/span&gt;, header &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;2021-04-03&#34;&gt;2021-04-03&lt;/h3&gt;
+&lt;h4 id=&#34;revisit-my-earlier-problem&#34;&gt;Revisit my earlier problem&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://michal.piekarczyk.xyz/2021/01/23/spark-weekend.html#2021-01-31&#34;&gt;Last time&lt;/a&gt; , I found this &lt;a href=&#34;https://data.cdc.gov/Case-Surveillance/COVID-19-Case-Surveillance-Public-Use-Data/vbim-akqf&#34;&gt;CDC dataset&lt;/a&gt; called &amp;ldquo;COVID-19_Case_Surveillance_Public_Use_Data.csv&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;My basic initial question I would like to answer is &amp;ldquo;how do the symptomatic rates compare by age bin&amp;rdquo;, since this dataset has an &lt;code&gt;onset_dt&lt;/code&gt; column, which is eithr blank if no symptoms and has a date if symptoms.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;more-dataset-metadata&#34;&gt;More dataset metadata..&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;22.5 M rows&lt;/li&gt;
+&lt;li&gt;each row is a de-identified patient&lt;/li&gt;
+&lt;li&gt;created: &lt;code&gt;2020-05-15&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;updated &lt;code&gt;2021-03-31&lt;/code&gt; (not sure what was being updated though)&lt;/li&gt;
+&lt;li&gt;Temporal Applicability: 	&lt;code&gt;2020-01-01/2021-03-16&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Update Frequency:	Monthly&lt;/li&gt;
+&lt;li&gt;columns&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Column Name&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Description&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Type&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;cdc_case_earliest_dt&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Calculated date&amp;ndash;the earliest available date for the record, taken from either the available set of clinical dates (date related to the illness or specimen collection) or the calculated date representing initial date case was received by CDC. This variable is optimized for completeness and may change for a given record from time to time as new information is submitted about a case.&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Date &amp;amp; Time&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;cdc_report_dt&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Calculated date representing initial date case was reported to CDC. Depreciated; CDC recommends researchers use cdc_case_earliest_dt in time series and other time-based analyses.&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Date &amp;amp; Time&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;pos_spec_dt&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Date of first positive specimen collection&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Date &amp;amp; Time&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;onset_dt&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Symptom onset date, if symptomatic&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Date &amp;amp; Time&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;current_status&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Case Status: Laboratory-confirmed case; Probable case&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Plain Text&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;sex&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Sex: Male; Female; Unknown; Other&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Plain Text&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;age_group&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Age Group: 0 - 9 Years; 10 - 19 Years; 20 - 39 Years; 40 - 49 Years; 50 - 59 Years; 60 - 69 Years; 70 - 79 Years; 80 + Years&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Plain Text&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;race_ethnicity_combined&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Race and ethnicity (combined): Hispanic/Latino; American Indian / Alaska Native, Non-Hispanic; Asian, Non-Hispanic; Black, Non-Hispanic; Native Hawaiian / Other Pacific Islander, Non-Hispanic; White, Non-Hispanic; Multiple/Other, Non-Hispanic&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Plain Text&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;hosp_yn&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Hospitalization status&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Plain Text&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;icu_yn&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;ICU admission status&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Plain Text&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;death_yn&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Death status&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Plain Text&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;medcond_yn&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Presence of underlying comorbidity or disease&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Plain Text&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;get-data-in-there&#34;&gt;Get data in there&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Per the Databricks web console I can specify an S3 bucket and create a table from my file like that&lt;/li&gt;
+&lt;li&gt;And they refer to &amp;ldquo;DBFS&amp;rdquo; as &amp;ldquo;Databricks File System&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;from the example you can load from the File Store like&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sparkDF &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; spark&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;csv(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/FileStore/tables/state_income-9f7c5.csv&amp;#39;&lt;/span&gt;, header&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;, inferSchema&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# then you can create a temp table from that df&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sparkDF&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;createOrReplaceTempView(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;temp_table_name&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;THere was also an interesting note in the help notebook about permanent tables available across cluster restarts&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Since this table is registered as a temp view, it will only be available to this notebook. If you&amp;#39;d like other users to be able to query this table, you can also create a table from the DataFrame.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Once saved, this table will persist across cluster restarts as well as allow various users across different notebooks to query this data.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# To do so, choose your table name and uncomment the bottom line.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;permanent_table_name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;{{table_name}}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# df.write.format(&amp;#34;{{table_import_type}}&amp;#34;).saveAsTable(permanent_table_name)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;I am looking for how to do this w/ s3&amp;hellip;&lt;/li&gt;
+&lt;li&gt;Ah according to &lt;a href=&#34;https://docs.databricks.com/data/data-sources/aws/amazon-s3.html&#34;&gt;docs&lt;/a&gt;  you mount s3 files as regular files then proceed as usual&lt;/li&gt;
+&lt;li&gt;ok will try that &amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;aws_bucket_name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;my-databricks-assets-alpha&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;s3fn &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;s3://my-databricks-assets-alpha/cdc-dataset/COVID-19_Case_Surveillance_Public_Use_Data.csv&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;s3fn &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;s3://my-databricks-assets-alpha/cdc-dataset/COVID-19_Case_Surveillance_Public_Use_Data.head1000.csv&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mount_name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;blah&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dbutils&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fs&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;mount(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;s3a://&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; aws_bucket_name, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/mnt/&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; mount_name)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;display(dbutils&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fs&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ls(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/mnt/&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; mount_name))
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Funny thing I was trying to run this cell in the databricks notebook but it would not run and no error was given. But the reason I am pretty sure is that no cluster was attached to the notebook.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1464,7 +1921,40 @@ Done.
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker save citibike-learn:0.9
 # image:citibike-learn, tag:latest, image-id:1ff5cd891f00
 # image:citibike-learn, tag:0.9, imageid:c8d430e84654
-&lt;/code&gt;&lt;/pr</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Then I did the factory reset.&lt;/li&gt;
+&lt;li&gt;And Enabled Kubernetes and wow! Nice finally got the green light.&lt;/li&gt;
+&lt;li&gt;And restoring with &lt;code&gt;docker load&lt;/code&gt; like this&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker load -i  citibike-learn-0.9.tar
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;ok-now-i-can-continue-trying-to-get-spark-setup&#34;&gt;Ok now I can continue trying to get spark setup..&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Per the &lt;a href=&#34;https://medium.com/faun/apache-spark-on-kubernetes-docker-for-mac-2501cc72e659&#34;&gt;post&lt;/a&gt; , I grabbed spark albeit &lt;code&gt;3.0.1&lt;/code&gt; , instead of &lt;code&gt;2.x&lt;/code&gt; ( from &lt;a href=&#34;https://www.apache.org/dyn/closer.lua/spark/spark-3.0.1/spark-3.0.1-bin-hadoop3.2.tgz&#34;&gt;here&lt;/a&gt; )  , because according to the &lt;a href=&#34;https://databricks.com/blog/2020/06/18/introducing-apache-spark-3-0-now-available-in-databricks-runtime-7-0.html&#34;&gt;release notes&lt;/a&gt; , 3.0 and 2.x are sounding very compatible.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;./bin/docker-image-tool.sh -t spark-docker build
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&amp;hellip; following along&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl create serviceaccount spark
+# serviceaccount/spark created
+
+kubectl create clusterrolebinding spark-role --clusterrole=edit  --serviceaccount=default:spark --namespace=default
+# clusterrolebinding.rbac.authorization.k8s.io/spark-role created
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;And submitting an example job&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;bin/spark-submit  \
+    --master k8s://https://localhost:6443  \
+    --deploy-mode cluster  \
+    --conf spark.executor.instances=1  \
+    --conf spark.kubernetes.authenticate.driver.serviceAccountName=spark  \
+    --conf spark.kubernetes.container.image=spark:spark-docker  \
+    --class org.apache.spark.examples.SparkPi  \
+    --name spark-pi  \
+    local:///opt/spark/examples/jars/spark-examples_2.12-3.0.1.jar
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Taking &lt;code&gt;4 minutes&lt;/code&gt; so far. Not sure how long this is meant to take haha.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1501,7 +1991,75 @@ total 32
 -rw-r--r--@ 1 michal  staff   153B Jul  4 14:20 56ffc9856515711c4114654acb0f36c1ee8ddb
 -rw-r--r--@ 1 michal  staff    29B Dec 13 17:28 70460b4b4aece5915caf5c68d12f560a9fe3e4
 -rw-r--r--@ 1 michal  staff   1.2K Nov 13 11:17 953fd15e1fa200b94fd6124f661adf1528165a
-&lt;/code&gt;&lt;/pr</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Hmm but it looks like some of the other files here actually have header looking things.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git cat-file -p d670460b4b4aece5915caf5c68d12f560a9fe3e4
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;But I&amp;rsquo;m not seeing actual data, just metadata like commit messages, parent hash, tree hash, author, and timestamps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;(pandars3) $ git cat-file -p d670460b4b4aece5915caf5c68d12f560a9fe3e4
+test content
+(pandars3) $ git cat-file -p d656ffc9856515711c4114654acb0f36c1ee8ddb
+tree 5ff96d0717daba0106acba2dd1b1145ba1e99275
+parent ff184a61f4d8bd871ef41cb7934423ecce17177a
+author Michal Piekarczyk &amp;lt;namoopsoo&amp;gt; 1593886823 -0400
+committer Michal Piekarczyk &amp;lt;namoopsoo&amp;gt; 1593886823 -0400
+
+moar
+(pandars3) $
+(pandars3) $ git cat-file -p d620fe6a1800a210848ce33e3ec41fc1077feeee
+tree 271d395b3591534ebfe7b1e519a744c379f84daf
+parent 0a41871bd7588b15f8f48b04bf024851ffdfe231
+author Michal Piekarczyk &amp;lt;namoopsoo&amp;gt; 1607285215 -0500
+committer Michal Piekarczyk &amp;lt;namoopsoo&amp;gt; 1607285215 -0500
+
+moar
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;echo &amp;#39;version 1&amp;#39; &amp;gt; test.txt
+git hash-object -w test.txt
+# 83baae61804e65cc73a7201a7252750c76066a30
+
+echo &amp;#39;version 2&amp;#39; &amp;gt; test.txt
+git hash-object -w test.txt
+# 1f7a7a472abf3dd9643fd615f6da379c4acb3e3a
+
+(pandars3) $ cat test.txt
+version 2
+
+# And I can restore the original..
+(pandars3) $ git cat-file -p 83baae61804e65cc73a7201a7252750c76066a30 &amp;gt; test.txt
+(pandars3) $ cat test.txt
+version 1
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;(pandars3) $ for sha in  20fe6a1800a210848ce33e3ec41fc1077feeee 56ffc9856515711c4114654acb0f36c1ee8ddb 70460b4b4aece5915caf5c68d12f560a9fe3e4 953fd15e1fa200b94fd6124f661adf1528165a ; do echo d5${sha} ; git cat-file -t d6${sha} ; done
+d520fe6a1800a210848ce33e3ec41fc1077feeee
+commit
+d556ffc9856515711c4114654acb0f36c1ee8ddb
+commit
+d570460b4b4aece5915caf5c68d12f560a9fe3e4
+blob
+d5953fd15e1fa200b94fd6124f661adf1528165a
+blob
+(pandars3) $
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;tree-objects&#34;&gt;Tree objects&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Ahhh, reading more now so a &lt;em&gt;Tree Object&lt;/em&gt; is what solves the problem of how to store file names and group multiple files together.&lt;/li&gt;
+&lt;li&gt;Ok wow when I use that special syntax in my repo&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;(pandars3) $ git cat-file -p master^{tree}
+100644 blob f40fbd8ba564ea28e0a2501e2921909467b39887	.gitignore
+100644 blob 086a5c9ea988c5a4d37acc5f8ea089e37cb19371	404.html
+100644 blob 922c44a4850e7421585c9030ecd82face732adc6	CNAME
+100644 blob 5d0fe01a3ad78b366d4e74186c976895611f27ab	Gemfile
+100644 blob ee589190061ef5e3e6b6d932edfaf342711878c4	Gemfile.lock
+040000 tree ce45afa627dd9bbe9632f33877e8b165409564a4	_authors
+100644 blob efa5e9ef216ff9ed5d06a2bf02475b72caa9a55f	_config.yml
+040000 tree b9e5321c96b32cf9cb1872e8750752344353af37	_data
+...
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I see the &lt;em&gt;&amp;ldquo;tree&amp;rdquo;&lt;/em&gt; of my latest commit includes all of the files whether they&amp;rsquo;ve changed or not. I guess I had expected to only see the ones that have changed.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1527,7 +2085,64 @@ total 32
 &lt;p&gt;Using the API explorer &amp;hellip; I hit Get Token ..&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.dropbox.com/oauth2/authorize?response_type=token&amp;amp;client_id=xxxxxxxxx&amp;amp;redirect_uri=https%3A%2F%2Fdropbox.github.io%2Fdropbox-api-v2-explorer%2F&amp;amp;state=file_requests_list!39%2B%2Bxxxxxxxx&amp;amp;token_access_type=online&amp;amp;&#34;&gt;https://www.dropbox.com/oauth2/authorize?response_type=token&amp;amp;client_id=xxxxxxxxx&amp;amp;redirect_uri=https%3A%2F%2Fdropbox.github.io%2Fdropbox-api-v2-explorer%2F&amp;amp;state=file_requests_list!39%2B%2Bxxxxxxxx&amp;amp;token_access_type=online&amp;amp;&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://www.dropbox.com/oauth2/authorize?response_type=token&amp;amp;client_id=xxxxxxxxx&amp;amp;redirect_uri=https%3A%2F%2Fdropbox.github.io%2Fdropbox-api-v2-explorer%2F&amp;amp;state=file_requests_list!39%2B%2Bxxxxxxxx&amp;amp;token_access_type=online&amp;amp;&#34;&gt;https://www.dropbox.com/oauth2/authorize?response_type=token&amp;amp;client_id=xxxxxxxxx&amp;amp;redirect_uri=https%3A%2F%2Fdropbox.github.io%2Fdropbox-api-v2-explorer%2F&amp;amp;state=file_requests_list!39%2B%2Bxxxxxxxx&amp;amp;token_access_type=online&amp;amp;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;That generated a token and I used &lt;a href=&#34;https://dropbox.github.io/dropbox-api-v2-explorer/#files_list_folder&#34;&gt;https://dropbox.github.io/dropbox-api-v2-explorer/#files_list_folder&lt;/a&gt; and I was able to see actual folders in my account.&lt;/li&gt;
+&lt;li&gt;That&amp;rsquo;s cool except I thought I had chosen  something like &amp;lsquo;single folder access&amp;rsquo; so I&amp;rsquo;m slightly confused why I can see the other folders.&lt;/li&gt;
+&lt;li&gt;Maybe the generated token in the API explorer is separate and meant for testing. Hopefully it&amp;rsquo;s short lived.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2020-12-13&#34;&gt;2020-12-13&lt;/h3&gt;
+&lt;h4 id=&#34;oh-my-special-app-folder-was-created-w-the-acess-token&#34;&gt;oh my special app folder was created w/ the acess token&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;As soon as on my &lt;a href=&#34;https://www.dropbox.com/developers/apps/info/blahblahblah&#34;&gt;app page&lt;/a&gt; I hit &amp;ldquo;Generate access token&amp;rdquo; , my special App folder was created.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; dropbox
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; os
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Initializing Dropbox API...&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dbx &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; dropbox&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Dropbox(os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;getenv(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;DBX_ACCESS_TOKEN&amp;#39;&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;result &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; dbx&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;files_list_folder(path&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;BadInputError: BadInputError(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;xxxxxxxxxxx&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Error in call to API function &amp;#34;files/list_folder&amp;#34;: Your app is not permitted to access this endpoint because it does not have the required scope &lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;files.metadata.read&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;. The owner of the app can enable the scope for the app using the Permissions tab on the App Console.&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Ah ok so I went to the Permissions tab, checked that  &amp;lsquo;files.metadata.read&amp;rsquo; box and tried again.&lt;/li&gt;
+&lt;li&gt;Now seeing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AuthError: AuthError(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;xxxxxxxxxxx&amp;#39;&lt;/span&gt;, AuthError(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;missing_scope&amp;#39;&lt;/span&gt;, TokenScopeError(required_scope&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;files.metadata.read&amp;#39;&lt;/span&gt;)))
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Ah according to &lt;a href=&#34;https://stackoverflow.com/a/64201654&#34;&gt;stackoverflow&lt;/a&gt; , the scope cannot be retroactively granted to a token created before the scope was granted.&lt;/li&gt;
+&lt;li&gt;Ok &amp;hellip; trying to re-create a new token&amp;hellip;&lt;/li&gt;
+&lt;li&gt;Ok recreated. Retried. Worked!&lt;/li&gt;
+&lt;li&gt;How to read?&lt;/li&gt;
+&lt;li&gt;What&amp;rsquo;s the difference between the two &lt;code&gt;files/download&lt;/code&gt; , &lt;code&gt;files/export&lt;/code&gt;  ( &lt;code&gt;files/get_preview&lt;/code&gt; )&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Initializing Dropbox API...&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dbx &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; dropbox&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Dropbox(os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;getenv(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;DBX_ACCESS_TOKEN&amp;#39;&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;meta, response &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; dbx&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;files_download(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/blarg.txt&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# In [22]: response.text                                                                                                                        &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Out[22]: &amp;#39;foo blarg\n&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;github-interaction&#34;&gt;Github interaction&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Hmm I was going down the path of building an AWS Batch container to commit to my git repo&lt;/li&gt;
+&lt;li&gt;But hmmm I encountered that there may be a &lt;a href=&#34;https://docs.github.com/en/free-pro-team@latest/rest&#34;&gt;Github API&lt;/a&gt; which I can perhaps use??? And a &lt;a href=&#34;https://codesnippet.io/github-api-tutorial/&#34;&gt;nice tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Cool, so &lt;code&gt;https://api.github.com/users/namoopsoo/repos&lt;/code&gt; , repos are here.&lt;/li&gt;
+&lt;li&gt;However &lt;a href=&#34;https://docs.github.com/en/free-pro-team@latest/rest/overview/other-authentication-methods&#34;&gt;the oauth flow&lt;/a&gt;  , looks kind of involved for a quick script&lt;/li&gt;
+&lt;li&gt;But ah that&amp;rsquo;s right you can create a token for your account from here,  &lt;a href=&#34;https://github.com/settings/tokens/new&#34;&gt;Github settings&lt;/a&gt; .&lt;/li&gt;
+&lt;li&gt;Ok cool I was able to perform a simple curl w/ the personal token I created for myself &amp;hellip;  ( per &lt;a href=&#34;https://docs.github.com/en/free-pro-team@latest/rest/overview/other-authentication-methods&#34;&gt;docs&lt;/a&gt; )&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ curl -v -H &amp;#34;Authorization: token ${GITHUB_TOKEN}&amp;#34; https://api.github.com/users/namoopsoo/repos
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;ok-but-can-your-write-using-this-api-is-the-big-question&#34;&gt;ok but can your write using this API is the big question..&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Hmm according to &lt;a href=&#34;https://docs.github.com/en/free-pro-team@latest/rest/reference/git#commits&#34;&gt;here&lt;/a&gt; you can commit.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;post /repos/{owner}/{repo}/git/commits
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;But not seeing how to include the actual diffs in there. Maybe a &lt;a href=&#34;https://docs.github.com/en/free-pro-team@latest/rest/reference/git#blobs&#34;&gt;blob?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Ok according to &lt;a href=&#34;http://www.levibotelho.com/development/commit-a-file-with-the-github-api/&#34;&gt;this nice article&lt;/a&gt;  , indeed the blob endpoint is for files! hmm&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;step-1-get-a-reference-like-herehttpsdevelopergithubcomv3gitrefsget-a-reference&#34;&gt;step 1, get a reference.. like &lt;a href=&#34;https://developer.github.com/v3/git/refs/#get-a-reference&#34;&gt;here&lt;/a&gt;&lt;/h5&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;curl -v -H &amp;#34;Authorization: token ${GITHUB_TOKEN}&amp;#34;   https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/ref/heads/master
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Nice excellent, &amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1548,7 +2163,112 @@ dyld: Library not loaded: /usr/local/opt/openssl/lib/libssl.1.0.0.dylib
   Reason: image not found
 Abort trap: 6
 (deep3) $
-&lt;/code&gt;&lt;/pr</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;I ran &lt;code&gt;brew update&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Then&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ brew upgrade ffmpeg
+...
+==&amp;gt; Upgrading 1 outdated package:
+ffmpeg 4.1.1 -&amp;gt; 4.3.1_4
+==&amp;gt; Upgrading ffmpeg 4.1.1 -&amp;gt; 4.3.1_4
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;That worked but I saw this at the end , so I did that&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;...
+Error: Xcode alone is not sufficient on Mojave.
+Install the Command Line Tools:
+  xcode-select --install
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Still getting..&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ ffmpeg
+dyld: Library not loaded: /usr/local/opt/openssl/lib/libssl.1.0.0.dylib
+  Referenced from: /usr/local/bin/ffmpeg
+  Reason: image not found
+Abort trap: 6
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;ok thank the ages, &lt;a href=&#34;https://stackoverflow.com/questions/59006602/dyld-library-not-loaded-usr-local-opt-openssl-lib-libssl-1-0-0-dylib&#34;&gt;this stackoverflow&lt;/a&gt; helped a lot !!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ brew switch openssl 1.0.2s
+Error: openssl does not have a version &amp;#34;1.0.2s&amp;#34; in the Cellar.
+openssl&amp;#39;s installed versions: 1.0.2q
+$ brew switch openssl 1.0.2q
+Cleaning /usr/local/Cellar/openssl/1.0.2q
+Opt link created for /usr/local/Cellar/openssl/1.0.2q
+$ ffmpeg
+ffmpeg version 4.1.1 Copyright (c) 2000-2019 the FFmpeg developers
+  built with Apple LLVM version 10.0.0 (clang-1000.11.45.5)
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;these-instructions-are-pretty-clear-to-get-setup-w-deepspeech&#34;&gt;These instructions are pretty clear to get setup w/ deepspeech&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/mozilla/DeepSpeech&#34;&gt;Starting page&lt;/a&gt; and the &lt;a href=&#34;https://deepspeech.readthedocs.io/en/v0.9.1/?badge=latest&#34;&gt;readthedocs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;I created a separate environment for this with &lt;code&gt;conda create -n deep3&lt;/code&gt; and &lt;code&gt;source activate deep3&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# Install DeepSpeech
+pip install deepspeech
+
+# Download pre-trained English model files
+curl -LO https://github.com/mozilla/DeepSpeech/releases/download/v0.9.1/deepspeech-0.9.1-models.pbmm
+curl -LO https://github.com/mozilla/DeepSpeech/releases/download/v0.9.1/deepspeech-0.9.1-models.scorer
+
+# Download example audio files
+curl -LO https://github.com/mozilla/DeepSpeech/releases/download/v0.9.1/audio-0.9.1.tar.gz
+tar xvf audio-0.9.1.tar.gz
+
+# Transcribe an audio file
+deepspeech --model deepspeech-0.9.1-models.pbmm --scorer deepspeech-0.9.1-models.scorer --audio audio/2830-3980-0043.wav
+
+Loading model from file deepspeech-0.9.1-models.pbmm
+TensorFlow: v2.3.0-6-g23ad988fcd
+DeepSpeech: v0.9.1-0-gab8bd3e1
+Loaded model in 0.0486s.
+Loading scorer from files deepspeech-0.9.1-models.scorer
+Loaded scorer in 0.00625s.
+Running inference.
+experience proves this
+Inference took 5.095s for 1.975s audio file.
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;That mini sample worked fine.. &amp;ldquo;experience proves this&amp;rdquo; is 100% accurate according to my ears at least.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;i-read-some-tips-on-the-conversion&#34;&gt;I Read Some tips on the conversion&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Ok cool according to &lt;a href=&#34;https://www.howtoforge.com/tutorial/ffmpeg-audio-conversion/&#34;&gt;here&lt;/a&gt; I can use &lt;code&gt;ffmpeg&lt;/code&gt; to convert from &lt;code&gt;m4a&lt;/code&gt; to &lt;code&gt;wav&lt;/code&gt; with just &lt;code&gt;ffmpeg -i blah.m4a blah.wav&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;But I tried &lt;code&gt;deepspeech&lt;/code&gt; on my wav file&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;deepspeech --model deepspeech-0.9.1-models.pbmm --scorer deepspeech-0.9.1-models.scorer --audio blah.wav
+
+Loading model from file deepspeech-0.9.1-models.pbmm
+TensorFlow: v2.3.0-6-g23ad988fcd
+DeepSpeech: v0.9.1-0-gab8bd3e1
+Loaded model in 0.0648s.
+Loading scorer from files deepspeech-0.9.1-models.scorer
+Loaded scorer in 0.00534s.
+Warning: original sample rate (24000) is different than 16000hz. Resampling might produce erratic speech recognition.
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Then the &lt;code&gt;sox&lt;/code&gt; program for resampling not present&amp;hellip;&lt;/li&gt;
+&lt;li&gt;I read Some notes on resampling &lt;a href=&#34;https://transcoding.wordpress.com/2011/11/16/careful-with-audio-resampling-using-ffmpeg/&#34;&gt;here&lt;/a&gt; and finding that &lt;code&gt;ffmpeg&lt;/code&gt; has &lt;code&gt;sox&lt;/code&gt; built in now.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;workdir=/blah/my/workdir
+infile=${workdir}/2020-11-22-09.54.59.wav
+outfile=${workdir}/2020-11-22-09.54.59--resampled.wav
+ffmpeg -i $infile  -af aresample=resampler=soxr -ar 16000 $outfile
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;deepspeech --model deepspeech-0.9.1-models.pbmm --scorer deepspeech-0.9.1-models.scorer --audio $outfile
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Ok hahaha this time after resampling to &lt;code&gt;16000Hz&lt;/code&gt; finally worked, but the output does not match any kind of reality haha.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Loading model from file deepspeech-0.9.1-models.pbmm
+TensorFlow: v2.3.0-6-g23ad988fcd
+DeepSpeech: v0.9.1-0-gab8bd3e1
+Loaded model in 0.0451s.
+Loading scorer from files deepspeech-0.9.1-models.scorer
+Loaded scorer in 0.00534s.
+Running inference.
+so then listened and even interesting it interesting idea for talking about the habitation main point is a paradise his crimes and the periostracum basically like ours person wrote his book or started this is to other thinking harrison article or are frontiersman like a loathing at the summer sententiam first creation antoinette to mitigate they had had been important role spoke for catering people is catching people attention and then destournier take nineteen and working on the antithetic aeternitate which takes a attakapas
+Inference took 65.434s for 114.816s audio file.
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;other-notes&#34;&gt;Other notes&lt;/h3&gt;
+&lt;p&gt;Maybe strategies like &lt;a href=&#34;https://medium.com/cod3/convert-speech-from-an-audio-file-to-text-using-google-speech-api-b951f4032a64&#34;&gt;this one &lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1638,7 +2358,85 @@ published in &amp;ldquo;New Yorker&amp;rdquo; in the &amp;ldquo;July 6 2020&amp;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tripsdf &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read_csv(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;datadir&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/2013-07 - Citi Bike trip data.csv&amp;#39;&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;stationsdf &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read_csv(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;localdir&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/datas/stations/stations-2018-12-04-c.csv&amp;#39;&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        index_col&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tripsdf&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;iloc[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;tripduration                               634
+starttime                  2013-07-01 00:00:00
+stoptime                   2013-07-01 00:10:34
+start station id                           164
+start station name             E 47 St &amp;amp; 2 Ave
+start station latitude                 40.7532
+start station longitude               -73.9703
+end station id                             504
+end station name               1 Ave &amp;amp; E 15 St
+end station latitude                   40.7322
+end station longitude                 -73.9817
+bikeid                                   16950
+usertype                              Customer
+birth year                                  \N
+gender                                       0
+Name: 0, dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tripsdf[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;starttime&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;map(&lt;span style=&#34;color:#66d9ef&#34;&gt;lambda&lt;/span&gt; x: x[&lt;span style=&#34;color:#ae81ff&#34;&gt;11&lt;/span&gt;:&lt;span style=&#34;color:#ae81ff&#34;&gt;13&lt;/span&gt;])&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;iloc[:&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;0    00
+1    00
+2    00
+3    00
+4    00
+5    00
+6    00
+7    00
+8    00
+9    00
+Name: starttime, dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tripsdf[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;hour&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; tripsdf[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;starttime&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;map(&lt;span style=&#34;color:#66d9ef&#34;&gt;lambda&lt;/span&gt; x: x[&lt;span style=&#34;color:#ae81ff&#34;&gt;11&lt;/span&gt;:&lt;span style=&#34;color:#ae81ff&#34;&gt;13&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# For all time looks like maybe two peaks&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fig &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;figure(figsize&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fig&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;patch&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set_facecolor(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;xkcd:mint green&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ax &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; fig&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;add_subplot(&lt;span style=&#34;color:#ae81ff&#34;&gt;111&lt;/span&gt;, )
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ax&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;hist(tripsdf&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;hour&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;tolist(), bins&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;24&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;grid(&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Perhaps on weekdays different?&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; fresh.utils &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; fu
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fu&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;prepare_weekday_feature(tripsdf)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fig &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;figure(figsize&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fig&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;patch&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set_facecolor(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;xkcd:mint green&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ax &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; fig&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;add_subplot(&lt;span style=&#34;color:#ae81ff&#34;&gt;111&lt;/span&gt;, )
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ax&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;hist(tripsdf[tripsdf&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;weekday &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;hour&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;tolist(), bins&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;24&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ax&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set_title(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Weekday hour histogram&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;grid(&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Weekend wow big difference. &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fig &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;figure(figsize&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fig&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;patch&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set_facecolor(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;xkcd:mint green&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ax &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; fig&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;add_subplot(&lt;span style=&#34;color:#ae81ff&#34;&gt;111&lt;/span&gt;, )
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ax&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;hist(tripsdf[tripsdf&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;weekday &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;hour&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;tolist(), bins&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;24&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ax&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set_title(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Weekend hour histogram&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;grid(&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Ok based on the above, going to create a version 2...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# time_of_day_v2_peaky&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Not sure how to account for the different peaks on weekends&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#     # 0: 6-10, 1: 11-15, 2: 16-20, 3: 21-00, 00-5&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;age&#34;&gt;Age&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Somehow I did not include age this time around but I should.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tripsdf[[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;usertype&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;birth year&amp;#39;&lt;/span&gt;]]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;iloc[:&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1684,7 +2482,21 @@ There is a lot to write about and I want to just start getting it out.&lt;/p&gt;
 &lt;p&gt;I have picked up my bike share data learning project from earlier, to try to redo it after having gathered more experience. I want to just jot down some ad hoc thoughts here.&lt;/p&gt;
 &lt;p&gt;This is mainly around navigating XGBoost.&lt;/p&gt;
 &lt;h4 id=&#34;there-are-two-xgboost-apis&#34;&gt;There are two XGBoost APIs&lt;/h4&gt;
-&lt;p&gt;With the sklearn API you can&lt;/p&gt;</description>
+&lt;p&gt;With the sklearn API you can&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; xgboost &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; xgb
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; xgboost &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; XGBClassifier
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; sklearn.model_selection &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; train_test_split
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; sklearn.metrics &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; accuracy_score, log_loss
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;X, y &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;random(size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;1000&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;)), np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;choice([&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;], size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;1000&lt;/span&gt;,), replace&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;X_train, X_test, y_train, y_test &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; train_test_split(X, y)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;model &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; XGBClassifier()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fit(X_train, y_train)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;y_pred_prob &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; model&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;predict_proba(X_test)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;y_pred &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;argmax(y_pred_prob, axis&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;acc &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; accuracy_score(y_test, y_pred)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(acc)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And you can also just&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1720,7 +2532,26 @@ There is a lot to write about and I want to just start getting it out.&lt;/p&gt;
 &lt;li&gt;But when I ran&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;python3 process_all.py --subject-name=mysubjectname --fit-source-dir=/media/myname/GARMIN/Garmin/ACTIVITY/
-&lt;/code&gt;&lt;/pr</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;I got&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;doing FIT conversions
+activity files:  [&amp;#39;2020-02-06-160620-FITNESS 3A6A-20-0.fit&amp;#39;]
+new names:  [&amp;#39;2020-02-06-160620-FITNESS 3A6A-20-0.fit&amp;#39;]
+current_files:  {&amp;#39;2020-02-06-160620-FITNESS 3A6A-20-0.fit&amp;#39;}
+2020-02-06-160620-FITNESS 3A6A-20-0.fit already exists...
+converting ....../fit_files/2020-02-06-160620-FITNESS 3A6A-20-0.fit
+...
+  File &amp;#34;/...../fit_processing/process_all.py&amp;#34;, line 1, in &amp;lt;module&amp;gt;
+    import os
+...
+  File &amp;#34;/usr/local/miniconda3/envs/pandars3/lib/python3.7/site-packages/fitparse/records.py&amp;#34;, line 450, in add_dev_field_description
+    field_def_num = message.get(&amp;#39;field_definition_number&amp;#39;).raw_value
+AttributeError: &amp;#39;NoneType&amp;#39; object has no attribute &amp;#39;raw_value&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;And I got the same result when trying the raw &lt;a href=&#34;http://dtcooper.github.io/python-fitparse/#api-documentation&#34;&gt;docs here&lt;/a&gt; for &lt;code&gt;fitparse&lt;/code&gt; itself. To be fair those docs appear to be python2.7 docs.&lt;/li&gt;
+&lt;li&gt;Of course also possible that not all &lt;code&gt;.fit&lt;/code&gt; files, Wahoo or Garmin, have the same kinds of data. Maybe &lt;code&gt;fitparse&lt;/code&gt; was tested only on Garmin &lt;code&gt;.fit&lt;/code&gt; files?&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -1752,7 +2583,18 @@ RubyGems installed the following executables:
 	/usr/local/Cellar/ruby/2.6.5/bin/bundle
     
 RubyGems system software updated
-&lt;/code&gt;&lt;/pr</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Now I get&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ gem list bundler
+
+*** LOCAL GEMS ***
+
+bundler (default: 2.1.4, 2.0.2, 1.17.2)
+$ 
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;And now my &lt;code&gt;jekyll build&lt;/code&gt; worked!&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -1802,7 +2644,80 @@ sh -c ffmpeg -i &amp;#34;./2019-03-10 13.05.02.mov&amp;#34;  2&amp;gt;&amp;amp;1
   Duration: 00:00:32.63, start: 0.000000, bitrate: 14944 kb/s
 sh -c ffmpeg -i &amp;#34;./2019-03-10 18.43.53.mov&amp;#34;  2&amp;gt;&amp;amp;1 |grep Duration 
   Duration: 00:00:39.10, start: 0.000000, bitrate: 14868 kb/s
-&lt;/code&gt;&lt;/pr</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;And the length of the merged movie created &amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ ffmpeg -i merged.MOV 2&amp;gt;&amp;amp;1|grep Duration
+  Duration: 00:02:18.10, start: 0.000000, bitrate: 14921 kb/s
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Doing some quick mental maths, that actually roughly adds up.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;grr-but-at-minute-105-it-flips-the-video&#34;&gt;Grr but at minute 1:05 it flips the video&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;What the heck? Ah according to &lt;a href=&#34;https://superuser.com/questions/578321/how-to-rotate-a-video-180-with-ffmpeg&#34;&gt;stackoverflow&lt;/a&gt; , ffmpeg uses rotation metadata to autorotate. Except heh in this case perhaps the autorotate did not happen when I was concatenating?&lt;/li&gt;
+&lt;li&gt;My file &lt;code&gt;2019-03-10 13.05.02.mov&lt;/code&gt; appears to be the one which was rotated.&lt;/li&gt;
+&lt;li&gt;Trying to process it to see what happens&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ffmpeg -i 2019-03-10\ 13.05.02.mov -c:a copy 2019-03-10\ 13.05.02.ROTATED.mov
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Wow that took at least a minute. So umm, since the initial concatenation took under a second, I seriously doubt the autorotation was done during the concatenation.&lt;/li&gt;
+&lt;li&gt;Okay, lets try that concat one more time, this time with the new file&amp;hellip; and new files list&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;file ./2019-03-09\ 23.03.34.mov
+file ./2019-03-10\ 01.21.50.mov
+file ./2019-03-10\ 13.01.46.mov
+file ./2019-03-10\ 13.03.59.mov
+file ./2019-03-10\ 13.05.02.mov
+file ./2019-03-10\ 18.43.53.mov
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;time ffmpeg -safe 0 -f concat -i infiles.2019-03-16T2004Z.txt -vcodec copy -acodec copy 2019-03-16T2006Z-puzzle-merged.MOV
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Unfortunately, &lt;code&gt;2019-03-16T2006Z-puzzle-merged.MOV&lt;/code&gt; is even worse, because for some reason, only one frame is displayed for several minutes. So some more tweaking is needed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;appendix&#34;&gt;Appendix&lt;/h3&gt;
+&lt;h4 id=&#34;full-output-of-the-merge-command&#34;&gt;full output of the merge command&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ffmpeg version 4.1.1 Copyright (c) 2000-2019 the FFmpeg developers
+  built with Apple LLVM version 10.0.0 (clang-1000.11.45.5)
+  configuration: --prefix=/usr/local/Cellar/ffmpeg/4.1.1 --enable-shared --enable-pthreads --enable-version3 --enable-hardcoded-tables --enable-avresample --cc=clang --host-cflags=&amp;#39;-I/Library/Java/JavaVirtualMachines/openjdk-11.0.2.jdk/Contents/Home/include -I/Library/Java/JavaVirtualMachines/openjdk-11.0.2.jdk/Contents/Home/include/darwin&amp;#39; --host-ldflags= --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libbluray --enable-libmp3lame --enable-libopus --enable-librubberband --enable-libsnappy --enable-libtesseract --enable-libtheora --enable-libvorbis --enable-libvpx --enable-libx264 --enable-libx265 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-librtmp --enable-libspeex --enable-videotoolbox --disable-libjack --disable-indev=jack --enable-libaom --enable-libsoxr
+  libavutil      56. 22.100 / 56. 22.100
+  libavcodec     58. 35.100 / 58. 35.100
+  libavformat    58. 20.100 / 58. 20.100
+  libavdevice    58.  5.100 / 58.  5.100
+  libavfilter     7. 40.101 /  7. 40.101
+  libavresample   4.  0.  0 /  4.  0.  0
+  libswscale      5.  3.100 /  5.  3.100
+  libswresample   3.  3.100 /  3.  3.100
+  libpostproc    55.  3.100 / 55.  3.100
+Input #0, concat, from &amp;#39;infiles.txt&amp;#39;:
+  Duration: N/A, start: 0.000000, bitrate: 14833 kb/s
+    Stream #0:0(und): Video: hevc (Main) (hvc1 / 0x31637668), yuvj420p(pc), 1920x1080, 14833 kb/s, 30 fps, 30 tbr, 600 tbn, 600 tbc
+    Metadata:
+      rotate          : 180
+      creation_time   : 2019-03-10T05:20:20.000000Z
+      handler_name    : Core Media Video
+      encoder         : HEVC
+Output #0, mov, to &amp;#39;merged.MOV&amp;#39;:
+  Metadata:
+    encoder         : Lavf58.20.100
+    Stream #0:0(und): Video: hevc (Main) (hvc1 / 0x31637668), yuvj420p(pc), 1920x1080, q=2-31, 14833 kb/s, 30 fps, 30 tbr, 19200 tbn, 600 tbc
+    Metadata:
+      rotate          : 180
+      creation_time   : 2019-03-10T05:20:20.000000Z
+      handler_name    : Core Media Video
+      encoder         : HEVC
+Stream mapping:
+  Stream #0:0 -&amp;gt; #0:0 (copy)
+Press [q] to stop, [?] for help
+[mov @ 0x7fba5d80dc00] Non-monotonous DTS in output stream 0:0; previous: 1246080, current: 1246080; changing to 1246081. This may result in incorrect timestamps in the output file.
+frame= 2828 fps=0.0 q=-1.0 size=  172544kB time=00:01:34.20 bitrate=15005.1kbitsframe= 4142 fps=0.0 q=-1.0 Lsize=  251538kB time=00:02:18.00 bitrate=14931.9kbits/s speed= 148x    
+video:251484kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.021355%
+
+real	0m1.186s
+user	0m0.124s
+sys	0m0.232s
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;reference&#34;&gt;reference&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://shapeshed.com/unix-xargs/&#34;&gt;xargs reference&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -1935,7 +2850,8 @@ for pkg-config to find ruby you may need to set:
 
 ==&amp;gt; summary
 🍺  /usr/local/cellar/ruby/2.6.5: 19,390 files, 31.1mb
-&lt;/code&gt;&lt;/pr</description>
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And &lt;code&gt;rbenv&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1967,7 +2883,66 @@ Traceback (most recent call last):
 	 1: from /usr/local/lib/ruby/gems/2.6.0/gems/bundler-2.0.2/lib/bundler/runtime.rb:31:in `block in setup&amp;#39;
 /usr/local/lib/ruby/gems/2.6.0/gems/bundler-2.0.2/lib/bundler/runtime.rb:319:in `check_for_activated_spec!&amp;#39;: You have already activated public_suffix 4.0.5, but your Gemfile requires public_suffix 4.0.1. Prepending `bundle exec` to your command may solve this. (Gem::LoadError)
 make: *** [build] Error 1
-&lt;/code&gt;&lt;/pr</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Ok cool. Whatever that means haha. So going full Memento here, looking at &lt;a href=&#34;https://michal.piekarczyk.xyz/jekyll/update/meta/2020/05/30/trying-again.html&#34;&gt;my earlier notes&lt;/a&gt; , I see last time I used &lt;code&gt;gem update --system&lt;/code&gt; to solve the problem.&lt;/li&gt;
+&lt;li&gt;So doing that again this time , and saw this output..&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ gem update --system
+Updating rubygems-update
+Fetching rubygems-update-3.1.4.gem
+Successfully installed rubygems-update-3.1.4
+Parsing documentation for rubygems-update-3.1.4
+Installing ri documentation for rubygems-update-3.1.4
+Installing darkfish documentation for rubygems-update-3.1.4
+Done installing documentation for rubygems-update after 59 seconds
+Parsing documentation for rubygems-update-3.1.4
+Done installing documentation for rubygems-update after 0 seconds
+Installing RubyGems 3.1.4
+  Successfully built RubyGem
+  Name: bundler
+  Version: 2.1.4
+  File: bundler-2.1.4.gem
+Bundler 2.1.4 installed
+RubyGems 3.1.4 installed
+Regenerating binstubs
+Parsing documentation for rubygems-3.1.4
+Installing ri documentation for rubygems-3.1.4
+
+=== 3.1.4 / 2020-06-03
+
+Minor enhancements:
+
+* Deprecate rubyforge_project attribute only during build
+  time. Pull request #3609 by Josef Šimánek.
+* Update links. Pull request #3610 by Josef Šimánek.
+* Run CI at 3.1 branch head as well. Pull request #3677 by Josef Šimánek.
+* Remove failing ubuntu-rvm CI flow. Pull request #3611 by
+  Josef Šimánek.
+
+
+------------------------------------------------------------------------------
+
+RubyGems installed the following executables:
+	/usr/local/Cellar/ruby/2.6.5/bin/gem
+	/usr/local/Cellar/ruby/2.6.5/bin/bundle
+
+Ruby Interactive (ri) documentation was installed. ri is kind of like man 
+pages for Ruby libraries. You may access it like this:
+  ri Classname
+  ri Classname.class_method
+  ri Classname#instance_method
+If you do not wish to install this documentation in the future, use the
+--no-document flag, or set it as the default in your ~/.gemrc file. See
+&amp;#39;gem help env&amp;#39; for details.
+
+RubyGems system software updated
+You have new mail in /var/mail/michal
+$ 
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;ok-letss-try-again&#34;&gt;ok letss try again&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;make build
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Darn getting same result. Ok it says to use &lt;code&gt;bundle exec jekyll build&lt;/code&gt; instead. Going to try that&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2000,7 +2975,7 @@ make: *** [build] Error 1
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;out_loc &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;workdir&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/foo.png&amp;#39;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pylab&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;savefig(out_loc)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pylab&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;close()
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -2044,7 +3019,41 @@ dyld: Library not loaded: /usr/local/opt/openssl/lib/libssl.1.0.0.dylib
   Referenced from: /usr/local/bin/ffmpeg
   Reason: image not found
 Abort trap: 6
-&lt;/code&gt;&lt;/pr</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ brew update
+Error:
+  homebrew-core is a shallow clone.
+  homebrew-cask is a shallow clone.
+To `brew update`, first run:
+  git -C /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core fetch --unshallow
+  git -C /usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask fetch --unshallow
+These commands may take a few minutes to run due to the large size of the repositories.
+This restriction has been made on GitHub&amp;#39;s request because updating shallow
+clones is an extremely expensive operation due to the tree layout and traffic of
+Homebrew/homebrew-core and Homebrew/homebrew-cask. We don&amp;#39;t do this for you
+automatically to avoid repeatedly performing an expensive unshallow operation in
+CI systems (which should instead be fixed to not use shallow clones). Sorry for
+the inconvenience!
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ openssl version
+OpenSSL 1.0.2n  7 Dec 2017
+$ ls -al /usr/local/Cellar/openssl
+ls: /usr/local/Cellar/openssl: No such file or directory
+$ ls -al /usr/local/Cellar/openssl\@1.1/
+total 0
+drwxr-xr-x    3 michal  staff    96 22 nov 20:38 .
+drwxr-xr-x  111 michal  admin  3552  1 mai 16:11 ..
+drwxr-xr-x   14 michal  staff   448 16 oct  2020 1.1.1h
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Well &lt;a href=&#34;https://stackoverflow.com/questions/59006602/dyld-library-not-loaded-usr-local-opt-openssl-lib-libssl-1-0-0-dylib&#34;&gt;this subject&lt;/a&gt;  is super busy on stack overflow. But the top answer did not work for me hmm&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ brew switch openssl 1.1.1h
+Error: Unknown command: switch
+$
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;And yea according to &lt;a href=&#34;&#34;&gt;here&lt;/a&gt;  , &lt;code&gt;switch&lt;/code&gt; command is no more&lt;/p&gt;</description>
     </item>
     
     <item>

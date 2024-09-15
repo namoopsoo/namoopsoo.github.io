@@ -36,7 +36,18 @@ RubyGems installed the following executables:
 	/usr/local/Cellar/ruby/2.6.5/bin/bundle
     
 RubyGems system software updated
-&lt;/code&gt;&lt;/pr</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Now I get&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ gem list bundler
+
+*** LOCAL GEMS ***
+
+bundler (default: 2.1.4, 2.0.2, 1.17.2)
+$ 
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;And now my &lt;code&gt;jekyll build&lt;/code&gt; worked!&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
   </channel>

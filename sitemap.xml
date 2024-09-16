@@ -2,11 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://michal.piekarczyk.xyz/post/</loc>
+    <lastmod>2024-09-16T08:38:17-04:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/post/2024-09-13-pyspark-32-bit-nulled/</loc>
+    <lastmod>2024-09-16T08:38:17-04:00</lastmod>
+  </url><url>
     <loc>https://michal.piekarczyk.xyz/post/2024-09-07-pgvector-indexes/</loc>
     <lastmod>2024-09-09T09:53:40-04:00</lastmod>
-  </url><url>
-    <loc>https://michal.piekarczyk.xyz/post/</loc>
-    <lastmod>2024-09-16T08:37:24-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/post/2024-08-29--architectures/</loc>
     <lastmod>2024-09-06T09:45:02-04:00</lastmod>
@@ -634,9 +637,6 @@
   </url><url>
     <loc>https://michal.piekarczyk.xyz/post/2024-08-25-bag-words-comforting/</loc>
     <lastmod>2024-08-25T20:40:54-04:00</lastmod>
-  </url><url>
-    <loc>https://michal.piekarczyk.xyz/post/2024-09-13-pyspark-32-bit-nulled/</loc>
-    <lastmod>2024-09-16T08:37:24-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/about/</loc>
     <lastmod>2024-06-30T18:07:04-04:00</lastmod>

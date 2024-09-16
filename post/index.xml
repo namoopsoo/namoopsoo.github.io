@@ -6,7 +6,18 @@
     <description>Recent content in Posts on michal.piekarczyk.xyz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 07 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>string to int conversion nulling</title>
+      <link>https://michal.piekarczyk.xyz/post/2024-09-13-pyspark-32-bit-nulled/</link>
+      <pubDate>Fri, 13 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://michal.piekarczyk.xyz/post/2024-09-13-pyspark-32-bit-nulled/</guid>
+      <description>&lt;p&gt;I had this interesting situqtion, where I wanted to plot some numbers that were nested inside of struct columns. They were row counts in a delta table history output, but in any case, I tried to plot them, but my plot treated them as categories.
+Ok realizing they were strings, I cast them to integers, but then I got nulls. After a bit of trial and error I realized they were probably laerger than 32bit!
+Casting to big int, aka, &lt;code&gt;long&lt;/code&gt;, did the trick.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>postgresql , pgvector and indexing</title>
       <link>https://michal.piekarczyk.xyz/post/2024-09-07-pgvector-indexes/</link>
@@ -3066,15 +3077,6 @@ $
 &lt;p&gt;One definition of mindfulness is awareness of pre-thought, that is, to capture rumination, stop it in its tracks and put a magnifying glass over it. Then you can inspect the material, as a thought, and either notice it go away or notice yourself doing something about it.&lt;/p&gt;
 &lt;h2 id=&#34;verbal-or-nonverbal&#34;&gt;verbal or nonverbal?&lt;/h2&gt;
 &lt;p&gt;Some of the pre thoughts, perhaps call them gut feelings or intuitions, can be nonverbal. Perhaps that is along the lines of a bag of words , sort of embedded in a hyperdimensional space? And one where neuralink can one day let us write with them or direct our environment. That’s the stuff of thought.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://michal.piekarczyk.xyz/post/2024-09-13-pyspark-32-bit-nulled/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://michal.piekarczyk.xyz/post/2024-09-13-pyspark-32-bit-nulled/</guid>
-      <description>&lt;p&gt;ok&lt;/p&gt;</description>
     </item>
     
     <item>

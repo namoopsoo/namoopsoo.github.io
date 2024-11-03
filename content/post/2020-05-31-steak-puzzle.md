@@ -1,6 +1,6 @@
 ---
 title: "Steak Puzzle"
-date: 2020-05-31 10:39 -0400
+date: 2020-05-31
 layout: post
 img: <img src="https://my-blog-content.s3.amazonaws.com/2020/2020-05-steak/2020-05-30+22.22.41-temp110.jpg" width="25%" style="transform:rotate(90deg);">
 ---

@@ -1,6 +1,6 @@
 ---
 title: "How to use Github pages with multiple repositories"
-date: 2020-05-31 14:26 -04:00
+date: 2020-05-31
 ---
 _Spoiler alert, don't do it_
 

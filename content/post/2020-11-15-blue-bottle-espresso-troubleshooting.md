@@ -3,7 +3,7 @@ layout: post
 title: blue bottle espresso troubleshooting
 img: <img src="https://s3.amazonaws.com/my-blog-content/2020-11-15-blue-bottle-espresso-troubleshooting/Screen Shot 2021-01-16 at 5.49.06 PM.png" width="30%">
 author: Michal
-date: 2020-11-15  12:00 -0500
+date: 2020-11-15
 ---
 
 Trying out this Blue Bottle Opascope espresso w/ this hand grinder w/ my Kamira espresso maker. But the Kamira is not pulling the espresso for some reason.

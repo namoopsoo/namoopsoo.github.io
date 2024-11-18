@@ -1,6 +1,8 @@
 [submodule "content/handy"]
-	path = content/handy
-	url = https://github.com/namoopsoo/handy.git
+    path = content/handy
+    url = https://github.com/namoopsoo/handy.git
 [submodule "themes/PaperMod"]
-	path = themes/PaperMod
-	url = https://github.com/adityatelange/hugo-PaperMod.git
+    path = themes/PaperMod
+    # url = https://github.com/adityatelange/hugo-PaperMod.git
+    url = git@github.com:namoopsoo/gotjokes-hugoPapermod.git
+    

@@ -4,13 +4,62 @@
     <title>michal.piekarczyk.xyz</title>
     <link>https://michal.piekarczyk.xyz/</link>
     <description>Recent content on michal.piekarczyk.xyz</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- 0.138.0</generator>
+    <language>en</language>
+    <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>embedding and pgvector query speedup</title>
+      <link>https://michal.piekarczyk.xyz/post/2024-11-09-query-speedup/</link>
+      <pubDate>Sat, 09 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2024-11-09-query-speedup/</guid>
+      <description>&lt;p&gt;Wow, I found a very silly issue that was holding back this query.&lt;/p&gt;
+&lt;p&gt;The data is a langchain embedding table of items associated with places, as well as a second table with those place addresses along with their longitude, latitude.&lt;/p&gt;
+&lt;p&gt;Also, as I had a slower query, executed through sqlalchemy, like&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; sqlalchemy.sql &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; text
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; foo&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;engine&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;connect() &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; conn:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;vector&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#ae81ff&#34;&gt;0.06014461815357208&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0.07383278757333755&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0.010295705869793892&lt;/span&gt;, &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0.058833882212638855&lt;/span&gt;,], &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;longitude&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;latitude&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sql &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    statement &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; text(sql)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# TODO also parameterize the `limit 10` ? fetchmany()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    results &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; conn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;execute(statement, data)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;mappings()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fetchall()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I&amp;rsquo;m glad about three strategies I used to help speed up the debugging. Namely, (1) deconstructing the sqlalchemy code, into a raw SQL query I could play with, (2) using DBeaver to quickly throw my raw SQL query against postgresql, for super fast iteration, and (3) of course using &lt;code&gt;explain analyze&lt;/code&gt; to look at query plans to understand where the bottle neck may be.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>odd prompt?</title>
+      <link>https://michal.piekarczyk.xyz/post/2024-11-07-odd-prompts/</link>
+      <pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2024-11-07-odd-prompts/</guid>
+      <description>&lt;p&gt;looked at someone&amp;rsquo;s fun project,
+&lt;a href=&#34;https://www.npmjs.com/package/@rhettlunn/is-odd-ai&#34;&gt;https://www.npmjs.com/package/@rhettlunn/is-odd-ai&lt;/a&gt;
+That uses GPT 3.5 to see if a number is odd, for fun.&lt;/p&gt;
+&lt;p&gt;My friend was asking has anyone evaluated this, so hmm i took a quick look.
+&lt;a href=&#34;https://github.com/rhettlunn/is-odd-ai/blob/main/index.js&#34;&gt;https://github.com/rhettlunn/is-odd-ai/blob/main/index.js&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;spotted-two-interesting-things&#34;&gt;Spotted two interesting things.&lt;/h1&gt;
+&lt;h2 id=&#34;prompt-injection-attack&#34;&gt;Prompt injection attack&lt;/h2&gt;
+&lt;p&gt;not sure if i just made that up, but like a SQL injection , the code that places user input into the prompt asking about oddness, doesn&amp;rsquo;t type check if it is a number, and doesn&amp;rsquo;t therefore have any way of knowing will someone attempt to insert some text that will cause GPT to escape its sandbox. of course chat GPT is intentionally sandboxed for most purposes, but it can still typically do internet research and GPT analysis can execute code in a limited VM.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>langchain_pgvector bug</title>
+      <link>https://michal.piekarczyk.xyz/post/2024-11-02-langchain-pgvector-bug/</link>
+      <pubDate>Sat, 02 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2024-11-02-langchain-pgvector-bug/</guid>
+      <description>&lt;p&gt;I had a issue where ,  using the langchain_pgvector library, with the vectorstore.add_documents function call, which has worked for me before for a while but somehow, for a new collection, I’m  trying to add thousands of documents, but only a handful get added, and without errors. Very weird .&lt;/p&gt;
+&lt;p&gt;I didn&amp;rsquo;t see any useful patterns in the 4 out of 1022 documents that did get added, and pdb tracing through the code did not reveal any silent errors.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>video game Stray Review</title>
+      <link>https://michal.piekarczyk.xyz/post/2024-10-25-stray-game-review/</link>
+      <pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2024-10-25-stray-game-review/</guid>
+      <description>&lt;p&gt;This contains spoilers. This isn’t really a review, but maybe just free writing about a game I really enjoyed, recently. Maybe that is a review haha not sure.&lt;/p&gt;
+&lt;p&gt;This is a story mode  action adventure explorer type like Borderlands, walking dead, life is strange, and many others. Where, you Control a protagonist, in this case a cat,, 🐈, interacting with other characters in the game, as well as exploring your world to solve mostly 3 -space geometry puzzles, of , how to navigate a cat , with jumps and crawl spaces. The storyline feels original, reminiscent of one of the early post apocalyptic episodes of the Netflix original Love death and robots ,  but more intense.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>How to query pgvector data leveraging multiple indexes</title>
       <link>https://michal.piekarczyk.xyz/post/2024-09-14-hnsw-multi-index-search/</link>
       <pubDate>Sat, 14 Sep 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2024-09-14-hnsw-multi-index-search/</guid>
       <description>&lt;p&gt;First, an embedding  table was created, using langchain pgvector. (TODO show that example).&lt;/p&gt;
 &lt;h3 id=&#34;initial-query-which-was-working&#34;&gt;Initial query which was working,&lt;/h3&gt;
@@ -34,23 +83,19 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;LIMIT&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;with, output, we see below, the &lt;code&gt;ix_embedding_hnsw&lt;/code&gt; index created last time does have an index scan.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>string to int conversion nulling</title>
       <link>https://michal.piekarczyk.xyz/post/2024-09-13-pyspark-32-bit-nulled/</link>
       <pubDate>Fri, 13 Sep 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2024-09-13-pyspark-32-bit-nulled/</guid>
       <description>&lt;p&gt;I had this interesting situqtion, where I wanted to plot some numbers that were nested inside of struct columns. They were row counts in a delta table history output, but in any case, I tried to plot them, but my plot treated them as categories.
 Ok realizing they were strings, I cast them to integers, but then I got nulls. After a bit of trial and error I realized they were probably laerger than 32bit!
 Casting to big int, aka, &lt;code&gt;long&lt;/code&gt;, did the trick.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>postgresql , pgvector and indexing</title>
       <link>https://michal.piekarczyk.xyz/post/2024-09-07-pgvector-indexes/</link>
       <pubDate>Sat, 07 Sep 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2024-09-07-pgvector-indexes/</guid>
       <description>&lt;p&gt;placeholder. didnt get chance to write this up yet, but I had used langchain pgvector, to add embeddings to postgresql , I ran my queries, and noticed they were slow.&lt;/p&gt;
 &lt;p&gt;I read about pgvector indexing, and on psql, noticed my embedding column was missing an index!&lt;/p&gt;
@@ -58,12 +103,10 @@ Casting to big int, aka, &lt;code&gt;long&lt;/code&gt;, did the trick.&lt;/p&gt;
 &lt;p&gt;Weird error about no dimensions on the vector column. ok learned need explicit dimension. Added it.
 Nice adding index worked.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Mini survey of some high level deep learning curiosities.</title>
       <link>https://michal.piekarczyk.xyz/post/2024-08-29--architectures/</link>
       <pubDate>Thu, 05 Sep 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2024-08-29--architectures/</guid>
       <description>&lt;h1 id=&#34;motivation&#34;&gt;motivation&lt;/h1&gt;
 &lt;p&gt;I know more about Databricks for distributed computing. But there is also the Kubernetes world. Let’s read some more on that.&lt;/p&gt;
@@ -79,24 +122,20 @@ Nice adding index worked.&lt;/p&gt;</description>
 &lt;h2 id=&#34;the-dominant-architecturesframeworks&#34;&gt;the dominant architectures/frameworks?&lt;/h2&gt;
 &lt;p&gt;Somehow I got the impression that, since whenever I opened up a google colab notebook in the past and saw GPU set up for tensorflow or pytorch, and then later when I started working with Databricks, I got the impression that GPU and clusters were an either or thing.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>read iphone temp</title>
       <link>https://michal.piekarczyk.xyz/post/2024-08-25-iphone-temp/</link>
       <pubDate>Sun, 25 Aug 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2024-08-25-iphone-temp/</guid>
       <description>&lt;h1 id=&#34;my-iphone-has-been-overheating-lately-&#34;&gt;My iphone has been overheating lately, 🤔&lt;/h1&gt;
 &lt;p&gt;Read one good tip, forget where, just try to avoid using your phone while charging it if it is starting to overheat. But also, if it is really heating up, to stop charging it just in case. Makes sense. Going to try that next time.&lt;/p&gt;
 &lt;h2 id=&#34;but-what-is-the-temp-anyway&#34;&gt;But what is the temp anyway?&lt;/h2&gt;
 &lt;p&gt;Nice, learned from here, &lt;a href=&#34;https://www.guidingtech.com/how-to-check-iphone-temperature/&#34;&gt;https://www.guidingtech.com/how-to-check-iphone-temperature/&lt;/a&gt;, you can access your iphone temp through the Privacy Settings, Analytics data. Looks like I had this turned on so I downloaded two of my last files there,&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>troubleshooting home cold plunge 🤔</title>
       <link>https://michal.piekarczyk.xyz/post/2024-08-25-troubleshootin-home-cold-plunge/</link>
       <pubDate>Sun, 25 Aug 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2024-08-25-troubleshootin-home-cold-plunge/</guid>
       <description>&lt;h2 id=&#34;the-legit-cold-plunge-was-great-but-the-home-one&#34;&gt;The legit cold plunge was great but the home one&amp;hellip;&lt;/h2&gt;
 &lt;p&gt;A few weeks ago I tried the cold plunge at the &lt;a href=&#34;https://www.standardhotels.com/miami/properties/miami-beach&#34;&gt;Standard Spa at Miami Beach&lt;/a&gt;. Someone measuring the temp said it was 57 F and this was on a sunny 80 plus something day.&lt;/p&gt;
@@ -107,12 +146,10 @@ Nice adding index worked.&lt;/p&gt;</description>
 That was amazing and I am glad I had a chance to try it a handful of times while there.&lt;/p&gt;
 &lt;p&gt;While attempting to leave Miami back, hurricane Debby blocked most flights out including ours and we ended up leaving Miami two days later.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Streamlit is lit</title>
       <link>https://michal.piekarczyk.xyz/post/2024-07-20-streamlit-is-lit/</link>
       <pubDate>Sat, 20 Jul 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2024-07-20-streamlit-is-lit/</guid>
       <description>&lt;p&gt;Briefly describing this Streamlit fronted python app that queries against menus pulled from a kaggle uber eats dataset found &lt;a href=&#34;https://www.kaggle.com/code/sadeghjalalian/uber-eats-restaurant-menus/input?select=restaurants.csv&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;figure&gt;
@@ -136,34 +173,28 @@ It is off topic, so no results&lt;/p&gt;
 
 &lt;p&gt;Continuing from an &lt;a href=&#34;https://michal.piekarczyk.xyz/post/2024-06-16-bart-zero-shot-look/&#34;&gt;earlier post&lt;/a&gt;, this is taking advantage of Facebook&amp;rsquo;s BART model. A hugging face pipeline is used to hit against six food and restaurant related topics are averaged and compared against a threshold of &lt;code&gt;0.60&lt;/code&gt; to determine if the query is food related. We see the topics are displayed with their level of &lt;a href=&#34;https://en.wikipedia.org/wiki/Textual_entailment&#34;&gt;entailment&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>withings wireless scale infinite loop</title>
       <link>https://michal.piekarczyk.xyz/post/2024-06-29-withings-scale-troubleshoot/</link>
       <pubDate>Sat, 29 Jun 2024 00:01:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2024-06-29-withings-scale-troubleshoot/</guid>
       <description>&lt;h1 id=&#34;holding-pattern&#34;&gt;holding pattern&lt;/h1&gt;
 &lt;p&gt;Kind of out of the blue, my Withings Body+ screen is on but theres nothing there. After some reseting, also cannot connect by phone. Removed it from the Withings app on my phone, trying to reconnect the scale as a new scale, but searching for the device, I see the Body+ c0 pop up, I select it, but then I am right back to the search for device screen.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Let&#39;s try BART zero shot on restaurant related queries</title>
       <link>https://michal.piekarczyk.xyz/post/2024-06-16-bart-zero-shot-look/</link>
       <pubDate>Sun, 16 Jun 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2024-06-16-bart-zero-shot-look/</guid>
       <description>&lt;h2 id=&#34;lets-look-at-what-bart-large-mnli-has-to-say-on-restaurant-related-labels-for-food-and-non-food-queries&#34;&gt;Let&amp;rsquo;s look at what bart-large-mnli has to say on restaurant related labels for food and non food queries&lt;/h2&gt;
 &lt;p&gt;The queries here are just arbitrary statements I came up with off the top of my head.&lt;/p&gt;
 &lt;p&gt;You can &lt;a href=&#34;#final-evaluation&#34;&gt;skip to the final scoring&lt;/a&gt;, but in summary, using a super simplistic evaluation here, I think that the super accessible &lt;code&gt;bart-large-mnli&lt;/code&gt; model does pretty well here.&lt;/p&gt;
 &lt;p&gt;One observation I am seeing casually, which I believe Jake Tae &lt;a href=&#34;https://jaketae.github.io/study/zero-shot-classification/&#34;&gt;https://jaketae.github.io/study/zero-shot-classification/&lt;/a&gt; refers too also, is that &lt;code&gt;bart-large-mnli&lt;/code&gt; is more or less by design, not as helpful w.r.t. single-word hypothesis entailment. And that&amp;rsquo;s why, inspired by Jake and the underlying work being discussed &lt;a href=&#34;https://joeddav.github.io/blog/2020/05/29/ZSL.html&#34;&gt;here&lt;/a&gt;, below, I&amp;rsquo;m also using mostly multi-word (multi-token) hypotheses as topics.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Recycling xero shoe diy huarache rubber</title>
       <link>https://michal.piekarczyk.xyz/post/2024-06-09-recycling-xero-diy-huarache-rubber/</link>
       <pubDate>Sun, 09 Jun 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2024-06-09-recycling-xero-diy-huarache-rubber/</guid>
       <description>&lt;h2 id=&#34;what-to-do-with-the-left-over-rubber-from-your-xero-diy-haraches&#34;&gt;What to do with the left over rubber from your Xero DIY haraches?&lt;/h2&gt;
 &lt;p&gt;I originally got this Vibram rubber sheet from &lt;a href=&#34;https://xeroshoes.com/shop/sandals/diy-vibram/&#34;&gt;this xeroshoes.com link&lt;/a&gt;, a few years ago.&lt;/p&gt;
@@ -173,23 +204,19 @@ It is off topic, so no results&lt;/p&gt;
 
 &lt;p&gt;I have made two pairs for myself and I made a few pairs for some family members too. They are great, however, I had stowed away the left over rubber for, well, a long time now haha. I didn&amp;rsquo;t know what to use the left over material for, until now 😀.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Some quick analysis of prior fasting data</title>
       <link>https://michal.piekarczyk.xyz/post/2024-06-02-quick-fast-analyze/</link>
       <pubDate>Sun, 02 Jun 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2024-06-02-quick-fast-analyze/</guid>
       <description>&lt;h2 id=&#34;ok-fasting-hours-but-how-about-eating-hours&#34;&gt;Ok fasting hours, but how about eating hours?&lt;/h2&gt;
 &lt;p&gt;The data dump from my Zero fasting app highlights the fasting hours. I had used Zero from 2019 to late 2023, and I wanted to look at briefly, well what about the eating hours, other than the fasted hours?&lt;/p&gt;
 &lt;p&gt;In an effort to save time, I used ChatGPT to come up with the calculation around the eating hours. Actually the first try was interesting since the outcome was showing daily eating hours that were beyond 40 hours 😅, but coercing ChatGPT to try to correct so this falls within the expected under 10 hours, ChatGPT was able to actually course correct nicely ! Impressed.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>issue experienced in typewise logseq interaction</title>
       <link>https://michal.piekarczyk.xyz/post/2024-05-24-typewise-plus-logseq/</link>
       <pubDate>Fri, 24 May 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2024-05-24-typewise-plus-logseq/</guid>
       <description>&lt;p&gt;An example that is around undo-ing auto-corrections,  when using the Logseq app.
 This is on on typewise&lt;/p&gt;
@@ -203,12 +230,10 @@ This is on on typewise&lt;/p&gt;
 &lt;h1 id=&#34;thoughts-as-to-why&#34;&gt;Thoughts as to why&lt;/h1&gt;
 &lt;p&gt;The issue I suppose is that when one types some text, on typewise, a buffer of the immediate text is kept, so if typewise auto-corrects, and someone taps the &amp;ldquo;↩️&amp;rdquo; undo , typewise attempts to replace the suggestion with the previous buffer. And if typewise is being used in an app that, say, modifies the text after typewise captures its buffer, but then applies an autocorrect, then of course the undo will not make sense. But say if typewise captures its buffer instead, not right after the last typewise keystroke, but before typewise issues its autocorrect, then everything would be golden.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Nice pretty printing go slices</title>
       <link>https://michal.piekarczyk.xyz/post/2024-03-30-pretty-printing-slices-golang/</link>
       <pubDate>Sat, 30 Mar 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2024-03-30-pretty-printing-slices-golang/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;package&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
@@ -254,12 +279,10 @@ better
 ]
 &lt;/code&gt;&lt;/pre&gt;</description>
     </item>
-    
     <item>
       <title>Scope trickiness in Go</title>
       <link>https://michal.piekarczyk.xyz/post/2024-03-30-scope-golang/</link>
       <pubDate>Sat, 30 Mar 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2024-03-30-scope-golang/</guid>
       <description>&lt;h2 id=&#34;go-scope-is-different-for-for-loops-and-if-blocks-than-in-python&#34;&gt;Go scope is different for for loops and if blocks than in Python&lt;/h2&gt;
 &lt;p&gt;For example, with some code,&lt;/p&gt;
@@ -316,23 +339,19 @@ better
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And get&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Go Sprinkle reflection on domain driven development</title>
       <link>https://michal.piekarczyk.xyz/post/2024-02-24-reflection/</link>
       <pubDate>Sat, 24 Feb 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2024-02-24-reflection/</guid>
       <description>&lt;p&gt;Ok cool, realizing, following on from earlier post, that to nicely test the case when I have a &lt;code&gt;Merchant&lt;/code&gt; and I am only making updates to it with &lt;code&gt;UpdateMerchantRequest&lt;/code&gt;, I would need a nice generic way to obtain a subset struct instance from the other. Getting ChatGPT to help, here is what I asked,&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Okay I have a strategy I&amp;rsquo;m using, where I have a go struct for a merchant that mirrors a postgresql database table and also another struct for updates to it which is a subset,&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Minimizing Golang struct types while observing tyep safety</title>
       <link>https://michal.piekarczyk.xyz/post/2024-02-04-golang-http-struct-types-proliferation/</link>
       <pubDate>Sun, 04 Feb 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2024-02-04-golang-http-struct-types-proliferation/</guid>
       <description>&lt;h2 id=&#34;asked-chat-gpt-the-following-conundrum&#34;&gt;Asked chat gpt the following conundrum,&lt;/h2&gt;
 &lt;p&gt;if I&amp;rsquo;m using Go struct types to model a data type, matching a table in my postgresql database say,&lt;/p&gt;
@@ -352,34 +371,28 @@ better
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;since the &lt;code&gt;id&lt;/code&gt; and &lt;code&gt;created_at&lt;/code&gt; timestamps are populated automatically,
 and also another to update the merchant,&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Some of my notes through learning Golang by conversing with ChatGPT</title>
       <link>https://michal.piekarczyk.xyz/post/2023-12-23-learn-golang-through-chat-gpt-conversation/</link>
       <pubDate>Sat, 23 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-12-23-learn-golang-through-chat-gpt-conversation/</guid>
       <description>&lt;h2 id=&#34;i-have-not-messed-around-with-golang-yet-and-figured-why-not-try-to-learn-this-through-just-chatting-with-chatgpt&#34;&gt;I have not messed around with Golang yet and figured why not try to learn this through just chatting with ChatGPT?&lt;/h2&gt;
 &lt;p&gt;Not a full conversation below , but just using this to jot down some notes. And most of the code examples I&amp;rsquo;m pasting below are from ChatGPT.&lt;/p&gt;
 &lt;h2 id=&#34;error-handling-is-very-different-in-go&#34;&gt;Error handling is very different in Go&lt;/h2&gt;
 &lt;p&gt;So no exceptions like Python. Instead, you can give a return tuple type from a function like this and the second term will be a error code.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Exporting messages from Apple imessages</title>
       <link>https://michal.piekarczyk.xyz/post/2023-12-09-imessage-export/</link>
       <pubDate>Sat, 09 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-12-09-imessage-export/</guid>
       <description>&lt;h1 id=&#34;the-problem&#34;&gt;The problem&lt;/h1&gt;
 &lt;p&gt;Messages have been clogging up my iphone for a while now and at this point, they are taking up maybe 15Gigs. Most of this is photo attchments. I thought an options was to manually go through the phone UI, deleting photo attachments to save space, but I did a bit of this tedium and the storage space did not seem to clear up. Maybe it is delayed? The other alternative is to hit a button that says &amp;ldquo;only keep messages up to a year old&amp;rdquo;. In reality, I don&amp;rsquo;t need the 15 Gigs of photo attachments, but I don&amp;rsquo;t want to lose the text data.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>test drive chat gpt data analysis</title>
       <link>https://michal.piekarczyk.xyz/post/2023-11-18-test-drive-chat-gpt-data-analysis/</link>
       <pubDate>Sat, 18 Nov 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-11-18-test-drive-chat-gpt-data-analysis/</guid>
       <description>&lt;p&gt;blog-date:: 2023-11-18&lt;/p&gt;
 &lt;h1 id=&#34;so-lets-try-out-chat-gpts-new-data-analysis-functionality&#34;&gt;So lets try out Chat GPT&amp;rsquo;s new Data Analysis functionality&lt;/h1&gt;
@@ -389,12 +402,10 @@ and also another to update the merchant,&lt;/p&gt;</description>
 &lt;blockquote&gt;
 &lt;p&gt;Can you plot the calories per day over time ?&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Help diagnose no coffee coming out of your Kamira Espresso Machine</title>
       <link>https://michal.piekarczyk.xyz/post/2023-09-24-no-coffee-from-kamira/</link>
       <pubDate>Sun, 24 Sep 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-09-24-no-coffee-from-kamira/</guid>
       <description>&lt;p&gt;I have loved using the Kamira stove top espresso machine for five plus years now, but here is one interesting thing I learned I did not know about until now.&lt;/p&gt;
 &lt;h2 id=&#34;what-is-coffee-soup&#34;&gt;What is coffee soup?&lt;/h2&gt;
@@ -405,12 +416,10 @@ and also another to update the merchant,&lt;/p&gt;</description>
 &lt;/div&gt;
 &lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Odd pyspark window function behavior</title>
       <link>https://michal.piekarczyk.xyz/post/2023-09-23-pyspark-window-interesting/</link>
       <pubDate>Sat, 23 Sep 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-09-23-pyspark-window-interesting/</guid>
       <description>&lt;h2 id=&#34;i-was-working-through-some-odd-window-function-behavior&#34;&gt;I was working through some odd window function behavior&lt;/h2&gt;
 &lt;p&gt;Analyzing some feature drift data, I wanted to obtain min, max and mean drift values for features, partitioning on the &lt;code&gt;compare_date&lt;/code&gt; here.
@@ -476,12 +485,10 @@ But I ended up with some strange results.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+--------+-------+------------+----------+---------+---------+-----------------------+&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I was confused why are the min, max and mean all the same. I thought, could it be my data is corrupted and some of my partitions only have one row?&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>summary learning how to learn coursera</title>
       <link>https://michal.piekarczyk.xyz/post/2023-09-10-summary-learning-how-to-learn-coursera/</link>
       <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-09-10-summary-learning-how-to-learn-coursera/</guid>
       <description>&lt;h1 id=&#34;what&#34;&gt;What&lt;/h1&gt;
 &lt;p&gt;On Coursera [[Barbara Oakley]] Learning How to Learn
@@ -489,12 +496,10 @@ Originally, came across by reading a medium post by [[Aleksa Gordić]]. This was
 &lt;h1 id=&#34;in-three-sentences&#34;&gt;In three sentences&lt;/h1&gt;
 &lt;p&gt;You control the input of learning and the output is a side-effect. But not all strategies are as useful and rote learning is overrated and recall like spaced repetition is where the benefit is. Sleep and taking walks  is the learning multiplier enabling diffuse mode you don&amp;rsquo;t benefit from if you are trying to just focus really hard on something.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>everybody loves reynauds</title>
       <link>https://michal.piekarczyk.xyz/post/2023-06-25-everybody-loves-reynauds/</link>
       <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-06-25-everybody-loves-reynauds/</guid>
       <description>&lt;h1 id=&#34;inspiration&#34;&gt;Inspiration&lt;/h1&gt;
 &lt;p&gt;Haha so per the joke of a friend about &amp;ldquo;Reynaud&amp;rsquo;s&amp;rdquo; sounds like &amp;ldquo;Raymond&amp;rdquo; as in &amp;ldquo;Everyone loves Raymond&amp;rdquo; , I was wondering, can sentence transformers tell the difference?
@@ -535,12 +540,10 @@ But haha spoiler alert sort is is that if a model finds this funny then that mig
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    print(corpus[idx]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;strip(), &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;(Score: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{:.4f}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;)&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;format(score))
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;output&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>semantic code search part 2</title>
       <link>https://michal.piekarczyk.xyz/post/2023-06-13-semantic-code-search-part-2/</link>
       <pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-06-13-semantic-code-search-part-2/</guid>
       <description>&lt;p&gt;public:: true
 blog-date:: 2023-06-13
@@ -549,12 +552,10 @@ Ok continuing from &lt;a href=&#34;https://michal.piekarczyk.xyz/post/2023-06-11
 &lt;h1 id=&#34;query-set-choice&#34;&gt;Query set choice&lt;/h1&gt;
 &lt;p&gt;I expanded the set of queries slightly, but not that much yet so I could focus on the evaluation code.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>logseq publish hugo with python</title>
       <link>https://michal.piekarczyk.xyz/post/2023-06-12-logseq-publish-hugo-with-python/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-06-12-logseq-publish-hugo-with-python/</guid>
       <description>&lt;p&gt;public:: true
 blog-date:: 2023-06-12&lt;/p&gt;
@@ -562,24 +563,20 @@ blog-date:: 2023-06-12&lt;/p&gt;
 &lt;p&gt;Inspired by the super popular #[[schrodinger logseq plugin]], I wrote up something in #python today, to publish to #Hugo like &lt;a href=&#34;https://github.com/sawhney17/logseq-schrodinger&#34;&gt;https://github.com/sawhney17/logseq-schrodinger&lt;/a&gt; but also with support for block embeds.&lt;/p&gt;
 &lt;p&gt;In particular, I was also really inspired by [[Bas Grolleman]]&amp;rsquo;s concept &lt;a href=&#34;https://youtu.be/CPMuGn2d8po&#34;&gt;here&lt;/a&gt;  around how to be able to use #interstitial-journaling and be able to nicely coalesce selected sources through their block embeds, into a target logseq concept they all refer to.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>semantic code search first stab</title>
       <link>https://michal.piekarczyk.xyz/post/2023-06-11-semantic-code-search-first-stab/</link>
       <pubDate>Sun, 11 Jun 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-06-11-semantic-code-search-first-stab/</guid>
       <description>&lt;p&gt;public:: true
 blog_date:: 2023-06-11
 The idea here was to try out Sentence Transformers , &lt;a href=&#34;https://sbert.net&#34;&gt;https://sbert.net&lt;/a&gt; , on source code search. And as a first stab, a corpus was built with, hey why not, the code from the #sentence-transformers repo.&lt;/p&gt;
 &lt;p&gt;The documentation at  &lt;a href=&#34;https://www.sbert.net/examples/applications/semantic-search/README.html#python&#34;&gt;https://www.sbert.net/examples/applications/semantic-search/README.html#python&lt;/a&gt; was used for the basic test here. And a small bit of code at the bottom here, shows how the lines from the python source files were written to a python list first.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Decartes vs Spinoza</title>
       <link>https://michal.piekarczyk.xyz/post/2023-06-10-spinoza-vs-descartes/</link>
       <pubDate>Sat, 10 Jun 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-06-10-spinoza-vs-descartes/</guid>
       <description>&lt;p&gt;This is a school English class project on philosophy from around 2004 where I recruited friends and family to do the voice acting of Spinoza and Descartes 😂. Glad this did not get lost.&lt;/p&gt;
 &lt;h2 id=&#34;my-brother-and-uncle-are-voicing-here&#34;&gt;My brother and uncle are voicing here&lt;/h2&gt;
@@ -612,41 +609,33 @@ The idea here was to try out Sentence Transformers , &lt;a href=&#34;https://sbe
 &lt;h2 id=&#34;george-and-eugene&#34;&gt;George and Eugene&lt;/h2&gt;
 &lt;p&gt;Here is the second set of voice acting.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>How to unchaos your photos?</title>
       <link>https://michal.piekarczyk.xyz/project/2023-photo-unchaos/</link>
       <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/project/2023-photo-unchaos/</guid>
       <description>an interlude to having better grasp of an unwieldly photo situation</description>
     </item>
-    
     <item>
       <title>A diabetes summary (draft)</title>
       <link>https://michal.piekarczyk.xyz/post/2023-05-20-diabetes/</link>
       <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-05-20-diabetes/</guid>
       <description>&lt;h2 id=&#34;tldr&#34;&gt;TLDR&lt;/h2&gt;
 &lt;p&gt;Diabetes is what happens when high blood sugar wreaks havoc on the body because either with type I diabetes, the pancreas cannot produce insulin for various reasons or with type II diabetes, no matter how much insulin the pancreas  produces, it is not  enough insulin to meet the high levels of blood sugar because of insulin resistance (insulin is ignored by cells and blood sugar is not taken up). But fortunately dietary carbohydrate is the main lever here.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Using ChatGPT to kickstart a flask app?</title>
       <link>https://michal.piekarczyk.xyz/post/2023-05-14-chat-gpt-flask-kickstart/</link>
       <pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-05-14-chat-gpt-flask-kickstart/</guid>
       <description>&lt;h2 id=&#34;context&#34;&gt;Context&lt;/h2&gt;
 &lt;p&gt;Per an &lt;a href=&#34;https://michal.piekarczyk.xyz/post/2022-11-12-food-not-food/&#34;&gt;earlier on-going interlude&lt;/a&gt;, I&amp;rsquo;ve been trying to more easily curate the photos I care to reference in passing in a conversation. This started out as &lt;a href=&#34;https://github.com/namoopsoo/manage-my-photos&#34;&gt;deduping photos and splitting out the photos of food&lt;/a&gt;,  but at some point I realized I have so many photos I take as notes, taking those out by hand was getting tedious. I used this as an opportunity to test chat GPT&amp;rsquo;s code-generating skills.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Run forever!</title>
       <link>https://michal.piekarczyk.xyz/post/2023-04-13-gh-pages-and-dates/</link>
       <pubDate>Thu, 13 Apr 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-04-13-gh-pages-and-dates/</guid>
       <description>&lt;h3 id=&#34;github-pages-build-queued-for-a-day&#34;&gt;Github Pages build queued for a day&lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; &amp;#34;Waiting for a runner to pick up this job&amp;#34;
@@ -656,12 +645,10 @@ The idea here was to try out Sentence Transformers , &lt;a href=&#34;https://sbe
 &lt;p&gt;Anyway I had a typo because I had &lt;code&gt;DateFormat&lt;/code&gt; , would not have worked anyway.&lt;/p&gt;
 &lt;p&gt;But I could not publish this!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Merge log-seq journal forks</title>
       <link>https://michal.piekarczyk.xyz/post/2023-04-01--merge-log-seq-journal-forks/</link>
       <pubDate>Sat, 01 Apr 2023 16:24:51 -0500</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-04-01--merge-log-seq-journal-forks/</guid>
       <description>&lt;h3 id=&#34;this-is-what-happens-to-me&#34;&gt;This is what happens to me&lt;/h3&gt;
 &lt;p&gt;When editing with &lt;a href=&#34;https://logseq.com&#34;&gt;https://logseq.com&lt;/a&gt; , on my phone, laptop and ipad, I end up seeing this&lt;/p&gt;
@@ -688,12 +675,10 @@ The idea here was to try out Sentence Transformers , &lt;a href=&#34;https://sbe
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journals/2023_03_21 2.md
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I think this is mostly happening when you start editing a file before a icloud sync has had a chance to take place.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Indistractable book summary</title>
       <link>https://michal.piekarczyk.xyz/post/2023-04-01--indistractable-book-summary/</link>
       <pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-04-01--indistractable-book-summary/</guid>
       <description>&lt;h2 id=&#34;draft-status&#34;&gt;Draft status&lt;/h2&gt;
 &lt;p&gt;Note haha, this is highly in draft mode, but I like to publish my early drafts because iterating is my preferred psychological happy place. But yea this is definitely not organized writing yet.&lt;/p&gt;
@@ -708,24 +693,20 @@ The idea here was to try out Sentence Transformers , &lt;a href=&#34;https://sbe
 &lt;h2 id=&#34;impact&#34;&gt;Impact&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;(TODO: rearrange this section, since lot of impact is still scattered below)&lt;/em&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Alternate Day Feasting</title>
       <link>https://michal.piekarczyk.xyz/post/2023-03-25--alternate-day-fasting/</link>
       <pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-03-25--alternate-day-fasting/</guid>
       <description>&lt;h3 id=&#34;first-stab-at-alternate-day-feasting&#34;&gt;First Stab at Alternate Day Feasting&lt;/h3&gt;
 &lt;h4 id=&#34;wait-dont-you-mean-alternate-day-fasting&#34;&gt;Wait Don&amp;rsquo;t you mean Alternate Day Fasting?&lt;/h4&gt;
 &lt;p&gt;Haha yes but I am still working up to the level of stoicism required to do proper &lt;a href=&#34;https://www.dietdoctor.com/weight-loss/alternate-day-fasting&#34;&gt;Alternate Day Fasting&lt;/a&gt; and a low stress life also helps especially if you rely on snacks to counter the stress of the daily Work-From-Home-Wake-Up-Surprise-You-Are-At-Work-And-Work-Throughout-The-Entire-Day-Life haha!&lt;/p&gt;
 &lt;p&gt;But having already been doing Time Restricted Feeding for several years now, I think I have the stoicism requirements to at least give Alternate Day Feasting a go, which is basically aiming at calorie restriction every other day.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>adjustments when migrating to hugo paper mod theme</title>
       <link>https://michal.piekarczyk.xyz/post/2023-03-18-hugo-columns-papermod-migrate-theme/</link>
       <pubDate>Fri, 17 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-03-18-hugo-columns-papermod-migrate-theme/</guid>
       <description>&lt;h2 id=&#34;quick-note-i-had-moved-to-the--papermodhttpsgithubcomadityatelangehugo-papermodwikifaqs-theme-last-month-and-have-been-slowly-fixing-a-few-things-that-borked&#34;&gt;Quick note, I had moved to the  &lt;a href=&#34;https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs&#34;&gt;PaperMod&lt;/a&gt; theme last month and have been slowly fixing a few things that borked.&lt;/h2&gt;
 &lt;h3 id=&#34;images-disappeared&#34;&gt;Images disappeared?&lt;/h3&gt;
@@ -740,22 +721,18 @@ I had them like&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;table&lt;/span&gt;&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;and I had to change them to be using the hugo language, below, then I saw the images again.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>fact checking dark humor</title>
       <link>https://michal.piekarczyk.xyz/post/2023-02-18-fact-checking-dark-humor/</link>
       <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-02-18-fact-checking-dark-humor/</guid>
       <description>&lt;p&gt;So my friend and I were discussing the general topic of what happens to our employability as people once we reach the age of retirement. My feelings on this are I am hopeful and I think people can retain their skills and probably express different kinds of skills too. (some call this wisdom =D ).&lt;/p&gt;
 &lt;p&gt;At this point my friend introduced some dark humor, citing this  &lt;a href=&#34;https://www.ssa.gov/oact/STATS/table4c6.html#fn1&#34;&gt;link&lt;/a&gt; with an actuarial table, saying that,&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>langchain interview me 2023 feb</title>
       <link>https://michal.piekarczyk.xyz/post/2023-06-18-my-projects-langchain-interview-me-2023-feb/</link>
       <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-06-18-my-projects-langchain-interview-me-2023-feb/</guid>
       <description>&lt;p&gt;type:: #project-type
 status:: #in-progress-status
@@ -768,12 +745,10 @@ blogDate:: 2023-02-18&lt;/p&gt;
 &lt;p&gt;collapsed:: true
 And [[my projects/personal/langchain-interview-me-2023-feb]] , also now the repo usable by anyone who wants to compare their #brag-document to #job-listings [[job-description]] out there , get a delta , and more broadly , understand say , their industry posture , since that’s a moving target . And you can interview yourself too haha .&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Using langchain to interview myself about my skills</title>
       <link>https://michal.piekarczyk.xyz/post/2023-02-18-first-stab-langchain-interview-me/</link>
       <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-02-18-first-stab-langchain-interview-me/</guid>
       <description>&lt;h3 id=&#34;premise&#34;&gt;Premise&lt;/h3&gt;
 &lt;p&gt;Ok, got this half baked idea , combine my #brag-document with the available [[langchain]] QA chains into a proof of concept maybe I can call [[langchain interview me 2023-feb]]&lt;/p&gt;
@@ -825,12 +800,10 @@ And [[my projects/personal/langchain-interview-me-2023-feb]] , also now the repo
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;ok-let-me-run-now-some-of-the-basic-question-answer-chains&#34;&gt;Ok let me run now some of the basic question answer chains&lt;/h3&gt;
 &lt;p&gt;Use my environment from before,&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Notes from a recent hackathon</title>
       <link>https://michal.piekarczyk.xyz/post/2023-02-03-policy-document-understanding/</link>
       <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-02-03-policy-document-understanding/</guid>
       <description>&lt;p&gt;Spending a few spare moments to summarize some of my thought processes from a recent hackathon.&lt;/p&gt;
 &lt;h3 id=&#34;what-is-all-this&#34;&gt;What is all this&lt;/h3&gt;
@@ -838,12 +811,10 @@ And [[my projects/personal/langchain-interview-me-2023-feb]] , also now the repo
 &lt;h3 id=&#34;plan-of-action&#34;&gt;Plan of action&lt;/h3&gt;
 &lt;p&gt;So We settled to constrain our problem space to apply langchain, a library that wraps around large language model APIs notably the OpenAI API, to show language understanding from a publicly available  health insurance plan summary of benefits document. We ended up starting out with this public facing document, which one can seee a description of &lt;a href=&#34;https://www.medicareadvantage.com/plans/humana-community-hmo-h1036-236-000&#34;&gt;here&lt;/a&gt; with its download link &lt;a href=&#34;here&#34;&gt;https://content.sunfirematrix.com/2023/Humana-H1036-236-000-SB-EN-2023-SF20220922.pdf&lt;/a&gt; .&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Try a small talk prompt for langchain</title>
       <link>https://michal.piekarczyk.xyz/post/2023-02-01-lang-chain-small-talk/</link>
       <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-02-01-lang-chain-small-talk/</guid>
       <description>&lt;h3 id=&#34;ok-first-stab-at-small-talk-prompt&#34;&gt;Ok first stab at small talk prompt&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
@@ -884,12 +855,10 @@ And [[my projects/personal/langchain-interview-me-2023-feb]] , also now the repo
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(output)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;ok so here is what happened&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Try some lang chain prompt engineering</title>
       <link>https://michal.piekarczyk.xyz/post/2023-01-31-lang-chain-try-prompt-engineering/</link>
       <pubDate>Tue, 31 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-01-31-lang-chain-try-prompt-engineering/</guid>
       <description>&lt;p&gt;So I wonder would you use a prompt template with the name of the person maybe as an input variable, prior to a free chat open ended conversation?&lt;/p&gt;
 &lt;p&gt;I am particularly super curious can we use prompt engineering to convey that the person on the other end is a customer say, so they might use personal pronouns like &amp;ldquo;my&amp;rdquo;, &amp;ldquo;me&amp;rdquo;, etc ? Using &lt;a href=&#34;https://langchain.readthedocs.io/en/latest/modules/memory/examples/chatgpt_clone.html&#34;&gt;https://langchain.readthedocs.io/en/latest/modules/memory/examples/chatgpt_clone.html&lt;/a&gt; to help try this.&lt;/p&gt;
@@ -949,12 +918,10 @@ And [[my projects/personal/langchain-interview-me-2023-feb]] , also now the repo
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Hello Alfred Jamesmanson, your hair &lt;span style=&#34;color:#f92672&#34;&gt;is&lt;/span&gt; brown&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ok so when I tried that above, I got one answer so that is nice, but I did not get into a long conversation.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Quick lang chain test drive</title>
       <link>https://michal.piekarczyk.xyz/post/2023-01-29-lang-chain-quick-look/</link>
       <pubDate>Sun, 29 Jan 2023 21:02:57 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-01-29-lang-chain-quick-look/</guid>
       <description>&lt;h1 id=&#34;okay-let-me-try-that-lang-chain-demo&#34;&gt;Okay let me try that lang chain demo&lt;/h1&gt;
 &lt;ul&gt;
@@ -980,24 +947,20 @@ And [[my projects/personal/langchain-interview-me-2023-feb]] , also now the repo
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;ok-let-me-query&#34;&gt;Ok let me query&lt;/h3&gt;
 &lt;p&gt;the [[New yorker]] #article I added . I recently read [[The American Beast New Yorker]] this article by [[person Jill Lepore]] about the #report that was commissioned about the #[[January 6th Insurrection]] . I used my #iphone #scan-to-text feature to pull in the first page and a half to a text file, &lt;code&gt;article.txt&lt;/code&gt; to try this out . Let&amp;rsquo;s see how this works.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Dockerizing Daniel Bourke&#39;s Food Not Food</title>
       <link>https://michal.piekarczyk.xyz/post/2022-11-12-food-not-food/</link>
       <pubDate>Sat, 12 Nov 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2022-11-12-food-not-food/</guid>
       <description>&lt;p&gt;I have this on-going effort to be able to more easily show off my photos in the context of conversations. (I have a repo here, &lt;a href=&#34;https://github.com/namoopsoo/manage-my-photos&#34;&gt;https://github.com/namoopsoo/manage-my-photos&lt;/a&gt; related to my glue code.)&lt;/p&gt;
 &lt;p&gt;But I want a nice photo stream and my food diary is not part of that at all haha. So after manually moving food photos out, ultimately I stumbled upon  Daniel Bourke&amp;rsquo;s Food Not Food repo, &lt;a href=&#34;https://github.com/mrdbourke/food-not-food&#34;&gt;https://github.com/mrdbourke/food-not-food&lt;/a&gt; .&lt;/p&gt;
 &lt;p&gt;This was great I thought but I had some challenges getting this code off the ground, so here are my notes where ultimately I forked this,
 &lt;a href=&#34;https://github.com/namoopsoo/food-not-food&#34;&gt;https://github.com/namoopsoo/food-not-food&lt;/a&gt; and added a &lt;code&gt;Dockerfile&lt;/code&gt; to make this easier. Also putting this into docker eventually helped me to batch process photos as well. I can link to a separate post on that as well.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Backprop and SGD From Scratch 2022-10-13</title>
       <link>https://michal.piekarczyk.xyz/post/2022-10-13-backprop-scratch/</link>
       <pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2022-10-13-backprop-scratch/</guid>
       <description>&lt;!-- directives: [] --&gt;
 &lt;div id=&#34;content&#34;&gt;
@@ -1011,12 +974,10 @@ And [[my projects/personal/langchain-interview-me-2023-feb]] , also now the repo
                 &lt;br /&gt;
 &lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Back prop from scratch 2022-10-12</title>
       <link>https://michal.piekarczyk.xyz/post/2022-10-12-backprop-scratch/</link>
       <pubDate>Wed, 12 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2022-10-12-backprop-scratch/</guid>
       <description>&lt;!-- directives: [] --&gt;
 &lt;div id=&#34;content&#34;&gt;
@@ -1082,12 +1043,10 @@ model, artifacts, metrics = runner.train_and_analysis(data, parameters)
                 &lt;br /&gt;
 &lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Not sure how I managed to catch my bus to DC this morning</title>
       <link>https://michal.piekarczyk.xyz/post/2022-10-06-iphone-unavailable/</link>
       <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2022-10-06-iphone-unavailable/</guid>
       <description>&lt;p&gt;I have no idea how I managed to get on my bus to DC this morning. My Citibike station I planned on, was full, then my phone is Unavailable until like 10:42 .&lt;/p&gt;
 &lt;figure&gt;
@@ -1096,12 +1055,10 @@ model, artifacts, metrics = runner.train_and_analysis(data, parameters)
 
 &lt;p&gt;Bus boards at 11:00am . Still got to find a citibike dock to park the bike, because the stolen citibike fee is $1,250. At 10:42 of course I open phone and have absolutely no cell service. The citibike station does not have a printed map on it. I open my Google map because it magically had still on the screen some citibike locations. I quickly ride 2 blocks up praying it has docks. Had a free dock! I run back with suit case to bus location . It is not super easy to find and this is the first time I am using thejet.coach . But I see it eventually. I go to a mall first that claims to have Starbucks at 10:50. I don’t see it . I leave. I see a street level Starbucks . Go inside . 10 people in line . no time. I have no water prepared for a 4 hour trip. I run to bus. It’s 10:55. I ask can I take 4 minutes to look for water? They say ok. I have no cash . But food vendor a block away takes Credit card. I have water. Run back to bus. 10:59. Still no cell service . I try to show a ticket photo from before . But it was   my moms ticket which is for a different day . It says Anna . I am not Anna. They are confused 😐. I show them my ID. That is adequate 🥲. They let me inside. Inside there is 10 people sharing a whole bus . I’m in the front . All good now.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Back prop from scratch 2022-10-02</title>
       <link>https://michal.piekarczyk.xyz/post/2022-10-02-backprop-scratch/</link>
       <pubDate>Sun, 02 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2022-10-02-backprop-scratch/</guid>
       <description>&lt;!-- directives: [] --&gt;
 &lt;div id=&#34;content&#34;&gt;
@@ -1118,12 +1075,10 @@ model, artifacts, metrics = runner.train_and_analysis(data, parameters)
                 &lt;br /&gt;
 &lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Backprop and SGD From Scratch 2022-09-25</title>
       <link>https://michal.piekarczyk.xyz/post/2022-09-25-backprop-scratch/</link>
       <pubDate>Sun, 25 Sep 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2022-09-25-backprop-scratch/</guid>
       <description>&lt;!-- directives: [] --&gt;
 &lt;div id=&#34;content&#34;&gt;
@@ -1150,12 +1105,10 @@ model, artifacts, metrics = runner.train_and_analysis(data, parameters)
                 &lt;br /&gt;
 &lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Backprop and SGD From Scratch Part 4</title>
       <link>https://michal.piekarczyk.xyz/post/2022-09-03-backprop-scratch/</link>
       <pubDate>Sat, 03 Sep 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2022-09-03-backprop-scratch/</guid>
       <description>&lt;!-- directives: [] --&gt;
 &lt;div id=&#34;content&#34;&gt;
@@ -1203,12 +1156,10 @@ model, artifacts, metrics = runner.train_and_analysis(data, parameters)
                     &lt;br /&gt;
 &lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Backprop and SGD From Scratch Part 3</title>
       <link>https://michal.piekarczyk.xyz/post/2022-08-27-backprop-scratch/</link>
       <pubDate>Sat, 27 Aug 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2022-08-27-backprop-scratch/</guid>
       <description>&lt;!-- directives: [] --&gt;
 &lt;div id=&#34;content&#34;&gt;
@@ -1249,12 +1200,10 @@ model, artifacts, metrics = runner.train_and_analysis(data, parameters)
                 &lt;br /&gt;
 &lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Mini scikit-learn backwards compatibility story</title>
       <link>https://michal.piekarczyk.xyz/post/2022-07-12-mini-scikit-learn-backwards-compatibility-story/</link>
       <pubDate>Tue, 12 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2022-07-12-mini-scikit-learn-backwards-compatibility-story/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;hmm blah blah
@@ -1273,53 +1222,47 @@ model, artifacts, metrics = runner.train_and_analysis(data, parameters)
 &lt;li&gt;
 &lt;p&gt;I was not initially able to use the Databricks 10.4 pinned version of scikit-learn , 0.24.x because of course there were #backwards-compatibility issues where trying to load the model gave me an error saying that &lt;code&gt;ModuleNotFoundError: No module named &#39;sklearn.preprocessing.imputation&#39;&lt;/code&gt; was not found basically because I learned that all the Imputers were moved over to &lt;code&gt;sklearn.impute&lt;/code&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Tracck those daily permanents</title>
       <link>https://michal.piekarczyk.xyz/post/2022-04-10--markdown-table-test/</link>
       <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2022-04-10--markdown-table-test/</guid>
       <description>&lt;p&gt;will this work?&lt;/p&gt;
 &lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;when&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;blog&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;vimeo&lt;/th&gt;
+          &lt;th&gt;when&lt;/th&gt;
+          &lt;th&gt;blog&lt;/th&gt;
+          &lt;th&gt;vimeo&lt;/th&gt;
       &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;2022-04-10&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;foo&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;yea&lt;/td&gt;
+          &lt;td&gt;2022-04-10&lt;/td&gt;
+          &lt;td&gt;foo&lt;/td&gt;
+          &lt;td&gt;yea&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ndash;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ndash;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ndash;&lt;/td&gt;
+          &lt;td&gt;&amp;ndash;&lt;/td&gt;
+          &lt;td&gt;&amp;ndash;&lt;/td&gt;
+          &lt;td&gt;&amp;ndash;&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;hope so&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Remember to Floss Your Batteries</title>
       <link>https://michal.piekarczyk.xyz/post/2022-01-29-floss-your-battery/</link>
       <pubDate>Sat, 29 Jan 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2022-01-29-floss-your-battery/</guid>
       <description>&lt;p&gt;Today I thought it would take me maybe half an hour to replace my laptop battery. I got a replacement in the mail. Actually funny enough they are called the &amp;ldquo;function keys&amp;rdquo; battery because there are three cells .&lt;/p&gt;
 &lt;p&gt;Anyway, turns out they are glued to the inside and you need some kind of epoxy loosener. I randomly stumbled on this video someone put together using some kind of wax line to actually remove batteries. Well I didn&amp;rsquo;t have wax thread, but I had floss so umm hey why not try that?&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Xcode Command Line Tools on HomeBrew</title>
       <link>https://michal.piekarczyk.xyz/post/2022-01-09-home-brew-xcode/</link>
       <pubDate>Sun, 09 Jan 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2022-01-09-home-brew-xcode/</guid>
       <description>&lt;p&gt;Wow, I am setting up on a fresh laptop today and I just ran the typical homebrew &lt;a href=&#34;https://brew.sh&#34;&gt;https://brew.sh&lt;/a&gt; setup and when I saw this, my eyes got slightly watery.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;==&amp;gt; This script will install:
@@ -1350,12 +1293,10 @@ Done.
 ...
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;etc.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Mini NLP Detour Part I</title>
       <link>https://michal.piekarczyk.xyz/post/2021-08-22/</link>
       <pubDate>Sun, 22 Aug 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2021-08-22/</guid>
       <description>&lt;h3 id=&#34;initial-intent&#34;&gt;Initial Intent&lt;/h3&gt;
 &lt;ul&gt;
@@ -1444,75 +1385,59 @@ Done.
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;next-time&#34;&gt;Next time&lt;/h4&gt;
 &lt;p&gt;Following along here, &lt;a href=&#34;https://madewithml.com/courses/foundations/recurrent-neural-networks/&#34;&gt;https://madewithml.com/courses/foundations/recurrent-neural-networks/&lt;/a&gt;  I think next I should do some preprocessing, so my data is tokenized.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Fasting Data Time Series Analysis Notebook</title>
       <link>https://michal.piekarczyk.xyz/post/2021-06-27-zero-time-series-analysis/</link>
       <pubDate>Sun, 27 Jun 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2021-06-27-zero-time-series-analysis/</guid>
       <description>This is a notebook of the day to day activity of a look into three years of fasting data.</description>
     </item>
-    
     <item>
       <title>Covid Vaccine 2 Temperatures</title>
       <link>https://michal.piekarczyk.xyz/post/2021-05-07-covid-vaccine-2-temps/</link>
       <pubDate>Sat, 29 May 2021 21:05:06 -0400</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2021-05-07-covid-vaccine-2-temps/</guid>
       <description>Some temperature data</description>
     </item>
-    
     <item>
       <title>some ffmpeg stitching</title>
       <link>https://michal.piekarczyk.xyz/post/2021-05-23-ffmpeg-stitching/</link>
       <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2021-05-23-ffmpeg-stitching/</guid>
       <description>using ffmpeg to stitch together some images into a slide show</description>
     </item>
-    
     <item>
       <title>Amazingness</title>
       <link>https://michal.piekarczyk.xyz/foo/one/</link>
       <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/foo/one/</guid>
       <description>okay</description>
     </item>
-    
     <item>
       <title>Another</title>
       <link>https://michal.piekarczyk.xyz/foo/two/</link>
       <pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/foo/two/</guid>
       <description>oklay</description>
     </item>
-    
     <item>
       <title>Notes on hugo</title>
       <link>https://michal.piekarczyk.xyz/post/2021-05-16-hugo-notes/</link>
       <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2021-05-16-hugo-notes/</guid>
       <description>Switched from Jekyll to Hugo</description>
     </item>
-    
     <item>
       <title>Noom Gdpr</title>
       <link>https://michal.piekarczyk.xyz/post/2021-05-02-noom-gdpr/</link>
       <pubDate>Sun, 02 May 2021 13:08:03 -0400</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2021-05-02-noom-gdpr/</guid>
       <description>Wow you can get your download raw Noom data</description>
     </item>
-    
     <item>
       <title>book How to Take Smart Notes</title>
       <link>https://michal.piekarczyk.xyz/post/2021-04-10-book-summary-how-to-take-smart-notes/</link>
       <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2021-04-10-book-summary-how-to-take-smart-notes/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;
@@ -1535,12 +1460,10 @@ Done.
 &lt;li&gt;
 &lt;p&gt;Impact&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Pumpkin Pie Note</title>
       <link>https://michal.piekarczyk.xyz/post/2021-04-10-pumpkin-pie-cheat-sheet/</link>
       <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2021-04-10-pumpkin-pie-cheat-sheet/</guid>
       <description>&lt;h4 id=&#34;quick-reference-for-that-keto-pie&#34;&gt;Quick reference for that keto pie&lt;/h4&gt;
 &lt;h3 id=&#34;almond-flour-crust&#34;&gt;Almond flour crust&lt;/h3&gt;
@@ -1586,12 +1509,10 @@ Done.
 &lt;li&gt;Refrigerate&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>Some Better Desk Research</title>
       <link>https://michal.piekarczyk.xyz/post/2021-04-10-standing-desk-hmm/</link>
       <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2021-04-10-standing-desk-hmm/</guid>
       <description>&lt;h3 id=&#34;2021-04-10&#34;&gt;2021-04-10&lt;/h3&gt;
 &lt;h4 id=&#34;tust-trawling-image-search-for-some-inspiration&#34;&gt;Tust trawling image search for some inspiration&lt;/h4&gt;
@@ -1604,12 +1525,10 @@ Done.
 &lt;h5 id=&#34;hmm-permanant-tall-desk&#34;&gt;Hmm permanant tall desk&lt;/h5&gt;
 &lt;p&gt;Actually, reading &lt;a href=&#34;https://www.homedit.com/ikea-standing-desk/&#34;&gt;that home Edit site&lt;/a&gt; more, I like the concept of just having a tall desk to begin with. And a nice soft mat to stand on. And then you can bring in a nice stool to sit on whenever you want to sit. Brilliant&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Troubleshooting Vimeo video upload freeze</title>
       <link>https://michal.piekarczyk.xyz/post/2021-03-28-vimeo-troubleshooting-frozen-uploads/</link>
       <pubDate>Sun, 28 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2021-03-28-vimeo-troubleshooting-frozen-uploads/</guid>
       <description>&lt;h3 id=&#34;2021-03-28&#34;&gt;2021-03-28&lt;/h3&gt;
 &lt;ul&gt;
@@ -1636,12 +1555,10 @@ Done.
 &lt;h5 id=&#34;was-the-video-being-uploaded-shot-on-the-same-device-or-imported-from-elsewhere&#34;&gt;Was the video being uploaded shot on the same device? Or imported from elsewhere?&lt;/h5&gt;
 &lt;p&gt;Yes&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Trying Databricks</title>
       <link>https://michal.piekarczyk.xyz/post/2021-03-20-databricks/</link>
       <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2021-03-20-databricks/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://databricks.com/try-databricks&#34;&gt;https://databricks.com/try-databricks&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;2021-03-21&#34;&gt;2021-03-21&lt;/h3&gt;
@@ -1678,71 +1595,71 @@ Done.
 &lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Column Name&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Description&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Type&lt;/th&gt;
+          &lt;th&gt;Column Name&lt;/th&gt;
+          &lt;th&gt;Description&lt;/th&gt;
+          &lt;th&gt;Type&lt;/th&gt;
       &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;cdc_case_earliest_dt&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Calculated date&amp;ndash;the earliest available date for the record, taken from either the available set of clinical dates (date related to the illness or specimen collection) or the calculated date representing initial date case was received by CDC. This variable is optimized for completeness and may change for a given record from time to time as new information is submitted about a case.&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Date &amp;amp; Time&lt;/td&gt;
+          &lt;td&gt;cdc_case_earliest_dt&lt;/td&gt;
+          &lt;td&gt;Calculated date&amp;ndash;the earliest available date for the record, taken from either the available set of clinical dates (date related to the illness or specimen collection) or the calculated date representing initial date case was received by CDC. This variable is optimized for completeness and may change for a given record from time to time as new information is submitted about a case.&lt;/td&gt;
+          &lt;td&gt;Date &amp;amp; Time&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;cdc_report_dt&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Calculated date representing initial date case was reported to CDC. Depreciated; CDC recommends researchers use cdc_case_earliest_dt in time series and other time-based analyses.&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Date &amp;amp; Time&lt;/td&gt;
+          &lt;td&gt;cdc_report_dt&lt;/td&gt;
+          &lt;td&gt;Calculated date representing initial date case was reported to CDC. Depreciated; CDC recommends researchers use cdc_case_earliest_dt in time series and other time-based analyses.&lt;/td&gt;
+          &lt;td&gt;Date &amp;amp; Time&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;pos_spec_dt&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Date of first positive specimen collection&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Date &amp;amp; Time&lt;/td&gt;
+          &lt;td&gt;pos_spec_dt&lt;/td&gt;
+          &lt;td&gt;Date of first positive specimen collection&lt;/td&gt;
+          &lt;td&gt;Date &amp;amp; Time&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;onset_dt&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Symptom onset date, if symptomatic&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Date &amp;amp; Time&lt;/td&gt;
+          &lt;td&gt;onset_dt&lt;/td&gt;
+          &lt;td&gt;Symptom onset date, if symptomatic&lt;/td&gt;
+          &lt;td&gt;Date &amp;amp; Time&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;current_status&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Case Status: Laboratory-confirmed case; Probable case&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Plain Text&lt;/td&gt;
+          &lt;td&gt;current_status&lt;/td&gt;
+          &lt;td&gt;Case Status: Laboratory-confirmed case; Probable case&lt;/td&gt;
+          &lt;td&gt;Plain Text&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;sex&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Sex: Male; Female; Unknown; Other&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Plain Text&lt;/td&gt;
+          &lt;td&gt;sex&lt;/td&gt;
+          &lt;td&gt;Sex: Male; Female; Unknown; Other&lt;/td&gt;
+          &lt;td&gt;Plain Text&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;age_group&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Age Group: 0 - 9 Years; 10 - 19 Years; 20 - 39 Years; 40 - 49 Years; 50 - 59 Years; 60 - 69 Years; 70 - 79 Years; 80 + Years&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Plain Text&lt;/td&gt;
+          &lt;td&gt;age_group&lt;/td&gt;
+          &lt;td&gt;Age Group: 0 - 9 Years; 10 - 19 Years; 20 - 39 Years; 40 - 49 Years; 50 - 59 Years; 60 - 69 Years; 70 - 79 Years; 80 + Years&lt;/td&gt;
+          &lt;td&gt;Plain Text&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;race_ethnicity_combined&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Race and ethnicity (combined): Hispanic/Latino; American Indian / Alaska Native, Non-Hispanic; Asian, Non-Hispanic; Black, Non-Hispanic; Native Hawaiian / Other Pacific Islander, Non-Hispanic; White, Non-Hispanic; Multiple/Other, Non-Hispanic&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Plain Text&lt;/td&gt;
+          &lt;td&gt;race_ethnicity_combined&lt;/td&gt;
+          &lt;td&gt;Race and ethnicity (combined): Hispanic/Latino; American Indian / Alaska Native, Non-Hispanic; Asian, Non-Hispanic; Black, Non-Hispanic; Native Hawaiian / Other Pacific Islander, Non-Hispanic; White, Non-Hispanic; Multiple/Other, Non-Hispanic&lt;/td&gt;
+          &lt;td&gt;Plain Text&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;hosp_yn&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Hospitalization status&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Plain Text&lt;/td&gt;
+          &lt;td&gt;hosp_yn&lt;/td&gt;
+          &lt;td&gt;Hospitalization status&lt;/td&gt;
+          &lt;td&gt;Plain Text&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;icu_yn&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;ICU admission status&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Plain Text&lt;/td&gt;
+          &lt;td&gt;icu_yn&lt;/td&gt;
+          &lt;td&gt;ICU admission status&lt;/td&gt;
+          &lt;td&gt;Plain Text&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;death_yn&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Death status&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Plain Text&lt;/td&gt;
+          &lt;td&gt;death_yn&lt;/td&gt;
+          &lt;td&gt;Death status&lt;/td&gt;
+          &lt;td&gt;Plain Text&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;medcond_yn&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Presence of underlying comorbidity or disease&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Plain Text&lt;/td&gt;
+          &lt;td&gt;medcond_yn&lt;/td&gt;
+          &lt;td&gt;Presence of underlying comorbidity or disease&lt;/td&gt;
+          &lt;td&gt;Plain Text&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1782,12 +1699,10 @@ Done.
 &lt;li&gt;
 &lt;p&gt;Funny thing I was trying to run this cell in the databricks notebook but it would not run and no error was given. But the reason I am pretty sure is that no cluster was attached to the notebook.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Book Summary of The Practice</title>
       <link>https://michal.piekarczyk.xyz/post/2021-03-06-book-summary-the-practice/</link>
       <pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2021-03-06-book-summary-the-practice/</guid>
       <description>&lt;h3 id=&#34;reference&#34;&gt;Reference&lt;/h3&gt;
 &lt;ul&gt;
@@ -1960,12 +1875,10 @@ Done.
 &lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>Spark Weekend</title>
       <link>https://michal.piekarczyk.xyz/post/2021-01-23-spark-weekend/</link>
       <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2021-01-23-spark-weekend/</guid>
       <description>&lt;h3 id=&#34;trying-out-spark-this-weekend&#34;&gt;Trying out Spark this weekend&lt;/h3&gt;
 &lt;p&gt;&lt;em&gt;These are just my casual notes from doing that, updating them as I go along.&lt;/em&gt;&lt;/p&gt;
@@ -2022,22 +1935,18 @@ kubectl create clusterrolebinding spark-role --clusterrole=edit  --serviceaccoun
 &lt;li&gt;
 &lt;p&gt;Taking &lt;code&gt;4 minutes&lt;/code&gt; so far. Not sure how long this is meant to take haha.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Steak Two</title>
       <link>https://michal.piekarczyk.xyz/post/2021-01-07-steak-two/</link>
       <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2021-01-07-steak-two/</guid>
       <description>&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;Two updates to the  &lt;!-- raw HTML omitted --&gt;earlier steak post&lt;!-- raw HTML omitted --&gt;. Earlier, I was getting a really low temperature on the meat thermometer I was using and I am pretty sure now that was because I was only dipping just the tip as opposed to basically burying the thermometer lengthwise. This time around I seem to be getting the expected temperature, above 130 F and even above 140 F, whereas before this temperature was not registering even though I had validated that it was working on some pie for instance.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>notes on Git Internals Git Objects article</title>
       <link>https://michal.piekarczyk.xyz/post/2020-12-13-article-gitinternalsgitobjects-notes/</link>
       <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2020-12-13-article-gitinternalsgitobjects-notes/</guid>
       <description>&lt;p&gt;Reading &lt;a href=&#34;https://git-scm.com/book/en/v2/Git-Internals-Git-Objects&#34;&gt;https://git-scm.com/book/en/v2/Git-Internals-Git-Objects&lt;/a&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;(pandars3) $ echo &amp;#39;test content&amp;#39; | git hash-object -w --stdin
@@ -2127,12 +2036,20 @@ blob
 ...
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I see the &lt;em&gt;&amp;ldquo;tree&amp;rdquo;&lt;/em&gt; of my latest commit includes all of the files whether they&amp;rsquo;ve changed or not. I guess I had expected to only see the ones that have changed.&lt;/p&gt;</description>
     </item>
-    
+    <item>
+      <title>Meritocracy Trap Book Summary</title>
+      <link>https://michal.piekarczyk.xyz/post/2020-12-12-meritocracytrap-book-summary/</link>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2020-12-12-meritocracytrap-book-summary/</guid>
+      <description>&lt;h3 id=&#34;meritocracy-trap-summary&#34;&gt;Meritocracy Trap Summary&lt;/h3&gt;
+&lt;p&gt;I Read this after hearing an interview with Daniel Markovits initially. (2020-08-23 to 2020-12-12)&lt;/p&gt;
+&lt;h4 id=&#34;the-book-in-three-sentences&#34;&gt;The Book in Three Sentences&lt;/h4&gt;
+&lt;p&gt;Meritocracy replaced direct inheritance style aristocracy after the post World War II baby boomers overwhelmed colleges&amp;ndash;forcing them to create the SAT to deal with admissions&amp;ndash;and has been snowballing a self reinforcing selection process that has been undoing the middle class ever since. The elite make bank slogging gnarly hours more than by stereotypical capital gains loop holes and &amp;ldquo;the rest&amp;rdquo; work fewer hours, involuntarily left out of the economy. The contribution of the elite is more self serving and the States would benefit from unraveling and debunking the idea that the elite are &amp;ldquo;adding incremental value&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Easy Blog Posting (&#34;My Noting Book&#34;)</title>
       <link>https://michal.piekarczyk.xyz/post/2020-12-09-dropbox-api-hmm/</link>
       <pubDate>Wed, 09 Dec 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2020-12-09-dropbox-api-hmm/</guid>
       <description>&lt;h3 id=&#34;for-my-easyblogposting-project&#34;&gt;For my EasyBlogPosting project..&lt;/h3&gt;
 &lt;p&gt;Testing out the Dropbox API..&lt;/p&gt;
@@ -2210,12 +2127,10 @@ blob
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;curl -v -H &amp;#34;Authorization: token ${GITHUB_TOKEN}&amp;#34;   https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/ref/heads/master
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Nice excellent, &amp;hellip;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Quick test drive this Mozilla/Baidu Deep Speech</title>
       <link>https://michal.piekarczyk.xyz/post/2020-11-22-deepspeech/</link>
       <pubDate>Sun, 22 Nov 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2020-11-22-deepspeech/</guid>
       <description>&lt;h4 id=&#34;summary&#34;&gt;Summary&lt;/h4&gt;
 &lt;p&gt;Ok managed to get &lt;a href=&#34;https://github.com/mozilla/DeepSpeech&#34;&gt;DeepSpeech&lt;/a&gt; to run, but the output for my voice maybe does not translate to any text that makes sense hahaha. But it was pretty funny to read the interpretation.&lt;/p&gt;
@@ -2336,24 +2251,20 @@ Inference took 65.434s for 114.816s audio file.
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;other-notes&#34;&gt;Other notes&lt;/h3&gt;
 &lt;p&gt;Maybe strategies like &lt;a href=&#34;https://medium.com/cod3/convert-speech-from-an-audio-file-to-text-using-google-speech-api-b951f4032a64&#34;&gt;this one &lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Summary of Mundanity of Excellence</title>
       <link>https://michal.piekarczyk.xyz/post/2020-11-14-themundanityofexcellencestratificationandolympicswimmers-summary/</link>
       <pubDate>Sat, 21 Nov 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2020-11-14-themundanityofexcellencestratificationandolympicswimmers-summary/</guid>
       <description>&lt;p&gt;This is a summary of &amp;ldquo;The Mundanity of Excellence: An Ethnographic Report on Stratification and Olympic Swimmers&amp;rdquo; by Daniel F. Chambliss.&lt;/p&gt;
 &lt;h4 id=&#34;in-three-sentences&#34;&gt;In three sentences&lt;/h4&gt;
 &lt;p&gt;The author has spent a lot of time reporting on all levels of swimming competition and writes about observations about the differences between them.&lt;/p&gt;
 &lt;p&gt;The differences in abilities of different levels of competition are not because of quantitative differences like &amp;ldquo;more training&amp;rdquo; but qualitative differences like using a flip turn instead of just touching the wall and turning around. Qualitative differences narrow to &amp;ldquo;technique&amp;rdquo;, &amp;ldquo;discipline&amp;rdquo; and &amp;ldquo;attitude&amp;rdquo;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Oh cool new washing machine is ruining the delicates</title>
       <link>https://michal.piekarczyk.xyz/post/2020-11-18--washing-machine-fiasco/</link>
       <pubDate>Wed, 18 Nov 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2020-11-18--washing-machine-fiasco/</guid>
       <description>&lt;h3 id=&#34;are-we-getting-warmer&#34;&gt;Are we getting warmer?&lt;/h3&gt;
 &lt;p&gt;The washing and drying machine units in our apartment was replaced because the drying machine was taking two plus cycles to do any drying and the washing machine came along for the ride. However, the new washing machine was basically destroying the delicates that required cold water. Somehow even on the coldest water setting, the water still ended up being too hot.&lt;/p&gt;
@@ -2363,12 +2274,23 @@ Inference took 65.434s for 114.816s audio file.
 &lt;/figure&gt;
 &lt;/p&gt;</description>
     </item>
-    
+    <item>
+      <title>blue bottle espresso troubleshooting</title>
+      <link>https://michal.piekarczyk.xyz/post/2020-11-15-blue-bottle-espresso-troubleshooting/</link>
+      <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2020-11-15-blue-bottle-espresso-troubleshooting/</guid>
+      <description>&lt;p&gt;Trying out this Blue Bottle Opascope espresso w/ this hand grinder w/ my Kamira espresso maker. But the Kamira is not pulling the espresso for some reason.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Comparing the Lavazza grounds to the Opascope grounds I can&amp;rsquo;t tell there&amp;rsquo;s a difference. Is it too fine? Not fine enough?&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;This is the hand grinder.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Here is what 2 out of 4 of the Blue Bottle pulls ended up like&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Rabbit Fever Summary</title>
       <link>https://michal.piekarczyk.xyz/post/2020-11-14-newyorker-rabbitfever-rhd-summary/</link>
       <pubDate>Sat, 14 Nov 2020 11:06:01 -0500</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2020-11-14-newyorker-rabbitfever-rhd-summary/</guid>
       <description>&lt;h4 id=&#34;the-material-source&#34;&gt;The material source&lt;/h4&gt;
 &lt;p&gt;&amp;ldquo;Rabbit Rever&amp;rdquo; by Susan Orlean
@@ -2376,23 +2298,63 @@ published in &amp;ldquo;New Yorker&amp;rdquo; in the &amp;ldquo;July 6 2020&amp;
 &lt;h4 id=&#34;the-article-in-3-sentences&#34;&gt;The article in 3 sentences&lt;/h4&gt;
 &lt;p&gt;The author writes about how the rabbit, apparently domesticated for hundreds of years now, has been all of livestock, fur source and since mid century a third most popular choice of pet in the US. But a highly contagious and highly lethal &amp;ldquo;Rabbit Hemorrhagic Disease&amp;rdquo; ( RHD the &amp;ldquo;rabbit Ebola&amp;rdquo;) caused by a lagovirus from the Caliciviridae family, has been wiping out populations of rabbits outside the US since 1984, but in mid 2019, dead rabbits fitting the RHD signs were showing up in the islands near Seattle and in Texas, Arizona and New Mexico not long after. A protective vaccine was developed within five years of the initial 1984 emergence, but because the production of a &amp;ldquo;live genetically modified vaccine&amp;rdquo; is not yet allowed in the US, the vaccine (and another vaccine for a subsequent &amp;ldquo;RHDV2&amp;rdquo; variant ) cannot be used here except by rare limited emergency requests allowed by the USDA.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Team of Teams Summary</title>
       <link>https://michal.piekarczyk.xyz/post/2020-11-12-team-of-teams-summary/</link>
       <pubDate>Thu, 12 Nov 2020 09:30:01 -0500</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2020-11-12-team-of-teams-summary/</guid>
       <description>&lt;p&gt;I was reading Team of Teams sometime around September 2019. I at least remember reading it in a really cold Starbucks in a mall in Tokyo haha. First, the standard template:&lt;/p&gt;
 &lt;h4 id=&#34;the-book-in-three-sentences&#34;&gt;The book in three sentences&lt;/h4&gt;
 &lt;p&gt;Team of Teams is former General Stanley McChrystal&amp;rsquo;s account of his time at the Joint Chiefs of Staff and in his role in the conflict with AQI (Al-Qaeda in Iraq) and Abu Musab al Zarqawi. He captures the information sharing struggles US forces in Iraq had that made them struggle in keeping up with AQI&amp;rsquo;s de-centralized un-command. And he shares the good news of how giving autonomy and decision making to teams stopped central command from being a bottle neck.&lt;/p&gt;</description>
     </item>
-    
+    <item>
+      <title>make some xero shoes</title>
+      <link>https://michal.piekarczyk.xyz/post/2020-11-07-make-some-xero-shoes/</link>
+      <pubDate>Sat, 07 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2020-11-07-make-some-xero-shoes/</guid>
+      <description>&lt;p&gt;Made some Xero shoes.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
+    <item>
+      <title>vitamin D</title>
+      <link>https://michal.piekarczyk.xyz/post/2020-11-07-vitamin-d/</link>
+      <pubDate>Sat, 07 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2020-11-07-vitamin-d/</guid>
+      <description>&lt;h4 id=&#34;vitamin-d-questions&#34;&gt;Vitamin D questions&lt;/h4&gt;
+&lt;p&gt;There are a couple mini researach questions I have around Vitamin D. How different are humans with respect to Vitamin D, from other life forms or just other mammals. Also what does the synthesis pathway look like for Vitamin D (or more than one pathway if dietary is a separate pathway from skin). And how exactly does vitamin D enable immune function?&lt;/p&gt;
+&lt;h4 id=&#34;the-names&#34;&gt;The names.&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Per &lt;a href=&#34;#1&#34;&gt;1&lt;/a&gt; , &amp;ldquo;plasma concentration of 25-hydroxyvitamin D&amp;rdquo; is one &amp;ldquo;vitamin D&amp;rdquo; biomarker.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;fish&#34;&gt;Fish&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Per &lt;a href=&#34;#2&#34;&gt;2&lt;/a&gt;, &amp;ldquo;Fish incorporates vitamin D2 and D3 through the diet.&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;roles-of-vitamin-d&#34;&gt;Roles of &amp;ldquo;Vitamin D&amp;rdquo;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Also per &lt;a href=&#34;#2&#34;&gt;2&lt;/a&gt;] , &amp;ldquo;In mammals, vitamin D forms are involved in mineral metabolism, cell growth, tissue differentiation, and antibacterial immune response.&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;synthesis-pathway-for-vitamin-d&#34;&gt;Synthesis pathway for &amp;ldquo;Vitamin D&amp;rdquo;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;From &lt;a href=&#34;#3&#34;&gt;3&lt;/a&gt;, &amp;ldquo;The synthesis of vitamin D begins in the skin with activation of a precursor molecule by ultraviolet light from the sun. After that, the process moves to the liver for further chemical modification and then on to the kidneys for a final tweak.&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;And  &amp;ldquo;Humans and other animals can synthesize this molecule right from cholesterol, something we always have plenty of&amp;rdquo; &lt;a href=&#34;#3&#34;&gt;3&lt;/a&gt; .&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;dietary-vitamin-d&#34;&gt;Dietary vitamin D&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Hmm ok so according to &lt;a href=&#34;#3&#34;&gt;3&lt;/a&gt;, &amp;ldquo;Many animals, including humans, can escape this paradox by simply ingesting the activated vitamin D precursor. Dietary vitamin D still requires the activation steps in the liver and kidney, but at least it lets us stay out of the sunlight. Such supplementation has allowed humans to live in frigid climates and it is no coincidence that Arctic diets tend toward fish and whale blubber, two very rich sources of vitamin D.&amp;rdquo; So I&amp;rsquo;m reading here that if you eat the vitamin D precursor, you can skip out on the sun.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;dumb-evolution-haha&#34;&gt;Dumb evolution Haha&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;And from &lt;a href=&#34;#3&#34;&gt;3&lt;/a&gt; , &amp;ldquo;it would make much more sense to house the enzymes for the synthesis of vitamin D within fat cells, which are often tucked right underneath the skin anyway, where the UV light is needed for the first step.&amp;rdquo; Indeed there is a list of these weird suboptimalities in life out there. Or do we just not understand what&amp;rsquo;s going on?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;references&#34;&gt;References&lt;/h4&gt;
+&lt;h5 id=&#34;1&#34;&gt;1&lt;/h5&gt;
+&lt;p&gt;&lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/18689390/&#34;&gt;here&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>What I consume</title>
       <link>https://michal.piekarczyk.xyz/post/2020-11-02-hmm-what-i-consume/</link>
       <pubDate>Mon, 02 Nov 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2020-11-02-hmm-what-i-consume/</guid>
       <description>&lt;h4 id=&#34;quick-idea-around-more-active-content-consumption&#34;&gt;Quick idea around more active content consumption&lt;/h4&gt;
 &lt;ul&gt;
@@ -2407,12 +2369,25 @@ published in &amp;ldquo;New Yorker&amp;rdquo; in the &amp;ldquo;July 6 2020&amp;
 &lt;li&gt;Anyway, just the beginning of a thought here.&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
+    <item>
+      <title>our lock finally bent my key haha</title>
+      <link>https://michal.piekarczyk.xyz/post/2020-11-01-our-lock-finally-bent-my-key-haha/</link>
+      <pubDate>Sun, 01 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2020-11-01-our-lock-finally-bent-my-key-haha/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
+    <item>
+      <title>Halloween kitchen sink pipe leak</title>
+      <link>https://michal.piekarczyk.xyz/post/2020-10-31-kitchen-sink-pipe-leak/</link>
+      <pubDate>Sat, 31 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2020-10-31-kitchen-sink-pipe-leak/</guid>
+      <description>&lt;p&gt;We had a surprise Halloween pipe leak but luckily I got to our local hardware store just 15 minutes before they closed. And they had the pipe I needed. We had guests over that night, so this went much better than the worst case scenario!&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
     <item>
       <title>Visualizing time of day and birth year</title>
       <link>https://michal.piekarczyk.xyz/post/2020-10-22-features-v3/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2020-10-22-features-v3/</guid>
       <description>&lt;p&gt;This is a mini post part of &lt;a href=&#34;https://michal.piekarczyk.xyz/project/2020-10-20-bike-share-learn-reboot/&#34;&gt;this project&lt;/a&gt;. (Originally posted &lt;a href=&#34;https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-22-features-v3.md&#34;&gt;here&lt;/a&gt; ).&lt;/p&gt;
 &lt;h4 id=&#34;take-a-quick-look-at-time-of-day-distribution&#34;&gt;Take a quick look at time of day distribution&lt;/h4&gt;
@@ -2504,30 +2479,24 @@ Name: starttime, dtype: object
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Bike Share Learn Reboot</title>
       <link>https://michal.piekarczyk.xyz/project/2020-10-20-bike-share-learn-reboot/</link>
       <pubDate>Tue, 20 Oct 2020 10:00:05 -0400</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/project/2020-10-20-bike-share-learn-reboot/</guid>
       <description>This project is a reboot of an earlier project predicting bicycle ride share riders destinations.</description>
     </item>
-    
     <item>
       <title>Understanding Tuning Results</title>
       <link>https://michal.piekarczyk.xyz/post/2020-07-24-understanding-tuning-results/</link>
       <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2020-07-24-understanding-tuning-results/</guid>
       <description>Looking at hyperparameter tuning results</description>
     </item>
-    
     <item>
       <title>Notes on multi-multi-class classifiers</title>
       <link>https://michal.piekarczyk.xyz/post/2020-07-13-multi-multi-class/</link>
       <pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2020-07-13-multi-multi-class/</guid>
       <description>&lt;h3 id=&#34;summary&#34;&gt;Summary&lt;/h3&gt;
 &lt;p&gt;Here is an early draft of a post, trying to extract some of the insights from the project &lt;a href=&#34;https://michal.piekarczyk.xyz/project/2020-10-20-bike-share-learn-reboot/&#34;&gt;here&lt;/a&gt;.
@@ -2545,12 +2514,10 @@ There is a lot to write about and I want to just start getting it out.&lt;/p&gt;
 &lt;h4 id=&#34;the-logloss-upper-bound&#34;&gt;The logloss upper bound&lt;/h4&gt;
 &lt;p&gt;Training set accuracy and test set accuracy have intuitive boundaries, between &lt;code&gt;0&lt;/code&gt; and &lt;code&gt;1&lt;/code&gt;, but logloss does not feel intuitive.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Some xgboost notes so far</title>
       <link>https://michal.piekarczyk.xyz/post/2020-06-21-notes-xgboost/</link>
       <pubDate>Sun, 21 Jun 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2020-06-21-notes-xgboost/</guid>
       <description>&lt;h4 id=&#34;lets-summarize&#34;&gt;Let&amp;rsquo;s summarize&lt;/h4&gt;
 &lt;p&gt;I want to just summarize some learnings &lt;a href=&#34;https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-07-quick-mvp-xgboost--snapshot-2020-06-10T0239Z.md&#34;&gt;from&lt;/a&gt; &lt;a href=&#34;https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-10-again.md&#34;&gt;some&lt;/a&gt; &lt;a href=&#34;https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-12--snapshot-2020-06-14T2258Z.md&#34;&gt;of&lt;/a&gt; &lt;a href=&#34;https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-14.md&#34;&gt;my&lt;/a&gt; &lt;a href=&#34;https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-16.md&#34;&gt;recent&lt;/a&gt; &lt;a href=&#34;https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-19.md&#34;&gt;notebooks&lt;/a&gt; &lt;a href=&#34;https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-06-20.md&#34;&gt;yea&lt;/a&gt;.&lt;/p&gt;
@@ -2573,12 +2540,10 @@ There is a lot to write about and I want to just start getting it out.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(acc)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And you can also just&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Does the Wahoo TIKR measure intervals that can be used for Heart Rate Variability measurements?</title>
       <link>https://michal.piekarczyk.xyz/post/2020-06-06-heart-datar/</link>
       <pubDate>Sat, 06 Jun 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2020-06-06-heart-datar/</guid>
       <description>&lt;p&gt;Not sure yet. There are a fitness trackers out there, but I am curious if my chest band can help. I took a quick look at one of my recordings on the Wahoo app, but I don&amp;rsquo;t see anything more granular than just beats per minute. The app indeed has  pushed to Apple Health, but I only see the bpm data and no HRV data.&lt;/p&gt;
 &lt;div class=&#34;row&#34;&gt;
@@ -2628,12 +2593,27 @@ AttributeError: &amp;#39;NoneType&amp;#39; object has no attribute &amp;#39;raw_
 &lt;li&gt;Of course also possible that not all &lt;code&gt;.fit&lt;/code&gt; files, Wahoo or Garmin, have the same kinds of data. Maybe &lt;code&gt;fitparse&lt;/code&gt; was tested only on Garmin &lt;code&gt;.fit&lt;/code&gt; files?&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
+    <item>
+      <title>How to use Github pages with multiple repositories</title>
+      <link>https://michal.piekarczyk.xyz/post/2020-05-31--github-pages/</link>
+      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2020-05-31--github-pages/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Spoiler alert, don&amp;rsquo;t do it&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I wrote some high level and low level markdown summaries for my &lt;a href=&#34;https://github.com/namoopsoo/aviation-pilot-physiology-hmm&#34;&gt;aviation kaggle data sciency project&lt;/a&gt;. I placed them in the github repo of the project itself. Today I have been thinking about how to best &lt;em&gt;build&lt;/em&gt; the &lt;em&gt;Github Pages&lt;/em&gt; repo to showcase those markdowns that live in that other repository.&lt;/p&gt;
+&lt;p&gt;Looking for inspiration, I saw &lt;a href=&#34;https://github.com/sajal2692/&#34;&gt;this author&lt;/a&gt; has chosen to have a typical &lt;a href=&#34;https://github.com/sajal2692/sajal2692.github.io&#34;&gt;github.io&lt;/a&gt; repo and also a separate &lt;a href=&#34;https://github.com/sajal2692/data-science-portfolio&#34;&gt;portfolio repo&lt;/a&gt;. On the other hand &lt;a href=&#34;https://github.com/chrisalbon/notes&#34;&gt;this author&amp;rsquo;s&lt;/a&gt; approach was to maintain any source python notebook and markdown files within the main &lt;em&gt;GithubPages&lt;/em&gt; repo itself.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Steak Puzzle</title>
+      <link>https://michal.piekarczyk.xyz/post/2020-05-31-steak-puzzle/</link>
+      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2020-05-31-steak-puzzle/</guid>
+      <description>&lt;p&gt;I have been trying to solve the steak puzzle for several attempts now. That is, how do you cook a good cast iron to oven transfer? The problem so far has been that the recommended time for the oven for a 450 finish, in &lt;a href=&#34;https://www.therisingspoon.com/2013/04/how-to-cook-perfect-steak-in-cast-iron.html?m=1&#34;&gt;this article&lt;/a&gt; , 4-5 minutes is the recommendation for a medium steak and 2-4 minutes for a rare.&lt;/p&gt;
+&lt;p&gt;Although I did not quite follow the 450, I used 400 F, I followed the temperature lore from &lt;a href=&#34;https://www.foodandwine.com/how/grilling-mistakes-avoid-according-chefs&#34;&gt;here&lt;/a&gt; last night, using a meat thermometer instead of time, because I suspect oven temperatures in one oven is not the same as that of another. There are possibly incorrect temperature readings.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Updates</title>
       <link>https://michal.piekarczyk.xyz/post/2020-05-30-trying-again/</link>
       <pubDate>Sat, 30 May 2020 17:24:43 -0400</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2020-05-30-trying-again/</guid>
       <description>&lt;h4 id=&#34;summary&#34;&gt;Summary&lt;/h4&gt;
 &lt;p&gt;I tried rebuilding today after 7 months of forgetting how this works and when I tried to &lt;code&gt;jekyll build&lt;/code&gt; I got&lt;/p&gt;
@@ -2671,30 +2651,24 @@ $
 &lt;li&gt;And now my &lt;code&gt;jekyll build&lt;/code&gt; worked!&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>Physiological deep learnings</title>
       <link>https://michal.piekarczyk.xyz/project/2020-04-05-aviation-kaggle-low-level/</link>
       <pubDate>Sun, 05 Apr 2020 10:00:00 -0400</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/project/2020-04-05-aviation-kaggle-low-level/</guid>
       <description>learning physiological state from time series data</description>
     </item>
-    
     <item>
       <title>Keras Hello WOrld</title>
       <link>https://michal.piekarczyk.xyz/post/2019-05-13--keras-hello-world-fashion/</link>
       <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2019-05-13--keras-hello-world-fashion/</guid>
       <description>&lt;p&gt;Here I&amp;rsquo;m doing one of the Keras hello world micro projects, involving classification of tiny &lt;code&gt;28x28&lt;/code&gt; wardrobe images. This was really fun. ( &lt;a href=&#34;https://github.com/namoopsoo/aviation-pilot-physiology-hmm/blob/master/notes/2019-05-13--keras-hello-world-fashion.ipynb&#34;&gt;Here&amp;rsquo;s the original home&lt;/a&gt; for the python notebook). One really fun part of this was that at the end I hand drew my own clothing samples, paired them down using the python &lt;code&gt;PIL&lt;/code&gt;  library and threw them against the classifier. Surprisingly, the mini model performed really well. That&amp;rsquo;s some generalizability!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Using ffmpeg to Merge Videos</title>
       <link>https://michal.piekarczyk.xyz/post/2019-03-16--ffmpeg-notes/</link>
       <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2019-03-16--ffmpeg-notes/</guid>
       <description>&lt;h4 id=&#34;put-together-our-hyperlapse-puzzle-videos&#34;&gt;Put together our hyperlapse puzzle videos&amp;hellip;&lt;/h4&gt;
 &lt;ul&gt;
@@ -2803,21 +2777,17 @@ sys	0m0.232s
 &lt;li&gt;&lt;a href=&#34;https://shapeshed.com/unix-xargs/&#34;&gt;xargs reference&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>Time Parser Project</title>
       <link>https://michal.piekarczyk.xyz/project/time-parser/time-parser-project/</link>
       <pubDate>Sun, 11 Feb 2018 19:39:35 -0400</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/project/time-parser/time-parser-project/</guid>
       <description>This is a simple personal time tracker built with clojure, aws lambda and dynamodb,  inspired by Laura Vanderkam&amp;rsquo;s &amp;ldquo;168 Hours&amp;rdquo; book</description>
     </item>
-    
     <item>
       <title>Some plant time lapse</title>
       <link>https://michal.piekarczyk.xyz/post/2018-01-07-plant-hyperlapse/</link>
       <pubDate>Sun, 07 Jan 2018 12:00:01 -0500</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2018-01-07-plant-hyperlapse/</guid>
       <description>&lt;p&gt;Some time lapse photography.
 
@@ -2827,41 +2797,33 @@ sys	0m0.232s
 &lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;</description>
     </item>
-    
     <item>
       <title>Spoke too soon</title>
       <link>https://michal.piekarczyk.xyz/post/2017-12-01-spokes/</link>
       <pubDate>Fri, 01 Dec 2017 12:00:01 -0500</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2017-12-01-spokes/</guid>
       <description>&lt;p&gt;Darn, I was riding for at least one to two days thinking, why am I riding much slower? Last night I finally noticed that wow my rear wheel is really wobbly and rubbing up against the breaks quite a bit lately. This morning I finally started setting up to true the wheel. I marked the spoke which looked like adjusting it would have the highest impact. And wow I didnt notice it completely sheared off.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Citibike Learn Project</title>
       <link>https://michal.piekarczyk.xyz/project/2016-12-18-citibike-project/</link>
       <pubDate>Sun, 18 Dec 2016 18:33:28 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/project/2016-12-18-citibike-project/</guid>
       <description>Can your Bike Share Destination be Predicted</description>
     </item>
-    
     <item>
       <title>petrol car queue question</title>
       <link>https://michal.piekarczyk.xyz/post/2023-09-30-petrol-car-queue-practice-question/</link>
       <pubDate>Wed, 30 Sep 1970 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-09-30-petrol-car-queue-practice-question/</guid>
       <description>&lt;p&gt;okay&lt;/p&gt;
 &lt;h2 id=&#34;question&#34;&gt;Question&lt;/h2&gt;
 &lt;p&gt;There is a queue of N cars waiting at the filling station. 3 fuel dispensers, x, y, z. When a car arrives at front of the queue, driver can choose to go to any dispenser not occupied. If all unoccupied dispensers have less than required by the driver he has to wait. if more than one dispenser has the required liter, the driver chooses the one labeled with the smallest letter.Calculate max amount of waiting time.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/aws/athena/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/aws/athena/</guid>
       <description>&lt;p&gt;This may apply to Athena and or prestodb in general&lt;/p&gt;
 &lt;h4 id=&#34;array-empty&#34;&gt;array empty?&lt;/h4&gt;
@@ -2876,12 +2838,10 @@ sys	0m0.232s
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;cardinality&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;cast&lt;/span&gt;(json_extract(json_parse(what), &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;$.blah.flah.clah&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; array(&lt;span style=&#34;color:#66d9ef&#34;&gt;map&lt;/span&gt;(varchar, varchar))))
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;will produce the length of those arrays.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/aws/lambda/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/aws/lambda/</guid>
       <description>&lt;h4 id=&#34;make-a-zip-file-for-a-lambda-layer&#34;&gt;Make a zip file for a lambda layer&lt;/h4&gt;
 &lt;ul&gt;
@@ -2938,12 +2898,10 @@ sys	0m0.232s
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;PackageType&amp;#39;&lt;/span&gt;]
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/aws/step_functions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/aws/step_functions/</guid>
       <description>&lt;h3 id=&#34;state-machine-life-cycle&#34;&gt;State Machine life cycle&lt;/h3&gt;
 &lt;ul&gt;
@@ -3129,12 +3087,10 @@ sys	0m0.232s
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/bash/spaces-in-filenames-traversal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/bash/spaces-in-filenames-traversal/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;I Stumbled on &lt;a href=&#34;https://unix.stackexchange.com/a/9499&#34;&gt;this gem of a stack overflow answer&lt;/a&gt;  (  in &lt;a href=&#34;https://unix.stackexchange.com/questions/9496/looping-through-files-with-spaces-in-the-names#9499&#34;&gt;here&lt;/a&gt; ) , which goes into some great detail but one of the hacks I learned is you can modify &lt;code&gt;IFS&lt;/code&gt; to change the following behavior.&lt;/li&gt;
@@ -3165,12 +3121,10 @@ $ for file in $(ls *RR.jpg) ; do echo $file ; done
 09.02.07RR.jpg
 &lt;/code&gt;&lt;/pre&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/atom-vec-and-while-loop/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/atom-vec-and-while-loop/</guid>
       <description>&lt;h3 id=&#34;atom-vec--and-while-loop&#34;&gt;atom vec &lt;code&gt;[]&lt;/code&gt; and while loop&amp;hellip;&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;let &lt;/span&gt;[results-atom (&lt;span style=&#34;color:#a6e22e&#34;&gt;atom&lt;/span&gt; [])]
@@ -3202,12 +3156,10 @@ $ for file in $(ls *RR.jpg) ; do echo $file ; done
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nil
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/callbacks-and-async/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/callbacks-and-async/</guid>
       <description>&lt;h3 id=&#34;basic-callbacks&#34;&gt;basic callbacks&amp;hellip;&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(comment 
@@ -3278,12 +3230,10 @@ $ for file in $(ls *RR.jpg) ; do echo $file ; done
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user=&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/clojure_tips/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/clojure_tips/</guid>
       <description>&lt;p&gt;(Porting over my notes from gists .. &lt;a href=&#34;https://gist.github.com/namoopsoo/607f29e923ceaba890588e69293413cf&#34;&gt;here&lt;/a&gt; ),..&lt;/p&gt;
 &lt;h3 id=&#34;quick-note-on-imports&#34;&gt;quick note on imports&lt;/h3&gt;
@@ -3305,12 +3255,10 @@ for &lt;code&gt;require&lt;/code&gt; followed by a &lt;code&gt;refer&lt;/code&gt
 &lt;li&gt;
 &lt;p&gt;Many ways to make a hash-map,&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/cool-arity-thing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/cool-arity-thing/</guid>
       <description>&lt;h3 id=&#34;keys-keywords-from-map&#34;&gt;keys keywords from map&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
@@ -3343,12 +3291,10 @@ for &lt;code&gt;require&lt;/code&gt; followed by a &lt;code&gt;refer&lt;/code&gt
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  )
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/debug-and-troubleshooting/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/debug-and-troubleshooting/</guid>
       <description>&lt;h3 id=&#34;print-data-structures-so-as-to-preserve-quotation-quotes&#34;&gt;print data structures so as to preserve quotation (quotes)&lt;/h3&gt;
 &lt;ul&gt;
@@ -3364,12 +3310,10 @@ for &lt;code&gt;require&lt;/code&gt; followed by a &lt;code&gt;refer&lt;/code&gt
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nil
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/devops-and-environment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/devops-and-environment/</guid>
       <description>&lt;h3 id=&#34;dependencies-and-the-repl&#34;&gt;Dependencies and the repl&lt;/h3&gt;
 &lt;ul&gt;
@@ -3389,12 +3333,10 @@ downloads required dependencies and makes them useable for in the project.&lt;/p
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/dynamodb/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/dynamodb/</guid>
       <description>&lt;h3 id=&#34;list-tables&#34;&gt;list tables,&lt;/h3&gt;
 &lt;ul&gt;
@@ -3429,12 +3371,10 @@ boot.user=&amp;gt; (dynamo/list-tables db/client-config)
 &lt;li&gt;
 &lt;p&gt;to get this &lt;code&gt;env&lt;/code&gt; part to work, I didnt see any way to set the env vars in clojure, so I just set them on my shell,&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/file-io/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/file-io/</guid>
       <description>&lt;p&gt;read&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;clojure.java.io&lt;/span&gt;)
@@ -3447,12 +3387,10 @@ boot.user=&amp;gt; (dynamo/list-tables db/client-config)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (&lt;span style=&#34;color:#a6e22e&#34;&gt;.write&lt;/span&gt; wrtr &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Line to be written&amp;#34;&lt;/span&gt;))
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/futures-promises/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/futures-promises/</guid>
       <description>&lt;h3 id=&#34;sleeping&#34;&gt;sleeping&amp;hellip;&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;Thread/sleep&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4000&lt;/span&gt;)
@@ -3728,12 +3666,10 @@ boot.user=&amp;gt; (dynamo/list-tables db/client-config)
 &lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/http-kit-and-timeouts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/http-kit-and-timeouts/</guid>
       <description>&lt;h3 id=&#34;test-http-kit-timeout&#34;&gt;test &lt;code&gt;http-kit&lt;/code&gt; timeout..&lt;/h3&gt;
 &lt;ul&gt;
@@ -3794,12 +3730,10 @@ boot.user=&amp;gt; (dynamo/list-tables db/client-config)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user=&amp;gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/interesting-exceptions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/interesting-exceptions/</guid>
       <description>&lt;h4 id=&#34;class-cast-exception&#34;&gt;class cast exception&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;clojure.lang.LazySeq cannot be cast to clojure.lang.IFn
@@ -3807,12 +3741,10 @@ boot.user=&amp;gt; (dynamo/list-tables db/client-config)
 &lt;li&gt;=&amp;gt; some code is expecting a function, but is getting a LazySeq.&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/io-and-streams/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/io-and-streams/</guid>
       <description>&lt;h3 id=&#34;amazonica-and-s3&#34;&gt;Amazonica and s3&lt;/h3&gt;
 &lt;ul&gt;
@@ -3836,12 +3768,10 @@ with the the &lt;code&gt;:input-stream&lt;/code&gt; parameter of the &lt;code&gt
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/library-and-reference/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/library-and-reference/</guid>
       <description>&lt;h4 id=&#34;logging&#34;&gt;logging,&lt;/h4&gt;
 &lt;ul&gt;
@@ -3858,12 +3788,10 @@ with the the &lt;code&gt;:input-stream&lt;/code&gt; parameter of the &lt;code&gt
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;() &lt;span style=&#34;color:#75715e&#34;&gt;; do stuff)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/like-zip-in-clojure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/like-zip-in-clojure/</guid>
       <description>&lt;h4 id=&#34;i-am-used-to-pythons-zip&#34;&gt;I am used to python&amp;rsquo;s zip&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;zip([&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;], [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;b&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;c&amp;#39;&lt;/span&gt;])
@@ -3895,12 +3823,10 @@ with the the &lt;code&gt;:input-stream&lt;/code&gt; parameter of the &lt;code&gt
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user=&amp;gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/more-on-namespaces/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/more-on-namespaces/</guid>
       <description>&lt;h3 id=&#34;-if-on-a-repl-but-wanting-to-simulate-a-namespace-ns-in-a-project-file&#34;&gt;? If on a repl, but wanting to simulate a namespace &lt;code&gt;ns&lt;/code&gt; in a project file&lt;/h3&gt;
 &lt;ul&gt;
@@ -3960,12 +3886,10 @@ with the the &lt;code&gt;:input-stream&lt;/code&gt; parameter of the &lt;code&gt
 &lt;li&gt;So here, &lt;code&gt;&#39;org.httpkit.client&lt;/code&gt; is a symbol and not a variable like &lt;code&gt;org.httpkit.client&lt;/code&gt; .&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/oh-plotting-cool/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/oh-plotting-cool/</guid>
       <description>&lt;h2 id=&#34;from-clojure-for-machine-learnings&#34;&gt;from clojure for machine learnings..&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;defn &lt;/span&gt;plot-points
@@ -4000,23 +3924,19 @@ with the the &lt;code&gt;:input-stream&lt;/code&gt; parameter of the &lt;code&gt
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;             
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/todo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/todo/</guid>
       <description>&lt;p&gt;port my notes from here &lt;a href=&#34;https://gist.github.com/namoopsoo/fa903799b958ffc9f279cd293e83e9d9&#34;&gt;https://gist.github.com/namoopsoo/fa903799b958ffc9f279cd293e83e9d9&lt;/a&gt;
 and here &lt;a href=&#34;https://gist.github.com/namoopsoo/df08c674b4e3e4794e97601682242c51&#34;&gt;https://gist.github.com/namoopsoo/df08c674b4e3e4794e97601682242c51&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;and here &lt;a href=&#34;https://gist.github.com/namoopsoo/607f29e923ceaba890588e69293413cf&#34;&gt;https://gist.github.com/namoopsoo/607f29e923ceaba890588e69293413cf&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/tools.trace-debugging-and-stack-trace/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/tools.trace-debugging-and-stack-trace/</guid>
       <description>&lt;h3 id=&#34;toolstrace-debugging-exceptions-and-stack-trace&#34;&gt;tools.trace debugging exceptions and stack trace&lt;/h3&gt;
 &lt;ul&gt;
@@ -4026,12 +3946,10 @@ and here &lt;a href=&#34;https://gist.github.com/namoopsoo/df08c674b4e3e4794e976
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user=&amp;gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;clojure.tools.trace&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/unit-testing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/unit-testing/</guid>
       <description>&lt;h3 id=&#34;hmm-using-is&#34;&gt;hmm&amp;hellip; using &lt;code&gt;is&lt;/code&gt;&lt;/h3&gt;
 &lt;ul&gt;
@@ -4060,33 +3978,27 @@ and here &lt;a href=&#34;https://gist.github.com/namoopsoo/df08c674b4e3e4794e976
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;lein test :only module-hmm.blah.test-file/test-foo
 &lt;/code&gt;&lt;/pre&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/databricks-spark/dbutils-notebook-run-and-global-temp-view/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/databricks-spark/dbutils-notebook-run-and-global-temp-view/</guid>
       <description>&lt;h3 id=&#34;passing-large-dataframes-with-dbutilsnotebookrun-&#34;&gt;Passing large dataframes with dbutils.notebook.run !&lt;/h3&gt;
 &lt;p&gt;At one point when migrating databricks notebooks to be useable purely with &lt;code&gt;dbutils.notebook.run&lt;/code&gt;, the question came up, hey &lt;code&gt;dbutils.notebook.run&lt;/code&gt; is a great way of calling notebooks explicitly, avoiding global variables that make code difficult to lint and debug, but what about spark dataframes?&lt;/p&gt;
 &lt;p&gt;I had come across this  &lt;a href=&#34;https://docs.databricks.com/notebooks/notebook-workflows.html#pass-structured-data&#34;&gt;https://docs.databricks.com/notebooks/notebook-workflows.html#pass-structured-data&lt;/a&gt; nice bit of documentation about using the spark global temp view to handle name references to nicely shuttle around dataframes by reference, given that a caller notebook and a callee notebook share a JVM and theoretically this is instantaneous.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/databricks-spark/join-merge-parquet/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/databricks-spark/join-merge-parquet/</guid>
       <description>&lt;h3 id=&#34;comparing-really-large-spark-dataframes&#34;&gt;comparing really large spark dataframes&lt;/h3&gt;
 &lt;p&gt;I had this usecase where I wanted to be able to check if very large multi-million row and multi-thousand column dataframes were equal, but the advice online about using &lt;code&gt;df1.subtract(df2)&lt;/code&gt; just was not cutting it because it was just too slow. It seems to me the &lt;code&gt;df1.subtract(df2)&lt;/code&gt; approach more or less is a &lt;code&gt;O(n^2)&lt;/code&gt; approach where it is necessary to compare each row in &lt;code&gt;df1&lt;/code&gt; with each row in &lt;code&gt;df2&lt;/code&gt;. Instead I was wondering, hey if there are known index columns in these dataframes, maybe we can cheat a little and join them first and then do the comparison after joining them.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/databricks-spark/rules-of-widgets/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/databricks-spark/rules-of-widgets/</guid>
       <description>&lt;h3 id=&#34;my-rules-of-text-dbutilswidgets&#34;&gt;My Rules of text &lt;code&gt;dbutils.widgets&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;(0) Reading a widget that does not exist results in&lt;/p&gt;
@@ -4101,12 +4013,10 @@ name, with&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;. However, if a widget was set in cell1, then cell2
 cannot both remove and reset the widget. This will surprisingly have no effect!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/docker/hmm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/docker/hmm/</guid>
       <description>&lt;h3 id=&#34;do-a-build&#34;&gt;Do a build&lt;/h3&gt;
 &lt;ul&gt;
@@ -4128,12 +4038,10 @@ docker run -d=false  -i -t ad6576e
 &lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;if-you-need-your-container-to-have-your-aws-creds&#34;&gt;If you need your container to have your aws creds&lt;/h4&gt;
 &lt;p&gt;Nice hack is to map the &amp;ldquo;root&amp;rdquo; user of your container &lt;code&gt;.aws&lt;/code&gt; directory&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/eda/f_test_statistic/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/eda/f_test_statistic/</guid>
       <description>&lt;h4 id=&#34;f-test-statistic-to-evaluate-the-features&#34;&gt;F test statistic to evaluate the features&lt;/h4&gt;
 &lt;ul&gt;
@@ -4191,12 +4099,10 @@ docker run -d=false  -i -t ad6576e
 [2] &lt;a href=&#34;https://scikit-learn.org/stable/auto_examples/feature_selection/plot_f_test_vs_mi.html&#34;&gt;https://scikit-learn.org/stable/auto_examples/feature_selection/plot_f_test_vs_mi.html&lt;/a&gt;
 [3] &lt;a href=&#34;https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.f_classif.html#sklearn.feature_selection.f_classif&#34;&gt;https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.f_classif.html#sklearn.feature_selection.f_classif&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/eda/variable_independence_techniques/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/eda/variable_independence_techniques/</guid>
       <description>&lt;p&gt;Appreciate &lt;a href=&#34;https://stackabuse.com/statistical-hypothesis-analysis-in-python-with-anovas-chi-square-and-pearson-correlation/&#34;&gt;this post&lt;/a&gt; on helping to choose between a few available tests in determining if there are meaningful relationships between feature data. In particular,&lt;/p&gt;
 &lt;ul&gt;
@@ -4210,24 +4116,20 @@ docker run -d=false  -i -t ad6576e
 &lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/git/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/git/</guid>
       <description>&lt;h4 id=&#34;get-the-parents-of-a-blah-branch&#34;&gt;get the parents of a &lt;code&gt;&amp;lt;blah-branch&amp;gt;&lt;/code&gt;&lt;/h4&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git rev-list --parents &amp;lt;blah-commit&amp;gt;
 beaaaafffff1111111111111111111 fe0000aaaad111111111111111
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;One of them will typically be the hash of &lt;code&gt;&amp;lt;blah-branch&amp;gt;&lt;/code&gt; itself&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/model/dummy_baseline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/model/dummy_baseline/</guid>
       <description>&lt;h3 id=&#34;super-cool-model-baseline-technique&#34;&gt;Super cool model baseline technique&lt;/h3&gt;
 &lt;p&gt;From scikitlearn, this is a super cool way of getting a baseline. In the past I had done this majority class assignment manually. But it is super cool this is kind of built in.&lt;/p&gt;
@@ -4240,12 +4142,10 @@ beaaaafffff1111111111111111111 fe0000aaaad111111111111111
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dummy_clf&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score(X_test, y_test)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/model/hugging-face/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/model/hugging-face/</guid>
       <description>&lt;h3 id=&#34;mainly-notes-from-reaading-the-natural-language-processing-with-transformers-book&#34;&gt;Mainly notes from reaading the Natural Language Processing with Transformers book&lt;/h3&gt;
 &lt;p&gt;Really nice book! I have the urge to write down for myself some snippets so I can more easily refer to them later.&lt;/p&gt;
@@ -4278,22 +4178,18 @@ beaaaafffff1111111111111111111 fe0000aaaad111111111111111
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;##p&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;[SEP]&amp;#39;&lt;/span&gt;]
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And finally&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/model/loss/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/model/loss/</guid>
       <description>&lt;h4 id=&#34;loss-functions-vs-metric-functions&#34;&gt;Loss functions vs Metric functions&lt;/h4&gt;
 &lt;p&gt;I like the phrasing in this &lt;a href=&#34;https://datascience.stackexchange.com/a/47012/74450&#34;&gt;SO&lt;/a&gt; answer, that loss functions are &lt;em&gt;optimized directly&lt;/em&gt; when training but that metrics are &lt;em&gt;optimized indirectly.&lt;/em&gt; I was trying to figure out last year why functions commonly used as metrics (F1 and AUC) are not listed in the tensor flow &lt;a href=&#34;https://keras.io/api/losses/&#34;&gt;keras loss functions&lt;/a&gt; . I did however &lt;a href=&#34;https://github.com/namoopsoo/aviation-pilot-physiology-hmm/blob/master/notes/2019-06-23-today.md&#34;&gt;earlier&lt;/a&gt; try using F1 as a loss function when trying to understand my particular problem. &lt;em&gt;(At least one error I ran into hints that it is not that simplle because you need to write extra code for computing the gradient.)&lt;/em&gt; But even if you can produce the code to compute a gradient for your custom loss function, maybe some metrics are more expensive to run  SGD than others. (Also F1 is clearly less sensitive than a function that uses probabilities or logits directly) .&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/model/metrics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/model/metrics/</guid>
       <description>&lt;h3 id=&#34;tpr-fpr&#34;&gt;TPR, FPR&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tpr &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1.0&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;TP&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;(FN &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; TP) &lt;span style=&#34;color:#75715e&#34;&gt;# aka recall&lt;/span&gt;
@@ -4309,38 +4205,36 @@ beaaaafffff1111111111111111111 fe0000aaaad111111111111111
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;predictions&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;False&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;True&lt;/th&gt;
+          &lt;th&gt;predictions&lt;/th&gt;
+          &lt;th&gt;False&lt;/th&gt;
+          &lt;th&gt;True&lt;/th&gt;
       &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;actual&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td&gt;actual&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;0&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;509&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;132&lt;/td&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td&gt;509&lt;/td&gt;
+          &lt;td&gt;132&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;1&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;32&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;22&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;32&lt;/td&gt;
+          &lt;td&gt;22&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h4 id=&#34;also-there-is-a-super-nice-helper-in-scikitlearn&#34;&gt;Also there is a super nice helper in scikitlearn&lt;/h4&gt;
 &lt;p&gt;Below, using some pre-baked results from running some of the chapter 2 code from &lt;a href=&#34;https://transformersbook.com/&#34;&gt;https://transformersbook.com/&lt;/a&gt; .&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/model/pipeline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/model/pipeline/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;One particularly killer feature about the &lt;code&gt;ColumnTransformer&lt;/code&gt; is that you can apply a specific preprocessor for a subset of the columns, and then set &lt;code&gt;remainder=&amp;quot;passthrough&amp;quot;&lt;/code&gt; for the others&lt;/li&gt;
@@ -4461,12 +4355,10 @@ beaaaafffff1111111111111111111 fe0000aaaad111111111111111
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/model/quick/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/model/quick/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; sklearn.datasets &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; load_iris
@@ -4592,12 +4484,10 @@ utils.class_weight.compute_sample_weight()
 &lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;other-handy-references&#34;&gt;Other handy references&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://ml-cheatsheet.readthedocs.io/&#34;&gt;https://ml-cheatsheet.readthedocs.io/&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/model/spark/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/model/spark/</guid>
       <description>&lt;h4 id=&#34;read&#34;&gt;Read&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;loc &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;dbfs:/databricks-datasets/wine-quality/winequality-red.csv&amp;#34;&lt;/span&gt;
@@ -4640,12 +4530,10 @@ Here imagine there is a column , &amp;ldquo;_c0&amp;rdquo; which has tab separat
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;quick-spark-ml-lib-logistic-regression-pipeline&#34;&gt;Quick Spark ml lib Logistic Regression Pipeline&lt;/h4&gt;
 &lt;p&gt;Given a dataframe with features you would like to use/transform in a LogisticRegression, similarly to sklearn taking an input without feature names, the spark flavor does the same, taking a single column for the input features.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/model/uncertainty/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/model/uncertainty/</guid>
       <description>&lt;h4 id=&#34;meanstd-technique-for-xgboostrandom-forest-type-models&#34;&gt;mean/std technique For xgboost/random forest type models&lt;/h4&gt;
 &lt;ul&gt;
@@ -4659,12 +4547,10 @@ Here imagine there is a column , &amp;ldquo;_c0&amp;rdquo; which has tab separat
 &lt;li&gt;&lt;a href=&#34;https://towardsdatascience.com/regression-prediction-intervals-with-xgboost-428e0a018b&#34;&gt;intervals&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/model/variance_inflation_factor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/model/variance_inflation_factor/</guid>
       <description>&lt;h4 id=&#34;initial-stab-on-interpreting-variance-inflation-factor-vif&#34;&gt;Initial stab on interpreting Variance inflation factor (VIF)&lt;/h4&gt;
 &lt;p&gt;So far my skim on &lt;a href=&#34;https://en.wikipedia.org/wiki/Variance_inflation_factor&#34;&gt;https://en.wikipedia.org/wiki/Variance_inflation_factor&lt;/a&gt; and &lt;a href=&#34;https://en.wikipedia.org/wiki/Multicollinearity&#34;&gt;https://en.wikipedia.org/wiki/Multicollinearity&lt;/a&gt;   tells me that high Variance Inflation Factor (VIF) indicates high multicolinearity w/ one or more other independent variables. And that’s bad because&lt;/p&gt;
@@ -4672,12 +4558,10 @@ Here imagine there is a column , &amp;ldquo;_c0&amp;rdquo; which has tab separat
 &lt;li&gt;
 &lt;p&gt;(a) when building a linear model (at least using ordinary least squares (OLS) , not yet sure if this is still true if you use regularization ) , the coefficients calculated for the independent variables can change “erratically” given slightly different data .&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/new_laptop_setup/ssh/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/new_laptop_setup/ssh/</guid>
       <description>&lt;h4 id=&#34;create-new-ssh-key&#34;&gt;Create New ssh key&lt;/h4&gt;
 &lt;p&gt;With &lt;code&gt;ssh-keygen&lt;/code&gt;, w/ a pass phrase too.&lt;/p&gt;
@@ -4693,12 +4577,10 @@ Here imagine there is a column , &amp;ldquo;_c0&amp;rdquo; which has tab separat
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh-add --apple-load-keychain ~/.ssh/path/to/private/key
 &lt;/code&gt;&lt;/pre&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/new_laptop_setup/virtual_envs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/new_laptop_setup/virtual_envs/</guid>
       <description>&lt;p&gt;Nice that now python has this built in method for creating virtual environments per &lt;a href=&#34;https://docs.python.org/3/library/venv.html&#34;&gt;docs&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# like this &lt;/span&gt;
@@ -4710,12 +4592,10 @@ Here imagine there is a column , &amp;ldquo;_c0&amp;rdquo; which has tab separat
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pip install scikit-learn scikit-learn pandas ipdb ipython matplotlib tqdm colormap easydev 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/plot/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/plot/</guid>
       <description>&lt;h4 id=&#34;histogram-overlays&#34;&gt;histogram overlays&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Nice technique from https://srome.github.io/Covariate-Shift,-i.e.-Why-Prediction-Quality-Can-Degrade-In-Production-and-How-To-Fix-It/ &lt;/span&gt;
@@ -5021,12 +4901,10 @@ so basically the count starts at &lt;code&gt;0&lt;/code&gt; from the upper left 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;savefig(loc)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/python/concurrent_futures/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/python/concurrent_futures/</guid>
       <description>&lt;h3 id=&#34;concurrentfutures&#34;&gt;concurrent.futures&lt;/h3&gt;
 &lt;p&gt;Recently at work I needed to add retry logic to some code that was using the &lt;code&gt;concurrent&lt;/code&gt; python library.&lt;/p&gt;
@@ -5095,12 +4973,10 @@ so basically the count starts at &lt;code&gt;0&lt;/code&gt; from the upper left 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            print(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;we are now &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;len(final_results)&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; out of &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;len(URLS)&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;with the output&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/python/dotenv/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/python/dotenv/</guid>
       <description>&lt;h4 id=&#34;environmental-variable-local-injection&#34;&gt;environmental variable local injection&lt;/h4&gt;
 &lt;ul&gt;
@@ -5116,12 +4992,10 @@ so basically the count starts at &lt;code&gt;0&lt;/code&gt; from the upper left 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;getenv(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;FOO&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#75715e&#34;&gt;# =&amp;gt; &amp;#39;hi&amp;#39;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/python/fano/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/python/fano/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
@@ -5158,12 +5032,10 @@ so basically the count starts at &lt;code&gt;0&lt;/code&gt; from the upper left 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://user-images.githubusercontent.com/2048242/50387562-46f47900-06cd-11e9-8e60-25481624b99c.png&#34; alt=&#34;image&#34;  /&gt;
 &lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/python/poormans_pomodoro/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/python/poormans_pomodoro/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; sys
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; time 
@@ -5185,12 +5057,10 @@ so basically the count starts at &lt;code&gt;0&lt;/code&gt; from the upper left 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And choose any &lt;code&gt;logfile&lt;/code&gt; location and any &lt;code&gt;tag&lt;/code&gt; ..&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/python/profiling/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/python/profiling/</guid>
       <description>&lt;h4 id=&#34;line-profiler&#34;&gt;line profiler&lt;/h4&gt;
 &lt;ul&gt;
@@ -5257,12 +5127,10 @@ so basically the count starts at &lt;code&gt;0&lt;/code&gt; from the upper left 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;15&lt;/span&gt;        &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;1034899.0&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;103489.9&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;100.0&lt;/span&gt;      time&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sleep(&lt;span style=&#34;color:#ae81ff&#34;&gt;.1&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/python/python2-to-3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/python/python2-to-3/</guid>
       <description>&lt;h3 id=&#34;what-the-what&#34;&gt;What the what&lt;/h3&gt;
 &lt;p&gt;Notes from after converting a project using the &lt;code&gt;2to3&lt;/code&gt;, of additional &lt;em&gt;gotchas&lt;/em&gt;&lt;/p&gt;
@@ -5500,12 +5368,10 @@ so basically the count starts at &lt;code&gt;0&lt;/code&gt; from the upper left 
 &lt;li&gt;To &lt;code&gt;from urllib.parse import urlparse&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/python/python_sql_helpers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/python/python_sql_helpers/</guid>
       <description>&lt;h2 id=&#34;generate-a-cte-from-a-local-csv-file&#34;&gt;Generate a CTE from a local csv file&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pandas &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; pd
@@ -5576,12 +5442,10 @@ so basically the count starts at &lt;code&gt;0&lt;/code&gt; from the upper left 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;x&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/python/search_muh_jsons/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/python/search_muh_jsons/</guid>
       <description>&lt;h4 id=&#34;search-and-return-json-paths&#34;&gt;Search and return json paths&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;substring_exists_lower&lt;/span&gt;(substring, string):
@@ -5619,12 +5483,10 @@ so basically the count starts at &lt;code&gt;0&lt;/code&gt; from the upper left 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;find_term(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;name&amp;#39;&lt;/span&gt;, {}, found)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/python/sentry-io-api/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/python/sentry-io-api/</guid>
       <description>&lt;h4 id=&#34;fetch-all-events-for-an-issue-like-this&#34;&gt;Fetch all events for an issue like this&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;issue &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;12345678&amp;#34;&lt;/span&gt;
@@ -5686,12 +5548,10 @@ so basically the count starts at &lt;code&gt;0&lt;/code&gt; from the upper left 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/python/with_context_manager/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/python/with_context_manager/</guid>
       <description>&lt;h4 id=&#34;enter-and-exit&#34;&gt;enter and exit&lt;/h4&gt;
 &lt;ul&gt;
@@ -5738,12 +5598,10 @@ so basically the count starts at &lt;code&gt;0&lt;/code&gt; from the upper left 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/python/write_glom/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/python/write_glom/</guid>
       <description>&lt;p&gt;Glom does not let you write or at least I couldnt figure out how. Tinkering with a spec based writer&amp;hellip;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; glom &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; glom, PathAccessError
@@ -5794,12 +5652,10 @@ so basically the count starts at &lt;code&gt;0&lt;/code&gt; from the upper left 
 &lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/python/zip/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/python/zip/</guid>
       <description>&lt;h4 id=&#34;for-targz&#34;&gt;for tar.gz&lt;/h4&gt;
 &lt;p&gt;Assuming we have a func &lt;code&gt;read_from_s3&lt;/code&gt; that reads from s3&amp;hellip;&lt;/p&gt;
@@ -5818,12 +5674,10 @@ so basically the count starts at &lt;code&gt;0&lt;/code&gt; from the upper left 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  foo &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; zip_archive&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;some/file.txt&amp;#39;&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/rc/readme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/rc/readme/</guid>
       <description>&lt;h3 id=&#34;macvim&#34;&gt;Macvim&lt;/h3&gt;
 &lt;ul&gt;
@@ -5858,23 +5712,19 @@ git clone git@github.com:lifepillar/vim-solarized8.git
 &lt;li&gt;Vim doesnt know about &amp;ldquo;terraform&amp;rdquo; files like &lt;code&gt;.tf&lt;/code&gt; and &lt;a href=&#34;https://github.com/hashivim/vim-terraform&#34;&gt;the hashivim github&lt;/a&gt; helps with that. &lt;code&gt;vim-terraform&lt;/code&gt; actually has a magical &lt;code&gt;:TerraformFmt&lt;/code&gt; command that inspects the syntax of your &lt;code&gt;.tf&lt;/code&gt; file too.&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/rc/zsh/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/rc/zsh/</guid>
       <description>&lt;h4 id=&#34;add-reverse-lookup-to-zsh&#34;&gt;Add reverse lookup to zsh&lt;/h4&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;bindkey &amp;#39;^R&amp;#39; history-incremental-search-backward
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;( read on Stack Exchange &amp;gt; Unix&amp;amp;Linux &amp;gt; &amp;ldquo;How to enable reverse search in zsh?&amp;rdquo;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/shell/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/shell/</guid>
       <description>&lt;h4 id=&#34;edit-files-in-place&#34;&gt;Edit files in place&lt;/h4&gt;
 &lt;ul&gt;
@@ -5897,12 +5747,10 @@ MD5 (./en/post/2021-01-23-spark-weekend.md) = 5534f81599860e239340b41ffa5aee09
 MD5 (./posts/2021-01-23-spark-weekend.md) = 5534f81599860e239340b41ffa5aee09
 &lt;/code&gt;&lt;/pre&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/sql/date_range_builder/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/sql/date_range_builder/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; datetime
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
@@ -5987,12 +5835,10 @@ MD5 (./posts/2021-01-23-spark-weekend.md) = 5534f81599860e239340b41ffa5aee09
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# &amp;#39; ( (year = 2021 AND month = 4 AND day &amp;gt;= 29) OR (year = 2021 AND month = 5) OR (year = 2021 AND month = 6) OR (year = 2021 AND month = 7) OR (year = 2021 AND month = 8) OR (year = 2021 AND month = 9) OR (year = 2021 AND month = 10) OR (year = 2021 AND month = 11) OR (year = 2021 AND month = 12) OR (year = 2022 AND month = 1) OR (year = 2022 AND month = 2) OR (year = 2022 AND month = 3) OR (year = 2022 AND month = 4) OR (year = 2022 AND month = 5 AND day &amp;lt;= 5) ) &amp;#39;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/sql/hmm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/sql/hmm/</guid>
       <description>&lt;h4 id=&#34;list-indexes&#34;&gt;List indexes&lt;/h4&gt;
 &lt;ul&gt;
@@ -6081,12 +5927,10 @@ MD5 (./posts/2021-01-23-spark-weekend.md) = 5534f81599860e239340b41ffa5aee09
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;UndefinedFunction: function round(double precision, integer) does not exist
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And surely enough after reading the &lt;a href=&#34;https://www.postgresql.org/docs/9.6/functions-math.html&#34;&gt;docs&lt;/a&gt; , oddly enough &lt;code&gt;round&lt;/code&gt; with precision is only defined for &lt;code&gt;numeric&lt;/code&gt; and not &lt;code&gt;float8&lt;/code&gt; (aka &lt;code&gt;double precision&lt;/code&gt;). After casting to &lt;code&gt;numeric&lt;/code&gt; my result of &lt;code&gt;round(table1.col1::numeric, 3) = round(table2.col1::numeric, 3)&lt;/code&gt; was &lt;code&gt;0.990&lt;/code&gt;. Can dig deeper about the implementation later!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/sql/ilike/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/sql/ilike/</guid>
       <description>&lt;p&gt;Interesting&lt;/p&gt;
 &lt;blockquote&gt;
@@ -6094,12 +5938,10 @@ MD5 (./posts/2021-01-23-spark-weekend.md) = 5534f81599860e239340b41ffa5aee09
 &lt;/blockquote&gt;
 &lt;p&gt;per &lt;a href=&#34;https://www.postgresql.org/docs/7.3/functions-matching.html&#34;&gt;7.3 doc&lt;/a&gt;. not sure if outdated&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/sql/is_equal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/sql/is_equal/</guid>
       <description>&lt;p&gt;Good to know.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
@@ -6150,12 +5992,10 @@ MD5 (./posts/2021-01-23-spark-weekend.md) = 5534f81599860e239340b41ffa5aee09
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;null_eq_null&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;}]
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/sql/time/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/sql/time/</guid>
       <description>&lt;h4 id=&#34;subtract-intervals-from-dates&#34;&gt;subtract intervals from dates&lt;/h4&gt;
 &lt;p&gt;although in postgresql you can freely add/subtract dates/timestamps and intervals,&lt;/p&gt;
@@ -6169,12 +6009,10 @@ MD5 (./posts/2021-01-23-spark-weekend.md) = 5534f81599860e239340b41ffa5aee09
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;DATEDIFF(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;2021-01-01&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;2021-05-01&amp;#39;&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/sql/user_management/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/sql/user_management/</guid>
       <description>&lt;h4 id=&#34;create-a-new-user&#34;&gt;Create a new user&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;username &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;new_user_foo&amp;#39;&lt;/span&gt;
@@ -6220,24 +6058,22 @@ MD5 (./posts/2021-01-23-spark-weekend.md) = 5534f81599860e239340b41ffa5aee09
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;tablename&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;tableowner&lt;/th&gt;
+          &lt;th&gt;tablename&lt;/th&gt;
+          &lt;th&gt;tableowner&lt;/th&gt;
       &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;footable&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;foouser&lt;/td&gt;
+          &lt;td&gt;footable&lt;/td&gt;
+          &lt;td&gt;foouser&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/sql/zero_fill_dates/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/sql/zero_fill_dates/</guid>
       <description>&lt;h3 id=&#34;lpad-is-the-func-to-make-sure-a-month-is-always-two-digits-as-an-example&#34;&gt;&lt;code&gt;lpad&lt;/code&gt; is the func to make sure a month is always two digits as an example.&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
@@ -6254,76 +6090,74 @@ MD5 (./posts/2021-01-23-spark-weekend.md) = 5534f81599860e239340b41ffa5aee09
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;yearmonth&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;count&lt;/th&gt;
+          &lt;th&gt;yearmonth&lt;/th&gt;
+          &lt;th&gt;count&lt;/th&gt;
       &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202005&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;5208&lt;/td&gt;
+          &lt;td&gt;202005&lt;/td&gt;
+          &lt;td&gt;5208&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202006&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;8584&lt;/td&gt;
+          &lt;td&gt;202006&lt;/td&gt;
+          &lt;td&gt;8584&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202007&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;7780&lt;/td&gt;
+          &lt;td&gt;202007&lt;/td&gt;
+          &lt;td&gt;7780&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202008&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;5382&lt;/td&gt;
+          &lt;td&gt;202008&lt;/td&gt;
+          &lt;td&gt;5382&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202009&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;3635&lt;/td&gt;
+          &lt;td&gt;202009&lt;/td&gt;
+          &lt;td&gt;3635&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202010&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;2791&lt;/td&gt;
+          &lt;td&gt;202010&lt;/td&gt;
+          &lt;td&gt;2791&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202011&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;1284&lt;/td&gt;
+          &lt;td&gt;202011&lt;/td&gt;
+          &lt;td&gt;1284&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202012&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;2704&lt;/td&gt;
+          &lt;td&gt;202012&lt;/td&gt;
+          &lt;td&gt;2704&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202101&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;2416&lt;/td&gt;
+          &lt;td&gt;202101&lt;/td&gt;
+          &lt;td&gt;2416&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202102&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;1964&lt;/td&gt;
+          &lt;td&gt;202102&lt;/td&gt;
+          &lt;td&gt;1964&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202103&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;2554&lt;/td&gt;
+          &lt;td&gt;202103&lt;/td&gt;
+          &lt;td&gt;2554&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202104&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;2935&lt;/td&gt;
+          &lt;td&gt;202104&lt;/td&gt;
+          &lt;td&gt;2935&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202105&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;2909&lt;/td&gt;
+          &lt;td&gt;202105&lt;/td&gt;
+          &lt;td&gt;2909&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202106&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;160&lt;/td&gt;
+          &lt;td&gt;202106&lt;/td&gt;
+          &lt;td&gt;160&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/ssh/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/ssh/</guid>
       <description>&lt;h3 id=&#34;checking-sha256&#34;&gt;Checking sha256&lt;/h3&gt;
 &lt;h4 id=&#34;for-older-versions-of-sshd&#34;&gt;For older versions of sshd&lt;/h4&gt;
@@ -6332,12 +6166,10 @@ MD5 (./posts/2021-01-23-spark-weekend.md) = 5534f81599860e239340b41ffa5aee09
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh-keygen -l -f key.pub -E (sha256|md5)
 &lt;/code&gt;&lt;/pre&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/tools/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/tools/</guid>
       <description>&lt;h4 id=&#34;ag-the-silver-searcher&#34;&gt;ag the silver searcher&lt;/h4&gt;
 &lt;ul&gt;
@@ -6379,12 +6211,10 @@ MD5 (./posts/2021-01-23-spark-weekend.md) = 5534f81599860e239340b41ffa5aee09
 &lt;li&gt;
 &lt;p&gt;Even &lt;code&gt;--toc, --table-of-contents&lt;/code&gt;  , &lt;code&gt;--toc-depth=NUMBER&lt;/code&gt;  , for automatic table of contents.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/wireshark/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/wireshark/</guid>
       <description>&lt;h4 id=&#34;packet-capture-filters&#34;&gt;packet capture filters&lt;/h4&gt;
 &lt;ul&gt;
@@ -6404,12 +6234,10 @@ MD5 (./posts/2021-01-23-spark-weekend.md) = 5534f81599860e239340b41ffa5aee09
 &lt;li&gt;Maybe I can&amp;rsquo;t see the low level 802.11 control packets/frames somehow.&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/post/2019-10-19--jekyll/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2019-10-19--jekyll/</guid>
       <description>&lt;h4 id=&#34;first-i-needed-to-get-ruby-from-homebrew&#34;&gt;First i needed to get ruby from homebrew&lt;/h4&gt;
 &lt;p&gt;Using &lt;code&gt;gem install bundler jekyll&lt;/code&gt; didn&amp;rsquo;t work for me because I was getting a permission error,&lt;/p&gt;
@@ -6503,12 +6331,10 @@ for pkg-config to find ruby you may need to set:
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;And &lt;code&gt;rbenv&lt;/code&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/post/2020-10-20--build-issues-again/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2020-10-20--build-issues-again/</guid>
       <description>&lt;h4 id=&#34;build-issues-again-haha&#34;&gt;Build issues again haha&lt;/h4&gt;
 &lt;p&gt;I am doing &lt;code&gt;jekyll build&lt;/code&gt; but this time from a &lt;code&gt;Makefile&lt;/code&gt; , containing&lt;/p&gt;
@@ -6594,12 +6420,10 @@ $
 &lt;li&gt;
 &lt;p&gt;Darn getting same result. Ok it says to use &lt;code&gt;bundle exec jekyll build&lt;/code&gt; instead. Going to try that&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/post/2020-11-14-georgia-recount-stats/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2020-11-14-georgia-recount-stats/</guid>
       <description>&lt;h4 id=&#34;binomial-distribution&#34;&gt;Binomial Distribution&lt;/h4&gt;
 &lt;p&gt;Plot Binomial distribution for &lt;code&gt;p&lt;/code&gt;, and a sample of &lt;code&gt;n&lt;/code&gt;&lt;/p&gt;
@@ -6627,12 +6451,10 @@ $
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pylab&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;close()
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/post/2020-11-14-georgia-recount/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2020-11-14-georgia-recount/</guid>
       <description>&lt;p&gt;Here, looking at the recent recount in Georgia as an example around determining, what would a good number of votes to randomly sample to help validate an election result.&lt;/p&gt;
 &lt;p&gt;According to the latest results of this writing there is&lt;/p&gt;
@@ -6640,12 +6462,10 @@ $
 p_observed = B*1./(B + T) # 0.501437
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For now just starting off below visualizing the binomial distribution around the &lt;code&gt;p_observed&lt;/code&gt; for different numbers of samples to look at what likelihoods are assigned to the different outcomes specified by that given binomial distribution.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/post/2021-03-27-nutrition-calcs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2021-03-27-nutrition-calcs/</guid>
       <description>&lt;h4 id=&#34;trying-to-figure-out-whether-calories-specified-typically-include-grams-from-fiber&#34;&gt;Trying to figure out whether Calories specified typically include grams from Fiber&lt;/h4&gt;
 &lt;ul&gt;
@@ -6654,12 +6474,10 @@ p_observed = B*1./(B + T) # 0.501437
 &lt;blockquote&gt;
 &lt;p&gt;&amp;ldquo;Carbohydrate content, referred to as “carbohydrate by difference” in the tables, is expressed as the difference between 100 and the sum of the percentages of water, protein, total lipid (fat), ash, and alcohol (when present). Values for carbohydrate by difference include total dietary fiber content. “Sugars, total NLEA” refers to the sum of the values for individual monosaccharides (galactose, glucose, and fructose) and disaccharides (sucrose, lactose, and maltose), which are those sugars analyzed for nutrition labelling. Because the analyses of total dietary fiber, total sugars, and starch content are conducted separately and reflect the analytical variability inherent in the measurement process, the sum of these carbohydrate fractions may not equal the carbohydrate-by-difference value or may even exceed it.&amp;rdquo;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/post/2021-05-23-that-openssl-load-error/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2021-05-23-that-openssl-load-error/</guid>
       <description>&lt;h4 id=&#34;tldr&#34;&gt;TLDR&lt;/h4&gt;
 &lt;p&gt;This time, the &lt;code&gt;brew update &amp;amp;&amp;amp; brew upgrade&lt;/code&gt; approach resolved my &lt;code&gt;openssl&lt;/code&gt;  &lt;code&gt;dyld: Library not loaded&lt;/code&gt; woes. And &lt;code&gt;brew&lt;/code&gt; apparently no longer has the &lt;code&gt;switch&lt;/code&gt; command which had been the cornerstone of a popular stackoverflow answer for this problem.&lt;/p&gt;
@@ -6705,82 +6523,20 @@ $
 &lt;li&gt;
 &lt;p&gt;And yea according to &lt;a href=&#34;&#34;&gt;here&lt;/a&gt;  , &lt;code&gt;switch&lt;/code&gt; command is no more&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/post/2024-08-25-bag-words-comforting/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2024-08-25-bag-words-comforting/</guid>
       <description>&lt;h2 id=&#34;mindfulness-or-mindlessness&#34;&gt;mindfulness or mindlessness?&lt;/h2&gt;
 &lt;p&gt;One definition of mindfulness is awareness of pre-thought, that is, to capture rumination, stop it in its tracks and put a magnifying glass over it. Then you can inspect the material, as a thought, and either notice it go away or notice yourself doing something about it.&lt;/p&gt;
 &lt;h2 id=&#34;verbal-or-nonverbal&#34;&gt;verbal or nonverbal?&lt;/h2&gt;
 &lt;p&gt;Some of the pre thoughts, perhaps call them gut feelings or intuitions, can be nonverbal. Perhaps that is along the lines of a bag of words , sort of embedded in a hyperdimensional space? And one where neuralink can one day let us write with them or direct our environment. That’s the stuff of thought.&lt;/p&gt;</description>
     </item>
-    
-    <item>
-      <title>blue bottle espresso troubleshooting</title>
-      <link>https://michal.piekarczyk.xyz/post/2020-11-15-blue-bottle-espresso-troubleshooting/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://michal.piekarczyk.xyz/post/2020-11-15-blue-bottle-espresso-troubleshooting/</guid>
-      <description>&lt;p&gt;Trying out this Blue Bottle Opascope espresso w/ this hand grinder w/ my Kamira espresso maker. But the Kamira is not pulling the espresso for some reason.&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;Comparing the Lavazza grounds to the Opascope grounds I can&amp;rsquo;t tell there&amp;rsquo;s a difference. Is it too fine? Not fine enough?&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;This is the hand grinder.&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;Here is what 2 out of 4 of the Blue Bottle pulls ended up like&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Halloween kitchen sink pipe leak</title>
-      <link>https://michal.piekarczyk.xyz/post/2020-10-31-kitchen-sink-pipe-leak/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://michal.piekarczyk.xyz/post/2020-10-31-kitchen-sink-pipe-leak/</guid>
-      <description>&lt;p&gt;We had a surprise Halloween pipe leak but luckily I got to our local hardware store just 15 minutes before they closed. And they had the pipe I needed. We had guests over that night, so this went much better than the worst case scenario!&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;</description>
-    </item>
-    
-    <item>
-      <title>How to use Github pages with multiple repositories</title>
-      <link>https://michal.piekarczyk.xyz/post/2020-05-31--github-pages/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://michal.piekarczyk.xyz/post/2020-05-31--github-pages/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Spoiler alert, don&amp;rsquo;t do it&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;I wrote some high level and low level markdown summaries for my &lt;a href=&#34;https://github.com/namoopsoo/aviation-pilot-physiology-hmm&#34;&gt;aviation kaggle data sciency project&lt;/a&gt;. I placed them in the github repo of the project itself. Today I have been thinking about how to best &lt;em&gt;build&lt;/em&gt; the &lt;em&gt;Github Pages&lt;/em&gt; repo to showcase those markdowns that live in that other repository.&lt;/p&gt;
-&lt;p&gt;Looking for inspiration, I saw &lt;a href=&#34;https://github.com/sajal2692/&#34;&gt;this author&lt;/a&gt; has chosen to have a typical &lt;a href=&#34;https://github.com/sajal2692/sajal2692.github.io&#34;&gt;github.io&lt;/a&gt; repo and also a separate &lt;a href=&#34;https://github.com/sajal2692/data-science-portfolio&#34;&gt;portfolio repo&lt;/a&gt;. On the other hand &lt;a href=&#34;https://github.com/chrisalbon/notes&#34;&gt;this author&amp;rsquo;s&lt;/a&gt; approach was to maintain any source python notebook and markdown files within the main &lt;em&gt;GithubPages&lt;/em&gt; repo itself.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>make some xero shoes</title>
-      <link>https://michal.piekarczyk.xyz/post/2020-11-07-make-some-xero-shoes/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://michal.piekarczyk.xyz/post/2020-11-07-make-some-xero-shoes/</guid>
-      <description>&lt;p&gt;Made some Xero shoes.&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;</description>
-    </item>
-    
-    <item>
-      <title>Meritocracy Trap Book Summary</title>
-      <link>https://michal.piekarczyk.xyz/post/2020-12-12-meritocracytrap-book-summary/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://michal.piekarczyk.xyz/post/2020-12-12-meritocracytrap-book-summary/</guid>
-      <description>&lt;h3 id=&#34;meritocracy-trap-summary&#34;&gt;Meritocracy Trap Summary&lt;/h3&gt;
-&lt;p&gt;I Read this after hearing an interview with Daniel Markovits initially. (2020-08-23 to 2020-12-12)&lt;/p&gt;
-&lt;h4 id=&#34;the-book-in-three-sentences&#34;&gt;The Book in Three Sentences&lt;/h4&gt;
-&lt;p&gt;Meritocracy replaced direct inheritance style aristocracy after the post World War II baby boomers overwhelmed colleges&amp;ndash;forcing them to create the SAT to deal with admissions&amp;ndash;and has been snowballing a self reinforcing selection process that has been undoing the middle class ever since. The elite make bank slogging gnarly hours more than by stereotypical capital gains loop holes and &amp;ldquo;the rest&amp;rdquo; work fewer hours, involuntarily left out of the economy. The contribution of the elite is more self serving and the States would benefit from unraveling and debunking the idea that the elite are &amp;ldquo;adding incremental value&amp;rdquo;.&lt;/p&gt;</description>
-    </item>
-    
     <item>
       <title>Michal Piekarczyk</title>
       <link>https://michal.piekarczyk.xyz/resume/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/resume/</guid>
       <description>&lt;h3 id=&#34;michal-piekarczyk&#34;&gt;Michal Piekarczyk&lt;/h3&gt;
 &lt;h3 id=&#34;professional-experience&#34;&gt;Professional Experience&lt;/h3&gt;
@@ -6802,64 +6558,5 @@ $
 &lt;h4 id=&#34;vp-and-software-lead-at-cortix-systems-inc-alexandria-va-feb-2011---jul-2014&#34;&gt;VP and Software Lead at Cortix Systems Inc, Alexandria, VA (Feb 2011 - Jul 2014)&lt;/h4&gt;
 &lt;p&gt;&lt;em&gt;Lead system and software engineer responsible for taking initial search engine for data company concept into a Python code base (with a demo helping us secure a $720,000 contract) and iterating it through several subsequent stages of customer validation.&lt;/em&gt;&lt;/p&gt;</description>
     </item>
-    
-    <item>
-      <title>our lock finally bent my key haha</title>
-      <link>https://michal.piekarczyk.xyz/post/2020-11-01-our-lock-finally-bent-my-key-haha/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://michal.piekarczyk.xyz/post/2020-11-01-our-lock-finally-bent-my-key-haha/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;</description>
-    </item>
-    
-    
-    <item>
-      <title>Steak Puzzle</title>
-      <link>https://michal.piekarczyk.xyz/post/2020-05-31-steak-puzzle/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://michal.piekarczyk.xyz/post/2020-05-31-steak-puzzle/</guid>
-      <description>&lt;p&gt;I have been trying to solve the steak puzzle for several attempts now. That is, how do you cook a good cast iron to oven transfer? The problem so far has been that the recommended time for the oven for a 450 finish, in &lt;a href=&#34;https://www.therisingspoon.com/2013/04/how-to-cook-perfect-steak-in-cast-iron.html?m=1&#34;&gt;this article&lt;/a&gt; , 4-5 minutes is the recommendation for a medium steak and 2-4 minutes for a rare.&lt;/p&gt;
-&lt;p&gt;Although I did not quite follow the 450, I used 400 F, I followed the temperature lore from &lt;a href=&#34;https://www.foodandwine.com/how/grilling-mistakes-avoid-according-chefs&#34;&gt;here&lt;/a&gt; last night, using a meat thermometer instead of time, because I suspect oven temperatures in one oven is not the same as that of another. There are possibly incorrect temperature readings.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>vitamin D</title>
-      <link>https://michal.piekarczyk.xyz/post/2020-11-07-vitamin-d/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://michal.piekarczyk.xyz/post/2020-11-07-vitamin-d/</guid>
-      <description>&lt;h4 id=&#34;vitamin-d-questions&#34;&gt;Vitamin D questions&lt;/h4&gt;
-&lt;p&gt;There are a couple mini researach questions I have around Vitamin D. How different are humans with respect to Vitamin D, from other life forms or just other mammals. Also what does the synthesis pathway look like for Vitamin D (or more than one pathway if dietary is a separate pathway from skin). And how exactly does vitamin D enable immune function?&lt;/p&gt;
-&lt;h4 id=&#34;the-names&#34;&gt;The names.&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Per &lt;a href=&#34;#1&#34;&gt;1&lt;/a&gt; , &amp;ldquo;plasma concentration of 25-hydroxyvitamin D&amp;rdquo; is one &amp;ldquo;vitamin D&amp;rdquo; biomarker.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;fish&#34;&gt;Fish&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Per &lt;a href=&#34;#2&#34;&gt;2&lt;/a&gt;, &amp;ldquo;Fish incorporates vitamin D2 and D3 through the diet.&amp;rdquo;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;roles-of-vitamin-d&#34;&gt;Roles of &amp;ldquo;Vitamin D&amp;rdquo;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Also per &lt;a href=&#34;#2&#34;&gt;2&lt;/a&gt;] , &amp;ldquo;In mammals, vitamin D forms are involved in mineral metabolism, cell growth, tissue differentiation, and antibacterial immune response.&amp;rdquo;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;synthesis-pathway-for-vitamin-d&#34;&gt;Synthesis pathway for &amp;ldquo;Vitamin D&amp;rdquo;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;From &lt;a href=&#34;#3&#34;&gt;3&lt;/a&gt;, &amp;ldquo;The synthesis of vitamin D begins in the skin with activation of a precursor molecule by ultraviolet light from the sun. After that, the process moves to the liver for further chemical modification and then on to the kidneys for a final tweak.&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;And  &amp;ldquo;Humans and other animals can synthesize this molecule right from cholesterol, something we always have plenty of&amp;rdquo; &lt;a href=&#34;#3&#34;&gt;3&lt;/a&gt; .&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;dietary-vitamin-d&#34;&gt;Dietary vitamin D&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Hmm ok so according to &lt;a href=&#34;#3&#34;&gt;3&lt;/a&gt;, &amp;ldquo;Many animals, including humans, can escape this paradox by simply ingesting the activated vitamin D precursor. Dietary vitamin D still requires the activation steps in the liver and kidney, but at least it lets us stay out of the sunlight. Such supplementation has allowed humans to live in frigid climates and it is no coincidence that Arctic diets tend toward fish and whale blubber, two very rich sources of vitamin D.&amp;rdquo; So I&amp;rsquo;m reading here that if you eat the vitamin D precursor, you can skip out on the sun.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;dumb-evolution-haha&#34;&gt;Dumb evolution Haha&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;And from &lt;a href=&#34;#3&#34;&gt;3&lt;/a&gt; , &amp;ldquo;it would make much more sense to house the enzymes for the synthesis of vitamin D within fat cells, which are often tucked right underneath the skin anyway, where the UV light is needed for the first step.&amp;rdquo; Indeed there is a list of these weird suboptimalities in life out there. Or do we just not understand what&amp;rsquo;s going on?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;references&#34;&gt;References&lt;/h4&gt;
-&lt;h5 id=&#34;1&#34;&gt;1&lt;/h5&gt;
-&lt;p&gt;&lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/18689390/&#34;&gt;here&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
   </channel>
 </rss>

@@ -4,18 +4,17 @@
     <title>Blog-Post on michal.piekarczyk.xyz</title>
     <link>https://michal.piekarczyk.xyz/tags/blog-post/</link>
     <description>Recent content in Blog-Post on michal.piekarczyk.xyz</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.138.0</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 20 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/tags/blog-post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 May 2023 17:11:41 -0400</lastBuildDate>
+    <atom:link href="https://michal.piekarczyk.xyz/tags/blog-post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A diabetes summary (draft)</title>
       <link>https://michal.piekarczyk.xyz/post/2023-05-20-diabetes/</link>
       <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-05-20-diabetes/</guid>
       <description>&lt;h2 id=&#34;tldr&#34;&gt;TLDR&lt;/h2&gt;
 &lt;p&gt;Diabetes is what happens when high blood sugar wreaks havoc on the body because either with type I diabetes, the pancreas cannot produce insulin for various reasons or with type II diabetes, no matter how much insulin the pancreas  produces, it is not  enough insulin to meet the high levels of blood sugar because of insulin resistance (insulin is ignored by cells and blood sugar is not taken up). But fortunately dietary carbohydrate is the main lever here.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

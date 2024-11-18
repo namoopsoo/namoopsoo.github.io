@@ -4,13 +4,13 @@
     <title>Handies on michal.piekarczyk.xyz</title>
     <link>https://michal.piekarczyk.xyz/handy/</link>
     <description>Recent content in Handies on michal.piekarczyk.xyz</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://michal.piekarczyk.xyz/handy/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- 0.138.0</generator>
+    <language>en</language>
+    <atom:link href="https://michal.piekarczyk.xyz/handy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/aws/athena/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/aws/athena/</guid>
       <description>&lt;p&gt;This may apply to Athena and or prestodb in general&lt;/p&gt;
 &lt;h4 id=&#34;array-empty&#34;&gt;array empty?&lt;/h4&gt;
@@ -25,12 +25,10 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;cardinality&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;cast&lt;/span&gt;(json_extract(json_parse(what), &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;$.blah.flah.clah&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; array(&lt;span style=&#34;color:#66d9ef&#34;&gt;map&lt;/span&gt;(varchar, varchar))))
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;will produce the length of those arrays.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/aws/lambda/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/aws/lambda/</guid>
       <description>&lt;h4 id=&#34;make-a-zip-file-for-a-lambda-layer&#34;&gt;Make a zip file for a lambda layer&lt;/h4&gt;
 &lt;ul&gt;
@@ -87,12 +85,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;PackageType&amp;#39;&lt;/span&gt;]
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/aws/step_functions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/aws/step_functions/</guid>
       <description>&lt;h3 id=&#34;state-machine-life-cycle&#34;&gt;State Machine life cycle&lt;/h3&gt;
 &lt;ul&gt;
@@ -278,12 +274,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/bash/spaces-in-filenames-traversal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/bash/spaces-in-filenames-traversal/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;I Stumbled on &lt;a href=&#34;https://unix.stackexchange.com/a/9499&#34;&gt;this gem of a stack overflow answer&lt;/a&gt;  (  in &lt;a href=&#34;https://unix.stackexchange.com/questions/9496/looping-through-files-with-spaces-in-the-names#9499&#34;&gt;here&lt;/a&gt; ) , which goes into some great detail but one of the hacks I learned is you can modify &lt;code&gt;IFS&lt;/code&gt; to change the following behavior.&lt;/li&gt;
@@ -314,12 +308,10 @@ $ for file in $(ls *RR.jpg) ; do echo $file ; done
 09.02.07RR.jpg
 &lt;/code&gt;&lt;/pre&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/atom-vec-and-while-loop/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/atom-vec-and-while-loop/</guid>
       <description>&lt;h3 id=&#34;atom-vec--and-while-loop&#34;&gt;atom vec &lt;code&gt;[]&lt;/code&gt; and while loop&amp;hellip;&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;let &lt;/span&gt;[results-atom (&lt;span style=&#34;color:#a6e22e&#34;&gt;atom&lt;/span&gt; [])]
@@ -351,12 +343,10 @@ $ for file in $(ls *RR.jpg) ; do echo $file ; done
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nil
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/callbacks-and-async/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/callbacks-and-async/</guid>
       <description>&lt;h3 id=&#34;basic-callbacks&#34;&gt;basic callbacks&amp;hellip;&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(comment 
@@ -427,12 +417,10 @@ $ for file in $(ls *RR.jpg) ; do echo $file ; done
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user=&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/clojure_tips/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/clojure_tips/</guid>
       <description>&lt;p&gt;(Porting over my notes from gists .. &lt;a href=&#34;https://gist.github.com/namoopsoo/607f29e923ceaba890588e69293413cf&#34;&gt;here&lt;/a&gt; ),..&lt;/p&gt;
 &lt;h3 id=&#34;quick-note-on-imports&#34;&gt;quick note on imports&lt;/h3&gt;
@@ -454,12 +442,10 @@ for &lt;code&gt;require&lt;/code&gt; followed by a &lt;code&gt;refer&lt;/code&gt
 &lt;li&gt;
 &lt;p&gt;Many ways to make a hash-map,&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/cool-arity-thing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/cool-arity-thing/</guid>
       <description>&lt;h3 id=&#34;keys-keywords-from-map&#34;&gt;keys keywords from map&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
@@ -492,12 +478,10 @@ for &lt;code&gt;require&lt;/code&gt; followed by a &lt;code&gt;refer&lt;/code&gt
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  )
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/debug-and-troubleshooting/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/debug-and-troubleshooting/</guid>
       <description>&lt;h3 id=&#34;print-data-structures-so-as-to-preserve-quotation-quotes&#34;&gt;print data structures so as to preserve quotation (quotes)&lt;/h3&gt;
 &lt;ul&gt;
@@ -513,12 +497,10 @@ for &lt;code&gt;require&lt;/code&gt; followed by a &lt;code&gt;refer&lt;/code&gt
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nil
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/devops-and-environment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/devops-and-environment/</guid>
       <description>&lt;h3 id=&#34;dependencies-and-the-repl&#34;&gt;Dependencies and the repl&lt;/h3&gt;
 &lt;ul&gt;
@@ -538,12 +520,10 @@ downloads required dependencies and makes them useable for in the project.&lt;/p
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/dynamodb/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/dynamodb/</guid>
       <description>&lt;h3 id=&#34;list-tables&#34;&gt;list tables,&lt;/h3&gt;
 &lt;ul&gt;
@@ -578,12 +558,10 @@ boot.user=&amp;gt; (dynamo/list-tables db/client-config)
 &lt;li&gt;
 &lt;p&gt;to get this &lt;code&gt;env&lt;/code&gt; part to work, I didnt see any way to set the env vars in clojure, so I just set them on my shell,&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/file-io/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/file-io/</guid>
       <description>&lt;p&gt;read&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;clojure.java.io&lt;/span&gt;)
@@ -596,12 +574,10 @@ boot.user=&amp;gt; (dynamo/list-tables db/client-config)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (&lt;span style=&#34;color:#a6e22e&#34;&gt;.write&lt;/span&gt; wrtr &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Line to be written&amp;#34;&lt;/span&gt;))
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/futures-promises/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/futures-promises/</guid>
       <description>&lt;h3 id=&#34;sleeping&#34;&gt;sleeping&amp;hellip;&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;Thread/sleep&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4000&lt;/span&gt;)
@@ -877,12 +853,10 @@ boot.user=&amp;gt; (dynamo/list-tables db/client-config)
 &lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/http-kit-and-timeouts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/http-kit-and-timeouts/</guid>
       <description>&lt;h3 id=&#34;test-http-kit-timeout&#34;&gt;test &lt;code&gt;http-kit&lt;/code&gt; timeout..&lt;/h3&gt;
 &lt;ul&gt;
@@ -943,12 +917,10 @@ boot.user=&amp;gt; (dynamo/list-tables db/client-config)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user=&amp;gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/interesting-exceptions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/interesting-exceptions/</guid>
       <description>&lt;h4 id=&#34;class-cast-exception&#34;&gt;class cast exception&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;clojure.lang.LazySeq cannot be cast to clojure.lang.IFn
@@ -956,12 +928,10 @@ boot.user=&amp;gt; (dynamo/list-tables db/client-config)
 &lt;li&gt;=&amp;gt; some code is expecting a function, but is getting a LazySeq.&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/io-and-streams/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/io-and-streams/</guid>
       <description>&lt;h3 id=&#34;amazonica-and-s3&#34;&gt;Amazonica and s3&lt;/h3&gt;
 &lt;ul&gt;
@@ -985,12 +955,10 @@ with the the &lt;code&gt;:input-stream&lt;/code&gt; parameter of the &lt;code&gt
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/library-and-reference/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/library-and-reference/</guid>
       <description>&lt;h4 id=&#34;logging&#34;&gt;logging,&lt;/h4&gt;
 &lt;ul&gt;
@@ -1007,12 +975,10 @@ with the the &lt;code&gt;:input-stream&lt;/code&gt; parameter of the &lt;code&gt
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;() &lt;span style=&#34;color:#75715e&#34;&gt;; do stuff)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/like-zip-in-clojure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/like-zip-in-clojure/</guid>
       <description>&lt;h4 id=&#34;i-am-used-to-pythons-zip&#34;&gt;I am used to python&amp;rsquo;s zip&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;zip([&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;], [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;b&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;c&amp;#39;&lt;/span&gt;])
@@ -1044,12 +1010,10 @@ with the the &lt;code&gt;:input-stream&lt;/code&gt; parameter of the &lt;code&gt
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user=&amp;gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/more-on-namespaces/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/more-on-namespaces/</guid>
       <description>&lt;h3 id=&#34;-if-on-a-repl-but-wanting-to-simulate-a-namespace-ns-in-a-project-file&#34;&gt;? If on a repl, but wanting to simulate a namespace &lt;code&gt;ns&lt;/code&gt; in a project file&lt;/h3&gt;
 &lt;ul&gt;
@@ -1109,12 +1073,10 @@ with the the &lt;code&gt;:input-stream&lt;/code&gt; parameter of the &lt;code&gt
 &lt;li&gt;So here, &lt;code&gt;&#39;org.httpkit.client&lt;/code&gt; is a symbol and not a variable like &lt;code&gt;org.httpkit.client&lt;/code&gt; .&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/oh-plotting-cool/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/oh-plotting-cool/</guid>
       <description>&lt;h2 id=&#34;from-clojure-for-machine-learnings&#34;&gt;from clojure for machine learnings..&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;defn &lt;/span&gt;plot-points
@@ -1149,23 +1111,19 @@ with the the &lt;code&gt;:input-stream&lt;/code&gt; parameter of the &lt;code&gt
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;             
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/todo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/todo/</guid>
       <description>&lt;p&gt;port my notes from here &lt;a href=&#34;https://gist.github.com/namoopsoo/fa903799b958ffc9f279cd293e83e9d9&#34;&gt;https://gist.github.com/namoopsoo/fa903799b958ffc9f279cd293e83e9d9&lt;/a&gt;
 and here &lt;a href=&#34;https://gist.github.com/namoopsoo/df08c674b4e3e4794e97601682242c51&#34;&gt;https://gist.github.com/namoopsoo/df08c674b4e3e4794e97601682242c51&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;and here &lt;a href=&#34;https://gist.github.com/namoopsoo/607f29e923ceaba890588e69293413cf&#34;&gt;https://gist.github.com/namoopsoo/607f29e923ceaba890588e69293413cf&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/tools.trace-debugging-and-stack-trace/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/tools.trace-debugging-and-stack-trace/</guid>
       <description>&lt;h3 id=&#34;toolstrace-debugging-exceptions-and-stack-trace&#34;&gt;tools.trace debugging exceptions and stack trace&lt;/h3&gt;
 &lt;ul&gt;
@@ -1175,12 +1133,10 @@ and here &lt;a href=&#34;https://gist.github.com/namoopsoo/df08c674b4e3e4794e976
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user=&amp;gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;clojure.tools.trace&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/clojure/unit-testing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/clojure/unit-testing/</guid>
       <description>&lt;h3 id=&#34;hmm-using-is&#34;&gt;hmm&amp;hellip; using &lt;code&gt;is&lt;/code&gt;&lt;/h3&gt;
 &lt;ul&gt;
@@ -1209,33 +1165,27 @@ and here &lt;a href=&#34;https://gist.github.com/namoopsoo/df08c674b4e3e4794e976
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;lein test :only module-hmm.blah.test-file/test-foo
 &lt;/code&gt;&lt;/pre&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/databricks-spark/dbutils-notebook-run-and-global-temp-view/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/databricks-spark/dbutils-notebook-run-and-global-temp-view/</guid>
       <description>&lt;h3 id=&#34;passing-large-dataframes-with-dbutilsnotebookrun-&#34;&gt;Passing large dataframes with dbutils.notebook.run !&lt;/h3&gt;
 &lt;p&gt;At one point when migrating databricks notebooks to be useable purely with &lt;code&gt;dbutils.notebook.run&lt;/code&gt;, the question came up, hey &lt;code&gt;dbutils.notebook.run&lt;/code&gt; is a great way of calling notebooks explicitly, avoiding global variables that make code difficult to lint and debug, but what about spark dataframes?&lt;/p&gt;
 &lt;p&gt;I had come across this  &lt;a href=&#34;https://docs.databricks.com/notebooks/notebook-workflows.html#pass-structured-data&#34;&gt;https://docs.databricks.com/notebooks/notebook-workflows.html#pass-structured-data&lt;/a&gt; nice bit of documentation about using the spark global temp view to handle name references to nicely shuttle around dataframes by reference, given that a caller notebook and a callee notebook share a JVM and theoretically this is instantaneous.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/databricks-spark/join-merge-parquet/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/databricks-spark/join-merge-parquet/</guid>
       <description>&lt;h3 id=&#34;comparing-really-large-spark-dataframes&#34;&gt;comparing really large spark dataframes&lt;/h3&gt;
 &lt;p&gt;I had this usecase where I wanted to be able to check if very large multi-million row and multi-thousand column dataframes were equal, but the advice online about using &lt;code&gt;df1.subtract(df2)&lt;/code&gt; just was not cutting it because it was just too slow. It seems to me the &lt;code&gt;df1.subtract(df2)&lt;/code&gt; approach more or less is a &lt;code&gt;O(n^2)&lt;/code&gt; approach where it is necessary to compare each row in &lt;code&gt;df1&lt;/code&gt; with each row in &lt;code&gt;df2&lt;/code&gt;. Instead I was wondering, hey if there are known index columns in these dataframes, maybe we can cheat a little and join them first and then do the comparison after joining them.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/databricks-spark/rules-of-widgets/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/databricks-spark/rules-of-widgets/</guid>
       <description>&lt;h3 id=&#34;my-rules-of-text-dbutilswidgets&#34;&gt;My Rules of text &lt;code&gt;dbutils.widgets&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;(0) Reading a widget that does not exist results in&lt;/p&gt;
@@ -1250,12 +1200,10 @@ name, with&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;. However, if a widget was set in cell1, then cell2
 cannot both remove and reset the widget. This will surprisingly have no effect!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/docker/hmm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/docker/hmm/</guid>
       <description>&lt;h3 id=&#34;do-a-build&#34;&gt;Do a build&lt;/h3&gt;
 &lt;ul&gt;
@@ -1277,12 +1225,10 @@ docker run -d=false  -i -t ad6576e
 &lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;if-you-need-your-container-to-have-your-aws-creds&#34;&gt;If you need your container to have your aws creds&lt;/h4&gt;
 &lt;p&gt;Nice hack is to map the &amp;ldquo;root&amp;rdquo; user of your container &lt;code&gt;.aws&lt;/code&gt; directory&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/eda/f_test_statistic/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/eda/f_test_statistic/</guid>
       <description>&lt;h4 id=&#34;f-test-statistic-to-evaluate-the-features&#34;&gt;F test statistic to evaluate the features&lt;/h4&gt;
 &lt;ul&gt;
@@ -1340,12 +1286,10 @@ docker run -d=false  -i -t ad6576e
 [2] &lt;a href=&#34;https://scikit-learn.org/stable/auto_examples/feature_selection/plot_f_test_vs_mi.html&#34;&gt;https://scikit-learn.org/stable/auto_examples/feature_selection/plot_f_test_vs_mi.html&lt;/a&gt;
 [3] &lt;a href=&#34;https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.f_classif.html#sklearn.feature_selection.f_classif&#34;&gt;https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.f_classif.html#sklearn.feature_selection.f_classif&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/eda/variable_independence_techniques/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/eda/variable_independence_techniques/</guid>
       <description>&lt;p&gt;Appreciate &lt;a href=&#34;https://stackabuse.com/statistical-hypothesis-analysis-in-python-with-anovas-chi-square-and-pearson-correlation/&#34;&gt;this post&lt;/a&gt; on helping to choose between a few available tests in determining if there are meaningful relationships between feature data. In particular,&lt;/p&gt;
 &lt;ul&gt;
@@ -1359,24 +1303,20 @@ docker run -d=false  -i -t ad6576e
 &lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/git/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/git/</guid>
       <description>&lt;h4 id=&#34;get-the-parents-of-a-blah-branch&#34;&gt;get the parents of a &lt;code&gt;&amp;lt;blah-branch&amp;gt;&lt;/code&gt;&lt;/h4&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git rev-list --parents &amp;lt;blah-commit&amp;gt;
 beaaaafffff1111111111111111111 fe0000aaaad111111111111111
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;One of them will typically be the hash of &lt;code&gt;&amp;lt;blah-branch&amp;gt;&lt;/code&gt; itself&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/model/dummy_baseline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/model/dummy_baseline/</guid>
       <description>&lt;h3 id=&#34;super-cool-model-baseline-technique&#34;&gt;Super cool model baseline technique&lt;/h3&gt;
 &lt;p&gt;From scikitlearn, this is a super cool way of getting a baseline. In the past I had done this majority class assignment manually. But it is super cool this is kind of built in.&lt;/p&gt;
@@ -1389,12 +1329,10 @@ beaaaafffff1111111111111111111 fe0000aaaad111111111111111
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dummy_clf&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score(X_test, y_test)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/model/hugging-face/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/model/hugging-face/</guid>
       <description>&lt;h3 id=&#34;mainly-notes-from-reaading-the-natural-language-processing-with-transformers-book&#34;&gt;Mainly notes from reaading the Natural Language Processing with Transformers book&lt;/h3&gt;
 &lt;p&gt;Really nice book! I have the urge to write down for myself some snippets so I can more easily refer to them later.&lt;/p&gt;
@@ -1427,22 +1365,18 @@ beaaaafffff1111111111111111111 fe0000aaaad111111111111111
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;##p&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;[SEP]&amp;#39;&lt;/span&gt;]
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And finally&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/model/loss/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/model/loss/</guid>
       <description>&lt;h4 id=&#34;loss-functions-vs-metric-functions&#34;&gt;Loss functions vs Metric functions&lt;/h4&gt;
 &lt;p&gt;I like the phrasing in this &lt;a href=&#34;https://datascience.stackexchange.com/a/47012/74450&#34;&gt;SO&lt;/a&gt; answer, that loss functions are &lt;em&gt;optimized directly&lt;/em&gt; when training but that metrics are &lt;em&gt;optimized indirectly.&lt;/em&gt; I was trying to figure out last year why functions commonly used as metrics (F1 and AUC) are not listed in the tensor flow &lt;a href=&#34;https://keras.io/api/losses/&#34;&gt;keras loss functions&lt;/a&gt; . I did however &lt;a href=&#34;https://github.com/namoopsoo/aviation-pilot-physiology-hmm/blob/master/notes/2019-06-23-today.md&#34;&gt;earlier&lt;/a&gt; try using F1 as a loss function when trying to understand my particular problem. &lt;em&gt;(At least one error I ran into hints that it is not that simplle because you need to write extra code for computing the gradient.)&lt;/em&gt; But even if you can produce the code to compute a gradient for your custom loss function, maybe some metrics are more expensive to run  SGD than others. (Also F1 is clearly less sensitive than a function that uses probabilities or logits directly) .&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/model/metrics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/model/metrics/</guid>
       <description>&lt;h3 id=&#34;tpr-fpr&#34;&gt;TPR, FPR&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tpr &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1.0&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;TP&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;(FN &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; TP) &lt;span style=&#34;color:#75715e&#34;&gt;# aka recall&lt;/span&gt;
@@ -1458,38 +1392,36 @@ beaaaafffff1111111111111111111 fe0000aaaad111111111111111
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;predictions&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;False&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;True&lt;/th&gt;
+          &lt;th&gt;predictions&lt;/th&gt;
+          &lt;th&gt;False&lt;/th&gt;
+          &lt;th&gt;True&lt;/th&gt;
       &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;actual&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td&gt;actual&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;0&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;509&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;132&lt;/td&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td&gt;509&lt;/td&gt;
+          &lt;td&gt;132&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;1&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;32&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;22&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;32&lt;/td&gt;
+          &lt;td&gt;22&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h4 id=&#34;also-there-is-a-super-nice-helper-in-scikitlearn&#34;&gt;Also there is a super nice helper in scikitlearn&lt;/h4&gt;
 &lt;p&gt;Below, using some pre-baked results from running some of the chapter 2 code from &lt;a href=&#34;https://transformersbook.com/&#34;&gt;https://transformersbook.com/&lt;/a&gt; .&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/model/pipeline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/model/pipeline/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;One particularly killer feature about the &lt;code&gt;ColumnTransformer&lt;/code&gt; is that you can apply a specific preprocessor for a subset of the columns, and then set &lt;code&gt;remainder=&amp;quot;passthrough&amp;quot;&lt;/code&gt; for the others&lt;/li&gt;
@@ -1610,12 +1542,10 @@ beaaaafffff1111111111111111111 fe0000aaaad111111111111111
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/model/quick/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/model/quick/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; sklearn.datasets &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; load_iris
@@ -1741,12 +1671,10 @@ utils.class_weight.compute_sample_weight()
 &lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;other-handy-references&#34;&gt;Other handy references&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://ml-cheatsheet.readthedocs.io/&#34;&gt;https://ml-cheatsheet.readthedocs.io/&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/model/spark/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/model/spark/</guid>
       <description>&lt;h4 id=&#34;read&#34;&gt;Read&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;loc &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;dbfs:/databricks-datasets/wine-quality/winequality-red.csv&amp;#34;&lt;/span&gt;
@@ -1789,12 +1717,10 @@ Here imagine there is a column , &amp;ldquo;_c0&amp;rdquo; which has tab separat
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;quick-spark-ml-lib-logistic-regression-pipeline&#34;&gt;Quick Spark ml lib Logistic Regression Pipeline&lt;/h4&gt;
 &lt;p&gt;Given a dataframe with features you would like to use/transform in a LogisticRegression, similarly to sklearn taking an input without feature names, the spark flavor does the same, taking a single column for the input features.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/model/uncertainty/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/model/uncertainty/</guid>
       <description>&lt;h4 id=&#34;meanstd-technique-for-xgboostrandom-forest-type-models&#34;&gt;mean/std technique For xgboost/random forest type models&lt;/h4&gt;
 &lt;ul&gt;
@@ -1808,12 +1734,10 @@ Here imagine there is a column , &amp;ldquo;_c0&amp;rdquo; which has tab separat
 &lt;li&gt;&lt;a href=&#34;https://towardsdatascience.com/regression-prediction-intervals-with-xgboost-428e0a018b&#34;&gt;intervals&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/model/variance_inflation_factor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/model/variance_inflation_factor/</guid>
       <description>&lt;h4 id=&#34;initial-stab-on-interpreting-variance-inflation-factor-vif&#34;&gt;Initial stab on interpreting Variance inflation factor (VIF)&lt;/h4&gt;
 &lt;p&gt;So far my skim on &lt;a href=&#34;https://en.wikipedia.org/wiki/Variance_inflation_factor&#34;&gt;https://en.wikipedia.org/wiki/Variance_inflation_factor&lt;/a&gt; and &lt;a href=&#34;https://en.wikipedia.org/wiki/Multicollinearity&#34;&gt;https://en.wikipedia.org/wiki/Multicollinearity&lt;/a&gt;   tells me that high Variance Inflation Factor (VIF) indicates high multicolinearity w/ one or more other independent variables. And that’s bad because&lt;/p&gt;
@@ -1821,12 +1745,10 @@ Here imagine there is a column , &amp;ldquo;_c0&amp;rdquo; which has tab separat
 &lt;li&gt;
 &lt;p&gt;(a) when building a linear model (at least using ordinary least squares (OLS) , not yet sure if this is still true if you use regularization ) , the coefficients calculated for the independent variables can change “erratically” given slightly different data .&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/new_laptop_setup/ssh/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/new_laptop_setup/ssh/</guid>
       <description>&lt;h4 id=&#34;create-new-ssh-key&#34;&gt;Create New ssh key&lt;/h4&gt;
 &lt;p&gt;With &lt;code&gt;ssh-keygen&lt;/code&gt;, w/ a pass phrase too.&lt;/p&gt;
@@ -1842,12 +1764,10 @@ Here imagine there is a column , &amp;ldquo;_c0&amp;rdquo; which has tab separat
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh-add --apple-load-keychain ~/.ssh/path/to/private/key
 &lt;/code&gt;&lt;/pre&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/new_laptop_setup/virtual_envs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/new_laptop_setup/virtual_envs/</guid>
       <description>&lt;p&gt;Nice that now python has this built in method for creating virtual environments per &lt;a href=&#34;https://docs.python.org/3/library/venv.html&#34;&gt;docs&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# like this &lt;/span&gt;
@@ -1859,12 +1779,10 @@ Here imagine there is a column , &amp;ldquo;_c0&amp;rdquo; which has tab separat
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pip install scikit-learn scikit-learn pandas ipdb ipython matplotlib tqdm colormap easydev 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/plot/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/plot/</guid>
       <description>&lt;h4 id=&#34;histogram-overlays&#34;&gt;histogram overlays&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Nice technique from https://srome.github.io/Covariate-Shift,-i.e.-Why-Prediction-Quality-Can-Degrade-In-Production-and-How-To-Fix-It/ &lt;/span&gt;
@@ -2170,12 +2088,10 @@ so basically the count starts at &lt;code&gt;0&lt;/code&gt; from the upper left 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;savefig(loc)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/python/concurrent_futures/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/python/concurrent_futures/</guid>
       <description>&lt;h3 id=&#34;concurrentfutures&#34;&gt;concurrent.futures&lt;/h3&gt;
 &lt;p&gt;Recently at work I needed to add retry logic to some code that was using the &lt;code&gt;concurrent&lt;/code&gt; python library.&lt;/p&gt;
@@ -2244,12 +2160,10 @@ so basically the count starts at &lt;code&gt;0&lt;/code&gt; from the upper left 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            print(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;we are now &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;len(final_results)&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; out of &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;len(URLS)&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;with the output&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/python/dotenv/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/python/dotenv/</guid>
       <description>&lt;h4 id=&#34;environmental-variable-local-injection&#34;&gt;environmental variable local injection&lt;/h4&gt;
 &lt;ul&gt;
@@ -2265,12 +2179,10 @@ so basically the count starts at &lt;code&gt;0&lt;/code&gt; from the upper left 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;getenv(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;FOO&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#75715e&#34;&gt;# =&amp;gt; &amp;#39;hi&amp;#39;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/python/fano/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/python/fano/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
@@ -2307,12 +2219,10 @@ so basically the count starts at &lt;code&gt;0&lt;/code&gt; from the upper left 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://user-images.githubusercontent.com/2048242/50387562-46f47900-06cd-11e9-8e60-25481624b99c.png&#34; alt=&#34;image&#34;  /&gt;
 &lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/python/poormans_pomodoro/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/python/poormans_pomodoro/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; sys
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; time 
@@ -2334,12 +2244,10 @@ so basically the count starts at &lt;code&gt;0&lt;/code&gt; from the upper left 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And choose any &lt;code&gt;logfile&lt;/code&gt; location and any &lt;code&gt;tag&lt;/code&gt; ..&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/python/profiling/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/python/profiling/</guid>
       <description>&lt;h4 id=&#34;line-profiler&#34;&gt;line profiler&lt;/h4&gt;
 &lt;ul&gt;
@@ -2406,12 +2314,10 @@ so basically the count starts at &lt;code&gt;0&lt;/code&gt; from the upper left 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;15&lt;/span&gt;        &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;1034899.0&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;103489.9&lt;/span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;100.0&lt;/span&gt;      time&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sleep(&lt;span style=&#34;color:#ae81ff&#34;&gt;.1&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/python/python2-to-3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/python/python2-to-3/</guid>
       <description>&lt;h3 id=&#34;what-the-what&#34;&gt;What the what&lt;/h3&gt;
 &lt;p&gt;Notes from after converting a project using the &lt;code&gt;2to3&lt;/code&gt;, of additional &lt;em&gt;gotchas&lt;/em&gt;&lt;/p&gt;
@@ -2649,12 +2555,10 @@ so basically the count starts at &lt;code&gt;0&lt;/code&gt; from the upper left 
 &lt;li&gt;To &lt;code&gt;from urllib.parse import urlparse&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/python/python_sql_helpers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/python/python_sql_helpers/</guid>
       <description>&lt;h2 id=&#34;generate-a-cte-from-a-local-csv-file&#34;&gt;Generate a CTE from a local csv file&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pandas &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; pd
@@ -2725,12 +2629,10 @@ so basically the count starts at &lt;code&gt;0&lt;/code&gt; from the upper left 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;x&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/python/search_muh_jsons/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/python/search_muh_jsons/</guid>
       <description>&lt;h4 id=&#34;search-and-return-json-paths&#34;&gt;Search and return json paths&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;substring_exists_lower&lt;/span&gt;(substring, string):
@@ -2768,12 +2670,10 @@ so basically the count starts at &lt;code&gt;0&lt;/code&gt; from the upper left 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;find_term(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;name&amp;#39;&lt;/span&gt;, {}, found)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/python/sentry-io-api/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/python/sentry-io-api/</guid>
       <description>&lt;h4 id=&#34;fetch-all-events-for-an-issue-like-this&#34;&gt;Fetch all events for an issue like this&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;issue &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;12345678&amp;#34;&lt;/span&gt;
@@ -2835,12 +2735,10 @@ so basically the count starts at &lt;code&gt;0&lt;/code&gt; from the upper left 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/python/with_context_manager/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/python/with_context_manager/</guid>
       <description>&lt;h4 id=&#34;enter-and-exit&#34;&gt;enter and exit&lt;/h4&gt;
 &lt;ul&gt;
@@ -2887,12 +2785,10 @@ so basically the count starts at &lt;code&gt;0&lt;/code&gt; from the upper left 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;  
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/python/write_glom/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/python/write_glom/</guid>
       <description>&lt;p&gt;Glom does not let you write or at least I couldnt figure out how. Tinkering with a spec based writer&amp;hellip;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; glom &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; glom, PathAccessError
@@ -2943,12 +2839,10 @@ so basically the count starts at &lt;code&gt;0&lt;/code&gt; from the upper left 
 &lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/python/zip/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/python/zip/</guid>
       <description>&lt;h4 id=&#34;for-targz&#34;&gt;for tar.gz&lt;/h4&gt;
 &lt;p&gt;Assuming we have a func &lt;code&gt;read_from_s3&lt;/code&gt; that reads from s3&amp;hellip;&lt;/p&gt;
@@ -2967,12 +2861,10 @@ so basically the count starts at &lt;code&gt;0&lt;/code&gt; from the upper left 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  foo &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; zip_archive&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;some/file.txt&amp;#39;&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/rc/readme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/rc/readme/</guid>
       <description>&lt;h3 id=&#34;macvim&#34;&gt;Macvim&lt;/h3&gt;
 &lt;ul&gt;
@@ -3007,23 +2899,19 @@ git clone git@github.com:lifepillar/vim-solarized8.git
 &lt;li&gt;Vim doesnt know about &amp;ldquo;terraform&amp;rdquo; files like &lt;code&gt;.tf&lt;/code&gt; and &lt;a href=&#34;https://github.com/hashivim/vim-terraform&#34;&gt;the hashivim github&lt;/a&gt; helps with that. &lt;code&gt;vim-terraform&lt;/code&gt; actually has a magical &lt;code&gt;:TerraformFmt&lt;/code&gt; command that inspects the syntax of your &lt;code&gt;.tf&lt;/code&gt; file too.&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/rc/zsh/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/rc/zsh/</guid>
       <description>&lt;h4 id=&#34;add-reverse-lookup-to-zsh&#34;&gt;Add reverse lookup to zsh&lt;/h4&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;bindkey &amp;#39;^R&amp;#39; history-incremental-search-backward
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;( read on Stack Exchange &amp;gt; Unix&amp;amp;Linux &amp;gt; &amp;ldquo;How to enable reverse search in zsh?&amp;rdquo;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/shell/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/shell/</guid>
       <description>&lt;h4 id=&#34;edit-files-in-place&#34;&gt;Edit files in place&lt;/h4&gt;
 &lt;ul&gt;
@@ -3046,12 +2934,10 @@ MD5 (./en/post/2021-01-23-spark-weekend.md) = 5534f81599860e239340b41ffa5aee09
 MD5 (./posts/2021-01-23-spark-weekend.md) = 5534f81599860e239340b41ffa5aee09
 &lt;/code&gt;&lt;/pre&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/sql/date_range_builder/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/sql/date_range_builder/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; datetime
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
@@ -3136,12 +3022,10 @@ MD5 (./posts/2021-01-23-spark-weekend.md) = 5534f81599860e239340b41ffa5aee09
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# &amp;#39; ( (year = 2021 AND month = 4 AND day &amp;gt;= 29) OR (year = 2021 AND month = 5) OR (year = 2021 AND month = 6) OR (year = 2021 AND month = 7) OR (year = 2021 AND month = 8) OR (year = 2021 AND month = 9) OR (year = 2021 AND month = 10) OR (year = 2021 AND month = 11) OR (year = 2021 AND month = 12) OR (year = 2022 AND month = 1) OR (year = 2022 AND month = 2) OR (year = 2022 AND month = 3) OR (year = 2022 AND month = 4) OR (year = 2022 AND month = 5 AND day &amp;lt;= 5) ) &amp;#39;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/sql/hmm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/sql/hmm/</guid>
       <description>&lt;h4 id=&#34;list-indexes&#34;&gt;List indexes&lt;/h4&gt;
 &lt;ul&gt;
@@ -3230,12 +3114,10 @@ MD5 (./posts/2021-01-23-spark-weekend.md) = 5534f81599860e239340b41ffa5aee09
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;UndefinedFunction: function round(double precision, integer) does not exist
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And surely enough after reading the &lt;a href=&#34;https://www.postgresql.org/docs/9.6/functions-math.html&#34;&gt;docs&lt;/a&gt; , oddly enough &lt;code&gt;round&lt;/code&gt; with precision is only defined for &lt;code&gt;numeric&lt;/code&gt; and not &lt;code&gt;float8&lt;/code&gt; (aka &lt;code&gt;double precision&lt;/code&gt;). After casting to &lt;code&gt;numeric&lt;/code&gt; my result of &lt;code&gt;round(table1.col1::numeric, 3) = round(table2.col1::numeric, 3)&lt;/code&gt; was &lt;code&gt;0.990&lt;/code&gt;. Can dig deeper about the implementation later!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/sql/ilike/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/sql/ilike/</guid>
       <description>&lt;p&gt;Interesting&lt;/p&gt;
 &lt;blockquote&gt;
@@ -3243,12 +3125,10 @@ MD5 (./posts/2021-01-23-spark-weekend.md) = 5534f81599860e239340b41ffa5aee09
 &lt;/blockquote&gt;
 &lt;p&gt;per &lt;a href=&#34;https://www.postgresql.org/docs/7.3/functions-matching.html&#34;&gt;7.3 doc&lt;/a&gt;. not sure if outdated&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/sql/is_equal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/sql/is_equal/</guid>
       <description>&lt;p&gt;Good to know.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
@@ -3299,12 +3179,10 @@ MD5 (./posts/2021-01-23-spark-weekend.md) = 5534f81599860e239340b41ffa5aee09
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;null_eq_null&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;}]
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/sql/time/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/sql/time/</guid>
       <description>&lt;h4 id=&#34;subtract-intervals-from-dates&#34;&gt;subtract intervals from dates&lt;/h4&gt;
 &lt;p&gt;although in postgresql you can freely add/subtract dates/timestamps and intervals,&lt;/p&gt;
@@ -3318,12 +3196,10 @@ MD5 (./posts/2021-01-23-spark-weekend.md) = 5534f81599860e239340b41ffa5aee09
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;DATEDIFF(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;2021-01-01&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;2021-05-01&amp;#39;&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/sql/user_management/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/sql/user_management/</guid>
       <description>&lt;h4 id=&#34;create-a-new-user&#34;&gt;Create a new user&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;username &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;new_user_foo&amp;#39;&lt;/span&gt;
@@ -3369,24 +3245,22 @@ MD5 (./posts/2021-01-23-spark-weekend.md) = 5534f81599860e239340b41ffa5aee09
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;tablename&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;tableowner&lt;/th&gt;
+          &lt;th&gt;tablename&lt;/th&gt;
+          &lt;th&gt;tableowner&lt;/th&gt;
       &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;footable&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;foouser&lt;/td&gt;
+          &lt;td&gt;footable&lt;/td&gt;
+          &lt;td&gt;foouser&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/sql/zero_fill_dates/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/sql/zero_fill_dates/</guid>
       <description>&lt;h3 id=&#34;lpad-is-the-func-to-make-sure-a-month-is-always-two-digits-as-an-example&#34;&gt;&lt;code&gt;lpad&lt;/code&gt; is the func to make sure a month is always two digits as an example.&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
@@ -3403,76 +3277,74 @@ MD5 (./posts/2021-01-23-spark-weekend.md) = 5534f81599860e239340b41ffa5aee09
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;yearmonth&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;count&lt;/th&gt;
+          &lt;th&gt;yearmonth&lt;/th&gt;
+          &lt;th&gt;count&lt;/th&gt;
       &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202005&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;5208&lt;/td&gt;
+          &lt;td&gt;202005&lt;/td&gt;
+          &lt;td&gt;5208&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202006&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;8584&lt;/td&gt;
+          &lt;td&gt;202006&lt;/td&gt;
+          &lt;td&gt;8584&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202007&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;7780&lt;/td&gt;
+          &lt;td&gt;202007&lt;/td&gt;
+          &lt;td&gt;7780&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202008&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;5382&lt;/td&gt;
+          &lt;td&gt;202008&lt;/td&gt;
+          &lt;td&gt;5382&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202009&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;3635&lt;/td&gt;
+          &lt;td&gt;202009&lt;/td&gt;
+          &lt;td&gt;3635&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202010&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;2791&lt;/td&gt;
+          &lt;td&gt;202010&lt;/td&gt;
+          &lt;td&gt;2791&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202011&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;1284&lt;/td&gt;
+          &lt;td&gt;202011&lt;/td&gt;
+          &lt;td&gt;1284&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202012&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;2704&lt;/td&gt;
+          &lt;td&gt;202012&lt;/td&gt;
+          &lt;td&gt;2704&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202101&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;2416&lt;/td&gt;
+          &lt;td&gt;202101&lt;/td&gt;
+          &lt;td&gt;2416&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202102&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;1964&lt;/td&gt;
+          &lt;td&gt;202102&lt;/td&gt;
+          &lt;td&gt;1964&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202103&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;2554&lt;/td&gt;
+          &lt;td&gt;202103&lt;/td&gt;
+          &lt;td&gt;2554&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202104&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;2935&lt;/td&gt;
+          &lt;td&gt;202104&lt;/td&gt;
+          &lt;td&gt;2935&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202105&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;2909&lt;/td&gt;
+          &lt;td&gt;202105&lt;/td&gt;
+          &lt;td&gt;2909&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;202106&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;160&lt;/td&gt;
+          &lt;td&gt;202106&lt;/td&gt;
+          &lt;td&gt;160&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/ssh/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/ssh/</guid>
       <description>&lt;h3 id=&#34;checking-sha256&#34;&gt;Checking sha256&lt;/h3&gt;
 &lt;h4 id=&#34;for-older-versions-of-sshd&#34;&gt;For older versions of sshd&lt;/h4&gt;
@@ -3481,12 +3353,10 @@ MD5 (./posts/2021-01-23-spark-weekend.md) = 5534f81599860e239340b41ffa5aee09
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh-keygen -l -f key.pub -E (sha256|md5)
 &lt;/code&gt;&lt;/pre&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/tools/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/tools/</guid>
       <description>&lt;h4 id=&#34;ag-the-silver-searcher&#34;&gt;ag the silver searcher&lt;/h4&gt;
 &lt;ul&gt;
@@ -3528,12 +3398,10 @@ MD5 (./posts/2021-01-23-spark-weekend.md) = 5534f81599860e239340b41ffa5aee09
 &lt;li&gt;
 &lt;p&gt;Even &lt;code&gt;--toc, --table-of-contents&lt;/code&gt;  , &lt;code&gt;--toc-depth=NUMBER&lt;/code&gt;  , for automatic table of contents.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://michal.piekarczyk.xyz/handy/wireshark/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/handy/wireshark/</guid>
       <description>&lt;h4 id=&#34;packet-capture-filters&#34;&gt;packet capture filters&lt;/h4&gt;
 &lt;ul&gt;
@@ -3553,6 +3421,5 @@ MD5 (./posts/2021-01-23-spark-weekend.md) = 5534f81599860e239340b41ffa5aee09
 &lt;li&gt;Maybe I can&amp;rsquo;t see the low level 802.11 control packets/frames somehow.&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
   </channel>
 </rss>

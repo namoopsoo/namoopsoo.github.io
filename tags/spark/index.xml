@@ -4,14 +4,14 @@
     <title>Spark on michal.piekarczyk.xyz</title>
     <link>https://michal.piekarczyk.xyz/tags/spark/</link>
     <description>Recent content in Spark on michal.piekarczyk.xyz</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.138.0</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/tags/spark/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Feb 2023 18:33:54 -0500</lastBuildDate>
+    <atom:link href="https://michal.piekarczyk.xyz/tags/spark/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Trying Databricks</title>
       <link>https://michal.piekarczyk.xyz/post/2021-03-20-databricks/</link>
       <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2021-03-20-databricks/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://databricks.com/try-databricks&#34;&gt;https://databricks.com/try-databricks&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;2021-03-21&#34;&gt;2021-03-21&lt;/h3&gt;
@@ -48,71 +48,71 @@
 &lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Column Name&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Description&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Type&lt;/th&gt;
+          &lt;th&gt;Column Name&lt;/th&gt;
+          &lt;th&gt;Description&lt;/th&gt;
+          &lt;th&gt;Type&lt;/th&gt;
       &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;cdc_case_earliest_dt&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Calculated date&amp;ndash;the earliest available date for the record, taken from either the available set of clinical dates (date related to the illness or specimen collection) or the calculated date representing initial date case was received by CDC. This variable is optimized for completeness and may change for a given record from time to time as new information is submitted about a case.&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Date &amp;amp; Time&lt;/td&gt;
+          &lt;td&gt;cdc_case_earliest_dt&lt;/td&gt;
+          &lt;td&gt;Calculated date&amp;ndash;the earliest available date for the record, taken from either the available set of clinical dates (date related to the illness or specimen collection) or the calculated date representing initial date case was received by CDC. This variable is optimized for completeness and may change for a given record from time to time as new information is submitted about a case.&lt;/td&gt;
+          &lt;td&gt;Date &amp;amp; Time&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;cdc_report_dt&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Calculated date representing initial date case was reported to CDC. Depreciated; CDC recommends researchers use cdc_case_earliest_dt in time series and other time-based analyses.&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Date &amp;amp; Time&lt;/td&gt;
+          &lt;td&gt;cdc_report_dt&lt;/td&gt;
+          &lt;td&gt;Calculated date representing initial date case was reported to CDC. Depreciated; CDC recommends researchers use cdc_case_earliest_dt in time series and other time-based analyses.&lt;/td&gt;
+          &lt;td&gt;Date &amp;amp; Time&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;pos_spec_dt&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Date of first positive specimen collection&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Date &amp;amp; Time&lt;/td&gt;
+          &lt;td&gt;pos_spec_dt&lt;/td&gt;
+          &lt;td&gt;Date of first positive specimen collection&lt;/td&gt;
+          &lt;td&gt;Date &amp;amp; Time&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;onset_dt&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Symptom onset date, if symptomatic&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Date &amp;amp; Time&lt;/td&gt;
+          &lt;td&gt;onset_dt&lt;/td&gt;
+          &lt;td&gt;Symptom onset date, if symptomatic&lt;/td&gt;
+          &lt;td&gt;Date &amp;amp; Time&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;current_status&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Case Status: Laboratory-confirmed case; Probable case&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Plain Text&lt;/td&gt;
+          &lt;td&gt;current_status&lt;/td&gt;
+          &lt;td&gt;Case Status: Laboratory-confirmed case; Probable case&lt;/td&gt;
+          &lt;td&gt;Plain Text&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;sex&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Sex: Male; Female; Unknown; Other&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Plain Text&lt;/td&gt;
+          &lt;td&gt;sex&lt;/td&gt;
+          &lt;td&gt;Sex: Male; Female; Unknown; Other&lt;/td&gt;
+          &lt;td&gt;Plain Text&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;age_group&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Age Group: 0 - 9 Years; 10 - 19 Years; 20 - 39 Years; 40 - 49 Years; 50 - 59 Years; 60 - 69 Years; 70 - 79 Years; 80 + Years&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Plain Text&lt;/td&gt;
+          &lt;td&gt;age_group&lt;/td&gt;
+          &lt;td&gt;Age Group: 0 - 9 Years; 10 - 19 Years; 20 - 39 Years; 40 - 49 Years; 50 - 59 Years; 60 - 69 Years; 70 - 79 Years; 80 + Years&lt;/td&gt;
+          &lt;td&gt;Plain Text&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;race_ethnicity_combined&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Race and ethnicity (combined): Hispanic/Latino; American Indian / Alaska Native, Non-Hispanic; Asian, Non-Hispanic; Black, Non-Hispanic; Native Hawaiian / Other Pacific Islander, Non-Hispanic; White, Non-Hispanic; Multiple/Other, Non-Hispanic&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Plain Text&lt;/td&gt;
+          &lt;td&gt;race_ethnicity_combined&lt;/td&gt;
+          &lt;td&gt;Race and ethnicity (combined): Hispanic/Latino; American Indian / Alaska Native, Non-Hispanic; Asian, Non-Hispanic; Black, Non-Hispanic; Native Hawaiian / Other Pacific Islander, Non-Hispanic; White, Non-Hispanic; Multiple/Other, Non-Hispanic&lt;/td&gt;
+          &lt;td&gt;Plain Text&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;hosp_yn&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Hospitalization status&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Plain Text&lt;/td&gt;
+          &lt;td&gt;hosp_yn&lt;/td&gt;
+          &lt;td&gt;Hospitalization status&lt;/td&gt;
+          &lt;td&gt;Plain Text&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;icu_yn&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;ICU admission status&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Plain Text&lt;/td&gt;
+          &lt;td&gt;icu_yn&lt;/td&gt;
+          &lt;td&gt;ICU admission status&lt;/td&gt;
+          &lt;td&gt;Plain Text&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;death_yn&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Death status&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Plain Text&lt;/td&gt;
+          &lt;td&gt;death_yn&lt;/td&gt;
+          &lt;td&gt;Death status&lt;/td&gt;
+          &lt;td&gt;Plain Text&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;medcond_yn&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Presence of underlying comorbidity or disease&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Plain Text&lt;/td&gt;
+          &lt;td&gt;medcond_yn&lt;/td&gt;
+          &lt;td&gt;Presence of underlying comorbidity or disease&lt;/td&gt;
+          &lt;td&gt;Plain Text&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -152,12 +152,10 @@
 &lt;li&gt;
 &lt;p&gt;Funny thing I was trying to run this cell in the databricks notebook but it would not run and no error was given. But the reason I am pretty sure is that no cluster was attached to the notebook.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Spark Weekend</title>
       <link>https://michal.piekarczyk.xyz/post/2021-01-23-spark-weekend/</link>
       <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2021-01-23-spark-weekend/</guid>
       <description>&lt;h3 id=&#34;trying-out-spark-this-weekend&#34;&gt;Trying out Spark this weekend&lt;/h3&gt;
 &lt;p&gt;&lt;em&gt;These are just my casual notes from doing that, updating them as I go along.&lt;/em&gt;&lt;/p&gt;
@@ -214,6 +212,5 @@ kubectl create clusterrolebinding spark-role --clusterrole=edit  --serviceaccoun
 &lt;li&gt;
 &lt;p&gt;Taking &lt;code&gt;4 minutes&lt;/code&gt; so far. Not sure how long this is meant to take haha.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

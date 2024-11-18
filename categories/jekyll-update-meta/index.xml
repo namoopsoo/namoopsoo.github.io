@@ -4,14 +4,14 @@
     <title>Jekyll Update Meta on michal.piekarczyk.xyz</title>
     <link>https://michal.piekarczyk.xyz/categories/jekyll-update-meta/</link>
     <description>Recent content in Jekyll Update Meta on michal.piekarczyk.xyz</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.138.0</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 30 May 2020 17:24:43 -0400</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/categories/jekyll-update-meta/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Feb 2023 18:33:54 -0500</lastBuildDate>
+    <atom:link href="https://michal.piekarczyk.xyz/categories/jekyll-update-meta/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Updates</title>
       <link>https://michal.piekarczyk.xyz/post/2020-05-30-trying-again/</link>
       <pubDate>Sat, 30 May 2020 17:24:43 -0400</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2020-05-30-trying-again/</guid>
       <description>&lt;h4 id=&#34;summary&#34;&gt;Summary&lt;/h4&gt;
 &lt;p&gt;I tried rebuilding today after 7 months of forgetting how this works and when I tried to &lt;code&gt;jekyll build&lt;/code&gt; I got&lt;/p&gt;
@@ -49,6 +49,5 @@ $
 &lt;li&gt;And now my &lt;code&gt;jekyll build&lt;/code&gt; worked!&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -4,25 +4,22 @@
     <title>The Foos on michal.piekarczyk.xyz</title>
     <link>https://michal.piekarczyk.xyz/foo/</link>
     <description>Recent content in The Foos on michal.piekarczyk.xyz</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://michal.piekarczyk.xyz/foo/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- 0.138.0</generator>
+    <language>en</language>
+    <atom:link href="https://michal.piekarczyk.xyz/foo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Amazingness</title>
       <link>https://michal.piekarczyk.xyz/foo/one/</link>
       <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/foo/one/</guid>
       <description>okay</description>
     </item>
-    
     <item>
       <title>Another</title>
       <link>https://michal.piekarczyk.xyz/foo/two/</link>
       <pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/foo/two/</guid>
       <description>oklay</description>
     </item>
-    
   </channel>
 </rss>

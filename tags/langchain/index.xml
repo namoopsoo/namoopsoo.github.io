@@ -4,14 +4,14 @@
     <title>Langchain on michal.piekarczyk.xyz</title>
     <link>https://michal.piekarczyk.xyz/tags/langchain/</link>
     <description>Recent content in Langchain on michal.piekarczyk.xyz</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.138.0</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 18 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/tags/langchain/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 May 2023 15:25:24 -0400</lastBuildDate>
+    <atom:link href="https://michal.piekarczyk.xyz/tags/langchain/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using langchain to interview myself about my skills</title>
       <link>https://michal.piekarczyk.xyz/post/2023-02-18-first-stab-langchain-interview-me/</link>
       <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-02-18-first-stab-langchain-interview-me/</guid>
       <description>&lt;h3 id=&#34;premise&#34;&gt;Premise&lt;/h3&gt;
 &lt;p&gt;Ok, got this half baked idea , combine my #brag-document with the available [[langchain]] QA chains into a proof of concept maybe I can call [[langchain interview me 2023-feb]]&lt;/p&gt;
@@ -63,12 +63,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;ok-let-me-run-now-some-of-the-basic-question-answer-chains&#34;&gt;Ok let me run now some of the basic question answer chains&lt;/h3&gt;
 &lt;p&gt;Use my environment from before,&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Quick lang chain test drive</title>
       <link>https://michal.piekarczyk.xyz/post/2023-01-29-lang-chain-quick-look/</link>
       <pubDate>Sun, 29 Jan 2023 21:02:57 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-01-29-lang-chain-quick-look/</guid>
       <description>&lt;h1 id=&#34;okay-let-me-try-that-lang-chain-demo&#34;&gt;Okay let me try that lang chain demo&lt;/h1&gt;
 &lt;ul&gt;
@@ -94,6 +92,5 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;ok-let-me-query&#34;&gt;Ok let me query&lt;/h3&gt;
 &lt;p&gt;the [[New yorker]] #article I added . I recently read [[The American Beast New Yorker]] this article by [[person Jill Lepore]] about the #report that was commissioned about the #[[January 6th Insurrection]] . I used my #iphone #scan-to-text feature to pull in the first page and a half to a text file, &lt;code&gt;article.txt&lt;/code&gt; to try this out . Let&amp;rsquo;s see how this works.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

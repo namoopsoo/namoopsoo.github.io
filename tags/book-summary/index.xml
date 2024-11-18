@@ -4,14 +4,14 @@
     <title>Book-Summary on michal.piekarczyk.xyz</title>
     <link>https://michal.piekarczyk.xyz/tags/book-summary/</link>
     <description>Recent content in Book-Summary on michal.piekarczyk.xyz</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.138.0</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 01 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/tags/book-summary/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Apr 2023 21:59:54 -0400</lastBuildDate>
+    <atom:link href="https://michal.piekarczyk.xyz/tags/book-summary/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Indistractable book summary</title>
       <link>https://michal.piekarczyk.xyz/post/2023-04-01--indistractable-book-summary/</link>
       <pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-04-01--indistractable-book-summary/</guid>
       <description>&lt;h2 id=&#34;draft-status&#34;&gt;Draft status&lt;/h2&gt;
 &lt;p&gt;Note haha, this is highly in draft mode, but I like to publish my early drafts because iterating is my preferred psychological happy place. But yea this is definitely not organized writing yet.&lt;/p&gt;
@@ -26,12 +26,10 @@
 &lt;h2 id=&#34;impact&#34;&gt;Impact&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;(TODO: rearrange this section, since lot of impact is still scattered below)&lt;/em&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>book How to Take Smart Notes</title>
       <link>https://michal.piekarczyk.xyz/post/2021-04-10-book-summary-how-to-take-smart-notes/</link>
       <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2021-04-10-book-summary-how-to-take-smart-notes/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;
@@ -54,12 +52,10 @@
 &lt;li&gt;
 &lt;p&gt;Impact&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Book Summary of The Practice</title>
       <link>https://michal.piekarczyk.xyz/post/2021-03-06-book-summary-the-practice/</link>
       <pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2021-03-06-book-summary-the-practice/</guid>
       <description>&lt;h3 id=&#34;reference&#34;&gt;Reference&lt;/h3&gt;
 &lt;ul&gt;
@@ -232,6 +228,5 @@
 &lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
   </channel>
 </rss>

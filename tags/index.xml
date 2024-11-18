@@ -4,323 +4,254 @@
     <title>Tags on michal.piekarczyk.xyz</title>
     <link>https://michal.piekarczyk.xyz/tags/</link>
     <description>Recent content in Tags on michal.piekarczyk.xyz</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.138.0</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 10 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Jun 2023 11:54:41 -0400</lastBuildDate>
+    <atom:link href="https://michal.piekarczyk.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Philosophy</title>
       <link>https://michal.piekarczyk.xyz/tags/philosophy/</link>
       <pubDate>Sat, 10 Jun 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/philosophy/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Vimeo</title>
       <link>https://michal.piekarczyk.xyz/tags/vimeo/</link>
       <pubDate>Sat, 10 Jun 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/vimeo/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Blog-Post</title>
       <link>https://michal.piekarczyk.xyz/tags/blog-post/</link>
       <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/blog-post/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Hmm</title>
       <link>https://michal.piekarczyk.xyz/tags/hmm/</link>
       <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/hmm/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Bash</title>
       <link>https://michal.piekarczyk.xyz/tags/bash/</link>
       <pubDate>Sat, 01 Apr 2023 16:24:51 -0500</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/bash/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Log-Seq</title>
       <link>https://michal.piekarczyk.xyz/tags/log-seq/</link>
       <pubDate>Sat, 01 Apr 2023 16:24:51 -0500</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/log-seq/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Book-Summary</title>
       <link>https://michal.piekarczyk.xyz/tags/book-summary/</link>
       <pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/book-summary/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Fasting</title>
       <link>https://michal.piekarczyk.xyz/tags/fasting/</link>
       <pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/fasting/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Nutrition</title>
       <link>https://michal.piekarczyk.xyz/tags/nutrition/</link>
       <pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/nutrition/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Jokes</title>
       <link>https://michal.piekarczyk.xyz/tags/jokes/</link>
       <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/jokes/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Langchain</title>
       <link>https://michal.piekarczyk.xyz/tags/langchain/</link>
       <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/langchain/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Openai</title>
       <link>https://michal.piekarczyk.xyz/tags/openai/</link>
       <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/openai/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Statistics</title>
       <link>https://michal.piekarczyk.xyz/tags/statistics/</link>
       <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/statistics/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Docker</title>
       <link>https://michal.piekarczyk.xyz/tags/docker/</link>
       <pubDate>Sat, 12 Nov 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/docker/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Tensorflow</title>
       <link>https://michal.piekarczyk.xyz/tags/tensorflow/</link>
       <pubDate>Sat, 12 Nov 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/tensorflow/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Citibike</title>
       <link>https://michal.piekarczyk.xyz/tags/citibike/</link>
       <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/citibike/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Stories</title>
       <link>https://michal.piekarczyk.xyz/tags/stories/</link>
       <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/stories/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Notebook</title>
       <link>https://michal.piekarczyk.xyz/tags/notebook/</link>
       <pubDate>Sun, 27 Jun 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/notebook/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Time-Series</title>
       <link>https://michal.piekarczyk.xyz/tags/time-series/</link>
       <pubDate>Sun, 27 Jun 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/time-series/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Desks</title>
       <link>https://michal.piekarczyk.xyz/tags/desks/</link>
       <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/desks/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Ergonomics</title>
       <link>https://michal.piekarczyk.xyz/tags/ergonomics/</link>
       <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/ergonomics/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Keto</title>
       <link>https://michal.piekarczyk.xyz/tags/keto/</link>
       <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/keto/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Recipe</title>
       <link>https://michal.piekarczyk.xyz/tags/recipe/</link>
       <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/recipe/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Recipies</title>
       <link>https://michal.piekarczyk.xyz/tags/recipies/</link>
       <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/recipies/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Covid</title>
       <link>https://michal.piekarczyk.xyz/tags/covid/</link>
       <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/covid/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Spark</title>
       <link>https://michal.piekarczyk.xyz/tags/spark/</link>
       <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/spark/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Improvement</title>
       <link>https://michal.piekarczyk.xyz/tags/improvement/</link>
       <pubDate>Sat, 21 Nov 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/improvement/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Productivity</title>
       <link>https://michal.piekarczyk.xyz/tags/productivity/</link>
       <pubDate>Sat, 21 Nov 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/productivity/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Debugging</title>
       <link>https://michal.piekarczyk.xyz/tags/debugging/</link>
       <pubDate>Wed, 18 Nov 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/debugging/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Vaccines</title>
       <link>https://michal.piekarczyk.xyz/tags/vaccines/</link>
       <pubDate>Sat, 14 Nov 2020 11:06:01 -0500</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/vaccines/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Management</title>
       <link>https://michal.piekarczyk.xyz/tags/management/</link>
       <pubDate>Thu, 12 Nov 2020 09:30:01 -0500</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/management/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Mpeg</title>
       <link>https://michal.piekarczyk.xyz/tags/mpeg/</link>
       <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/mpeg/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Xargs</title>
       <link>https://michal.piekarczyk.xyz/tags/xargs/</link>
       <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/xargs/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Plants</title>
       <link>https://michal.piekarczyk.xyz/tags/plants/</link>
       <pubDate>Sun, 07 Jan 2018 12:00:01 -0500</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/plants/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Cycling</title>
       <link>https://michal.piekarczyk.xyz/tags/cycling/</link>
       <pubDate>Fri, 01 Dec 2017 12:00:01 -0500</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/tags/cycling/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

@@ -4,23 +4,21 @@
     <title>Notes on michal.piekarczyk.xyz</title>
     <link>https://michal.piekarczyk.xyz/categories/notes/</link>
     <description>Recent content in Notes on michal.piekarczyk.xyz</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.138.0</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 16 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/categories/notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Feb 2023 18:33:54 -0500</lastBuildDate>
+    <atom:link href="https://michal.piekarczyk.xyz/categories/notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Notes on hugo</title>
       <link>https://michal.piekarczyk.xyz/post/2021-05-16-hugo-notes/</link>
       <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2021-05-16-hugo-notes/</guid>
       <description>Switched from Jekyll to Hugo</description>
     </item>
-    
     <item>
       <title>Easy Blog Posting (&#34;My Noting Book&#34;)</title>
       <link>https://michal.piekarczyk.xyz/post/2020-12-09-dropbox-api-hmm/</link>
       <pubDate>Wed, 09 Dec 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2020-12-09-dropbox-api-hmm/</guid>
       <description>&lt;h3 id=&#34;for-my-easyblogposting-project&#34;&gt;For my EasyBlogPosting project..&lt;/h3&gt;
 &lt;p&gt;Testing out the Dropbox API..&lt;/p&gt;
@@ -98,6 +96,5 @@
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;curl -v -H &amp;#34;Authorization: token ${GITHUB_TOKEN}&amp;#34;   https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/ref/heads/master
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Nice excellent, &amp;hellip;&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

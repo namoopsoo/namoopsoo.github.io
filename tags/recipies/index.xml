@@ -4,14 +4,14 @@
     <title>Recipies on michal.piekarczyk.xyz</title>
     <link>https://michal.piekarczyk.xyz/tags/recipies/</link>
     <description>Recent content in Recipies on michal.piekarczyk.xyz</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.138.0</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 10 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/tags/recipies/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Feb 2023 18:33:54 -0500</lastBuildDate>
+    <atom:link href="https://michal.piekarczyk.xyz/tags/recipies/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pumpkin Pie Note</title>
       <link>https://michal.piekarczyk.xyz/post/2021-04-10-pumpkin-pie-cheat-sheet/</link>
       <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2021-04-10-pumpkin-pie-cheat-sheet/</guid>
       <description>&lt;h4 id=&#34;quick-reference-for-that-keto-pie&#34;&gt;Quick reference for that keto pie&lt;/h4&gt;
 &lt;h3 id=&#34;almond-flour-crust&#34;&gt;Almond flour crust&lt;/h3&gt;
@@ -57,16 +57,13 @@
 &lt;li&gt;Refrigerate&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>Steak Two</title>
       <link>https://michal.piekarczyk.xyz/post/2021-01-07-steak-two/</link>
       <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2021-01-07-steak-two/</guid>
       <description>&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;Two updates to the  &lt;!-- raw HTML omitted --&gt;earlier steak post&lt;!-- raw HTML omitted --&gt;. Earlier, I was getting a really low temperature on the meat thermometer I was using and I am pretty sure now that was because I was only dipping just the tip as opposed to basically burying the thermometer lengthwise. This time around I seem to be getting the expected temperature, above 130 F and even above 140 F, whereas before this temperature was not registering even though I had validated that it was working on some pie for instance.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

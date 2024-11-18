@@ -4,14 +4,14 @@
     <title>Openai on michal.piekarczyk.xyz</title>
     <link>https://michal.piekarczyk.xyz/tags/openai/</link>
     <description>Recent content in Openai on michal.piekarczyk.xyz</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.138.0</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 18 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://michal.piekarczyk.xyz/tags/openai/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Feb 2023 18:33:54 -0500</lastBuildDate>
+    <atom:link href="https://michal.piekarczyk.xyz/tags/openai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using langchain to interview myself about my skills</title>
       <link>https://michal.piekarczyk.xyz/post/2023-02-18-first-stab-langchain-interview-me/</link>
       <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://michal.piekarczyk.xyz/post/2023-02-18-first-stab-langchain-interview-me/</guid>
       <description>&lt;h3 id=&#34;premise&#34;&gt;Premise&lt;/h3&gt;
 &lt;p&gt;Ok, got this half baked idea , combine my #brag-document with the available [[langchain]] QA chains into a proof of concept maybe I can call [[langchain interview me 2023-feb]]&lt;/p&gt;
@@ -63,6 +63,5 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;ok-let-me-run-now-some-of-the-basic-question-answer-chains&#34;&gt;Ok let me run now some of the basic question answer chains&lt;/h3&gt;
 &lt;p&gt;Use my environment from before,&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

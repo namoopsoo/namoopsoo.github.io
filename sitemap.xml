@@ -2,10 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://michal.piekarczyk.xyz/post/2024-09-14-hnsw-multi-index-search/</loc>
-    <lastmod>2024-09-16T09:09:56-04:00</lastmod>
+    <loc>https://michal.piekarczyk.xyz/post/2024-11-09-query-speedup/</loc>
+    <lastmod>2024-11-17T15:38:10-05:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/post/</loc>
+    <lastmod>2024-11-17T18:08:50-05:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/post/2024-11-07-odd-prompts/</loc>
+    <lastmod>2024-11-08T09:06:41-05:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/post/2024-11-02-langchain-pgvector-bug/</loc>
+    <lastmod>2024-11-03T09:02:15-05:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/post/2024-10-25-stray-game-review/</loc>
+    <lastmod>2024-11-17T18:08:50-05:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/post/2024-09-14-hnsw-multi-index-search/</loc>
     <lastmod>2024-09-16T09:09:56-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/post/2024-09-13-pyspark-32-bit-nulled/</loc>
@@ -246,7 +258,7 @@
     <lastmod>2023-02-26T18:33:54-05:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/categories/</loc>
-    <lastmod>2023-03-18T19:43:12-04:00</lastmod>
+    <lastmod>2024-11-03T12:17:47-05:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/categories/notes/</loc>
     <lastmod>2023-02-26T18:33:54-05:00</lastmod>
@@ -314,6 +326,12 @@
     <loc>https://michal.piekarczyk.xyz/post/2020-12-13-article-gitinternalsgitobjects-notes/</loc>
     <lastmod>2023-02-26T18:33:54-05:00</lastmod>
   </url><url>
+    <loc>https://michal.piekarczyk.xyz/post/2020-12-12-meritocracytrap-book-summary/</loc>
+    <lastmod>2024-11-03T12:17:47-05:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/categories/summary/</loc>
+    <lastmod>2024-11-03T12:17:47-05:00</lastmod>
+  </url><url>
     <loc>https://michal.piekarczyk.xyz/post/2020-12-09-dropbox-api-hmm/</loc>
     <lastmod>2023-02-26T18:33:54-05:00</lastmod>
   </url><url>
@@ -326,9 +344,6 @@
     <loc>https://michal.piekarczyk.xyz/tags/productivity/</loc>
     <lastmod>2023-02-26T18:33:54-05:00</lastmod>
   </url><url>
-    <loc>https://michal.piekarczyk.xyz/categories/summary/</loc>
-    <lastmod>2023-02-26T18:33:54-05:00</lastmod>
-  </url><url>
     <loc>https://michal.piekarczyk.xyz/post/2020-11-14-themundanityofexcellencestratificationandolympicswimmers-summary/</loc>
     <lastmod>2023-02-26T18:33:54-05:00</lastmod>
   </url><url>
@@ -337,6 +352,9 @@
   </url><url>
     <loc>https://michal.piekarczyk.xyz/post/2020-11-18--washing-machine-fiasco/</loc>
     <lastmod>2023-03-18T19:43:12-04:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/post/2020-11-15-blue-bottle-espresso-troubleshooting/</loc>
+    <lastmod>2024-11-03T12:18:15-05:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/categories/booksummary/</loc>
     <lastmod>2023-02-26T18:33:54-05:00</lastmod>
@@ -353,8 +371,23 @@
     <loc>https://michal.piekarczyk.xyz/post/2020-11-12-team-of-teams-summary/</loc>
     <lastmod>2023-02-26T18:33:54-05:00</lastmod>
   </url><url>
+    <loc>https://michal.piekarczyk.xyz/post/2020-11-07-make-some-xero-shoes/</loc>
+    <lastmod>2024-11-03T12:16:58-05:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/categories/nutrition/</loc>
+    <lastmod>2024-11-03T12:17:14-05:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/post/2020-11-07-vitamin-d/</loc>
+    <lastmod>2024-11-03T12:17:14-05:00</lastmod>
+  </url><url>
     <loc>https://michal.piekarczyk.xyz/post/2020-11-02-hmm-what-i-consume/</loc>
     <lastmod>2023-02-26T18:33:54-05:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/post/2020-11-01-our-lock-finally-bent-my-key-haha/</loc>
+    <lastmod>2024-11-03T12:16:39-05:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/post/2020-10-31-kitchen-sink-pipe-leak/</loc>
+    <lastmod>2024-11-03T12:16:08-05:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/post/2020-10-22-features-v3/</loc>
     <lastmod>2023-02-26T18:33:54-05:00</lastmod>
@@ -373,6 +406,12 @@
   </url><url>
     <loc>https://michal.piekarczyk.xyz/post/2020-06-06-heart-datar/</loc>
     <lastmod>2023-03-18T14:54:52-04:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/post/2020-05-31--github-pages/</loc>
+    <lastmod>2024-11-03T12:13:13-05:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/post/2020-05-31-steak-puzzle/</loc>
+    <lastmod>2024-11-03T12:13:34-05:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/categories/jekyll-update-meta/</loc>
     <lastmod>2023-02-26T18:33:54-05:00</lastmod>
@@ -644,23 +683,8 @@
     <loc>https://michal.piekarczyk.xyz/about/</loc>
     <lastmod>2024-06-30T18:07:04-04:00</lastmod>
   </url><url>
-    <loc>https://michal.piekarczyk.xyz/post/2020-11-15-blue-bottle-espresso-troubleshooting/</loc>
-    <lastmod>2023-02-26T18:33:54-05:00</lastmod>
-  </url><url>
-    <loc>https://michal.piekarczyk.xyz/post/2020-10-31-kitchen-sink-pipe-leak/</loc>
-    <lastmod>2023-02-26T18:33:54-05:00</lastmod>
-  </url><url>
     <loc>https://michal.piekarczyk.xyz/handy/</loc>
     <lastmod>2023-02-26T18:40:19-05:00</lastmod>
-  </url><url>
-    <loc>https://michal.piekarczyk.xyz/post/2020-05-31--github-pages/</loc>
-    <lastmod>2023-02-26T18:33:54-05:00</lastmod>
-  </url><url>
-    <loc>https://michal.piekarczyk.xyz/post/2020-11-07-make-some-xero-shoes/</loc>
-    <lastmod>2023-02-26T18:33:54-05:00</lastmod>
-  </url><url>
-    <loc>https://michal.piekarczyk.xyz/post/2020-12-12-meritocracytrap-book-summary/</loc>
-    <lastmod>2023-02-26T18:33:54-05:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/resume/</loc>
     <lastmod>2023-02-26T18:33:54-05:00</lastmod>
@@ -668,25 +692,13 @@
     <loc>https://michal.piekarczyk.xyz/</loc>
     <lastmod>2023-02-26T19:27:16-05:00</lastmod>
   </url><url>
-    <loc>https://michal.piekarczyk.xyz/categories/nutrition/</loc>
-    <lastmod>2023-02-26T18:33:54-05:00</lastmod>
-  </url><url>
-    <loc>https://michal.piekarczyk.xyz/post/2020-11-01-our-lock-finally-bent-my-key-haha/</loc>
-    <lastmod>2023-02-26T18:33:54-05:00</lastmod>
-  </url><url>
     <loc>https://michal.piekarczyk.xyz/search/</loc>
     <lastmod>2023-03-04T13:22:50-05:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/project/</loc>
     <lastmod>2023-02-26T18:33:54-05:00</lastmod>
   </url><url>
-    <loc>https://michal.piekarczyk.xyz/post/2020-05-31-steak-puzzle/</loc>
-    <lastmod>2023-02-26T18:33:54-05:00</lastmod>
-  </url><url>
     <loc>https://michal.piekarczyk.xyz/foo/</loc>
-    <lastmod>2023-02-26T18:33:54-05:00</lastmod>
-  </url><url>
-    <loc>https://michal.piekarczyk.xyz/post/2020-11-07-vitamin-d/</loc>
     <lastmod>2023-02-26T18:33:54-05:00</lastmod>
   </url>
 </urlset>

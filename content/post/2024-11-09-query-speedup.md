@@ -146,4 +146,12 @@ Planning Time: 5.488 ms
 Execution Time: 1630.725 ms
 ```
 
+## lat / lng originally flipped ! 
+A few weeks back, I was getting some weird query results, though I ignored them. everything was so far away! I figured okay I'll just debug this later. turned out everything was far away because my longitude and latitude were flipped and therefore everything was was ordered by a distance that essentially 9,000 miles away !! 😆
+
+## currently, not using that hnsw index
+This may very well change very soon, when my batch data insert finishes, but for the initial testing, been using without hnsw index, because it cannot be used easily when using another join. 
+
+let me double check,  I think I settled on materialized, which is the so called "non lazy" CTE, faster, anyway, for my initial test case. my initial prediction, is, 🤞, additional data will not affect speed, because a subset odd pre computed each time. 
+
 

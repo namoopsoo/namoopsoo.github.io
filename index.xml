@@ -4,9 +4,16 @@
     <title>michal.piekarczyk.xyz</title>
     <link>https://michal.piekarczyk.xyz/</link>
     <description>Recent content on michal.piekarczyk.xyz</description>
-    <generator>Hugo -- 0.139.0</generator>
+    <generator>Hugo -- 0.141.0</generator>
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>objective comparison of embedding models for your use case</title>
+      <link>https://michal.piekarczyk.xyz/post/2025-01-11-comparing-embedding-models/</link>
+      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2025-01-11-comparing-embedding-models/</guid>
+      <description>&lt;p&gt;Recently, I got to the point in a project, of looking into TypeSense as an option for embedding hosting for search. Prior, I was working with one particular embedding model, &lt;code&gt;all-mpnet-base-v2&lt;/code&gt;, which intuitively and anecdotally performed decently well for my retrieval task. But yea that was the problem, my information was anecdotal and cherry-picked. But when I started looking into TypeSense, I noticed my model of choice was not in the list, &lt;a href=&#34;https://huggingface.co/typesense/models&#34;&gt;https://huggingface.co/typesense/models&lt;/a&gt; , and that gave me the direct motivation to finally run a comparison.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>embedding and pgvector query speedup</title>
       <link>https://michal.piekarczyk.xyz/post/2024-11-09-query-speedup/</link>
@@ -2911,7 +2918,7 @@ sys	0m0.232s
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;AWSTemplateFormatVersion&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;2010-09-09&amp;#39;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;Transform&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;AWS::Serverless-2016-10-31&amp;#39;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;Description&lt;/span&gt;: &amp;gt;-&lt;span style=&#34;color:#e6db74&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;  A description of the State Machine goes here. &lt;/span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;  A description of the State Machine goes here. &lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;Resources&lt;/span&gt;:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;MyStateMachineName&lt;/span&gt;:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;Type&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;AWS::StepFunctions::StateMachine&lt;/span&gt;
@@ -2923,7 +2930,7 @@ sys	0m0.232s
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f92672&#34;&gt;DefinitionString&lt;/span&gt;:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;Fn::Sub&lt;/span&gt;: |&lt;span style=&#34;color:#e6db74&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;          {{full_json_definition}}&lt;/span&gt;          
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;          {{full_json_definition}}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;manage_step_functionspy&#34;&gt;&lt;code&gt;manage_step_functions.py&lt;/code&gt;&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; boto3
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; os

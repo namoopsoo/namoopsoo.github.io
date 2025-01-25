@@ -4,7 +4,7 @@
     <title>Cooking on michal.piekarczyk.xyz</title>
     <link>https://michal.piekarczyk.xyz/categories/cooking/</link>
     <description>Recent content in Cooking on michal.piekarczyk.xyz</description>
-    <generator>Hugo -- 0.141.0</generator>
+    <generator>Hugo -- 0.142.0</generator>
     <language>en</language>
     <lastBuildDate>Sun, 26 Feb 2023 18:33:54 -0500</lastBuildDate>
     <atom:link href="https://michal.piekarczyk.xyz/categories/cooking/index.xml" rel="self" type="application/rss+xml" />
@@ -13,8 +13,7 @@
       <link>https://michal.piekarczyk.xyz/post/2021-01-07-steak-two/</link>
       <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/post/2021-01-07-steak-two/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;Two updates to the  &lt;!-- raw HTML omitted --&gt;earlier steak post&lt;!-- raw HTML omitted --&gt;. Earlier, I was getting a really low temperature on the meat thermometer I was using and I am pretty sure now that was because I was only dipping just the tip as opposed to basically burying the thermometer lengthwise. This time around I seem to be getting the expected temperature, above 130 F and even above 140 F, whereas before this temperature was not registering even though I had validated that it was working on some pie for instance.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Two updates to the  &lt;!-- raw HTML omitted --&gt;earlier steak post&lt;!-- raw HTML omitted --&gt;. Earlier, I was getting a really low temperature on the meat thermometer I was using and I am pretty sure now that was because I was only dipping just the tip as opposed to basically burying the thermometer lengthwise. This time around I seem to be getting the expected temperature, above 130 F and even above 140 F, whereas before this temperature was not registering even though I had validated that it was working on some pie for instance.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

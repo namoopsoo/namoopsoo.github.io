@@ -4,9 +4,9 @@
     <title>Posts on michal.piekarczyk.xyz</title>
     <link>https://michal.piekarczyk.xyz/post/</link>
     <description>Recent content in Posts on michal.piekarczyk.xyz</description>
-    <generator>Hugo -- 0.141.0</generator>
+    <generator>Hugo -- 0.142.0</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 21 Jan 2025 18:22:30 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jan 2025 16:33:19 -0500</lastBuildDate>
     <atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>objective comparison of embedding models for your use case</title>
@@ -33,6 +33,15 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;per_page&amp;#39;:&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;100&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>other interesting topics on postgres and kubernetes</title>
+      <link>https://michal.piekarczyk.xyz/post/2024-12-01-placeholder-postgres-post/</link>
+      <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2024-12-01-placeholder-postgres-post/</guid>
+      <description>&lt;p&gt;Have not covered yet, a few other cool topics.&lt;/p&gt;
+&lt;p&gt;Can go into more detail later, but, for now some highlights.&lt;/p&gt;
+&lt;p&gt;At one point in a recent postgres pgvector retrieval project, a really cool epiphany was, w.r.t. indexing in pgvector both a concat blob of items and granular items, that it is not necessary to also embed the low level items because they can be embedded at runtime and it is not that time consuming.&lt;/p&gt;</description>
     </item>
     <item>
       <title>embedding and pgvector query speedup</title>
@@ -1946,8 +1955,7 @@ kubectl create clusterrolebinding spark-role --clusterrole=edit  --serviceaccoun
       <link>https://michal.piekarczyk.xyz/post/2021-01-07-steak-two/</link>
       <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/post/2021-01-07-steak-two/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;Two updates to the  &lt;!-- raw HTML omitted --&gt;earlier steak post&lt;!-- raw HTML omitted --&gt;. Earlier, I was getting a really low temperature on the meat thermometer I was using and I am pretty sure now that was because I was only dipping just the tip as opposed to basically burying the thermometer lengthwise. This time around I seem to be getting the expected temperature, above 130 F and even above 140 F, whereas before this temperature was not registering even though I had validated that it was working on some pie for instance.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Two updates to the  &lt;!-- raw HTML omitted --&gt;earlier steak post&lt;!-- raw HTML omitted --&gt;. Earlier, I was getting a really low temperature on the meat thermometer I was using and I am pretty sure now that was because I was only dipping just the tip as opposed to basically burying the thermometer lengthwise. This time around I seem to be getting the expected temperature, above 130 F and even above 140 F, whereas before this temperature was not registering even though I had validated that it was working on some pie for instance.&lt;/p&gt;</description>
     </item>
     <item>
       <title>notes on Git Internals Git Objects article</title>

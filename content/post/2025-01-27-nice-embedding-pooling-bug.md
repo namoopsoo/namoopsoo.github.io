@@ -70,14 +70,17 @@ uv pip install ipython optimum[onnxruntime] "numpy<2"
 
 and now loading was fine, 
 ```python
+from pathlib import Path
 from optimum.onnxruntime import ORTModelForFeatureExtraction
 from transformers import AutoTokenizer
 
-model_id = "all-MiniLM-L12-v2"
+model_name = "all-MiniLM-L12-v2"
+local_models = "local_models"
+path_to_local_all_minilm_l12_v2 = (Path.home() / local_models / model_name).as_posix()
 
 # Load the model
-model = ORTModelForFeatureExtraction.from_pretrained(model_id)
-tokenizer = AutoTokenizer.from_pretrained(model_id)
+model = ORTModelForFeatureExtraction.from_pretrained(path_to_local_all_minilm_l12_v2)
+tokenizer = AutoTokenizer.from_pretrained(path_to_local_all_minilm_l12_v2)
 
 # Prepare input
 inputs = tokenizer("Hello world!", return_tensors="pt")
@@ -87,10 +90,30 @@ outputs = model(**inputs)
 
 # Retrieve embeddings from last_hidden_state (for example)
 embeddings = outputs.last_hidden_state
+print(inputs)
 print(embeddings.shape)  # e.g., [batch_size, seq_length, hidden_dim]
+print(embeddings)
 ```
 ```
+{'input_ids': tensor([[ 101, 7592, 2088,  999,  102]]), 'token_type_ids': tensor([[0, 0, 0, 0, 0]]), 'attention_mask': tensor([[1, 1, 1, 1, 1]])}
 torch.Size([1, 5, 384])
+tensor([[[-0.1849, -0.0977, -0.0351, -0.2134,  ..., -0.0405, -0.2599,  0.1040,  0.1008],
+         [-0.8934, -0.0513,  0.4190, -0.3306,  ..., -0.0511,  0.1419,  0.0011,  0.5171],
+         [-0.0798,  0.1150, -0.2807, -0.4178,  ..., -0.5528, -0.4580, -0.5165, -0.0583],
+         [-0.3010,  0.9995, -0.0930, -0.1598,  ...,  0.0433, -0.3697,  0.5390,  0.1855],
+         [-0.1849, -0.0977, -0.0351, -0.2134,  ..., -0.0405, -0.2599,  0.1040,  0.1008]]])
+```
+only thing left to do here is to use mean pooling to get one embedding from the 5 token embeddings,
+
+```python
+emb = torch.mean(embeddings[0, :, :], 0)
+
+print(emb.shape)
+print(emb)
+```
+```python
+torch.Size([384])
+tensor([-0.3288,  0.1736, -0.0050, -0.2670,  ..., -0.1283, -0.2411,  0.0463,  0.1692])
 ```
 
 ## reproduce local embedding model matches what is used on typesense cluster
@@ -106,13 +129,11 @@ torch.set_printoptions(threshold=12, edgeitems=4, linewidth=90)
 client = make_client(timeout=600)
 location = random_us_coords()
 
-
 results = query_raw(location, "buffalo wings", 100)
 df = df_from_results(results)
 df[:5]
 
-pprint([[row["concat"][:37], torch.tensor(row["embedding"]), round(row["vector_distance"], 3)] for row in df[:5].
-    ...: to_dicts()])
+pprint([[row["concat"][:37], torch.tensor(row["embedding"]), round(row["vector_distance"], 3)] for row in df[:5].to_dicts()])
 [[' fried chicken wings  ',
   tensor([ 0.0037,  0.0396, -0.9224,  0.1760,  ..., -0.0739,  0.3501, -0.3490, -0.1918]),
   0.395],
@@ -129,6 +150,47 @@ pprint([[row["concat"][:37], torch.tensor(row["embedding"]), round(row["vector_d
   tensor([-0.0436, -0.0633, -0.3899,  0.0730,  ..., -0.2415,  0.0070,  0.1767, -0.0291]),
   0.549]]
 
+```
+and compare with local,
+```python
+for row in df[:5].to_dicts():
+    text = row["concat"]
+    inputs = tokenizer(text, return_tensors="pt")
+    outputs = model(**inputs)
+    embeddings_vec = outputs.last_hidden_state
+    emb = torch.mean(embeddings_vec[0, :, :], 0)
+    print(text[:37])
+    print("typesense embedding", torch.tensor(row["embedding"]))
+    print("local embedding", emb, "\n")
+```
+
+```
+ fried chicken wings  
+typesense embedding tensor([ 0.0037,  0.0396, -0.9224,  0.1760,  ..., -0.0739,  0.3501, -0.3490, -0.1918])
+local embedding tensor([ 0.0037,  0.0396, -0.9224,  0.1760,  ..., -0.0739,  0.3501, -0.3490, -0.1918]) 
+
+c bourbon chicken 
+typesense embedding tensor([-0.1860, -0.1894, -0.3629, -0.0392,  ..., -0.0728,  0.0968,  0.3149, -0.1836])
+local embedding tensor([-0.1860, -0.1894, -0.3629, -0.0392,  ..., -0.0728,  0.0968,  0.3149, -0.1836]) 
+
+thai crispy wings large chicken wings
+typesense embedding tensor([-0.1742,  0.0064, -0.2367,  0.0564,  ..., -0.0186,  0.3364, -0.2523, -0.2709])
+local embedding tensor([-0.1742,  0.0064, -0.2367,  0.0564,  ..., -0.0186,  0.3364, -0.2523, -0.2709]) 
+
+bourbon honey bourbons  
+typesense embedding tensor([-0.5718, -0.0672, -0.0274, -0.0360,  ...,  0.3141,  0.1054,  0.4766, -0.3480])
+local embedding tensor([-0.5718, -0.0672, -0.0274, -0.0360,  ...,  0.3141,  0.1054,  0.4766, -0.3480]) 
+
+boar s head buffalo style chicken  
+typesense embedding tensor([-0.0436, -0.0633, -0.3899,  0.0730,  ..., -0.2415,  0.0070,  0.1767, -0.0291])
+local embedding tensor([-0.0436, -0.0633, -0.3899,  0.0730,  ..., -0.2415,  0.0070,  0.1767, -0.0291]) 
+
+
+```
+
+## The bug
+
+## The resolution
 ```
 
 ## The bug

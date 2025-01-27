@@ -93,6 +93,114 @@ print(embeddings.shape)  # e.g., [batch_size, seq_length, hidden_dim]
 torch.Size([1, 5, 384])
 ```
 
+## reproduce local embedding model matches what is used on typesense cluster
+So I had loaded some food related data on my typesense cluster, ran a simple query to pull a few documents and then re-embedded them locally to check the vectors.
+
+### First query my cluster
+```python
+import torch
+from pprint import pprint
+
+torch.set_printoptions(threshold=12, edgeitems=4, linewidth=90)
+
+client = make_client(timeout=600)
+location = random_us_coords()
+
+
+results = query_raw(location, "buffalo wings", 100)
+df = df_from_results(results)
+df[:5]
+
+pprint([[row["concat"][:37], torch.tensor(row["embedding"]), round(row["vector_distance"], 3)] for row in df[:5].
+    ...: to_dicts()])
+[[' fried chicken wings  ',
+  tensor([ 0.0037,  0.0396, -0.9224,  0.1760,  ..., -0.0739,  0.3501, -0.3490, -0.1918]),
+  0.395],
+ ['c bourbon chicken ',
+  tensor([-0.1860, -0.1894, -0.3629, -0.0392,  ..., -0.0728,  0.0968,  0.3149, -0.1836]),
+  0.478],
+ ['thai crispy wings large chicken wings',
+  tensor([-0.1742,  0.0064, -0.2367,  0.0564,  ..., -0.0186,  0.3364, -0.2523, -0.2709]),
+  0.541],
+ ['bourbon honey bourbons  ',
+  tensor([-0.5718, -0.0672, -0.0274, -0.0360,  ...,  0.3141,  0.1054,  0.4766, -0.3480]),
+  0.542],
+ ['boar s head buffalo style chicken  ',
+  tensor([-0.0436, -0.0633, -0.3899,  0.0730,  ..., -0.2415,  0.0070,  0.1767, -0.0291]),
+  0.549]]
+
+```
+
 ## The bug
 
 ## The resolution
+
+
+# Appendix 
+
+
+## some helper functions 
+
+```python
+import os
+import polars as pl
+import typesense
+import random
+from glom import glom
+
+
+def make_client(timeout=60):
+    api_key = os.getenv("TYPESENSE_API_KEY")
+    cluster_host = os.getenv("TYPESENSE_CLUSTER")  # https://cloud.typesense.org/clusters/xxxx
+
+    client = typesense.Client({
+      "nodes": [{
+        "host": cluster_host,
+        "port": "443",
+        "protocol": "https"
+      }],
+      "api_key": api_key,
+      "connection_timeout_seconds": timeout
+    })
+    return client
+
+
+def random_us_coords():
+    # Continental US approximate bounds:
+    # Latitude: 24.5°N to 49.5°N
+    # Longitude: -124.77°W to -66.95°W
+    lat = random.uniform(24.5, 49.5)
+    lng = random.uniform(-124.77, -66.95)
+    return lat, lng
+
+
+def query_raw(location, query, radius_km):
+    client = make_client(timeout=600)
+    lat, lng = location
+    search_results = client.collections['items'].documents.search({	
+      "q": query,
+      "query_by": "concat_embedding",
+      "filter_by": 
+          f"location:({lat}, {lng}, {radius_km} km)",
+      "sort_by": "_vector_distance:asc",
+      # "exclude_fields": "concat_embedding",
+      'page': 1,
+      'per_page': 100
+    }
+    )
+    return search_results
+
+
+def df_from_results(results):
+    spec = [
+        {
+            "published_name": "document.published_name",
+            "concat": "document.concat",
+            "embedding": "document.concat_embedding",
+            "vector_distance": "vector_distance",
+            "location": "document.location",
+        }
+    ]
+    df = pl.from_dicts(glom(results["hits"], spec))
+    return df
+```

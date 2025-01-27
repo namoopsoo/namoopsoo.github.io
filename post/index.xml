@@ -6,8 +6,16 @@
     <description>Recent content in Posts on michal.piekarczyk.xyz</description>
     <generator>Hugo -- 0.142.0</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 25 Jan 2025 16:33:19 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jan 2025 13:20:22 -0500</lastBuildDate>
     <atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>fun pool embedding bug</title>
+      <link>https://michal.piekarczyk.xyz/post/2025-01-27-nice-embedding-pooling-bug/</link>
+      <pubDate>Mon, 27 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2025-01-27-nice-embedding-pooling-bug/</guid>
+      <description>&lt;p&gt;Recently, I had been interested in locally reproducing the &lt;a href=&#34;https://huggingface.co/typesense/models/tree/main/all-MiniLM-L12-v2&#34;&gt; typesense huggingface &lt;/a&gt; models on my laptop. I want to experiment with the &lt;a href=&#34;https://typesense.org&#34;&gt;https://typesense.org&lt;/a&gt; nodes, but I also want to be able to use the same embedding models on my laptop for local development.&lt;/p&gt;
+&lt;p&gt;I noticed that the models in the typesense section of hugging face are in the &lt;code&gt;model.onnx&lt;/code&gt; format which I had not encountered before. I learned how to get them running locally and I was able to compare that the vectors on a typesense cluster I was running matched vectors I generated locally.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>objective comparison of embedding models for your use case</title>
       <link>https://michal.piekarczyk.xyz/post/2025-01-11-comparing-embedding-models/</link>

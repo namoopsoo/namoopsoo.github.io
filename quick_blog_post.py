@@ -278,6 +278,8 @@ def do():
         print("Done.")
         return
 
+
+
     images = [x.replace("\\", "").strip() for x in args.get("images").split(",")]
     print("images", images)
     dry_run = args.get("dry_run")

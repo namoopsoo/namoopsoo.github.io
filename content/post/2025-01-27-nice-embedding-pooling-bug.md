@@ -230,7 +230,7 @@ print(model.embed_documents([queries[1], queries[1]]))
 print(torch.stack([model.embed_query(x) for x in queries]))
 ```
 
-![](assets/image_1737937287599_0.png)
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2025-01-27-nice-embedding-pooling-bug/image_1737937287599_0.png" width="50%">}}
 
 
 So I also printed the tokens and then I found the smoking gun. (Idea to also look at the intermediate token ideas came from describing my problem to chatgpt!)
@@ -244,7 +244,7 @@ print("...\n")
 print(torch.stack([model.embed_query(x, print_tokens=True) for x in queries]))
 ```
 
-![](assets/image_1737939403540_0.png)
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2025-01-27-nice-embedding-pooling-bug/image_1737939403540_0.png" width="50%">}}
 
 so I realized, looking at the above that ok duhh, the padding is the issue. So looking at the pre-pooling it is more clear even,
 
@@ -325,3 +325,4 @@ def df_from_results(results):
     df = pl.from_dicts(glom(results["hits"], spec))
     return df
 ```
+

@@ -185,13 +185,72 @@ boar s head buffalo style chicken
 typesense embedding tensor([-0.0436, -0.0633, -0.3899,  0.0730,  ..., -0.2415,  0.0070,  0.1767, -0.0291])
 local embedding tensor([-0.0436, -0.0633, -0.3899,  0.0730,  ..., -0.2415,  0.0070,  0.1767, -0.0291]) 
 
-
 ```
 
 ## The bug
+So I wanted yesterday, to extend a single text embedding to be batched, to vectorize it in other words. But when I did this, my first iteration of the code had a really weird bug. As I was testing it here is what I noticed, below.
+
+At this point I have a minimal convenience class to wrap the retrieval too
+
+```python
+import torch
+torch.set_printoptions(threshold=10, edgeitems=2, linewidth=80)
+
+from pathlib import Path
+import embedder.onnx_utils as eou
+
+model = eou.LocalOnnx(path_to_local_all_minilm_l12_v2)
+
+queries = ["chicken wings", "chicken parmesan"]
+embeddings_separate = torch.stack([model.embed_query(x) for x in queries])
+embeddings_batch = model.embed_documents(queries)
+print(embeddings_separate.shape, embeddings_batch.shape)
+print( embeddings_separate)
+print( embeddings_batch)
+
+```
+```python
+torch.Size([2, 384]) torch.Size([2, 384])
+tensor([[-0.1094,  0.0502,  ..., -0.3084, -0.2158],
+        [-0.1148, -0.0603,  ...,  0.1199,  0.0667]])
+tensor([[-0.0658,  0.0258,  ..., -0.2852, -0.0799],
+        [-0.1148, -0.0603,  ...,  0.1199,  0.0667]])
+```
+so, clearly one of the vectors was the same batched but not the other.
+
+### Looking at it another way I saw this,
+
+```python
+queries = ["chicken wings", "chicken parmesan"]
+print(model.embed_documents(queries))
+print(model.embed_documents([queries[1], queries[0]]))
+print(model.embed_documents([queries[0]]))
+print(model.embed_documents([queries[0], queries[0]]))
+print(model.embed_documents([queries[1], queries[1]]))
+print(torch.stack([model.embed_query(x) for x in queries]))
+```
+
+![](assets/image_1737937287599_0.png)
+
+
+So I also printed the tokens and then I found the smoking gun. (Idea to also look at the intermediate token ideas came from describing my problem to chatgpt!)
+
+```python
+queries = ["moroccan peppermint chile", "saudi falafel with mint"]
+print(model.embed_documents(queries, print_tokens=True))
+print("...\n")
+print(model.embed_documents([queries[1], queries[0]], print_tokens=True))
+print("...\n")
+print(torch.stack([model.embed_query(x, print_tokens=True) for x in queries]))
+```
+
+![](assets/image_1737939403540_0.png)
+
+so I realized, looking at the above that ok duhh, the padding is the issue. So looking at the pre-pooling it is more clear even,
+
+
 
 ## The resolution
-```
 
 ## The bug
 

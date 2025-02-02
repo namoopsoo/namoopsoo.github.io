@@ -219,7 +219,7 @@ tensor([[-0.0658,  0.0258,  ..., -0.2852, -0.0799],
 so, clearly one of the vectors was the same batched but not the other.
 
 ### Looking at it another way I saw this,
-
+So the embeddings from the new `model.embed_documents` func was different than when running the single `model.embed_query`, but only for one query. Weird, and flippin the order did not isolate the bug.
 ```python
 queries = ["chicken wings", "chicken parmesan"]
 print(model.embed_documents(queries))
@@ -249,10 +249,33 @@ print(torch.stack([model.embed_query(x, print_tokens=True) for x in queries]))
 so I realized, looking at the above that ok duhh, the padding is the issue. So looking at the pre-pooling it is more clear even,
 
 
-
-## The resolution
-
 ## The bug
+The issue, per the above, was that the query that was being messed up, was the one requiring fewer tokens, and so got padded with two additional `0s` . And so when applying the mean pooling, the `0s` got averaged in, therefore messing with the final vector.
+
+Also, the whole reason for the padding is, when embedding tokens, in batch, padding must be used because all the transformations work on matrix operations. And without matrices, we get the below error.
+
+```python
+from pathlib import Path
+from transformers import AutoTokenizer
+from optimum.onnxruntime import ORTModelForFeatureExtraction
+
+model_name = "all-MiniLM-L12-v2"
+local_models = "local_models"
+path_to_local_all_minilm_l12_v2 = (Path.home() / local_models / model_name).as_posix()
+
+tokenizer = AutoTokenizer.from_pretrained(path_to_local_all_minilm_l12_v2)
+queries = ["moroccan peppermint chile", "saudi falafel with mint"]
+
+inputs = tokenizer.batch_encode_plus(queries, return_tensors="pt", padding=False)
+model = ORTModelForFeatureExtraction.from_pretrained(path_to_local_all_minilm_l12_v2)
+
+outputs = model(
+  **inputs
+)
+```
+```
+ValueError: Unable to create tensor, you should probably activate truncation and/or padding with 'padding=True' 'truncation=True' to have batched tensors with the same length. Perhaps your features (`input_ids` in this case) have excessive nesting (inputs type `list` where type `int` is expected).
+```
 
 ## The resolution
 

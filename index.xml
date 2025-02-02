@@ -4,7 +4,7 @@
     <title>michal.piekarczyk.xyz</title>
     <link>https://michal.piekarczyk.xyz/</link>
     <description>Recent content on michal.piekarczyk.xyz</description>
-    <generator>Hugo -- 0.142.0</generator>
+    <generator>Hugo -- 0.143.0</generator>
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -5976,8 +5976,7 @@ MD5 (./posts/2021-01-23-spark-weekend.md) = 5534f81599860e239340b41ffa5aee09
       <guid>https://michal.piekarczyk.xyz/handy/sql/ilike/</guid>
       <description>&lt;p&gt;Interesting&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;The operator &lt;code&gt;~~&lt;/code&gt; is equivalent to LIKE, and &lt;code&gt;~~*&lt;/code&gt; corresponds to ILIKE. There are also &lt;code&gt;!~~&lt;/code&gt; and &lt;code&gt;!~~*&lt;/code&gt; operators that represent NOT LIKE and NOT ILIKE. All of these operators are PostgreSQL-specific.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;The operator &lt;code&gt;~~&lt;/code&gt; is equivalent to LIKE, and &lt;code&gt;~~*&lt;/code&gt; corresponds to ILIKE. There are also &lt;code&gt;!~~&lt;/code&gt; and &lt;code&gt;!~~*&lt;/code&gt; operators that represent NOT LIKE and NOT ILIKE. All of these operators are PostgreSQL-specific.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;per &lt;a href=&#34;https://www.postgresql.org/docs/7.3/functions-matching.html&#34;&gt;7.3 doc&lt;/a&gt;. not sure if outdated&lt;/p&gt;</description>
     </item>
     <item>

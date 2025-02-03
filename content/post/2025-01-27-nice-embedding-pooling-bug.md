@@ -249,7 +249,7 @@ print(torch.stack([model.embed_query(x, print_tokens=True) for x in queries]))
 so I realized, looking at the above that ok duhh, the padding is the issue. So looking at the pre-pooling it is more clear even,
 
 
-## The bug
+### The padding
 The issue, per the above, was that the query that was being messed up, was the one requiring fewer tokens, and so got padded with two additional `0s` . And so when applying the mean pooling, the `0s` got averaged in, therefore messing with the final vector.
 
 Also, the whole reason for the padding is, when embedding tokens, in batch, padding must be used because all the transformations work on matrix operations. And without matrices, we get the below error.
@@ -277,8 +277,96 @@ outputs = model(
 ValueError: Unable to create tensor, you should probably activate truncation and/or padding with 'padding=True' 'truncation=True' to have batched tensors with the same length. Perhaps your features (`input_ids` in this case) have excessive nesting (inputs type `list` where type `int` is expected).
 ```
 
-## The resolution
 
+### the bug
+But when padding, the bug was that then after embedding the individual tokens, the code applied [ mean pooling ] (https://sbert.net/docs/sentence_transformer/usage/custom_models.html), naively ignoring the `0` token values,
+
+```python
+def embed_documents(self, queries: List[str], print_tokens=False):
+    inputs = self.tokenizer.batch_encode_plus(
+        queries, return_tensors="pt", padding=True)
+
+    outputs = self.model(
+        **inputs
+    )
+    embedding_vec = outputs.last_hidden_state
+    embedding = torch.mean(embedding_vec, 1)
+
+    print(embedding_vec.shape, embedding.shape)
+    # torch.Size([2, 9, 384]) torch.Size([2, 384])
+```
+and messing with the final embedding.
+
+### The resolution
+As a new approach, the attention mask that is provided during the encoding is used to remove the pad vectors before taking the mean.
+
+```python
+In [13]: inputs
+Out[13]: 
+{'input_ids': tensor([[  101, 17494, 11565, 10020,  ...,  7029,   102,     0,     0],
+        [  101,  8174,  6904,  2721,  ...,  2140,  2007, 12927,   102]]), 'token_type_ids': tensor([[0, 0, 0, 0,  ..., 0, 0, 0, 0],
+        [0, 0, 0, 0,  ..., 0, 0, 0, 0]]), 'attention_mask': tensor([[1, 1, 1, 1,  ..., 1, 1, 0, 0],
+        [1, 1, 1, 1,  ..., 1, 1, 1, 1]])}
+
+```
+actually, this is only the first stab and this code can be way cleaner of course, but this sovles the problem for now.
+
+```python
+def embed_documents(self, queries: List[str], print_tokens=False):
+    inputs = self.tokenizer.batch_encode_plus(
+        queries, return_tensors="pt", padding=True)
+
+    if print_tokens:
+        print(inputs)
+
+    outputs = self.model(
+        **inputs
+    )
+    embedding_vec = outputs.last_hidden_state
+
+    foo_vec = []
+
+    # use the mask, after padding, to remove the pad rows.
+    mask_size = inputs["attention_mask"][1].shape[0]
+
+    vector_length = embedding_vec.shape[2]
+
+    for i, _ in enumerate(queries):
+        mask = inputs["attention_mask"][i].bool().view(mask_size, 1).repeat(1, vector_length)
+
+        mask_sum = inputs["attention_mask"][i].sum()
+
+        emb = embedding_vec[i]
+
+        foo_vec.append(
+            torch.mean(
+                torch.masked_select(emb, mask).view(mask_sum, vector_length), 0
+            )
+        )
+
+    return torch.stack(foo_vec)
+```
+
+### new run with fix
+```python
+In [58]: queries = ["moroccan peppermint chile", "saudi falafel with mint"]
+    ...: print(model.embed_documents(queries, ))
+    ...: print("...\n")
+    ...: print(model.embed_documents([queries[1], queries[0]]))
+    ...: print("...\n")
+    ...: print(torch.stack([model.embed_query(x) for x in queries]))
+tensor([[-0.4740, -0.0985, -0.3240, -0.1140,  ..., -0.0500, -0.2265,  0.0522,  0.1712],
+        [-0.4011,  0.0649, -0.7596, -0.1395,  ...,  0.3353, -0.4370,  0.1567,  0.2334]])
+...
+
+tensor([[-0.4011,  0.0649, -0.7596, -0.1395,  ...,  0.3353, -0.4370,  0.1567,  0.2334],
+        [-0.4740, -0.0985, -0.3240, -0.1140,  ..., -0.0500, -0.2265,  0.0522,  0.1712]])
+...
+
+tensor([[-0.4740, -0.0985, -0.3240, -0.1140,  ..., -0.0500, -0.2265,  0.0522,  0.1712],
+        [-0.4011,  0.0649, -0.7596, -0.1395,  ...,  0.3353, -0.4370,  0.1567,  0.2334]])
+
+```
 
 # Appendix 
 

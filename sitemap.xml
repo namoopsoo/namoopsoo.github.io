@@ -2,10 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://michal.piekarczyk.xyz/post/2025-01-27-nice-embedding-pooling-bug/</loc>
-    <lastmod>2025-02-02T19:20:41-05:00</lastmod>
+    <loc>https://michal.piekarczyk.xyz/post/2025-02-01-speedup-building-ground-truth-dataset-with-chromadb/</loc>
+    <lastmod>2025-02-02T19:45:20-05:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/post/</loc>
+    <lastmod>2025-02-02T19:45:20-05:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/post/2025-01-27-nice-embedding-pooling-bug/</loc>
     <lastmod>2025-02-02T19:20:41-05:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/post/2025-01-11-comparing-embedding-models/</loc>

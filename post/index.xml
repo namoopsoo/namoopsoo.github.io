@@ -6,8 +6,16 @@
     <description>Recent content in Posts on michal.piekarczyk.xyz</description>
     <generator>Hugo -- 0.143.0</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 02 Feb 2025 19:20:41 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 02 Feb 2025 19:45:20 -0500</lastBuildDate>
     <atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>build ground truth golden dataset for comparing embedding models faster with chromadb</title>
+      <link>https://michal.piekarczyk.xyz/post/2025-02-01-speedup-building-ground-truth-dataset-with-chromadb/</link>
+      <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2025-02-01-speedup-building-ground-truth-dataset-with-chromadb/</guid>
+      <description>&lt;p&gt;Initially, thinking that I wanted to create this grand truth data set quickly, a started out by having a four loop and sampling data from my giant data set of documents, looking for matches to input queries, but this ended up being pretty slow and tedious.
+today I switched to just setting up a local index using chroma DB. and this ended up being extremely fast because I am not having to redo the embedding.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>fun pool embedding bug</title>
       <link>https://michal.piekarczyk.xyz/post/2025-01-27-nice-embedding-pooling-bug/</link>

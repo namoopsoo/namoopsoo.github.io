@@ -4,7 +4,7 @@
     <title>michal.piekarczyk.xyz</title>
     <link>https://michal.piekarczyk.xyz/</link>
     <description>Recent content on michal.piekarczyk.xyz</description>
-    <generator>Hugo -- 0.143.0</generator>
+    <generator>Hugo -- 0.143.1</generator>
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -269,17 +269,10 @@ It is off topic, so no results&lt;/p&gt;
       <link>https://michal.piekarczyk.xyz/post/2024-05-24-typewise-plus-logseq/</link>
       <pubDate>Fri, 24 May 2024 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/post/2024-05-24-typewise-plus-logseq/</guid>
-      <description>&lt;p&gt;An example that is around undo-ing auto-corrections,  when using the Logseq app.
-This is on on typewise&lt;/p&gt;
-&lt;h1 id=&#34;example&#34;&gt;example&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://vimeo.com/948393509&#34;&gt;https://vimeo.com/948393509&lt;/a&gt;
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://player.vimeo.com/video/948393509&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;vimeo video&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-&lt;h1 id=&#34;thoughts-as-to-why&#34;&gt;Thoughts as to why&lt;/h1&gt;
-&lt;p&gt;The issue I suppose is that when one types some text, on typewise, a buffer of the immediate text is kept, so if typewise auto-corrects, and someone taps the &amp;ldquo;↩️&amp;rdquo; undo , typewise attempts to replace the suggestion with the previous buffer. And if typewise is being used in an app that, say, modifies the text after typewise captures its buffer, but then applies an autocorrect, then of course the undo will not make sense. But say if typewise captures its buffer instead, not right after the last typewise keystroke, but before typewise issues its autocorrect, then everything would be golden.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;update-2025-02-04&#34;&gt;&lt;strong&gt;UPDATE: 2025-02-04&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;wow, i dont know if this is new or if I stumbled upon something thats been sitting in plain site all along, but today, when after entering a part of a logseq node , with either the &lt;code&gt;#&lt;/code&gt; or &lt;code&gt;[[]]&lt;/code&gt;  notation, if subsequently I type q comma and a space, &lt;code&gt;, &lt;/code&gt; then no typesense autocorrection occurs!&lt;/p&gt;
+&lt;p&gt;An example that is around undo-ing auto-corrections,  when using the Logseq app.
+This is on on typewise&lt;/p&gt;</description>
     </item>
     <item>
       <title>Nice pretty printing go slices</title>

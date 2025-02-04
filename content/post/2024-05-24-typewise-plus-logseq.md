@@ -7,7 +7,7 @@ title: issue experienced in typewise logseq interaction
 ## **UPDATE: 2025-02-04**
 wow, i dont know if this is new or if I stumbled upon something thats been sitting in plain site all along, but today, when after entering a part of a logseq node , with either the `#` or `[[]]`  notation, if subsequently I type q comma and a space, `, ` then no typesense autocorrection occurs! 
 
-
+# The issue
 An example that is around undo-ing auto-corrections,  when using the Logseq app. 
 This is on on typewise 
 

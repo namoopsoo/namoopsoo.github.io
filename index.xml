@@ -271,6 +271,7 @@ It is off topic, so no results&lt;/p&gt;
       <guid>https://michal.piekarczyk.xyz/post/2024-05-24-typewise-plus-logseq/</guid>
       <description>&lt;h2 id=&#34;update-2025-02-04&#34;&gt;&lt;strong&gt;UPDATE: 2025-02-04&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;wow, i dont know if this is new or if I stumbled upon something thats been sitting in plain site all along, but today, when after entering a part of a logseq node , with either the &lt;code&gt;#&lt;/code&gt; or &lt;code&gt;[[]]&lt;/code&gt;  notation, if subsequently I type q comma and a space, &lt;code&gt;, &lt;/code&gt; then no typesense autocorrection occurs!&lt;/p&gt;
+&lt;h1 id=&#34;the-issue&#34;&gt;The issue&lt;/h1&gt;
 &lt;p&gt;An example that is around undo-ing auto-corrections,  when using the Logseq app.
 This is on on typewise&lt;/p&gt;</description>
     </item>

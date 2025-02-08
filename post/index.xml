@@ -6,7 +6,7 @@
     <description>Recent content in Posts on michal.piekarczyk.xyz</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 04 Feb 2025 09:47:49 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 08 Feb 2025 14:59:37 -0500</lastBuildDate>
     <atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>build ground truth golden dataset for comparing embedding models faster with chromadb</title>
@@ -57,6 +57,7 @@ today I switched to just setting up a local index using chroma DB. and this ende
       <guid>https://michal.piekarczyk.xyz/post/2024-12-01-placeholder-postgres-post/</guid>
       <description>&lt;p&gt;Have not covered yet, a few other cool topics.&lt;/p&gt;
 &lt;p&gt;Can go into more detail later, but, for now some highlights.&lt;/p&gt;
+&lt;h3 id=&#34;runtime-embeddings-to-save-money&#34;&gt;Runtime embeddings to save money&lt;/h3&gt;
 &lt;p&gt;At one point in a recent postgres pgvector retrieval project, a really cool epiphany was, w.r.t. indexing in pgvector both a concat blob of items and granular items, that it is not necessary to also embed the low level items because they can be embedded at runtime and it is not that time consuming.&lt;/p&gt;</description>
     </item>
     <item>

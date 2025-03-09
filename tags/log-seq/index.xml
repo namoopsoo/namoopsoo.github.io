@@ -4,7 +4,7 @@
     <title>Log-Seq on michal.piekarczyk.xyz</title>
     <link>https://michal.piekarczyk.xyz/tags/log-seq/</link>
     <description>Recent content in Log-Seq on michal.piekarczyk.xyz</description>
-    <generator>Hugo -- 0.143.1</generator>
+    <generator>Hugo -- 0.128.0</generator>
     <language>en</language>
     <lastBuildDate>Sat, 01 Apr 2023 21:57:32 -0400</lastBuildDate>
     <atom:link href="https://michal.piekarczyk.xyz/tags/log-seq/index.xml" rel="self" type="application/rss+xml" />
@@ -13,30 +13,8 @@
       <link>https://michal.piekarczyk.xyz/post/2023-04-01--merge-log-seq-journal-forks/</link>
       <pubDate>Sat, 01 Apr 2023 16:24:51 -0500</pubDate>
       <guid>https://michal.piekarczyk.xyz/post/2023-04-01--merge-log-seq-journal-forks/</guid>
-      <description>&lt;h3 id=&#34;this-is-what-happens-to-me&#34;&gt;This is what happens to me&lt;/h3&gt;
-&lt;p&gt;When editing with &lt;a href=&#34;https://logseq.com&#34;&gt;https://logseq.com&lt;/a&gt; , on my phone, laptop and ipad, I end up seeing this&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ fd &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt; journals/
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journals/2021_03_13 2.md
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journals/2021_05_30 2.md
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journals/2021_10_17 2.md
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journals/2022_01_23 2.md
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journals/2022_05_15 2.md
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journals/2022_06_11 2.md
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journals/2022_07_16 2.md
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journals/2022_08_21 2.md
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journals/2022_09_01 2.md
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journals/2022_09_07 2.md
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journals/2022_09_07 3.md
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journals/2022_09_10 2.md
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journals/2022_09_26 2.md
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journals/2022_10_22 2.md
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journals/2022_10_22 3.md
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journals/2022_12_14 2.md
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journals/2023_01_12 2.md
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journals/2023_02_04 2.md
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journals/2023_03_10 2.md
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journals/2023_03_21 2.md
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I think this is mostly happening when you start editing a file before a icloud sync has had a chance to take place.&lt;/p&gt;</description>
+      <description>This is what happens to me When editing with https://logseq.com , on my phone, laptop and ipad, I end up seeing this
+$ fd &amp;#39; &amp;#39; journals/ journals/2021_03_13 2.md journals/2021_05_30 2.md journals/2021_10_17 2.md journals/2022_01_23 2.md journals/2022_05_15 2.md journals/2022_06_11 2.md journals/2022_07_16 2.md journals/2022_08_21 2.md journals/2022_09_01 2.md journals/2022_09_07 2.md journals/2022_09_07 3.md journals/2022_09_10 2.md journals/2022_09_26 2.md journals/2022_10_22 2.md journals/2022_10_22 3.md journals/2022_12_14 2.md journals/2023_01_12 2.md journals/2023_02_04 2.md journals/2023_03_10 2.md journals/2023_03_21 2.md I think this is mostly happening when you start editing a file before a icloud sync has had a chance to take place.</description>
     </item>
   </channel>
 </rss>

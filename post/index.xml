@@ -6,14 +6,15 @@
     <description>Recent content in Posts on michal.piekarczyk.xyz</description>
     <generator>Hugo -- 0.128.0</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 09 Mar 2025 15:57:03 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 11 Mar 2025 09:48:01 -0400</lastBuildDate>
     <atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>transformer architecture sweet spot</title>
       <link>https://michal.piekarczyk.xyz/post/2025-03-09-transformer-explain/</link>
       <pubDate>Sun, 09 Mar 2025 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/post/2025-03-09-transformer-explain/</guid>
-      <description>What is the transformer architecture? Let me try for a, hopefully a sweet spot explanation.
+      <description>(DRAFT for now )
+What is the transformer architecture? Let me try for a, hopefully a sweet spot explanation.
 A deep neural network, trained by back propagation, with language data, first by self supervised learning (aka pre-training) using Masked Language Modeling, and then by fine tuning, for tasks like text summarization, part of speech labeling, Name Entity Recognition labeling, question answering, translation, and others.
 Self supervision, by way of next token prediction or more generally masked language modeling , lets a model to be trained without human generated labels.</description>
     </item>

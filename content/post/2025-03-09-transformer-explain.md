@@ -3,8 +3,11 @@ title: transformer architecture sweet spot
 date: 2025-03-09
 ---
 
+_(DRAFT for now )_
+
 # What is the transformer architecture?
 Let me try for a, hopefully a sweet spot explanation.
+
 
 A deep neural network, trained by back propagation, with language data, first by self supervised learning (aka pre-training) using Masked Language Modeling, and then by fine tuning, for tasks like text summarization, part of speech labeling, Name Entity Recognition labeling, question answering, translation, and others.
 
@@ -13,11 +16,19 @@ Self supervision, by way of next token prediction or more generally masked langu
 It may be that a diagram is not the best way of explaining the attention mechanism that is the core of the transformer, but instead linear algebra or just matrix math more generally.
 
 
-mathjax test, 
+## Names for concepts,
+(borrowing notation and concepts from https://sebastianraschka.com/blog/2023/self-attention-from-scratch.html , )
 
-$$a_4 \ne b_4$$
+query sequence, $$q^{(i)}$$, for embedded input $$i$$. As well as key sequence, and value sequence, built from the query, key and value weight matrices .
 
-or take 2, 
+attention vector per each input element.
 
+And query and key sequences are involved in a dot product to produce unnormalized attention weights.
 
-$$a\_4 \ne b\_4$$
+$$\omega_{ij} = q^{(i)^T} k^{(j)}$$ 
+
+Normalized attention weights are _softmaxed_ unnormalized attention weights, along with a scaling factor, $$1/{\sqrt d_{k}}$$ , 
+
+like, 
+
+ $$\alpha_{2,i} = softmax(\frac{\omega_{2,i}}{{\sqrt d_{k}}})$$

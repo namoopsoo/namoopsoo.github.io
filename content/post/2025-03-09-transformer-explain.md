@@ -32,3 +32,6 @@ Normalized attention weights are _softmaxed_ unnormalized attention weights, alo
 like, 
 
  $$\alpha_{2,i} = softmax(\frac{\omega_{2,i}}{{\sqrt d_{k}}})$$
+
+
+Finally, after computing $$ \alpha_{2,1}, \alpha_{2,j}, ..., \alpha_{2,T} $$  for all terms, related to the $$x^{(2)}$$ input token, we also have the *context vector* $$z^{(2)} = \sum_{j=1}^{T} \alpha_{2,j} v^{(j)}$$

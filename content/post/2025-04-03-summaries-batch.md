@@ -11,4 +11,5 @@ oh yeah and I think Andrew Huberman caused this "non-sleep deep rest", so not na
 
 I have also been reflecting on Anna Lemke's book dopamine nation. More on that later.
 
-
+Accountability devices, although I have learned about the earlier in near Nir Eyal's book Indistractible, I have finally started to apply them with Anna Lembkes book. So I converted the lock on my snack closet into an actual keyed lock. And I bought a  Masterlock pinned key safe lock, for key storage.
+(Im not recalling if she had used the actual phrase "dopamine detox", but reminds me slightly of the concepts of [this link](https://www.deprocrastination.co/blog/how-to-do-dopamine-detox-the-right-way) too)

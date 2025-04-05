@@ -8,6 +8,16 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>collect logseq logbook stats</title>
+      <link>https://michal.piekarczyk.xyz/post/2025-04-05-logseq-logbook-python/</link>
+      <pubDate>Sat, 05 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2025-04-05-logseq-logbook-python/</guid>
+      <description>Figured, I&amp;rsquo;m not good at logseq datalog queries yet, so may as well just read logseq LOGBOOK data using plain python.
+And with assist of chat gpt, I have a nice proof of concept.
+from pathlib import Path import polars as pl import time_log as tl journals_dir = &amp;#34;mgraphblah/journals&amp;#34; pattern = &amp;#34;2025_*.md&amp;#34; out_vec = tl.iterate_across_journals(journals_dir, pattern) df = pl.from_dicts(out_vec) how much time I spent on taxes?
+per_tag_stats = df.explode(&amp;#34;Tags&amp;#34;).group_by(&amp;#34;Tags&amp;#34;).agg(pl.col(&amp;#34;Duration (mins)&amp;#34;).sum().alias(&amp;#34;Total minutes&amp;#34;)) per_tag_stats.</description>
+    </item>
+    <item>
       <title>good vibes all around</title>
       <link>https://michal.piekarczyk.xyz/post/2025-04-04-vibes/</link>
       <pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate>

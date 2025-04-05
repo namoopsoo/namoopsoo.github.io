@@ -8,6 +8,13 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>good vibes all around</title>
+      <link>https://michal.piekarczyk.xyz/post/2025-04-04-vibes/</link>
+      <pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2025-04-04-vibes/</guid>
+      <description>I was reading Andrej Karpathy&amp;rsquo;s original post, https://x.com/karpathy/status/1886192184808149383, on vibe coding. And yesterday, first time I tried VS Code, in order to try Codeium, as my first touch of edit assist which the early GitHub Copilot I test drove before did not have. Cursor introduced the edit concept but I hadn&amp;rsquo;t tried this because I was already paying for Open AI ChatGPT, so I didnt want to double dip. But I got a chance to try Codeium at work, so I did.</description>
+    </item>
+    <item>
       <title>batch a few book summaries</title>
       <link>https://michal.piekarczyk.xyz/post/2025-04-03-summaries-batch/</link>
       <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>

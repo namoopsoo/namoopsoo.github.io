@@ -18,7 +18,7 @@ def bake_options():
             [['--dry-run', '-D'],
                 {'action': 'store_true',
                     'help': 'Dry run. Just print the command.  '},],
-            [['--append'],
+            [['--append-only'],
                 {'action': 'store_true',
                     'help': 'Append instead of creating a new file. (If the file already exists, you will get an error.)'},],
             [['--images'],
@@ -40,7 +40,7 @@ def bake_options():
             [['--stdout'],
                 {'action': 'store_true',
                     'help': 'Send the html to stdout instead.'},],
-            [['--only-convert-images-to-s3-assets'],
+            [['--convert-images-to-s3-assets'],
                 {'action': 'store_true',
                     'help': 'For an existing file, send its local images to S3 and replace the links with S3 links.'},],
             [['--local-asset-dir'],
@@ -59,6 +59,15 @@ def bake_options():
     #             choices='',
     #             action='',
     #             type='',
+
+def collect_kwargs():
+    parser = argparse.ArgumentParser()
+    [parser.add_argument(*x[0], **x[1])
+            for x in bake_options()]
+
+    # Collect args from user.
+    kwargs = dict(vars(parser.parse_args()))
+    return kwargs
 
 
 def parse_date(date):
@@ -256,69 +265,45 @@ def update_this_file(loc, update_in_place=True):
             print("done")
 
 
-def do():
-    parser = argparse.ArgumentParser()
-
-    [parser.add_argument(*x[0], **x[1])
-            for x in bake_options()]
-
+def main():
     # Collect args from user.
-    args = vars(parser.parse_args())
+    args = collect_kwargs()
 
     if not check_env_vars():
         print("Oops need to set S3_DEPLOY_BUCKET")
         return
 
     existing_file = args.get("existing_file")
-    if args.get("only_convert_images_to_s3_assets"):
+    convert_images_to_s3_assets = args.get("convert_images_to_s3_assets")
+    append_only = args.get("append_only")
+    input_images = args.get("images")
+    dry_run = args.get("dry_run")
+    local_asset_dir = args.get("local_asset_dir")
 
-        assert existing_file and Path(existing_file).is_file()
-        local_asset_dir = args.get("local_asset_dir")
-        assert local_asset_dir and Path(local_asset_dir).is_dir()
-        convert_local_images_to_s3_assets(existing_file, local_asset_dir)
-        print("Done.")
+    if not existing_file or not Path(existing_file).is_file():
+        print(f"Oops {existing_file} doesnt exist. bye.")
         return
 
-    images = [x.replace("\\", "").strip() for x in args.get("images").split(",")]
-    print("images", images)
-    dry_run = args.get("dry_run")
-    title = args.get("title")
-    date = args.get("date")
-    out_dir = args.get("out_dir")
-    assert existing_file or out_dir
+    if append_only:
+        if not input_images:
+            print(f"oops forgot to pass --images in --append-only mode.")
+            return
 
-    print(args)
-    if existing_file:
-        prefix = os.path.basename(existing_file)
-        if prefix.endswith('.md'):
-            prefix = prefix[:-3]
-    else:
-        prefix = make_prefix(date=date, title=title)
-    print('prefix', prefix)
-    s3fn_vec = upload_images_s3(images, prefix, dry_run=dry_run)
+        images = [x.replace("\\", "").strip() for x in input_images.split(",")]
+        base_name = Path(existing_file).stem
+        s3fn_vec = upload_images_s3(images, base_name, dry_run=dry_run)
+        image_html = make_image_html(s3fn_vec)
+        write_post_file(path=existing_file, content=image_html, append=True)
+        return
 
-    image_html = make_image_html(s3fn_vec)
+    elif convert_images_to_s3_assets:
+        assert local_asset_dir and Path(local_asset_dir).is_dir()
+        convert_local_images_to_s3_assets(existing_file, local_asset_dir)
+        return
 
-    header_html = header_template(date, title)
+    print("nothing to do. bye")
+    return
 
-    print('image_html', image_html)
-    append = args.get('append')
-    if append:
-        content = f'\n{image_html}'
-    else:
-        content = f'{header_html} \n{image_html}'
-
-    if args.get('stdout'):
-        print(content)
-    else:
-        if existing_file:
-            path = existing_file
-        else:
-            path = f"{out_dir}/{date}-{title.replace(' ', '-')}.md"
-        write_post_file(path=path,
-                        content=content,
-                        append=append)
-    
 
 if __name__ == "__main__":    
-    do()
+    main()

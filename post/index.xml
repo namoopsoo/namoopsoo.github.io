@@ -6,7 +6,7 @@
     <description>Recent content in Posts on michal.piekarczyk.xyz</description>
     <generator>Hugo -- 0.128.0</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 05 Apr 2025 19:25:19 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 06 Apr 2025 12:51:05 -0400</lastBuildDate>
     <atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>collect logseq logbook stats</title>
@@ -42,6 +42,15 @@ In, Feel Good Productivity, Ali Abdaal captured very well, the idea that sometim
 What is the transformer architecture? Let me try for a, hopefully a sweet spot explanation.
 A deep neural network, trained by back propagation, with language data, first by self supervised learning (aka pre-training) using Masked Language Modeling, and then by fine tuning, for tasks like text summarization, part of speech labeling, Name Entity Recognition labeling, question answering, translation, and others.
 Self supervision, by way of next token prediction or more generally masked language modeling , lets a model to be trained without human generated labels.</description>
+    </item>
+    <item>
+      <title>The local sediment</title>
+      <link>https://michal.piekarczyk.xyz/post/2025-03-08-rock-climbing-literal/</link>
+      <pubDate>Sat, 08 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2025-03-08-rock-climbing-literal/</guid>
+      <description>Recently went to check out some of the rock faces in New Haven
+Nice rocks! Cool dirt too!
+And in the neighborhood, across the street from the local rock climbing gym were some additional practice rocks.</description>
     </item>
     <item>
       <title>Chopin Etude op 10 no 1 progress with voice memo and ffprobe and chatgpt</title>

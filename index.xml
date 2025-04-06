@@ -43,6 +43,15 @@ A deep neural network, trained by back propagation, with language data, first by
 Self supervision, by way of next token prediction or more generally masked language modeling , lets a model to be trained without human generated labels.</description>
     </item>
     <item>
+      <title>The local sediment</title>
+      <link>https://michal.piekarczyk.xyz/post/2025-03-08-rock-climbing-literal/</link>
+      <pubDate>Sat, 08 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2025-03-08-rock-climbing-literal/</guid>
+      <description>Recently went to check out some of the rock faces in New Haven
+Nice rocks! Cool dirt too!
+And in the neighborhood, across the street from the local rock climbing gym were some additional practice rocks.</description>
+    </item>
+    <item>
       <title>Chopin Etude op 10 no 1 progress with voice memo and ffprobe and chatgpt</title>
       <link>https://michal.piekarczyk.xyz/post/2025-02-22-piano-tracking/</link>
       <pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate>

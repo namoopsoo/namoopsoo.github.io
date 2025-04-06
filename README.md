@@ -8,7 +8,7 @@ This code expects `S3_DEPLOY_BUCKET` is defined.
 ### upload images to s3 and append html links to them to an existing .md file
 ```sh
 python quick_blog_post.py \
-    --append \
+    --append-only \
     --existing-file "/path/to/content/file.md" \
     --images "/full/path/to/image.png,/full/path/to/another_image.png" \
 ```

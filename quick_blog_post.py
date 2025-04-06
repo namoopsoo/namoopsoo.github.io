@@ -165,8 +165,9 @@ def convert_local_images_to_s3_assets(content_file_path, absolute_asset_dir, rep
         elif match_img_md:
             relative_path = Path(match_img_md.groups()[0])
         else:
-            relative_path = ""
-        if relative_path and not str(relative_path).startswith("http"):
+            continue
+
+        if not relative_path.to_posix().startswith("http"):
             assert " " not in str(relative_path), relative_path
             image_path = asset_dir / relative_path
             assert image_path.exists(), image_path
@@ -205,24 +206,24 @@ def convert_local_images_to_s3_assets(content_file_path, absolute_asset_dir, rep
             relative_path = Path(match_img_md.groupdict()["path"])
             all_match = Path(match_img_md.groupdict()["all"])
         else:
-            relative_path = ""
-        if relative_path:
-            image_path = asset_dir / relative_path
-            assert image_path.exists(), image_path
-
-            updated_line = line.replace(
-                str(all_match), 
-                make_image_html(
-                    # make_s3_image_url(str(Path(prefix) / relative_path.name))
-                    (str(Path(prefix) / relative_path.name))
-                ),
-            )
-            if line == updated_line:
-                print("Hmm, line and updated_line are both ", line, ", that is weird")
-            updates.append({"before": line, "after": updated_line})
-            output_lines.append(updated_line)
-        else:
             output_lines.append(line)
+            continue
+
+        image_path = asset_dir / relative_path
+        assert image_path.exists(), image_path
+
+        updated_line = line.replace(
+            str(all_match), 
+            make_image_html(
+                # make_s3_image_url(str(Path(prefix) / relative_path.name))
+                (str(Path(prefix) / relative_path.name))
+            ),
+        )
+        if line == updated_line:
+            print("Hmm, line and updated_line are both ", line, ", that is weird")
+        updates.append({"before": line, "after": updated_line})
+        output_lines.append(updated_line)
+
     if replace:
         out = Path(content_file_path).write_text("\n".join(output_lines))
         print("write out", out)
@@ -277,8 +278,6 @@ def do():
         convert_local_images_to_s3_assets(existing_file, local_asset_dir)
         print("Done.")
         return
-
-
 
     images = [x.replace("\\", "").strip() for x in args.get("images").split(",")]
     print("images", images)

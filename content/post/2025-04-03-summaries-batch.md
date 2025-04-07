@@ -13,3 +13,5 @@ I have also been reflecting on Anna Lemke's book dopamine nation. More on that l
 
 Accountability devices, although I have learned about the earlier in near Nir Eyal's book Indistractible, I have finally started to apply them with Anna Lembkes book. So I converted the lock on my snack closet into an actual keyed lock. And I bought a  Masterlock pinned key safe lock, for key storage.
 (Im not recalling if she had used the actual phrase "dopamine detox", but reminds me slightly of the concepts of [this link](https://www.deprocrastination.co/blog/how-to-do-dopamine-detox-the-right-way) too)
+
+Speaking of accountability devices, this reminds me of Severance Apple TV series, where you surgically alter your brain to keep focused on work side of your life, such that your "severed" side at work doesnt know about your personal life, so forget about blocking phone notifications, you dont have a personal life to be notified about!

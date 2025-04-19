@@ -6,8 +6,17 @@
     <description>Recent content in Posts on michal.piekarczyk.xyz</description>
     <generator>Hugo -- 0.128.0</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 07 Apr 2025 08:07:58 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 19 Apr 2025 15:07:08 -0400</lastBuildDate>
     <atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Drop it Like It&#39;s null</title>
+      <link>https://michal.piekarczyk.xyz/post/2025-04-19-drop-it-like-its-null/</link>
+      <pubDate>Sat, 19 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2025-04-19-drop-it-like-its-null/</guid>
+      <description>Arghh haha I have been messing around with trying to understand why the transactions I see on my Tiller from my credit card, are not as many as what I see when I pull the csv of transactions straight from my credit card website.
+Dohh.
+During my data wrangling, I had to manually copy and paste transactions out of my Google Sheets, because Google Sheets oddly enough does not have the capability of &amp;ldquo;exporting as csv&amp;rdquo; what has undergone a data filter.</description>
+    </item>
     <item>
       <title>collect logseq logbook stats</title>
       <link>https://michal.piekarczyk.xyz/post/2025-04-05-logseq-logbook-python/</link>

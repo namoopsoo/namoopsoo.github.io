@@ -76,6 +76,13 @@ Asked chatgpt for help. I&amp;rsquo;ve been recording to .m4a by mac voice memo.
       <description>Initially, thinking that I wanted to create this grand truth data set quickly, a started out by having a four loop and sampling data from my giant data set of documents, looking for matches to input queries, but this ended up being pretty slow and tedious. today I switched to just setting up a local index using chroma DB. and this ended up being extremely fast because I am not having to redo the embedding.</description>
     </item>
     <item>
+      <title>model-metric-updates</title>
+      <link>https://michal.piekarczyk.xyz/post/2025-02-01--model-metric-updates/</link>
+      <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2025-02-01--model-metric-updates/</guid>
+      <description>TODO</description>
+    </item>
+    <item>
       <title>fun pool embedding bug</title>
       <link>https://michal.piekarczyk.xyz/post/2025-01-27-nice-embedding-pooling-bug/</link>
       <pubDate>Mon, 27 Jan 2025 00:00:00 +0000</pubDate>

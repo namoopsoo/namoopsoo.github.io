@@ -6,8 +6,17 @@
     <description>Recent content in Posts on michal.piekarczyk.xyz</description>
     <generator>Hugo -- 0.128.0</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 26 Apr 2025 09:38:39 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 10 May 2025 12:20:06 -0400</lastBuildDate>
     <atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>simple made easy</title>
+      <link>https://michal.piekarczyk.xyz/post/2025-05-09-simple-easy/</link>
+      <pubDate>Fri, 09 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2025-05-09-simple-easy/</guid>
+      <description>drafting&amp;hellip;
+2025-05-10 Simple Made Easy, Richard Hickey talk, take aways,
+Listening to this presentation, from the frame of why do codebases get difficult to change , but also how you plan changes you want to make on the scale of a &amp;ldquo;story&amp;rdquo; or &amp;ldquo;bug&amp;rdquo; and also just a &amp;ldquo;day&amp;rdquo; and even a single block of time you have for a particular story. The definition of simple as simplex as one interleave and less simplex as more &amp;ldquo;concepts&amp;rdquo; that are taken tofjgether to be more &amp;ldquo;complex&amp;rdquo;.</description>
+    </item>
     <item>
       <title>Drop it Like It&#39;s null</title>
       <link>https://michal.piekarczyk.xyz/post/2025-04-19-drop-it-like-its-null/</link>

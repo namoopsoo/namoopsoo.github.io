@@ -18,3 +18,6 @@ While going through this, I had been also watching the Ken Burns story about Mar
 Hickey has a poijt about jugglers. How many pins or balls can a really good juggler juggle? He argues, probably most people are working with similar limitations. And I wonder what would Michael Stevens of Vsauce , who created a very thought provoking , very Zipfian video on entropy and combinatorics, say on such shared limitations of language itself. And here Gary Marcus, Stephen Pinker, Noam Chomsky, see language as a "instinct" yes and that we have some machinery we have evolved to be born with. But yea, is the limitation in what you are conveying, in code or in spoken words, or written words, tied to intrinsic mathematical limitations. 
 
 All this also of course made me try to understand writing style too, wondering say, is it better to write as "Breadth First" or "depth first"? Conversations are neither interestingly. Conversations are like walking a Graph, meandering , in a non-tree algorithm. Technical articles are probably best as BFS, laying out the stage first, tgen diving down one layer at a time, perhaps covering subtrees as well.
+
+
+Didnt get to yet the Freakenomics Sludge epieodes yet either. I feel like I have to just lay out all the related concepts first. Then try to attack chunks.

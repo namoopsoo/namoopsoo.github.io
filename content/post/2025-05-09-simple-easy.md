@@ -22,7 +22,11 @@ All this also of course made me try to understand writing style too, wondering s
 
 Didnt get to yet the Freakenomics Sludge epieodes yet either. I feel like I have to just lay out all the related concepts first. Then try to attack chunks.
 
-Maybe most intriguing aspect, is the relationship between how you feel and the number of items you attempt to juggle. A moment can be chaotic when you are weighing multiple concepts of consequence. I remember I had a friend in college who said to me she would write down her work in solving a problem, writing out loud, and I recall being and at first confused, dont you want to be clever and try to keep the steps in your head. But I think trying to hold too many details only leads to frustration, especially if this is unnecessary. Ultimately I hear Hickey's point about this and I think that less is more applies here.
+Maybe most intriguing aspect, is the relationship between how you feel and the number of items you attempt to juggle. A moment can be chaotic when you are weighing multiple concepts of consequence. I remember I had a friend in college who said to me she would write down her work in solving a problem, writing out loud, and I recall being and at first confused, dont you want to be clever and try to keep the steps in your head. But I think trying to hold too many details only leads to frustration, especially if this is unnecessary. 
+
+Holding more ideas in your head than necessary is no more clever than attempting to use esoteric words with the aim of sounding smart. Both result in confusion. One on your part, other on the part of your audience. Maybe thats why jokes are so useful, because they allow you to hack another's brain into revealing the owners emotional state to you.
+
+Ultimately I hear Hickey's point about this and I think that less is more applies here.
 I was just riding my bike today and realizing how at peace I felt. And it was because I only had what was in front of me to negotiate. 
 
 ...

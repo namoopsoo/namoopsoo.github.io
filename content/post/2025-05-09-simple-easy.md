@@ -21,3 +21,7 @@ All this also of course made me try to understand writing style too, wondering s
 
 
 Didnt get to yet the Freakenomics Sludge epieodes yet either. I feel like I have to just lay out all the related concepts first. Then try to attack chunks.
+
+Maybe most intriguing aspect, is the relationship between how you feel and the number of items you attempt to juggle.
+
+...

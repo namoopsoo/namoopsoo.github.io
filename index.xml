@@ -8,6 +8,14 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>apple iphoto to immich</title>
+      <link>https://michal.piekarczyk.xyz/post/2025-05-16-apple-iphoto-to-immich/</link>
+      <pubDate>Fri, 16 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2025-05-16-apple-iphoto-to-immich/</guid>
+      <description>Few weeks ago stumbled upon an amazing Apple iPhoto alternative, immich, a self hosted photo server, and I have been on the journey to migrate but wow Apple has been shining exceptionally in maintaining its deathgrip on my assets, relentlessly reaffirming why I am trying to get off Apple Photos.
+Immich gives you the control Apple Photos lacks and it has really nice UI elements too.</description>
+    </item>
+    <item>
       <title>simple made easy</title>
       <link>https://michal.piekarczyk.xyz/post/2025-05-09-simple-easy/</link>
       <pubDate>Fri, 09 May 2025 00:00:00 +0000</pubDate>

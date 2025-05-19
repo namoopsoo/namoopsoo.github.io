@@ -30,3 +30,14 @@ Ultimately I hear Hickey's point about this and I think that less is more applie
 I was just riding my bike today and realizing how at peace I felt. And it was because I only had what was in front of me to negotiate. 
 
 ...
+
+## Modulariztion and Simplicity
+More to Hickey's technical points on complecting. So he says, 
+
+> "dont be fooled by code organization", 
+
+in you can have this neat class code layout, but complecting comes down to ,
+
+> "what are they allowed to think about?"
+
+Classes may appear separate but they may not separate concerns and are coupled (aka complected) by what one class knows about another class's internals.

@@ -12,8 +12,9 @@
       <link>https://michal.piekarczyk.xyz/post/2025-05-16-apple-iphoto-to-immich/</link>
       <pubDate>Fri, 16 May 2025 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/post/2025-05-16-apple-iphoto-to-immich/</guid>
-      <description>Few weeks ago stumbled upon an amazing Apple iPhoto alternative, immich, a self hosted photo server, and I have been on the journey to migrate but wow Apple has been shining exceptionally in maintaining its deathgrip on my assets, relentlessly reaffirming why I am trying to get off Apple Photos.
-Immich gives you the control Apple Photos lacks and it has really nice UI elements too.</description>
+      <description>draft A few weeks ago stumbled upon an amazing Apple iPhoto alternative, immich, a self hosted photo server, and I have been on the journey to migrate but wow Apple has been shining exceptionally in maintaining its deathgrip on my assets, relentlessly reaffirming why I am trying to get off Apple Photos.
+Immich gives you the control Apple Photos lacks and it has really nice UI elements too.
+Willing to serve Seeimg the bustling development on the immich github and pleased to see both geolocation pinching goodness and time granularity on a nice demo site, I started flipping through the nice looking docs, but I did not easily notice how I can start serving my immich instance in the cloud.</description>
     </item>
     <item>
       <title>simple made easy</title>

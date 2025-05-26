@@ -74,3 +74,9 @@ shape: (5, 3)
 └──────┴──────┴──────┘
 ```
 
+### dropping only if all columns are null
+per the documentation this appears to be a bit verbose 
+
+```python
+result = df.filter(~pl.all_horizontal(pl.all().is_null()))
+```

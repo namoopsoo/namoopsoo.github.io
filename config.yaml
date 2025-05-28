@@ -71,6 +71,10 @@ menu:
       name: about
       url: /about/
       weight: 50
+    - identifier: now
+      name: now
+      url: /now/
+      weight: 60
     - identifier: posts
       name: posts
       url: /post/

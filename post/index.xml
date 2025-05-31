@@ -6,7 +6,7 @@
     <description>Recent content in Posts on michal.piekarczyk.xyz</description>
     <generator>Hugo -- 0.128.0</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 31 May 2025 15:52:41 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 31 May 2025 17:46:16 -0400</lastBuildDate>
     <atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>super scripts</title>
@@ -23,6 +23,13 @@ To make sure hugo allows the custom &amp;lt;sup&amp;gt; html you need in your co
       <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/post/2025-05-31-tabs-vs-spaces/</guid>
       <description>Going over Rich Hickey&amp;rsquo;s Simple Made Easy talk, clicked for me not just w.r.t. code but behaviorally1 too. So now I&amp;rsquo;m seeing the braids and weaves everywhere. Why do we still use browser tabs, they are very distractng when they accumulate. And the fact that they do accumulate is almost its own evidence of distraction that has occurred. But when you think, okay let me close the tabs, you try to close a tab but you read it and instantly get sucked back into what you were doing before.</description>
+    </item>
+    <item>
+      <title>trials of error</title>
+      <link>https://michal.piekarczyk.xyz/post/2025-05-31-trials-of-error/</link>
+      <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2025-05-31-trials-of-error/</guid>
+      <description>I have very much appreciated Anna Lembke&amp;rsquo;s Dopamine Nation. Easy rewards brings the gremlins that sit on the pain side of the scale, and thats withdrawal. In contrast, working through a challenging task, with mini milestones along the way, is reinforcing and stimulating. And small risks in the work feel good too. This is trial and error. I suppose trial and error is a kind of one armed bandit slot machine too but it involves effort and energy and care and attention, and it lets you learn of course and you come out with some kind of end product hopefully.</description>
     </item>
     <item>
       <title>apple iphoto to immich</title>

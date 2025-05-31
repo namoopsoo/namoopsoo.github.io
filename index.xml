@@ -8,6 +8,14 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>super scripts</title>
+      <link>https://michal.piekarczyk.xyz/post/2025-05-31-super-script-refs/</link>
+      <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2025-05-31-super-script-refs/</guid>
+      <description>adapting super script references I was mentioning in another post1 about switching from hyperlinks to citation style links thanks to seeing Doug Slater’s2 use of this technique. I am sure I have seen it elsewhere too but I forget.
+how to use the new technique An inline reference is simply &amp;ldquo;some text&amp;lt;sup&amp;gt;[1](#references)&amp;lt;/sup&amp;gt;&amp;rdquo;, which has a corresponding 1. blahblah at the references at the end To make sure hugo allows the custom &amp;lt;sup&amp;gt; html you need in your config.</description>
+    </item>
+    <item>
       <title>tabs vs spaces redux</title>
       <link>https://michal.piekarczyk.xyz/post/2025-05-31-tabs-vs-spaces/</link>
       <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>

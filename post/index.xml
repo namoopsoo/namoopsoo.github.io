@@ -6,16 +6,14 @@
     <description>Recent content in Posts on michal.piekarczyk.xyz</description>
     <generator>Hugo -- 0.128.0</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 31 May 2025 13:07:32 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 31 May 2025 13:32:09 -0400</lastBuildDate>
     <atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>tabs vs spaces redux</title>
       <link>https://michal.piekarczyk.xyz/post/2025-05-31-tabs-vs-spaces/</link>
       <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/post/2025-05-31-tabs-vs-spaces/</guid>
-      <description>Going over Rich Hickey&amp;rsquo;s Simple Made Easy talk, clicked for me not just w.r.t. code but behaviorally1 too. So now I&amp;rsquo;m seeing the braids and weaves everywhere. Why do we still use browser tabs, they are very distractng when they accumulate. And the fact that they do accumulate is almost its own evidence of distraction that has occurred.
-too.
-References initial simple made easy reaction </description>
+      <description>Going over Rich Hickey&amp;rsquo;s Simple Made Easy talk, clicked for me not just w.r.t. code but behaviorally1 too. So now I&amp;rsquo;m seeing the braids and weaves everywhere. Why do we still use browser tabs, they are very distractng when they accumulate. And the fact that they do accumulate is almost its own evidence of distraction that has occurred. But when you think, okay let me close the tabs, you try to close a tab but you read it and instantly get sucked back into what you were doing before.</description>
     </item>
     <item>
       <title>apple iphoto to immich</title>

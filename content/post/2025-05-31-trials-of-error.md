@@ -1,0 +1,11 @@
+---
+title: trials of error
+date: 2025-05-31
+---
+
+
+I have very much appreciated Anna Lembke's Dopamine Nation. Easy rewards brings the gremlins that sit on the pain side of the scale, and thats withdrawal. In contrast, working through a challenging task, with mini milestones along the way, is reinforcing and stimulating. And small risks in the work feel good too. This is trial and error. I suppose trial and error is a kind of one armed bandit slot machine too but it involves effort and energy and care and attention, and it lets you learn of course and you come out with some kind of end product hopefully. And if you feel proud of what you did, that feels good, especially if it helps someone else.
+
+But thats not the whole picture. Many projects take a long time so ending the day on nice milestones is not guaranteed. Accepting  this is challenging. I suppose thats the skill set hard core researchers have mastered. The art of trudging through days or weeks before   something you have visibly accomplished. Nevertheless you still need to have something to show for your time especially if someone is paying you for your time. This is stressful. One answer to this is keeping track of what  you tried each day. And if you at least have a solid journal of what you tried, then that can help to close out a day. But this does not come for free. You need to actively and patiently and thoroughly document the trial and error for reprodicibility. Otherwise your journal will be chaotic. And you will not recognize what you did and the chaos will again make  you feel like you wasted a day. 
+
+And you undoubtedly learn quite a lot too. These learnings can often be documented in isolation as well. This is especially helpful if your work is private to an employer and your effort for the most part cannot be shared with the public. This can be very depressing, having nothing to show for a contribution to society , but if you can at least capture the generic non proprietary learnings you have gleaned, that can go a long way to keep you sane 😆. 

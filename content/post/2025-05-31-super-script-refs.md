@@ -24,8 +24,8 @@ I was mentioning in another post<sup>[1](#references)</sup> about switching from
     ```
 
 
-# thanks
-Also I definitely did not know about the goldmark and css tips off the top of my head. This advice came from ChatGPT when prompted about hmm why wasnt the `<sup>` lighting up when I tried it out for the first time. 
+# Thanks
+Also I definitely did not know about the goldmark and css tips off the top of my head. This advice came from ChatGPT when prompted about hmm why wasn't the `<sup>` lighting up when I tried it out for the first time. 
 
 # references
 1. [other post](https://michal.piekarczyk.xyz/post/2025-05-31-tabs-vs-spaces/#wherever-you-go-there-you-are) 

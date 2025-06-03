@@ -3,13 +3,13 @@ title: Drop it Like It's null
 date: 2025-04-19
 ---
 
-Arghh haha I have been messing around with trying to understand why the transactions I see on my Tiller from my credit card, are not as many as what I see when I pull the csv of transactions straight from my credit card website.
+Arghh ha ha I have been messing around with trying to understand why the transactions I see on my Tiller from my credit card, are not as many as what I see when I pull the csv of transactions straight from my credit card website.
 
 Dohh.
 
 During my data wrangling,  I had to manually copy and paste transactions out of my Google Sheets, because Google Sheets oddly enough does not have the capability of "exporting as csv" what has undergone a data filter. So you are awkwardly forced to manually copy and paste it out.
 
-But then becaues after pasting into a file locally, lots of rows ended up as empties, and when I was 
+But then because after pasting into a file locally, lots of rows ended up as empties, and when I was 
 
 ```python
 tillerdf = pl.read_csv("from_tiller.csv")

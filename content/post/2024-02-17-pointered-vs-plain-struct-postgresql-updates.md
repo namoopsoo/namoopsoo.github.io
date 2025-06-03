@@ -1,11 +1,7 @@
-
-
-
-
-
-
-
-
+---
+title: pointer vs plain struct postgresql updates
+draft: true
+---
 
 
 ```go

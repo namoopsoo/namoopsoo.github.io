@@ -7,7 +7,7 @@ Recently, I had been interested in locally reproducing the [ typesense huggingfa
 
 I noticed that the models in the typesense section of hugging face are in the `model.onnx` format which I had not encountered before. I learned how to get them running locally and I was able to compare that the vectors on a typesense cluster I was running matched vectors I generated locally. 
 
-However, I was extending the model from single query embedding to batch embedding yesterday and I stumbled upon the weirdnes bug of one query being embedded differently depending on whether I embedded it alone versus in a batch. Eventually I understood what my bug was and after facepalming, wrote up and tested a fix!
+However, I was extending the model from single query embedding to batch embedding yesterday and I stumbled upon the weirdness bug of one query being embedded differently depending on whether I embedded it alone versus in a batch. Eventually I understood what my bug was and after facepalming, wrote up and tested a fix!
 
 ## Setting up the onnx model locally
 So I learned that the typical huggingface python library was not sufficient here.
@@ -219,7 +219,7 @@ tensor([[-0.0658,  0.0258,  ..., -0.2852, -0.0799],
 so, clearly one of the vectors was the same batched but not the other.
 
 ### Looking at it another way I saw this,
-So the embeddings from the new `model.embed_documents` func was different than when running the single `model.embed_query`, but only for one query. Weird, and flippin the order did not isolate the bug.
+So the embeddings from the new `model.embed_documents` func was different than when running the single `model.embed_query`, but only for one query. Weird, and flipping the order did not isolate the bug.
 ```python
 queries = ["chicken wings", "chicken parmesan"]
 print(model.embed_documents(queries))
@@ -309,7 +309,7 @@ Out[13]:
         [1, 1, 1, 1,  ..., 1, 1, 1, 1]])}
 
 ```
-actually, this is only the first stab and this code can be way cleaner of course, but this sovles the problem for now.
+actually, this is only the first stab and this code can be way cleaner of course, but this solves the problem for now.
 
 ```python
 def embed_documents(self, queries: List[str], print_tokens=False):

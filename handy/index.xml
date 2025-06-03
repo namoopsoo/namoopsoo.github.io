@@ -457,7 +457,8 @@ $ fd spark-wee en/post/2021-01-23-spark-weekend.md posts/2021-01-23-spark-weeken
       <link>https://michal.piekarczyk.xyz/handy/sql/hmm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/handy/sql/hmm/</guid>
-      <description>List indexes From here SELECT tablename, indexname, indexdef FROM pg_indexes WHERE schemaname = &amp;#39;public&amp;#39; ORDER BY tablename, indexname; Disk Usage per table from the postgresql wiki except one minor change &amp;hellip; for (&#39;user_blah&#39;, &#39;user_blar&#39;, &#39;schema1&#39;, &#39;schema2&#39;) schemas only &amp;hellip; SELECT *, pg_size_pretty(total_bytes) AS total , pg_size_pretty(index_bytes) AS INDEX , pg_size_pretty(toast_bytes) AS toast , pg_size_pretty(table_bytes) AS TABLE FROM ( SELECT *, total_bytes-index_bytes-COALESCE(toast_bytes,0) AS table_bytes FROM ( SELECT c.oid,nspname AS table_schema, relname AS TABLE_NAME , c.</description>
+      <description>[[TOC]]
+List indexes From here SELECT tablename, indexname, indexdef FROM pg_indexes WHERE schemaname = &amp;#39;public&amp;#39; ORDER BY tablename, indexname; Disk Usage per table from the postgresql wiki except one minor change &amp;hellip; for (&#39;user_blah&#39;, &#39;user_blar&#39;, &#39;schema1&#39;, &#39;schema2&#39;) schemas only &amp;hellip; SELECT *, pg_size_pretty(total_bytes) AS total , pg_size_pretty(index_bytes) AS INDEX , pg_size_pretty(toast_bytes) AS toast , pg_size_pretty(table_bytes) AS TABLE FROM ( SELECT *, total_bytes-index_bytes-COALESCE(toast_bytes,0) AS table_bytes FROM ( SELECT c.oid,nspname AS table_schema, relname AS TABLE_NAME , c.</description>
     </item>
     <item>
       <title></title>

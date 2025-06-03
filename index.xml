@@ -21,7 +21,7 @@ To make sure hugo allows the custom &amp;lt;sup&amp;gt; html you need in your co
       <link>https://michal.piekarczyk.xyz/post/2025-05-31-tabs-vs-spaces/</link>
       <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/post/2025-05-31-tabs-vs-spaces/</guid>
-      <description>Going over Rich Hickey&amp;rsquo;s Simple Made Easy talk, clicked for me not just w.r.t. code but behaviorally1 too. So now I&amp;rsquo;m seeing the braids and weaves everywhere. Why do we still use browser tabs, they are very distractng when they accumulate. And the fact that they do accumulate is almost its own evidence of distraction that has occurred. But when you think, okay let me close the tabs, you try to close a tab but you read it and instantly get sucked back into what you were doing before.</description>
+      <description>Going over Rich Hickey&amp;rsquo;s Simple Made Easy talk, clicked for me not just w.r.t. code but behaviorally1 too. So now I&amp;rsquo;m seeing the braids and weaves everywhere. Why do we still use browser tabs, they are very distracting when they accumulate. And the fact that they do accumulate is almost its own evidence of distraction that has occurred. But when you think, okay let me close the tabs, you try to close a tab but you read it and instantly get sucked back into what you were doing before.</description>
     </item>
     <item>
       <title>trials of error</title>
@@ -31,13 +31,13 @@ To make sure hugo allows the custom &amp;lt;sup&amp;gt; html you need in your co
       <description>I have very much appreciated Anna Lembke&amp;rsquo;s Dopamine Nation. Easy rewards brings the gremlins that sit on the pain side of the scale, and thats withdrawal. In contrast, working through a challenging task, with mini milestones along the way, is reinforcing and stimulating. And small risks in the work feel good too. This is trial and error. I suppose trial and error is a kind of one armed bandit slot machine too but it involves effort and energy and care and attention, and it lets you learn of course and you come out with some kind of end product hopefully.</description>
     </item>
     <item>
-      <title>apple iphoto to immich</title>
+      <title>apple photos to immich</title>
       <link>https://michal.piekarczyk.xyz/post/2025-05-16-apple-iphoto-to-immich/</link>
       <pubDate>Fri, 16 May 2025 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/post/2025-05-16-apple-iphoto-to-immich/</guid>
-      <description>draft A few weeks ago stumbled upon an amazing Apple iPhoto alternative, immich, a self hosted photo server, and I have been on the journey to migrate but wow Apple has been shining exceptionally in maintaining its deathgrip on my assets, relentlessly reaffirming why I am trying to get off Apple Photos.
+      <description>draft A few weeks ago stumbled upon an amazing Apple iPhoto alternative, immich, a self hosted photo server, and I have been on the journey to migrate but wow Apple has been shining exceptionally in maintaining its death-grip on my assets, relentlessly reaffirming why I am trying to get off Apple Photos.
 Immich gives you the control Apple Photos lacks and it has really nice UI elements too.
-Willing to serve Seeimg the bustling development on the immich github and pleased to see both geolocation pinching goodness and time granularity on a nice demo site, I started flipping through the nice looking docs, but I did not easily notice how I can start serving my immich instance in the cloud.</description>
+Willing to serve Seeing the bustling development on the immich github and pleased to see both geolocation pinching goodness and time granularity on a nice demo site, I started flipping through the nice looking docs, but I did not easily notice how I can start serving my immich instance in the cloud.</description>
     </item>
     <item>
       <title>simple made easy</title>
@@ -45,15 +45,15 @@ Willing to serve Seeimg the bustling development on the immich github and please
       <pubDate>Fri, 09 May 2025 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/post/2025-05-09-simple-easy/</guid>
       <description>drafting&amp;hellip;
-2025-05-10 Simple Made Easy, Richard Hickey talk, take aways,
-Listening to this presentation, from the frame of why do codebases get difficult to change , but also how you plan changes you want to make on the scale of a &amp;ldquo;story&amp;rdquo; or &amp;ldquo;bug&amp;rdquo; and also just a &amp;ldquo;day&amp;rdquo; and even a single block of time you have for a particular story. The definition of simple as simplex as one interleave and less simplex as more &amp;ldquo;concepts&amp;rdquo; that are taken tofjgether to be more &amp;ldquo;complex&amp;rdquo;.</description>
+2025-05-10 Simple Made Easy, Richard Hickey talk, takeaways,
+Listening to this presentation, from the frame of why do codebases get difficult to change , but also how you plan changes you want to make on the scale of a &amp;ldquo;story&amp;rdquo; or &amp;ldquo;bug&amp;rdquo; and also just a &amp;ldquo;day&amp;rdquo; and even a single block of time you have for a particular story. The definition of simple as simplex as one interleave and less simplex as more &amp;ldquo;concepts&amp;rdquo; that are taken together to be more &amp;ldquo;complex&amp;rdquo;.</description>
     </item>
     <item>
       <title>Drop it Like It&#39;s null</title>
       <link>https://michal.piekarczyk.xyz/post/2025-04-19-drop-it-like-its-null/</link>
       <pubDate>Sat, 19 Apr 2025 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/post/2025-04-19-drop-it-like-its-null/</guid>
-      <description>Arghh haha I have been messing around with trying to understand why the transactions I see on my Tiller from my credit card, are not as many as what I see when I pull the csv of transactions straight from my credit card website.
+      <description>Arghh ha ha I have been messing around with trying to understand why the transactions I see on my Tiller from my credit card, are not as many as what I see when I pull the csv of transactions straight from my credit card website.
 Dohh.
 During my data wrangling, I had to manually copy and paste transactions out of my Google Sheets, because Google Sheets oddly enough does not have the capability of &amp;ldquo;exporting as csv&amp;rdquo; what has undergone a data filter.</description>
     </item>
@@ -72,7 +72,7 @@ per_tag_stats = df.explode(&amp;#34;Tags&amp;#34;).group_by(&amp;#34;Tags&amp;#3
       <link>https://michal.piekarczyk.xyz/post/2025-04-04-vibes/</link>
       <pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/post/2025-04-04-vibes/</guid>
-      <description>I was reading Andrej Karpathy&amp;rsquo;s original post, https://x.com/karpathy/status/1886192184808149383, on vibe coding. And yesterday, first time I tried VS Code, in order to try Codeium, as my first touch of edit assist which the early GitHub Copilot I test drove before did not have. Cursor introduced the edit concept but I hadn&amp;rsquo;t tried this because I was already paying for Open AI ChatGPT, so I didnt want to double dip. But I got a chance to try Codeium at work, so I did.</description>
+      <description>I was reading Andrej Karpathy&amp;rsquo;s original post, https://x.com/karpathy/status/1886192184808149383, on vibe coding. And yesterday, first time I tried VS Code, in order to try Codeium, as my first touch of edit assist which the early GitHub Copilot I test drove before did not have. Cursor introduced the edit concept but I hadn&amp;rsquo;t tried this because I was already paying for Open AI ChatGPT, so I didn&amp;rsquo;t want to double dip. But I got a chance to try Codeium at work, so I did.</description>
     </item>
     <item>
       <title>batch a few book summaries</title>
@@ -1449,7 +1449,8 @@ $ fd spark-wee en/post/2021-01-23-spark-weekend.md posts/2021-01-23-spark-weeken
       <link>https://michal.piekarczyk.xyz/handy/sql/hmm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/handy/sql/hmm/</guid>
-      <description>List indexes From here SELECT tablename, indexname, indexdef FROM pg_indexes WHERE schemaname = &amp;#39;public&amp;#39; ORDER BY tablename, indexname; Disk Usage per table from the postgresql wiki except one minor change &amp;hellip; for (&#39;user_blah&#39;, &#39;user_blar&#39;, &#39;schema1&#39;, &#39;schema2&#39;) schemas only &amp;hellip; SELECT *, pg_size_pretty(total_bytes) AS total , pg_size_pretty(index_bytes) AS INDEX , pg_size_pretty(toast_bytes) AS toast , pg_size_pretty(table_bytes) AS TABLE FROM ( SELECT *, total_bytes-index_bytes-COALESCE(toast_bytes,0) AS table_bytes FROM ( SELECT c.oid,nspname AS table_schema, relname AS TABLE_NAME , c.</description>
+      <description>[[TOC]]
+List indexes From here SELECT tablename, indexname, indexdef FROM pg_indexes WHERE schemaname = &amp;#39;public&amp;#39; ORDER BY tablename, indexname; Disk Usage per table from the postgresql wiki except one minor change &amp;hellip; for (&#39;user_blah&#39;, &#39;user_blar&#39;, &#39;schema1&#39;, &#39;schema2&#39;) schemas only &amp;hellip; SELECT *, pg_size_pretty(total_bytes) AS total , pg_size_pretty(index_bytes) AS INDEX , pg_size_pretty(toast_bytes) AS toast , pg_size_pretty(table_bytes) AS TABLE FROM ( SELECT *, total_bytes-index_bytes-COALESCE(toast_bytes,0) AS table_bytes FROM ( SELECT c.oid,nspname AS table_schema, relname AS TABLE_NAME , c.</description>
     </item>
     <item>
       <title></title>

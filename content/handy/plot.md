@@ -260,7 +260,7 @@ image = train_mages[3]
 ```
 
 #### Plot colors
-* With tips from [here](https://stackoverflow.com/questions/14088687/how-to-change-plot-background-color)
+With tips from [here](https://stackoverflow.com/questions/14088687/how-to-change-plot-background-color), for setting the background color to green instead of transparent so that when displaying on a dark-mode page, the black axis letters are still visible instead of hidden, opaque, invisible, not seen, missing, cannot see them, or assumed cut off, etc. 
 ```python
 # print(plt.style.available)
 # ['Solarize_Light2', '_classic_test_patch', 'bmh', 'classic', 'dark_background', 'fast', 'fivethirtyeight', 'ggplot', 'grayscale', 'seaborn', 'seaborn-bright', 'seaborn-colorblind', 'seaborn-dark', 'seaborn-dark-palette', 'seaborn-darkgrid', 'seaborn-deep', 'seaborn-muted', 'seaborn-notebook', 'seaborn-paper', 'seaborn-pastel', 'seaborn-poster', 'seaborn-talk', 'seaborn-ticks', 'seaborn-white', 'seaborn-whitegrid', 'tableau-colorblind10']
@@ -317,38 +317,83 @@ with plt.style.context('fivethirtyeight'):
 
 ```
 
-#### broken bar chart intended for gantt and I suspect useful as a waterfall for walltimes
+#### Another way of preventing smushing 
+Similar to the above, I learned about a non `pylab` native `matplotlib.pyplot` option for avoiding multi plot figure covering each other, overlapping , getting crammed. (Just including many synonyms for crowding so I can find this more easily :) )
+
+Basically if you define, a figure, you can do this , as I learned from [stacko](https://stackoverflow.com/questions/6541123/improve-subplot-size-spacing-with-many-subplots) recently,
+
+```python
+fig = plt.figure(figsize=(12,12))
+for i in range(5):
+    ax = fig.add_subplot(int(f"51{i + 1}"))
+    ...
+fig.tight_layout()
+```
+And 
+```python
+plt.tight_layout()
+```
+is also available, and when I was trying this out, I used the latter because the former was not quite working for me.
+
+Maybe the former was not working because I used `fig.add_suplot` as opposed to `plt.subplots` as shown in the stacko example I linked above. ^^ So below is the example,
+_show adding it verbatim here below_  
+```python
+import matplotlib.pyplot as plt
+
+fig, axes = plt.subplots(nrows=4, ncols=4, figsize=(8, 8))
+fig.tight_layout() # Or equivalently,  "plt.tight_layout()"
+
+plt.show()
+```
+
+#### How to use `plt.subplots` , iterate across the axes, 
+Here is an example, three histograms across three columns, `category, name, description`, 
+```python
+fig, axes = plt.subplots(figsize=(12,6), nrows=3, ncols=1)
+fig.patch.set_facecolor("xkcd:mint green")
+plt.tight_layout()
+for i, col in enumerate(["category", "name", "description"]):
+    menusdf[col + "_num_tokens"] = menusdf[col].map(lambda x: len(x.split(" "))) #  if isinstance(x, str) else 0
+    ax = axes[i]
+    
+    ax.hist(menusdf[col + "_num_tokens"], bins=50)
+    ax.set(title=f"{col} num tokens")
+```
+<img width="864" alt="image" src="https://github.com/namoopsoo/handy/assets/2048242/be811f67-1f03-4800-8355-40dddc5ec2b0">
+
+
+#### Broken bar chart intended for gantt and I suspect useful as a waterfall for walltimes
 * Borrowing this beautiful example from [Geeks for Geeks](https://www.geeksforgeeks.org/python-basic-gantt-chart-using-matplotlib/)
 ```python
 # Declaring a figure "gnt"
-fig, gnt = plt.subplots()
+fig, ax = plt.subplots()
 
 # Setting Y-axis limits
-gnt.set_ylim(0, 50)
+ax.set_ylim(0, 50)
 
 # Setting X-axis limits
-gnt.set_xlim(0, 160)
+ax.set_xlim(0, 160)
 
 # Setting labels for x-axis and y-axis
-gnt.set_xlabel('seconds since start')
-gnt.set_ylabel('Processor')
+ax.set_xlabel('seconds since start')
+ax.set_ylabel('Processor')
 
 # Setting ticks on y-axis
-gnt.set_yticks([15, 25, 35])
+ax.set_yticks([15, 25, 35])
 # Labelling tickes of y-axis
-gnt.set_yticklabels(['1', '2', '3'])
+ax.set_yticklabels(['1', '2', '3'])
 
 # Setting graph attribute
-gnt.grid(True)
+ax.grid(True)
 
 # Declaring a bar in schedule
-gnt.broken_barh([(40, 50)], (30, 9), facecolors =('tab:orange'))
+ax.broken_barh([(40, 50)], (30, 9), facecolors =('tab:orange'))
 
 # Declaring multiple bars in at same level and same width
-gnt.broken_barh([(110, 10), (150, 10)], (10, 9),
+ax.broken_barh([(110, 10), (150, 10)], (10, 9),
 						facecolors ='tab:blue')
 
-gnt.broken_barh([(10, 50), (100, 20), (130, 10)], (20, 9),
+ax.broken_barh([(10, 50), (100, 20), (130, 10)], (20, 9),
 								facecolors =('tab:red'))
 
 loc = 'gantt.png'
@@ -361,5 +406,36 @@ plt.savefig(loc)
 
 
 
+#### One x axis and two y axes, with different scales, share the x axis
+Reposting for my reference, this really nice example from [here](https://matplotlib.org/stable/gallery/subplots_axes_and_figures/two_scales.html), that I recently needed to use, 
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Create some mock data
+t = np.arange(0.01, 10.0, 0.01)
+data1 = np.exp(t)
+data2 = np.sin(2 * np.pi * t)
+
+fig, ax1 = plt.subplots()
+
+color = 'tab:red'
+ax1.set_xlabel('time (s)')
+ax1.set_ylabel('exp', color=color)
+ax1.plot(t, data1, color=color)
+ax1.tick_params(axis='y', labelcolor=color)
+
+ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
+
+color = 'tab:blue'
+ax2.set_ylabel('sin', color=color)  # we already handled the x-label with ax1
+ax2.plot(t, data2, color=color)
+ax2.tick_params(axis='y', labelcolor=color)
+
+fig.tight_layout()  # otherwise the right y-label is slightly clipped
+plt.show()
+```
+
+![2023-03-20T022620-example-two-y-axes](https://user-images.githubusercontent.com/2048242/227736794-d311ec6b-fdaa-4423-95d3-147f8816de3a.png)
 
 

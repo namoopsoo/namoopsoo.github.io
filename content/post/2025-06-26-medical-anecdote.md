@@ -26,8 +26,8 @@ I went on this raft with my mom as  a side quest during a family trip to Kraków
 I have been having issues with my wrists for many years and I figured that let me try to understand what's the latest with my wrists now. Well I ask my, primary, doctor okay, so she refers me to get a xray, but I made the mistake of not asking for the cost up front. And I feel pretty silly, I got hit with a crazy bill   for the wrist xrays. The full amount was $710 plus a second one, $2,025  and my insurance contributed to some of this, but taking a look at https://www.fairhealthconsumer.org/, I know thee charges are outliers.
 
 So specifically, the claim has two parts,
- - General HC Xray Hand 3 Views - 73130 (CPT) 
-- HC Xray Wrist Complete 3+Views - 73110 (CPT) 
+ - General HC Xray Hand 3 Views , 73130 (CPT) 
+- HC Xray Wrist Complete 3+Views , 73110 (CPT) 
 
 Where CAT stands for, Current Procedural Terminology. And each part also is split into two parts, One diagnostic and one to take the actual xrays.
 

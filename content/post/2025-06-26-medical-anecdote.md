@@ -13,11 +13,11 @@ In krakow, I went on a traditional raft during the trip and prior to that, in th
 
 and in the process,   I got to    , experience the medical system here, so I con compare it lightly to another experience in Th U.S.
 
-One of the things to do in the Polish countryside is to raft with the local Gorals who live in the forest areas, near the Poland/ Slovak border.  Involved in herding and forestry, but at one point they got into rafting and the tourist attraction is to go on a large raft made out of six canoes tied together by ropes. The joke is that youhave to hold them tightly with your adductors in case the ropes give . The trip is a lot of funbecause the flisak (or raftsman) keeps you engaged with jokes about names of mountains and about friendly rivalries with the bordering Slovakia, of which is separated by the River Dunajec.
+One of the things to do in the Polish countryside is to raft with the local Gorals who live in the forest areas, near the Poland/ Slovak border.  Involved in herding and forestry, but at one point they got into rafting and a tourist attraction they organize is to go on a large raft made out of six canoes tied together by ropes. The joke is that you have to hold them tightly with your adductors in case the ropes give . The trip is a lot of fun because the flisak (or raftsman) keeps you engaged with jokes about names of mountains and about friendly rivalries with the bordering Slovakia, of which is separated by the River Dunajec.
 
 This type of raft is propelled mainly by the river, Classically intended To help take chopped trees downstream offer harvesting. So there isn't so much rowing as using a long pole to push Off rocks and to steer more or less.  
 
-I went on this raft with my mom as  a side quest during a family trip to Kraków. we were moving right along, with 6 other people though at one point, there we saw a long  wooden pole floating from another boot, and our guide attempted to snatch it but it was too late and then one of the passengers to my aft, made on attempt to grab  it    but he  , managed to shove the pushing pole  into our boat's but also jabbing straight at my face .  I felt the impact but this wash't incredibly painful, just that apparently there was o lot of blood and the people around me were  kind of speechless. I felt fine more less for 10 minutes but then all of a sudden I got a feeling of intense dizziness, and pressure  and everything got pretty bright too. Right away I thought wow this must be what a hemorrhage feels like and this is the end of my story. I palmed my head and folded myself into my lap. But   a few minutes after, actually, the dizziness went away. And no fainting either. I didn’t feel great but my mom was kind enough to cool me down with some of the river water to try to keep the swelling down. And as soon as I  got off the raft, I started GPTing, how late con the symptoms of concussion arrive ? Turns out it is possible for them to be delayed. They con include nausea vomiting, numbness, asymmetric vision, slurring, and seizure. None so far.
+I went on this raft with my mom as  a side quest during a family trip to Kraków. We were moving right along, with 6 other people though at one point, there we saw a long  wooden pole floating from another boot, and our guide attempted to snatch it but it was too late and then one of the passengers to my aft, made on attempt to grab  it    but he  , managed to shove the pushing pole  into our boat's but also jabbing straight at my face .  I felt the impact but this wash't incredibly painful, just that apparently there was o lot of blood and the people around me were  kind of speechless. I felt fine more less for 10 minutes but then all of a sudden I got a feeling of intense dizziness, and pressure  and everything got pretty bright too. Right away I thought wow this must be what a hemorrhage feels like and this is the end of my story. I palmed my head and folded myself into my lap. But   a few minutes after, actually, the dizziness went away. And no fainting either. I didn’t feel great but my mom was kind enough to cool me down with some of the river water to try to keep the swelling down. And as soon as I  got off the raft, I started GPTing, how late con the symptoms of concussion arrive ? Turns out it is possible for them to be delayed. They con include nausea vomiting, numbness, asymmetric vision, slurring, and seizure. None so far.
 
   So this was the second time I had the chance to also, try out travel insurance in general too.  The first time was in Germany, with a pink eye incident, maybe a story for another time.
 
@@ -26,8 +26,8 @@ But Back at home, in the U.S., let's talk about a bill I received before my trip
 I have been having issues with my wrists for many years and I figured that let me try to understand what's the latest with my wrists now. Well I ask my, primary, doctor okay, so she refers me to get a xray, but I made the mistake of not asking for the cost up front. And I feel pretty silly, I got hit with a crazy bill   for the wrist xrays. The full amount was $710 plus a second one, $2,025  and my insurance contributed to some of this, but taking a look at https://www.fairhealthconsumer.org/, I know thee charges are outliers.
 
 So specifically, the claim has two parts,
-  - General HC Xray Hand 3 Views - 73130 (CPT) 
- - HC Xray Wrist Complete 3+Views - 73110 (CPT) 
+ - General HC Xray Hand 3 Views - 73130 (CPT) 
+- HC Xray Wrist Complete 3+Views - 73110 (CPT) 
 
 Where CAT stands for, Current Procedural Terminology. And each part also is split into two parts, One diagnostic and one to take the actual xrays.
 
@@ -63,3 +63,10 @@ And the nurse recognizedme, and said, okay I should call back in like half on ho
 So next, I should gather my claim information, and, add it to my travel insurance
 
 I saw family in Warsaw after, a cousin who is a surgeon he mentioned that yea my brow bone was doing it's job of protecting the eye, when my mom pointed out that I could have gotten hit in the eye
+
+references
+https://en.wikipedia.org/wiki/Gorals
+https://www.fairhealthconsumer.org/
+
+...
+

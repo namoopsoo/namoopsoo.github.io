@@ -32,7 +32,7 @@ func UpdateEntityNonNil[T any](tableName string, request T, dryRun bool) error {
 
 	// Construct and execute the SQL statement
 	sql := fmt.Sprintf("update %s set %s where id = $1", tableName, strings.Join(setClauses, ", "))
-	fmt.Printf("\n\nUpdteEntity: sql: %q, args: %v", sql, args)
+	fmt.Printf("\n\nUpdateEntity: sql: %q, args: %v", sql, args)
 	if dryRun == true {
 		fmt.Printf("\n\ndry run no update!")
 		return nil
@@ -72,7 +72,7 @@ func UpdateEntity [T any](tableName string, request T) error {
 
 	// Construct and execute the SQL statement
 	sql := fmt.Sprintf("update %s set %s where id = $1", tableName, strings.Join(setClauses, ", "))
-	fmt.Printf("\n\nUpdteEntity: sql: %q, args: %v", sql, args)
+	fmt.Printf("\n\nUpdateEntity: sql: %q, args: %v", sql, args)
 
     _, err := Conn.Exec(context.Background(), sql, args...)
     return err

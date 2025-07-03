@@ -17,14 +17,15 @@ One of the things to do in the Polish countryside is to raft with the local Gora
 
 This type of raft is propelled mainly by the river, Classically intended To help take chopped trees downstream offer harvesting. So there isn't so much rowing as using a long pole to push Off rocks and to steer more or less.  
 
-I went on this raft with my mom as  a side quest during a family trip to Kraków. We were moving right along, with 6 other people though at one point, there we saw a long  wooden pole floating from another boat, and our raftsman attempted to snatch it but it was too late and then one of the other passengers  near the  aft, made an attempt to grab  it   but instead he, managed to shove that wooden pole  into our boat, but  straight at my face .  I felt the impact but this wash't incredibly painful, just that apparently there was a lot of blood and the people around me were  kind of speechless. I felt fine more less for 10 minutes but then all of a sudden I got a feeling of intense dizziness, and pressure and everything got pretty bright too. Right away I thought wow this must be what a hemorrhage feels like and this is the end of my story. I palmed my head and folded myself into my lap. But   a few minutes after, actually, the dizziness went away. And no fainting either. I didn’t feel great but my mom was kind enough to cool down my brow with some of the river water to try to keep the swelling down. And as soon as I  got off the raft, half hour later, I started GPTing, how late can the symptoms of concussion arrive ? 
+I went on this raft with my mom as  a side quest during a family trip to Kraków. We were moving right along, with 6 other people though at one point, there we saw a long  wooden pole floating, lost by  another boat, and our raftsman attempted to snatch it but it was just out of his reach and then one of the other passengers  near the  aft, made an attempt to grab  it  and he managed to shove that wooden pole  into our boat, but also straight at my face .  I felt the impact but this wash't incredibly painful, just that apparently there was a lot of blood and the people around me were  kind of speechless. I felt fine more less for 10 minutes but then all of a sudden I got a feeling of intense dizziness, and pressure and everything got pretty bright too. Right away I thought wow this must be what a hemorrhage feels like and this is the end of my story. I palmed my head and folded myself into my lap. But   a few minutes after, actually, the dizziness went away. And no fainting either. I didn’t feel great but my mom was super helpful to cool down my brow with some of the river water to try to keep the swelling down. And as soon as I  got off the raft, half hour later, I started GPTing, how late can the symptoms of concussion arrive ? 
 Turns out it is possible for them to be delayed. They can include nausea, vomiting, numbness, asymmetric vision, slurring, and seizures. None so far.
 
   So this was the second time I had the chance to also, try out travel insurance in general too.  The first time was in Germany, with a pink eye incident, maybe a story for another time.
 
 ## But Back at home, in the U.S., let's talk about a bill I received before my trip 
 
-I have been having issues with my wrists for many years and I figured that let me try to understand what's the latest with my wrists now. Well I ask my, primary, doctor okay, so she refers me to get a xray, but I made the mistake of not asking for the cost up front. And I feel pretty silly, I got hit with a crazy bill   for the wrist xrays. The full amount was $710 plus a second one, $2,025  and my insurance contributed to some of this, but taking a look at https://www.fairhealthconsumer.org/, I know thee charges are outliers.
+I have been having issues with my wrists for many years and I figured that let me try to understand what's the latest with my wrists now. Well I ask my, primary, doctor okay, so she refers me to get a xray, but I made the mistake of not asking for the cost up front. And I feel pretty silly, I got hit with a crazy bill   for the wrist xrays. The full amount was $710 plus a second one, $2,025  and my insurance contributed to some of this, but taking a look at https://www.fairhealthconsumer.org/, I learn these charges are outliers.
+Xrays and interpretations usually cost 10x less than that.
 
 So specifically, the claim has two parts,
  1. General HC Xray Hand 3 Views , 73130 (CPT) 
@@ -39,17 +40,17 @@ Basically it said that nothing abnormal was found.
 
 My thinking was now that sounds like a crazy amount of money for a non emergency procedure, done calmly by appointment.
 
- Per https://www.fairhealthconsumer.org/,  the typical cost is $60 based on the ICD codes. Ans I feel lucky that at least I'm getting bills that have the actual procedure codes, because I can look up the procedure, and I can see, what the typical charge is for this very specific type of xray. So it was one code for wrist for the hands. 
+ Per https://www.fairhealthconsumer.org/,  the typical cost is $60 based on the ICD codes. But I feel lucky that at least I'm getting bills that have the procedure codes, because I can look up the procedure, and I can see, what the expected charge is for this very specific type of xray. So it was one code for wrist for the hands. 
 
 
 ## Okay so back to  Kraków. 
 
-our guide, he helped so much, he found me ice for my face,
+Our guide, he helped so much, he found me ice for my face,
 
 We found a pharmacy nearby, 2nd attached too da doctors offi office,
-Wi. Event inside, they could not help, but offered to take my blood pressure. And she said the closest hospital was in Nowy Targ.
+Wi. Event inside, they could not help, but offered to take my blood pressure. And she said the closest hospital was in Nowy Targ, a town nearby.
 
-I felt super - glad. we were with our guide who was going to toke is to see another castle, but for now instead we went to the hospital.
+I felt super - glad. we were with our guide who was going to toke is to see another castle, but for now instead he agreed to take us to the hospital.
 
 I pickup a number, on a Tuesday, maybe after 5pm, so this was perhaps a mistake. I go to the intake with my number okay,
 

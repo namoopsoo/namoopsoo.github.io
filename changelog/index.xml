@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Changelog on michal.piekarczyk.xyz</title>
+    <title>Personal Changelog on michal.piekarczyk.xyz</title>
     <link>https://michal.piekarczyk.xyz/changelog/</link>
-    <description>Recent content in Changelog on michal.piekarczyk.xyz</description>
+    <description>Recent content in Personal Changelog on michal.piekarczyk.xyz</description>
     <generator>Hugo -- 0.128.0</generator>
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/changelog/index.xml" rel="self" type="application/rss+xml" />

@@ -1,22 +1,13 @@
 ---
 title: Personal Changelog
 robots: noindex, nofollow
-
 --- 
-All notable changes to this "human" project will be documented in this file.
 
-## [Unreleased]
+All notable changes to this "human experiment" will be documented in this file.
 
-### Changed
-### Added
-### Logged
+## 2025-07
 ### Started
-### Removed
-### Completed
-### Noticed
-### Repaired
-### Celebrated
-
+- Started this personal changelog!
 
 ## 2025-06
 ### Started
@@ -38,6 +29,12 @@ All notable changes to this "human" project will be documented in this file.
 ## 2025-04
 ### Started
 - Returned, to [cooking soup](https://world.hey.com/michal.piekarczyk/i-am-soup-people-dc5d899d) after a long pause.
+- First attempt to buzz cut my own hair.
+
+## 2024-11
+### Completed 
+- Finished a full year of getting daily morning outdoor sunlight (Thanks [Andrew Huberman](https://ai.hubermanlab.com/s/43X8TsN1)).
+
 ## 2023-11
 
 ### Changed

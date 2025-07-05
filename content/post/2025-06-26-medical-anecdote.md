@@ -66,7 +66,8 @@ And the nurse recognized me, and said, okay I should call back in like half on h
 
 Later in the trip, I saw family in Warsaw afterward. A cousin who is a surgeon mentioned that my brow bone had done its job protecting the eye, so that was definitely a fun aha moment about our biology.
 
-So next, I should gather my claim information and add it to my travel insurance. I should update this anecdote then later, with that experience.
+## So what's next
+Next, I should gather my claim information and add it to my travel insurance. I should update this anecdote then later, with that experience.
 
 ## References
 1. https://en.wikipedia.org/wiki/Gorals

@@ -27,7 +27,8 @@ All notable changes to this "human experiment" will be documented in this file.
 - Went through Sean Carroll's [Many Hidden Worlds of Quantum Mechanics](https://www.preposterousuniverse.com/blog/2023/11/27/new-course-the-many-hidden-worlds-of-quantum-mechanics/) finishing just by a hair when it evaporated from amazon prime.
 
 ## 2025-04
-### Started
+### Changed
+- First try of [VS Code](https://en.wikipedia.org/wiki/Visual_Studio_Code), effectively switching over from [macvim](https://github.com/macvim-dev/macvim), in order to do a first try of prompt based code editing, Windsurf, describing my experience [here](https://michal.piekarczyk.xyz/post/2025-04-04-vibes/).
 - Returned, to [cooking soup](https://world.hey.com/michal.piekarczyk/i-am-soup-people-dc5d899d) after a long pause.
 - First attempt to buzz cut my own hair.
 

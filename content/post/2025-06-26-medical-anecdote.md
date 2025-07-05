@@ -32,7 +32,42 @@ So specifically, the claim has two parts,
 2. HC X-ray Wrist Complete 3+Views, 73110 (CPT)
 where CPT stands for Current Procedural Terminology. Each part is split into two parts, one diagnostic and one to take the actual X-rays.
 
-There is also an interpretation that I took a look at on my Mount Sinai
+There is also an interpretation that I took a look at on my Mount Sinai.
+
+Basically it said that nothing abnormal was found. 
+
+
+
+
+Procedure Code/Description: IMGXR9063 / XR HAND 3+ VIEWS BILATERAL 
+Reason For Exam : b/l first MCP pain Clinical Comments:
+CLINICAL HISTORY: Bilateral hand pain. MCP pain
+TECHNIQUE: Frontal, lateral, and oblique views of the BILATERAL hands are submitted.
+
+IMPRESSION:
+RIGHT HAND: Normal osseous mineralization.
+No acute fracture or dislocation.
+The joint spaces are preserved. No significant degenerative changes.
+LEFT HAND: Normal osseous mineralization.
+No acute fracture or dislocation.
+The joint spaces are preserved. No significant degenerative changes.
+
+
+...
+
+and
+
+Procedure Code/Description: IMGXR9151 / XR WRIST COMPLETE 3+ VIEWS BILATERAL 
+Reason For Exam : bilateral wrist pain Clinical Comments:
+CLINICAL HISTORY: Bilateral wrist pain.
+TECHNIQUE: Frontal, lateral, and oblique views of the BILATERAL wrists are submitted. COMPARISON: None
+IMPRESSION:
+RIGHT WRIST: Normal osseous mineralization. No acute fracture. Carpal alignment is preserved. The joint spaces are preserved.
+LEFT WRIST: Normal osseous mineralization. No acute fracture. Carpal alignment is preserved. The joint spaces are preserved.
+
+
+
+
 
 My thinking was now that sounds like a crazy amount of money for a non-emergency procedure, done calmly by appointment.
  Per https://www.fairhealthconsumer.org/, the typical cost is $60 based on the ICD codes. I'm lucky that my bills include procedure codes, because I can look them up and see the expected charge for this specific type of X-ray. There was one code for the wrist and one for the hands.

@@ -32,7 +32,7 @@ So specifically, the claim has two parts,
 2. HC X-ray Wrist Complete 3+Views, 73110 (CPT)
 where CPT stands for Current Procedural Terminology. Each part is split into two parts, one diagnostic and one to take the actual X-rays.
 
-There is also an interpretation that I took a look at on my Mount Sinai.
+There is also an interpretation that I took a look at on the app for my provider.
 
 Basically it said that nothing abnormal was found. 
 
@@ -41,10 +41,9 @@ Basically it said that nothing abnormal was found.
 | ----------- | ----------- |
 |  **Reason For Exam:** b/l first MCP pain <br> **Clinical Comments:** <br> **CLINICAL HISTORY:** Bilateral hand pain. MCP pain <br> **TECHNIQUE:** Frontal, lateral, and oblique views of the BILATERAL hands are submitted. <br><br> **IMPRESSION:** <br> **RIGHT HAND:** Normal osseous mineralization. No acute fracture or dislocation. The joint spaces are preserved. No significant degenerative changes. <br> **LEFT HAND:** Normal osseous mineralization. No acute fracture or dislocation. The joint spaces are preserved. No significant degenerative changes. | **Reason For Exam:** bilateral wrist pain <br> **Clinical Comments:** <br> **CLINICAL HISTORY:** Bilateral wrist pain. <br> **TECHNIQUE:** Frontal, lateral, and oblique views of the BILATERAL wrists are submitted. <br> **COMPARISON:** None <br><br> **IMPRESSION:** <br> **RIGHT WRIST:** Normal osseous mineralization. No acute fracture. Carpal alignment is preserved. The joint spaces are preserved. <br> **LEFT WRIST:** Normal osseous mineralization. No acute fracture. Carpal alignment is preserved. The joint spaces are preserved. |
 
+My thinking was now that sounds like a crazy amount of money for a non-emergency procedure, done calmly by appointment and by referral from my primary doctor.
 
-
-My thinking was now that sounds like a crazy amount of money for a non-emergency procedure, done calmly by appointment.
- Per https://www.fairhealthconsumer.org/, the typical cost is $60 based on the ICD codes. I'm lucky that my bills include procedure codes, because I can look them up and see the expected charge for this specific type of X-ray. There was one code for the wrist and one for the hands.
+Per https://www.fairhealthconsumer.org/, the typical cost is $60 based on the ICD codes. I'm lucky that my bills include procedure codes, because I can look them up and see the expected charge for this specific type of X-ray. There was one code for the wrist and one for the hands.
 
 ## Okay so back to  Kraków
 

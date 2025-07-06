@@ -8,6 +8,7 @@ All notable changes to this "human experiment" will be documented in this file.
 ## 2025-07
 ### Started
 - Started this personal changelog!
+- First post intended at Substack, [this one](https://michalpiekarczyk.substack.com/p/2025-06-26-medical-anecdote)
 
 ## 2025-06
 ### Started
@@ -49,3 +50,11 @@ All notable changes to this "human experiment" will be documented in this file.
 ## 2023-01
 ### Changed
 - Switched from LastPass to [BitWarden](https://bitwarden.com/) for personal password management.
+
+
+## 2021-08 
+### Changed 
+- Switched from gmail.com to hey.com for my main email home.
+## 2021-05
+### Changed
+- Switched from github pages with Jekyll to [Hugo](https://gohugo.io/), noted the change [here](https://michal.piekarczyk.xyz/post/2021-05-16-hugo-notes/)

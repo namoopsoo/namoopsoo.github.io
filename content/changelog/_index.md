@@ -91,4 +91,14 @@ All notable changes to this "human experiment" will be documented in this file.
 - logseq
 - Tokyo 
 - Golang, and Golang package, to switch back to logseq
+- first ipad,
+- first iphone
+- first palm pilot? (tungsten second?)
+- Twine game, redhat
+- first skateboard, and stopped it
+- started using  CarbManager
+-  driving licenss 
+- zipcar membership (DC)
+
+
 

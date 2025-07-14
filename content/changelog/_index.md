@@ -62,3 +62,9 @@ All notable changes to this "human experiment" will be documented in this file.
 ## 2021-05
 ### Changed
 - Switched from github pages with Jekyll to [Hugo](https://gohugo.io/), noted the change [here](https://michal.piekarczyk.xyz/post/2021-05-16-hugo-notes/)
+
+
+## 2013-07
+### Started
+- Joined as Citibike member, and took first ride.
+

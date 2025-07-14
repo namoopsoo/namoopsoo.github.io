@@ -68,3 +68,17 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Started
 - Joined as Citibike member, and took first ride.
 
+## 2012-11
+### Stopped
+- Bye bye breads, pastas, rice, sugar, 
+
+## 2025-03
+### Logged
+- First trip to Paris
+
+## 2005-02
+### Logged
+- First trip to UK, started a study abroad at U of Sheffield
+
+
+

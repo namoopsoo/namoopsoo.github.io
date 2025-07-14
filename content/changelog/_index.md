@@ -9,6 +9,7 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Started
 - Started this personal changelog!
 - First post intended at Substack, [this one](https://michalpiekarczyk.substack.com/p/2025-06-26-medical-anecdote)
+- Meditations, Marcus Aurelius.
 
 ## 2025-06
 ### Started

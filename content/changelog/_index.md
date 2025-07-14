@@ -52,6 +52,9 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Changed
 - Switched from LastPass to [BitWarden](https://bitwarden.com/) for personal password management.
 
+## 2021-09
+### Completed
+- ASA 101, Basic Keelboat Sailing passed.
 
 ## 2021-08 
 ### Changed 

@@ -19,7 +19,7 @@ All notable changes to this "human experiment" will be documented in this file.
 
 ### Logged
 - Visited friends and family in Warsaw and Barcelona, [writing](/post/2025-06-26-medical-anecdote/) about a medical anecdote in Krakow too.
-
+- First time visiting Catalonia (technically still part of Spain I am told).
 ## 2025-05
 ### Changed
 - Switched from Apple Photos to self-hosted [immich](https://immich.app/) for personal photo management, writing about it [here](/post/2025-05-16-apple-iphoto-to-immich/) [yea](/post/2025-05-16-apple-iphoto-to-immich/).

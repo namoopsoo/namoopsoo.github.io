@@ -82,3 +82,13 @@ All notable changes to this "human experiment" will be documented in this file.
 
 
 
+## Undated
+
+### hmm
+- huaraches and barefoot running
+- vim, (college)
+- emacs (evil mode), ~2021?
+- logseq
+- Tokyo 
+- Golang, and Golang package, to switch back to logseq
+

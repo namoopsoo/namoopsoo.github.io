@@ -63,6 +63,9 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Changed
 - Switched from github pages with Jekyll to [Hugo](https://gohugo.io/), noted the change [here](https://michal.piekarczyk.xyz/post/2021-05-16-hugo-notes/)
 
+## 2017-12
+### Started
+- First Yamaha piano, P-115 (link the "2017-12-28 guitar center yamaha piano.pdf") 
 
 ## 2013-07
 ### Started
@@ -72,9 +75,11 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Stopped
 - Bye bye breads, pastas, rice, sugar, 
 
-## 2025-03
+## 2005-03
 ### Logged
 - First trip to Paris
+
+
 
 ## 2005-02
 ### Logged

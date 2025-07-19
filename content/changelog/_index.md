@@ -10,6 +10,8 @@ All notable changes to this "human experiment" will be documented in this file.
 - Started this personal changelog!
 - First post intended at Substack, [this one](https://michalpiekarczyk.substack.com/p/2025-06-26-medical-anecdote)
 - Meditations, Marcus Aurelius.
+- First time used [sklearn-onnx](https://onnx.ai/sklearn-onnx/) to convert an older version scikit-learn pipeline to onnx and verified that it produces the same scores within a very high precision.
+- First time visiting [MoMa PS1](https://www.momaps1.org), which was for their  27th season summer music series called Warm Up.
 
 ## 2025-06
 ### Started
@@ -51,6 +53,10 @@ All notable changes to this "human experiment" will be documented in this file.
 ## 2023-01
 ### Changed
 - Switched from LastPass to [BitWarden](https://bitwarden.com/) for personal password management.
+
+## 2022-11
+### Started
+- First split keyboard, the Moonlander from ZSA Technologies, 
 
 ## 2021-09
 ### Completed
@@ -105,5 +111,9 @@ All notable changes to this "human experiment" will be documented in this file.
 -  driving licenss 
 - zipcar membership (DC)
 - nightguard, 2022?,3?,4?
+- First Clojure code in production?
+- First meetup.com attended?
+- First git repo? (2011?)
+- First code written? (javascript in, hmm, 1997 ishh? some webpage for boyscouts something? I wanted to make a funny animation, and was really into this tutorial by )
 
 

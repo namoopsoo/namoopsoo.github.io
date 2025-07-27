@@ -1,6 +1,6 @@
 import boto3
 import os
-import pandas as pd
+import polars as pl
 from functools import reduce, partial
 
 try:
@@ -59,7 +59,7 @@ def s3uri_to_parts(s3uri):
 def s3_csv_to_df(bucket_name, s3fn):
     blah = read_s3_file(bucket_name, s3fn)
     foo = StringIO(blah.decode("utf-8"))
-    return pd.read_csv(foo)
+    return pl.read_csv(foo)
 
 
 def big_s3_csv_to_df(bucket_name, s3fn_prefix, suffixes):
@@ -70,7 +70,7 @@ def big_s3_csv_to_df(bucket_name, s3fn_prefix, suffixes):
             for s3fn in filenames ]
     blah = reduce(lambda x, y: x+y, parts)
     foo = StringIO(blah.decode("utf-8"))
-    return pd.read_csv(foo)
+    return pl.read_csv(foo)
 
 
 def df_to_s3(bucket_name, df, s3fn, index=False):

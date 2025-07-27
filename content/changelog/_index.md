@@ -115,5 +115,7 @@ All notable changes to this "human experiment" will be documented in this file.
 - First meetup.com attended?
 - First git repo? (2011?)
 - First code written? (javascript in, hmm, 1997 ishh? some webpage for boyscouts something? I wanted to make a funny animation, and was really into this tutorial by )
+- hung up that whiteboard
+- hung up cool painting Gabe found outside, in Bushwick apartment 
 
 

@@ -123,3 +123,12 @@ All notable changes to this "human experiment" will be documented in this file.
 - hung up cool painting Gabe found outside, in Bushwick apartment 
 - signed up to vimeo
 
+
+- first fast over 2 days, ( fish can fast breaker)
+- stopped using Sleep Ctcle 
+- stopped Zero App
+- Started Carb Manager, stopped Noom,...
+
+- first time requested, downloaded data from Amazon for GDPR link.
+
+

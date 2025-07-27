@@ -77,6 +77,10 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Started
 - First Yamaha piano, P-115 (link the "2017-12-28 guitar center yamaha piano.pdf") 
 
+## 2014-10
+### Built
+- [Built](/post/2014-10-26-chair/) a better cardboard chair, after first attempt back in ~1999.
+
 ## 2013-07
 ### Started
 - Joined as Citibike member, and took first ride.

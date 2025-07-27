@@ -6,7 +6,7 @@
     <description>Recent content in Posts on michal.piekarczyk.xyz</description>
     <generator>Hugo -- 0.128.0</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 27 Jul 2025 10:19:07 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 27 Jul 2025 10:20:27 -0400</lastBuildDate>
     <atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>look at the chargemaster</title>
@@ -705,8 +705,7 @@ Anyway, turns out they are glued to the inside and you need some kind of epoxy l
       <link>https://michal.piekarczyk.xyz/post/2021-04-26-whiteboard/</link>
       <pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/post/2021-04-26-whiteboard/</guid>
-      <description>{{ vimeo 541656084 }}
-link</description>
+      <description>link</description>
     </item>
     <item>
       <title>book How to Take Smart Notes</title>

@@ -69,6 +69,10 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Changed
 - Switched from github pages with Jekyll to [Hugo](https://gohugo.io/), noted the change [here](https://michal.piekarczyk.xyz/post/2021-05-16-hugo-notes/)
 
+## 2021-04
+### Changed
+- [Switched](/post/2021-04-26-whiteboard/) my whiteboard location to new room, also trying new drill-less anchor style.
+
 ## 2017-12
 ### Started
 - First Yamaha piano, P-115 (link the "2017-12-28 guitar center yamaha piano.pdf") 
@@ -115,7 +119,7 @@ All notable changes to this "human experiment" will be documented in this file.
 - First meetup.com attended?
 - First git repo? (2011?)
 - First code written? (javascript in, hmm, 1997 ishh? some webpage for boyscouts something? I wanted to make a funny animation, and was really into this tutorial by )
-- hung up that whiteboard
+- hung up that whiteboard, first time?
 - hung up cool painting Gabe found outside, in Bushwick apartment 
-
+- signed up to vimeo
 

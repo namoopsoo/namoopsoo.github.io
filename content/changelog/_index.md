@@ -134,5 +134,8 @@ All notable changes to this "human experiment" will be documented in this file.
 - Started Carb Manager, stopped Noom,...
 
 - first time requested, downloaded data from Amazon for GDPR link.
+- skateboard, from letgo.com
 
+- moonlander split keyboard 
+- logi ergonomic mouse
 

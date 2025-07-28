@@ -3,5 +3,34 @@ date: 2025-02-01
 title: model-metric-updates
 ---
 
-*TODO*
+*DRAFT*
 
+This is as an update to an earlier post, in which the goal is to increase the size of a golden dataset in order to help compare the query performance between two embedding models, `all-MiniLM-L12-v2` and `all-mpnet-base-v2` and the comparison is important because they are `384` and `768` dimensions respectively, meaning that the second one has twice the storage costs as the other and live postgresql storage is expensive not just for its storage but also for the storage of the hnsw indexes involved 😅. 
+
+TLDR, with additional data and additional metrics, the objective evidence continues to support that the lower dimension model is actually better and so the justification exists not to spend the extra money. And this is also interesting empirical evidence that a larger model means it will be better for your specific use case.
+
+
+## Summary
+For the two models, and the three metrics we have, 
+
+```
+┌───────────────────┬────────────┬──────────┬──────────┬────────┐
+│ model_name        ┆ dimensions ┆ map      ┆ mrr      ┆ p@k=10 │
+│ ---               ┆ ---        ┆ ---      ┆ ---      ┆ ---    │
+│ str               ┆ i64        ┆ f64      ┆ f64      ┆ f64    │
+╞═══════════════════╪════════════╪══════════╪══════════╪════════╡
+│ all-MiniLM-L12-v2 ┆ 384        ┆ 0.715203 ┆ 0.925    ┆ 0.65   │
+│ all-mpnet-base-v2 ┆ 768        ┆ 0.664065 ┆ 0.920833 ┆ 0.5875 │
+└───────────────────┴────────────┴──────────┴──────────┴────────┘
+```
+
+## Details
+Here, I went from 21 queries to 25 queries and also increased the number of  documents in the corpus.
+
+And I also added a new metric, Precision@K=10, that is the proportion of the first K=10 search results that is relevant, averaging across all queries, alongside the earlier two metrics. The other two metrics were, MAP Mean Average Precision and MRR Mean Reciprocal Rank .
+
+
+
+## TODO notes
+
+I should also discuss the use of onnx  to reproduce the  `all-MiniLM-L12-v2` model locally, in order to make the analysis even possible. This was pretty cool.

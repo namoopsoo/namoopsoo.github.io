@@ -33,8 +33,11 @@ And I also added a new metric, Precision@K=10, that is the proportion of the fir
 ## I also looked at a hit/miss bitmap to get a visual sense too
 
 
+
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2025-02-01--model-metric-updates/2025-02-02T204108-all-MiniLM-L12-v2.png" width="50%">}}
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2025-02-01--model-metric-updates/2025-02-02T204219-all-mpnet-base-v2.png" width="50%">}}
+
+
 ## TODO notes
 
 I should also discuss the use of onnx  to reproduce the  `all-MiniLM-L12-v2` model locally, in order to make the analysis even possible. This was pretty cool.
-
-

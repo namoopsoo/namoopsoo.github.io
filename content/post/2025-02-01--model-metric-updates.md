@@ -25,12 +25,16 @@ For the two models, and the three metrics we have,
 ```
 
 ## Details
-Here, I went from 21 queries to 25 queries and also increased the number of  documents in the corpus.
+Here, I went from 21 queries to 24 queries and also increased the number of  documents in the corpus. In particular, now, the corpus had about 10 relevant documents per query as opposed to prior with only sometimes 5. This is important since fractions with small denominators skew the average worse. (100 would be better than 10 of course but one step at a time haha.)
 
 And I also added a new metric, Precision@K=10, that is the proportion of the first K=10 search results that is relevant, averaging across all queries, alongside the earlier two metrics. The other two metrics were, MAP Mean Average Precision and MRR Mean Reciprocal Rank .
 
+
+## I also looked at a hit/miss bitmap to get a visual sense too
 
 
 ## TODO notes
 
 I should also discuss the use of onnx  to reproduce the  `all-MiniLM-L12-v2` model locally, in order to make the analysis even possible. This was pretty cool.
+
+

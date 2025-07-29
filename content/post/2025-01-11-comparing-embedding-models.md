@@ -19,7 +19,7 @@ First the results briefly. So, surprisingly, I found, that although the models p
 | "all-MiniLM-L12-v2" | 384 | 0.628 | 0.841 |
 |  "all-mpnet-base-v2" | 768 | 0.552 | 0.654 |
 
-I created dataset with `21` queries, and selected `81 documents`, marking the ones that are relevant for each query. I added these ground truth indications into a `queries.yaml` , looking sort of like the following, since the use case is about querying for documents pertaining to food dishes.
+I created a dataset with `21` queries, and selected `81 documents`, marking the ones that are relevant for each query. I added these ground truth indications into a `queries.yaml` , looking sort of like the following, since the use case is about querying for documents pertaining to food dishes.
 
 ```
 - query: Tacos al Pastor
@@ -40,6 +40,6 @@ I created dataset with `21` queries, and selected `81 documents`, marking the on
     text: French Onion Soup - CROCK
 ```
 
-The documents were larger than the section of text in the `text:` field, but the small snippet was helpful in debugging. Overall, I actually have a corpus of millions of documents, so building a dataset was something I have been procrastinating for a while, since it created a kind of analysis parlysis. However I found I could bootstrap creating a dataset, by first creating, by hand, a list of food queries and then using one of the models, to select out documents, with high cosine similarity. And then, came the task of a lot of manual labor of verifying the relevance of documents by hand. This was definitely tedious. I ended up writing a good chunk of code for doing the bootstrapping, however, and that was super helpful. 
+The documents were larger than the section of text in the `text:` field, but the small snippet was helpful in debugging. Overall, I actually have a corpus of millions of documents, so building a dataset was something I have been procrastinating for a while, since it created a kind of analysis paralysis. However I found I could bootstrap creating a dataset, by first creating, by hand, a list of food queries and then using one of the models, to select out documents, with high cosine similarity. And then, came the task of a lot of manual labor of verifying the relevance of documents by hand. This was definitely tedious. I ended up writing a good chunk of code for doing the bootstrapping, however, and that was super helpful. 
 
-Interestingly, I had run an initial calculation of MAP and MRR, with slightly worse results than above, but I realized I forgot to cross-mark document relevance, that is, after retrieving this union of the `81` relevant documents, I forgot to then also, rerun the cosine similarity, of all queries, one more time, on all the documents, in case there were some documents that were relevant to multiple queries. This turned out indeed to be the case and when I updated my ground truth `queries.yaml` , subsequently my MAP and MRR scores went up.
+Interestingly, I had run an initial calculation of MAP and MRR, with slightly worse results than above, but I realized I forgot to cross-mark document relevance, that is, after retrieving this union of the `81` relevant documents, I forgot to then also, rerun the cosine similarity, of all queries, one more time, on all the documents, in case there were some documents that were relevant to multiple queries, which I forgot to mark in the `queries.yaml`. This turned out indeed to be the case and when I updated my ground truth `queries.yaml` , subsequently my MAP and MRR scores went up.

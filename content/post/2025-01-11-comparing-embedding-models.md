@@ -10,7 +10,7 @@ Very interestingly in particular, my current choice, `all-mpnet-base-v2`, being 
 
 
 ## So given the motivation, how did I compare these embedding models? 
-I did some research and found out about Mean Average Precision (MAP) first, tried that out and also later tried  Mean Reciprocal Rank (MRR), because the bulk of the effort to calculate MAP was building a ground truth dataset and the code to then calculate MRR was trivial.
+I did some information retrieval metric shopping and found Mean Average Precision (MAP) to be a good first meaningful measure, tried that out and also later tried  Mean Reciprocal Rank (MRR), because the bulk of the effort to calculate MAP was building a ground truth dataset and the code to then calculate MRR was trivial.
 
 First the results briefly. So, surprisingly, I found, that although the models performed more or less similarly, the lower dimension model actually appears to be slightly better.
 
@@ -19,6 +19,15 @@ First the results briefly. So, surprisingly, I found, that although the models p
 | "all-MiniLM-L12-v2" | 384 | 0.628 | 0.841 |
 |  "all-mpnet-base-v2" | 768 | 0.552 | 0.654 |
 
+## So what are MAP and MRR?
+MAP is [ Mean Average Precision ](https://en.wikipedia.org/wiki/Evaluation_measures_(information_retrieval)#Mean_average_precision), where if for a query we go down the list of ranked results, for all the *relevant* ones we compute the proportion that is relevant up to that point (aka *precision* ) and then averaging those we get the *average precision*, then repeating this for all the queries, and taking the mean, gives the MAP.
+MRR is [ Mean Reciprocal Rank ](https://en.wikipedia.org/wiki/Mean_reciprocal_rank), looking at the position we see the first relevant document, averaging across all queries. The reciprocal of the rank is used so it falls between `0 and 1` for a more normalized result.
+
+#### MRR is greedy and MAP is more comprehensive
+Mean Reciprocal Rank says if a relevant document is close to the top. Mean Average Precision, blends query precision across all relevant documents, but discounting the contribution proportionally, the lower in the rank we go. This is because, say for a query, there's a relevant document at rank=1 and the second relevant document is at rank=10, then the first contributes `1.0` to the average and the second contributes `0.2`, and the average precision is `(1.0 + 0.2)/2 = 0.6`, which shows the first has more influence.
+
+
+## More on the golden dataset
 I created a dataset with `21` queries, and selected `81 documents`, marking the ones that are relevant for each query. I added these ground truth indications into a `queries.yaml` , looking sort of like the following, since the use case is about querying for documents pertaining to food dishes.
 
 ```

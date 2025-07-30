@@ -154,7 +154,7 @@ Asked chatgpt for help. I&amp;rsquo;ve been recording to .m4a by mac voice memo.
       <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/post/2025-02-01--model-metric-updates/</guid>
       <description>DRAFT
-This is as an update to an earlier post, in which the goal is to increase the size of a golden dataset in order to help compare the query performance between two embedding models, all-MiniLM-L12-v2 and all-mpnet-base-v2 and the comparison is important because they are 384 and 768 dimensions respectively, meaning that the second one has twice the storage costs as the other and live postgresql storage is expensive not just for its storage but also for the storage of the hnsw indexes involved 😅.</description>
+This is as an update to an earlier post1, in which the goal is to increase the size of a golden dataset in order to help compare the query performance between two embedding models, all-MiniLM-L12-v2 and all-mpnet-base-v2 and the comparison is important because they are 384 and 768 dimensions respectively, meaning that the second one has twice the storage costs as the other and live postgresql storage is expensive not just for its storage but also for the storage of the hnsw indexes involved 😅.</description>
     </item>
     <item>
       <title>fun pool embedding bug</title>

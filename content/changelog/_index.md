@@ -5,6 +5,10 @@ robots: noindex, nofollow
 
 All notable changes to this "human experiment" will be documented in this file.
 
+## 2025-08
+### Logged
+- First time went to a roller skating [rink](https://www.xanadu.nyc/). Very different from rollerblading I recall from childhood haha!
+
 ## 2025-07
 ### Started
 - Started this personal changelog!

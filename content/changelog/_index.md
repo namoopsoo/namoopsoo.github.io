@@ -77,6 +77,10 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Changed
 - [Switched](/post/2021-04-26-whiteboard/) my whiteboard location to new room, also trying new drill-less anchor style.
 
+## 2021-02
+### Started
+- Switched to hover.com and registered this domain, michal.piekarczyk.xyz , [almost thought](/post/2021-02-02-whois/) I forgot to use WHOIS anonimization !
+
 ## 2017-12
 ### Started
 - First Yamaha piano, P-115 (link the "2017-12-28 guitar center yamaha piano.pdf") 

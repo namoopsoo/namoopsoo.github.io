@@ -77,7 +77,7 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Changed
 - [Switched](/post/2021-04-26-whiteboard/) my whiteboard location to new room, also trying new drill-less anchor style.
 
-## 2021-02
+## 2020-06
 ### Started
 - Switched to hover.com and registered this domain, michal.piekarczyk.xyz , [almost thought](/post/2021-02-02-whois/) I forgot to use WHOIS anonimization !
 

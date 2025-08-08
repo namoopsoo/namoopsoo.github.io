@@ -47,4 +47,18 @@ sys.path.insert(0, "/Workspace/foo/bar/"
 
 so that your python `my_feature_selection` notebook can see your module `my_module` and be able to import it.
  
+Thats your python path.
+
+
+In a recent project, I was running into this interesting conundrum, where I had a set of two notebooks, which both had a pandas udf `call_model` function defined inline, for calling a model , on a spark feature dataframe. and to add  append its output predictions to the dataframe. 
+
+I was in the process of updating `call_model`, because I converted the scikit-learn model with skl2onnx to onnx, for better model portability. But at the same time, as a good boyscout 😆, I was interested in reducing the copy pasta so I put the `call_model` into a module, so it can be imported by the two notebooks using it.
+
+My new code ran swimmingly interactively, except that within a databricks job, interestingly, I was getting a `ModuleNotFound` error for the module I was importing.
+
+The reason was subtle. One of the notebooks was actually using multithreading and when the spark driver distributes work to its workers, it will often serialize the pandas udf in cases like this with cloudpickle, and I have found in my case, the worker is okay with the namespace , however, when multithreading, somehow my sys.path update from earlier was not propagated.  
+
+To  
+
+
 

@@ -1,0 +1,50 @@
+---
+date: 2025-08-05
+title: python path to Databricks modules
+---
+
+This year, and last, Ive been glad Databricks changed one simple thing that has nothing to do with fancy ML algorithms or distributed computing optimization, and thats the ability to interact with workspace files on the python level. 
+
+Prior to Databricks 11.3 , the workspace could only contain notebooks and folders but no plain files. If you used python to do 
+
+```python
+import os
+os.getcwd()
+```
+
+you would see `/databricks/driver` and you could just use this cluster file system to copy files from outside blob systems for python file processing like say to read some csv into pandas and convert that to a spark dataframe but there was no notion of interacting with the actual file system where your notebooks lived (aka the workspace). 
+
+So with databricks 11.2 onward, that all changed, you could now run your `os.getcwd()` , and if you were editing a notebook, say, `/Workspace/foo/bar/my_feature_selection`, you would get `/Workspace/foo/bar`
+
+and you could now all of a sudden create tiny modules in your workspace, say, 
+`/Workspace/foo/bar/my_module/__init__.py`, 
+
+and in your notebook, `from my_module.hello import friend`, and run `friend.hack()`. 
+
+Now you could finally do in the databricks Notebook Driven Development world what you could always do in your jupyter notebook on your laptop.
+
+Sure prior you  had the ability to `pip install /dbfs/path/to/some.whl`, which was great too, but with native files, you can write modular code faster without extra steps of externally writing and building and uploading your `some.whl`.
+
+# Enter python path
+
+So the above is all well and good but what if you want a super simple thing like, 
+
+```
+# notebook stuff
+/Workspace/foo/bar/notebooks
+/Workspace/foo/bar/notebooks/training/my_feature_selection
+
+# module stuff
+/Workspace/foo/bar/my_module/hello/friend.py
+
+```
+well now in your notebook you need  a special line
+
+```python
+import sys
+sys.path.insert(0, "/Workspace/foo/bar/"
+```
+
+so that your python `my_feature_selection` notebook can see your module `my_module` and be able to import it.
+ 
+

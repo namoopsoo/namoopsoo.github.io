@@ -58,7 +58,12 @@ My new code ran swimmingly interactively, except that within a databricks job, i
 
 The reason was subtle. One of the notebooks was actually using multithreading and when the spark driver distributes work to its workers, it will often serialize the pandas udf in cases like this with cloudpickle, and I have found in my case, the worker is okay with the namespace , however, when multithreading, somehow my sys.path update from earlier was not propagated.  
 
-To  
+To  address the above, I found, if I packaged my module into a .whl and `pip install` -ed it on my init script for my cluster, the problem went away of course. And also, I realized one night as I was falling asleep, if I made my code generic enough perhaps it would make sense to include it in a generic package that is installed everywhere on all clusters.
+
+As im writing this Im also literally having an epiphany that 😅, since Databricks does also add a default root of the git repository for the code in question, to the python path here, and maybe if I just stuff my module there, perhaps that would be the path if least resistance?! 
+
+Let me try that next 😀.
+
 
 
 

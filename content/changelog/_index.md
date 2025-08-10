@@ -62,6 +62,11 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Started
 - First split keyboard, the Moonlander from ZSA Technologies, 
 
+## 2022-01
+
+### Logged
+- First time attempted to [replace](https://michal.piekarczyk.xyz/post/2022-01-29-floss-your-battery/) laptop macbook batteries. Laptop Worked for a few days before batteries ballooned then I went to Mikey's hookup for help haha, to replace using official and not knock-off batteries.
+
 ## 2021-09
 ### Completed
 - ASA 101, Basic Keelboat Sailing passed.
@@ -136,14 +141,15 @@ All notable changes to this "human experiment" will be documented in this file.
 - signed up to vimeo
 
 
-- first fast over 2 days, ( fish can fast breaker)
-- stopped using Sleep Ctcle 
+- first fast over 2 days, ( fish from can as fast breaker)
+- also first transpacific fast to japan.
+- stopped using Sleep Cycle 
 - stopped Zero App
 - Started Carb Manager, stopped Noom,...
 
 - first time requested, downloaded data from Amazon for GDPR link.
 - skateboard, from letgo.com
 
-- moonlander split keyboard 
 - logi ergonomic mouse
 
+- switched from pandas to polars some time in 2024 .

@@ -60,10 +60,9 @@ The reason was subtle. One of the notebooks was actually using multithreading an
 
 To  address the above, I found, if I packaged my module into a .whl and `pip install` -ed it on my init script for my cluster, the problem went away of course. And also, I realized one night as I was falling asleep, if I made my code generic enough perhaps it would make sense to include it in a generic package that is installed everywhere on all clusters.
 
-As im writing this Im also literally having an epiphany that 😅, since Databricks does also add a default root of the git repository for the code in question, to the python path here, and maybe if I just stuff my module there, perhaps that would be the path if least resistance?! 
+As I'm writing this Im also literally having an epiphany that 😅, since Databricks does also add a default root of the git repository for the code in question, to the python path here, and maybe if I just stuff my module there, perhaps that would be the path if least resistance?! 
 
 Let me try that next 😀.
 
-
-
-
+### Update per above: yes leverage default databricks sys.path
+Oh wow haha, the above final idea is what worked and what I switched to. Silly that the simplest solution was hiding in plain sight all along.

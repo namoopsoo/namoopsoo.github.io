@@ -27,12 +27,15 @@ Another interesting note, from a different Lex Fridman interview, from 2022-10-2
 
 You must learn to crawl before you can walk as they say haha.
 
-Incidentally, perhaps Doom programmer can have a different outcome ? I understand that this year 2025, John Carmack and his team have started talking about their stab at the Atari game set, using their own flavor of RL. And yea similarly, they are attempting not to enhance what a model experiences, instead using simply a camera that looks at a screen and a robot hand that steers a joystick.  Maybe in Andrej Karpathy's case with World of Bits, perhaps their system had access to the DOM too and they were using maybe a kind of selenium and scripted mouse keyboard control as opposed to the Carmack outside of the computer approach.
+Incidentally, perhaps Doom programmer can have a different outcome ? I understand that this year 2025, John Carmack and his team have started talking about<sup>[7](#references)</sup>  their stab at the Atari game set, using their own flavor of an RL approach. And yea similarly, they are attempting not to enhance what a model experiences, instead using simply a camera that looks at a screen and a robot hand that steers a joystick.  Maybe in Andrej Karpathy's case with World of Bits, perhaps their system had access to the DOM too and they were using maybe a kind of selenium and scripted mouse keyboard control as opposed to the Carmack outside of the computer approach.
 
 Their experiences feel kind of opposite ends of the problem? Karpathy ended up talking about how we are in a position to now create webpages that are more LLM friendly. And Carmack was saying that augmenting, annotating, sort of spoon feeding the experience for a system, is a kind of cheating and might also not even yield optimal results. This argument is very similar to what was problematic with any kind of image processing feature engineering we can do to get gains from image recognition algorithms, and we learned from the deep learning revolution of the 2010s (image net, cat paper etc), that deep learning will perform its own feature engineering, one hidden layer at a time. And the results will be better.
 
 But yea going back to the RL question, we know that after all, even Deep Mind, the pioneers of Atari RL and AlphaGo, eventually went on to very much embrace  Transformers and end up winning the Nobel Prize with Alpha Fold. 
 
+So back to that note about learning to crawl before you can walk and by extension learning to walk before learning to run, maybe there is something to this. I know during my entry into tensorflow during my aviation physiological classification project<sup>[8](#references)</sup>, I was fascinated to learn about epochal learning, that is how with deep learning libraries, learning on your data multiple times was simply a hyperparameter. And the idea is that behind the scenes, perhaps your network was doing its own kind of boosting but not as explicitly focusing on errors as with xgboost say.
+
+So yea it's not to say that training foundation models does not already take a long time, but if we are doing it with gigawatts as opposed to kilowatts or 20 watts, are we just banking on the likes of those moores law gains and not those differences in kind. So yea does intelligence have a speed limit. Otherwise you're just overclocking.
 
 
 # References
@@ -42,3 +45,5 @@ But yea going back to the RL question, we know that after all, even Deep Mind, t
 4. https://www.coursera.org/learn/learning-how-to-learn
 5. https://www.newyorker.com/magazine/2024/12/02/a-revolution-in-how-robots-learn
 6. https://lexfridman.com/andrej-karpathy/
+7. John Carmack speaks on new Atari RL work https://www.youtube.com/watch?v=iz9lUMSQBfY 
+8. https://michal.piekarczyk.xyz/project/2020-04-05-aviation-kaggle-low-level/

@@ -1,9 +1,8 @@
 ---
 title: Argumentum Computem ad Infinitum
-date: 2024-08-22
+date: 2025-08-16
 ---
-
-I was reading Leopold Aschenbrenner's post<sup>[1](#references)</sup> on AGI and have just a musing here about the scaling law observations here. 
+About a year ago, 2024-08-22, I was reading Leopold Aschenbrenner's post<sup>[1](#references)</sup> on AGI and I had jotted down a  musing about a scaling law observations, but I forgot to write about it. I found my note today.
 
 So I get that it is possible to look at charts comparing compute and performance and many conclude scaling laws mean AGI is inevitable.
 
@@ -16,6 +15,8 @@ Massive compute is the opposite of we have in our 20 watt brains.
 I know Leopold addresses the categorical shifts we will need apart from the order-of-magnitude oom shifts, as "unhobbling"<sup>[3](#references)</sup>.
 
 But I wonder if in the end the biggest categorical shift will be that we cannot download kung fu as Neo learned from Morpheus in The Matrix, but that actual learning can only be slow. Maybe this is like a reverse scaling law. That, for example, anyone who has crammed for an exam the night before, knows they can indeed access a kind of lookup table in some kind of short term memory and use that to rally during the exam. But that will be all gone the next day. Like Barbara Oakley describes in her Learning How to Learn<sup>[4](#references)</sup> course, for some reason humans learn best by chunking and attaching those chunks associatively but then also pruning the unneeded bits during sleep. It is a kind of "how do you eat an elephant? well you eat an elephant by cutting up an elephant into very small pieces and eating one piece at a time as long as that takes."
+
+Attention mechanisms are also just the right amount of associative. And that then begs the question, then are Transformer models essentially are a kind of cramming for an exam the night before? And 
 
 
 But if with engineered silicon anatomy, we if can come up with learning algorithms the likes of which surpass human learning, then great.

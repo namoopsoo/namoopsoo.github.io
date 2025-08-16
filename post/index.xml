@@ -6,7 +6,7 @@
     <description>Recent content in Posts on michal piekarczyk | end to end combat</description>
     <generator>Hugo -- 0.128.0</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 16 Aug 2025 16:49:29 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 16 Aug 2025 17:31:01 -0400</lastBuildDate>
     <atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Argumentum Computem ad Infinitum</title>
@@ -15,7 +15,7 @@
       <guid>https://michal.piekarczyk.xyz/post/2025-08-16-argumentum-computem-ad-infinitum/</guid>
       <description>About a year ago, 2024-08-22, I was reading Leopold Aschenbrenner&amp;rsquo;s post1 on AGI and I had jotted down a musing about a scaling law observations, but I forgot to write about it. I found my note today.
 So I get that it is possible to look at charts comparing compute and performance and many conclude scaling laws mean AGI is inevitable.
-I like Yan Lecunn&amp;rsquo;s perspective here that if transformer models are giant lookup tables, then making them bigger will make them appear more impressive, but this is not sustainable.</description>
+I like Yann Lecun&amp;rsquo;s perspective here that if transformer models are giant lookup tables, then making them bigger will make them appear more impressive, but this is not sustainable.</description>
     </item>
     <item>
       <title>python path to Databricks modules</title>

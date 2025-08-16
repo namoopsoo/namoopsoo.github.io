@@ -23,7 +23,7 @@ But if with engineered silicon anatomy, we if can come up with learning algorith
 
 But we know that these days, in the physical realm, this is exactly the shift that has occurred, with the likes of imitation learning at Google Deep Mind, where at least in the physical realm of folding shirts or taking clothes out of a washing machine. Operators, like puppeteers, use robot hands to perform the tasks and they will press foot pedals marked Success or Failure depending on the outcome. This is a very slow kind of learning. It is learning of a policy, as in a mapping from states to actions with a deterministic or probabilistic function. I don't know if this has been applied to language modeling or reasoning yet, but that would be super interesting. That would literally be like a kind of teaching as in school . (And side note I think I recall teaching AI is another kind of learning too. )
 
-Another interesting note, from a different Lex Fridman interview, was from Andrej Karpathy. On how just reinforcement learning on its own, was not good enough. And the hybrid approach of pretraining plus RLHF was better.
+Another interesting note, from a different Lex Fridman interview, from 2022-10-29, was from Andrej Karpathy. On how just reinforcement learning on its own, was not good enough. He described a project called World of Bits where a RL system had access to And the hybrid approach of pretraining plus RLHF was better. Incidentally, perhaps Doom programmer can have a different outcome ? I understand that this year 2025, John Carmack and his team have started talking about their stab at the Atari game set, using their own flavor of RL. And yea similarly, they are attempting not to enhance what a model experiences, instead using simply a camera that looks at a screen and a robot hand that steers a joystick.  Maybe in Andrej Karpathy's case with World of Bits, perhaps their system had access to the DOM too and they were using maybe a kind of selenium and scripted mouse keyboard control as opposed to the Carmack outside of the computer approach.
 
 
 
@@ -33,3 +33,5 @@ Another interesting note, from a different Lex Fridman interview, was from Andre
 3. https://situational-awareness.ai/from-gpt-4-to-agi/#Unhobbling
 4. https://www.coursera.org/learn/learning-how-to-learn
 5. https://www.newyorker.com/magazine/2024/12/02/a-revolution-in-how-robots-learn
+
+6.  https://lexfridman.com/andrej-karpathy/

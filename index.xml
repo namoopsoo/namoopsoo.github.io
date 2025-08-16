@@ -286,6 +286,15 @@ That was amazing and I am glad I had a chance to try it a handful of times while
 While attempting to leave Miami back, hurricane Debby blocked most flights out including ours and we ended up leaving Miami two days later.</description>
     </item>
     <item>
+      <title>Argumentum Computem ad Infinitum</title>
+      <link>https://michal.piekarczyk.xyz/post/2024-08-22-argumentum-computem-ad-infinitum/</link>
+      <pubDate>Thu, 22 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2024-08-22-argumentum-computem-ad-infinitum/</guid>
+      <description>I was reading Leopold Aschenbrenner&amp;rsquo;s post1 on AGI and have just a musing here about the scaling law observations here.
+So I get that it is possible to look at charts comparing compute and performance and many conclude scaling laws mean AGI is inevitable.
+I like Yan Lecunn&amp;rsquo;s perspective here that if transformer models are giant lookup tables, then making them bigger will make them appear more impressive, but this is not sustainable.</description>
+    </item>
+    <item>
       <title>Streamlit is lit</title>
       <link>https://michal.piekarczyk.xyz/post/2024-07-20-streamlit-is-lit/</link>
       <pubDate>Sat, 20 Jul 2024 00:00:00 +0000</pubDate>

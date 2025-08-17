@@ -40,6 +40,7 @@ So yea it's not to say that training foundation models does not already take a l
 ### Editors note
 Retrospectively thinking I got interested in picking up this scribble from a year ago I think because I was listening to Andrew Huberman talking with Michael Easter , and they were talking about armchair writing and writing from experience. Michael has taken a lot of inspiration from 35 days in the arctic, amoung many other crazy trips and just many road trips and trail trips, and just being in nature. And personally this makes me reflect on how somehow not only real world experiential knowledge is special but also just the getting out of your own head is too, and spinning some brain cycles alongside looking at some waves (as I happen to be doing while tapping these words on my phone screen this moment 😆).  
 
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2025-08-16-argumentum-computem-ad-infinitum/IMG_7156.jpeg" width="50%">}}
 
 # References
 1. https://situational-awareness.ai/from-gpt-4-to-agi/ 

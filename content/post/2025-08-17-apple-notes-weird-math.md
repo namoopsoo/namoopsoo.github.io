@@ -28,7 +28,8 @@ I just am starting to get into walking I guess so I dont know the numbers but ha
 
 
 ```
+yea haha. Not sure what the `:` was legally doing either.
 
-
-
+screenshot too
+{{< figure src="https://my-blog-content.s3.amazonaws.com/2025-08-17-apple-notes-weird-math/IMG_7159.PNG" width="50%">}}
 

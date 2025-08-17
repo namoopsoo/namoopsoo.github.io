@@ -544,6 +544,15 @@ But having already been doing Time Restricted Feeding for several years now, I t
 &amp;lt;table&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td&amp;gt;&amp;lt;img src=&amp;#34;https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.39.42.png&amp;#34; width=&amp;#34;30%&amp;#34;/&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;&amp;lt;img src=&amp;#34;https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.39.49.png&amp;#34; width=&amp;#34;30%&amp;#34; /&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;&amp;lt;img src=&amp;#34;https://my-blog-content.s3.amazonaws.com/2020/06/06/wahoo/2020-06-06+11.44.39.png&amp;#34; width=&amp;#34;30%&amp;#34; /&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;/table&amp;gt; and I had to change them to be using the hugo language, below, then I saw the images again.</description>
     </item>
     <item>
+      <title>Passing large dataframes with dbutils.notebook.run in databricks</title>
+      <link>https://michal.piekarczyk.xyz/post/2023-02-25-databricks-spark-dbutils-notebook-run-and-global-temp-view/</link>
+      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2023-02-25-databricks-spark-dbutils-notebook-run-and-global-temp-view/</guid>
+      <description>(Note, originally posted this here but cross posting here too)
+Passing large dataframes with dbutils.notebook.run ! At one point when migrating databricks notebooks to be useable purely with dbutils.notebook.run, the question came up, hey dbutils.notebook.run is a great way of calling notebooks explicitly, avoiding global variables that make code difficult to lint and debug, but what about spark dataframes?
+I had come across this https://docs.databricks.com/notebooks/notebook-workflows.html#pass-structured-data nice bit of documentation about using the spark global temp view to handle name references to nicely shuttle around dataframes by reference, given that a caller notebook and a callee notebook share a JVM and theoretically this is instantaneous.</description>
+    </item>
+    <item>
       <title>fact checking dark humor</title>
       <link>https://michal.piekarczyk.xyz/post/2023-02-18-fact-checking-dark-humor/</link>
       <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>

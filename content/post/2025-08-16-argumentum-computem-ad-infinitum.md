@@ -37,6 +37,9 @@ So back to that note about learning to crawl before you can walk and by extensio
 
 So yea it's not to say that training foundation models does not already take a long time, but if we are doing it with gigawatts as opposed to kilowatts or 20 watts, are we just banking on the likes of those moores law gains and not those differences in kind. So yea does intelligence have a speed limit. Otherwise you're just overclocking.
 
+### Editors note
+Retrospectively thinking I got interested in picking up this scribble from a year ago I think because I was listening to Andrew Huberman talking with Michael Easter , and they were talking about armchair writing and writing from experience. Michael has taken a lot of inspiration from 35 days in the arctic, amoung many other crazy trips and just many road trips and trail trips, and just being in nature. And personally this makes me reflect on how somehow not only real world experiential knowledge is special but also just the getting out of your own head is too, and spinning some brain cycles alongside looking at some waves (as I happen to be doing while tapping these words on my phone screen this moment 😆).  
+
 
 # References
 1. https://situational-awareness.ai/from-gpt-4-to-agi/ 
@@ -47,3 +50,4 @@ So yea it's not to say that training foundation models does not already take a l
 6. https://lexfridman.com/andrej-karpathy/
 7. John Carmack speaks on new Atari RL work https://www.youtube.com/watch?v=iz9lUMSQBfY 
 8. https://michal.piekarczyk.xyz/project/2020-04-05-aviation-kaggle-low-level/
+9. https://podcasts.apple.com/us/podcast/huberman-lab/id1545953110?i=1000713063630

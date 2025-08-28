@@ -9,6 +9,9 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Logged
 - First time went to a roller skating [rink](https://www.xanadu.nyc/). Very different from rollerblading I recall from childhood haha!
 
+### Changed
+- From Lavazza to Kirkland espresso, for the kamira.
+
 ## 2025-07
 ### Started
 - Started this personal changelog!
@@ -155,5 +158,7 @@ All notable changes to this "human experiment" will be documented in this file.
 - skateboard, from letgo.com
 
 - logi ergonomic mouse
-
+- bustelo to lavazza? kamira?
 - switched from pandas to polars some time in 2024 .
+- first publish a Golang app
+

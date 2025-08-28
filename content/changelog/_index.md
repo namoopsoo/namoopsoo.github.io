@@ -44,6 +44,10 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Completed 
 - Finished a full year of getting daily morning outdoor sunlight (Thanks [Andrew Huberman](https://ai.hubermanlab.com/s/43X8TsN1)).
 
+## 2024-07
+### First
+- First successful cold plunge, learning how to stay 5+ minutes in 60 F ( TODO doubple check temp), at Standard Spa Miami Beach.
+
 ## 2023-11
 
 ### Changed

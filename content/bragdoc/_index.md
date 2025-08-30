@@ -131,10 +131,6 @@ Our ML platform’s integration tests had accumulated scattered custom Python co
 
     
 
-## ..., (2024-?)
-...
-    
-
 ## Integrated Sphinx-generated docs into our Hugo wiki, creating an accessible workflow for publishing ML platform library documentation., (2024-?)
 ..
 Inspired by a colleague experimenting with Sphinx to generate documentation for one of our core ML platform libraries, I explored how we could make that documentation more easily accessible to our internal users. Since our internal wiki is built with Hugo, I tested whether the HTML output from a Sphinx build could be served directly in the wiki’s static section. The experiment worked seamlessly.
@@ -143,14 +139,6 @@ Building on this, I documented a clear process for running Sphinx builds and pub
 
 After publishing the first iteration of the Sphinx-based docs, I began sharing them with users, who responded positively. The impact was that for the first time, we had a more structured and accessible way to point our internal community toward up-to-date documentation for our Databricks ML platform package—improving discoverability, reducing friction, and helping data scientists ramp up more quickly.
 
-    
-
-## ..., (2024-?)
-...
-    
-
-## ..., (2024-?)
-...
     
 
 ## Improved CI/CD for our new shared Databricks utility package by unifying test/deploy steps and parameterizing test clusters for concurrent development by multiple people., (2024-?)
@@ -169,30 +157,6 @@ The result was a more resilient, reliable, and developer-friendly CI/CD process,
 
     
 
-## ..., (2024-?)
-...
-    
-
-## ..., (2024-?)
-...
-    
-
-## ..., (2024-?)
-...
-    
-
-## ..., (2024-?)
-...
-    
-
-## ..., (2024-?)
-...
-    
-
-## ..., (2024-?)
-...
-    
-
 ## Introduced modular Python coding in Databricks 11.3 by enabling multi-file module imports and updating deployment pipelines to support plain files, moving beyond %run globals., (2024-01-23)
 With the release of Databricks 11.3, our ML Platform gained a new capability: workspaces could now host not just notebooks, but also plain Python files. This opened the door to more modular, Pythonic development practices. Previously, our notebook code often relied on %run statements to pull in helper functions, which polluted the global namespace and discouraged clean module design.
 
@@ -201,11 +165,6 @@ I took the initiative to explore how far the new functionality could go. While D
 To prove the approach, I introduced this modular style into one of our model repositories, replacing %run calls in a feature engineering notebook with imports from a local module. To make the pattern sustainable, I extended our Azure DevOps deployment pipeline to automatically detect such modules in Git repositories and recursively push them into Databricks workspaces using the newly available Databricks SDK. This was a significant improvement over the old Databricks CLI, which had no support for plain files.
 
 After successfully applying this pattern to a few additional repositories, I shared the results with colleagues. Interest grew quickly, and others began to adopt the approach. The impact was a meaningful cultural and technical shift: our team could now move away from hidden global-variable hacks and toward cleaner, modular, and maintainable code.
-
-    
-
-## ..., (2024-?)
-..
 
     
 

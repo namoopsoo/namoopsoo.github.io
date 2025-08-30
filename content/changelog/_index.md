@@ -11,7 +11,7 @@ All notable changes to this "human experiment" will be documented in this file.
 
 ### Changed
 - From Lavazza to Kirkland espresso, for the kamira.
-
+- From more typical dryness eye drops Ive used for a long time, to so called preservative free PF kind. (Some crazy redness went away after switching, but this was just a n=1 pre/post anececdote of course) 
 ## 2025-07
 ### Started
 - Started this personal changelog!

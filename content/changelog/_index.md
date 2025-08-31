@@ -13,6 +13,10 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Changed
 - From Lavazza to Kirkland espresso, for the kamira.
 - From more typical dryness eye drops Ive used for a long time, to so called preservative free PF kind. (Some crazy redness went away after switching, but this was just a n=1 pre/post anececdote of course) 
+
+### Started
+- Started using Stage Manager on Apple macos. (2025-08-27)
+
 ## 2025-07
 ### Started
 - Started this personal changelog!
@@ -78,6 +82,21 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Started
 - First split keyboard, the Moonlander from ZSA Technologies, 
 
+## 2022-08
+### Stopped
+- Perhaps TMI, but stopped using shampoo. Just use water now for hair.
+
+## 2022-07
+### Changed
+- Switched from [Roam Research](https://roamresearch.com/) to [logseq](https://logseq.com) (2022-07-18)
+
+## 2022-04
+### Started
+- That night guard life! (This is actually just a upper bound based on some notes but at least as early as 2022-04-10 but likely earlier )
+
+### Logged
+- Built [a red hat](https://github.com/namoopsoo/red-hat), my first game using [twine](https://twinery.org/), [playable here](https://michal.piekarczyk.xyz/red-hat/).
+
 ## 2022-01
 
 ### Logged
@@ -97,6 +116,17 @@ All notable changes to this "human experiment" will be documented in this file.
 ## 2021-04
 ### Changed
 - [Switched](/post/2021-04-26-whiteboard/) my whiteboard location to new room, also trying new drill-less anchor style.
+
+## 2021-01
+
+### Started
+- Started using [Roam Research](https://roamresearch.com/) , (2021-01-30).
+
+## 2020-11
+
+### Started
+- TMI! I know, but, started that bidet life with https://hellotushy.com
+- Started uploading to https://vimeo.com (2020-11-07)
 
 ## 2020-06
 ### Started
@@ -142,7 +172,6 @@ All notable changes to this "human experiment" will be documented in this file.
 - first ipad,
 - first iphone
 - first palm pilot? (tungsten second?)
-- Twine game, redhat
 - first skateboard, and stopped it
 - started using  CarbManager
 -  driving licenss 
@@ -154,20 +183,20 @@ All notable changes to this "human experiment" will be documented in this file.
 - First code written? (javascript in, hmm, 1997 ishh? some webpage for boyscouts something? I wanted to make a funny animation, and was really into this tutorial by )
 - hung up that whiteboard, first time?
 - hung up cool painting Gabe found outside, in Bushwick apartment 
-- signed up to vimeo
-
-
 - first fast over 2 days, ( fish from can as fast breaker)
 - also first transpacific fast to japan.
 - stopped using Sleep Cycle 
 - stopped Zero App
 - Started Carb Manager, stopped Noom,...
-
 - first time requested, downloaded data from Amazon for GDPR link.
 - skateboard, from letgo.com
-
 - logi ergonomic mouse
 - bustelo to lavazza? kamira?
 - switched from pandas to polars some time in 2024 .
 - first publish a Golang app
-
+- tushy bidet 2020-11 ?
+- apple air pods, 
+- apple pencil , ipad ?
+- away luggage 
+- pixel blue light glasses 
+- dyson air purifier ; and also when it died ; but it died first filter function and then heat function too. two deaths.

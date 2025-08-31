@@ -29,7 +29,7 @@ All notable changes to this "human experiment" will be documented in this file.
 ## 2025-06
 ### Started
 - First try of [Openai Codex](https://openai.com/codex/), merging [first pr](https://github.com/namoopsoo/tiller_utils/pull/1), to my tiller utils repo, helping to convert paypal csv to tiller.
-- Started reading Douglas Murray's Madness of Crowds, to have a thinker for the plane trips.
+- Started reading Douglas Murray's Madness of Crowds, to have a thinker for an upcoming plane trip.
 - Started using [Paperlike](https://paperlike.com), attaching it to my ipad the day before my eurotrip, using it to write the first draft of this [post](/post/2025-06-26-medical-anecdote/), and also to work on coding problems for fun.
 
 ### Logged

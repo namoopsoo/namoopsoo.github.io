@@ -62,6 +62,9 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Changed
 - Switched from [Mint](https://en.wikipedia.org/wiki/Intuit_Mint) to [Tiller](https://tiller.com/) for personal finance tracking (After over a decade on Mint).
 
+## 2023-09
+### Changed 
+- Switched to refillable deodorant, from [getfussy.com](https://getfussy.com), as opposed to the disposable kind.
 
 ## 2023-07
 ### Started

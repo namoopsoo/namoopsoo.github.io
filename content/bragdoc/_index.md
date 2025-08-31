@@ -10,9 +10,9 @@ Coming out of school, I knew ML theory but not practice. I reached for Weka (whi
 
 I learned scikit-learn from him, and with the data we had—default customer data plus our first provider—I trained my first Random Forest model. While my colleague’s model ultimately won on AUC and was chosen for deployment, I contributed by building the infrastructure to host it.
 
-I used Redis to cache the model, integrated it into our Django web server, and wrote the glue code to call predict_proba on new prospective customer data. This supported underwriting decisions in real time. To manage multiple models, I keyed them by retailer, allowing us to segment and transition more deliberately as we added new versions.
+I used Redis to cache the model, integrated it into our Django web server, and wrote the glue code to call `predict_proba` on new prospective customer data. This supported underwriting decisions in real time. To manage multiple models, I keyed them by retailer, allowing us to segment and transition more deliberately as we added new versions.
 
-It wasn’t my best technical win, but it was a defining career moment: a hands-on education in the difference between academic ML and applied ML, and my first experience building real infrastructure to bring a model into production.
+Though humbling, it was a defining career moment: a hands-on education in the difference between academic ML and applied ML, and my first experience building real infrastructure to bring a model into production.
 
     
 

@@ -36,6 +36,18 @@ Reflecting on this, I realized the limitation was potentially my lack of access 
 Although I chose to stop the effort rather than invest further without better data, the experiment reinforced an important lesson: fraud and default are not interchangeable signals, and future work in this area should focus on higher-quality chargeback data to more accurately separate the two.
 
 
+## Decoupled underwriting ML pipeline from monolith into a SageMaker + Lambda microservice, enabling faster, safer model deployments with Dockerized scikit-learn and XGBoost., (2018)
+At one point, our underwriting models were too tightly coupled to the company’s monolithic application. Feature engineering was abstracted behind layers of object-oriented code, making bugs hard to isolate. Even small changes required redeploying the entire monolith—an error-prone process that risked outages (and had already caused them).
+
+To break this bottleneck, I designed and implemented a microservice-based approach using AWS SageMaker and Lambda. I began by containerizing one of our existing model artifacts, building a Docker-based pipeline that handled both feature preprocessing and model serving. From there, I rewrote the feature engineering code in a functional style, added unit tests, and integrated the service with an AWS Lambda + API Gateway stack. This allowed us to call SageMaker endpoints from Lambda for real-time predictions.
+
+The decoupling effort gave us critical flexibility: the Dockerized approach supported both scikit-learn and XGBoost models, and by splitting our underwriting stack into its own Git repo we reduced shared dependency conflicts with the monolith. Over many months of iterations and deployments, this system proved stable and significantly improved our ability to test, deploy, and evolve models independently.
+
+Along the way, I encountered and fixed issues typical of building new infrastructure. One memorable debugging moment—the “Sweetgreen story”—involved accidentally caching QA database connections globally, which risked being reused in production Lambda calls. I caught the bug while debugging at a Sweetgreen restaurant, removed the global variable, and ensured environment isolation going forward.
+
+This project was one of the first major steps in transforming our underwriting ML stack from brittle, tightly coupled code into a modular, testable, and resilient production system.
+
+
 ## Resolved an out-of-memory issue during Databricks runtime upgrade by replacing a costly nested one-hot encoding loop with a streamlined manual transformation., (2022)
 As part of upgrading our hosted model repositories to the Databricks 10.4 general release runtime—both to access new optimizations and because earlier runtimes were approaching end-of-support—I encountered an out-of-memory error in the feature engineering step of one repository.
 

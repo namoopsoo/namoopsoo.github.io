@@ -10,6 +10,7 @@ All notable changes to this "human experiment" will be documented in this file.
 - First time went to a roller skating [rink](https://www.xanadu.nyc/). Very different from rollerblading I recall from childhood haha!
 - First time used nail polish to smoothe out a few screen cracks on my iphone.
 - Finished reading Genius Makers (2025-08-29).
+- Shredded 6 past [time block planner](https://www.timeblockplanner.com/) books. And through updates to my [logseq_utils](https://github.com/namoopsoo/logseq_utils/pull/3), with codex, I imported a few select scanned notes I kept, into my logseq. I happened to join someone on a Good Will errand to do my UPS shredding hehe (2025-08-24).
 
 ### Changed
 - From Lavazza to Kirkland espresso, for the kamira.

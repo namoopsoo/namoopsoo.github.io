@@ -129,6 +129,8 @@ All notable changes to this "human experiment" will be documented in this file.
 - Started using [Roam Research](https://roamresearch.com/) , (2021-01-30).
 
 ## 2020-11
+### Created
+- there be dragons hyperlapse [video](https://vimeo.com/479064830?share=copy) (2020-11-13).
 
 ### Started
 - TMI! I know, but, started that bidet life with https://hellotushy.com
@@ -142,6 +144,10 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Started
 - First Yamaha piano, P-115 (link the "2017-12-28 guitar center yamaha piano.pdf") 
 
+## 2017-09
+### Logged
+- Had the privilege to attend a friend's wedding and give a speech and really appreciated the opportunity because I logged it as a 4 minute mini stand up routine celebrating my friend and showing me it is something I really enjoy doing (2017-09-25).
+
 ## 2014-10
 ### Built
 - [Built](/post/2014-10-26-chair/) a better cardboard chair, after first attempt back in ~1999.
@@ -153,6 +159,10 @@ All notable changes to this "human experiment" will be documented in this file.
 ## 2012-11
 ### Stopped
 - Bye bye breads, pastas, rice, sugar, 
+
+## 2011-02
+### Created
+- Claymation [video](https://vimeo.com/938446805?share=copy) (2011-02-13).
 
 ## 2005-03
 ### Logged

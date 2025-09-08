@@ -48,6 +48,26 @@ Along the way, I encountered and fixed issues typical of building new infrastruc
 This project was one of the first major steps in transforming our underwriting ML stack from brittle, tightly coupled code into a modular, testable, and resilient production system.
 
 
+## Re-engineered SQL-based logistic regression for returning-customer underwriting, cutting runtime from 6+ hours to <1 hour with batching, normalization, and query optimizations., (2020)
+As our customer base grew, we needed better underwriting models for returning customers. Initially, our approach was a slow, SQL-based logistic regression pipeline that took over six hours to run—too long for daily operational use. A colleague developed features that showed promise, but integrating them highlighted multiple challenges: inconsistent use of “days past due” calculations, gaps in scoring customers without active leases, and assumptions about live vs. historical data.
+
+I tackled the problem by re-engineering the pipeline in Python with Docker orchestration, while retaining SQL feature logic. To improve performance, I normalized a key data provider table, converting JSON string fields into JSONB and columnar formats for faster lookups. I also restructured the table by user ID, making it easier to retrieve earliest and latest interactions via window functions.
+
+Several SQL optimizations contributed to major speed gains:
+
+- Switching to indexed snapshot tables instead of live tables.
+
+- Refactoring queries with >7 joins to force PostgreSQL to optimize join ordering.
+
+- Adjusting batch sizes: discovering 10k-row partitions ran as fast as 2k-row ones, delivering a 5x free speedup.
+
+- Refactoring CTEs with explicit partitioning to avoid full materialization overhead.
+
+The result was a runtime reduction from over six hours to under an hour. I also added versioning to output scores, so we could trace back exactly which code generated results—critical when later adjustments were required.
+
+This project both improved underwriting decisions for returning customers and laid a foundation for more disciplined model versioning. It also taught me to combine SQL tuning, data normalization, and batch strategy in practical ways to achieve substantial performance gains.
+
+
 ## Resolved an out-of-memory issue during Databricks runtime upgrade by replacing a costly nested one-hot encoding loop with a streamlined manual transformation., (2022)
 As part of upgrading our hosted model repositories to the Databricks 10.4 general release runtime—both to access new optimizations and because earlier runtimes were approaching end-of-support—I encountered an out-of-memory error in the feature engineering step of one repository.
 

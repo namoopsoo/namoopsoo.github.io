@@ -48,6 +48,16 @@ Along the way, I encountered and fixed issues typical of building new infrastruc
 This project was one of the first major steps in transforming our underwriting ML stack from brittle, tightly coupled code into a modular, testable, and resilient production system.
 
 
+## Rebuilt underwriting model with XGBoost + SageMaker after sudden data provider deprecation, ensuring business continuity and demonstrating the value of prior Dockerization and pipeline modularization., (2019)
+When our main data provider abruptly deprecated their products, we had to rebuild our underwriting pipeline on very short notice to avoid losing a core business function.
+
+I collaborated with a colleague to refresh the model and pipeline. My colleague incorporated the new features into our feature store and produced a fresh dataset. From there, I took on the feature engineering with the new data. Drawing on prior experience with XGBoost, I recognized it as a strong fit compared to our previous logistic regression model, since it handled missing values and scaling gracefully. This let me focus on one-hot encoding, binning, and categorical transforms with scikit-learn. I iterated quickly on models in SageMaker’s managed environment, validating with KS and logloss metrics, and ran overnight hyperparameter tuning jobs. We defined the stopping point by comparing the performance of new candidates directly against the prior production model, making the decision straightforward.
+
+Because I had Dockerized our modeling pipeline the year prior, deployment was smooth: once we had a good candidate, I only needed to update the Dockerfile and add preprocessing code to a new branch. This made the model production-ready without major rework. While I briefly traveled abroad, my colleague continued iterating using the setup I had built—trimming non-contributory features and testing new Docker image versions.
+
+The outcome was a new end-to-end underwriting pipeline and model, delivered under severe time constraints, that kept the business operating without interruption. Beyond the immediate win, the work demonstrated the value of earlier investments in containerization and modular pipeline design, which paid off when we needed agility most.
+
+
 ## Re-engineered SQL-based logistic regression for returning-customer underwriting, cutting runtime from 6+ hours to <1 hour with batching, normalization, and query optimizations., (2020)
 As our customer base grew, we needed better underwriting models for returning customers. Initially, our approach was a slow, SQL-based logistic regression pipeline that took over six hours to run—too long for daily operational use. A colleague developed features that showed promise, but integrating them highlighted multiple challenges: inconsistent use of “days past due” calculations, gaps in scoring customers without active leases, and assumptions about live vs. historical data.
 

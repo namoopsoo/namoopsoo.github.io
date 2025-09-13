@@ -90,6 +90,16 @@ The result was a runtime reduction from over six hours to under an hour. I also 
 This project both improved underwriting decisions for returning customers and laid a foundation for more disciplined model versioning. It also taught me to combine SQL tuning, data normalization, and batch strategy in practical ways to achieve substantial performance gains.
 
 
+## Rebuilt underwriting pipeline with AWS Step Functions + Lambda for disaster recovery, reducing legacy Django dependencies and improving resilience, explainability, and auditability., (2021?)
+Following a double hit—a pre-Thanksgiving AWS outage and an information security incident—we prioritized strengthening the resilience of our underwriting infrastructure. At the same time, stricter PCI compliance and lingering reliance on a legacy Python 2 Django monolith pushed us to decouple risk-related flows from the broader customer experience. Cleaner separation meant better explainability, simpler auditing, and reduced operational risk.
+
+To achieve this, I redesigned the pipeline using AWS Step Functions State Machines with Lambda-based microservices. This “football-passing” control flow replaced our prior orchestrated design, lowering inter-Lambda overhead and making the system fully serverless. I also carefully minimized the size of data passed between Lambdas, improving runtime efficiency. To ensure disaster recovery readiness, I built the stack with CloudFormation, giving us infrastructure-as-code repeatability.
+
+We rolled out the new system incrementally in canary style, starting with smaller retailers and later migrating larger partners once stability was proven. A highlight of this architecture was its replay capability: we could feed past payloads through the pipeline to validate new rules or architecture changes. I worked closely with a colleague to test rule modifications, comparing before-and-after outputs meticulously to ensure no unintended changes in business logic.
+
+The result was a serverless underwriting pipeline that improved disaster recovery, reduced reliance on legacy systems, and simplified future development. It provided not only technical resilience but also operational clarity, positioning the platform for safer iteration and long-term maintainability.
+
+
 ## Resolved an out-of-memory issue during Databricks runtime upgrade by replacing a costly nested one-hot encoding loop with a streamlined manual transformation., (2022)
 As part of upgrading our hosted model repositories to the Databricks 10.4 general release runtime—both to access new optimizations and because earlier runtimes were approaching end-of-support—I encountered an out-of-memory error in the feature engineering step of one repository.
 

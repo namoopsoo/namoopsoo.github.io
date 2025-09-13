@@ -58,6 +58,18 @@ Because I had Dockerized our modeling pipeline the year prior, deployment was sm
 The outcome was a new end-to-end underwriting pipeline and model, delivered under severe time constraints, that kept the business operating without interruption. Beyond the immediate win, the work demonstrated the value of earlier investments in containerization and modular pipeline design, which paid off when we needed agility most.
 
 
+## Optimized live underwriting pipeline by pruning features and rewriting feature engineering code, reducing latency by ~2.5s while maintaining accuracy to support a key retail partner., (2019-04-26)
+Our live underwriting model pipeline had become too slow, exceeding 10 seconds in some cases, which was hurting conversion rates and jeopardizing relationships with major retail partners. The challenge was to speed up predictions without sacrificing accuracy.
+
+First, I focused on feature selection. I was curious if cutting that down could yield a model with faster inference and equivalent performance. Using scikit-learn’s SelectKBest with the ANOVA F-statistic, I pruned features from 1,829 down to 1,000. Change in performancve was negligible. However, cutting further to 500 degraded accuracy noticeably. After discussion with colleagues, we settled on the top 1,000 features, which shaved ~1 second from runtime while keeping model performance essentially unchanged.
+
+Next, I rewrote our feature engineering code almost from scratch. The existing implementation was pandas-heavy and overly object-oriented, making it both inefficient and hard to profile. By switching to raw Python and JSON-based feature definitions, I tailored the pipeline for single-row evaluation, which was the performance-critical case. I also separated “layer 1” raw features from “layer 2” derived features, simplifying both readability and extensibility. Historical-data paths, which were no longer in use, were stripped out, reducing unnecessary overhead.
+
+This rewrite reduced latency by an additional 1.5–2 seconds. To validate correctness, I used Athena logs and S3-stored dataframe pickles to compare outputs between the new and old code paths. With only negligible precision differences, we gained confidence to deploy quickly.
+
+Overall, the combined optimizations cut ~2.5 seconds from live underwriting latency while preserving model accuracy. This made our pipeline more competitive in a waterfall setup against other services, directly supporting improved conversion with one of our biggest retail partners.
+
+
 ## Re-engineered SQL-based logistic regression for returning-customer underwriting, cutting runtime from 6+ hours to <1 hour with batching, normalization, and query optimizations., (2020)
 As our customer base grew, we needed better underwriting models for returning customers. Initially, our approach was a slow, SQL-based logistic regression pipeline that took over six hours to run—too long for daily operational use. A colleague developed features that showed promise, but integrating them highlighted multiple challenges: inconsistent use of “days past due” calculations, gaps in scoring customers without active leases, and assumptions about live vs. historical data.
 

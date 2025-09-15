@@ -58,6 +58,14 @@ Because I had Dockerized our modeling pipeline the year prior, deployment was sm
 The outcome was a new end-to-end underwriting pipeline and model, delivered under severe time constraints, that kept the business operating without interruption. Beyond the immediate win, the work demonstrated the value of earlier investments in containerization and modular pipeline design, which paid off when we needed agility most.
 
 
+## Built custom PSI-based drift monitor to detect shifts in provider data, catching feature degradation early and flagging upstream product changes before they impacted model outputs for too long., (2019)
+To monitor risks from shifts in our input data provider feeds, I implemented a Population Stability Index (PSI) measure on our top features. At the time, I didn’t find a reliable off-the-shelf solution, so I wrote the PSI logic from scratch using NumPy. The goal was to catch distribution drift between live data and training data before it silently degraded model performance.
+
+The value of this approach did show up: the monitor flagged a significant drift in one of our most important features. With this evidence in hand, we engaged our data provider and confirmed that they had updated their product—without advance notice. By detecting the issue at the feature level, we were able to respond proactively, rather than waiting for degradation to surface through model outputs or downstream business metrics, which would have been slower and less informative.
+
+This gave us an earlier warning system for data quality issues, reinforcing the importance of feature-level monitoring alongside model-level metrics.
+
+
 ## Optimized live underwriting pipeline by pruning features and rewriting feature engineering code, reducing latency by ~2.5s while maintaining accuracy to support a key retail partner., (2019-04-26)
 Our live underwriting model pipeline had become too slow, exceeding 10 seconds in some cases, which was hurting conversion rates and jeopardizing relationships with major retail partners. The challenge was to speed up predictions without sacrificing accuracy.
 

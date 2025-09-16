@@ -8,6 +8,7 @@ All notable changes to this "human experiment" will be documented in this file.
 ## 2025-09
 ### Logged
 - Not a big deal but, pushed my 1600m into a 3200m, for first time in a while today, with a not entirely embarassing 7:32min/mi pace (2025-09-02).
+- My NYC apartment building got a compost bin, so I started composting. tiny wins ftw (2025-09-13)
 
 ## 2025-08
 ### Logged

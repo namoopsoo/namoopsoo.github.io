@@ -48,6 +48,22 @@ Along the way, I encountered and fixed issues typical of building new infrastruc
 This project was one of the first major steps in transforming our underwriting ML stack from brittle, tightly coupled code into a modular, testable, and resilient production system.
 
 
+## Parallelized and refactored third-party data provider pulls into fault-tolerant microservices, cutting underwriting latency by several seconds and improving resilience., (2018?)
+An important retail partner challenged us to reduce live underwriting latency below five seconds, but our system was taking more than double that. A major bottleneck was the sequential way we called multiple third-party data providers during underwriting, and I proposed parallelizing these calls.
+
+I refactored the relevant section of our monolith into an AWS Lambda-based microservice, using Python multiprocessing to fan out provider requests. For fault tolerance, I introduced S3 as a caching layer and designed the service with a clean API contract: a list of provider names in, transformed data out. Importantly, the function was written side-effect-free, using mocked provider data during tests, which made it easy to validate and extend.
+
+During development, I also discovered that the true performance drag wasn’t only in provider pulls—it was in our feature engineering code. I optimized those transformations as well, shaving off additional seconds in dataframe construction.
+
+The new design delivered two key benefits:
+
+Speed – Vendor call latency was cut roughly in half, bringing us much closer to our performance target.
+
+Resilience and maintainability – I added walltime monitoring and error handling so that if one provider failed, the pipeline could still proceed with partial data. It also became easier to add new providers or adjust existing logic within a smaller, testable service.
+
+This project not only reduced underwriting time but also moved us toward a more modular, resilient architecture, setting the stage for future improvements (including later Step Functions-based orchestration).
+
+
 ## Rebuilt underwriting model with XGBoost + SageMaker after sudden data provider deprecation, ensuring business continuity and demonstrating the value of prior Dockerization and pipeline modularization., (2019)
 When our main data provider abruptly deprecated their products, we had to rebuild our underwriting pipeline on very short notice to avoid losing a core business function.
 

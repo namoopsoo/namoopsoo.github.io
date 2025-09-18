@@ -345,7 +345,11 @@ Previously, adding new Python packages to our Databricks package cache relied on
 
 
 ## Automated metadata sync from Databricks registry to Git, reducing bulky PRs to minimal, targeted changes., (2025-03)
-this was a mini task with the aim to synchronize metadata that may have been manually added on the databricks central model registry into our git version control. It was definitely mostly a laborious task that had to be done, but I ended up scripting out the pull requests at least since there were so many updates to be made. I had a script that compared data from the cmr side with data on our json git side, and I created pull requests on the git side. At first, the pull requests were very verbose because they altered the full settings.json we use for our model metadata so instead I found a way to only edit a small subset of the json metadata so that the pull requests were not so unwieldly.
+This was a small but necessary task: synchronizing metadata from our Databricks Central Model Registry (CMR) into Git version control. Over time, some metadata updates had been made directly in CMR without being reflected in Git, leaving us with drift between the two.
+
+Rather than manually reconciling dozens of differences, I wrote a script to compare CMR metadata with our Git-based JSON settings and automatically generate pull requests. At first, the pull requests were unwieldy because they rewrote the full settings.json files, making it difficult to review changes. To improve this, I refined the script to edit only the specific fields that had changed, producing cleaner, more focused pull requests.
+
+The outcome was a faster, less error-prone way to keep CMR and Git in sync, saving time on a tedious maintenance task while making version control history more meaningful.
 
 
 ## Future-proofed a production ML pipeline by replacing CVE-flagged legacy scikit-learn with ONNX, modularizing shared inference logic, and validating output scores to high precision., (2025-07-18)

@@ -1,0 +1,96 @@
+<!-- Usage in Markdown:
+{{< sheetchart
+  csv="https://docs.google.com/spreadsheets/d/1341IFRW4NeoOBWy3ybnRNcebbaZ2buoeIuB_30exCrE/pub?gid=0&single=true&output=csv"
+  labelsCol="DateEarned"
+  valueCol="PointsEarned"
+  title="My Rolling Average"
+  compute="rolling7"  /* options: none | rolling7 */
+>}}
+-->
+
+<div>
+  <canvas id="chart-{{ .Get "title" | urlize }}"></canvas>
+</div>
+
+<!-- Load Chart.js and Papa Parse from CDNs -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" defer></script>
+
+<script>
+(function(){
+  const csvUrl   = {{ .Get "csv" | jsonify }};
+  const labelsCol = {{ .Get "labelsCol" | default "Date" | jsonify }};
+  const valueCol  = {{ .Get "valueCol"  | default "Value" | jsonify }};
+  const title     = {{ .Get "title"     | default "Chart" | jsonify }};
+  const compute   = {{ .Get "compute"   | default "none"  | jsonify }};
+  const canvasId  = "chart-" + encodeURIComponent(JSON.parse(title).toLowerCase().replace(/\s+/g,'-'));
+
+  // Wait for scripts to be ready even with defer
+  function ready(fn){ if(document.readyState!=='loading'){ fn(); } else { document.addEventListener('DOMContentLoaded', fn); } }
+
+  function rollingAvg(values, windowSize){
+    const out = [];
+    let sum = 0;
+    for (let i=0; i<values.length; i++){
+      sum += values[i];
+      if (i >= windowSize) sum -= values[i-windowSize];
+      out.push(i >= windowSize-1 ? +(sum/windowSize).toFixed(4) : null);
+    }
+    return out;
+  }
+
+  ready(function(){
+    Papa.parse(csvUrl, {
+      download: true,
+      header: true,
+      dynamicTyping: true,
+      complete: function(results){
+        const rows = results.data.filter(r => r && Object.keys(r).length);
+        if (!rows.length) return;
+
+        // Extract and clean
+        const labels = rows.map(r => r[labelsCol]);
+        const values = rows.map(r => {
+          const v = r[valueCol];
+          return typeof v === "string" ? parseFloat(v.replace(/,/g,'')) : v;
+        });
+
+        // Optional computation
+        let computed = values.slice();
+        let legend = valueCol;
+        if (compute === "rolling7"){
+          computed = rollingAvg(values, 7);
+          legend = valueCol + " (7-day avg)";
+        }
+
+        // Build chart
+        const ctx = document.getElementById(canvasId).getContext('2d');
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: legend,
+              data: computed,
+              borderWidth: 2,
+              pointRadius: 0,
+              tension: 0.2
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              title: { display: true, text: title }
+            },
+            scales: {
+              x: { ticks: { autoSkip: true, maxTicksLimit: 12 } },
+              y: { beginAtZero: false }
+            }
+          }
+        });
+      },
+      error: function(err){ console.error("CSV parse error", err); }
+    });
+  });
+})();
+</script>

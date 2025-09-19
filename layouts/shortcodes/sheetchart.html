@@ -1,12 +1,3 @@
-<!-- Usage in Markdown:
-{{< sheetchart
-  csv="https://docs.google.com/spreadsheets/d/1341IFRW4NeoOBWy3ybnRNcebbaZ2buoeIuB_30exCrE/pub?gid=0&single=true&output=csv"
-  labelsCol="DateEarned"
-  valueCol="PointsEarned"
-  title="My Rolling Average"
-  compute="rolling7"  /* options: none | rolling7 */
->}}
--->
 
 <div>
   <canvas id="chart-{{ .Get "title" | urlize }}"></canvas>

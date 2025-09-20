@@ -1,13 +1,8 @@
-<!-- sheetchart.html -->
-<!-- Usage:
-{{< sheetchart
-  csv="https://docs.google.com/spreadsheets/d/XXX/pub?gid=0&single=true&output=csv"
-  labelsCol="Date"
-  valueCol="Value"
-  title="SnackPoints 7-day Avg"
-  compute="rolling7"  /* options: none | rolling7 */
->}}
--->
+{{/* sheetchart shortcode (CSV + Chart.js + Papa Parse)
+   Params: csv, labelsCol (default "Date"), valueCol (default "Value"),
+           title (default "Chart"), compute ("none" | "rolling7")
+*/}}
+
 {{- $csv := .Get "csv" -}}
 {{- $labels := .Get "labelsCol" | default "Date" -}}
 {{- $values := .Get "valueCol"  | default "Value" -}}

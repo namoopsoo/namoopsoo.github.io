@@ -1,82 +1,74 @@
+<!-- sheetchart.html -->
+<!-- Usage:
+{{< sheetchart
+  csv="https://docs.google.com/spreadsheets/d/XXX/pub?gid=0&single=true&output=csv"
+  labelsCol="Date"
+  valueCol="Value"
+  title="SnackPoints 7-day Avg"
+  compute="rolling7"  /* options: none | rolling7 */
+>}}
+-->
+{{- $csv := .Get "csv" -}}
+{{- $labels := .Get "labelsCol" | default "Date" -}}
+{{- $values := .Get "valueCol"  | default "Value" -}}
+{{- $title := .Get "title" | default "Chart" -}}
+{{- $compute := .Get "compute" | default "none" -}}
+{{- $cid := printf "chart-%s" (urlize $title) -}}
 
-<div>
-  <canvas id="chart-{{ .Get "title" | urlize }}"></canvas>
-</div>
+<div><canvas id="{{ $cid }}"></canvas></div>
 
-<!-- Load Chart.js and Papa Parse from CDNs -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" defer></script>
 
 <script>
 (function(){
-  const csvUrl   = {{ .Get "csv" | jsonify }};
-  const labelsCol = {{ .Get "labelsCol" | default "Date" | jsonify }};
-  const valueCol  = {{ .Get "valueCol"  | default "Value" | jsonify }};
-  const title     = {{ .Get "title"     | default "Chart" | jsonify }};
-  const compute   = {{ .Get "compute"   | default "none"  | jsonify }};
-  const canvasId  = "chart-" + encodeURIComponent(JSON.parse(title).toLowerCase().replace(/\s+/g,'-'));
+  const csvUrl   = {{ $csv | jsonify }};
+  const labelsCol= {{ $labels | jsonify }};
+  const valueCol = {{ $values | jsonify }};
+  const titleTxt = {{ $title  | jsonify }};
+  const compute  = {{ $compute| jsonify }};
+  const cid      = {{ $cid    | jsonify }};
 
-  // Wait for scripts to be ready even with defer
-  function ready(fn){ if(document.readyState!=='loading'){ fn(); } else { document.addEventListener('DOMContentLoaded', fn); } }
+  function onReady(fn){ if (document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
 
-  function rollingAvg(values, windowSize){
-    const out = [];
-    let sum = 0;
-    for (let i=0; i<values.length; i++){
-      sum += values[i];
-      if (i >= windowSize) sum -= values[i-windowSize];
-      out.push(i >= windowSize-1 ? +(sum/windowSize).toFixed(4) : null);
+  function rollingAvg(vals, n){
+    const out=[]; let sum=0;
+    for (let i=0;i<vals.length;i++){
+      const v = Number(vals[i]); if (!Number.isFinite(v)) { out.push(null); continue; }
+      sum += v; if (i>=n) sum -= Number(vals[i-n]);
+      out.push(i>=n-1 ? +(sum/n).toFixed(4) : null);
     }
     return out;
   }
 
-  ready(function(){
+  onReady(function(){
     Papa.parse(csvUrl, {
-      download: true,
-      header: true,
-      dynamicTyping: true,
-      complete: function(results){
-        const rows = results.data.filter(r => r && Object.keys(r).length);
+      download: true, header: true, dynamicTyping: true,
+      complete: function(res){
+        const rows = (res.data || []).filter(r => r && Object.keys(r).length);
         if (!rows.length) return;
 
-        // Extract and clean
         const labels = rows.map(r => r[labelsCol]);
         const values = rows.map(r => {
           const v = r[valueCol];
           return typeof v === "string" ? parseFloat(v.replace(/,/g,'')) : v;
         });
 
-        // Optional computation
-        let computed = values.slice();
+        let data = values.slice();
         let legend = valueCol;
-        if (compute === "rolling7"){
-          computed = rollingAvg(values, 7);
-          legend = valueCol + " (7-day avg)";
-        }
+        if (compute === "rolling7"){ data = rollingAvg(values, 7); legend += " (7-day avg)"; }
 
-        // Build chart
-        const ctx = document.getElementById(canvasId).getContext('2d');
+        const el = document.getElementById(cid);
+        if (!el) return;
+        const ctx = el.getContext('2d');
+
         new Chart(ctx, {
           type: 'line',
-          data: {
-            labels: labels,
-            datasets: [{
-              label: legend,
-              data: computed,
-              borderWidth: 2,
-              pointRadius: 0,
-              tension: 0.2
-            }]
-          },
+          data: { labels, datasets: [{ label: legend, data, borderWidth: 2, pointRadius: 0, tension: 0.2 }] },
           options: {
             responsive: true,
-            plugins: {
-              title: { display: true, text: title }
-            },
-            scales: {
-              x: { ticks: { autoSkip: true, maxTicksLimit: 12 } },
-              y: { beginAtZero: false }
-            }
+            plugins: { title: { display: true, text: titleTxt } },
+            scales: { x: { ticks: { autoSkip: true, maxTicksLimit: 12 } } }
           }
         });
       },

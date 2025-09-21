@@ -220,3 +220,6 @@ All notable changes to this "human experiment" will be documented in this file.
 - away luggage 
 - pixel blue light glasses 
 - dyson air purifier ; and also when it died ; but it died first filter function and then heat function too. two deaths.
+
+first pro soccer game. Liberty, 2025
+

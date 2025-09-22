@@ -9,7 +9,7 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Logged
 - Not a big deal but, pushed my 1600m into a 3200m, for first time in a while today, with a not entirely embarassing 7:32min/mi pace (2025-09-02).
 - My NYC apartment building got a compost bin, so I started composting. tiny wins ftw (2025-09-13)
-
+- First [crochet](https://world.hey.com/michal.piekarczyk/crochet-dna-40269b95) attempt (2025-09-21)).
 ### Changed
 - From oral-b electric, to Suri 2 (2025-09-10).
 

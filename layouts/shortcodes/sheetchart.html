@@ -40,7 +40,11 @@
     Papa.parse(csvUrl, {
       download: true, header: true, dynamicTyping: true,
       complete: function(res){
+        console.log("Papa parse complete:", res);
         const rows = (res.data || []).filter(r => r && Object.keys(r).length);
+
+        console.log("Filtered rows:", rows);
+
         if (!rows.length) return;
 
         const labels = rows.map(r => r[labelsCol]);
@@ -48,6 +52,10 @@
           const v = r[valueCol];
           return typeof v === "string" ? parseFloat(v.replace(/,/g,'')) : v;
         });
+
+        console.log("Labels:", labels);
+        console.log("Values:", values);
+
 
         let data = values.slice();
         let legend = valueCol;
@@ -67,7 +75,10 @@
           }
         });
       },
-      error: function(err){ console.error("CSV parse error", err); }
+      error: function(err, file, inputElem, reason) {
+          console.error("Papa parse error:", err, reason);
+
+      }
     });
   });
 })();

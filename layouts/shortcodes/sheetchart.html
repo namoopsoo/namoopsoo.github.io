@@ -64,16 +64,54 @@
         const el = document.getElementById(cid);
         if (!el) return;
         const ctx = el.getContext('2d');
-
+ 
+        // Build datasets
+        const rawDs = {
+          label: valueCol,
+          data: values,
+          borderWidth: 2,
+          pointRadius: 2,
+          tension: 0.2
+        };
+        
+        const datasets = [rawDs];
+        
+        if (compute === "rolling7") {
+          const ma = rollingAvg(values, 7);
+          const haveAny = ma.some(v => Number.isFinite(v));
+          if (haveAny) {
+            datasets.push({
+              label: valueCol + " (7-day avg)",
+              data: ma,
+              borderWidth: 2,
+              pointRadius: 0,
+              tension: 0.2,
+              spanGaps: true
+            });
+          } else {
+            console.warn("Not enough data for rolling7—showing raw series only.");
+          }
+        }
+        
+        const el = document.getElementById(cid);
+        if (!el) return;
+        const ctx = el.getContext('2d');
+        
         new Chart(ctx, {
           type: 'line',
-          data: { labels, datasets: [{ label: legend, data, borderWidth: 2, pointRadius: 0, tension: 0.2 }] },
+          data: { labels, datasets },
           options: {
             responsive: true,
             plugins: { title: { display: true, text: titleTxt } },
-            scales: { x: { ticks: { autoSkip: true, maxTicksLimit: 12 } } }
+            scales: {
+              x: { ticks: { autoSkip: true, maxTicksLimit: 12 } },
+              y: { beginAtZero: false }
+            }
           }
         });
+        
+
+
       },
       error: function(err, file, inputElem, reason) {
           console.error("Papa parse error:", err, reason);

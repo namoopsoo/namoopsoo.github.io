@@ -61,10 +61,6 @@
         let legend = valueCol;
         if (compute === "rolling7"){ data = rollingAvg(values, 7); legend += " (7-day avg)"; }
 
-        const el = document.getElementById(cid);
-        if (!el) return;
-        const ctx = el.getContext('2d');
- 
         // Build datasets
         const rawDs = {
           label: valueCol,

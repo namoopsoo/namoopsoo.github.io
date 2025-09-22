@@ -17,12 +17,12 @@
 
 <script>
 (function(){
-  const csvUrl   = {{ $csv | jsonify }};
-  const labelsCol= {{ $labels | jsonify }};
-  const valueCol = {{ $values | jsonify }};
-  const titleTxt = {{ $title  | jsonify }};
-  const compute  = {{ $compute| jsonify }};
-  const cid      = {{ $cid    | jsonify }};
+  const csvUrl   = "{{ $csv }}";
+  const labelsCol= "{{ $labels }}";
+  const valueCol = "{{ $values }}";
+  const titleTxt = "{{ $title }}";
+  const compute  = "{{ $compute }}";
+  const cid      = "{{ $cid }}";
 
   function onReady(fn){ if (document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
 

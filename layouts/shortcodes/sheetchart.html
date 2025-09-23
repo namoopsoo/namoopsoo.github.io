@@ -23,8 +23,22 @@
   const titleTxt = "{{ $title }}";
   const compute  = "{{ $compute }}";
   const cid      = "{{ $cid }}";
-
+  const cumulative = "{{ .Get "cumulative" | default "false" }}";
+  
   function onReady(fn){ if (document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
+
+  function cumulativeSum(vals){
+    const out = [];
+    let sum = 0;
+    for (let i = 0; i < vals.length; i++){
+      const v = Number(vals[i]);
+      if (Number.isFinite(v)) sum += v;                 // add when finite
+      // carry the last sum forward so the line stays continuous
+      out.push(+sum.toFixed(4));
+    }
+    return out;
+  }
+
 
   function rollingAvg(vals, n){
     const out=[]; let sum=0;
@@ -62,30 +76,45 @@
         if (compute === "rolling7"){ data = rollingAvg(values, 7); legend += " (7-day avg)"; }
 
         // Build datasets
-        const rawDs = {
+        // Build datasets (left axis = 'y')
+        const datasets = [{
           label: valueCol,
           data: values,
           borderWidth: 2,
           pointRadius: 2,
-          tension: 0.2
-        };
-        
-        const datasets = [rawDs];
+          tension: 0.2,
+          yAxisID: 'y'
+        }];
         
         if (compute === "rolling7") {
           const ma = rollingAvg(values, 7);
-          const haveAny = ma.some(v => Number.isFinite(v));
-          if (haveAny) {
+          if (ma.some(v => Number.isFinite(v))) {
             datasets.push({
               label: valueCol + " (7-day avg)",
               data: ma,
               borderWidth: 2,
               pointRadius: 0,
               tension: 0.2,
-              spanGaps: true
+              spanGaps: true,
+              yAxisID: 'y'
             });
           } else {
-            console.warn("Not enough data for rolling7—showing raw series only.");
+            console.warn("Not enough data for rolling7 — showing raw only.");
+          }
+        }
+        
+        // Cumulative (right axis = 'y2')
+        if (String(cumulative).toLowerCase() === "true") {
+          const cum = cumulativeSum(values);
+          if (cum.some(v => Number.isFinite(v))) {
+            datasets.push({
+              label: valueCol + " (cumulative)",
+              data: cum,
+              borderWidth: 2,
+              pointRadius: 0,
+              tension: 0.2,
+              yAxisID: 'y2'
+            });
           }
         }
         
@@ -100,12 +129,20 @@
             responsive: true,
             plugins: { title: { display: true, text: titleTxt } },
             scales: {
-              x: { ticks: { autoSkip: true, maxTicksLimit: 12 } },
-              y: { beginAtZero: false }
+              y: {
+                position: 'left',
+                beginAtZero: true
+              },
+              y2: {
+                position: 'right',
+                grid: { drawOnChartArea: false }, // keep grids from overlapping
+                beginAtZero: true
+              },
+              x: { ticks: { autoSkip: true, maxTicksLimit: 12 } }
             }
           }
         });
-        
+
 
 
       },

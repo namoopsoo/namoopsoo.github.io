@@ -124,6 +124,26 @@ We rolled out the new system incrementally in canary style, starting with smalle
 The result was a serverless underwriting pipeline that improved disaster recovery, reduced reliance on legacy systems, and simplified future development. It provided not only technical resilience but also operational clarity, positioning the platform for safer iteration and long-term maintainability.
 
 
+## Tackled my first Kaggle project on aviation physiology with TensorFlow LSTMs, learning hard lessons in 3D time series data, scaling, and deep learning practice through months of weekend experiments., (2019, [link](https://michal.piekarczyk.xyz/project/2020-04-05-aviation-kaggle-low-level/))
+My first (and only so far) Kaggle project was the Aviation Safety physiology classification challenge, which asked whether pilot state could be inferred from respiration, ECG, GSR, and EEG time-series data. I used it as an opportunity to dive into TensorFlow and LSTMs.
+
+One of my early realizations was just how different time series data is: moving from 2D to 3D meant the 1.1 GB dataset could balloon to 256 GB if I wasn’t careful with sequence windows. This forced me to learn much more about NumPy’s reshaping tricks, h5py for chunked data, and how to avoid crashes during training. I also discovered that LSTMs are extremely sensitive to unscaled inputs—only after applying scaling did my logloss improve.
+
+Along the way, I sharpened my tooling habits:
+
+- Visualization: raw Matplotlib plots helped me track logloss and inspect time series.
+
+- Workflow hygiene: I got disciplined with Jupyter Notebook experiments to avoid mixing datasets or models across days.
+
+- Data balancing: because the dataset was so skewed, I compared balanced weights vs balanced training sets, eventually preferring balanced datasets to simplify preprocessing.
+
+- Messy data reality: despite expectations of “clean Kaggle data,” I discovered the time series wasn’t even sorted by time—a frustrating but instructive experience.
+
+I invested nearly half a year of weekends, often slotting in training runs before bed, before going on runs, or even while waiting at the Boston Amtrak terminal (where I once almost missed a bus while mulling over logits vs softmax probabilities!). I also had fun moments along the way, like reading Yann LeCun’s warning about large minibatches and immediately tweaking my SGD batch size, or realizing at a family birthday party that I finally understood the idea of neural network “capacity.”
+
+Most competitors used gradient boosting (LightGBM/XGBoost), but I stuck with my LSTM path—it was less about leaderboard placement and more about learning deeply. While the final score wasn’t strong, the project gave me my first real immersion in deep learning practice: scaling, batching, managing experiments, wrangling messy time-series data, and living with the grind of trial and error.
+
+
 ## Resolved an out-of-memory issue during Databricks runtime upgrade by replacing a costly nested one-hot encoding loop with a streamlined manual transformation., (2022)
 As part of upgrading our hosted model repositories to the Databricks 10.4 general release runtime—both to access new optimizations and because earlier runtimes were approaching end-of-support—I encountered an out-of-memory error in the feature engineering step of one repository.
 

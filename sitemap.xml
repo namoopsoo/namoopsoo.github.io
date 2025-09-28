@@ -2,10 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://michal.piekarczyk.xyz/post/2025-08-17-apple-notes-weird-math/</loc>
-    <lastmod>2025-08-17T10:58:37-04:00</lastmod>
+    <loc>https://michal.piekarczyk.xyz/post/2025-09-28-sheet-charts/</loc>
+    <lastmod>2025-09-28T15:18:19-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/post/</loc>
+    <lastmod>2025-09-28T15:18:19-04:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/post/2025-08-17-apple-notes-weird-math/</loc>
     <lastmod>2025-08-17T10:58:37-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/post/2025-08-16-argumentum-computem-ad-infinitum/</loc>
@@ -782,6 +785,9 @@
     <loc>https://michal.piekarczyk.xyz/</loc>
     <lastmod>2023-02-26T19:27:16-05:00</lastmod>
   </url><url>
+    <loc>https://michal.piekarczyk.xyz/vis/</loc>
+    <lastmod>2025-09-28T15:07:06-04:00</lastmod>
+  </url><url>
     <loc>https://michal.piekarczyk.xyz/now/</loc>
     <lastmod>2025-05-28T09:26:30-04:00</lastmod>
   </url><url>
@@ -790,9 +796,6 @@
   </url><url>
     <loc>https://michal.piekarczyk.xyz/search/</loc>
     <lastmod>2023-03-04T13:22:50-05:00</lastmod>
-  </url><url>
-    <loc>https://michal.piekarczyk.xyz/vis/</loc>
-    <lastmod>2025-09-28T14:39:29-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/project/</loc>
     <lastmod>2023-02-26T18:33:54-05:00</lastmod>

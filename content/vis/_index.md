@@ -10,5 +10,5 @@ Below is a chart driven by a Google Sheet published as CSV.
   valueCol="PointsEarned"
   title="Points: raw and cumulative"
   compute="rolling7"
-  cumulative="true"      # ← enables the right-axis running total
+  cumulative="true"      #  enables the right-axis running total
 >}}

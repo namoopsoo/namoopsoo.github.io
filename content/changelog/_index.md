@@ -10,6 +10,7 @@ All notable changes to this "human experiment" will be documented in this file.
 - Not a big deal but, pushed my 1600m into a 3200m, for first time in a while today, with a not entirely embarassing 7:32min/mi pace (2025-09-02).
 - My NYC apartment building got a compost bin, so I started composting. tiny wins ftw (2025-09-13)
 - First [crochet](https://world.hey.com/michal.piekarczyk/crochet-dna-40269b95) attempt (2025-09-21)).
+- First time using a rev balance board at my brothers(2025-09-21) .
 ### Changed
 - From oral-b electric, to Suri 2 (2025-09-10).
 
@@ -26,7 +27,7 @@ All notable changes to this "human experiment" will be documented in this file.
 
 ### Started
 - Started using Stage Manager on Apple macos. (2025-08-27)
-
+- Park next to me got renovated and has a pull up bar now so I started using a normal size pull up bar again finally after a long time.
 ## 2025-07
 ### Started
 - Started this personal changelog!

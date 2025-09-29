@@ -11,6 +11,7 @@ All notable changes to this "human experiment" will be documented in this file.
 - My NYC apartment building got a compost bin, so I started composting. tiny wins ftw (2025-09-13)
 - First [crochet](https://world.hey.com/michal.piekarczyk/crochet-dna-40269b95) attempt (2025-09-21)).
 - First time using a rev balance board at my brothers(2025-09-21) .
+- First time using sandpaper to [fix](https://michal.piekarczyk.xyz/post/2025-09-28-fix-chipped-pint-glass/) chipped broken pint glass (2025-09-28).
 ### Changed
 - From oral-b electric, to Suri 2 (2025-09-10).
 

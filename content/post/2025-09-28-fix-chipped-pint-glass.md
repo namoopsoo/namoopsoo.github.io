@@ -1,6 +1,10 @@
 ---
 title: Fix a chipped pint glass
 date: 2025-09-28
+images:
+  - "https://s3.amazonaws.com/my-blog-content/2025-09-28-fix-chipped-pint-glass/IMG_7717.jpeg"
+cover:
+  image: "https://s3.amazonaws.com/my-blog-content/2025-09-28-fix-chipped-pint-glass/IMG_7717.jpeg"
 ---
 
 

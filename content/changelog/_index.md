@@ -136,6 +136,10 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Started
 - Started using [Roam Research](https://roamresearch.com/) , (2021-01-30).
 
+## 2020-12
+### Changed
+- Updated from earlier Kindle to Kindle Oasis (2020-12-01).
+
 ## 2020-11
 ### Created
 - there be dragons hyperlapse [video](https://vimeo.com/479064830?share=copy) (2020-11-13).

@@ -10,7 +10,9 @@
 {{- $compute := .Get "compute" | default "none" -}}
 {{- $cid := printf "chart-%s" (urlize $title) -}}
 
-<div><canvas id="{{ $cid }}"></canvas></div>
+<div class="sheet-chart-wrap" style="position:relative;width:100%;max-width:900px;margin:0 auto;height:340px;">
+  <canvas id="{{ $cid }}"></canvas>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" defer></script>
@@ -127,6 +129,7 @@
           data: { labels, datasets },
           options: {
             responsive: true,
+            maintainAspectRatio: false,   //  KEY so our fixed height is respected
             plugins: { title: { display: true, text: titleTxt } },
             scales: {
               y: {

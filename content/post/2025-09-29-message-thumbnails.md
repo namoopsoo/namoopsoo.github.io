@@ -1,7 +1,12 @@
 ---
 title: Thumbs Up
 date: 2025-09-29
+images:
+  - "https://s3.amazonaws.com/my-blog-content/2025-09-29-message-thumbnails/2025-10-05-12_38_55--thumb-on-nail.png" 
+cover:
+  image: "https://s3.amazonaws.com/my-blog-content/2025-09-29-message-thumbnails/2025-10-05-12_38_55--thumb-on-nail.png" 
 ---
+
 ## Who has two thumbnail learnings about hugo blog post images? 😀👍👍
 
 Note that I finally learned how to make hugo blog links sent by imessage have thumbnails and I re-learned how to make hugo blog posts thumbnails show up.
@@ -41,8 +46,27 @@ cover:
 ## Scale it though
 That seemed to work as a one off but I would like to batch update all previous content too.
 
+## For next time
+Also updated the upload func I use to also pass the ContentType now because before I was not. And I learned about the built-in python lib, that will guess the content type
+
+```python
+In [1]: import mimetypes
+
+In [2]: key = "foo.png"
+   ...: ctype, _ = mimetypes.guess_type(key)
+   ...: ctype
+Out[2]: 'image/png'
+
+In [3]: key = "foo.jpg"
+   ...: ctype, _ = mimetypes.guess_type(key)
+   ...: ctype
+Out[3]: 'image/jpeg'
+
+In [4]: key = "foo.JPG"
+   ...: ctype, _ = mimetypes.guess_type(key)
+   ...: ctype
+Out[4]: 'image/jpeg'
+```
+
 # References
 1. https://michal.piekarczyk.xyz/post/2025-09-28-fix-chipped-pint-glass/
-
-
-{{< figure src="https://s3.amazonaws.com/my-blog-content/2025-09-29-message-thumbnails/2025-10-05---12_38_55.png" width="50%">}}

@@ -8,6 +8,14 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Thumbs Up</title>
+      <link>https://michal.piekarczyk.xyz/post/2025-09-29-message-thumbnails/</link>
+      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2025-09-29-message-thumbnails/</guid>
+      <description>Who has two thumbnail learnings about hugo blog post images? 😀👍👍 Note that I finally learned how to make hugo blog links sent by imessage have thumbnails and I re-learned how to make hugo blog posts thumbnails show up.
+So as far as text message thumbnails go, apparently, since my images live on s3, I needed to make sure their content type was image/jpeg because in my case they were binary/octet-stream.</description>
+    </item>
+    <item>
       <title>Fix a chipped pint glass</title>
       <link>https://michal.piekarczyk.xyz/post/2025-09-28-fix-chipped-pint-glass/</link>
       <pubDate>Sun, 28 Sep 2025 00:00:00 +0000</pubDate>

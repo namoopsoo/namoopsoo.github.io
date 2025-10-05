@@ -6,8 +6,16 @@
     <description>Recent content in Posts on michal piekarczyk | end to end combat</description>
     <generator>Hugo -- 0.128.0</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 03 Oct 2025 09:10:43 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 05 Oct 2025 13:26:22 -0400</lastBuildDate>
     <atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Thumbs Up</title>
+      <link>https://michal.piekarczyk.xyz/post/2025-09-29-message-thumbnails/</link>
+      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2025-09-29-message-thumbnails/</guid>
+      <description>Who has two thumbnail learnings about hugo blog post images? 😀👍👍 Note that I finally learned how to make hugo blog links sent by imessage have thumbnails and I re-learned how to make hugo blog posts thumbnails show up.
+So as far as text message thumbnails go, apparently, since my images live on s3, I needed to make sure their content type was image/jpeg because in my case they were binary/octet-stream.</description>
+    </item>
     <item>
       <title>Fix a chipped pint glass</title>
       <link>https://michal.piekarczyk.xyz/post/2025-09-28-fix-chipped-pint-glass/</link>

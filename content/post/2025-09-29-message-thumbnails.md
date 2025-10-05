@@ -43,3 +43,6 @@ That seemed to work as a one off but I would like to batch update all previous c
 
 # References
 1. https://michal.piekarczyk.xyz/post/2025-09-28-fix-chipped-pint-glass/
+
+
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2025-09-29-message-thumbnails/2025-10-05---12_38_55.png" width="50%">}}

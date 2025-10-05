@@ -3,6 +3,9 @@ import os
 import polars as pl
 from functools import reduce, partial
 
+import mimetypes
+
+
 try:
     from StringIO import StringIO #python2
 except:
@@ -19,17 +22,31 @@ def make_s3_resource():
     else:
         return f()
 
+def _guess_content_type(key: str, default="application/octet-stream") -> str:
+    # First try Python's built-in map
+    ctype, _ = mimetypes.guess_type(key)
+    if ctype:
+        return ctype
+    # Extra image fallbacks (common when extensions are unusual)
+    k = key.lower()
+    if k.endswith((".jpg", ".jpeg")): return "image/jpeg"
+    if k.endswith(".png"):            return "image/png"
+    if k.endswith(".webp"):           return "image/webp"
+    if k.endswith(".gif"):            return "image/gif"
+    if k.endswith(".svg"):            return "image/svg+xml"
+    return default
 
-def write_s3_file(bucket_name, s3fn, content, content_type=None):
+
+def write_s3_file(bucket_name, s3fn, content):
     s3conn = make_s3_resource()
     put = partial(
             s3conn.Object(bucket_name, s3fn).put, 
             Body=content)
 
-    if content_type:
-        put(ContentType=content_type)
-    else:
-        put()
+    content_type, _ = mimetypes.guess_type(s3fn)
+    assert content_type, f"oops could not figure out content type from {s3fn}"
+
+    put(ContentType=content_type)
 
 
 def read_s3_file(bucket_name=None, s3fn=None, s3uri=None):

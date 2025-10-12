@@ -36,6 +36,18 @@ Reflecting on this, I realized the limitation was potentially my lack of access 
 Although I chose to stop the effort rather than invest further without better data, the experiment reinforced an important lesson: fraud and default are not interchangeable signals, and future work in this area should focus on higher-quality chargeback data to more accurately separate the two.
 
 
+## Reduced unnecessary address rejections by improving validation pass rates from ~85% to ~95%, through log analysis, Athena-based monitoring, and integration of Google Geocoding API for smarter normalization., (2017)
+Our retailer operations team suspected that poor address validation was reducing conversion, so I took the initiative to investigate. I started by analyzing our existing logs in Sentry but quickly realized they were sampled (~10%), making them unreliable for analytical conclusions. This insight prompted me to build our first AWS Athena table for ingesting raw JSON logs, so we could properly measure address validation outcomes at full fidelity.
+
+With this new infrastructure in place, I defined a new “pass rate” metric—the proportion of addresses successfully recognized by our downstream SmartyStreets USPS validator. The existing approach often failed to normalize addresses properly before validation, which led to unnecessary rejections.
+
+Leveraging my experience with the Google Geocoding API, I introduced an additional normalization step to clean up addresses before sending them to SmartyStreets. This dramatically improved our pass rate—from around 85% to roughly 95%—and gave us much more reliable address recognition.
+
+To help visualize progress, I built a quick Matplotlib stacked area chart in Jupyter, showing the pass rate improvement over time. I also collaborated with our business analytics team to make the new Athena dataset easily accessible for ongoing analysis.
+
+Overall, this effort replaced ad hoc log sampling with a measurable, data-driven feedback loop, directly improving the customer experience and reducing operational friction for address validation.
+
+
 ## Decoupled underwriting ML pipeline from monolith into a SageMaker + Lambda microservice, enabling faster, safer model deployments with Dockerized scikit-learn and XGBoost., (2018)
 At one point, our underwriting models were too tightly coupled to the company’s monolithic application. Feature engineering was abstracted behind layers of object-oriented code, making bugs hard to isolate. Even small changes required redeploying the entire monolith—an error-prone process that risked outages (and had already caused them).
 

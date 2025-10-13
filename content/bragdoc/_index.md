@@ -3,6 +3,20 @@ title: Careerlog
 robots: noindex, nofollow
 --- 
 
+## Built an end-to-end bike-share destination prediction pipeline with feature engineering, SageMaker training, and geospatial preprocessing, blending hobby and learning to explore model performance and evaluation., (2017)
+As a side project combining my biking hobby with data science, I worked on predicting Citibike rider destinations from trip and user attributes. My idea was to model a rider’s likely endpoint based on start time, location, and demographics — effectively, a small urban mobility prediction problem.
+
+Early on, I realized predicting exact station IDs was too granular, so I broadened the prediction to neighborhoods, enriching the data with Google Geolocation API to get zip codes and neighborhood metadata. I also learned that timestamp precision (4:05 vs 4:06 p.m.) didn’t meaningfully affect outcomes, so I engineered time-based features using coarser hourly buckets.
+
+Working through preprocessing taught me the subtle power of data handling: applying StandardScaler improved results; randomizing training splits reduced bias; and ensuring consistent test sets prevented misleading gains.
+
+The project turned into a sandbox for modeling experimentation. I explored one-hot encoding, balanced training sets, and even switched evaluation to Top-K accuracy (a lesson borrowed from information retrieval). That’s when I discovered a big insight: although top-1 accuracy across 28 neighborhoods hovered around 0.5, top-3 accuracy reached 0.77 — a reminder that ranking metrics can be far more meaningful than single-class hits.
+
+I eventually Dockerized and deployed the model using AWS SageMaker, gaining hands-on experience with reproducible training environments, hyperparameter tuning jobs, and model serving endpoints. A later debugging adventure taught me that missing geolocation data (and a lapsed Google API key!) could tank performance — an invaluable “garbage in, garbage out” lesson.
+
+Overall, this project connected data science theory with real, messy data and real-world systems. It sharpened my understanding of geospatial features, temporal modeling, and production ML workflows, and it ultimately convinced my colleagues that I was serious about machine learning — leading to my formal move into our company’s data science team soon after.
+
+
 ## Built infrastructure to serve my company’s first ML underwriting model in 2015, using Redis + Django to deliver real-time predictions., (2015)
 When I joined my first ML startup in 2015, we barely had any customer data—so our early system relied entirely on heuristics. By the time we landed our first paying customers, I volunteered to take a stab at training our first real model from the new data we’d started collecting.
 

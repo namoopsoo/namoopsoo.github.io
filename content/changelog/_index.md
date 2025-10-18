@@ -22,7 +22,7 @@ All notable changes to this "human experiment" will be documented in this file.
 - First time using a rev balance board at my brothers(2025-09-21) .
 - First time using sandpaper to [fix](https://michal.piekarczyk.xyz/post/2025-09-28-fix-chipped-pint-glass/) chipped broken pint glass (2025-09-28).
 - First time I followed through on a travel insurance policy claim and actually managed to get a [successful outcome!](https://michal.piekarczyk.xyz/post/2025-09-28-travel-guard/) (2025-09-28).
-
+- First time came back to my company's office after probably not being there in over a year because no drinking water or coffee. Went back because new coworker who hadn't seen it but office still has no drinking water or coffee 😆 (2025-09-26).
 ### Changed
 - From oral-b electric, to Suri 2 (2025-09-10).
 

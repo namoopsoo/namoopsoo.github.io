@@ -21,7 +21,7 @@ All notable changes to this "human experiment" will be documented in this file.
 - First [crochet](https://world.hey.com/michal.piekarczyk/crochet-dna-40269b95) attempt (2025-09-21)).
 - First time using a rev balance board at my brothers(2025-09-21) .
 - First time using sandpaper to [fix](https://michal.piekarczyk.xyz/post/2025-09-28-fix-chipped-pint-glass/) chipped broken pint glass (2025-09-28).
-- First time I followed through on a travel insurance policy claim and actually managed to get a [successful outcome!](/post/2025-09-28-travel-guard/) (2025-09-28).
+- First time I followed through on a travel insurance policy claim and actually managed to get a [successful outcome!](https://michal.piekarczyk.xyz/post/2025-09-28-travel-guard/) (2025-09-28).
 
 ### Changed
 - From oral-b electric, to Suri 2 (2025-09-10).

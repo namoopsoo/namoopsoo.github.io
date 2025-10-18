@@ -1,8 +1,8 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-slug: "{{ .Name }}"
+# slug: "{{ .Name }}"
 date: {{ .Date }}
-draft: true
+# draft: true
 
 # optional thumbnail
 images:

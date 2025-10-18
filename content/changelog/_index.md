@@ -26,6 +26,9 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Changed
 - From oral-b electric, to Suri 2 (2025-09-10).
 
+### Deployed
+- Successfully vibe code iterated, a [hugo google sheet powered](https://michal.piekarczyk.xyz/post/2025-09-28-sheet-charts/) timeseries chart, to encourage myself to build better habits (2025-09-28).
+
 ## 2025-08
 ### Logged
 - First time went to a roller skating [rink](https://www.xanadu.nyc/). Very different from rollerblading I recall from childhood haha!

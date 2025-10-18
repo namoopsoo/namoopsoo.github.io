@@ -5,6 +5,15 @@ robots: noindex, nofollow
 
 All notable changes to this "human experiment" will be documented in this file.
 
+## 2025-10
+### Updated
+- Went from immich server [1.x to 2.0.1](https://docs.immich.app/install/upgrading) because my phone upload mysteriously broke until I updated (2025-10-11).
+
+### Logged
+- Went on our annual Warwick apple picking trip, (2025-10-04).
+- Silly to even log this, 😛, rewatched the Naked Gun trilogy again after a long time.  (2025-10-08).
+- Hosted friend of friend from Costa Rica for a week (2025-10-09).
+
 ## 2025-09
 ### Logged
 - Not a big deal but, pushed my 1600m into a 3200m, for first time in a while today, with a not entirely embarassing 7:32min/mi pace (2025-09-02).

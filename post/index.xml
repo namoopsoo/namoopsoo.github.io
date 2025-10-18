@@ -6,7 +6,7 @@
     <description>Recent content in Posts on michal piekarczyk | end to end combat</description>
     <generator>Hugo -- 0.128.0</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 18 Oct 2025 16:44:26 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 18 Oct 2025 19:35:53 -0400</lastBuildDate>
     <atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Thumbs Up</title>
@@ -55,6 +55,14 @@ I have paid for travel insurance many times and only once prior to this case, di
       <description>I got a laugh, showing this silly 😛 before and after to a family member recently.
 But this expensive silliness is just an example of an otherwise very versatile technique.
 I remember still for most of the brief lifetime of ChatGPT that this kind of image manipulation using a prompt, with autoencoder latent space manipulation was not possible. The only models available for most of ChatGPT history were like DALL-E text to image word2vec types, trained by using a dataset of text and image pairs.</description>
+    </item>
+    <item>
+      <title>2025 09 11 Parking Lot</title>
+      <link>https://michal.piekarczyk.xyz/post/2025-09-11-parking-log/</link>
+      <pubDate>Thu, 11 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2025-09-11-parking-log/</guid>
+      <description>At my work, our team meets daily to discuss our goings on but I think the part I think everyone gets the most utility from is the affectionately named parking lot, where we talk through issues that are blocking people in their efforts and the team does ad hoc resolution sessions.
+I still recall when a colleague had introduced this practice to our team a while back, as a modification to the typical standup.</description>
     </item>
     <item>
       <title>apple notes , walk back those numbers</title>

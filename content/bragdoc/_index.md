@@ -17,6 +17,21 @@ I eventually Dockerized and deployed the model using AWS SageMaker, gaining hand
 Overall, this project connected data science theory with real, messy data and real-world systems. It sharpened my understanding of geospatial features, temporal modeling, and production ML workflows, and it ultimately convinced my colleagues that I was serious about machine learning — leading to my formal move into our company’s data science team soon after.
 
 
+## Rebooted earlier Citibike destination-prediction project with XGBoost, custom K-area metric, and SageMaker-hosted demo site—combining model experimentation with hands-on MLOps deployment., (2020-10-20, [link](https://michal.piekarczyk.xyz/project/2020-10-20-bike-share-learn-reboot/))
+... 
+Several years after my first Citibike destination-prediction experiment, I revisited the idea—this time applying everything I’d learned since, both in modeling and deployment. The goal remained the same: given a rider’s start time and location, predict the neighborhood where their trip would end.
+
+This version used XGBoost rather than scikit-learn Random Forest,  along with new temporal and categorical features and a complete hyperparameter-tuning workflow. I explored both the functional API (xgboost.train) and the scikit-learn-style API (XGBClassifier().fit), discovering that the former exploited parallelism much better—4 minutes vs 49 minutes wall time for the same result. I also learned that, at the time, neither API fully supported batch or incremental training, which was something I’d hoped to test for online-learning scenarios.
+
+Feature engineering included weekday flags and time-of-day bucketing (five coarse periods instead of 24 hourly bins). EDA confirmed clear differences between weekday and weekend behavior—two commute-time peaks during the week versus one broader weekend curve—and the new weekday feature turned out to be the model’s most predictive input.
+
+To evaluate performance, I devised a new metric called “K-area”, inspired by top-K accuracy, which I had used in the previous project. Instead of just measuring the proportion of correct top-1 predictions, it averaged cumulative accuracies across ranks, giving a more nuanced sense of how close predictions were to the right neighborhood. Looking back, it was effectively a uniform-weighted version of MRR (Mean Reciprocal Rank).
+
+I ran over a thousand model variations, tracking metrics per epoch and across parameter combinations, and used the results to analyze performance curves. To make the work more tangible, I built a small demo site: a web page with a map plotting predicted destinations, backed by a SageMaker “bring-your-own-Docker” endpoint and a Google Static Maps API overlay.
+
+In the end, this reboot blended machine-learning experimentation and production engineering—a full MLE + MLOps loop in miniature. The project deepened my intuition for feature importance, evaluation metrics, and the practical trade-offs of serving real models online.
+
+
 ## Built infrastructure to serve my company’s first ML underwriting model in 2015, using Redis + Django to deliver real-time predictions., (2015)
 When I joined my first ML startup in 2015, we barely had any customer data—so our early system relied entirely on heuristics. By the time we landed our first paying customers, I volunteered to take a stab at training our first real model from the new data we’d started collecting.
 

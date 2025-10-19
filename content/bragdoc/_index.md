@@ -77,12 +77,12 @@ To help visualize progress, I built a quick Matplotlib stacked area chart in Jup
 Overall, this effort replaced ad hoc log sampling with a measurable, data-driven feedback loop, directly improving the customer experience and reducing operational friction for address validation.
 
 
-## Decoupled underwriting ML pipeline from monolith into a SageMaker + Lambda microservice, enabling faster, safer model deployments with Dockerized scikit-learn and XGBoost., (2018)
+## Decoupled underwriting ML pipeline from monolith into a SageMaker + Lambda microservice, enabling faster, safer model deployments with Dockerized scikit-learn under distinct versions of python., (2018)
 At one point, our underwriting models were too tightly coupled to the company’s monolithic application. Feature engineering was abstracted behind layers of object-oriented code, making bugs hard to isolate. Even small changes required redeploying the entire monolith—an error-prone process that risked outages (and had already caused them).
 
 To break this bottleneck, I designed and implemented a microservice-based approach using AWS SageMaker and Lambda. I began by containerizing one of our existing model artifacts, building a Docker-based pipeline that handled both feature preprocessing and model serving. From there, I rewrote the feature engineering code in a functional style, added unit tests, and integrated the service with an AWS Lambda + API Gateway stack. This allowed us to call SageMaker endpoints from Lambda for real-time predictions.
 
-The decoupling effort gave us critical flexibility: the Dockerized approach supported both scikit-learn and XGBoost models, and by splitting our underwriting stack into its own Git repo we reduced shared dependency conflicts with the monolith. Over many months of iterations and deployments, this system proved stable and significantly improved our ability to test, deploy, and evolve models independently.
+The decoupling effort gave us critical flexibility: the Dockerized approach supported models of different version of scikit-learn and python, and by splitting our underwriting stack into its own Git repo we reduced shared dependency conflicts with the monolith. Over many months of iterations and deployments, this system proved stable and significantly improved our ability to test, deploy, and evolve models independently.
 
 Along the way, I encountered and fixed issues typical of building new infrastructure. One memorable debugging moment—the “Sweetgreen story”—involved accidentally caching QA database connections globally, which risked being reused in production Lambda calls. I caught the bug while debugging at a Sweetgreen restaurant, removed the global variable, and ensured environment isolation going forward.
 

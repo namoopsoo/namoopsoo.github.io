@@ -225,7 +225,9 @@ Out[7]:
 
 
 ```
-* More on the "k-area" metric is [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-20-karea-worst.md)
+
+#### k-area
+More on the "k-area" metric is [here](https://github.com/namoopsoo/learn-citibike/blob/master/notes/2020-10-20-karea-worst.md), but briefly [this code](https://github.com/namoopsoo/learn-citibike/blob/master/fresh/metrics.py), is about averaging the top-k accuracy for all predicted ranks. (Writing here in retrospect also, I realized this is conceptually similar to Mean Reciprocal Rank MRR except averaging uniformally as opposed to inversely discounting lower ranks. (Did a quic, [retro look here as well](https://github.com/namoopsoo/learn-citibike/blob/master/2025-10-25--k-area.md)))
 
 
 #### Top Model's Top Fscore features

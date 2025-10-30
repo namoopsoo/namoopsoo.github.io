@@ -34,3 +34,20 @@ I also saw it recently in this article about rocketry and Elon.
 
 #### Explain or predict or describe
 ...
+
+
+Guess im misinterpreting but in the social determinants of wealth example , how does age, address, race, background occupation contribute to annual income, that still sounds predictive not explanatory. Just because its a regression model you build doesnt mean it cant be used to predict income and be evaluated by say RMSE. 
+
+I suspect that yes we dont need to know why beta blockers work, that is, theory not required, then im using the word "explain" in a lay way and it probably has a formal technical meaning i dont know . Just like "theory" has both a lay and technical definition. 
+....
+I found this line from Shmueli's paper that in explaining online auction final price prediction models, the authors used R^2, the coefficient of determination , "determine explanatory power", but that s kind of sillg because that's literally correlation and not causation 😂😂😂. 
+
+I dont understand why Shmueli didnt criticize this.
+
+Then again, I dont really know yet what is a proper way to prove causality 
+...
+Oops, i think i figured it out. R^2 is used for a different kind of explainability, kind of like I suspected. 
+
+R^2, shows a model has "explanatory power" not if is interpretable , but if "the model can explain most of the variance in the data". 
+
+

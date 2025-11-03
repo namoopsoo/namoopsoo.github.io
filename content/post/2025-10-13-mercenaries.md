@@ -98,6 +98,12 @@ Outcome oriented team, vs our activity separate.
 The PI planning thing totally missed this mark. that we forgot to negotiate 
 
 
+## engineering and science 
+ultimately, the inspiration for me thinking about this, is, what am I doing? what is the industry doing? perhaps  there really is a need to give names because it reminds me of the old joke, 
+> if you talk to candidates, its machine learning , investors , its AI, but in reality youre using logistic regression in Excel  😂
+
+
+
 
 
 

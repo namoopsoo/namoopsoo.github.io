@@ -9,6 +9,9 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Broke
 - Leaned on and broke a table of my moms, 😅, though to be fair, we were both criticizing, the manufacturers crappy construction choices from the beginning (2025-11-01).
 
+## Logged 
+- First time I think I saw a raptor [doing their bird grooming](https://vimeo.com/1133482427) (2025-11-02)
+
 ## 2025-10
 ### Updated
 - Went from immich server [1.x to 2.0.1](https://docs.immich.app/install/upgrading) because my phone upload mysteriously broke until I updated (2025-10-11).

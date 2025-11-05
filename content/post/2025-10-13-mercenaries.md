@@ -25,7 +25,7 @@ Here we have the option of either using "search only" or using "search and Duck.
 I only just recently saw this option come up after probably a year of Duck.ai being available by default and now that I think about it, it was probably being A/B tested at that point. So I would assume that if an A/B test showed that using Duck.ai did not produce a solid justification for increased click through, then presenting it as a choice rather than the default would be a way smarter more cost effective path.
 
 #### But if we are not doing any testing really and we are just cranking out a model?
-What if you are squeezing every bit of entropy out of a datast and achieving an amazing magic trick.
+What if you are squeezing every bit of entropy out of a dataset and achieving an amazing magic trick.
 
 ### on the philosophy of science and engineering
 I also saw it recently in this article about rocketry and Elon. 
@@ -49,6 +49,17 @@ Then again, I dont really know yet what is a proper way to prove causality
 Oops, i think i figured it out. R^2 is used for a different kind of explainability, kind of like I suspected. 
 
 R^2, shows a model has "explanatory power" not if is interpretable , but if "the model can explain most of the variance in the data". 
+
+
+## Also enter here , “To Explain or to Predict?”
+(Shmueli, 2011), a paper I had read a long time ago, which came to mind recently, but I realized I remembered only half of the punchline. Originally, I remembered the idea that if you don't have a predictive model, and you can only explain some kind of phenomenon retrospectively, then do you really understand what is going on? Science, is a kind of technology we have developed, that helps us find patterns in data, for the purpose of learning something meaningful, but that can be used practically for the future as well. 
+
+The part I did not remember is that predicting successfully without being able to explain is a perhaps very costly conundrum. 
+
+The question becomes perhaps, if you use machine learning to mine out a pattern, using, say a deep neural net, you have a black box that makes predictions and if you area a business, perhaps you can run A/B tests and prove you are making money from your ML. (And the [booking.com paper from 2019](https://blog.kevinhu.me/2021/04/25/25-Paper-Reading-Booking.com-Experiences/bernardi2019.pdf) contains the super interesting lesson that just because your model is good doesn't mean that it provides business value.)
+
+A fun realization or epiphany I have also , now, is that in applied ML, the idea of drift and retraining is a very hot topic but that maybe this is literally not just a side effect of distributions changing around you , but of perhaps you not quite building the right model in the first place. So maybe the really highly general models do not require constant refitting because they are not using proxy features that are as affected by drift.
+
 
 ## Cal Newport 
 
@@ -101,7 +112,6 @@ The PI planning thing totally missed this mark. that we forgot to negotiate
 ## engineering and science 
 ultimately, the inspiration for me thinking about this, is, what am I doing? what is the industry doing? perhaps  there really is a need to give names because it reminds me of the old joke, 
 > if you talk to candidates, its machine learning , investors , its AI, but in reality youre using logistic regression in Excel  😂
-
 
 
 

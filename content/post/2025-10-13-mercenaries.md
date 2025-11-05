@@ -119,3 +119,19 @@ ultimately, the inspiration for me thinking about this, is, what am I doing? wha
 ### Shmueli...
 It is also interesting though, what does Shmueli mean by explaining ? So she defines "explaining as causal explanation and explanatory modeling as the use of statistical models for testing causal explanations." In her paper she gives the Netflix Prize as an example where the predictive approach shined. That is, the winning model, was chosen by the performance on the held out dataset simply because that is an objective way to choose a winner. But also, the winning team, happened to lean heavily into a collaborative filtering model (nearest neighbor) and therefore the model was more focused on the person doing the rating and whose ratings they are most similar to, but the model doesn't need to know any kind of philosophically deep knowledge about what people like about the movies themselves. In fact the winning team's paper noted that adding metadata about the movies themselves was not additive. Shmueli point out that although the model was an ensemble of several abstract models, we did perhaps learn that the movies being rated as opposed to not rated were more important than the ratings themselves. And that in itself is perhaps a kind of insight.
 
+
+## epiphany reading the google swe culture book
+
+
+ok I found it , https://abseil.io/resources/swe-book/html/ch05.html the chapter on tech leads and engineering managers.
+
+ok I kind of had this intuition about the way my current company runs projects is spineless and reading a bit of this online book, I think I'm on the right track.
+
+In my past companies , the way of getting work done is that each person would basically be part of small execution teams (2 or 3 people) and each team would just work on basically one project several days at a time. The mini teams just organically divide up the work and just collaborate super organically. And you just talk to your boss basically whenever you got super excited about something you want to show or when if you held off too long , your boss would tap on your shoulder to see what's up haha.
+
+Yea and instead my current team does Scrum and it is shoved down everyones throats from the top of the company. It is terrible. It is like "leadership by backlog" . My team has a so called Product Owner but this person literally is not a team player, very judgemental, extremmely insecure to criticism, always sounds condescending , never contributes any insights or opinions into a conversation unless it is to sound as if speaking from some high mountain top of authority.
+
+All they know how to do is just hide behind their backlog and just sound very agitated whenever people dont acknowlege items that have been placed into each sprint backlog. But this person never asks for feedback. ever . And boy do they love the PI Planning . We did the pi planning thing , everyone participated hoping it would finally be a team effort, and then at the end this product owner person they just rearranged everything , putting their own preferred projects at the top but they were actually doing it while sharing their screen haha so we had a kind of embarrassing moment and we said hey what are you doing , we literally just spent two days doing this team thing and now you are just deciding everything; what the heck was the point of all that if you wre just going to change everything last minute.
+
+Terrible human. Anyway, actually I suppose I shouldn't blame this person, instead I suppose Scrum and SAFe gave them this weird mission of lead-by-backlog and that is kind of what they are spinelessly doing. And I really love reading this Google SWE culture document because it reminds me of the good old days of working projects at past companies .
+

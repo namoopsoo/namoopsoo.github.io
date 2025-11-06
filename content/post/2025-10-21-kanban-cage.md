@@ -73,6 +73,9 @@ Terrible human. Anyway, actually I suppose I shouldn't blame this person, instea
 
 
 
+## BYOA
+bring your own agile. if someone offers you a SAFe space, jyst say thanks but no thanks 😂
+
 
 
 

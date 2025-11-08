@@ -87,6 +87,8 @@ And instead of one sprint goal per sprint tied in , into a PI, just do OKR, whic
 PI planning is like a shitty OKR. 
 
 
+funny in this [video](https://youtu.be/jHRsBDC5E9Q), at the end the guest sqys  PI planning is like OKRs but with everyone involved, discussing it. I think, ok well, that would be cool but why not just have the OKRs plus negotiation? PI plqnning has all other weirdness to it. 
+
 
 
 

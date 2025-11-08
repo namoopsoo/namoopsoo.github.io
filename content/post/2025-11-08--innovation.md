@@ -23,10 +23,11 @@ I have been on teams many times where it is true that even one person can suck t
 
 But beyond  all of the mixed signaling, a company can also explicitly  discourage risk. I have recently written<sup>[2](#references)</sup> about my first experience of PI Planning, because my company is doubling down on predictability.
 
-So what is the sad reality for people who have nurtured their spark, and have been fanning their flame their whole lives?  So sad but , secret I think is, "we want innovation and reward compliance" is because innovative people will be innovative regardless of  what managers say , because innovative people don’t listen to anyone , not really .. 
+So what is the sad reality for people who have nurtured their spark, and have been fanning their flame their whole lives? I think the boring answer to, "we want innovation and reward compliance", is just like haters are going to hate, innovators are going to innovate. Innovative people will be innovative despite being discouraged because that high of blowing peoples minds with cool things you do is worth it every time. The alternative is basically brain death.
 
 And at the end of the day all the planning games don’t matter  , people will innovate behind closed doors , and when they succeed they will show cool results, and if  they have ready made success to show, no one will say don’t do it because it is already done. 
 
+The spark of hope is that if folks at a company get together Phoenix Project<sup>[8](#references)</sup> style, post-it-noting their way out of a crisis, everyone works together and it feels great. But probably more often, the decay is a slow burn.
 
 I understand that I heard recently<sup>[5](#references)</sup> that it’s not that Google no longer has a 20% culture, it’s just that it morphed into 120% culture (haha like everywhere else , because innovators will always innovate for free ) .
 
@@ -52,6 +53,5 @@ and maybe they write their OKRs using the bold and inspiring language  that Inte
 5. Google’s engineering culture, https://youtube.com/watch?v=sj9Q2VcfUeA  
 6. https://abseil.io/resources/swe-book
 7. https://abseil.io/resources/swe-book/html/ch05.html#manager_is_a_four-letter_word 
+8. phoenix project https://www.google.com/search?q=phoenix+project
 
-
- 

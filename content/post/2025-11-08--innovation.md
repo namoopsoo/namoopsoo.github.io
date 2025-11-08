@@ -19,7 +19,7 @@ But an essay<sup>[3](#references)</sup>  by Sam Altman, clarifies that risk taki
 
 So also this really reminded me of the No Rules Rules Netflix book, basically chapter 1 was , okay nothing else in this book matters unless you do chapter 1, which is, you got to hire the right people. 
 
-I have been on teams many times where it is true that even one person can suck the energy out of a room. On a Netflix team I understand that haha they would get a healthy severance, a thank you and a wave good bye. However the reality is that most companies will be perfectly fine hiring people who pooh-pooh ideas and when the preference for predictability borders on safetyism, then the symptom is the root cause.
+I have been on teams many times where it is true that even one person can suck the energy out of a room. On a Netflix team I understand that people with the hater mindset would get a healthy severance and a hand gesturing at the exit. However the reality is that most companies will be perfectly fine hiring people who pooh-pooh ideas and when the preference for predictability borders on safetyism, then the symptom is the root cause.
 
 But beyond  all of the mixed signaling, a company can also explicitly  discourage risk. I have recently written<sup>[2](#references)</sup> about my first experience of PI Planning, because my company is doubling down on predictability.
 

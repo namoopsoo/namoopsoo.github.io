@@ -2,7 +2,7 @@
 title: "Innovation"
 # slug: "2025-11-08--innovation"
 date: 2025-11-08T09:54:16-05:00
-draft: true
+# draft: true
 
 # optional thumbnail
 images:
@@ -12,19 +12,12 @@ cover:
 ---
 
 <!-- Write your intro paragraph here. -->
+I was recently reading this Forbes article<sup>[1](#references)</sup> asking the question, "Why So Many Leaders Say They Want Innovation But Reward Compliance". The author's answer is essentially 
 
-Why So Many Leaders Say They Want Innovation But Reward Compliance
+it is easy to talk about innovation , but because it is less predictable, then safe bets are rewarded  and a vicious cycle ensues, people see what gets rewarded so less innovation.
 
-
-
-https://www.forbes.com/sites/dianehamilton/2025/11/05/why-so-many-leaders-say-they-want-innovation-but-reward-compliance/
-
-I think the answer is kind of simple. Not sure why they didn’t write it in the article , but I think it’s kind of like Steve Jobs is quoted for saying, paraphrasing, that "A’s hire A’s and B’s hire Cs and D’s" .  
-
-I feel like a dick for saying this but I suspect most people are not that creative/innovative 😅. But I suspect this article is on point that the reason why most people are not innovative, is because it was beaten out of them at an early age. 
-
-
-Also Sam Altman , has this essay , about taking risks, but being right is a requirement. 
+I think there is another answer worth exploring. Steve Jobs has been quoted for saying something like, that "A’s hire A’s and B’s hire Cs and D’s" . I choose to think this quote speaks to multiple dimensions including creativity.  My brief experience on this earth tells me that most people are not that creative/innovative. And I suspect this article is on point that the reason why most people are not innovative, is because it was beaten out of them at an early age. 
+But an essay<sup>[3](#references)</sup>  by Sam Altman, clarifies that risk taking on its own is not the winning answer, that you instead have to smell out the thing to do which makes sense, after lots of trial and error, despite the people comfort-zoning around you, discouraging you, and dive deep whenever you strike gold.
 
 So sad but , secret I think is, "we want innovation and reward compliance" is because innovative people will be innovative regardless of  what managers say , because innovative people don’t listen to anyone , not really .. 
 
@@ -45,3 +38,15 @@ Actually I think we have a pretty good team but for ehhem ehhem the haters , whi
 
 notes from the article itself
 "reward innovation more", and make sure lead by example , etc , foster culture of risk taking. leaders should be fostering curiosity, so like asking more questions instead of only answering questions.
+
+
+But beyond  all of the mixed signaling, a company can also explicitly  discourage risk. I have recently written<sup>[2](#references)</sup> about my first experience of PI Planning, because my company is doubling down on predictability.
+
+
+# references
+1.  https://www.forbes.com/sites/dianehamilton/2025/11/05/why-so-many-leaders-say-they-want-innovation-but-reward-compliance/
+2. pi planning predictability
+
+3. https://blog.samaltman.com/how-to-be-successful
+
+4. No Rules Rules

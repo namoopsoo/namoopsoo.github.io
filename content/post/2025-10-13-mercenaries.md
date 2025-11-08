@@ -1,10 +1,10 @@
 ---
 date: 2025-10-13
 title: The Data Mercenary
-draft: true
+draft: false
 ---
 
-What is science? Does it imply putting knowledge into the public domain? 
+What is science? Does it imply putting knowledge into the public domain? How about learning something? Did you need to learn something?
 
 A few months back I was thinking to myself about the corporate nature of data science and whether it is true to its name.
 
@@ -69,15 +69,9 @@ Oops, i think i figured it out. R^2 is used for a different kind of explainabili
 R^2, shows a model has "explanatory power" not if is interpretable , but if "the model can explain most of the variance in the data". 
 
 
-
-
-
-
-## engineering and science 
-ultimately, the inspiration for me thinking about this, is, what am I doing? what is the industry doing? perhaps  there really is a need to give names because it reminds me of the old joke, 
+## Engineering and science 
+Ultimately, the inspiration for me thinking about this was personal. That is, what am I doing? what is the industry doing? perhaps  there really is a need to give names because it reminds me of the old joke, 
 > if you talk to candidates, its machine learning , investors , its AI, but in reality youre using logistic regression in Excel  😂
-
-
 
 
 ### Shmueli...

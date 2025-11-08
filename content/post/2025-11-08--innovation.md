@@ -27,7 +27,7 @@ So what is the reality for people who have nurtured their spark, and have been f
 
 The spark of hope is that if folks at a company get together Phoenix Project<sup>[8](#references)</sup> style, *post-it-noting* their way out of a crisis, everyone works together and it feels great. But more often than not, decay burns slow until it is too late.
 
-And at the end of the day all the planning games don’t matter, because people will innovate behind closed doors if they don't feel safe doing it openly. And when they succeed they will show cool results, and if  they have ready made success to show, no one will say don’t do it because it is already done. 
+In the end, all the formal planning rituals don’t matter-—because when people don’t feel safe innovating in the open, they’ll just move their creativity behind closed doors, defeating the purpose of planning. And when they succeed they will show cool results, and if  they have ready made success to show, no one will say don’t do it because it is already done. 
 
 I heard recently<sup>[5](#references)</sup> that it’s not that Google no longer has a 20% culture, it’s just that people started calling it their 120% culture.
 

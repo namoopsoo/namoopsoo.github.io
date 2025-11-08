@@ -23,7 +23,7 @@ I have been on many teams where it is true that even one person can suck the ene
 
 But beyond  all of the mixed signaling, a company can also explicitly  discourage risk. I have recently written<sup>[2](#references)</sup> about my first experience of PI Planning, because my company is doubling down on predictability.
 
-So what is the reality for people who have nurtured their spark, and have been fanning their flame their whole lives? I think the boring answer to the whole, "we want innovation and reward compliance" paradox is: just like haters are going to hate, innovators are going to innovate. Innovative people will be innovative despite being discouraged because that high of blowing peoples minds with cool things you do is worth it every time. The alternative is basically brain death.
+So what is the reality for people who have nurtured their spark, and have been fanning their flame their whole lives? I think the boring answer to the whole, "we want innovation and reward compliance" paradox is: just like haters are going to hate, innovators are going to innovate. Innovative people will be innovative despite being discouraged because that high of blowing peoples minds with cool things you do is worth it every time. The alternative is unthinkable.
 
 The spark of hope is that if folks at a company get together Phoenix Project<sup>[8](#references)</sup> style, *post-it-noting* their way out of a crisis, everyone works together and it feels great. But more often than not, decay burns slow until it is too late.
 

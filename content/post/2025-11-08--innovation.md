@@ -23,7 +23,7 @@ I have been on many teams where it is true that even one person can suck the ene
 
 But beyond  all of the mixed signaling, a company can also explicitly  discourage risk. I have recently written<sup>[2](#references)</sup> about my first experience of PI Planning, because my company is doubling down on predictability.
 
-So what is the reality for people who have nurtured their spark, and have been fanning their flame their whole lives? I think the boring answer to, "we want innovation and reward compliance", is--*like haters are going to hate*--, innovators are going to innovate. Innovative people will be innovative despite being discouraged because that high of blowing peoples minds with cool things you do is worth it every time. The alternative is basically brain death.
+So what is the reality for people who have nurtured their spark, and have been fanning their flame their whole lives? I think the boring answer to the whole, "we want innovation and reward compliance" paradox is: just like haters are going to hate, innovators are going to innovate. Innovative people will be innovative despite being discouraged because that high of blowing peoples minds with cool things you do is worth it every time. The alternative is basically brain death.
 
 The spark of hope is that if folks at a company get together Phoenix Project<sup>[8](#references)</sup> style, *post-it-noting* their way out of a crisis, everyone works together and it feels great. But more often than not, decay burns slow until it is too late.
 
@@ -33,7 +33,7 @@ I heard recently<sup>[5](#references)</sup> that it’s not that Google no longe
 
 Bringing it back home, I like that the initial Forbes article suggests to "reward innovation more", and make sure lead by example. They write, to foster a culture of risk taking, leaders wax curious, asking more questions than they are answering. I have been to many a town hall where the only question you hear is "are there any questions for us".
 
-Going back to perspectives from Google, the other helpful bit I learned from here<sup>[5](#references)</sup>, is about the published Software Engineering at Google , published in 2020, long after 2013 when the combination of layoffs and OKRs taking hold formally slid 20%ism into the graveyard. This book to me reads that even when reality has evolved a company ino a conservative animal, you still have room for trust,
+Going back to perspectives from Google, the other helpful bit I learned from here<sup>[5](#references)</sup>, is about the published Software Engineering at Google, published in 2020, long after 2013 when the combination of layoffs and OKRs taking hold formally slid 20%ism into the graveyard. This book to me reads that even when reality has evolved a company ino a conservative animal, you still have room for trust,
 
 > *Traditional managers worry about how to get things done, whereas great managers worry about what things get done (and trust their team to figure out how to do it).<sup>[7](#references)</sup>*
 

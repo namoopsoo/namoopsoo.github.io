@@ -76,6 +76,17 @@ Terrible human. Anyway, actually I suppose I shouldn't blame this person, instea
 ## BYOA
 bring your own agile. if someone offers you a SAFe space, jyst say thanks but no thanks 😂
 
+## flip predictability on its head
+
+
+why not commit to a cadence and get good at cutting slicing splitting. 
+this is A LA No Estimates.
+
+And instead of one sprint goal per sprint tied in , into a PI, just do OKR, which is order invariant, communicable, specific measurable and gives you room for stretch and moon too.
+
+PI planning is like a shitty OKR. 
+
+
 
 
 

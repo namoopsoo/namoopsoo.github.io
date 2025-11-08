@@ -92,3 +92,10 @@ funny in this [video](https://youtu.be/jHRsBDC5E9Q), at the end the guest sqys  
 law of raspberry jam. further it spreads, thinner it gets 😂
 
 
+## kant
+Kant explained morality systemically, his theory, "categorical imperative". He gave examples, one involving debt repayment. Not repaying debt out of avoiding consequence of no more loans is too self interested to be moral for Kant. He said, broadly, if no one repayed their debt, no one kept their promises, then there could be no trust. 
+
+And from the Kantian perspective I understand why PI Planning is a kind of attempt at a social agreement in company projects. There is a huge desire for certainty. 
+
+Kant did also say that humanity cannot know the true nature of reality .
+

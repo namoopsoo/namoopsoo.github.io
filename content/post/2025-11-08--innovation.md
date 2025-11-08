@@ -1,17 +1,17 @@
 ---
-title: "Innovation"
+title: "Safety first"
 # slug: "2025-11-08--innovation"
 date: 2025-11-08T09:54:16-05:00
 # draft: true
 
 # optional thumbnail
 images:
-  - "THUMBNAIL_PLACEHOLDER"
+  - "https://s3.amazonaws.com/my-blog-content/2025-11-08--innovation/IMG_8060.jpg"
 cover:
-  image: "THUMBNAIL_PLACEHOLDER"
+  image: "https://s3.amazonaws.com/my-blog-content/2025-11-08--innovation/IMG_8060.jpg"
+
 ---
 
-<!-- Write your intro paragraph here. -->
 I was recently reading this Forbes article<sup>[1](#references)</sup> on a colleague's recommendation, asking the question, "Why So Many Leaders Say They Want Innovation But Reward Compliance". The author's answer is essentially that it is easy to talk about innovation, but because it is less predictable, then safe bets are rewarded by default and a vicious cycle ensues. Innovation is an optical illusion and idea seeds do not get planted.
 
 I think there is another answer worth exploring. Steve Jobs has been quoted for saying, I'm paraphrasing, that "A’s hire A’s and B’s hire Cs and D’s" . I choose to think this quote speaks to multiple dimensions including creativity.  My brief time on this earth tells me that most people are not that creative/innovative. And I suspect this Forbes article is on point that the reason why most people are not innovative, is it was beaten out of them at an early age. 
@@ -51,4 +51,3 @@ and maybe they write their OKRs using the bold and inspiring language  that Inte
 6. https://abseil.io/resources/swe-book
 7. https://abseil.io/resources/swe-book/html/ch05.html#manager_is_a_four-letter_word 
 8. phoenix project https://www.google.com/search?q=phoenix+project
-

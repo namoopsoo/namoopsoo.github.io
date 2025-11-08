@@ -19,19 +19,17 @@ But an essay<sup>[3](#references)</sup>  by Sam Altman, clarifies that risk taki
 
 So also this really reminded me of the No Rules Rules Netflix book, basically chapter 1 was , okay nothing else in this book matters unless you do chapter 1, which is, you got to hire the right people. 
 
-I have been on teams many times where it is true that even one person can suck the energy out of a room. On a Netflix team I understand that people with the hater mindset would get a healthy severance and a hand gesturing at the exit. However the reality is that most companies will be perfectly fine hiring people who pooh-pooh ideas and when the preference for predictability borders on safetyism, then the symptom is the root cause.
+I have been on many teams where it is true that even one person can suck the energy out of a room. On a Netflix team I understand that people with the hater mindset would get a healthy severance and a hand gesturing at the exit. However most companies are fine hiring people who pooh-pooh ideas and when the preference for predictability borders on safetyism, then the symptom is the root cause.
 
 But beyond  all of the mixed signaling, a company can also explicitly  discourage risk. I have recently written<sup>[2](#references)</sup> about my first experience of PI Planning, because my company is doubling down on predictability.
 
-So what is the sad reality for people who have nurtured their spark, and have been fanning their flame their whole lives? I think the boring answer to, "we want innovation and reward compliance", is just like haters are going to hate, innovators are going to innovate. Innovative people will be innovative despite being discouraged because that high of blowing peoples minds with cool things you do is worth it every time. The alternative is basically brain death.
-
-And at the end of the day all the planning games don’t matter  , people will innovate behind closed doors , and when they succeed they will show cool results, and if  they have ready made success to show, no one will say don’t do it because it is already done. 
+So what is the reality for people who have nurtured their spark, and have been fanning their flame their whole lives? I think the boring answer to, "we want innovation and reward compliance", is--*like haters are going to hate*--, innovators are going to innovate. Innovative people will be innovative despite being discouraged because that high of blowing peoples minds with cool things you do is worth it every time. The alternative is basically brain death.
 
 The spark of hope is that if folks at a company get together Phoenix Project<sup>[8](#references)</sup> style, post-it-noting their way out of a crisis, everyone works together and it feels great. But probably more often, the decay is a slow burn.
 
-I understand that I heard recently<sup>[5](#references)</sup> that it’s not that Google no longer has a 20% culture, it’s just that it morphed into 120% culture (haha like everywhere else , because innovators will always innovate for free ) .
+And at the end of the day all the planning games don’t matter, because people will innovate behind closed doors if they don't feel safe doing it openly. And when they succeed they will show cool results, and if  they have ready made success to show, no one will say don’t do it because it is already done. 
 
-Actually I think we have a pretty good team but for ehhem ehhem the haters , which bring everyone else down. A team needs to be 100% awesome sauce , even 1 bad egg will stink it up for everyone else.
+I understand that I heard recently<sup>[5](#references)</sup> that it’s not that Google no longer has a 20% culture, it’s just that it morphed into 120% culture (haha like everywhere else , because innovators will always innovate for free ) .
 
 Bringing it back home for myself, I like that the initial Forbes article suggests to "reward innovation more", and make sure lead by example , etc , foster culture of risk taking. leaders should be fostering curiosity, so like asking more questions instead of only answering questions. This resonates with me quite about many a town hall at my company.  ,  the point about leaders asking questions instead of answering questions,  reminds me why i really dislike ,  the   leaders always just ask "okay we will now answer your questions.." … seriously ,  haha , so clueless, turn around and ask questions instead .
 

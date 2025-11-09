@@ -85,9 +85,17 @@ so basically you think you understand QM, you probably don't understand QM. And 
 
 Although a few months ago, I was digging into the Many Worlds Interpretation of QM lectures of the Mindscape guy. I think MWI does does sort of nicely explain that a photon will be following the universe's hilbert space and wen will see its wave pattern on the opposite wall of the double slit but when it decoheres, it is simply entangling with our branch and that there is another branch of the universe where a different photon is entangled with of a different slit pathway and that perhaps does have some mystery resolution .
 
-But still it is not a classical explanation. 
+But still it is not a classical explanation. And another Feynmanism apparently was, "shut up and calculate." 
+
+And so I think ultimately back to deep learning and similarly Feynman would have been perfectly fine just calculating. Maybe it is fine that there are no amazing interpetations of black box models. Trying to make them interpretable can be a distraction. 
+
+Of course that doesnt mean black box ML should be used unfairly. It is argued by Cynthia Rudin, in particular<sup>[3](#references)</sup>, that only interpretable models will help us to avoid the ethical conundrums that plague our society--*also famously discussed by Cathy Oneil of Weapons of Math Destruction<sup>[4](#references)</sup> fame*.
 
 
 # References
 1. https://www.reddit.com/r/MachineLearning/comments/r76igz/discussion_rant_most_of_us_just_pretend_to/
 2. https://www.nobelprize.org/prizes/chemistry/2024/press-release/
+
+3. Cynthia Rudin, https://arxiv.org/abs/1811.10154 , Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead
+4. Cathy Oneil weapons of math destruction
+

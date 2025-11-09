@@ -12,7 +12,7 @@ And I don't even mean that the majority of your time might be spent on data plum
 
 I mean that if you solve problems using machine learning, regardless of whether the end model affects some internal process or an external one that is customer facing, if you are not contributing to the public domain, maybe these are more like local optimizations? 
 
-A similar conversation has been taking place around the topic of the GPT papers from Open AI. Does the discovery and novel application of scaling laws mean science was done, is what has been discussed for the past few years. That topic likely is a better candidate for the label of science since lots of research has benefited from it and we even have a Nobel Prize in chemistry that came from this research.
+A similar conversation has been taking place around the topic of the GPT papers from Open AI. Does the discovery and novel application of scaling laws mean science was done, is what has been discussed<sup>[1](#references)</sup> for the past few years. That topic likely is a better candidate for the label of science since at least there is a Nobel Prize<sup>[2](#references)</sup> in chemistry that came from this research. And this is while the theory side is still fuzzy. 
 
 But for the topic I'm after here, I'm thinking of work done for a company that doesn't make it into the research space.
 
@@ -77,4 +77,17 @@ Ultimately, the inspiration for me thinking about this was personal. That is, wh
 ### Shmueli...
 It is also interesting though, what does Shmueli mean by explaining ? So she defines "explaining as causal explanation and explanatory modeling as the use of statistical models for testing causal explanations." In her paper she gives the Netflix Prize as an example where the predictive approach shined. That is, the winning model, was chosen by the performance on the held out dataset simply because that is an objective way to choose a winner. But also, the winning team, happened to lean heavily into a collaborative filtering model (nearest neighbor) and therefore the model was more focused on the person doing the rating and whose ratings they are most similar to, but the model doesn't need to know any kind of philosophically deep knowledge about what people like about the movies themselves. In fact the winning team's paper noted that adding metadata about the movies themselves was not additive. Shmueli point out that although the model was an ensemble of several abstract models, we did perhaps learn that the movies being rated as opposed to not rated were more important than the ratings themselves. And that in itself is perhaps a kind of insight.
 
+## Surely you're joking mr Feynman
+I remember when I was in college, one time I sat at a public lecture by Brian Green about quantum mechanics, where I learned that although it is a field with the highest ability to predict phenomenon with accuracy, it is still not clear what is actually happening. Afterwards I went on to listen to Feynman's lectures. He 
 
+> “I think I can safely say that nobody understands quantum mechanics.”
+so basically you think you understand QM, you probably don't understand QM. And I suppose if available, would his reasoning be simply that it is not like the physics of gravity or springs or other classical phenomenon that are easier to relate to. and so the absence of an analog means you can only approach QM mathematically and perhaps metaphorically. For example, how could you possibly understand intuitively the double split experiment .
+
+Although a few months ago, I was digging into the Many Worlds Interpretation of QM lectures of the Mindscape guy. I think MWI does does sort of nicely explain that a photon will be following the universe's hilbert space and wen will see its wave pattern on the opposite wall of the double slit but when it decoheres, it is simply entangling with our branch and that there is another branch of the universe where a different photon is entangled with of a different slit pathway and that perhaps does have some mystery resolution .
+
+But still it is not a classical explanation. 
+
+
+# References
+1. https://www.reddit.com/r/MachineLearning/comments/r76igz/discussion_rant_most_of_us_just_pretend_to/
+2. https://www.nobelprize.org/prizes/chemistry/2024/press-release/

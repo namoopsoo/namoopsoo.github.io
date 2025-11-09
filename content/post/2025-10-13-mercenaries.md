@@ -1,7 +1,7 @@
 ---
 date: 2025-10-13
 title: The Data Mercenary
-draft: false
+draft: true
 images:
   - "https://s3.amazonaws.com/my-blog-content/2025-10-13-mercenaries/IMG_6381.jpg"
 cover:

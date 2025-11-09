@@ -91,6 +91,12 @@ And so I think ultimately back to deep learning and similarly Feynman would have
 
 Of course that doesnt mean black box ML should be used unfairly. It is argued by Cynthia Rudin, in particular<sup>[3](#references)</sup>, that only interpretable models will help us to avoid the ethical conundrums that plague our society--*also famously discussed by Cathy Oneil of Weapons of Math Destruction<sup>[4](#references)</sup> fame*.
 
+## A descriptive example: Aphantasia
+
+After starting to read a New Yorker article recently, Phantasia, on the study into the spectrum of how much or how little, different people are able to view imagery in their minds, I also on the side, read a bit more of the intro to the Gregory Hays Meditations translation<sup>[5](#references)</sup> . Hays helps the reader understand more of Marcus Aurelius's world before they dive into the text. And he discusses the three stoic disciplines of perception, action and will, and that perception is how you accurately or inaccurately interpret what you observe. And what you observe, in its raw state, is the "phantasia".  And then the next day, I went back to reading the New Yorker article, where I read about the Scotish neurologist, Adam Zeman, who (later on) coined the term "aphantasia", related to what he learned about a patient, Jim Campbell, who apparently lost his ability to visualize in his mind, after a cardiac procedure, while in his sixties. Zeman goes on to publish on a brain imaging study he runs, comparing Campbell with a control group of other men of close age, who can generate images in their minds. He publishes this in the journal Neuropsychologia in 2010. And after studying a total of 21 subjects, he published again, this time in Cortex, in 2015.
+
+A while back, around 2014, I picture a memory I had, of carefully walking the stairs in a Bushwick apartment I had moved into, while I was thinking about just learning about the benefits of epedemiology. Before, I had assumed it was more or less just faux science, but I was having the kind of epiphany that it is the beginnings of an understanding. My context, was in learning about how most diet studies in humans are very much retrospective and obesrvational. I thought earlier that, they are not very useful because they are not the gold standard of the so called randomized controlled trials. I thought to myself, a humbling thought then. What  I had read was that epedemiology is required in order to start seeing the direction of some kind of relationship, before you can later get the funding in order to perform a RCT.
+
 
 # References
 1. https://www.reddit.com/r/MachineLearning/comments/r76igz/discussion_rant_most_of_us_just_pretend_to/
@@ -99,3 +105,4 @@ Of course that doesnt mean black box ML should be used unfairly. It is argued by
 3. Cynthia Rudin, https://arxiv.org/abs/1811.10154 , Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead
 4. Cathy Oneil weapons of math destruction
 
+5. https://store.dailystoic.com/products/meditations

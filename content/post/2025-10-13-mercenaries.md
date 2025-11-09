@@ -1,7 +1,11 @@
 ---
 date: 2025-10-13
 title: The Data Mercenary
-draft: true
+draft: false
+images:
+  - "https://s3.amazonaws.com/my-blog-content/2025-10-13-mercenaries/IMG_6381.jpg"
+cover:
+  image: "https://s3.amazonaws.com/my-blog-content/2025-10-13-mercenaries/IMG_6381.jpg"
 ---
 
 What is science? Does it imply putting knowledge into the public domain? How about learning something? Did you need to learn something?

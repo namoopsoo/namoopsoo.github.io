@@ -97,6 +97,14 @@ After starting to read a New Yorker article recently, Phantasia, on the study in
 
 A while back, around 2014, I picture a memory I had, of carefully walking the stairs in a Bushwick apartment I had moved into, while I was thinking about just learning about the benefits of epedemiology. Before, I had assumed it was more or less just faux science, but I was having the kind of epiphany that it is the beginnings of an understanding. My context, was in learning about how most diet studies in humans are very much retrospective and obesrvational. I thought earlier that, they are not very useful because they are not the gold standard of the so called randomized controlled trials. I thought to myself, a humbling thought then. What  I had read was that epedemiology is required in order to start seeing the direction of some kind of relationship, before you can later get the funding in order to perform a RCT.
 
+What contributed to Campbell's aphantasia? Was it his cardiac procedure or something related to his age? Maybe we will not know, but after Zeman published his second paper, there was an article about it in the New York Times and seventeen thousand more people emailed him. Zeman started learning about people who were born with this condition, more also who developed it after inury and he also learned about a kind of hyperphantasia, of people with extreme ability to visualize, who can sometimes confuse their imaginings with reality. One hyperphantasic reported walking into many walls, imagining there were doorways present.
+
+I suppose one of Shmuli's points in writing her paper was not that purely explanatory modeling is not useful without being predictive and not that highly predictive black box models don't reveal enough about the world in which they interact, but that perhaps you need both as you are making sense of the world around you. 
+
+And maybe while you are only able to build a correlation machine that helps to solve a business problem, but only for perhaps a few months or only a year until it starts suffering from covariate drift or concept drift, perhaps that's fine if say, this helped you, say, make or save money that you can hopefully later use to invest in better understanding the actual underlying phenomenon.
+
+But also perhaps sometimes it is also fine to do as Feynman says and just *shut up and calculate*!
+
 
 # References
 1. https://www.reddit.com/r/MachineLearning/comments/r76igz/discussion_rant_most_of_us_just_pretend_to/

@@ -1,7 +1,7 @@
 ---
 date: 2025-10-13
 title: The Data Mercenary
-draft: false
+draft: true
 ---
 
 What is science? Does it imply putting knowledge into the public domain? How about learning something? Did you need to learn something?

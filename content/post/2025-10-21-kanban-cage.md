@@ -99,3 +99,9 @@ And from the Kantian perspective I understand why PI Planning is a kind of attem
 
 Kant did also say that humanity cannot know the true nature of reality .
 
+
+## multithreaded, locks vs distributed map reduce 
+
+locking is bad. Golang avoids. best use distributed, concurrent. and limit dependencies. 
+
+reduce, shuffle, are expensive 

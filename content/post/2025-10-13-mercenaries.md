@@ -31,10 +31,43 @@ I only just recently saw this option come up after probably a year of Duck.ai be
 #### But if we are not doing any testing really and we are just cranking out a model?
 What if you are squeezing every bit of entropy out of a dataset and achieving an amazing magic trick.
 
+### what does science do to answer questions
+
+#### thank you for not smoking
+The hazard ratio and smoking :
+How did science convince the world that smoking is bad?
+
+#### What does a RCT look like
+
+
+The reason I became interested in some of these topics wqs becque of diet science. But is it science? Food studies are overwhelmingly animal based but they are RCT. Human ones are survey based. But as Doctor House knows , eferybody lies. 
+
+The ad libidum feeding study with processed foods. actual people. Actual science? Sample size? 
+
+#### reprodicibility? 
+The area of social science has lately had a blow to confidence with some (a) reprodicibility problems around the Extra Sensory perxeption thijg, (b) p value 5% , gotten questions past deade, (while Higgs boson more precise , God Particle), (c) and Harvard studies , hmm tampering? (Atlantic article). 
+
+
+#### hmm
+So the label science doesnt always mean the same thing.
+
 ### on the philosophy of science and engineering
 I also saw it recently in this article about rocketry and Elon. 
 
 > "Every time I see Musk, I think of Sagan--because Musk is his opposite. He is a creature not of science but of engineering. He owes his fortune to the brute force of his rockets, and the awe they inspire. There's nothing humble about his manner. Rather than celebrate the fragile, improvised nature of human existence, Musk seeks to optimize or overwrite it- in the name of evolution, in pursuit of profit, in the vainglorious fulfillment of his adolescent fantasies. Where Sagan envisioned cooperation, Musk embodies the triumph of the individual. Where Sagan cautioned against the unintended consequences of technology, Musk charges headlong into the next disruption."
+
+#### Data science has been a pain in my neck
+Disclosure, this topic has given me some imposter syndrome over time. And so I have a personal stake in thinking through these questions.
+
+On this side personally I come back to how Charles Isbell phrases this. And he brings us back to Computer Science that predates Data Science. Halting Problem, Turing completeness, P v NP. 
+
+#### Hot dog not hot dog
+Deep learning , cats , Google, Casey's Genius Makers book. We have a Turing Award  . What are the contributions and what does it add to science?
+
+#### That diagram , about all of knowledge, and the Phd, 
+is this tiny finger poke, protrusion, the frontier.
+
+But how about the Francois Chollette , exponential growth publications and linear progress still? Quantity , Quality?
 
 
 ## Also enter here , “To Explain or to Predict?”

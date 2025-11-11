@@ -47,6 +47,9 @@ The ad libidum feeding study with processed foods. actual people. Actual science
 #### reprodicibility? 
 The area of social science has lately had a blow to confidence with some (a) reprodicibility problems around the Extra Sensory perxeption thijg, (b) p value 5% , gotten questions past deade, (while Higgs boson more precise , God Particle), (c) and Harvard studies , hmm tampering? (Atlantic article). 
 
+#### job market
+
+economists trying to interpret job data, https://www.stlouisfed.org/on-the-economy/2025/aug/is-ai-contributing-unemployment-evidence-occupational-variation
 
 #### hmm
 So the label science doesnt always mean the same thing.

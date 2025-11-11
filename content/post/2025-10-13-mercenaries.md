@@ -51,6 +51,8 @@ The area of social science has lately had a blow to confidence with some (a) rep
 
 economists trying to interpret job data, https://www.stlouisfed.org/on-the-economy/2025/aug/is-ai-contributing-unemployment-evidence-occupational-variation
 
+Contrast with Big Short , Christian Bale real life speculator, put your money where your mouth is? What would the Edge Institute hedge hogs and foxes guy say? What would Nate Silver , 538 guy say? The model that didnt predict Trump but was good up until then?
+
 #### hmm
 So the label science doesnt always mean the same thing.
 

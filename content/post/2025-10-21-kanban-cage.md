@@ -1,9 +1,8 @@
 ---
-title: the kanban cage 
+title: The kanban cage 
 date: 2025-10-21
 draft: true
 ---
-
 
 ## Cal Newport 
 
@@ -87,13 +86,13 @@ And instead of one sprint goal per sprint tied in , into a PI, just do OKR, whic
 PI planning is like a shitty OKR. 
 
 
-funny in this [video](https://youtu.be/jHRsBDC5E9Q), at the end the guest sqys  PI planning is like OKRs but with everyone involved, discussing it. I think, ok well, that would be cool but why not just have the OKRs plus negotiation? PI plqnning has all other weirdness to it. 
+funny in this video<sup>[4](#references)</sup>, at the end the guest says PI planning is like OKRs but with everyone involved, discussing it. I think, ok well, that would be cool but why not just have the OKRs plus negotiation? PI planning has all other weirdness to it. 
 
 law of raspberry jam. further it spreads, thinner it gets 😂
 
 
 ## kant
-Kant explained morality systemically, his theory, "categorical imperative". He gave examples, one involving debt repayment. Not repaying debt out of avoiding consequence of no more loans is too self interested to be moral for Kant. He said, broadly, if no one repayed their debt, no one kept their promises, then there could be no trust. 
+Kant explained morality systemically, his theory, "categorical imperative". He gave examples, one involving debt repayment. Not repaying debt out of avoiding consequence of no more loans is too self interested to be moral for Kant. He said, broadly, if no one repaid their debt, no one kept their promises, then there could be no trust. 
 
 And from the Kantian perspective I understand why PI Planning is a kind of attempt at a social agreement in company projects. There is a huge desire for certainty. 
 
@@ -105,3 +104,7 @@ Kant did also say that humanity cannot know the true nature of reality .
 locking is bad. Golang avoids. best use distributed, concurrent. and limit dependencies. 
 
 reduce, shuffle, are expensive 
+
+
+# References
+4. https://youtu.be/jHRsBDC5E9Q , Yuval Yeret and Ryan Ripley, "Breaking the SAFe: Deconstructing PI Planning"

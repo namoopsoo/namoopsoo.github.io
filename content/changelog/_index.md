@@ -20,6 +20,7 @@ All notable changes to this "human experiment" will be documented in this file.
 - Went on our annual Warwick apple picking trip, (2025-10-04).
 - Silly to even log this, 😛, rewatched the Naked Gun trilogy again after a long time.  (2025-10-08).
 - Hosted friend of friend from Costa Rica for a week (2025-10-09).
+- First time I experienced PI Planning , eek! Writing about it (2025-10...).
 
 ### Recognized
 - Learned and accepted haha that probably the reason I am always simultaneously doing 10 things at a time is maybe because I have some kind of ADHD 😂😂😂(2025-10-04).

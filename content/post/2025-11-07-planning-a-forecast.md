@@ -1,5 +1,5 @@
 ---
-title: forecast: sunshine and rainbows
+title: Forecast, sunshine and rainbows
 date: 2025-11-07
 draft: false
 images:

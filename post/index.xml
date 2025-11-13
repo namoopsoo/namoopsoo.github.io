@@ -6,7 +6,7 @@
     <description>Recent content in Posts on michal piekarczyk | end to end combat</description>
     <generator>Hugo -- 0.128.0</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 09 Nov 2025 17:02:08 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 12 Nov 2025 22:53:29 -0500</lastBuildDate>
     <atom:link href="https://michal.piekarczyk.xyz/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gap Analysis</title>
@@ -22,6 +22,14 @@
       <guid>https://michal.piekarczyk.xyz/post/2025-11-08--innovation/</guid>
       <description>I was recently reading this Forbes article1 on a colleague&amp;rsquo;s recommendation, asking the question, &amp;ldquo;Why So Many Leaders Say They Want Innovation But Reward Compliance&amp;rdquo;. The author&amp;rsquo;s answer is essentially that it is easy to talk about innovation, but because it is less predictable, then safe bets are rewarded by default and a vicious cycle ensues. Innovation is an optical illusion and idea seeds do not get planted.
 I think there is another answer worth exploring.</description>
+    </item>
+    <item>
+      <title>Forecast, sunshine and rainbows</title>
+      <link>https://michal.piekarczyk.xyz/post/2025-11-07-planning-a-forecast/</link>
+      <pubDate>Fri, 07 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2025-11-07-planning-a-forecast/</guid>
+      <description>I was going through this interesting discussion1 about PI Planning recently, because I&amp;rsquo;m in the middle of writing2 about the first PI Planning I participated in as well.
+I have not encountered the hosts before, but I take it that this is a discussion between someone who is represents Scrum, Ryan Ripley and SAFe, Yuval Yeret, respectively. I picked up that Yuval represents the business perspective and when he hears statements like &amp;ldquo;it&amp;rsquo;s done when it&amp;rsquo;s done&amp;rdquo;, he thinks &amp;ldquo;not mature&amp;rdquo;.</description>
     </item>
     <item>
       <title>Thumbs Up</title>

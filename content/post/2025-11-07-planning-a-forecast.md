@@ -20,7 +20,7 @@ But he sees PI Planning as coming from a good place, as an improvement upon exis
 
 Instead he sees PI Planning as create a runway for collaboration, getting everyone in the room, aligning on priorities, and coming up with a reasonable expectation for the outcome.
 
-I think  Yuval has heard  the actual utterance  "its done when its done", but he is framing a strawman argument. He talks about being "data driven" but I didn't really hear any error bars ever used in PI Planning.
+I think  Yuval has heard  the actual utterance  "it's done when it's done", but he is framing a strawman argument--*most critics of predictability simply prefer to under-promise and over-deliver*. He talks about being "data driven" but I didn't really hear him talk about using error bars in PI Planning.
 
 The other host, Ryan Ripley, says that one sprint backlog is challenging enough but duct taping together 6 is guaranteed failure. Yuval says backlogs are not the deliverable from PI Planning; it's more like sprint goals and one more level of detail of how those sprint goals are achieved.
 

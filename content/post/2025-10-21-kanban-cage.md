@@ -11,15 +11,14 @@ While reading about these every day approaches, I have also lived the parallel l
 Knowledge work is a special kind of hell, where if you are not careful, you will receive an endless inbox of actionable things which are only visible to you. There can be emails to respond to, reports to write and in software an endless list of issues and bugs to triage. Cal thoughtfully borrows the concept of the sprint from "Scrum" which is a flavor of "Agile", where you make your work visible on a "sprint board", because then you can theoretically gate your time, pointing to what you are currently doing in your "sprint" and that anything additional would need to go into a future "sprint" or otherwise would have to "bump" an in transit task, leading to a kind of messy context switch that is the killer of flow and classic waste. In principle, this sounds like a fair improvement upon the knowledge worker status quo, however it comes with a price, in that you may lose all control of your time.
 
 ## Surveillance Productivity
-If you are not careful, your Scrum / Agile / sprint system becomes your Kanban Cage. In principle, your time looks protected, but this constraint means that everything you do is scrutinized. The problem here is that 
+If you are not careful, your Scrum / Agile / sprint system becomes your Kanban Cage. In principle, your time looks protected, but this constraint means that everything you do is scrutinized. The problem here is that although in theory your only job is to do what is on your "sprint board", this is actually far from the truth. You are still spending most of your day simultaneously collaborating with your coworkers because "Scrum" is a "team sport" as they say. Depending on how senior you are, you may spend at least half of your time helping to unblock your teammates as well as your customers within your organization or outside of it, dealing with bugfixes that crop up and impact user experience. 
 
-## ... 
+In fact all of the responsibility of "sharpening the saw"--*making your product more resilient so your users report fewer bugs or improving the quality of your internal documentation so your teammates can self-resolve their issues*--falls on your back, and you basically cannot put any of this extra work into your actual "sprint board" because in practice the business will do their best to "help you prioritize" your work, which is to say "their short term work" versus your long term stability resiliency work. 
 
-and Slow Productivity, surveillance productivity, Kanban Cage
+Much more to say on what I see as a kind of light at the end of the tunnel. I think it starts with negotiation.
 
-
-## also, Martin Fowler
-Product vs Engineering, https://martinfowler.com/articles/bottlenecks-of-scaleups/03-product-v-engineering.html
+## Fisticuffs or alignment?
+ Martin Fowler's blog on negotiation, Product vs Engineering, https://martinfowler.com/articles/bottlenecks-of-scaleups/03-product-v-engineering.html
 
 my notes: "2025-10-23_0837--0400"
 
@@ -58,9 +57,6 @@ Outcome oriented team, vs our activity separate.
 
 The PI planning thing totally missed this mark. that we forgot to negotiate 
 
-
-
-
 ## epiphany reading the google swe culture book
 
 
@@ -74,10 +70,7 @@ Yea and instead my current team does Scrum and it is shoved down everyones throa
 
 All they know how to do is just hide behind their backlog and just sound very agitated whenever people dont acknowlege items that have been placed into each sprint backlog. But this person never asks for feedback. ever . And boy do they love the PI Planning . We did the pi planning thing , everyone participated hoping it would finally be a team effort, and then at the end this product owner person they just rearranged everything , putting their own preferred projects at the top but they were actually doing it while sharing their screen haha so we had a kind of embarrassing moment and we said hey what are you doing , we literally just spent two days doing this team thing and now you are just deciding everything; what the heck was the point of all that if you wre just going to change everything last minute.
 
-Terrible human. Anyway, actually I suppose I shouldn't blame this person, instead I suppose Scrum and SAFe gave them this weird mission of lead-by-backlog and that is kind of what they are spinelessly doing. And I really love reading this Google SWE culture document because it reminds me of the good old days of working projects at past companies .
-
-
-
+Arguably pointless. Anyway, actually I suppose I shouldn't blame this person, instead I suppose Scrum and SAFe gave them this weird mission of lead-by-backlog and that is kind of what they are spinelessly doing. And I really love reading this Google SWE culture document because it reminds me of the good old days of working projects at past companies .
 
 ## BYOA
 bring your own agile. if someone offers you a SAFe space, jyst say thanks but no thanks 😂
@@ -116,7 +109,7 @@ reduce, shuffle, are expensive
 # References
 1. Getting Things Done, David Allen
 2. Slow Productivity
-3. ..
+3. Martin Fowler's blog https://martinfowler.com/articles/bottlenecks-of-scaleups/03-product-v-engineering.html
 4. https://youtu.be/jHRsBDC5E9Q , Yuval Yeret and Ryan Ripley, "Breaking the SAFe: Deconstructing PI Planning"
 
 5. Extreme Gohorse

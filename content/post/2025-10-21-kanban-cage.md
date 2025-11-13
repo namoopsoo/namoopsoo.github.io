@@ -115,3 +115,5 @@ reduce, shuffle, are expensive
 5. Extreme Gohorse
 
 6.  Cal Newport and Adam Grant, https://link.chtbl.com/4HaHYkSm
+
+7. https://michal.piekarczyk.xyz/post/2025-06-04-fragile/ 

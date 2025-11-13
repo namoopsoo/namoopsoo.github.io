@@ -4,18 +4,18 @@ date: 2025-11-07
 draft: true
 ---
 
-https://youtu.be/jHRsBDC5E9Q 
 
-Summary
- Yuval represents the business perspective and for him, statements like  "its done when its done"  is not "mature". He says you need some predictability to be serious about business. Overall he characterized it as "Assume viability, preserve options".
+I was going through this interesting discussion<sup>[1](#references)</sup> about PI Planning recently, because I'm in the middle of writing<sup>[2](#references)</sup>  about the first PI Planning I participated in as well. 
 
-For him, the PI Planning is one more level  of detail than 5-6 sprints ahead with one sprint goal per sprint. He wants the one level deeper I think, not to have a more specific plan that is brittle but because he sees if you dont think more deeply, you will not consider the possible things that could go wrong and you'll form a unrealistic  plan. 
+I have not encountered the hosts before, but I take it that this is a discussion between someone who is represents Scrum, Ryan Ripley and SAFe, Yuval Yeret, respectively. I picked up that Yuval represents the business perspective and when he hears statements like  "it's done when it's done", he thinks "not mature". He says you need some predictability to be serious about business. Overall he characterized PI Planning as how to "assume viability, while preserving options".
 
-However he sees PI Planning as both producing a forecast , or  a hypothesis of what will happen but he also calls it a commitment, which  would be a contradiction of "forecast". 😂.
+For him, PI Planning is one more level of detail than 5-6 sprints ahead with one sprint goal per sprint. He wants the one level deeper I think, not to have a more specific plan that is brittle but because he sees if you don't think more deeply, you will not consider the possible things that could go wrong and you'll form an unrealistic  plan. 
 
-But he sees PI Planning as coming from a good place, as an improvement upon existing quarterly OKR planning which he sees is like a tablet handed to Moses from a sky god .
+However he sees PI Planning as both producing a forecast--also calling it a hypothesis--as well as a commitment, which are basically the opposite 😂. Rather, yes technically you can commit to a forecast, but "forecast" is by definition, not a commitment. 
 
-Instead PI Planning, he sees is everyone in the room, where everyone agrees on priorities, creates a runway for collaboration, and a reasonable expectation for the outcome.
+But he sees PI Planning as coming from a good place, as an improvement upon existing quarterly OKR planning which is like a tablet handed to Moses from a sky god, more or less.
+
+Instead he sees PI Planning as create a runway for collaboration, getting everyone in the room, aligning on priorities, and coming up with a reasonable expectation for the outcome.
 
 Ithink  Yuval has heard  the actual utterance  "its done when its done"  , but he is framing a strawman argument. He talks about being "data driven" but I didnt really hear any error bars ever used in PI Planning.
 
@@ -34,3 +34,5 @@ And to me predictability should be flipped on its head, as not predict the arriv
 
 
 
+# References
+1. https://youtu.be/jHRsBDC5E9Q , Yuval Yeret and Ryan Ripley, "Breaking the SAFe: Deconstructing PI Planning"

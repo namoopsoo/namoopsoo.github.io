@@ -6,9 +6,14 @@ draft: false
 
 I have for a while now learned about how the mainstream deals with knowledge work glut. I was a big fan of David Allen's Getting Sh\*t Done--just kidding ;D it was Getting Things Done<sup>[1](#references)</sup>. And I forget where, but I also came across the notion that all the old pre-digital ideas to getting your sh\*t together don't apply since nothing beats a digital sh\*t storm which faced down papercuts before emails. Ok enough of that bullsh\*t. 
 
-## Cal Newport 
+While reading about these every day approaches, I have also lived the parallel life of experiencing how the software world has been struggling with task management. Most people don't know much about "Agile" but it has been slowly spilling into the mainstream. Cal Newport sits sort of close enough to the software world that he has written, in Slow Productivity<sup>[2](#references)</sup>, sort of borrowing some of the good parts of *Agile*, to help modern knowledge workers with their woes. I have not yet sad down with Cal's book but I have heard him characterize the idea of the infinite work queue quite well, in his podcast. He describes that in knowledge work is unlike any other kind of physical work, where you do precisely what is in front of you, if you are a barista tending to customers at a coffee shop of an auto worker on the classic Ford assembly line working on cars.
 
-Adam Grant, https://link.chtbl.com/4HaHYkSm
+Knowledge work is a special kind of hell, where if you are not careful, you will receive an endless inbox of actionable things which are only visible to you. There can be emails to respond to, reports to write and in software an endless list of issues and bugs to triage. Cal thoughtfully borrows the concept of the sprint from "Scrum" which is a flavor of "Agile", where you make your work visible on a "sprint board", because then you can theoretically gate your time, pointing to what you are currently doing in your "sprint" and that anything additional would need to go into a future "sprint" or otherwise would have to "bump" an in transit task, leading to a kind of messy context switch that is the killer of flow and classic waste. In principle, this sounds like a fair improvement upon the knowledge worker status quo, however it comes with a price, in that you may lose all control of your time.
+
+## Surveillance Productivity
+If you are not careful, your Scrum / Agile / sprint system becomes your Kanban Cage. In principle, your time looks protected, but this constraint means that everything you do is scrutinized. The problem here is that 
+
+## ... 
 
 and Slow Productivity, surveillance productivity, Kanban Cage
 
@@ -110,4 +115,10 @@ reduce, shuffle, are expensive
 
 # References
 1. Getting Things Done, David Allen
+2. Slow Productivity
+3. ..
 4. https://youtu.be/jHRsBDC5E9Q , Yuval Yeret and Ryan Ripley, "Breaking the SAFe: Deconstructing PI Planning"
+
+5. Extreme Gohorse
+
+6.  Cal Newport and Adam Grant, https://link.chtbl.com/4HaHYkSm

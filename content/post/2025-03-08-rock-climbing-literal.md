@@ -1,6 +1,11 @@
 ---
 title: The local sediment
 date: 2025-03-08
+
+images:
+  - "https://s3.amazonaws.com/my-blog-content/2025-03-08-rock-climbing-literal/2025-03-08-IMG_4049.jpg"
+cover:
+  image: "https://s3.amazonaws.com/my-blog-content/2025-03-08-rock-climbing-literal/2025-03-08-IMG_4049.jpg"
 ---
 
 Recently went to check out some of the rock faces in New Haven

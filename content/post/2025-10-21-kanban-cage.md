@@ -4,6 +4,8 @@ date: 2025-10-21
 draft: false
 ---
 
+I have for a while now learned about how the mainstream deals with knowledge work glut. I was a big fan of David Allen's Getting Sh\*t Done--just kidding ;D it was Getting Things Done<sup>[1](#references)</sup>. And I forget where, but I also came across the notion that all the old pre-digital ideas to getting your sh\*t together don't apply since nothing beats a digital sh\*t storm which faced down papercuts before emails. Ok enough of that bullsh\*t. 
+
 ## Cal Newport 
 
 Adam Grant, https://link.chtbl.com/4HaHYkSm
@@ -107,4 +109,5 @@ reduce, shuffle, are expensive
 
 
 # References
+1. Getting Things Done, David Allen
 4. https://youtu.be/jHRsBDC5E9Q , Yuval Yeret and Ryan Ripley, "Breaking the SAFe: Deconstructing PI Planning"

@@ -132,6 +132,8 @@ Is the bar for a good explanation, more or less causality? Do we all intuitively
 
 We also have the legal system where a guilt model is constructed using your peers, sampled from the jury pool. Different crimes require different burden of proof, where sometimes, witness testimony works, but DNA evidence didnt exist before and murder was still taking convictions. But juries are not statisticians though they are instructed to think critically and use only the evidence presented. And not what was "wiped". Witness tampering can result in new jurors or even a mistrial.
 
+We don't know what happens in the jury deliberation room, we don't know if each jury member is required to explain in their own words their understanding of what happened. They are not asked to take a test to verify they understand the facts. Probably because those charged have a right to a "speedy" trial.
+
 In the end we call it a fair trial. 
 
 

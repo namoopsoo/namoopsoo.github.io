@@ -134,6 +134,12 @@ We also have the legal system where a guilt model is constructed using your peer
 
 We don't know what happens in the jury deliberation room, we don't know if each jury member is required to explain in their own words their understanding of what happened. They are not asked to take a test to verify they understand the facts. Probably because those charged have a right to a "speedy" trial.
 
+Yet tests are one thing close to what we use to validate a model and we do to humans too, to students, specifically. Yet, many can *testify* that book smarts and street smarts are not quite the same. (in the practice in theory are the same, but not in practice, as they say).
+
+and when models drift, we just retrain with new data, and move on. 
+
+Of course even a really good explanation can turn out to be a trick, as often a illusionist will demonstrate with a slight of hand or a ventriloquist with their various illusions. We all love a good detective story in a film, where twists and turns in a who done it cause you to keep changing your mind about the rank order of suspects. (Netflix had a good series like this recenyly. Also the Knives one). You keep changing your mind but thats what makes the illusion so delicious!
+
 In the end we call it a fair trial. 
 
 

@@ -123,6 +123,14 @@ It is also interesting though, what does Shmueli mean by explaining ? So she def
 
 The algorithm is tearing us apart? Influencing elections and not just Explqin Predict Describe, but Influence? (The Social Dilema Tristan Harris?)
 
+## Explain like Im 5
+Is The explanation and rational thought is mysterious or is it.. rational? I remember there was this fun podcast series called Reply All, where in a segment  yes yes no , (https://en.wikipedia.org/wiki/Reply_All_(podcast)), PJ Vogt and Alex Goldman explain to , Alex Blumberg, internet trivia memes.
+
+Explaining what happened , explain a meaning of something. You can also have something like a proof in math. And some proofs take a fery long time, Fermat Last Theorem. ( incidentally someone I know recently telling me they knew and met Andrew Wiles ... ). 
+
+Is the bar for a good explanation, more or less causality? Do we all intuitively know correlation is not good enough? (smellt it dealt it)
+
+
 ## Surely you're joking mr Feynman
 I remember when I was in college, one time I sat at a public lecture by Brian Green about quantum mechanics, where I learned that although it is a field with the highest ability to predict phenomenon with accuracy, it is still not clear what is actually happening. Afterwards I went on to listen to Feynman's lectures. He 
 

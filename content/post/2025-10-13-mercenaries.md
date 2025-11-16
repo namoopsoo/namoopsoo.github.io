@@ -41,21 +41,39 @@ Back in 2001, the case of United States v. Phillip Morris began around a charge 
 
 But in order to prove the fraud, we needed the initial evidence that the harm was present. By 2001, the harm was already well established. Actually, by 1964, the Surgeon General already formally reported that smoking causes lung cancer. There were two major epidemiological studies in the 1950s that contributed the evidence. One was the British Doctors study where 34,439 british physicians had a 20x higher lung cancer mortality than non smokers (Doll & Hill 1951). 
 
-The hazard ratio of 20x here is not strictly evidence of causality, meaning that, we are not looking at the bodies and we are not monitoring what the smoke is doing. This study does not know for sure what is the biological pathway that causes 
+The hazard ratio of 20x here is not strictly evidence of causality, meaning that, we are not looking at the bodies or lung tissue and we are not monitoring what the smoke is doing. This study does not know for sure what is the biological pathway that causes the outcome. Also the first 1954 set of numbers published was just an early indicator, since aftre the first 29 months, out of 34,439 doctors, there were only 36 lung cancer deaths, though the ratio was high, 34 smokers to 2 non smokers. 
+
+At this point you might also think, but why would there even be any non-smokers in the lung cancer death group? But the thing is, there can also be confounders such as second hand smoking as well. Also environmental factors can contribute, such as say air pollution. But interestingly, we don't look at any of this in the published studies. The assertion is that the relative ratios of prevalence is strong enough of an association to be submitted as proof.
+
+There were also follow ups after 20, 40 and 50 years. 
+
+By year for the 20, 34,439 men, there was a somewhat stable per-year relative risk of lung cancer death of 17 to 1, with 170 to 10 smoker to non smoker lung cancer deaths. And the quantities were also stratified across several buckets of 1-14 cigarettes per day, 15-24, and 25+ and the 25+ group had the largest relative risk of 21.0.
+
+A 91 year old Doll actually published the 50-year study in 2024 and the numbers were consistent at ~20x in smokers. However, these were more modern times, and this longitudinal study also tracked men who had quit smoking in their 30s and all their excess risk was gone. And those who quit in their 50s halved their risk.
+
+So there were no lung autopsies as part of these longitudinal studies, but the numbers were what was presented. And by being a longitudinal study, the rate of lung cancer death per year per 100,000 is what was compared between the smoking and non smoking groups and that rate remained fairly consistent in the 170-210 range throughout the 50 years. 
+
+So one might also say that no not all of the smoker cohort died with lung cancer but also, there were still 9,000 men alive at year 50 and there were also many other kinds of mortalities that were not lung cancer but related, such as COPD and heart disease, but these are precursors to lung cancer and therefore one might say that had they survived longer they would have faced lung cancer as well and that the hazard was therefore likely underestimated.
+
+Still all that being said, we know that hazard ratios are not the gold standard when it comes to science. That honor goes to randomized controlled trials.
 
 #### What does a RCT look like
 
 
-The reason I became interested in some of these topics wqs becque of diet science. But is it science? Food studies are overwhelmingly animal based but they are RCT. Human ones are survey based. But as Doctor House knows , eferybody lies. 
+The reason I became interested in some of these topics was because of diet science. But is it science? Food studies are overwhelmingly animal based but they are RCT. Human ones are survey based. But as Doctor House knows , everybody lies. 
 
 The ad libidum feeding study with processed foods. actual people. Actual science? Sample size? 
 
-#### reprodicibility? 
-The area of social science has lately had a blow to confidence with some (a) reprodicibility problems around the Extra Sensory perxeption thijg, (b) p value 5% , gotten questions past deade, (while Higgs boson more precise , God Particle), (c) and Harvard studies , hmm tampering? (Atlantic article). 
+This study was indeed an RCT and over a multi week period , ad libidum calorie consumption was compared and measured as 500 greater in the processed food group.
+
+
+
+#### Reprodicibility? 
+The area of social science has lately had a blow to confidence with some (a) reproducibility problems around the Extra Sensory perception thijg, (b) p value 5% , gotten questions past decade, (while Higgs boson more precise , God Particle), (c) and Harvard studies , hmm tampering? (Atlantic article). 
 
 #### job market
 
-economists trying to interpret job data, https://www.stlouisfed.org/on-the-economy/2025/aug/is-ai-contributing-unemployment-evidence-occupational-variation
+Economists trying to interpret job data, https://www.stlouisfed.org/on-the-economy/2025/aug/is-ai-contributing-unemployment-evidence-occupational-variation
 
 Contrast with Big Short , Christian Bale real life speculator, put your money where your mouth is? What would the Edge Institute hedge hogs and foxes guy say? What would Nate Silver , 538 guy say? The model that didnt predict Trump but was good up until then?
 
@@ -132,11 +150,11 @@ The algorithm is tearing us apart? Influencing elections and not just Explqin Pr
 ## Explain like Im 5
 Is The explanation and rational thought is mysterious or is it.. rational? I remember there was this fun podcast series called Reply All, where in a segment  yes yes no , (https://en.wikipedia.org/wiki/Reply_All_(podcast)), PJ Vogt and Alex Goldman explain to , Alex Blumberg, internet trivia memes.
 
-Explaining what happened , explain a meaning of something. You can also have something like a proof in math. And some proofs take a fery long time, Fermat Last Theorem. ( incidentally someone I know recently telling me they knew and met Andrew Wiles ... ). 
+Explaining what happened , explain a meaning of something. You can also have something like a proof in math. And some proofs take a very long time, Fermat Last Theorem. ( incidentally someone I know recently telling me they knew and met Andrew Wiles ... ). 
 
 Is the bar for a good explanation, more or less causality? Do we all intuitively know correlation is not good enough? (smellt it dealt it), is this Occam's Razor? 
 
-We also have the legal system where a guilt model is constructed using your peers, sampled from the jury pool. Different crimes require different burden of proof, where sometimes, witness testimony works, but DNA evidence didnt exist before and murder was still taking convictions. But juries are not statisticians though they are instructed to think critically and use only the evidence presented. And not what was "wiped". Witness tampering can result in new jurors or even a mistrial.
+Going back to court, we also have the legal system where a guilt model is constructed using your peers, sampled from the jury pool. Different crimes require different burden of proof, where sometimes, witness testimony works, but DNA evidence didn't exist before and murder was still taking convictions. But juries are not statisticians though they are instructed to think critically and use only the evidence presented. And not what was "wiped". Witness tampering can result in new jurors or even a mistrial.
 
 We don't know what happens in the jury deliberation room, we don't know if each jury member is required to explain in their own words their understanding of what happened. They are not asked to take a test to verify they understand the facts. Probably because those charged have a right to a "speedy" trial.
 
@@ -144,7 +162,7 @@ Yet tests are one thing close to what we use to validate a model and we do to hu
 
 and when models drift, we just retrain with new data, and move on. 
 
-Of course even a really good explanation can turn out to be a trick, as often a illusionist will demonstrate with a slight of hand or a ventriloquist with their various illusions. We all love a good detective story in a film, where twists and turns in a who done it cause you to keep changing your mind about the rank order of suspects. (Netflix had a good series like this recenyly. Also the Knives one). You keep changing your mind but thats what makes the illusion so delicious!
+Of course even a really good explanation can turn out to be a trick, as often a illusionist will demonstrate with a slight of hand or a ventriloquist with their various illusions. We all love a good detective story in a film, where twists and turns in a who done it cause you to keep changing your mind about the rank order of suspects. (Netflix had a good series like this recently. Also the Knives one). You keep changing your mind but thats what makes the illusion so delicious!
 
 In the end we call it a fair trial. 
 

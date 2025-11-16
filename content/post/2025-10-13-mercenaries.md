@@ -71,6 +71,18 @@ This study was indeed an RCT and over a multi week period , ad libidum calorie c
 #### Reprodicibility? 
 The area of social science has lately had a blow to confidence with some (a) reproducibility problems around the Extra Sensory perception thijg, (b) p value 5% , gotten questions past decade, (while Higgs boson more precise , God Particle), (c) and Harvard studies , hmm tampering? (Atlantic article). 
 
+So the Harvard one, Franchesca Gino , 
+https://www.theatlantic.com/magazine/archive/2025/01/business-school-fraud-research/680669/ , this professor doing research into honesty,  but four papers published and data anomalies were described. 
+
+The Atlantic article author took one of the studies in question and inspected the data to better understand what the perceived data tampering might be about. The study was called “Don’t Stop Believing: Rituals Improve Performance by Decreasing Anxiety,” and was trying to show that performing rituals could help reduce anxiety prior to doing something that provokes the anxiety. This could be something like public speaking and the rituals can be just anything arbitrary that you (I think I heard Wayne Gretzkey was known to wear a lucky pair of underwear or something like that). And the anxiety was measured using a pulse oximeter to check heart rate. The problem was that , as the Atlantic author shows, although the heart rate data looks normal for the first two readings recorded, it looks very weird and suspicious for the third one. 
+
+The paper had 7 authors and Gina was listed as number 4. Without yet going into the culpability, just first thinking about this study, you just want to know , what happened? If someone looked at the data they would be able to wonder was it fudged. But was the point of view just naivetei like no one will notice? And that this was right before a submission deadline? And maybe some of the original results were perhaps lost and itwas too late to redo all of the data collection, so lets just put some numbers in that kind of fake it?
+
+As a personal anecdote, I want to recollect a story I remember very well from when I was in 5th grade. I had a teacher who taught me a lesson I keep very close to my heart. I had been moving around schools a handful of times and at one point I had an assignment to hand draw the animal cell and all of its parts, including the cell membrane, the mitochondria and all of the vacuoules that clean up unwanted particles in the cytoplasm. I remember I got a really good grade. I always liked drawing so I was pretty proud of this. A year later, I moved schools and I happened to get the same assignment from a different teacher. I don't know what was going through my 10 year old brain but I decided to pencil erase the date and fill in the current date and hand in the drawing I had made prior. My teacher Ms Geary confronted me about this and asked me I think to redo the assignment. This shame, I somehow still remember so many decades later but I am ever thankful for her lesson because I realize writing this, it has shaped my belief in high integrity and quality to this day. So I think that reproducibility is a very important topic and any kind of tampering, even to harmlessly save time if the result would have been the same so you suspect, is not ethical and should be explicitly written out. 
+
+The case is made best by Balaji Srinivasan. A point of view I think is easy to get behind and might help to avoid the various levels of junk science out there.
+
+
 #### job market
 
 Economists trying to interpret job data, https://www.stlouisfed.org/on-the-economy/2025/aug/is-ai-contributing-unemployment-evidence-occupational-variation

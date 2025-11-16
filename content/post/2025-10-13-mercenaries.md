@@ -1,22 +1,22 @@
 ---
 date: 2025-10-13
 title: The Data Mercenary
-draft: true
+draft: false
 images:
   - "https://s3.amazonaws.com/my-blog-content/2025-10-13-mercenaries/IMG_6381.jpg"
 cover:
   image: "https://s3.amazonaws.com/my-blog-content/2025-10-13-mercenaries/IMG_6381.jpg"
 ---
 
-What is science? Does it imply putting knowledge into the public domain? How about learning something? Did you need to learn something?
+What is science? Does it imply putting knowledge into the public domain? How about learning something? Did you need to learn something? Do you need to prove what you find?
 
-A few months back I was thinking to myself about the corporate nature of data science and whether it is true to its name.
+These are some of the questions going through my head a few months back. Given the corporate nature of data science, is true to its name, or is more hype to attract candidates?
 
 And I don't even mean that the majority of your time might be spent on data plumbing, ad hoc data munging or other kinds of analytics that can only be described as story telling with data. 
 
-I mean that if you solve problems using machine learning, regardless of whether the end model affects some internal process or an external one that is customer facing, if you are not contributing to the public domain, maybe these are more like local optimizations? 
+I mean that if you solve problems using machine learning, regardless of whether the end model affects some internal process or an external one that is customer facing, if you are not contributing to the public domain, maybe these are more like local optimizations that don't generalize rather than "science".
 
-A similar conversation has been taking place around the topic of the GPT papers from Open AI. Does the discovery and novel application of scaling laws mean science was done, is what has been discussed<sup>[1](#references)</sup> for the past few years. That topic likely is a better candidate for the label of science since at least there is a Nobel Prize<sup>[2](#references)</sup> in chemistry that came from this research. And this is while the theory side is still fuzzy. 
+A similar conversation has been taking place around the topic of the GPT scaling law papers from Open AI. Does the discovery and novel application of scaling laws mean science was done, is what has been discussed<sup>[1](#references)</sup> for the past few years. That topic likely is a better candidate for the label of science since at least there is a Nobel Prize<sup>[2](#references)</sup> in chemistry that came from this research. And this is while the theory side is still fuzzy. 
 
 But for the topic I'm after here, I'm thinking of work done for a company that doesn't make it into the research space.
 
@@ -33,9 +33,15 @@ What if you are squeezing every bit of entropy out of a dataset and achieving an
 
 ### what does science do to answer questions
 
-#### thank you for not smoking
+#### Thank you for not smoking
 The hazard ratio and smoking :
 How did science convince the world that smoking is bad?
+
+Back in 2001, the case of United States v. Phillip Morris began around a charge of conspiracy to hide health risks about lung cancer and second hand smoke, hiding them from the public. The statute under which conspiracy was argued was the so called RICO, Racketeer Influenced and Corrupt Organizations Act. The prosecution had to demonstrate that Phillip Morris knew about the risks, and publicly denied them and manipulated marketing, claiming that light cigarettes were low tar and were lower risk. This was fraud, by the definition that they knew the risks but they were still applying marketing saying the product was fine. By 2006, the case was won and appeals to the supreme court were declined. The injunction required Phillip Morris to clarify the harms in the marketing and packaging.
+
+But in order to prove the fraud, we needed the initial evidence that the harm was present. By 2001, the harm was already well established. Actually, by 1964, the Surgeon General already formally reported that smoking causes lung cancer. There were two major epidemiological studies in the 1950s that contributed the evidence. One was the British Doctors study where 34,439 british physicians had a 20x higher lung cancer mortality than non smokers (Doll & Hill 1951). 
+
+The hazard ratio of 20x here is not strictly evidence of causality, meaning that, we are not looking at the bodies and we are not monitoring what the smoke is doing. This study does not know for sure what is the biological pathway that causes 
 
 #### What does a RCT look like
 

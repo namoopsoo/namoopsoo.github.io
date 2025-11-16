@@ -182,6 +182,10 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Started
 - Switched to hover.com and registered this domain, michal.piekarczyk.xyz , [almost thought](/post/2021-02-02-whois/) I forgot to use WHOIS anonimization !
 
+## 2018-11
+### Started
+- Switched to "away" luggage, "The Bigger Carry-On, Asphalt", for $245 (awaytravel.com)  (2018-11-04).
+
 ## 2017-12
 ### Started
 - First Yamaha piano, P-115 (link the "2017-12-28 guitar center yamaha piano.pdf") 

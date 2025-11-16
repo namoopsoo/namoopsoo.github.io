@@ -217,3 +217,7 @@ But also perhaps sometimes it is also fine to do as Feynman says and just *shut 
 4. Cathy Oneil weapons of math destruction
 
 5. https://store.dailystoic.com/products/meditations
+
+
+... https://www.theatlantic.com/magazine/archive/2025/01/business-school-fraud-research/680669/ 
+

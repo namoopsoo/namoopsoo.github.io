@@ -30,9 +30,9 @@ My thing has been, Im realizing, our Product Team is not accurately representing
 
 That , lack of representation has been a problem in our OKR meetings too, wrt, top down and bottom up OKRs.
 
-And whqt ends up happening, people in a PI planning meeting are coerced , under duress, even recorded , to sign with blood as we joked , agree, commit , without a full review of phoenix, technical backlog, tech debt, etc.
+And whqt ends up happening, people in a PI planning meeting are coerced , under duress, even recorded ,--to sign with blood as we joked-- , agree, commit , without a full review of phoenix, technical backlog, tech debt, etc.
 
-Only mentions in Pi planning are the MLP Support, which is bullshit because then you just only have time to fix broken shit without preventing , making stuff more resilient. 
+Only "ad hoc" lip service  in Pi planning might be  the on-call work , which is not "tackling" tech debt at all, it is  making minimum monthly payments,      just fixing what broken without making it more resilient for the future.
 
 quote, 
 > "Us vs them", and product leaders throwing requirements over the wall, treating engineering team as a feature factory. 

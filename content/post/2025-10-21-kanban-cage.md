@@ -49,7 +49,7 @@ Hmm though yea im leaning more towards Shane De La Moore that this is got to be 
 ### Product is cool
 This article goes into depth about cool ways to unify the team, get excited about product. 
 
-We are sorely missing this . Again, just mainly doing random garbage work inherited from Devops .
+We are sorely missing this .This year , just mainly bending to will of  the   Devops dictatorship in our company , showing fealty to asks without demonstrated utility.
 
 Outcome oriented team, vs our activity separate. 
 

@@ -30,7 +30,7 @@ My thing has been, Im realizing, our Product Team is not accurately representing
 
 That , lack of representation has been a problem in our OKR meetings too, wrt, top down and bottom up OKRs.
 
-And whqt ends up happening, people in a PI planning meeting are coerced , under duress, even recorded ,--to sign with blood as we joked-- , agree, commit , without a full review of phoenix, technical backlog, tech debt, etc.
+And what ends up happening, people in a PI planning meeting are coerced , under duress, even recorded ,--to sign with blood as we joked-- , agree, commit , without a full review of phoenix, technical backlog, tech debt, etc.
 
 Only "ad hoc" lip service  in Pi planning might be  the on-call work , which is not "tackling" tech debt at all, it is  making minimum monthly payments,      just fixing what broken without making it more resilient for the future.
 
@@ -66,11 +66,28 @@ ok I kind of had this intuition about the way my current company runs projects i
 
 In my past companies , the way of getting work done is that each person would basically be part of small execution teams (2 or 3 people) and each team would just work on basically one project several days at a time. The mini teams just organically divide up the work and just collaborate super organically. And you just talk to your boss basically whenever you got super excited about something you want to show or when if you held off too long , your boss would tap on your shoulder to see what's up haha.
 
-Yea and instead my current team does Scrum and it is shoved down everyones throats from the top of the company. It is terrible. It is like "leadership by backlog" . My team has a so called Product Owner but this person literally is not a team player, very judgemental, extremmely insecure to criticism, always sounds condescending , never contributes any insights or opinions into a conversation unless it is to sound as if speaking from some high mountain top of authority.
 
-All they know how to do is just hide behind their backlog and just sound very agitated whenever people dont acknowlege items that have been placed into each sprint backlog. But this person never asks for feedback. ever . And boy do they love the PI Planning . We did the pi planning thing , everyone participated hoping it would finally be a team effort, and then at the end this product owner person they just rearranged everything , putting their own preferred projects at the top but they were actually doing it while sharing their screen haha so we had a kind of embarrassing moment and we said hey what are you doing , we literally just spent two days doing this team thing and now you are just deciding everything; what the heck was the point of all that if you wre just going to change everything last minute.
+### Leadership by Backlog
+Instead my current team does Scrum     but without the negotiation. The product arm of the team is mainly  a mouthpiece  to the company's Devops agenda, which our customers dont really know about and affects our ability to produce good improvements.  
 
-Arguably pointless. Anyway, actually I suppose I shouldn't blame this person, instead I suppose Scrum and SAFe gave them this weird mission of lead-by-backlog and that is kind of what they are spinelessly doing. And I really love reading this Google SWE culture document because it reminds me of the good old days of working projects at past companies .
+And without a healthy back and forth, our product arm  just uses   their backlog like a shield and any resistance is met with agitation . 
+
+Passive agressive is the operative word here w.r.t. the sprint backlog. 
+
+#### First PI Planning experience 
+
+Everyone participated hoping it would finally be a team effort, and then at the end the  product arm of the team rearranges the results , sorting projects by  their own preferrence. 
+
+That final moment wqs quite eye opening and the PI planning arguably pointless.
+
+I suppose the PI Planning process enables this kind of scenario , but I understand from this video, recently, the theory and practice, can diverge a lot. 
+
+The quote was, it is like Strawberry Jam, the further it spreads, the thinner it gets.
+
+
+And lead-by-backlog was not the originalintent.
+
+ And I really love reading this Google SWE culture document because it reminds me of the good old days of working projects at past companies .
 
 ## BYOA
 bring your own agile. if someone offers you a SAFe space, jyst say thanks but no thanks 😂

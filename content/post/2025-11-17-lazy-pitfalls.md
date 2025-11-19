@@ -23,3 +23,14 @@ And that reproduces the crash.
 I wonder hmm maybe that orderBy style smoke test might be good to run for all data at the beginning? 
 
 Or is there a more "pysparkian" best practice ? Have people  written about this pain in general? Does everyone just solve it in a bespoke way? 
+
+## fail fast
+
+```
+spark.conf.set("spark.sql.files.ignoreCorruptFiles", "false")
+spark.conf.set("spark.sql.files.ignoreMissingFiles", "false")
+
+
+```
+https://spark.apache.org/docs/latest/configuration.html
+

@@ -17,6 +17,23 @@ In fact all of the responsibility of "sharpening the saw"--*making your product 
 
 Much more to say on what I see as a kind of light at the end of the tunnel. I think it starts with negotiation.
 
+###  You might be in a Kanban Cage if...
+If you are being asked to give a T Shirt Size to ypur Task, you might be under surveillance. 
+
+Predictability is this intriguing part of some scrum ceremonies .
+
+You know complex tasks are not tractable yet this concept of estimation creeps in. My favorite quote on the topic, 
+
+> If I knew how long this took it means I already did it so I could just give it to you.
+
+( e.g. NP Hard Problem)
+
+And the book No Estimates cleanly states, the simple alternative is just get good at cutting scope. Again , it is negotiation. 
+
+And the cutting skill invalidates Sunk Cost Fallacy if you do everything quickly.
+
+So if you are doing planning and it works , it probably means youre doing widget work, which yes you have to do every once in a while, but hopefully thsts not your life otherwise exploit and no explore . (exploitative by definition ) .
+
 ## Fisticuffs or alignment?
  Martin Fowler's blog on negotiation, Product vs Engineering, https://martinfowler.com/articles/bottlenecks-of-scaleups/03-product-v-engineering.html
 

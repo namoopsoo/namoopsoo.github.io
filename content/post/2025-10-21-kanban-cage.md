@@ -34,6 +34,13 @@ And the cutting skill invalidates Sunk Cost Fallacy if you do everything quickly
 
 So if you are doing planning and it works , it probably means youre doing widget work, which yes you have to do every once in a while, but hopefully thsts not your life otherwise exploit and no explore . (exploitative by definition ) .
 
+
+### The Tacit Dimension 
+
+> “I shall reconsider human knowledge by starting from the fact that we can know more than we can tell,
+
+(requote from a Cal article) 
+
 ## Fisticuffs or alignment?
  Martin Fowler's blog on negotiation, Product vs Engineering, https://martinfowler.com/articles/bottlenecks-of-scaleups/03-product-v-engineering.html
 

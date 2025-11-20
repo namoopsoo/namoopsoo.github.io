@@ -20,6 +20,9 @@ A similar conversation has been taking place around the topic of the GPT scaling
 
 But for the topic I'm after here, I'm thinking of work done for a company that doesn't make it into the research space.
 
+### all models are wrong some models are interesting 
+yea
+
 ### Lets look this interesting recent call to action I saw when using Duck Duck Go.
 
 {{< figure src="https://s3.amazonaws.com/my-blog-content/2025-10-13-mercenaries/image_1760802043881_0.png" width="50%">}}

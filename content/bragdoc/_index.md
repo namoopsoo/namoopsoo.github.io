@@ -288,8 +288,7 @@ Following a successful mini hackathon where colleagues began packaging common ut
 To build momentum, I collaborated with a colleague to pitch the initiative as a bottom-up internal OKR. We emphasized how modularizing platform utilities would simplify user-facing code, reduce repeated effort, and lower troubleshooting time. By formalizing the vision and contributing maturity work, I helped establish the foundation for shared abstractions to replace repeated notebook boilerplate.
 
 
-## Standardized integration test code by introducing our shared internal Python library, replacing scattered custom logic with a uniform platform package.
-, (2024-08-23)
+## Standardized integration test code by introducing our shared internal Python library, replacing scattered custom logic with a uniform platform package., (2024-08-23)
 Our ML platform’s integration tests had accumulated scattered custom Python code across different repositories, which made them inconsistent and harder to maintain. After we introduced a centralized internal platform library, I refactored the test code to use this package. This reduced duplication, brought consistency to how tests were written, and ensured they followed shared best practices—making the framework easier to maintain and extend.
 
 
@@ -389,8 +388,7 @@ continuing the effort to help validate typesense embedding models as an alternat
 ## One-line fix, six-month mystery: restored Git commit tagging in our ML deployment flow with a tiny tweak to the pipeline.
 
 
-Traced and fixed a subtle bug that had silently broken Git commit injection in our ML deployment pipeline for over six months.
-, (2025-03-07)
+Traced and fixed a subtle bug that had silently broken Git commit injection in our ML deployment pipeline for over six months., (2025-03-07)
 in our ml platform, we use a common deployment pipeline when updating ml pipelines and part of that is we have a step in the yaml deploy that during the deployment, takes the git commit hash and within databricks notebooks, replaces template placeholders with the actual git commit. there was a bug which for well over half a year caused this not to work and I made a simple update , just literally one line changing from one version of the Azure devops pipeline replacement function that did not work, to another that did work, and then boom fixed it. just no one else had noticed it maybe or no one else found the time to debug it troubleshoot it haha.
 
 ## Added histogram overlays by cohort to model integration tests, providing clearer visual evidence for troubleshooting score deviations., (2025-04-16)
@@ -416,7 +414,7 @@ In our Git-based ML platform, new repositories are frequently added and removed,
 
 
 ## Simplified Databricks package cache updates by replacing a convoluted streaming/event-hub setup with a clear client–server design and a scheduled Azure DevOps pipeline., (2025-07)
-Previously, adding new Python packages to our Databricks package cache relied on a convoluted two-part system: a continuously running streaming notebook listening to Event Hub messages, and a client-side Python wrapper that both pip installed packages locally and triggered the server-side notebook to install them again and cache the wheel files in ADLS. Both client and server code were complex and hard to follow. I refactored the client–server logic for clarity, replaced the Event Hub–driven streaming notebook with a simpler message-passing mechanism using timestamp-named files, and moved the server-side cache updater into an Azure DevOps pipeline running every six hours. This made the workflow easier to maintain and removed the need for a constantly running notebook.
+Previously, adding new Python packages to our Databricks package cache relied on a convoluted two-part system: a continuously running streaming notebook listening to Event Hub messages, and a client-side Python wrapper that both pip installed packages locally and triggered the server-side notebook to install them again and cache the wheel files in ADLS. Both client and server code were complex and hard to follow. I refactored the client–server logic for clarity, replaced the Event Hub–driven streaming notebook with a simpler message-passing mechanism using timestamp-named files, and moved the server-side cache updater into an Azure DevOps pipeline running every six hours. This made the workflow easier to maintain and made the constantly running notebook redundant.
 
 
 ## Automated metadata sync from Databricks registry to Git, reducing bulky PRs to minimal, targeted changes., (2025-03)
@@ -432,8 +430,7 @@ I had a usecase where i had a multi notebook databricks ADF pipeline, where the 
 And in order to test run the full pipeline, i adopted the new run databricks multi task job connecting my new notebooks, executing from git source directly, showing it is possible to step away from data factory orchestration where code is possible to be tampered with and into  run from source where tampering is not possible.
 
 
-## Added a lightweight helper to automatically detect the active Databricks workspace (staging vs. production) via hostname, enabling safer environment-specific behavior without parameter drift.
-, (2025-08-14)
+## Added a lightweight helper to automatically detect the active Databricks workspace (staging vs. production) via hostname, enabling safer environment-specific behavior without parameter drift., (2025-08-14)
 Our Databricks platform runs separate staging and production workspaces, which historically had nearly identical configurations for consistency. The problem was that certain features—extra logging, experimental capabilities, or in-progress integrations—needed to run only in staging, but our previous way of managing that distinction was clumsy: passing special notebook parameters at runtime. That created subtle inconsistencies between environments and was easy to forget during deployment.
 
 To simplify this, I added a small but powerful helper that inspects the Databricks workspace hostname to determine the current environment. This provided a consistent, self-contained way to conditionally enable or disable functionality without modifying runtime arguments.
@@ -451,8 +448,31 @@ As part of this refactor, I fixed a long-standing issue in CI testing: notebooks
 This work reduced duplication, eliminated fragile dependencies, and simplified ongoing maintenance for a package we still needed to support. Just as importantly, it was a learning experience for me: I practiced scoping my refactor carefully, resisting the temptation to add clever complexity, and shipping a smaller, safer change instead.
 
 
-## Formalized and documented our ML pipeline data-sensitivity policy, clarifying rules for handling predictive outputs and establishing default “sensitive-by-inheritance” guidance for mixed-source pipelines.
-, (2025-12-09)
+## Refreshed ML platform documentation on using Hugging Face pretrained models, replacing outdated examples with a safe, proxy-compatible workflow that loads models from local paths., (2025-11-06)
+While reviewing a recent user question about integrating a Hugging Face pretrained model on our internal ML platform, I realized our documentation had grown outdated and confusing. Lack of clarity led to one of the issues the user was running into. Also the examples were not runnable.
+
+To address this, I took the opportunity to revise the platform documentation. I removed legacy snippets, clarified the point of confusion and added a modern, runnable end-to-end example showing how to:
+
+Download models once through the approved proxy,
+
+Store them locally in a workspace or artifact path, and
+
+Load them using Hugging Face APIs from a local directory rather than a remote URL.
+
+This example made it much clearer how to safely and reproducibly use pretrained models within our company’s environment. It also will hopefully reduce future support questions.
+
+
+## Began correcting a non-reproducible reference model by introducing workflow-based training and a DVC-style proposal for data and notebook lineage., (2025-11-17)
+As part of an ongoing effort, I revisited a predictive pipeline on our ML platform that was being used as a canonical example repository. While attempting to retrain it, I discovered that its training code was no longer runnable end-to-end. The root cause turned out to be subtle but important: the code used to generate the model artifacts in MLflow no longer matched the code in the repository. Different algorithms and paths had been used for testing, hyperparameter tuning, and final model fitting, meaning the checked-in code could not faithfully reproduce the registered model.
+
+I documented these gaps and traced how the repository had drifted into this state, clarifying where code had likely been modified after the original training runs. From there, I established a cleaner retraining precedent using Databricks Workflows. Although workflows have existed for some time, they are not yet widely adopted on our platform. Using them here allowed us to explicitly freeze and version the entire training process as a single unit — including feature construction, feature selection, train/test splits, hyperparameter tuning, and model fitting — rather than only capturing the final model artifact.
+
+In parallel, I proposed a DVC-inspired approach to data and notebook lineage, extending beyond simple notebook sequencing to explicitly define what datasets each notebook consumes and produces. This would make training runs auditable, reproducible, and easier to reason about over time.
+
+While this effort is still in progress, it establishes an important direction: moving our example repositories from “illustrative but fragile” toward fully reproducible, end-to-end training pipelines that better reflect best practices for production ML.
+
+
+## Formalized and documented our ML pipeline data-sensitivity policy, clarifying rules for handling predictive outputs and establishing default “sensitive-by-inheritance” guidance for mixed-source pipelines., (2025-12-09)
 Our ML platform had long operated under an implicit understanding of how to handle sensitive data — but not a clearly written rule. The ambiguity showed up when discussing predictive pipeline outputs: if a model read from sensitive sources but wrote only pseudonymized results, should those outputs still be stored in a sensitive location?
 
 Opinions varied across team members. Some argued that pseudonymization was sufficient to allow writing to a non-sensitive zone. Others felt that provenance mattered more — that any pipeline touching sensitive inputs should default to writing sensitive outputs, regardless of transformations.

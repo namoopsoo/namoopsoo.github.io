@@ -452,8 +452,7 @@ This work reduced duplication, eliminated fragile dependencies, and simplified o
 
 
 ## Formalized and documented our ML pipeline data-sensitivity policy, clarifying rules for handling predictive outputs and establishing default “sensitive-by-inheritance” guidance for mixed-source pipelines.
-, (yyyy-mm-dd)
-...
+, (2025-12-09)
 Our ML platform had long operated under an implicit understanding of how to handle sensitive data — but not a clearly written rule. The ambiguity showed up when discussing predictive pipeline outputs: if a model read from sensitive sources but wrote only pseudonymized results, should those outputs still be stored in a sensitive location?
 
 Opinions varied across team members. Some argued that pseudonymization was sufficient to allow writing to a non-sensitive zone. Others felt that provenance mattered more — that any pipeline touching sensitive inputs should default to writing sensitive outputs, regardless of transformations.

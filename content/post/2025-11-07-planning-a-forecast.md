@@ -39,3 +39,5 @@ And to me predictability should be flipped on its head, as not predict the arriv
 1. https://youtu.be/jHRsBDC5E9Q , Yuval Yeret and Ryan Ripley, "Breaking the SAFe: Deconstructing PI Planning"
 2. still writing this.
 3. Shape Up, "Bets not Backlogs", https://basecamp.com/shapeup/2.1-chapter-07 
+
+

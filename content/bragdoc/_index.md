@@ -432,6 +432,15 @@ I had a usecase where i had a multi notebook databricks ADF pipeline, where the 
 And in order to test run the full pipeline, i adopted the new run databricks multi task job connecting my new notebooks, executing from git source directly, showing it is possible to step away from data factory orchestration where code is possible to be tampered with and into  run from source where tampering is not possible.
 
 
+## Added a lightweight helper to automatically detect the active Databricks workspace (staging vs. production) via hostname, enabling safer environment-specific behavior without parameter drift.
+, (2025-08-14)
+Our Databricks platform runs separate staging and production workspaces, which historically had nearly identical configurations for consistency. The problem was that certain features—extra logging, experimental capabilities, or in-progress integrations—needed to run only in staging, but our previous way of managing that distinction was clumsy: passing special notebook parameters at runtime. That created subtle inconsistencies between environments and was easy to forget during deployment.
+
+To simplify this, I added a small but powerful helper that inspects the Databricks workspace hostname to determine the current environment. This provided a consistent, self-contained way to conditionally enable or disable functionality without modifying runtime arguments.
+
+Initially, I used it to suppress time-consuming staging-only logging. Shortly after, a teammate used it to gate their experimental feature, preventing it from accidentally going live in production. The function quickly became one of those quietly indispensable utilities—simple, reliable, and broadly useful.
+
+
 ## Refactored a legacy ML platform package deployment into a single, simplified Azure DevOps pipeline, reducing tech debt and preventing staging environment conflicts., (2025-09-05)
 Our ML platform team inherited an internal Python package that predated me, written by authors no longer on the team. Although much of its functionality had since been migrated into a newer package, several critical systems—including our feature store—still depended on it. Supporting this legacy code had become a long-avoided but necessary task.
 
@@ -440,3 +449,17 @@ When making a routine maintenance change to its deployment pipeline, I used the 
 As part of this refactor, I fixed a long-standing issue in CI testing: notebooks used absolute %run calls that forced CI to overwrite staging paths, potentially breaking others’ workflows. By switching to relative paths, I was able to redirect tests into a safe, isolated test location. To avoid interfering with production or staging, I settled on using a fixed test path that was cleared at the start of each run—a simpler, more reliable choice than the dynamic timestamped paths I had originally considered.
 
 This work reduced duplication, eliminated fragile dependencies, and simplified ongoing maintenance for a package we still needed to support. Just as importantly, it was a learning experience for me: I practiced scoping my refactor carefully, resisting the temptation to add clever complexity, and shipping a smaller, safer change instead.
+
+
+## Formalized and documented our ML pipeline data-sensitivity policy, clarifying rules for handling predictive outputs and establishing default “sensitive-by-inheritance” guidance for mixed-source pipelines.
+, (yyyy-mm-dd)
+...
+Our ML platform had long operated under an implicit understanding of how to handle sensitive data — but not a clearly written rule. The ambiguity showed up when discussing predictive pipeline outputs: if a model read from sensitive sources but wrote only pseudonymized results, should those outputs still be stored in a sensitive location?
+
+Opinions varied across team members. Some argued that pseudonymization was sufficient to allow writing to a non-sensitive zone. Others felt that provenance mattered more — that any pipeline touching sensitive inputs should default to writing sensitive outputs, regardless of transformations.
+
+To resolve this, I gathered the various viewpoints, and drafted explicit guidance in our internal wiki. With input from several colleagues, we agreed on a conservative principle:
+
+"If any input to a predictive pipeline is sensitive, the output should also be treated as sensitive."
+
+This decision recognized the reality that model code evolves, and it would be risky to depend on future reviews always catching subtle data-leak vectors. The new written policy gave everyone a clear rule of thumb, reducing confusion and ensuring a stronger default stance on data protection.

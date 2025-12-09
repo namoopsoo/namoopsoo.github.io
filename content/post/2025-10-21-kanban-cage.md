@@ -132,7 +132,7 @@ funny in this video<sup>[4](#references)</sup>, at the end the guest says PI pla
 law of raspberry jam. further it spreads, thinner it gets 😂
 
 
-## kant
+## Kant
 Kant explained morality systemically, his theory, "categorical imperative". He gave examples, one involving debt repayment. Not repaying debt out of avoiding consequence of no more loans is too self interested to be moral for Kant. He said, broadly, if no one repaid their debt, no one kept their promises, then there could be no trust. 
 
 And from the Kantian perspective I understand why PI Planning is a kind of attempt at a social agreement in company projects. There is a huge desire for certainty. 
@@ -158,3 +158,7 @@ reduce, shuffle, are expensive
 6.  Cal Newport and Adam Grant, https://link.chtbl.com/4HaHYkSm
 
 7. https://michal.piekarczyk.xyz/post/2025-06-04-fragile/ 
+
+8. https://www.seangoedecke.com/how-to-ship/
+ 
+9. .... north star concept

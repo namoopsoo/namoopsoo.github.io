@@ -448,6 +448,34 @@ As part of this refactor, I fixed a long-standing issue in CI testing: notebooks
 This work reduced duplication, eliminated fragile dependencies, and simplified ongoing maintenance for a package we still needed to support. Just as importantly, it was a learning experience for me: I practiced scoping my refactor carefully, resisting the temptation to add clever complexity, and shipping a smaller, safer change instead.
 
 
+## Prototyped a Databricks SDK–based export of job runs to improve SRE visibility and mitigate retention limitations., (2025-09-17)
+I learned about an ongoing investigation into an issue where our SRE team could not access Databricks job runs, that Databricks permissions around run visibility are complex and not easily adjusted.
+
+In parallel, I had previously experimented with the Databricks SDK for an unrelated idea: backing up production Databricks runs. Revisiting that work, I realized it could serve a second purpose. Using the SDK, I built a proof of concept that downloads and exports Databricks runs as notebooks (IPYNB), making execution context accessible outside the Databricks UI.
+
+This approach addresses two problems at once: it provides a workaround for limited SRE access to run details, and it mitigates the fact that Databricks job run retention is fixed and not configurable. While the current implementation is intentionally scoped as a proof of concept, it demonstrates a feasible path toward regularly exporting runs via automation.
+
+I shared the idea with a small group of colleagues, including SRE-adjacent teammates, and the feedback so far has been positive. The next step, if prioritized, would be productionizing and scheduling the export process to make run history consistently available for debugging and auditing.
+
+
+## Collaborated on diagnosing and fixing a subtle permissions issue that unblocked batched Python package installs on Databricks., (2025-10-02)
+While revisiting an earlier refactor of our Databricks Python package installation workflow, I noticed a confusing permissions issue: users could successfully install packages, but the follow-on step that wrote a small “signal” file — used to notify a downstream batching system to populate our shared package cache — was failing with a permissions error.
+
+As an interim measure, I first suppressed the noisy failure since it did not block the user-facing install path. However, the underlying issue still prevented the background batching mechanism from working as intended.
+
+In collaboration with a colleague, we revisited the permissions model. I had originally configured write permissions assuming they would apply recursively, but my colleague suggested explicitly granting permissions on a lower-level directory as well. Once we made that change, the 403 errors disappeared and the end-to-end flow began working correctly.
+
+This small but important fix completed the last missing piece of the earlier project: enabling a scheduled background job to reliably batch user package installation requests and populate our package cache. The result was a quieter, more robust system and a workflow that finally behaved as it had been designed to from the start.
+
+
+## ..., (2025-10-07)
+...
+
+
+## ..., (20254-10-27)
+...
+
+
 ## Refreshed ML platform documentation on using Hugging Face pretrained models, replacing outdated examples with a safe, proxy-compatible workflow that loads models from local paths., (2025-11-06)
 While reviewing a recent user question about integrating a Hugging Face pretrained model on our internal ML platform, I realized our documentation had grown outdated and confusing. Lack of clarity led to one of the issues the user was running into. Also the examples were not runnable.
 

@@ -146,6 +146,18 @@ locking is bad. Golang avoids. best use distributed, concurrent. and limit depen
 
 reduce, shuffle, are expensive 
 
+## Measure what Matters not what is easy
+Measuring predictability is so predictable . it is also the   
+McNamara_fallacy: 
+> "the first step is to measure whatever can be easily measured. The second step is to disregard that which can't easily be measured or given a quantitative value. The third step is to presume that what can't be measured easily really isn't important. The fourth step is to say that what can't be easily measured really doesn't exist."
+
+It's also Goodhart's Law, but this corollary, offers a motivation too. 
+
+Like in this https://michal.piekarczyk.xyz/post/2025-11-08--innovation/ innovation note, the hard stuff is just not within your grasp, but you need to offer something to your overseers. 
+
+This is also Cal's notion of "proxy productivity" , busyness is visible, so that is what you reward.
+
+
 
 # References
 1. Getting Things Done, David Allen
@@ -158,6 +170,9 @@ reduce, shuffle, are expensive
 6.  Cal Newport and Adam Grant, https://link.chtbl.com/4HaHYkSm
 
 7. https://michal.piekarczyk.xyz/post/2025-06-04-fragile/ 
+
+x. https://en.wikipedia.org/wiki/McNamara_fallacy
+
 
 8. https://www.seangoedecke.com/how-to-ship/
  

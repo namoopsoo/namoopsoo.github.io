@@ -157,7 +157,9 @@ Like in this https://michal.piekarczyk.xyz/post/2025-11-08--innovation/ innovati
 
 This is also Cal's notion of "proxy productivity" , busyness is visible, so that is what you reward.
 
+## the way things were
 
+Before pi planning hit our shores, inviting itself in, we planned by everyone putting what theu were excited about into a big group writable table and everyone with equal votes , voted. then we ranked. thats what ir was . that was great
 
 # References
 1. Getting Things Done, David Allen

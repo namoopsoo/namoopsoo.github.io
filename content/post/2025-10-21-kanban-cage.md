@@ -163,6 +163,14 @@ This is also Cal's notion of "proxy productivity" , busyness is visible, so that
 
 Before pi planning hit our shores, inviting itself in, we planned by everyone putting what theu were excited about into a big group writable table and everyone with equal votes , voted. then we ranked. thats what ir was . that was great
 
+# Summary of my points
+
+- As the Martin Fowler blog puts it, a team Backlog is a mix of product and engineering priorities. Product looks at the user perspective, and Engineering looks at stability, reliability, maintainability and all the other -ilities. 
+- All the team members will wear the Product and Engineering hats , some might lean one way more than the other. 
+- There might be other external pressures other than Product or Engineering that put thumbs on the scale as well, call it Corporate. Corporate doesnt represent either user interests or engineering interests. But they are the HIPPO so you will hear them
+- The process of PI planning is a negotiation, where all parties state their positions and bid for the time of the individual contributors 
+- At the end of the day , there is room to be excited about whqt the team is up to and can unify behind.
+
 # References
 1. Getting Things Done, David Allen
 2. Slow Productivity

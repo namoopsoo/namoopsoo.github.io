@@ -1,8 +1,10 @@
 ---
 title: The kanban cage 
 date: 2025-10-21
-draft: true
+draft: false
 ---
+
+*DRAFTING*
 
 I have for a while now learned about how the mainstream deals with knowledge work glut. I was a big fan of David Allen's Getting Sh\*t Done--just kidding ;D it was Getting Things Done<sup>[1](#references)</sup>. And I forget where, but I also came across the notion that all the  pre-digital-era ideas to getting your sh\*t together don't apply since papercuts are nothing compared to a digital sh\*t storm. Ok enough of that bullsh\*t. 
 

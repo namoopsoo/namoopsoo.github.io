@@ -38,10 +38,21 @@ So if you are doing planning and it works , it probably means youre doing widget
 
 
 ### The Tacit Dimension 
+How did we get into this mess where light hearted terms like "planning poker" are used to engage with topics around the future that we really cannot know much about. 
 
-> “I shall reconsider human knowledge by starting from the fact that we can know more than we can tell,
+In the realm of the unknown of what may take place in a non-widget-work project, you might really not know and thinking forwards , you can spend enough time on the hypothetical to merit actually doing the work. 
 
-(requote from a Cal article) 
+But you might also enter the realm of the tacit dimension, where you may know something but you just cannot describe it well . This is also the realm of "show don't tell" . 
+ (requote from  Cal on email [10](#references)  ), Cal quotes a known line from a michael polanyi book,  The Tacit Dimension, 
+
+> “I shall reconsider human knowledge by starting from the fact that we can know more than we can tell."
+
+The answer I usually get is the Eisenhower quote about about how, 
+> "plans are worthless, but planning is everything"
+
+but this quote feels grossly out of context because software projects are way more flexible than battle plans, but also Eisenhower's quote literally also acknowledges that plans are worthless and yet a lot of software planning language espouses language like "commitment" and "capacity planning" and "estimates" which enter a territory of certainty that is not knowable and not necessary to know (hence "agility").
+
+To answer the question, I think we are here out of a very strong desire for certainty and a discomfort around not having the certainty, that maybe is difficult to shake for many.
 
 ## Fisticuffs or alignment?
  Martin Fowler's blog on negotiation, Product vs Engineering, https://martinfowler.com/articles/bottlenecks-of-scaleups/03-product-v-engineering.html
@@ -192,3 +203,5 @@ x. https://en.wikipedia.org/wiki/McNamara_fallacy
 8. https://www.seangoedecke.com/how-to-ship/
  
 9. .... north star concept
+
+10. why can't ai manage my email , Cal Newport , New Yorker

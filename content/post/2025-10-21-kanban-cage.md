@@ -61,13 +61,16 @@ my notes: "2025-10-23_0837--0400"
 
 Wow this is written well, says what I didnt really realize what I wanted to say, that there are basically two backlogs, product backlog and engineering backlog.
 
-But on our team problem is deeper that our product backlog isn't even  for customers its for the devops team. some  referring to an adjacent concept of buckets also.
+But on our team, the problem is deeper that our product backlog isn't even  for customers; it's for the devops team. some  referring to an adjacent concept of buckets also.
 
-My thing has been, Im realizing, our Product Team is not accurately representing the product interests , not engineering interests either, so its no taxation without representation I think  . You cant have a PI planning meeting if it doesnt accurately represent all the interests at play.
+Our Product Team is not accurately representing the product interests , not engineering interests either. It has been no taxation without representation . As I read about PI planning, the distinction with OKR planning is that "everyone is in the room" so that the meeting represents all the interests at play.
 
 That , lack of representation has been a problem in our OKR meetings too, wrt, top down and bottom up OKRs.
 
-And what ends up happening, people in a PI planning meeting are coerced , under duress, even recorded ,--to sign with blood as we joked-- , agree, commit , without a full review of phoenix, technical backlog, tech debt, etc.
+But the theory and execution of pi planning can be different.
+
+As an example of our recent experience, 
+ what ended up happening, our plan was kind of oddly pre-populated and there was no connection to the various exploratory working sessions we were doing over the last several months. We spent time in a bit of asynchronous work, writing out sort of plans across the stories. Then people added a kind of confidence. Then under a bit of  coersion  and duress, even recorded ,--to sign with blood as we joked-- , agree, commit , without a full review of phoenix, technical backlog, tech debt, etc.
 
 Only "ad hoc" lip service  in Pi planning might be  the on-call work , which is not "tackling" tech debt at all, it is  making minimum monthly payments,      just fixing what broken without making it more resilient for the future.
 

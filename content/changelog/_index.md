@@ -101,6 +101,9 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Completed 
 - Finished a full year of getting daily morning outdoor sunlight (Thanks [Andrew Huberman](https://ai.hubermanlab.com/s/43X8TsN1)).
 
+### First
+- First davidprotein.com order (2024-11-17).
+
 ## 2024-09
 ### Logged
 - First [escape room](https://theescapegame.com/brooklyn/) experience. Have to thank my mom for organizing this !  (2025-09-24).

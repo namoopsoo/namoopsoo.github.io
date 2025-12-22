@@ -177,6 +177,12 @@ This is also Cal's notion of "proxy productivity" , busyness is visible, so that
 
 Before pi planning hit our shores, inviting itself in, we planned by everyone putting what theu were excited about into a big group writable table and everyone with equal votes , voted. then we ranked. thats what ir was . that was great
 
+## Dont Defer thinking
+You shouldnt   defer thinking about what problems to solve to your product team any more than you should defer design choices to your AI LLM tool of choice. 
+
+(Last bit inspired by https://youtu.be/eIoohUmYpGI ) 
+
+
 # Summary of my points
 
 - As the Martin Fowler blog puts it, a team Backlog is a mix of product and engineering priorities. Product looks at the user perspective, and Engineering looks at stability, reliability, maintainability and all the other -ilities. 

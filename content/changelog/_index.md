@@ -17,6 +17,9 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Stopped
 - Stopped daily Carb Manager logging during travel to India but also did not resume after returning. Discussed why [here](https://michal.piekarczyk.xyz/post/2025-12-10-not-tracking/) (2025-12-08) .
 
+### Returned
+- Resumed office commutes after 4 years! Because my company now has a proper office with coffee and water that doesnt require notification (2025-12-07).
+
 ## 2025-11
 ### Broke
 - Leaned on and broke a table of my moms, 😅, though to be fair, we were both criticizing, the manufacturers crappy construction choices from the beginning (2025-11-01).

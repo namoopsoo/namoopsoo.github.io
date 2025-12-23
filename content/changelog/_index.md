@@ -12,6 +12,10 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Logged
 - First time in New Delhi India (2025-11-28).
 - First time on a wild jeep safari (2025-12-01).
+- Fourth December I made the bigos, our family Xmas dish. (2025-12-22). 
+
+### Stopped
+- Stopped daily Carb Manager logging during travel to India but also did not resume after returning. Discussed why [here](https://michal.piekarczyk.xyz/post/2025-12-10-not-tracking/) (2025-12-08) .
 
 ## 2025-11
 ### Broke

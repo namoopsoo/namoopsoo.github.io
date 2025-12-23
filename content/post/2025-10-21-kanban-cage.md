@@ -173,6 +173,12 @@ Like in this https://michal.piekarczyk.xyz/post/2025-11-08--innovation/ innovati
 
 This is also Cal's notion of "proxy productivity" , busyness is visible, so that is what you reward.
 
+At my place of work, folks share words of wisdom on their anniversaries and I didnt prepare this time recently, was kind of stuck, I said. Will prepare later I said. but funny opportunity came up, I was randomly mentioned that I had most commits out of others or something like that 5,000 or whatever.   I responded like, umm this is not impact and that what you measure fails to become a good metric. we went to another topic. At the end I realized my wisdom if you can call it that, is dont fzll into the trap of proxy productivity, pseudo Productivity, because the good stuff typically is not noticeable but without putting your head down, you will just be busy. waving your arms around. Funny , my skip level   interpret what I said as "big picyure thinking " which is important too but kind of missed the point, being, big picture doing ! 
+
+That being said, "building in public" is great too, blasting out legit artifacts , but not just git commits haha 😆. Someone else was saying she wants a prize for the number of meetings she attends. Indeed.   
+
+
+
 ## the way things were
 
 Before pi planning hit our shores, inviting itself in, we planned by everyone putting what theu were excited about into a big group writable table and everyone with equal votes , voted. then we ranked. thats what ir was . that was great

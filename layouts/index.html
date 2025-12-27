@@ -1,0 +1,77 @@
+{{ define "main" }}
+  {{ $dateFormat := site.Params.date_format | default "2006-01-02" }}
+  {{ $postsPage := site.GetPage "section" "post" }}
+  {{ $notesPage := site.GetPage "section" "note" }}
+  {{ $projectsPage := site.GetPage "section" "project" }}
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+  </header>
+
+  <div class="home-pane-grid">
+    <section class="home-pane">
+      <div class="home-pane-header">
+        <h2>Posts</h2>
+        {{ with $postsPage }}
+          <a class="home-pane-link" href="{{ .RelPermalink }}">All posts</a>
+        {{ end }}
+      </div>
+      <ul class="home-pane-list">
+        {{ with $postsPage }}
+          {{ range .Pages.ByDate.Reverse }}
+            <li class="home-pane-item">
+              <a class="home-pane-item-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+              <span class="home-pane-date">{{ .Date.Format $dateFormat }}</span>
+              {{ with .Summary }}
+                <p class="home-pane-summary">{{ . | plainify }}</p>
+              {{ end }}
+            </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </section>
+
+    <section class="home-pane">
+      <div class="home-pane-header">
+        <h2>Notes</h2>
+        {{ with $notesPage }}
+          <a class="home-pane-link" href="{{ .RelPermalink }}">All notes</a>
+        {{ end }}
+      </div>
+      <ul class="home-pane-list">
+        {{ with $notesPage }}
+          {{ range .Pages.ByDate.Reverse }}
+            <li class="home-pane-item">
+              <a class="home-pane-item-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+              <span class="home-pane-date">{{ .Date.Format $dateFormat }}</span>
+              {{ with .Summary }}
+                <p class="home-pane-summary">{{ . | plainify }}</p>
+              {{ end }}
+            </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </section>
+  </div>
+
+  <section class="home-pane home-pane-projects">
+    <div class="home-pane-header">
+      <h2>Projects</h2>
+      {{ with $projectsPage }}
+        <a class="home-pane-link" href="{{ .RelPermalink }}">All projects</a>
+      {{ end }}
+    </div>
+    <ul class="home-pane-list">
+      {{ with $projectsPage }}
+        {{ range .Pages.ByDate.Reverse }}
+          <li class="home-pane-item">
+            <a class="home-pane-item-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <span class="home-pane-date">{{ .Date.Format $dateFormat }}</span>
+            {{ with .Summary }}
+              <p class="home-pane-summary">{{ . | plainify }}</p>
+            {{ end }}
+          </li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </section>
+{{ end }}

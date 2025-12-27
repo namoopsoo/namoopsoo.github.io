@@ -46,6 +46,7 @@ params:
   mainSections:
     - post
     - project
+    - note
   fuseOpts:
     isCaseSensitive: false
     shouldSort: true
@@ -86,6 +87,10 @@ menu:
     - identifier: handy
       name: handy
       url: /handy/
+      weight: 30
+    - identifier: notes
+      name: notes
+      url: /note/
       weight: 30
     - identifier: Search
       name: search

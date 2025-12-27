@@ -1,5 +1,8 @@
 {{ define "main" }}
-  {{ $dateFormat := site.Params.date_format | default "2006-01-02" }}
+  {{ $dateFormat := site.Params.DateFormat | default site.Params.date_format }}
+  {{ if not (in $dateFormat "2006") }}
+    {{ $dateFormat = "Jan 2, 2006" }}
+  {{ end }}
   {{ $postsPage := site.GetPage "section" "post" }}
   {{ $notesPage := site.GetPage "section" "note" }}
   {{ $projectsPage := site.GetPage "section" "project" }}
@@ -19,11 +22,31 @@
         {{ with $postsPage }}
           {{ range .Pages.ByDate.Reverse }}
             <li class="home-pane-item">
-              <a class="home-pane-item-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
-              <span class="home-pane-date">{{ .Date.Format $dateFormat }}</span>
-              {{ with .Summary }}
-                <p class="home-pane-summary">{{ . | plainify }}</p>
-              {{ end }}
+              <article class="home-pane-entry">
+                {{ $cover := "" }}
+                {{ with .Params.cover }}
+                  {{ with .image }}{{ $cover = . }}{{ end }}
+                {{ end }}
+                {{ if not $cover }}
+                  {{ with .Params.images }}{{ $cover = index . 0 }}{{ end }}
+                {{ end }}
+                {{ if $cover }}
+                  {{ $coverURL := $cover }}
+                  {{ if not (hasPrefix $coverURL "http") }}
+                    {{ $coverURL = $coverURL | relURL }}
+                  {{ end }}
+                  <div class="home-pane-cover">
+                    <img src="{{ $coverURL }}" alt="{{ .Title }}" loading="lazy">
+                  </div>
+                {{ end }}
+                <div class="home-pane-body">
+                  <a class="home-pane-item-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                  <span class="home-pane-date">{{ .Date.Format $dateFormat }}</span>
+                  {{ with .Summary }}
+                    <p class="home-pane-summary">{{ . | plainify }}</p>
+                  {{ end }}
+                </div>
+              </article>
             </li>
           {{ end }}
         {{ end }}
@@ -41,11 +64,31 @@
         {{ with $notesPage }}
           {{ range .Pages.ByDate.Reverse }}
             <li class="home-pane-item">
-              <a class="home-pane-item-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
-              <span class="home-pane-date">{{ .Date.Format $dateFormat }}</span>
-              {{ with .Summary }}
-                <p class="home-pane-summary">{{ . | plainify }}</p>
-              {{ end }}
+              <article class="home-pane-entry">
+                {{ $cover := "" }}
+                {{ with .Params.cover }}
+                  {{ with .image }}{{ $cover = . }}{{ end }}
+                {{ end }}
+                {{ if not $cover }}
+                  {{ with .Params.images }}{{ $cover = index . 0 }}{{ end }}
+                {{ end }}
+                {{ if $cover }}
+                  {{ $coverURL := $cover }}
+                  {{ if not (hasPrefix $coverURL "http") }}
+                    {{ $coverURL = $coverURL | relURL }}
+                  {{ end }}
+                  <div class="home-pane-cover">
+                    <img src="{{ $coverURL }}" alt="{{ .Title }}" loading="lazy">
+                  </div>
+                {{ end }}
+                <div class="home-pane-body">
+                  <a class="home-pane-item-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                  <span class="home-pane-date">{{ .Date.Format $dateFormat }}</span>
+                  {{ with .Summary }}
+                    <p class="home-pane-summary">{{ . | plainify }}</p>
+                  {{ end }}
+                </div>
+              </article>
             </li>
           {{ end }}
         {{ end }}
@@ -64,11 +107,31 @@
       {{ with $projectsPage }}
         {{ range .Pages.ByDate.Reverse }}
           <li class="home-pane-item">
-            <a class="home-pane-item-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
-            <span class="home-pane-date">{{ .Date.Format $dateFormat }}</span>
-            {{ with .Summary }}
-              <p class="home-pane-summary">{{ . | plainify }}</p>
-            {{ end }}
+            <article class="home-pane-entry">
+              {{ $cover := "" }}
+              {{ with .Params.cover }}
+                {{ with .image }}{{ $cover = . }}{{ end }}
+              {{ end }}
+              {{ if not $cover }}
+                {{ with .Params.images }}{{ $cover = index . 0 }}{{ end }}
+              {{ end }}
+              {{ if $cover }}
+                {{ $coverURL := $cover }}
+                {{ if not (hasPrefix $coverURL "http") }}
+                  {{ $coverURL = $coverURL | relURL }}
+                {{ end }}
+                <div class="home-pane-cover">
+                  <img src="{{ $coverURL }}" alt="{{ .Title }}" loading="lazy">
+                </div>
+              {{ end }}
+              <div class="home-pane-body">
+                <a class="home-pane-item-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                <span class="home-pane-date">{{ .Date.Format $dateFormat }}</span>
+                {{ with .Summary }}
+                  <p class="home-pane-summary">{{ . | plainify }}</p>
+                {{ end }}
+              </div>
+            </article>
           </li>
         {{ end }}
       {{ end }}

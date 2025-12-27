@@ -224,3 +224,4 @@ But also perhaps sometimes it is also fine to do as Feynman says and just *shut 
 
 ... https://www.theatlantic.com/magazine/archive/2025/01/business-school-fraud-research/680669/ 
 
+x. https://world.hey.com/michal.piekarczyk/data-mercenarism-8d39ca61

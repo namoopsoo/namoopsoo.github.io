@@ -2,14 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://michal.piekarczyk.xyz/note/</loc>
-    <lastmod>2025-12-27T15:42:20-05:00</lastmod>
-  </url><url>
     <loc>https://michal.piekarczyk.xyz/note/2025-12-27-recruiting-is-not-a-science/</loc>
     <lastmod>2025-12-27T15:42:20-05:00</lastmod>
-  </url><url>
-    <loc>https://michal.piekarczyk.xyz/post/</loc>
-    <lastmod>2025-12-27T14:36:44-05:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/post/2025-12-11-skip-jetlag/</loc>
     <lastmod>2025-12-11T08:54:00-05:00</lastmod>
@@ -830,11 +824,17 @@
     <loc>https://michal.piekarczyk.xyz/vis/</loc>
     <lastmod>2025-09-28T15:07:06-04:00</lastmod>
   </url><url>
+    <loc>https://michal.piekarczyk.xyz/note/</loc>
+    <lastmod>2025-12-28T14:17:43-05:00</lastmod>
+  </url><url>
     <loc>https://michal.piekarczyk.xyz/now/</loc>
     <lastmod>2025-05-28T09:26:30-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/changelog/</loc>
     <lastmod>2025-12-23T15:06:32-05:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/post/</loc>
+    <lastmod>2025-12-28T14:17:43-05:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/search/</loc>
     <lastmod>2023-03-04T13:22:50-05:00</lastmod>

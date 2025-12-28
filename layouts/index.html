@@ -18,6 +18,11 @@
           <a class="home-pane-link" href="{{ .RelPermalink }}">All posts</a>
         {{ end }}
       </div>
+      {{ with $postsPage }}
+        {{ with .Params.description }}
+          <p class="home-pane-description">{{ . }}</p>
+        {{ end }}
+      {{ end }}
       <ul class="home-pane-list">
         {{ with $postsPage }}
           {{ range first 5 .Pages.ByDate.Reverse }}
@@ -60,6 +65,11 @@
           <a class="home-pane-link" href="{{ .RelPermalink }}">All notes</a>
         {{ end }}
       </div>
+      {{ with $notesPage }}
+        {{ with .Params.description }}
+          <p class="home-pane-description">{{ . }}</p>
+        {{ end }}
+      {{ end }}
       <ul class="home-pane-list">
         {{ with $notesPage }}
           {{ range first 5 .Pages.ByDate.Reverse }}

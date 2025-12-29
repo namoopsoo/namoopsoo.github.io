@@ -13,6 +13,8 @@ All notable changes to this "human experiment" will be documented in this file.
 - First time in New Delhi India (2025-11-28).
 - First time on a wild jeep safari (2025-12-01).
 - Fourth December I made the bigos, our family Xmas dish. (2025-12-22). 
+- Played table top monopoly first time in wow many many years . (2025-12-26).
+- Pull ups, push ups in the snow. Sort of memorable 😆. First time using the outdoor equipment in my neighborhood park gym, after it snowed. 22F, but no wind and luckily the actual equipment did not have snow on it (2025-12-27).
 
 ### Stopped
 - Stopped daily Carb Manager logging during travel to India but also did not resume after returning. Discussed why [here](https://michal.piekarczyk.xyz/post/2025-12-10-not-tracking/) (2025-12-08) .

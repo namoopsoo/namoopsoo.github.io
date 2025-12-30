@@ -211,6 +211,10 @@ And maybe while you are only able to build a correlation machine that helps to s
 
 But also perhaps sometimes it is also fine to do as Feynman says and just *shut up and calculate*!
 
+## Another reflection at the personal
+
+We go through most of our time, the `n of 1` life embracing anecdata and we p-hack and cherry pick evidence all day long. That is, unlike I describe<sup>[8](#references)</sup> about how clinical trials more rigorously ask you to declare your method of evaluation, we are perfectly happy drawing conclusions of the "glass half full" full stop.
+
 
 # References
 1. https://www.reddit.com/r/MachineLearning/comments/r76igz/discussion_rant_most_of_us_just_pretend_to/
@@ -222,6 +226,7 @@ But also perhaps sometimes it is also fine to do as Feynman says and just *shut 
 5. https://store.dailystoic.com/products/meditations
 
 
-... https://www.theatlantic.com/magazine/archive/2025/01/business-school-fraud-research/680669/ 
+6. https://www.theatlantic.com/magazine/archive/2025/01/business-school-fraud-research/680669/ 
 
-x. https://world.hey.com/michal.piekarczyk/data-mercenarism-8d39ca61
+7. https://world.hey.com/michal.piekarczyk/data-mercenarism-8d39ca61
+8. https://michal.piekarczyk.xyz/note/2025-12-27-recruiting-is-not-a-science/

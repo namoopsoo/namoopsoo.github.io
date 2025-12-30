@@ -1,5 +1,5 @@
 ---
 title: "Notes"
-description: "Short notes and quick thoughts I want to keep around."
+description: "Fleeting notes and thoughts that might take shape later."
 ---
 

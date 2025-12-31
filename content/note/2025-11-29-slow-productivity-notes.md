@@ -3,6 +3,11 @@ title: Slow Productivity book notes
 date: 2025-11-29
 ---
 
+## Disconnection From the Familiar
+The p160 - 163, daily rituals, going to some other other place , as a escape place to focus. 
+
+I have stumbled upon this phenomenon too. Traveling has been a favorite way to collect my thoughts not otherwise accessible. Bonus relaxed low stakes environment. 
+
 ## trail of broken urls
 Reading, p181, about this Jarvis, this quote resonates, 
 

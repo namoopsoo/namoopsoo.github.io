@@ -6,9 +6,9 @@ draft: false
 
 *DRAFTING*
 
-I have for a while now learned about how the mainstream deals with knowledge work glut. I was a big fan of David Allen's Getting Sh\*t Done--just kidding ;D it was Getting Things Done<sup>[1](#references)</sup>. And I forget where, but I also came across the notion that all the  pre-digital-era ideas to getting your sh\*t together don't apply since papercuts are nothing compared to a digital sh\*t storm. Ok enough of that bullsh\*t. 
+I have for a while now learned about how the mainstream deals with knowledge work glut. I was a big fan of David Allen's Getting Sh\*t Done--just kidding ;D it was Getting Things Done<sup>[1](#references)</sup>. And I forget where, but I also came across the notion that all the  pre-digital-era ideas to getting your sh\*t together don't apply since paper cuts are nothing compared to a digital sh\*t storm. Ok enough of that bullsh\*t. 
 
-While reading about these civilian  approaches to knowledgework glut, I  have also lived the parallel life of experiencing how the software world has been struggling with it . Most people don't know much about "Agile" but it has been slowly spilling into the mainstream. Cal Newport sits sort of close enough to the software world that he has written, in Slow Productivity<sup>[2](#references)</sup>, sort of borrowing some of the good parts of *Agile*, to help modern knowledge workers with their woes. I have not yet sat down with Cal's book but I have heard him characterize the idea of the infinite work queue quite well, in his podcast. He describes that knowledge work is unlike physical work, where you do precisely what is in front of you, if you are a barista tending to customers at a coffee shop of an auto worker on the classic Ford assembly line working on cars.
+While reading about these civilian  approaches to knowledge work glut, I  have also lived the parallel life of experiencing how the software world has been struggling with it . Most people don't know much about "Agile" but it has been slowly spilling into the mainstream. Cal Newport sits sort of close enough to the software world that he has written, in Slow Productivity<sup>[2](#references)</sup>, sort of borrowing some of the good parts of *Agile*, to help modern knowledge workers with their woes. I have not yet sat down with Cal's book but I have heard him characterize the idea of the infinite work queue quite well, in his podcast. He describes that knowledge work is unlike physical work, where you do precisely what is in front of you, if you are a barista tending to customers at a coffee shop of an auto worker on the classic Ford assembly line working on cars.
 
 Knowledge work is a special kind of hell, where if you are not careful, you will receive an endless inbox of actionable things which are only visible to you. There can be emails to respond to, reports to write and in software an endless list of issues and bugs to triage. Cal thoughtfully borrows the concept of the sprint from "Scrum" which is a flavor of "Agile", where you make your work visible on a "sprint board", because then you can theoretically gate your time, pointing to what you are currently doing in your "sprint" and that anything additional would need to go into a future "sprint" or otherwise would have to "bump" an in transit task, leading to a kind of messy context switch that is the killer of flow and classic waste. In principle, this sounds like a fair improvement upon the knowledge worker status quo, however it comes with a price, in that you may lose all control of your time.
 
@@ -46,6 +46,8 @@ But you might also enter the realm of the tacit dimension, where you may know so
  (requote from  Cal on email [10](#references)  ), Cal quotes a known line from a michael polanyi book,  The Tacit Dimension, 
 
 > “I shall reconsider human knowledge by starting from the fact that we can know more than we can tell."
+
+My coworker summarized this brilliantly also as, *"planning is planning and working is working."* This also reminds me of the handy "driver" analogy I heard in this interview<sup>[11,12](#references)</sup>   between Barbara Oakley and Daphne Gray Grant, about her advice on how writing is like driving a car and between your writer and editor, only one can drive the car at a time, otherwise it gets messy. And I realize similarly, Planning and working are also similarly very different and it's almost like attempting to plan in the level of detail recommended in my first experience of PI Planning felt like attempting to mix these two. You simply can't achieve that level of detail while you are planning and if you try, well you might  as well have spent that time working.
 
 The answer I usually get is the Eisenhower quote about about how, 
 > "plans are worthless, but planning is everything"
@@ -220,3 +222,6 @@ x. https://en.wikipedia.org/wiki/McNamara_fallacy
 9. .... north star concept
 
 10. why can't ai manage my email , Cal Newport , New Yorker
+
+11. my description about writing brain , https://michal.piekarczyk.xyz/post/2023-09-10-summary-learning-how-to-learn-coursera/#if-your-inner-writing-brain-and-editing-brain-are-in-the-same-car-only-one-can-drive-at-any-one-time- 
+12. learning how to learn , https://www.coursera.org/learn/learning-how-to-learn 

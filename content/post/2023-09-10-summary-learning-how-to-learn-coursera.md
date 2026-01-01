@@ -3,7 +3,7 @@ date: 2023-09-10
 title: summary learning how to learn coursera
 ---
 # What
-On Coursera [[Barbara Oakley]] Learning How to Learn
+On Coursera [[Barbara Oakley]] Learning How to Learn<sup>[1](#references)</sup>
 Originally, came across by reading a medium post by [[Aleksa Gordić]]. This was a surprisingly useful meta-course ! (NOTE my mini write-up here is still somewhat in DRAFT mode)
 # In three sentences
 You control the input of learning and the output is a side-effect. But not all strategies are as useful and rote learning is overrated and recall like spaced repetition is where the benefit is. Sleep and taking walks  is the learning multiplier enabling diffuse mode you don't benefit from if you are trying to just focus really hard on something.
@@ -16,7 +16,8 @@ I think [this article](https://www.huffpost.com/entry/the-30-second-habit-that_b
 ### "If your inner writing brain and editing brain are in the same car, only one can drive at any one time". 😀.
 [[Daphne Gray Grant]] , one of the interviews , with this editor, she said to separate the writing from the editing. This is really helpful, because I have spent a lot of time doing both writing and editing at the same time and I realize now that is really slow. Just get it out and then edit later.
 "Write with your diffuse thinking brain and don't write with your editing brain!" I like the way she put it that,
-She had a interesting point too about avoiding [[linear]] thinking also, like write in a [[landscape-paper]] to write more broadly . Yea I remember adapting this a while back from this professor ,
+She had a interesting point too about avoiding [[linear]] thinking also, like write in a [[landscape-paper]] to write more broadly . Yea I remember adapting this a while back from this professor . You could even say that if you are attempting to edit with your writing brain, this is a form of back-seat driving 😅.
+
 ### Take a break !
 Many of the experts interviewed said they benefited from stepping away from problems they were trying to solve that would not yield. Including [[Keith Devlin]],
 And also that [[nose to grind stone]] quote, [[Dr Norman Fortenberry]] , he said , about diffuse thinking that yes you end up often putting your nose to the grindstone but there are people out there walking around without noses, so don't grind too much else you grind away too much. haha 😅. [[turn off your brain]] [[chill out]]
@@ -50,3 +51,6 @@ reminds me of [[instant-gratification-monkey]] and [[Tim Urban]] who had that cr
 {{query (and [[course/Learning How to Learn]] [[take-away]] [[TODO]] ) }}
 
 
+# References
+
+1. https://www.coursera.org/learn/learning-how-to-learn

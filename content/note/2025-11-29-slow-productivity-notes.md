@@ -21,3 +21,5 @@ Up to p188 , Cal desceibes how his sophisticated  movie appreciation is so unrel
 Like Ali Abdaal's take on Hobbies in Feel Good Productivity (George W Bush the oil painter), and Tim Ferris has this notion too. Also Hugh Laurie characer House on House
  multiple tracks , side quests he has, getting out of his duties and making fun of his residents, helps stir the diagnostics. 
 
+## Sustained and specific
+(p205) Yea, efforts in increments. Measured bets. This is where microplanning shines. 

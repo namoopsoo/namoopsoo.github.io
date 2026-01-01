@@ -57,13 +57,13 @@ but this quote feels grossly out of context because software projects are way mo
 To answer the question, I think we are here out of a very strong desire for certainty and a discomfort around not having the certainty, that maybe is difficult to shake for many.
 
 ## Fisticuffs or alignment?
- Martin Fowler's blog on negotiation, Product vs Engineering, https://martinfowler.com/articles/bottlenecks-of-scaleups/03-product-v-engineering.html
+ Martin Fowler's blog post<sup>[3](#references)</sup> on negotiation, Product vs Engineering, 
 
 my notes: "2025-10-23_0837--0400"
 
-Wow this is written well, says what I didnt really realize what I wanted to say, that there are basically two backlogs, product backlog and engineering backlog.
+Wow this is written well, says what I didnt really realize what I wanted to say, that there are basically two roadmaps, product roadmap and engineering roadmap.
 
-But on our team, the problem is deeper that our product backlog isn't even  for customers; it's for the devops team. some  referring to an adjacent concept of buckets also.
+But on our team, the problem is deeper that our product roadmap isn't even  for customers; it's for the devops team. some  referring to an adjacent concept of buckets also.
 
 Our Product Team is not accurately representing the product interests , not engineering interests either. It has been no taxation without representation . As I read about PI planning, the distinction with OKR planning is that "everyone is in the room" so that the meeting represents all the interests at play.
 
@@ -118,21 +118,28 @@ Passive agressive is the operative word here w.r.t. the sprint backlog.
 
 #### First PI Planning experience 
 
-Everyone participated hoping it would finally be a team effort, and then at the end the  product arm of the team rearranges the results , sorting projects by  their own preferrence. 
+Everyone participated hoping it would finally be a team effort, and then at the end the  product arm of the team rearranges the results , sorting projects by  their own preference. 
 
-That final moment wqs quite eye opening and the PI planning arguably pointless.
+That final moment was quite eye opening and the PI planning arguably pointless.
 
 I suppose the PI Planning process enables this kind of scenario , but I understand from this video, recently, the theory and practice, can diverge a lot. 
 
 The quote was, it is like Strawberry Jam, the further it spreads, the thinner it gets.
 
 
-And lead-by-backlog was not the originalintent.
+And lead-by-backlog was not the original intent.
 
  And I really love reading this Google SWE culture document because it reminds me of the good old days of working projects at past companies .
 
+## The stuff of Thought
+One of the sort of chicken and egg questions that came up on the team, recently during the time in between the first and second PI planning sessions, is that pi planning , tries to perform a kind of exercise called "capacity planning", filling all of the available time available. 
+
+But this means there is no time to write proposals so the team is stuck with only the ideas from the point of view of external parties. You benefit from getting proposals from all the perspectives and not just the outside looking in ones.
+
 ## BYOA
-bring your own agile. if someone offers you a SAFe space, jyst say thanks but no thanks 😂
+bring your own agile. if someone offers you a SAFe space, just say thanks but no thanks 😂.
+
+I think one of the principles that the SAFe elephant breaks, while it runs through the agile china shop, is that it arrives especially when it is not invited. The premise of agile is that a group of people who work together will be best positioned to figure out their working pattern. And SAFe pi planning smuggles in a pre baked--*half baked*--method of gantt-charting each sprint under the promise of connecting together dependencies between multiple teams will lead to a superior result.
 
 ## flip predictability on its head
 

@@ -137,9 +137,9 @@ One of the sort of chicken and egg questions that came up on the team, recently 
 But this means there is no time to write proposals so the team is stuck with only the ideas from the point of view of external parties. You benefit from getting proposals from all the perspectives and not just the outside looking in ones.
 
 ## BYOA
-bring your own agile. if someone offers you a SAFe space, just say thanks but no thanks 😂.
+Bring your own agile. If someone offers you a SAFe™ space, just say thanks but no thanks 😂. If your team has been coerced into SAFe™, then that's already evidence your company isn't listening to its engineering teams, so reasoning your way out is unlikely to work, but according to Thoughtworks, adoption is on the rise<sup>[13](#references)</sup>, so there may be no escape soon.
 
-I think one of the principles that the SAFe elephant breaks, while it runs through the agile china shop, is that it arrives especially when it is not invited. The premise of agile is that a group of people who work together will be best positioned to figure out their working pattern. And SAFe pi planning smuggles in a pre baked--*half baked*--method of gantt-charting each sprint under the promise of connecting together dependencies between multiple teams will lead to a superior result.
+I think one of the principles that the SAFe™ elephant breaks, while it runs through the agile china shop, is that it arrives especially when it is not invited. The premise of agile is that a group of people who work together will be best positioned to figure out their working pattern. And SAFe™ pi planning smuggles in a pre baked--*half baked*--method of gantt-charting each sprint under the promise of connecting together dependencies between multiple teams will lead to a superior result.
 
 ## flip predictability on its head
 
@@ -155,6 +155,11 @@ PI planning is like a shitty OKR.
 funny in this video<sup>[4](#references)</sup>, at the end the guest says PI planning is like OKRs but with everyone involved, discussing it. I think, ok well, that would be cool but why not just have the OKRs plus negotiation? PI planning has all other weirdness to it. 
 
 law of raspberry jam. further it spreads, thinner it gets 😂
+
+## Less is More
+Possibly the simplest reply to all of the ceremony and rhapsody around the religion of process is to plan in small increments, and treat everything as an experiment and learning experience. 
+
+Thoughtworks captures the planning hubris with an iceberg<sup>[14](#references)</sup>  as a clever analogy. And their recommendation is incremental value and experimentation.
 
 
 ## Kant
@@ -213,7 +218,7 @@ You shouldnt   defer thinking about what problems to solve to your product team 
 1. Getting Things Done, David Allen
 2. Slow Productivity
 3. Martin Fowler's blog https://martinfowler.com/articles/bottlenecks-of-scaleups/03-product-v-engineering.html
-4. https://youtu.be/jHRsBDC5E9Q , Yuval Yeret and Ryan Ripley, "Breaking the SAFe: Deconstructing PI Planning"
+4. https://youtu.be/jHRsBDC5E9Q , Yuval Yeret and Ryan Ripley, "Breaking the SAFe™: Deconstructing PI Planning"
 
 5. Extreme Gohorse
 
@@ -232,3 +237,8 @@ x. https://en.wikipedia.org/wiki/McNamara_fallacy
 
 11. my description about writing brain , https://michal.piekarczyk.xyz/post/2023-09-10-summary-learning-how-to-learn-coursera/#if-your-inner-writing-brain-and-editing-brain-are-in-the-same-car-only-one-can-drive-at-any-one-time- 
 12. learning how to learn , https://www.coursera.org/learn/learning-how-to-learn 
+
+
+13. https://www.thoughtworks.com/en-us/radar/techniques/safe
+
+14. https://www.thoughtworks.com/insights/blog/digital-transformation/how-value-slices-can-fix-your-digital-transformation

@@ -18,4 +18,39 @@ Not yet transitioned to vqlue based cqre, so many providers are incentivized to 
 
 Also, insurance still focuses on reactive care as opposed to prefeneative. Maybe outcome based medicine could help move the needle?
 
+## The Comfort Crisis
+As the book of the same name ,  describes, https://eastermichael.com/book/ , that which feels good in the moment and makes our lives easier, perversely , hurts us in the long run.
+
+This category is probably not narrow enough but it is a good gateway into others, such as, anything from , 
+
+### the quick dopamine hits 
+
+1) ultra processed food
+2) easy entertainment, 
+3) easy infotainment 
+
+### but also things that make us just more comfortable
+4) comfortable shoes?
+
+### dumber?
+5) the GPS?
+8) generative AI?
+
+### save time?
+6) fast fashion?
+7) fast food?
+
+And maybe a lot of this is arguably, saving us time and money so we can focus on what "really matters". And save for a zombie apocalypse or an EMP from the sun toasting all electronics , maybe it is okay not to go back to 
+(a) hunting and gathering
+(b) hand washing your clothes
+(c) foregoing cars, walking everywhere
+
+And for sure most of modern medicine was a huge win .
+(local anesthesia, antibiotics !)
+
+But there are for sure some technologies that arguably cut out too much "effort" out of life and make us less hardy, less pain tolerant?
+
+What are they?
+
+
 

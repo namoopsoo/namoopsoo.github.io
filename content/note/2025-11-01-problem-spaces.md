@@ -1,4 +1,4 @@
----
+    ---
 title: What are the important problems to solve these days?
 date: 2025-11-01
 ---
@@ -52,5 +52,9 @@ But there are for sure some technologies that arguably cut out too much "effort"
 
 What are they?
 
+## What is the stuff of life?
+> "Bringing the new physics of life to problems of AI may not only help researchers predict what software engineers can build; it may also reveal the limits of trying to capture life’s essential character in silicon."
+
+( from, piece by Adam Frank, "The Truth Physics Can No Longer Ignore"  )
 
 

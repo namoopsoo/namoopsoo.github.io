@@ -111,6 +111,10 @@ All notable changes to this "human experiment" will be documented in this file.
 - First attempt to buzz cut my own hair.
 - Went back to using non-compostable trash bags again  😐️. Had tried Cleanomic compostable trash bags for many months but they are just not rugged enough yet. (2024-04-19)
 
+## 2025-03
+### Logged 
+- Sleeping Giant State Park, hike with Connecticut friends (2025-03-08).
+
 ## 2024-11
 ### Completed 
 - Finished a full year of getting daily morning outdoor sunlight (Thanks [Andrew Huberman](https://ai.hubermanlab.com/s/43X8TsN1)).
@@ -121,6 +125,7 @@ All notable changes to this "human experiment" will be documented in this file.
 ## 2024-09
 ### Logged
 - First [escape room](https://theescapegame.com/brooklyn/) experience. Have to thank my mom for organizing this !  (2025-09-24).
+- Woodstock VA, perhaps furthest west I have been in Virginia so far (2024-09-17).
 
 ## 2024-07
 ### First

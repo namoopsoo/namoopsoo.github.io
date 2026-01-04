@@ -24,5 +24,22 @@ Like Ali Abdaal's take on Hobbies in Feel Good Productivity (George W Bush the o
 ## Sustained and specific
 (p205) Yea, efforts in increments. Measured bets. This is where microplanning shines. 
 
+
 ## Dont quit  your dayjob
 p206 Cussler, Crighton, Grisham, 3 exzmplss of writers that only quit their day jobs after their side hussles started proving profitable.
+
+### Focused side projects
+And they are used as examples of making that shift, by doing that energizing self driving passion effort in their spare time. This story is a throughline in history I think that the deep stuff takes time and typically you cant get paid for it early on. 
+
+Plenty examples of this I hear all the time. Can collect them elsewhere. 
+
+## Set up the story  
+I like the p213 description of how McPhee cut up his notes into scraps of paper and sort of story-boarded  the components, rearranging them until it flowed at a high level , bird's eye perspective. He did it low tech but I wonder how people do that today.
+ 
+
+
+
+
+
+
+

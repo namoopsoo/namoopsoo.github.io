@@ -5,6 +5,10 @@ robots: noindex, nofollow
 
 All notable changes to this "human experiment" will be documented in this file.
 
+## 2026-01
+### Firsts
+- First try apple continuous camera for laptop-mind-phone-snap document batch scanning . Saves so much time! (2026-01-03).
+
 ## 2025-12
 ### Changed
 - First time, tried making chicken soup by first roasting the chicken (450F 30min) before putting it into the soup. (2025-12-10).

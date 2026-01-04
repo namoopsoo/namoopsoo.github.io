@@ -27,6 +27,10 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Returned
 - Resumed office commutes after 4 years! Because my company now has a proper office with coffee and water that doesnt require notification (2025-12-07).
 
+### First
+- First time our smaller brown lipped snail fell asleep outside of their terrarium! (2025-12-19).
+- First time our smaller brown lipped snail had wheel time (2025-12-31).
+
 ## 2025-11
 ### Broke
 - Leaned on and broke a table of my moms, 😅, though to be fair, we were both criticizing, the manufacturers crappy construction choices from the beginning (2025-11-01).

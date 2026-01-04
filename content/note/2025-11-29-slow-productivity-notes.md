@@ -33,6 +33,9 @@ And they are used as examples of making that shift, by doing that energizing sel
 
 Plenty examples of this I hear all the time. Can collect them elsewhere. 
 
+Also Andrew wiles story too. He setup 7 years of unpublished research and trickled it out to be able to focus better on his Fermat's Last Theorem work in secret in his attic.
+
+
 ## Set up the story  
 I like the p213 description of how McPhee cut up his notes into scraps of paper and sort of story-boarded  the components, rearranging them until it flowed at a high level , bird's eye perspective. He did it low tech but I wonder how people do that today.
  

@@ -35,6 +35,8 @@ Plenty examples of this I hear all the time. Can collect them elsewhere.
 
 Also Andrew wiles story too. He setup 7 years of unpublished research and trickled it out to be able to focus better on his Fermat's Last Theorem work in secret in his attic.
 
+### Compound interest
+Dont think Cal phrases it like this but the stories of all the sustained efforts in his book feel like setting up for compound interest. Actually he does write about betting on yourself , that you make investments in yourself thqt may or may not pay off. But then later, you can reinvest the gains little by little taking what you do and if you learn from it, then it feels like compounding.
 
 ## Set up the story  
 I like the p213 description of how McPhee cut up his notes into scraps of paper and sort of story-boarded  the components, rearranging them until it flowed at a high level , bird's eye perspective. He did it low tech but I wonder how people do that today.

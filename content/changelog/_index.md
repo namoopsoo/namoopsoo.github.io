@@ -8,6 +8,7 @@ All notable changes to this "human experiment" will be documented in this file.
 ## 2026-01
 ### Firsts
 - First try apple continuous camera for laptop-mind-phone-snap document batch scanning . Saves so much time! (2026-01-03).
+- Perhaps first time I used Strava while ice skating? There was some GPS drift and I only had idea to record half way in but ended up being 2.21 miles in 29 min, so 4.6mi/hour, oddly slow haha (2026-01-04).
 
 ## 2025-12
 ### Changed

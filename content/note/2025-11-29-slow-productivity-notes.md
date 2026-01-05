@@ -41,6 +41,15 @@ Dont think Cal phrases it like this but the stories of all the sustained efforts
 ## Set up the story  
 I like the p213 description of how McPhee cut up his notes into scraps of paper and sort of story-boarded  the components, rearranging them until it flowed at a high level , bird's eye perspective. He did it low tech but I wonder how people do that today.
  
+## drip drip
+p219, I like this summary below, addressing, not just that there is daily pressure to be "pseudo-productive"--*aka look busy*--but more importantly that it sucks away your energy you would like to use toward meaningful work. But(!), if you can defend just a little bit of your time every day consistently, then maybe you can take that daily win as a peace of mind against the anxiety of losing a day, keeping instead a perspective of what thoss little "drips" can amount to over time. Sort of *biding your time* perhaps. 
+> Slow productivity, more than anything else, is a plea to step back from the frenzied activity of the daily grind. It's not that these efforts are arbitrary: our anxious days include tasks and appointments that really do need to get done. But once you realize, as McPhee did, that this exhausted scrambling is often orthogonal to the activities that matter, your perspective changes. A slower approach to work is not only feas-ible, but is likely superior to the ad hoc pseudo-productivity that dictates the professional lives of so many today. If you collect modest drops of meaningful effort for 365 days, McPhee reminds us, you'll end the year with a bucket that's pretty damn full. This is what ultimately matters: where you end up, not the speed at which you get there, or the number of people you impress with your jittery busyness along the way.
+
+
+
+
+
+
 
 
 

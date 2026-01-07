@@ -20,6 +20,11 @@ p41, referrals and prior authorizations, to pay less for services as a respknse 
 More paperwork for clinicians. And more hoops for patients. 
 
 
+## churn
+p42, hmm, plan churn, disincentivizes insurers from helping with preventative care! some other insurer getting bentfit of better outcome. yikes.
+
+MA: 8% to 33% churn.
+
 
 
 

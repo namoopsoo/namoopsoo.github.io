@@ -14,6 +14,11 @@ so all those would be out of network.
 p40, cost sharing like HDHP, intended to reduce cost by getting people to shop around more. RAND, findings, less money spent but not by shopping around but by getting less care .
 
 
+## managed care
+p41, referrals and prior authorizations, to pay less for services as a respknse to more services and higher costs in 1970s and 1980s?? HMOs. And Medicare Advantage. 
+
+More paperwork for clinicians. And more hoops for patients. 
+
 
 
 

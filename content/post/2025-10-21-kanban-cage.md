@@ -242,3 +242,9 @@ x. https://en.wikipedia.org/wiki/McNamara_fallacy
 13. https://www.thoughtworks.com/en-us/radar/techniques/safe
 
 14. https://www.thoughtworks.com/insights/blog/digital-transformation/how-value-slices-can-fix-your-digital-transformation
+
+15. top down and bottom up OKRs, 
+16. other meaning of topdown, https://open.spotify.com/track/17MK2u7iHFpNb3tPuJnUdw?si=P0q6ooVVTBiRYMAyT9L9ng from Channel Tres
+
+
+

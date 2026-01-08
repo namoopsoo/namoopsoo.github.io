@@ -300,3 +300,5 @@ All notable changes to this "human experiment" will be documented in this file.
 
 first pro soccer game. Liberty, 2025
 
+Post shoe goo photos for duc shoe and also air mattress!
+

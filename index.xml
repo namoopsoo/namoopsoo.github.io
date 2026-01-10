@@ -8,6 +8,13 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>hide distracting items</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-01-10-hide-distracting-items/</link>
+      <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-01-10-hide-distracting-items/</guid>
+      <description>Wow, today I was learning about the timeline of Microsoft adding Linux support on Windows, reading this article, [1], on my phone, but I got distracted. I was trying to long-press one of the links in the article, but this news website, bless their hearts, is click harvesting, so was preventing my long-click trying to take a peak at a link prior to clicking it&amp;ndash;since don&amp;rsquo;t click on shift is just 101 against phishing.</description>
+    </item>
+    <item>
       <title>notes-healthcare-handbook</title>
       <link>https://michal.piekarczyk.xyz/note/2026-01-01-notes-healthcare-handbook/</link>
       <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>

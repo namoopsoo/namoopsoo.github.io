@@ -23,7 +23,8 @@ def bake_options():
                     'help': 'Append instead of creating a new file. (If the file already exists, you will get an error.)'},],
             [['--images'],
                 {'action': 'store',
-                    'help': 'List of images to include, separated by a "," comma without spaces surrounding the comma'},],
+                    'nargs': '+',
+                    'help': 'List of images to include, separated by spaces (absolute paths).'},],
             [['--out-dir'],
                 {'action': 'store',
                     'help': 'Target directory. Optional if providing "--existing-file"'},],
@@ -289,7 +290,12 @@ def main():
             print(f"oops forgot to pass --images in --append-only mode.")
             return
 
-        images = [x.replace("\\", "").strip() for x in input_images.split(",")]
+        if isinstance(input_images, str):
+            image_entries = input_images.split(",")
+        else:
+            image_entries = input_images
+
+        images = [x.replace("\\", "").strip() for x in image_entries]
         base_name = Path(existing_file).stem
         s3fn_vec = upload_images_s3(images, base_name, dry_run=dry_run)
         image_html = make_image_html(s3fn_vec)

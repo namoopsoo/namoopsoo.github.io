@@ -44,5 +44,7 @@ Ah, ok reading more on that kff.org website, so , ok the other 46% that does not
 Dang, 
 > CBO projects that between 2021 and 2032, net Medicare spending—after subtracting premiums and other offsetting receipts—will grow as a share of both the federal budget, from 10.1% to 17.8%, and the nation's economy, from 3.1% to 4.3% of gross domestic product (GDP). Projected spending growth for Medicare is due in part to growing enrollment in Medicare related to the aging of the population, increased use of services and intensity of care, and rising health care costs.
 
-
+#### Fascinating, so Part B outpatient services gobbling up costs , and Part A, emergency services going down, 
+more from the kff.org link, 
+> Spending on benefits under each part of Medicare (A, B, and D) increased in dollar terms between 2011 and 2021, but the distribution of total benefit payments by part has changed over time. Spending on Part B benefits, including physician services, hospital outpatient services, physician-administered drugs, and other outpatient services, increased from 41% in 2011 to 48% in 2021, and now accounts for the largest share of total spending on Medicare benefits (Figure 4). The share of total spending on Part A benefits (mainly hospital inpatient services) decreased from 47% to 39%, reflecting a shift from inpatient to outpatient services.
 

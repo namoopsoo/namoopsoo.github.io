@@ -37,7 +37,9 @@ Published August 20, 2019.
 https://www.kff.org/medicare/issue-brief/the-facts-on-medicare-spending-and-financing/
 
 
+Ah, ok reading more on that kff.org website, so , ok the other 46% that does not come from pqyroll taxes or premiums , comes from general revenue. (probably just printing fresh debt?)
 
+> "Funding for Medicare, which totaled $888 billion in 2021, comes primarily from general revenues (46%), payroll tax revenues (34%), and premiums paid by beneficiaries (15%)."
 
 
 

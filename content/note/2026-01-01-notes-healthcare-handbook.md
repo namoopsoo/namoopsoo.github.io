@@ -26,6 +26,15 @@ p42, hmm, plan churn, disincentivizes insurers from helping with preventative ca
 MA: 8% to 33% churn.
 
 
+## only 15% of payroll taxes fund medicare these days
+p47, wow! 
+> "since 1965, spending has far exceeded whqt beneficiaries have cojtributed in taxes."
+
+Cubanski J, Neuman T, Freed
+M. The facts on Medicare spending and financing.
+Kaiser Family Foundation.
+Published August 20, 2019.
+https://www.kff.org/medicare/issue-brief/the-facts-on-medicare-spending-and-financing/
 
 
 

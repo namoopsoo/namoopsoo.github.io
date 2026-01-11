@@ -8,18 +8,18 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>One Level of Abstraction at a Time</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-01-10-dont-go-insane/</link>
+      <pubDate>Sun, 11 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-01-10-dont-go-insane/</guid>
+      <description>Sometimes the experience of overwhelm looks like bouncing between, actively being in the weeds doing a thing, but suddenly, thinking, &amp;ldquo;hmm is this the right thing to be doing? Maybe I should do more big picture thinking&amp;rdquo;, and then doing some big picture thinking, but getting kind of caught up in some details of a priority that comes up, and thinking, &amp;ldquo;oh wow this looks important, I should probably stop planning and thinking and just do this thing now because all this strategic thinking just feels like a waste of time&amp;rdquo; .</description>
+    </item>
+    <item>
       <title>hide distracting items</title>
       <link>https://michal.piekarczyk.xyz/note/2026-01-10-hide-distracting-items/</link>
       <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2026-01-10-hide-distracting-items/</guid>
       <description>Wow, today I was learning about the timeline of Microsoft adding Linux support on Windows, reading this article1, on my phone, but I got distracted. I was trying to long-press one of the links in the article, but this news website, bless their hearts, is click harvesting, so was preventing my long-click trying to take a peak at a link prior to clicking it&amp;ndash;since don&amp;rsquo;t click on shift is just 101 against phishing.</description>
-    </item>
-    <item>
-      <title>One Level of Abstraction at a Time</title>
-      <link>https://michal.piekarczyk.xyz/note/2026-01-10-dont-go-insane/</link>
-      <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://michal.piekarczyk.xyz/note/2026-01-10-dont-go-insane/</guid>
-      <description>Sometimes the experience of overwhelm looks like bouncing between, actively being in the weeds doing a thing, but suddenly, thinking, &amp;ldquo;hmm is this the right thing to be doing? Maybe I should do more big picture thinking&amp;rdquo;, and then doing some big picture thinking, but getting kind of caught up in some details of a priority that comes up, and thinking, &amp;ldquo;oh wow this looks important, I should probably stop planning and thinking and just do this thing now because all this strategic thinking just feels like a waste of time&amp;rdquo; .</description>
     </item>
     <item>
       <title>continuity camera</title>

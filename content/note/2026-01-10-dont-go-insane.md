@@ -1,6 +1,6 @@
 ---
 title: One Level of Abstraction at a Time
-date: 2026-01-10
+date: 2026-01-11
 ---
 
 Sometimes the experience of overwhelm looks like bouncing between, actively being in the weeds doing a thing, but suddenly, thinking, "hmm is this the right thing to be doing? Maybe I should do more big picture thinking", and then doing some big picture thinking, but getting kind of caught up in some details of a priority that comes up, and thinking, "oh wow this looks important, I should probably stop planning and thinking and just do this thing now because all this strategic thinking just feels like a waste of time" . 😂 

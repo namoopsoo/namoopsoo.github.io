@@ -41,6 +41,8 @@ Ah, ok reading more on that kff.org website, so , ok the other 46% that does not
 
 > "Funding for Medicare, which totaled $888 billion in 2021, comes primarily from general revenues (46%), payroll tax revenues (34%), and premiums paid by beneficiaries (15%)."
 
+Dang, 
+> CBO projects that between 2021 and 2032, net Medicare spending—after subtracting premiums and other offsetting receipts—will grow as a share of both the federal budget, from 10.1% to 17.8%, and the nation's economy, from 3.1% to 4.3% of gross domestic product (GDP). Projected spending growth for Medicare is due in part to growing enrollment in Medicare related to the aging of the population, increased use of services and intensity of care, and rising health care costs.
 
 
 

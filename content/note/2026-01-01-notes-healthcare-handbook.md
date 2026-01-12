@@ -67,3 +67,13 @@ p 53, hmm ESI was 70% of insured individuals in 2009 and 50% in 2019, absorbed b
 
 ##   employers like ESI because of tax benefit 🤦‍♂️
 p54 What Employer pays employees through insurance premium, they can deduct from their corporate taxes and so they can keep the total compensation package to an employee the same but less taxes if they put some into insurance  premiums as opposed to the wages. 🤯
+
+
+p54 however ESI is required by law for companies with ovrr 50 head count. ok. 
+
+insurers like it because the pool will be relatively healthy.
+
+Hmm, note here that health care costs are rising and we see wages lagging behind premiums . 
+
+
+ 

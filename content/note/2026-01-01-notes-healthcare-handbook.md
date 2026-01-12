@@ -48,3 +48,18 @@ Dang,
 more from the kff.org link, 
 > Spending on benefits under each part of Medicare (A, B, and D) increased in dollar terms between 2011 and 2021, but the distribution of total benefit payments by part has changed over time. Spending on Part B benefits, including physician services, hospital outpatient services, physician-administered drugs, and other outpatient services, increased from 41% in 2011 to 48% in 2021, and now accounts for the largest share of total spending on Medicare benefits (Figure 4). The share of total spending on Part A benefits (mainly hospital inpatient services) decreased from 47% to 39%, reflecting a shift from inpatient to outpatient services.
 
+## medicaid is paid similarly to MA
+p50, medicaid managed care plans, are paid, a flat annual fee per beneficiary, in a particular state,  and hmm, then they set their own rates with providers.
+
+And up to providers to take or not take medicaid, though not sure how that is switched on/off yet.
+
+Hmm, hospitals get more? 
+Cunningham P, Rudowitz
+R, Young K, et al. "Understanding Medicaid hospital payments and the impact of recent policy changes." Kaiser Family Foundation. Published June 9, 2016. https://www.kff.org/report-section/understanding-medicaid-hospital-payments-and-the-impact-of-recent-policy-changes-issue-brief/
+
+Kaiser Family Foundation.
+Federal Medical Assistance Percentage (FMAP) for Medicaid and multiplier. 2022.
+https://www.kff.org/medicaid/state-indicator/ federal-matching-rate-and-multiplier/?currentTimeframe=0&sort-Model=%7B%22colId%22:%22Location%22,%22sort%22:%22asc%22%7D
+
+
+

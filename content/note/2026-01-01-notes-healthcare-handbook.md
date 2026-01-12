@@ -62,4 +62,8 @@ Federal Medical Assistance Percentage (FMAP) for Medicaid and multiplier. 2022.
 https://www.kff.org/medicaid/state-indicator/ federal-matching-rate-and-multiplier/?currentTimeframe=0&sort-Model=%7B%22colId%22:%22Location%22,%22sort%22:%22asc%22%7D
 
 
+## effeft of ACA on Employer Sponsored Insurance
+p 53, hmm ESI was 70% of insured individuals in 2009 and 50% in 2019, absorbed by ACA marketplace (or medicaid?).
 
+##   employers like ESI because of tax benefit 🤦‍♂️
+p54 What Employer pays employees through insurance premium, they can deduct from their corporate taxes and so they can keep the total compensation package to an employee the same but less taxes if they put some into insurance  premiums as opposed to the wages. 🤯

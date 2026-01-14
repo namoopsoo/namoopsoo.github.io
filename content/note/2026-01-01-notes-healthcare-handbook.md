@@ -81,3 +81,8 @@ p 56, . They are one of the new (?)  insurer plus provider models .
 
 ## oregon medicaid experiment
 p57 lottery, organic experiment, 
+mixed results
+
+Baicker K, Finkelstein A, Allen H, et al. Oregon health insurance experiment-results.
+National Bureau of Economic Research. Accessed April 25, 2022. https://www.nber.org/programs-projects/projects-and-centers/oregon-health-insurance-experiment/ oregon-health-insurance-experiment-results
+

@@ -76,4 +76,8 @@ insurers like it because the pool will be relatively healthy.
 Hmm, note here that health care costs are rising and we see wages lagging behind premiums . 
 
 
- 
+## Kaiser and capitation plans
+p 56, . They are one of the new (?)  insurer plus provider models . 
+
+## oregon medicaid experiment
+p57 lottery, organic experiment, 

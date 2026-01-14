@@ -81,7 +81,7 @@ p 56, . They are one of the new (?)  insurer plus provider models .
 
 ## oregon medicaid experiment
 p57 lottery, organic experiment, 
-mixed results
+mixed results. More access to care, but also no improvement in health outcomes (lipid markers), however some point out it was too early to tell that which takes a long time to measure. And short term, sounds like people were more financially stable, which sounds great. There was increased use of Emergency use even for non emergency needs, but that can happen anyway with private insurance too. Maybe it takes quite a lot more effort to solve that sub-problem, especially since there is a stigma against preventative care. 
 
 Baicker K, Finkelstein A, Allen H, et al. Oregon health insurance experiment-results.
 National Bureau of Economic Research. Accessed April 25, 2022. https://www.nber.org/programs-projects/projects-and-centers/oregon-health-insurance-experiment/ oregon-health-insurance-experiment-results

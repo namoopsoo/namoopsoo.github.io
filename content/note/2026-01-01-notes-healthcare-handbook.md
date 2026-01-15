@@ -90,3 +90,10 @@ National Bureau of Economic Research. Accessed April 25, 2022. https://www.nber.
 ## uninsured: buy now pay later
 p60, $42.4 billion for uncompensated, non reimbursed spending, for uninsured. 20% providers ate, 2017, rest government ate it. Authors argue the country chooses to not pay for universal coverage but it is kickijg the can down the road and medicaid ends up footing the bill anyway but probably higher as Emergency dollars.
 
+## Monies
+p67 nice cashflow charts , for the 4 trillion. Uwe Reinhardt. 
+
+
+
+
+

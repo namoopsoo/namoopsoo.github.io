@@ -93,6 +93,22 @@ p60, $42.4 billion for uncompensated, non reimbursed spending, for uninsured. 20
 ## Monies
 p67 nice cashflow charts , for the 4 trillion. Uwe Reinhardt. 
 
+Wow, 5% of people initiated   50% of  total spend?! three million people , average of $127,284 a year. wow. 
+
+Bottom 50%: just 3.2% of spend. 
+
+But the growth is decelerating?
+
+Figure 3.3
+Wager E, Amim K. How has U.S. spending on healthcare changed over time?
+Peterson-KFF Health System Tracker.
+Published February 25, 2022. https:// www.healthsystemtracker.org/chart-
+collection/u-s-spending-healthcare-
+changed-time/
+#:~:text=From%201970%20through%2
+
+Mayhe slowijg, but still faster than rest of economy
+
 
 
 

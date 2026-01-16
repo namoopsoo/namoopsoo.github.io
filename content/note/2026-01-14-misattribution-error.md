@@ -1,5 +1,5 @@
 ---
-title: Armpits of Giants: A Fundamental Mis-Attribution Error
+title: "Armpits of Giants: A Fundamental Mis-Attribution Error"
 date: 2026-01-14
 ---
 It doesn't feel great when you get a feeling those closest to you are not giving you credit for your ideas but maybe that is usually not the whome picture.

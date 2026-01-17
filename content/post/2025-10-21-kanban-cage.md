@@ -205,14 +205,17 @@ You shouldnt   defer thinking about what problems to solve to your product team 
 
 ## What happened after our second attempt at pi planning
 
-This time around we wanted to prepare better, instead of being caught by surprise. Indeed fool me once shame on me. So second time around the team put together their initiatives in a clean way on a spreadsheet and everyone voted on initiatives.  (Well the product team refused to participate in the voting and perhaps that was a red flag.) And once again during our pi planning session, capacity planning threw out all of the initiatives the team came up with internally. 
+This time around we wanted to prepare better, instead of being caught by surprise. Indeed fool me once shame on me. So second time around the team put together their initiatives in a clean way on a spreadsheet and everyone voted on initiatives.  (Well the product team refused to participate in the voting and perhaps that was a red flag.) 
 
-And the team scrambled together to try to descope the top down initiatives to desperately try to make some "official" breathing room for some smidgens of internal work.
+However after we started putting together the verbage for our initiatives, we almost accidentally learned that our upper management already held their roadmap prioritization meeting and so essentially our initiatives would yet again be at the bottom of the pile.
 
-I'm writing this particular bit on a saturday after just fixing a production issue related to some tech debt we didn't get a chance to address earlier. My lesson yet again is that if the system you use is rigged so the house always wins, you can't win. The house in this case insists you only work on what it asks you to work on, but if you want the product the team is building to be successful, you need to incorporate all the sharpening-the-saw activities as well, paying down the tech debt as early as possible. But if the house wants your work to be visible, so it can double check that you are only doing what was asked of you, then that is the essence of the Kanban Cage. You have no choice but to work outside the system. 
+And once again during our pi planning session, the capacity planning exercise threw out all of the initiatives the team came up with internally. 
+
+The team scrambled together to try to de-scope the top down initiatives to desperately try to make some "official" breathing room for some smidgens of internal work. 
+
+I'm writing this particular bit on a Saturday after just fixing a production issue related to some tech debt we didn't get a chance to address earlier. My lesson yet again is that if the system you use in your team or company is rigged so the house always wins, you can't win by playing the house rules by definition--tautologically speaking. The house in this case insists you only work on what it asks you to work on, but if you want the product that the team is building to be successful, you need to incorporate all the sharpening-the-saw activities as well, paying down the tech debt as early as possible, and pay attention to all the best ideas, regardless of where they come from (And chances are the best ideas will come from a mix of both top down and bottom up initiatives). But if the house wants your work to be visible, so it can look over your shoulder to see that you are only doing what was asked of you, then that is the essence of the Kanban Cage. You have no choice but to work outside the system. 
 
 Maybe the analogy of the shadow economy is appropriate here ? Why is there a shadow economy. Maybe there is an economics answer to some of these problems in knowledge work?
-
 
 # Summary of my points
 

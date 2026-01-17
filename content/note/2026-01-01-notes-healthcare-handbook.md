@@ -117,6 +117,14 @@ Do people treat insurance like a endless buffet like some may imagine?
 
 Personally, on a HDHP, Im much more penny pinching with utilizing care because I know it is my money but  I realize that probably meqns I don't make use of preventative care which could end up being a overall savings in the long run!
 
+## real cost is not known
+p 71 quote from RWJF
+
+> Little is known about how prices are derived. The answer to the basic question of what health care - costs often is unknown. Payers see a bill, but generally are given very little detail abour how prices in that bill are determined 
+Medpac. Skilled nursing facility services payment system.
+Revised November, 2021.
+https://www.medpac.gov/wp-content/ uploads/2021/11/medpac payment basics 21 snf final sec.pdf
+
 
 
 

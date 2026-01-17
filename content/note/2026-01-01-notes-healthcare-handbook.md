@@ -110,6 +110,13 @@ changed-time/
 Mayhe slowijg, but still faster than rest of economy
 
 
+## skin in the game and moral hazards
+p 70 , so does the style of insurance, where you don't see the piles of  money  moving around when you participate in it, make you more wreckless? Is it like a seatbelt effect? 
+
+Do people treat insurance like a endless buffet like some may imagine?
+
+Personally, on a HDHP, Im much more penny pinching with utilizing care because I know it is my money but  I realize that probably meqns I don't make use of preventative care which could end up being a overall savings in the long run!
+
 
 
 

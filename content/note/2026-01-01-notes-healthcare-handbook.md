@@ -126,5 +126,11 @@ Revised November, 2021.
 https://www.medpac.gov/wp-content/ uploads/2021/11/medpac payment basics 21 snf final sec.pdf
 
 
+## healthcare consumer choices are not like the rest of the economy consumer choices
+p 73 
 
+I have been thinking about this whole, "knowing the pricetag in advance " thing and the authors have a good point about this, with a hypothetical example of a 75 year old mother at a hospital with an inflamed gall bladder. They write, 
+> When you buy groceries, all of your spending is known in ad-vance, but that's not the case with health care. Further, even if you could know how much it would cost you ahead of time, would that change her or your choices? Would she decide not to have gallbladder sur-gery? Would she risk leaving for another hospital? 
+
+If anything maybe it is like Uber Lyft surge pricing?
 

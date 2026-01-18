@@ -134,3 +134,6 @@ I have been thinking about this whole, "knowing the pricetag in advance " thing 
 
 If anything maybe it is like Uber Lyft surge pricing?
 
+The authors say buying health insurance is therefore not really like buying broccoli like Justice Anthony Scalia has compared it to.
+
+

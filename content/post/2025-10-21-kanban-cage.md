@@ -202,6 +202,14 @@ You shouldnt   defer thinking about what problems to solve to your product team 
 
 (Last bit inspired by https://youtu.be/eIoohUmYpGI ) 
 
+## What would a Nobel Laureate say?
+I recently made this discovery that Daniel Kahneman wrote about planning in his Thinking Fast and Slow, discusing it as , the planning fallacy. And the reason why I looked was because one of my skip level managers has mentioned he is a fan of Kahneman 's book many times and he is also a big fan of PI Planning, so I was curious to look into this to maybe understand the connection better. My manager here, quotes Eisenhower too often, "all plans fail but planning is everything," so I knew Kahneman's point would probably be more nuanced. 
+
+So I learned that in his planning fallacy chapter, Kahneman relates to an anecdote of when he was involved in helping to build a course and the people involved estimated it would take two years, three years tops. He asked them to dig around to get some data about what comparable efforts took. He learned, from them, that of the 50% efforts they looked at that didnt fail, they took over 8 years and even some over 10 years. But then asking them how will they use this information to revise their plans, and well, they didnt. And ultimately the course also took into the same ballpark , of 8 years. 
+
+Kahneman uses the anecdote to say that planning is good if by planning you mean looking at reference data of past projects to inform your effort. This is what he calls the outside view. Otherwise you are just basing your planning on your own biased narrative, your own optimism, with your blindspots. This is what he calls sticking to the inside view. 
+So I realized PI Planning, at least the way our organization is utilizing it, has no view of reference data. So the baby is gone and all we have left is the bath water. (I can't speak for PI Planning in general but I hope the SAFe proponents of it do actually advocate for the outside view). So why do all the people I know in my organization who love  planning end up with planning theatre? And here we see Kahneman has the explanation as well, as the other parts of his book--*which I should get more familiar with since it sounds helpful!*--, deal with *thinking fast*, your System 1 thinking that is, and here you have your rituals and ceremonies and feeling special that you can ignore all of historical data because you are special and you got this, go get em tiger!
+
 
 ## What happened after our second attempt at pi planning
 
@@ -259,6 +267,6 @@ x. https://en.wikipedia.org/wiki/McNamara_fallacy
 
 15. top down and bottom up OKRs, 
 16. other meaning of topdown, https://open.spotify.com/track/17MK2u7iHFpNb3tPuJnUdw?si=P0q6ooVVTBiRYMAyT9L9ng from Channel Tres
-
+17. Thinking Fast and Slow
 
 

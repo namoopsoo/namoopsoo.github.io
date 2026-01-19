@@ -114,7 +114,7 @@ All notable changes to this "human experiment" will be documented in this file.
 - First try of [VS Code](https://en.wikipedia.org/wiki/Visual_Studio_Code), effectively switching over from [macvim](https://github.com/macvim-dev/macvim), in order to do a first try of prompt based code editing, Windsurf, describing my experience [here](https://michal.piekarczyk.xyz/post/2025-04-04-vibes/).
 - Returned, to [cooking soup](https://world.hey.com/michal.piekarczyk/i-am-soup-people-dc5d899d) after a long pause.
 - First attempt to buzz cut my own hair.
-- Went back to using non-compostable trash bags again  😐️. Had tried Cleanomic compostable trash bags for many months but they are just not rugged enough yet. (2024-04-19)
+- Went back to using non-compostable trash bags again  😐️. Had tried Cleanomic compostable trash bags for many months but they are just not rugged enough yet. (2025-04-19)
 
 ## 2025-03
 ### Logged 

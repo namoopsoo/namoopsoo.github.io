@@ -42,7 +42,7 @@ How did we get into this mess where light hearted terms like "planning poker" ar
 
 In the realm of the unknown of what may take place in a non-widget-work project, you might really not know and thinking forwards , you can spend enough time on the hypothetical to merit actually doing the work. 
 
-But you might also enter the realm of the tacit dimension, where you may know something but you just cannot describe it well . This is also the realm of "show don't tell" . 
+But you might also enter the realm of the tacit dimension, where you may know something but you just cannot describe it well . This is also the realm of "show don't tell"<sup>[21](#references)</sup>. 
  (requote from  Cal on email [10](#references)  ), Cal quotes a known line from a michael polanyi book,  The Tacit Dimension, 
 
 > “I shall reconsider human knowledge by starting from the fact that we can know more than we can tell."
@@ -250,6 +250,8 @@ Hopefully this collection  is  representative .
 
 > "The path is the goal" -zen saying
 
+> "Show don't tell" -many sources<sup>[21](#references)</sup>
+
 ## What happened after our second attempt at pi planning
 
 This time around we wanted to prepare better, instead of being caught by surprise. Indeed fool me once shame on me. So second time around the team put together their initiatives in a clean way on a spreadsheet and everyone voted on initiatives.  (Well the product team refused to participate in the voting and perhaps that was a red flag.) 
@@ -302,6 +304,6 @@ x. https://en.wikipedia.org/wiki/McNamara_fallacy
 19. https://michal.piekarczyk.xyz/post/2025-06-04-fragile/ , discussing Robert  "Uncle Bob" Martin Clean Agile 
 
 20. https://www.sciencedirect.com/science/article/abs/pii/S0191886906002194?via%3Dihub , "On the distinction between yuppies and hippies: Individual differences in prediction biases for planning future tasks"
-
+21. https://en.wikipedia.org/wiki/Show,_don%27t_tell
 
 

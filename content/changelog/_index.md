@@ -126,6 +126,7 @@ All notable changes to this "human experiment" will be documented in this file.
 
 ### First
 - First davidprotein.com order (2024-11-17).
+- First time I [reported](https://portal.311.nyc.gov/sr-details/?srnum=311-20692687) a leaky fire hydrant, to 311, since also, living through first time of major drought warnings in NYC. (*My request was closed 10 days later as no issue found so perhaps someone wrenched it shut by the time inspectors arrived*) (2024-11-04). 
 
 ## 2024-09
 ### Logged

@@ -217,7 +217,8 @@ So I realized PI Planning, at least the way our organization is utilizing it, ha
 ### Yuppies vs Hippies
 Hopefully we don't have to whip out a horoscope but researchers have also looked at   generational differences [20]. 
 
-### There are many competing ethea (aka ethoses ), maybe a few of these are representative 
+### There are many competing ethea (aka ethoses ), about getting from point A to point B
+Hopefully this collection  is  representative .
 
 > "Fake it til you make it" -?
 
@@ -247,6 +248,7 @@ Hopefully we don't have to whip out a horoscope but researchers have also looked
 
 > "Move fast and break things" -early Facebook mantra?
 
+> "The path is the goal" -zen saying
 
 ## What happened after our second attempt at pi planning
 

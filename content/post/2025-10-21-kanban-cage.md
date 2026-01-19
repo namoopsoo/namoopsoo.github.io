@@ -203,7 +203,7 @@ You shouldnt   defer thinking about what problems to solve to your product team 
 (Last bit inspired by https://youtu.be/eIoohUmYpGI ) 
 
 ## What would a Nobel Laureate say?
-I recently made this discovery that Daniel Kahneman wrote about planning in his Thinking Fast and Slow, discusing it as , the planning fallacy. And the reason why I looked was because one of my skip level managers has mentioned he is a fan of Kahneman 's book many times and he is also a big fan of PI Planning, so I was curious to look into this to maybe understand the connection better. My manager here, quotes Eisenhower too often, "all plans fail but planning is everything," so I knew Kahneman's point would probably be more nuanced. 
+I recently made this discovery that Daniel Kahneman wrote about planning in his Thinking Fast and Slow<sup>[17](#references)</sup>, discusing it as, the planning fallacy<sup>[18](#references)</sup>. And the reason why I looked was because one of my skip level managers has mentioned he is a fan of Kahneman's book many times and he is also a big fan of PI Planning, so I was curious to look into this to maybe understand the connection better. My manager here, quotes Eisenhower too often, "all plans fail but planning is everything," so I knew Kahneman's point would probably be more nuanced. 
 
 So I learned that in his planning fallacy chapter, Kahneman relates to an anecdote of when he was involved in helping to build a course and the people involved estimated it would take two years, three years tops. He asked them to dig around to get some data about what comparable efforts took. He learned, from them, that of the 50% efforts they looked at that didnt fail, they took over 8 years and even some over 10 years. But then asking them how will they use this information to revise their plans, and well, they didnt. And ultimately the course also took into the same ballpark , of 8 years. 
 
@@ -233,7 +233,7 @@ Maybe the analogy of the shadow economy is appropriate here ? Why is there a sha
 - The Corporate opinion for example: lets measure proxy productivity, in lieu of value because is hard to measure 
 - Predictability is a typical measure of proxy productivity 
 - The process of PI planning is a negotiation, where all parties state their positions and bid for the time of the individual contributors 
-- At the end of the day , there is room to be excited about whqt the team is up to and can unify behind.
+- At the end of the day , there is room to be excited about what the team is up to and can unify behind.
 
 
 # References
@@ -243,30 +243,26 @@ Maybe the analogy of the shadow economy is appropriate here ? Why is there a sha
 4. https://youtu.be/jHRsBDC5E9Q , Yuval Yeret and Ryan Ripley, "Breaking the SAFe™: Deconstructing PI Planning"
 
 5. Extreme Gohorse
-
 6.  Cal Newport and Adam Grant, https://link.chtbl.com/4HaHYkSm
 
 7. https://michal.piekarczyk.xyz/post/2025-06-04-fragile/ 
-
 x. https://en.wikipedia.org/wiki/McNamara_fallacy
 
-
 8. https://www.seangoedecke.com/how-to-ship/
- 
 9. .... north star concept
-
 10. why can't ai manage my email , Cal Newport , New Yorker
-
 11. my description about writing brain , https://michal.piekarczyk.xyz/post/2023-09-10-summary-learning-how-to-learn-coursera/#if-your-inner-writing-brain-and-editing-brain-are-in-the-same-car-only-one-can-drive-at-any-one-time- 
 12. learning how to learn , https://www.coursera.org/learn/learning-how-to-learn 
-
-
 13. https://www.thoughtworks.com/en-us/radar/techniques/safe
-
 14. https://www.thoughtworks.com/insights/blog/digital-transformation/how-value-slices-can-fix-your-digital-transformation
 
 15. top down and bottom up OKRs, 
 16. other meaning of topdown, https://open.spotify.com/track/17MK2u7iHFpNb3tPuJnUdw?si=P0q6ooVVTBiRYMAyT9L9ng from Channel Tres
 17. Thinking Fast and Slow
+18. https://en.wikipedia.org/wiki/Planning_fallacy
+19. https://michal.piekarczyk.xyz/post/2025-06-04-fragile/ , discussing Robert  "Uncle Bob" Martin Clean Agile 
+
+
+
 
 

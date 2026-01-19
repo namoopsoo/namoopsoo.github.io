@@ -203,12 +203,47 @@ You shouldnt   defer thinking about what problems to solve to your product team 
 (Last bit inspired by https://youtu.be/eIoohUmYpGI ) 
 
 ## What would a Nobel Laureate say?
-I recently made this discovery that Daniel Kahneman wrote about planning in his Thinking Fast and Slow<sup>[17](#references)</sup>, discusing it as, the planning fallacy<sup>[18](#references)</sup>. And the reason why I looked was because one of my skip level managers has mentioned he is a fan of Kahneman's book many times and he is also a big fan of PI Planning, so I was curious to look into this to maybe understand the connection better. My manager here, quotes Eisenhower too often, "all plans fail but planning is everything," so I knew Kahneman's point would probably be more nuanced. 
+I recently made this discovery that Daniel Kahneman wrote about planning in his Thinking Fast and Slow<sup>[17](#references)</sup>, discusing it as, the planning fallacy<sup>[18](#references)</sup>. And the reason why I looked was because one of my skip level managers has mentioned he is a fan of Kahneman's book many times and he is also a big fan of PI Planning, so I was curious to look into this to maybe understand the connection better.  (As an aside, although Kahneman discusses the topic in his 2011 book, actually the planning fallacy wiki<sup>[18](#references)</sup> cites his work with Amos Tversky presenting the idea back in 1979, though later in 2003, Lovallo and Kahneman added the benefit shortfall as a secondary consequence of the fallacy. Researchers have been adding empirical evidence to make the theory more quantitative ever sinde). 
+
+My manager here, quotes Eisenhower too often, "all plans fail but planning is everything," so I knew Kahneman's point would probably be more nuanced. 
 
 So I learned that in his planning fallacy chapter, Kahneman relates to an anecdote of when he was involved in helping to build a course and the people involved estimated it would take two years, three years tops. He asked them to dig around to get some data about what comparable efforts took. He learned, from them, that of the 50% efforts they looked at that didnt fail, they took over 8 years and even some over 10 years. But then asking them how will they use this information to revise their plans, and well, they didnt. And ultimately the course also took into the same ballpark , of 8 years. 
 
-Kahneman uses the anecdote to say that planning is good if by planning you mean looking at reference data of past projects to inform your effort. This is what he calls the outside view. Otherwise you are just basing your planning on your own biased narrative, your own optimism, with your blindspots. This is what he calls sticking to the inside view. 
-So I realized PI Planning, at least the way our organization is utilizing it, has no view of reference data. So the baby is gone and all we have left is the bath water. (I can't speak for PI Planning in general but I hope the SAFe proponents of it do actually advocate for the outside view). So why do all the people I know in my organization who love  planning end up with planning theatre? And here we see Kahneman has the explanation as well, as the other parts of his book--*which I should get more familiar with since it sounds helpful!*--, deal with *thinking fast*, your System 1 thinking that is, and here you have your rituals and ceremonies and feeling special that you can ignore all of historical data because you are special and you got this, go get em tiger!
+Kahneman uses the anecdote to say that planning is good if by planning you mean looking at reference data of past projects to inform your estimation effort. This is what he calls the "outside view". Otherwise you are just basing your planning on your own biased narrative, your own optimism, with your blindspots. This is what he calls sticking to the "inside view". 
+So I realized PI Planning, at least the way our organization is utilizing it, has no view of reference data. So the baby is gone and all we have left is the bath water. (I can't speak for PI Planning in general but I hope the SAFe proponents of it do actually advocate for the "outside view"). So why do all the people I know in my organization who love  planning end up with *planning theatre*? And here we see Kahneman has the explanation as well, as the other parts of his book--*which I should get more familiar with since it sounds helpful!*--, deal with *thinking fast*, your System 1 thinking that is, and here you have your rituals and ceremonies and feeling special that you can ignore all of historical data because you are special and you got this, go get em tiger!
+
+### Yuppies vs Hippies
+Hopefully we don't have to whip out a horoscope but researchers have also looked at   generational differences [20]. 
+
+### There are many competing ethea (aka ethoses ), maybe a few of these are representative 
+
+> "Fake it til you make it" -?
+
+> "Underpromise and overdeliver" -?
+
+> "There is no try, there is only do" -Yoda
+
+> "80% of life is showing up" -Woody Allen
+
+> "Everyone has a plan until they get punched in the face" -Tyson
+
+> "If You're Gonna Be Dumb, You Gotta Be Tough" -Roger Alan Wade 
+
+> "It ain't over till it's over" -Yogi Berra
+
+> "Just get sh$t done"
+
+> "It is possible to commit no mistakes and still lose. That is not weakness; that is life." -Jean‑Luc Picard
+
+> "Slow is smooth, and smooth is fast." -military, anonymous
+
+> "Think slow and move fast" (reverberates the military quote, but comes from riff off Kahneman's book)
+
+> "Shut up and calculate" -Feynman
+
+> "measure twice, cut once"
+
+> "Move fast and break things" -early Facebook mantra?
 
 
 ## What happened after our second attempt at pi planning
@@ -262,7 +297,7 @@ x. https://en.wikipedia.org/wiki/McNamara_fallacy
 18. https://en.wikipedia.org/wiki/Planning_fallacy
 19. https://michal.piekarczyk.xyz/post/2025-06-04-fragile/ , discussing Robert  "Uncle Bob" Martin Clean Agile 
 
-
+20. https://www.sciencedirect.com/science/article/abs/pii/S0191886906002194?via%3Dihub , "On the distinction between yuppies and hippies: Individual differences in prediction biases for planning future tasks"
 
 
 

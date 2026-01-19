@@ -203,7 +203,9 @@ You shouldnt   defer thinking about what problems to solve to your product team 
 (Last bit inspired by https://youtu.be/eIoohUmYpGI ) 
 
 ## What would a Nobel Laureate say?
-I recently made this discovery that Daniel Kahneman wrote about planning in his Thinking Fast and Slow<sup>[17](#references)</sup>, discusing it as, the planning fallacy<sup>[18](#references)</sup>. And the reason why I looked was because one of my skip level managers has mentioned he is a fan of Kahneman's book many times and he is also a big fan of PI Planning, so I was curious to look into this to maybe understand the connection better.  (As an aside, although Kahneman discusses the topic in his 2011 book, actually the planning fallacy wiki<sup>[18](#references)</sup> cites his work with Amos Tversky presenting the idea back in 1979, though later in 2003, Lovallo and Kahneman added the benefit shortfall as a secondary consequence of the fallacy. Researchers have been adding empirical evidence to make the theory more quantitative ever sinde). 
+I recently made this discovery that Daniel Kahneman wrote about planning in his Thinking Fast and Slow<sup>[17](#references)</sup>, discusing it as, the planning fallacy<sup>[18](#references)</sup>. And the reason why I looked was because one of my skip level managers has mentioned he is a fan of Kahneman's book many times and he is also a big fan of PI Planning, so I was curious to look into this to maybe understand the connection better. 
+
+(*As an aside, although Kahneman discusses the topic in his 2011 book, actually the planning fallacy wiki<sup>[18](#references)</sup> cites his work with Amos Tversky presenting the idea back in 1979, though later in 2003, Lovallo and Kahneman added the benefit shortfall as a secondary consequence of the fallacy. Researchers have been adding empirical evidence to make the theory more quantitative ever since*). 
 
 My manager here, quotes Eisenhower too often, "all plans fail but planning is everything," so I knew Kahneman's point would probably be more nuanced. 
 

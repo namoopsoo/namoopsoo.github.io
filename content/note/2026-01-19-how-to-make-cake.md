@@ -12,7 +12,7 @@ shall be saved."
 
 In other words, mildly entertaining?  , highly confident? useless? sure let's pick all three 😂.
 
-But in this case, as far as the societal  we're talking biblical proportions!
+But in this case, as far as the societal implications suggested, we're talking biblical proportions!
 
 Also what comes to mind was this bus I noticed, during covid times, 
 

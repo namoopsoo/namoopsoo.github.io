@@ -136,4 +136,6 @@ If anything maybe it is like Uber Lyft surge pricing?
 
 The authors say buying health insurance is therefore not really like buying broccoli like Justice Anthony Scalia has compared it to.
 
+p76, authors point out the lack of price transparency and lack of choice of what insurance you have if employer based, and lack of choice Emergency Departments have in treating patients, and finally lack of choice in getting ill or getting hit by a car makes the insurance system not really a typical economic market.
 
+(I know some argue we all make choices affecting our health but I think the point is say if you are at the time you are having a myocardial infarction for eating too many doughnuts in the last thirty years, but then at that point in time, you probably will not be comparison shopping).

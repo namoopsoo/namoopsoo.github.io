@@ -230,3 +230,7 @@ We go through most of our time, the `n of 1` life embracing anecdata and we p-ha
 
 7. https://world.hey.com/michal.piekarczyk/data-mercenarism-8d39ca61
 8. https://michal.piekarczyk.xyz/note/2025-12-27-recruiting-is-not-a-science/
+
+9. https://press.princeton.edu/books/hardcover/9780691249131/ai-snake-oil#preview Arvind Narayanan and Sayash. AI Snake Oil.
+
+

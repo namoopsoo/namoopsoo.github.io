@@ -12,6 +12,20 @@ shall be saved."
 
 In other words, mildly entertaining?  , highly confident? useless? sure let's pick all three 😂.
 
+But in this case, as far as the societal  we're talking biblical proportions!
+
+Also what comes to mind was this bus I noticed, during covid times, 
+
+{{< vimeo 785843804 >}}
+
+
+
+
+
 # references
 
 1. https://press.princeton.edu/books/hardcover/9780691249131/ai-snake-oil#preview
+2. Russel Peters routine
+3. https://vimeo.com/785843804
+
+

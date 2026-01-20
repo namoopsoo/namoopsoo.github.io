@@ -139,3 +139,33 @@ The authors say buying health insurance is therefore not really like buying broc
 p76, authors point out the lack of price transparency and lack of choice of what insurance you have if employer based, and lack of choice Emergency Departments have in treating patients, and finally lack of choice in getting ill or getting hit by a car makes the insurance system not really a typical economic market.
 
 (I know some argue we all make choices affecting our health but I think the point is say if you are at the time you are having a myocardial infarction for eating too many doughnuts in the last thirty years, but then at that point in time, you probably will not be comparison shopping).
+
+
+## Fee For Service vs Value Based or Capitation Reimbursement 
+p 74, interesting inverse point, that yes although Fee For Service incentivises providers to provide more services to get paid more, however, the opposite is true for capitation, that providers are incentivized to provide fewer services. 
+
+Realizing that measuring "value" or "quality" or "outcomes" is probably really tricky! 
+
+I like authors electrician analogy, for electrician who gets paid for lowering peoples bills. They might not help you if they predict you hqve not much to lower compared to someone else . 
+
+### aside: prediction is error prone too
+Realizing this book pairs well with the AI Snake Oil book too haha. 
+
+### Medicare reimbursement is leading
+Hmm sounds like private insurers model (or copy?) what they do after Medicare? For simplicity? 
+
+Oh and Medicare is aiming to move to Value Based care? 
+
+### CPT codes 
+p 75 , Current Procedural Terminology. (1960s terminology). 
+
+diagnostic or therapeutic service like 
+xray, office visit, or biopsy or earwax removal. hmm also counseling on alcohol misuse.
+
+Oh wow AMA makes $72 million for selling the code book!??!
+
+ohh, all CPT is , is the "what" but "why" is diagnosis, standardized by ICD, ICD-10 with 100,000 diagnoses! Oh wow!
+
+And insurers will pay only if coding is correct.
+
+

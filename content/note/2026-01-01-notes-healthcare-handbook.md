@@ -166,6 +166,41 @@ Oh wow AMA makes $72 million for selling the code book!??!
 
 ohh, all CPT is , is the "what" but "why" is diagnosis, standardized by ICD, ICD-10 with 100,000 diagnoses! Oh wow!
 
-And insurers will pay only if coding is correct.
+p76
+And insurers have rules setup , so that diagnoses ICD codes must be linked to CPT codes for payment to process otherwise denied. 
+
+Example in book,
+
+"Z13.82 screening for osteoporosis "
+and "Z78.0 Asymptomatic Menopausal State".
+
+#### Coder arms race?
+Sounds like given the complexity, there is a new profession/occupation, of people who translate clinician notes to codes.
+
+And I'm aware this is an area of  NLP as well. 
+
+Definitely like in 5th Element, Zorg's chaos translating into profit 😆.
+
+### DRG: Medicare's  Prospective instead of Retrospective hospital reimbursement model 
+DRG or Diagnosis-related Group 
+ is a system used by medicare for inpatient hospital classification, of intake, to determine the cost up front as opposed to after the fact.
+
+Inputs:
+- type of admitting diagnosis
+- severity of condition
+- whether a procedure took place
+- other known conditions (*hmm possible complications ?*)
+
+Example given in book is that a myocardial infarction without complications is typically $4,274.25 but more than double otherwise, $9,580.68 . Wow!
+
+This has influenced a reduction in average hospital stay, since it is not a "we will pay you per day" kind of thing  . 
+
+But wow so much nuance, authors point out that increased hospital stay has consequences other than just a higher bill, like hospital related diseases , and medical errors, both of which are a real thing, also mentioned in The Price We Pay. 
+
+In response, a hospital may perhaps on purpose or unwittingly upcode someone, increasing the secerity to increase the expected payment. 
+
+
+
+
 
 

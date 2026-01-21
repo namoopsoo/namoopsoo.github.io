@@ -200,7 +200,21 @@ But wow so much nuance, authors point out that increased hospital stay has conse
 In response, a hospital may perhaps on purpose or unwittingly upcode someone, increasing the secerity to increase the expected payment. 
 
 
+### stanford alleged billing fraud
 
+"Stanford hospital accused of alleged $468 million dollar healthcare billing fraud: DOJ filed its statement of interest in federal court. " AP News.
+Published June 19, 2020.
+https://apnews.com/press-release/prcom/ business-72b885fd050ba0f7512f-c942457b3647
 
+### Relative Value Unit
+p77
+RVU, Physician Fee Schedule, annual, from CMS
+
+inputs:
+- overhead 🤔
+- malpractice insurance costs
+- expected effort , known as wRVU
+
+Examples of wRVU given, too.
 
 

@@ -24,6 +24,16 @@ p 23 Preach! Several examples of flaws in ML models and attempts to address them
 
 Reading many examples, including a "next music hit" predictor that failed to separate train test split validation. And a "has covid" predictor where positive and negative examples were split evenly as children and adults so models just learned "is child" insteaf of "has covid". Wow
 
+## lack of AI product audits
+p24 hiring: 
+Pymetrics, HireVue, in the dog house: no public audits for "does it work?" only for "are the models biased w.r.t. demographics. 
+
+p25
+Sounds like FTC has stepped up in 2023, noticing unjustified claims on AI products. Cool, that is their wheelhouse.
+
+p26 Social Sentinel: student ptotest surveillance disguised as threat detection, oops.
+
+
 
 # references
 

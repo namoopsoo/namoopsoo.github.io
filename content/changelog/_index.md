@@ -10,6 +10,9 @@ All notable changes to this "human experiment" will be documented in this file.
 - First try apple continuous camera for laptop-mind-phone-snap document batch scanning . Saves so much time! (2026-01-03).
 - Perhaps first time I used Strava while ice skating? There was some GPS drift and I only had idea to record half way in but ended up being 2.21 miles in 29 min, so 4.6mi/hour, oddly slow haha (2026-01-04).
 
+### Changed
+- This month, I've done more bed sleep initiations as opposed to couch sleep initiations in a long time (years?). Having a couch guest has really helped here 😅.
+
 ## 2025-12
 ### Changed
 - First time, tried making chicken soup by first roasting the chicken (450F 30min) before putting it into the soup. (2025-12-10).

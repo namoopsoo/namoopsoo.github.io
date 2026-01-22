@@ -192,6 +192,9 @@ All notable changes to this "human experiment" will be documented in this file.
 ## 2021-08 
 ### Changed 
 - Switched from gmail.com to hey.com for my main email home.
+- TMI, but, 😅. Switched from standard nail clippers for toenails to the "toe bro" tool, for dealing with ingrown toenails (2021-08-17).
+
+
 ## 2021-05
 ### Changed
 - Switched from github pages with Jekyll to [Hugo](https://gohugo.io/), noted the change [here](https://michal.piekarczyk.xyz/post/2021-05-16-hugo-notes/)

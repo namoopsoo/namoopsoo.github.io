@@ -19,7 +19,10 @@ Also what comes to mind was this bus I noticed, during covid times,
 {{< vimeo 785843804 >}}
 
 
+## crisis of replicability
+p 23 Preach! Several examples of flaws in ML models and attempts to address them in research falling on deaf ears. hmm "self-correction" is the preference? 
 
+Reading many examples, including a "next music hit" predictor that failed to separate train test split validation. And a "has covid" predictor where positive and negative examples were split evenly as children and adults so models just learned "is child" insteaf of "has covid". Wow
 
 
 # references

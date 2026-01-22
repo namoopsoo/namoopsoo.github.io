@@ -216,5 +216,51 @@ inputs:
 - expected effort , known as wRVU
 
 Examples of wRVU given, too.
+p77
+> • a 30-minute office visit with a physician is 1.92 wRVUs,
+> • a screening colonoscopy is 3.26
+WRVUs,
+> • admitting a complex patient to the hospital is 3.86 wRVUs,
+> • surgery to replace a hip joint is 19.6 wRVUs.
+
+But hmm author mentions activities like talking to patients have no wRVU 🤔. Also neither diagnostics, author writes "thinking", but hmm just research in general sounds like would not be here? 
+
+I wonder how that compares to lawyer billable hours, or billable hours of other industries like contract work.
+
+Apparently in 2021, CMS updated their wRVU to reflect this question, to address "cognitive" vs "procedural" work.
+
+Conversion factor? from RVU to $$dollars? Wow so like credit card reward points or scrum story points in software development? 
+
+p78 
+Hmm, huhh, an interesting point like also in Price We Pay TPWP , that theres a lot of variation in "volume" for services and less in reimbursement rate per service . Hmm does that mean unnecessary? 
+
+Upcoding? In TPWP, they would show cliniciand where they fall on a distribution of something like volume of services like amounts cut for melanoma biopsies. 
+
+This was effective. We should do more of these  Nudge style interventions .
+
+Seeing Dartmouth Atlas Project, charts these trends 👀, Medicare reimburse-ments— by HRR. 2019. https:// www.dartmouthatlas.org/interactive-apps/medicare-reimbursements/#hrr
+
+## Medicare fee schedules are take it or leave it
+p79
+Hmm and for other private insurers sounds like they negotiate with providers?
+
+Interesting, their negotiation is kind of influenced by the Medicare CMS rates? 
+
+p80
+Here finally reading about how the "charge price" is much higher than negotiated private price ("transaction price"?) , which is hogher than Medicare reimbursement rates for various CPTs.
+
+### Cost shifting theory debunking? 
+Note here hispitals theoretically offset medicare losses against private reimbursements? 
+
+Frakt A. Hospitals are wrong for shifting costs to private insurers. The Upshot. The New York Times. Published March 23, 2015. https:// www.nytime.s.com/2015/03/24/upshot/why-hospitals-are-wrong: about-shifting-costs-to-private-insurers.html? rref=upshot&abt=0002&abg=1
+
+
+So that was studied and debunked? But authors don't really mention an alternative theory other than it is what it is 😆. 
+
+Sounds like, a kind of, "whatever they can get" scenario , makes sense, but I am reading so far that there are kind of no "market rates" often. Or anyway, the market is asymmetric and this book so far doesnt seem to cover the new transparency laws that were passed recently. But even after those laws passed, it seems it will tqke a long time for those numbers to affect behavior because they are not really surfaced.
+
+And of course in emergencies you choose not by dollar usually. 
+
+
 
 

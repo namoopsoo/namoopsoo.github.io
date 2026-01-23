@@ -262,5 +262,34 @@ Sounds like, a kind of, "whatever they can get" scenario , makes sense, but I am
 And of course in emergencies you choose not by dollar usually. 
 
 
+## private variation in reimbursement 
+p80 Hmm, negotiation means what payors pay for services will vary a lot? Even from plan to plan?
+
+Data on knee hip replacement. wow $20,000 to $70,000 , from Baltimore to NYC? 
+
+Peterson-KFF Health System Tracker.
+Published January 13, 2021. https:// www.healthsystemtracker.org/brief/ price-transparency-and-variation-in-u-s-health-services/
+
+### vs chargemaster 
+ahhh ok cool, so this book was published after the 2021 chargemaster legislation published, so they know about it. Wonder about No Surprise Act timing .
+
+nytimes had discussed colonoscopy variation by plan.
+
+16. KliffS, Katz J. Hospitals and insurers didn't want you to see these prices. Here's why.
+The Upshot. The New York Times. Published August 22, 2021. https://
+www.nytimes.com/
+interactive/2021/08/22/ upshot/hospital-prices.html?
+campaign id=9&emc= edit nn 20210823&in-stance id=38591&nl=the-morning&regi id=
+69542217&segment id=
+66986&te=1&user id=f32bb
+8e73ab-
+са4414430586c0307cd4c
+
+
+
+
+
+
+
 
 

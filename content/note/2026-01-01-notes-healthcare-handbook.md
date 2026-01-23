@@ -285,7 +285,19 @@ campaign id=9&emc= edit nn 20210823&in-stance id=38591&nl=the-morning&regi id=
 8e73ab-
 са4414430586c0307cd4c
 
+## APM
+p82 oh providers can choose which metrics they are graded on? weird.
 
+p 83 
+hmm and can choose which risks to take on? if spending is lower than spending tzrget , you get an upside bonus? 
+
+if worse, you can get a downside penalty? 
+
+but can choose between 1 sided or 2 sided?
+
+not allowed to cherry pick anymore i think. 
+
+use risk adjustment for sycker pools.
 
 
 

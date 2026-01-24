@@ -301,7 +301,12 @@ use risk adjustment for sycker pools.
 
 ## Accountable Care Organizations ACOs (a kind of APM)
 p84, They are responsible for populations of people, and contract with Medicare or private payers. 
-So again, the idea is to constrain spending below a benchmark number specified up front. And they can split the difference with the payer as a bonus, but if they overshoot, hmm they don't necessarily eat it but pay a penalty. But there is some partial fee-for-service along the way but that is not the full picture.
+
+I'm reading that a benchmark is determined as to what a population a payor assigns to an ACO should cost. And my interpretation is, the ACO will collect payments for services over time and then at the end of the year, if they are under the benchmark, for the fees they collected, the payer will give them a bonus which is a portion of the difference, but if they go over, they have to pay the payer part of the difference in the form of a penalty. And they only get the bonus if quality metrics are met. Oddly enough though there doesn't seem to be a penalty for poor quality. Hmm however they might be removed for poor performance. And maybe more important to the ACO and providers, those quality metrics are publicly available!
+
+In reality, the front line providers collect those fees for services and reconciliation happens at the end of the year.
+
+And again there are ACOs that are upside only or 2-sided. That distinction is made up front.
 
 p 85
 Reading that , in 2020, a Medicare ACOs split a mutual savings of $4.1 billion with Medicare, getting to pocket a little more than half. And also for 2020, 97% of Medicare ACOs met the CMS quality ratings that are the post-condition to verify they are not just skimping on care.
@@ -310,12 +315,23 @@ So, there is a population, and someone comes up with an expected cost per person
 
 Hmmm so, maybe it's something like, the ACO, provides the various services along the way and does receive fees for those services, but hmm if those fees go over the threshold then they have to give some of it back in the form of a penalty?
 
-Also maybe weird can be that a provider might be playing both games, having an ACO population as well as a separate FFS population along side. 
+Also maybe weird can be that a provider might be playing both games, having an ACO population as well as a separate FFS population along side. Maybe diversification is good?
+
+Reading also https://www.cms.gov/medicare/payment/fee-for-service-providers/shared-savings-program-ssp-acos , maybe Shared Savings Program is the formal name of the CMS program where through the ACA , ACO programs were established.
+
+And it sounds like, as part of an agreement providers negotiate with an ACO they join, at the end of the year, as part of reconciliation, if the ACO gets the quality-adjusted bonus or loss statement from CMS, then that ACO per the agreements would share those bonuses or losses.
 
 ## Medicare Advantage is not an ACO
 Hmm but pool of people is not assigned unlike an ACO but people are advertised to and can sign up on their own during Annual Enrollment Period. When the population is set after enrollment period, then there is a similar process like with ACOs to determine the benchmark for the population, the expected cost. CMS will pay a flat fee, per-member-per-month, hmm a capitation payment.
 
+Unlike an ACO where providers bill CMS directly and reconcile at the end of the year, providers who contract with MA plans will send their claims to the MA plan. ACOs do not process claims like MA middle-men.
 
+p86 Oh wow and sounds like MA plans will attempt to be clever and instead of only pushing to reduce costs will, also push to increase the HCC Hierarchical Condition Category data they provide about patients, so that the risk adjustment formula that CMS runs at the end of the year, comes out higher to bump the benchmark. And the authors cite that to this effect for example, Kaiser was alleged by DOJ in 2021 to have defrauded Medicare of $1 billion, https://news.bloomberglaw.com/health-law-and-business/kaiser-permanente-defrauded-medicare-of-1-billion-doj-alleges . 
 
+> "CMS pays an average of 4% more per capita for MA beneficiaries than they do for similar patients in traditional Medicare" . 
+
+But it sounds like 48% of eligible folks are on MA plans. Authors point out that analyses vary far and wide on this topic. Cherry-picking? So the 4% is real money, but does that mean that the people on MA have better health or is MA a "scam"? This is heavily being debated. Hopefully there can be some way to get a good answer with good evidence everyone can agree on!
+
+Wow I think I just spent an hour and a half trying to understand those 2-3 pages about ACOs and MAs!
 
 

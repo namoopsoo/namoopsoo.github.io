@@ -266,6 +266,13 @@ I'm writing this particular bit on a Saturday after just fixing a production iss
 
 Maybe the analogy of the shadow economy is appropriate here ? Why is there a shadow economy. Maybe there is an economics answer to some of these problems in knowledge work?
 
+## Alex Honnold and Kind vs Wicked Problems 
+In the David Epstein book Range, he contrasts problems which are static vs those that are dynamic. Alex Honnold even thinkinh about solo-ing Yosemite 's El Capitan
+ gave him the chills for years --even though he has less inhibition that most do. But mountain climbing on a day of your choice has little to no unknowns. And Honnold rationalizes performing the solo ultimately by meticulously planning and sort of memorizing every hold, by rope climbing dozens of times first.
+
+I was in a grungy Virginia hotel room during the 2024 Olympics in France. Everyone talks about the ecoli water in the Sein but in that hotel room I remember watching the sprint climbing events. Everypne climbs sort of the same style and importantly exactly the same course. And milliseconds are what separate gold from silver. There is zero risk of death. 
+
+
 # Summary of my points
 
 - As the Martin Fowler blog puts it, a team Backlog is a mix of product and engineering priorities. Product looks at the user perspective, and Engineering looks at stability, reliability, maintainability and all the other -ilities. 

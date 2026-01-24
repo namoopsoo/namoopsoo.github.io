@@ -1,7 +1,7 @@
 ---
-title: "What are we doing"
+title: "Why do anything"
 date: 2026-01-24
-draft: true
+draft: false
 ---
 
 
@@ -23,15 +23,30 @@ Finding purpose through some kind of self inflicted struggle is not new though. 
 ## Mind hacks
 But today, books like Atomic Habits also teach how to make things perhaps we don't like as more likely our default path, by maybe putting a pair of running shoes next to your bed. Also gamification can be an way to follow up something difficult with a reward, but that can become a vicious loop and can leave you with learning some pretty bad habits in the long run.
 
+
 ## Intrinsic motivation
 Ultimately we can tap into the less glamorous but more sustainable idea that doing hard things is rewarding at a more natural pace. I have heard Anna Lembke explain this with her "balance scale" analogy that whereas your brain will counteract a pleasurable "hit" with withdrawal, doing something hard will produce its own little high.
 
-And coming back to Marcus Aurelius,
-> "What stands in the way becomes the way"
+### But beware burnout
+Overdoing it on the pain side can lead to resentment and you can spiral into escapism to deal with the extra stress.
 
-What if we stop overthinking it and just try living with more presence, taking opportunities as they come up, to challenge ourselves and learn from them. 
+## Mindfulness?
+Coming back to Marcus Aurelius, embrace the suck, it is the only thing you have but take advantage of it.
+
+> *"What stands in the way becomes the way"*
+
+What if we stop overthinking it and just try living with more presence, turn things we don't want to do into opportunities as they come up, to challenge ourselves and learn from them. 
+
+Do difficult things, but not to get something in return. The universe doesn't care how hard you work. *"Life's a bitch, and then you die"* according to a 1982 Washington Post article.
+
+The universe however is kind of random, with its risk-reward payoffs, so if you do something you don't want to do, you *might* succeed. And that is probably for the best. Any kind of system where the reward is guaranteed can cause your brain to merely do the hard thing to get the nice thing, but if it is a sometimes payoff, then we are more likely to do it for the intrinsic reasons.
 
 
 
-# references
+# References
 1. https://www.edmylett.com/podcast/david-goggins-victory-in-suffering
+2. Meditations
+3. Atomic Habits
+4. Peterson Maps of Meaning
+5. 1982 washington post article
+6. Anna Lembke Dopamine Nation

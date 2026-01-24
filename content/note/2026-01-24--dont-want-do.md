@@ -5,12 +5,13 @@ draft: false
 ---
 
 
-My friend asks me, in reference to a Goggins interview, what do I think about doing things you don't want to do? Let me write out my thoughts hre since I have been thinking on this topic for a long time haha.
+My friend asks me, in reference to a Goggins interview, what do I think about doing things you don't want to do? Let me write out my thoughts here since I have been thinking on this topic for a long time!
 
 There are many ways of thinking about this topic and depending on which frame of reference you are wearing at any one time, you will form a totally different point of view. 
 
 ## The discipline mindset
 > "Pain is weakness leaving the body"
+
 Today people talk about doing difficult things *as a means to an end*, like, you need to work hard to get good results.
 
 But Marcus Aurelius in Meditations, wrote you simply do what is necessary that life throws your way. There was no notion of agency, there was only doing the right thing. 
@@ -40,7 +41,6 @@ What if we stop overthinking it and just try living with more presence, turn thi
 Do difficult things, but not to get something in return. The universe doesn't care how hard you work. *"Life's a bitch, and then you die"* according to a 1982 Washington Post article.
 
 The universe however is kind of random, with its risk-reward payoffs, so if you do something you don't want to do, you *might* succeed. And that is probably for the best. Any kind of system where the reward is guaranteed can cause your brain to merely do the hard thing to get the nice thing, but if it is a sometimes payoff, then we are more likely to do it for the intrinsic reasons.
-
 
 
 # References

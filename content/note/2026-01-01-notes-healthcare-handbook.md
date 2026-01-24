@@ -299,7 +299,21 @@ not allowed to cherry pick anymore i think.
 
 use risk adjustment for sycker pools.
 
+## Accountable Care Organizations ACOs (a kind of APM)
+p84, They are responsible for populations of people, and contract with Medicare or private payers. 
+So again, the idea is to constrain spending below a benchmark number specified up front. And they can split the difference with the payer as a bonus, but if they overshoot, hmm they don't necessarily eat it but pay a penalty. But there is some partial fee-for-service along the way but that is not the full picture.
 
+p 85
+Reading that , in 2020, a Medicare ACOs split a mutual savings of $4.1 billion with Medicare, getting to pocket a little more than half. And also for 2020, 97% of Medicare ACOs met the CMS quality ratings that are the post-condition to verify they are not just skimping on care.
+
+So, there is a population, and someone comes up with an expected cost per person which is multiplied by the size of the population. That money is available to the ACO , but I didn't get yet, does it work like a reimbursement (after the fact) or along the way or before?
+
+Hmmm so, maybe it's something like, the ACO, provides the various services along the way and does receive fees for those services, but hmm if those fees go over the threshold then they have to give some of it back in the form of a penalty?
+
+Also maybe weird can be that a provider might be playing both games, having an ACO population as well as a separate FFS population along side. 
+
+## Medicare Advantage is not an ACO
+Hmm but pool of people is not assigned unlike an ACO but people are advertised to and can sign up on their own during Annual Enrollment Period. When the population is set after enrollment period, then there is a similar process like with ACOs to determine the benchmark for the population, the expected cost. CMS will pay a flat fee, per-member-per-month, hmm a capitation payment.
 
 
 

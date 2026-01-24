@@ -24,6 +24,8 @@ Finding purpose through some kind of self inflicted struggle is not new though. 
 ## Mind hacks
 But today, books like Atomic Habits also teach how to make things perhaps we don't like as more likely our default path, by maybe putting a pair of running shoes next to your bed. Also gamification can be an way to follow up something difficult with a reward, but that can become a vicious loop and can leave you with learning some pretty bad habits in the long run.
 
+### Just one step
+I remember once hearing this ultra-marathoner answering the *"how do you do it"* question saying, they don't thing of the whole thing, they only ever think of the next step. This kind of sounds like "being in the moment" at its core.
 
 ## Intrinsic motivation
 Ultimately we can tap into the less glamorous but more sustainable idea that doing hard things is rewarding at a more natural pace. I have heard Anna Lembke explain this with her "balance scale" analogy that whereas your brain will counteract a pleasurable "hit" with withdrawal, doing something hard will produce its own little high.
@@ -42,6 +44,12 @@ Do difficult things, but not to get something in return. The universe doesn't ca
 
 The universe however is kind of random, with its risk-reward payoffs, so if you do something you don't want to do, you *might* succeed. And that is probably for the best. Any kind of system where the reward is guaranteed can cause your brain to merely do the hard thing to get the nice thing, but if it is a sometimes payoff, then we are more likely to do it for the intrinsic reasons.
 
+## Path of *Most* resistance 
+But getting back to the Huberman Goggins interview. The suck is the way to find yourself. 
+
+> "...you'll never in my life hear me tell you I'm missing something. Everybody is, they're missing this feeling....you challenge yourself into something...call it happiness, peace, whatever...you'll never hear me say I'm missing something. I found it years ago. You find it in the suck. And you find it repeatedly in the suck to the point where you know exactly who you are."
+
+Agree, that embracing the suck is good, but probably it is important to learn to frame it to represent something meaningful in your mind. Many times I think there is some crappy experience you are facing and you can try to channel your problem solving skills, decompose it and solve it, and you can reframe it as something you overcame and a problem you solved. 
 
 # References
 1. https://www.edmylett.com/podcast/david-goggins-victory-in-suffering
@@ -50,3 +58,5 @@ The universe however is kind of random, with its risk-reward payoffs, so if you 
 4. Peterson Maps of Meaning
 5. 1982 washington post article
 6. Anna Lembke Dopamine Nation
+
+7. https://youtu.be/84dYijIpWjQ doing what you dont want to do, Huberman and Goggins. anterior mid singulate cortex

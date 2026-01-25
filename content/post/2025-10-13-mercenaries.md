@@ -222,7 +222,7 @@ I bring this up because pricing is another kind of classic applied data science 
 
 This kind of delves into the topic of economics too, where there have been many instances where critics will say that the effects of actions on the economy are so difficult to measure that whether actions were actually effective or not are almost impossible to tell, in the pre and post style of analysis. For example, during the 2008 housing crisis, the US Fed went through with their Too Big to Fail policy , and quantitative easing and all this fancy jargon. And the economy eventually stabilized yet changed forever. But can we know whether the interventions of not bailing out Lehman Brothers and bailing out Bear Sterns, etc, were good choices in retrospect? We don't have two universes to A/B test major economic decisions and so we can only hand-wave about causal links. 
 
-Maybe the closest we have is what is admitted in public?  On Oct 23 2008, Alan Greenspan testified to Congress, admitting that his belief in self-regulation was wrong, that in the Fed, they should have been regulating credit default swaps and that he considers it a huge Flaw that somehow organizations did not protect the interests of their own shareholders. 
+Maybe the closest we have is what is admitted in public?  On Oct 23 2008, Alan Greenspan testified to Congress<sup>[11](#references)</sup> , admitting that his belief in self-regulation was wrong, that in the Fed, they should have been regulating credit default swaps and that he considers it a huge Flaw that somehow organizations did not protect the interests of their own shareholders. 
 *( Side note, what does econometrics say? We sort of have a whole lot of pop-culture-economics popularizing what can potentially be done. Underscoring the Nudge Thaler experimentation. Maybe it depends on the scale of what can be done. Freakenomics also underlines natural experiments as the best kind, where an element of randomness is sort of the best way to know what is actually happening.  )*
 
 # References
@@ -244,3 +244,4 @@ Maybe the closest we have is what is admitted in public?  On Oct 23 2008, Alan G
 10. https://www.tagesschau.de/wirtschaft/mogelpackung-des-jahres-verbraucherzentrale-milka-100.html
 
 
+11. https://www.pbs.org/newshour/show/greenspan-admits-flaw-to-congress-predicts-more-economic-problems#:~:text=In%202008%2C%20former%20Federal%20Reserve%20Chairman%20Alan,evidence%20that%20it%20was%20working%20exceptionally%20well.

@@ -370,3 +370,12 @@ oh wow and hospitals merge into networks.
 
 Monopolizing? 
 
+p90 , analysis northern california vs southern california, when adjusting for wages, (not sure what that means), 20-30% higher sticker prices in the way more consolidated one , north, by Sutter.
+
+inpatient prices 70% , outpatient 17-55% higher, 
+
+research from petris.org
+
+As a result, Sutter agreed to settle a monopoly lawsuit for $575 million in 2019! wow. Federal Antitrust lqwsuit still ongoing.
+
+flip side, negotiation with payers can be hard on small practice owners. (p90)

@@ -334,4 +334,39 @@ But it sounds like 48% of eligible folks are on MA plans. Authors point out that
 
 Wow I think I just spent an hour and a half trying to understand those 2-3 pages about ACOs and MAs!
 
+## SNF Reimbursement 
+p87 oh Skilled Nursing Facilities, post acute care facilities. You go here hmm, only if three nights in a hospital and go for physical or occupational therapy.
+
+Reimbursement, daily rate, average $434.95
+
+Long term nursing home per diem: not Medicare but Medicaid. $200
+
+..
+
+## Big Business ROI
+p88
+hmm return on investment , if you are attempting to do M&A merger acquisition or middleman types of businesses.
+
+better for pharmacy companies, 18% , not as good for others, 
+drug wholesalers 15%
+pharmacy benefits managers PBM 12%
+health insurance plans 12%
+pharma companies 11%
+device/tech 10%
+hospitals in network 7%
+independent hospital 4.5%
+
+==>
+from https:/ www2.deloitte.com/content/dam/Deloitte/ec/Documents/life-sciences-health-care/DI Investment-view-of-health-care-market.pdf
+
+Economy of scale?
+
+2018: turning point year, more physicians work for someone as opposed to private practice.! wow
+
+p89
+oh wow and hospitals merge into networks. 
+1990: 65% of regions , very low hospital competition 
+2016: 90% !!!
+
+Monopolizing? 
 

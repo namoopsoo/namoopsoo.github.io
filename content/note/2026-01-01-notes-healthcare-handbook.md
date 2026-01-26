@@ -379,3 +379,12 @@ research from petris.org
 As a result, Sutter agreed to settle a monopoly lawsuit for $575 million in 2019! wow. Federal Antitrust lqwsuit still ongoing.
 
 flip side, negotiation with payers can be hard on small practice owners. (p90)
+
+### largest
+p91
+employer with most physicians is United Health
+
+but CVS owns Aetna, which is latgest insurer, huh so larger maybe by revenue but not employees? And CVS also owns two other businesses: mail order pharmacy plus PBM. 
+
+ 
+

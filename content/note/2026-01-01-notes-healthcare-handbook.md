@@ -386,5 +386,31 @@ employer with most physicians is United Health
 
 but CVS owns Aetna, which is latgest insurer, huh so larger maybe by revenue but not employees? And CVS also owns two other businesses: mail order pharmacy plus PBM. 
 
+## PBM
+Between big pharma, pharmacies and payers, are PBMs, in the middle.
+
+Price negotiation. 
+
+p91 
+Wow there used to be this thijg where PBMs would tell pharmacies not to tell customers paying out of pocket is cheaper , called a "gag order". This was banned in 2018. Wow but hmm, what if a PBM also owns the pharmacy too? Like CVS?
+
+Crazy chart showing how a drug costing $17 to produce can cost $100 after all the various wholesalers, PBMs and insurers pocket.
+
+https://healthpolicy.usc.edu/ research/flow-of-money-through-the-pharmaceutical-distribution-system/
+
+
+Argued point is that yes PBMs negotiate prices down but then dip into the difference to get their cut and how much is the right amount is the question here. Hmm.
+
+Personal opinion, transparency is probably key here, so no asymmetric information as they say.
+
+
+## Why health care  so expensive in US
+p92.. 
+
+
+
+
+
+
  
 

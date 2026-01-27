@@ -406,6 +406,9 @@ Personal opinion, transparency is probably key here, so no asymmetric informatio
 
 ## Why health care  so expensive in US
 p92.. 
+Oh wow. I think this was already hinted earlier, but per analysys in 2003 Uwe Reinhardt paper, its not that utilization is higher in US, since pvysician visits and hospital days per capita hmm less than OECD median.
+
+But his paper is called "It's the prices , Stupid!" He doesn't bury the lead! 😆
 
 
 

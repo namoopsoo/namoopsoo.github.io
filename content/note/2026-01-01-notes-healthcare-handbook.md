@@ -412,7 +412,19 @@ But his paper is called "It's the prices , Stupid!" He doesn't bury the lead! ðŸ
 
 
 
+### information asymmetries 
+p93
+regular people, dont know what things cost. So how could they make proper "rational" decisions? 
 
+Not only no "sticker" prices, but also no way to easily "comparison shop" for services.
+
+Rational decisions require access to historical data on averages and extremes and where some hospital or provider in front of you falls on that distribution. 
+
+And competition is low anyway these days regionally.
+
+Medical billing is also way more complicated than just a single price anywzy.
+
+There are no people advocating for your wallet. There is a hipocratic oath, for not harming the patient but I think we need one for the wallet too. Though I dont expect clinicians to take that on necessarily. 
 
 
  

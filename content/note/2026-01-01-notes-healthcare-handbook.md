@@ -428,4 +428,13 @@ There are no people advocating for your wallet. There is a hipocratic oath, for 
 
 
  
+## each billing system is a special unique snowflake
+p 94
+hmm lack of standardization like in Uk, 
+
+A 2011 study, finding , 20.6 hours per physician per week is spent doing health plan stuff , by nurses and PAs, which could have been spent on patient interactions instead. wow. Overhead! extra $82,975 annually!
+
+Interesting point that billing administration for value based care can be more complex than FFS!
+
+
 

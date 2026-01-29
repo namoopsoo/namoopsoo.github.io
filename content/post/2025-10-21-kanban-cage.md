@@ -252,6 +252,9 @@ Hopefully this collection  is  representative .
 
 > "Show don't tell" -many sources<sup>[21](#references)</sup>
 
+### Bullshit jobs
+ [22] ultimately have to really realize pi planning as much as nobel prize wining thinkers like Kahneman would criticize it, it is likely hefe to stay because theres  just too many bullshit jobs that partycipate in the ceremony of planning theatre. 
+
 ## What happened after our second attempt at pi planning
 
 This time around we wanted to prepare better, instead of being caught by surprise. Indeed fool me once shame on me. So second time around the team put together their initiatives in a clean way on a spreadsheet and everyone voted on initiatives.  (Well the product team refused to participate in the voting and perhaps that was a red flag.) 
@@ -313,4 +316,5 @@ x. https://en.wikipedia.org/wiki/McNamara_fallacy
 20. https://www.sciencedirect.com/science/article/abs/pii/S0191886906002194?via%3Dihub , "On the distinction between yuppies and hippies: Individual differences in prediction biases for planning future tasks"
 21. https://en.wikipedia.org/wiki/Show,_don%27t_tell
 
+22. bullshit jobs article, book
 

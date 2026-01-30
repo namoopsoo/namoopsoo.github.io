@@ -436,5 +436,11 @@ A 2011 study, finding , 20.6 hours per physician per week is spent doing health 
 
 Interesting point that billing administration for value based care can be more complex than FFS!
 
+### sounds to me maybe our HIPAa is causing a cost mess?
 
+p 96 fictional story here authors describe is very telling!
+
+> Let's say Ms. M is admitted to Hospital X for a broken hip after getting hit by a car. She gets a computed tomography (CT) scan, which shows a small brain bleed. After surgical repair of her hip, she's discharged to SNE, but after a few days she becomes confused and is sent to the ED at Hospital Z. Hospital Z doesn't have access to her records from Hospital X, so they repeat much of the same blood tests and CT scan of her head. Eventu-ally, she's discharged home with a home health agency, but the medications from her pharmacy don't match the med list from Hospital X or from Hospital Z, and she ends up taking too much blood pressure medication. No one has helped her get a timely appointment with her PCP, so she goes to an urgent care, where they don't have access to any of her records, she doesn't remember her brain bleed, and they prescribe aspirin. Ms. M's head bleed thus worsens and she gets confused again, so she's taken back to Hospital X, where they have no record of anything that happened since she was discharged the first time, and they get a third CT scan. These separate entities-two different hospitals, a nursing facility, pharmacy, doctor's office, urgent care, and home health agency-do not have any incentive to share information and efficiently coordinate Ms. M's care. 
+
+Authors write about lack of coordination but I suspect HIPAA plays a role too. I recall reading in a statnews article how HIPAA is cited in other situations too, for not revealing how algorithmic discharge decisions are made as opposed to just coordination, but I can imagine it applying here too. 🤔
 

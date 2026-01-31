@@ -52,21 +52,35 @@
       list.className = "search-results";
       items.forEach((item) => {
         const entry = document.createElement("li");
-        const title = item.title || item.name || item.slug || "Result";
+        const schema = item.schema_object || {};
+        const title =
+          schema.name || item.title || item.name || item.slug || "Result";
         const url = item.url || item.permalink || item.link;
+        const scoreText =
+          typeof item.score === "number" ? ` (${item.score.toFixed(3)})` : "";
+
+        const header = document.createElement("div");
+        header.className = "search-result-header";
+
         if (url) {
           const link = document.createElement("a");
           link.href = url;
-          link.textContent = title;
-          entry.appendChild(link);
+          link.textContent = `${title}${scoreText}`;
+          header.appendChild(link);
         } else {
-          entry.textContent = title;
+          header.textContent = `${title}${scoreText}`;
         }
-        if (item.snippet || item.summary || item.excerpt) {
+
+        entry.appendChild(header);
+
+        const description =
+          schema.description || item.description || item.snippet || item.summary;
+        if (description) {
           const snippet = document.createElement("p");
-          snippet.textContent = item.snippet || item.summary || item.excerpt;
+          snippet.textContent = description;
           entry.appendChild(snippet);
         }
+
         list.appendChild(entry);
       });
       results.appendChild(list);

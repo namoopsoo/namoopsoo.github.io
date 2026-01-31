@@ -140,6 +140,10 @@ All notable changes to this "human experiment" will be documented in this file.
 ### First
 - First successful cold plunge, learning how to stay 5+ minutes in 60 F ( TODO doubple check temp), at Standard Spa Miami Beach.
 
+## 2024-06
+### Logged
+- First time seeing the Coney Island Mermaid Parade (2024-06-24).
+
 ## 2024-02
 ### Changed
 - Switched from built in Apple iphone keyboard to typewise.app. (2024-02-19)

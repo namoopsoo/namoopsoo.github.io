@@ -8,6 +8,14 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Hook Up Cloudflare Rag Search</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-01-25-hook-up-cloudflare-rag-search/</link>
+      <pubDate>Sat, 31 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-01-25-hook-up-cloudflare-rag-search/</guid>
+      <description>Here are some of my notes on adding Cloudflare AI search as the endpoint for my hugo site&amp;rsquo;s search.
+Summary The other weekend, I randomly looked into some minimal ways to set up RAG search on my hugo site. A year prior, I had tried out TypeSense as a hosted vector embedding store for a several million row many gigabyte dataset but a hugo text site is pretty small so I was wondering what the price might be for this.</description>
+    </item>
+    <item>
       <title>Why do anything</title>
       <link>https://michal.piekarczyk.xyz/note/2026-01-24--dont-want-do/</link>
       <pubDate>Sat, 24 Jan 2026 00:00:00 +0000</pubDate>

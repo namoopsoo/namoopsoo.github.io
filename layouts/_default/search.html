@@ -1,0 +1,11 @@
+{{- define "main" -}}
+<main class="main">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+  </header>
+
+  {{ partial "search.html" . }}
+</main>
+
+<script src="{{ "js/search-worker.js" | relURL }}" defer></script>
+{{- end -}}

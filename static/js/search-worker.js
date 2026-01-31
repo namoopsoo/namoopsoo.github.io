@@ -9,7 +9,7 @@
   }
 
   const endpoint =
-    "https://blahblah-this-endpoint-nlweb.michal-piekarczyk.workers.dev/ask";
+    "https://my-web-hugo-rag-nlweb.michal-piekarczyk.workers.dev/ask";
 
   const setStatus = (message, isError = false) => {
     if (!status) {

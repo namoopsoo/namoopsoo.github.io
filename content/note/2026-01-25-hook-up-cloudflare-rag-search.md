@@ -26,7 +26,11 @@ Briefly, the setup involved the following steps:
 I read that cloudflare will only manage search on a subdomain it controls, so I decided to update my registrar's NS to point to cloudflare, figuring this was just a super reversible choice anyway.
 
 ## Setting up AI Search
-The Web UI method here did not work for me because for some reason my apex domain was used for the setup. Even after I wrote my subdomain into the text box, my button press after was not responsive. This looked like a bug basically, but that's okay because following along with the REST API docs, I was able to explicitly pass my intended domain along, `michal.piekarczyk.xyz` to the request, and that worked just fine. 
+The Web UI method here did not work for me because for some reason my apex domain was used for the setup. Even after I wrote my subdomain into the text box, my button press after was not responsive.
+
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2026-01-25-hook-up-cloudflare-rag-search/image_1769912475837_0.png" width="50%">}}
+
+This looked like a bug basically, but that's okay because following along with the REST API docs, I was able to explicitly pass my intended domain along, `michal.piekarczyk.xyz` to the request, and that worked just fine. 
 
 ## Next the search step
 Cloudflare has a nice playground I was able to use to try out a few queries, after my content started getting embedded. So I saw that it was basically functional. And I was able to create a REST token too and try out the AI Search endpoint with curl from my laptop as well. 
@@ -36,9 +40,25 @@ And at this point I had intended to just hook up my hugo javascript directly to 
 ## Let's replace my existing hugo search
 Here is where I leveraged Codex, prompting to make a GET request to the worker endpoint from the previous step. I had actually replaced the default hugo search for a project at work in the past, so I knew what to expect this time. The out of the box hugo search runs on each key-stroke, but I wanted to search on a button click this time instead. The default fuse.js search is a simple edit distance fuzzy search based on Levenshtein distance and it is super fast especially because it refers to the hugo in-memory `index.json` and that's why it can afford to refresh per key stroke. But because the small free cloudflare worker I'm using takes 5 seconds, I definitely wanted to use button search instead.
 
+## Iterating 
+One of the initial results was funny because the raw output was presented.
+
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2026-01-25-hook-up-cloudflare-rag-search/image_1769897492552_0.png" width="50%">}}
+But I realized oh haha of course, because I definitely forgot to describe what the output of this request looked like in my codex prompt and so this makes perfect sense.
+
+And after only a few extra iterations, I basically got what I intended. 
+
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2026-01-25-hook-up-cloudflare-rag-search/image_1769913049432_0.png" width="50%">}}
+
+## Are the results good?
+Anecdotally I do see some hits I expect but not others. I noticed one page that did not come up in my results I realized somehow did not get indexed. To really measure the performance, I know I would have to create a nice golden dataset like I did for an earlier project, and apply Mean Average Precision and Mean Reciprocal Rank<sup>[6,7](#references)</sup> , to get a fair evaluation.
+
+
 # References 
 1. https://developers.cloudflare.com/ai-search/how-to/brower-rendering-autorag-tutorial/
 2. https://developers.cloudflare.com/ai-search/get-started/api/
 3. https://michal.piekarczyk.xyz/post/2025-01-11-comparing-embedding-models/
 4. https://www.fusejs.io/concepts/scoring-theory.html
 5. https://en.wikipedia.org/wiki/Bitap_algorithm
+6. https://michal.piekarczyk.xyz/post/2025-01-11-comparing-embedding-models/
+7. https://michal.piekarczyk.xyz/post/2025-02-01-speedup-building-ground-truth-dataset-with-chromadb/

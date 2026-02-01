@@ -1,7 +1,7 @@
 ---
 date: 2025-10-13
 title: The Data Mercenary
-draft: false
+draft: true
 images:
   - "https://s3.amazonaws.com/my-blog-content/2025-10-13-mercenaries/IMG_6381.jpg"
 cover:
@@ -20,8 +20,7 @@ A similar conversation has been taking place around the topic of the GPT scaling
 
 But for the topic I'm after here, I'm thinking of work done for a company that doesn't make it into the research space.
 
-### all models are wrong some models are interesting 
-yea
+### All models are wrong some models are interesting 
 
 ### Lets look this interesting recent call to action I saw when using Duck Duck Go.
 

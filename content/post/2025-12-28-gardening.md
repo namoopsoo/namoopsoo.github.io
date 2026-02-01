@@ -1,7 +1,12 @@
 ---
 title: "Gardening time"
-date: 2026-02-01T12:26:23-05:00
+date: 2025-12-28
 draft: false
+images:
+  - "https://s3.amazonaws.com/my-blog-content/2025-12-28-gardening/image_1769969627778_0.png"
+cover:
+  image: "https://s3.amazonaws.com/my-blog-content/2025-12-28-gardening/image_1769969627778_0.png"
+
 ---
 # Life's a garden, can you dig it?
 That is what a colleague of mine had said very often when we worked together, about how you need to put time and effort into stuff. You know, get your hands dirty !

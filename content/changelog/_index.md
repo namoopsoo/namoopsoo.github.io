@@ -12,6 +12,7 @@ All notable changes to this "human experiment" will be documented in this file.
 
 ### Changed
 - This month, I've done more bed sleep initiations as opposed to couch sleep initiations in a long time (years?). Having a couch guest has really helped here 😅.
+- Not sure if this will stick, but I started a github markdown strategy for birds eye tracking of my projects, whereas trello was only really good for tactical work (2026-01-31).
 
 ## 2025-12
 ### Changed

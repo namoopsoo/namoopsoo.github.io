@@ -33,6 +33,13 @@ Sounds like FTC has stepped up in 2023, noticing unjustified claims on AI produc
 
 p26 Social Sentinel: student ptotest surveillance disguised as threat detection, oops.
 
+## Retention models
+p36 , crazy story about University Mount St Mary's, using a retention model, not to help people succeed but to identify students likely to drop out and get them out early before they hurt the school's statistics.
+
+But wouldn't it at this point be more fair to say clearly any technology can be used for good or evil,  before we even understand if this model was accurate or not.
+
+And going even deeper, the fact that university retention rates get tracked like this might not be great either and end up creating the perverse incentives we see.
+
 
 
 # references

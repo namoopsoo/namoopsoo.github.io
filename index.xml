@@ -312,6 +312,15 @@ To make sure hugo allows the custom &amp;lt;sup&amp;gt; html you need in your co
       <description>I have very much appreciated Anna Lembke&amp;rsquo;s Dopamine Nation. Easy rewards brings the gremlins that sit on the pain side of the scale, and thats withdrawal. In contrast, working through a challenging task, with mini milestones along the way, is reinforcing and stimulating. And small risks in the work feel good too. This is trial and error. I suppose trial and error is a kind of one armed bandit slot machine too but it involves effort and energy and care and attention, and it lets you learn of course and you come out with some kind of end product hopefully.</description>
     </item>
     <item>
+      <title>Terminate Your Photos</title>
+      <link>https://michal.piekarczyk.xyz/post/2025-05-17-terminate-your-photos/</link>
+      <pubDate>Sat, 17 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/post/2025-05-17-terminate-your-photos/</guid>
+      <description>Continuing, muy apple to immich experience, spending a lot of time on my immich bash terminal, I often had the need to look at my photos but bash is headless of course.
+Yes, of course immich is a browser based photo server of course, but often I found myself needing to look at some specific photo more quickly without finding it wihin the immich gui.
+Enter chafa2 I had the need and an idea of just using maybe ascii art to help and found someone had already done this and it was called chafa!</description>
+    </item>
+    <item>
       <title>apple photos to immich</title>
       <link>https://michal.piekarczyk.xyz/post/2025-05-16-apple-iphoto-to-immich/</link>
       <pubDate>Fri, 16 May 2025 00:00:00 +0000</pubDate>

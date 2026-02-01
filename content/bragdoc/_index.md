@@ -624,3 +624,11 @@ To resolve this, I gathered the various viewpoints, and drafted explicit guidanc
 "If any input to a predictive pipeline is sensitive, the output should also be treated as sensitive."
 
 This decision recognized the reality that model code evolves, and it would be risky to depend on future reviews always catching subtle data-leak vectors. The new written policy gave everyone a clear rule of thumb, reducing confusion and ensuring a stronger default stance on data protection.
+
+
+## Migrated my personal Hugo site to vector-based semantic search in two weekends using Cloudflare AI., (2026-01-31, [link](https://michal.piekarczyk.xyz/note/2026-01-25-hook-up-cloudflare-rag-search/))
+As a side project, I upgraded the default search on my personal Hugo-based static site, which previously relied on local edit-distance matching, to a vector-based semantic search. Wanting to move quickly and minimize infrastructure overhead, I chose to experiment with Cloudflare’s managed AI search offering.
+
+Over the course of two Saturdays, I migrated my site’s DNS to Cloudflare, indexed my content using their out-of-the-box embedding model, and set up vector search using their documented workflow. I then updated the site’s JavaScript to query the new Cloudflare endpoint, integrating it cleanly into Hugo’s existing frontend.
+
+The result was a working semantic search experience with minimal custom infrastructure, and a satisfying example of how managed vector search can be added incrementally to a static site. I documented the setup and tradeoffs in a short write-up for future reference.

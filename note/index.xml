@@ -17,22 +17,22 @@ The iron cross, maybe without one leg? You can’t cheat the scope–time–qual
 I have heard many variations of this.</description>
     </item>
     <item>
+      <title>do you have a flag?</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-01-31-lessons-steve/</link>
+      <pubDate>Sat, 31 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-01-31-lessons-steve/</guid>
+      <description>no flag no country Steve Huyhn (aka A Life Engineered ), discusses here , https://youtu.be/oLzj67H-OHo , a few career concepts he says he had to unlearn.
+One being about hoping if he does good work, it will surely get noticed.
+But he points out thats highly unlikely to happen.
+His alternative is to get better at self promoting, starting gently if youre not a natural braggart, highlighting the work of others and then slipping in alongside something you did too, in some email say or chat message.</description>
+    </item>
+    <item>
       <title>Hook Up Cloudflare Rag Search</title>
       <link>https://michal.piekarczyk.xyz/note/2026-01-25-hook-up-cloudflare-rag-search/</link>
       <pubDate>Sat, 31 Jan 2026 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2026-01-25-hook-up-cloudflare-rag-search/</guid>
       <description>Here are some of my notes on adding Cloudflare AI search as the endpoint for my hugo site&amp;rsquo;s search.
 Summary The other weekend, I randomly looked into some minimal ways to set up RAG search on my hugo site. A year prior, I had tried out3 TypeSense as a hosted vector embedding store for a several million row many gigabyte dataset but a hugo text site is pretty small so I was wondering what the price might be for this.</description>
-    </item>
-    <item>
-      <title>Steve lessons thoughts</title>
-      <link>https://michal.piekarczyk.xyz/note/2026-01-31-lessons-steve/</link>
-      <pubDate>Sat, 31 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://michal.piekarczyk.xyz/note/2026-01-31-lessons-steve/</guid>
-      <description>Steve Huyhn (aka A Life Engineered ), discusses here , https://youtu.be/oLzj67H-OHo , a few career concepts he says he had to unlearn.
-One being about hoping if he does good work, it will surely get noticed.
-But he points out thats highly unlikely to happen.
-His alternative is to get better at self promoting, starting gently if youre not a natural braggart, highlighting the work of others and then slipping in alongside something you did too, in some email say or chat message.</description>
     </item>
     <item>
       <title>Why do anything</title>

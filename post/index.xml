@@ -191,7 +191,7 @@ To make sure hugo allows the custom &amp;lt;sup&amp;gt; html you need in your co
       <link>https://michal.piekarczyk.xyz/post/2025-05-17-terminate-your-photos/</link>
       <pubDate>Sat, 17 May 2025 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/post/2025-05-17-terminate-your-photos/</guid>
-      <description>Continuing, muy apple to immich experience, spending a lot of time on my immich bash terminal, I often had the need to look at my photos but bash is headless of course.
+      <description>Continuing, my apple to immich experience, spending a lot of time on my immich bash terminal, I often had the need to look at my photos but bash is headless of course.
 Yes, of course immich is a browser based photo server of course, but often I found myself needing to look at some specific photo more quickly without finding it wihin the immich gui.
 Enter chafa2 I had the need and an idea of just using maybe ascii art to help and found someone had already done this and it was called chafa!</description>
     </item>

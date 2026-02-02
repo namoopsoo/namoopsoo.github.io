@@ -8,6 +8,15 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Iteration Planning</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-02-01--iteration-planning/</link>
+      <pubDate>Sun, 01 Feb 2026 21:18:39 -0500</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-02-01--iteration-planning/</guid>
+      <description>Notes, reading this article. Has some zingers in here , hah!
+The iron cross, maybe without one leg? You can’t cheat the scope–time–quality triangle. If we try to fix time and scope, quality takes the hit. In a developer-facing product, degraded quality means support escalations, technical debt, and broken trust. Like any debt, technical debt must be paid back, and its interest compounds over time.
+I have heard many variations of this.</description>
+    </item>
+    <item>
       <title>Hook Up Cloudflare Rag Search</title>
       <link>https://michal.piekarczyk.xyz/note/2026-01-25-hook-up-cloudflare-rag-search/</link>
       <pubDate>Sat, 31 Jan 2026 00:00:00 +0000</pubDate>
@@ -316,7 +325,7 @@ To make sure hugo allows the custom &amp;lt;sup&amp;gt; html you need in your co
       <link>https://michal.piekarczyk.xyz/post/2025-05-17-terminate-your-photos/</link>
       <pubDate>Sat, 17 May 2025 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/post/2025-05-17-terminate-your-photos/</guid>
-      <description>Continuing, muy apple to immich experience, spending a lot of time on my immich bash terminal, I often had the need to look at my photos but bash is headless of course.
+      <description>Continuing, my apple to immich experience, spending a lot of time on my immich bash terminal, I often had the need to look at my photos but bash is headless of course.
 Yes, of course immich is a browser based photo server of course, but often I found myself needing to look at some specific photo more quickly without finding it wihin the immich gui.
 Enter chafa2 I had the need and an idea of just using maybe ascii art to help and found someone had already done this and it was called chafa!</description>
     </item>

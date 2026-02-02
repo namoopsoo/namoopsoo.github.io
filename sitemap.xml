@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://michal.piekarczyk.xyz/note/2026-02-01--iteration-planning/</loc>
+    <lastmod>2026-02-01T21:37:05-05:00</lastmod>
+  </url><url>
     <loc>https://michal.piekarczyk.xyz/note/2026-01-25-hook-up-cloudflare-rag-search/</loc>
     <lastmod>2026-01-31T21:44:43-05:00</lastmod>
   </url><url>
@@ -60,7 +63,7 @@
     <lastmod>2026-01-01T21:27:33-05:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/post/2025-10-21-kanban-cage/</loc>
-    <lastmod>2026-01-28T20:09:55-05:00</lastmod>
+    <lastmod>2026-02-01T21:22:26-05:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/post/2025-09-29-message-thumbnails/</loc>
     <lastmod>2025-10-05T13:26:22-04:00</lastmod>
@@ -114,7 +117,7 @@
     <lastmod>2025-05-31T17:46:16-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/post/2025-05-17-terminate-your-photos/</loc>
-    <lastmod>2026-02-01T14:30:31-05:00</lastmod>
+    <lastmod>2026-02-01T21:22:26-05:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/post/2025-05-16-apple-iphoto-to-immich/</loc>
     <lastmod>2025-06-02T20:43:52-04:00</lastmod>

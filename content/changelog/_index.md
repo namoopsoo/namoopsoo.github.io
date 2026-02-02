@@ -317,3 +317,8 @@ first pro soccer game. Liberty, 2025
 
 Post shoe goo photos for duc shoe and also air mattress!
 
+
+### changed my mind / learned 
+- I used to think code versions should be released when you merge your code to your trunk branch (aka mmaster or main), but during 2024-2025, my colleagues at work pushed us to switch to what others in the industry do (but not all) releasing a new version on a cadence *(I think colleague Jack in particular, I should check the logs)* . Trying it out since the benefit proposed was stability, I wondered okay why not. I dont think we had users at the time who cared one way or another but in my mindspace, the idea grew on me because of also adopting CHANGELOG ,another idea another colleague introduced (Jack or Julia??) and those two together clicked for me , clearly since haha I also ended up creating this personal changelog for myself as well haha. something about bucketing chronologically has a weird Heart Rate Variability stability , organized chaos kind of feeling haha.  ( should split this out into a micro blog post actually)
+
+

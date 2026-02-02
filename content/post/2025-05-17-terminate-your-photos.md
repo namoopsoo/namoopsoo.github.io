@@ -9,7 +9,7 @@ images:
 cover:
   image: "THUMBNAIL_PLACEHOLDER"
 ---
-Continuing, muy apple to immich experience, spending a lot of time on my immich bash terminal, I often had the need to look at my photos but bash is headless of course. 
+Continuing, my apple to immich experience, spending a lot of time on my immich bash terminal, I often had the need to look at my photos but bash is headless of course. 
 
 Yes, of course immich is a browser based photo server of course, but often I found myself needing to look at some specific photo more quickly without finding it wihin the immich gui. 
 

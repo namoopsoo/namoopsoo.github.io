@@ -1,8 +1,8 @@
 ---
-title: Steve lessons thoughts
+title: do you have a flag?
 date: 2026-01-31
 ---
-
+# no flag no country
 Steve Huyhn (aka A Life Engineered ), discusses here   ,  https://youtu.be/oLzj67H-OHo , a few career concepts he says he had to unlearn. 
 
 One being about hoping if he does good work, it will surely get noticed. 

@@ -469,7 +469,12 @@ But many others. Also recently saw this former neuro surgeon,
 https://youtu.be/25LUF8GmbFU , speaking out about complicated surgeries not really being well understood as helpful and being done. Very specialized and expensive yet potentially also overtreatment!
 
 
+### overuse of ED 
+also mentioned, going to ED for a cold , or any non urgent thing. Expensive , avoidable. 
 
+
+Related but not mentioned:
+I realize part of this is there arr people , tens of millions of people, who dont have access to insurance but cannot be refused by ED for when a condition that could have been caught early, gets to be an actual emergency.
 
 
 

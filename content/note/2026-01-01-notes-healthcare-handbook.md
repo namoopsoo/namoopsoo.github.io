@@ -444,3 +444,33 @@ p 96 fictional story here authors describe is very telling!
 
 Authors write about lack of coordination but I suspect HIPAA plays a role too. I recall reading in a statnews article how HIPAA is cited in other situations too, for not revealing how algorithmic discharge decisions are made as opposed to just coordination, but I can imagine it applying here too. 🤔
 
+
+## regulation and cost
+p96 , US has less cost regulation unlike other countries (Japan , UK mentioned), 
+
+though medicare drug  regulation finally arrived in 2022, (Inflation Reduction Act),
+
+but thats just medicare. And a lot of unbounded cost in private.
+
+Authors acknowledge there are tradeoffs to pinning cost of anything of course.
+
+From what Im reading, so far, its the lack of cost transparency and inability to make informed choices about your health even if you did know , that probably contributes most to this wild west of pricing.
+
+## low value care
+
+p 97, avoidable spending. generic vs brand name statins, mentioned. 
+
+Overtreatment. Acute back pain and use of MRI cited , an area where high cost is used for something that goes away oj its own often.
+
+This reminds me, there is a lot of junk surgery out there too. There was a famous knee replacement placebo surgery study showing one example.
+
+But many others. Also recently saw this former neuro surgeon, 
+
+https://youtu.be/25LUF8GmbFU , speaking out about complicated surgeries not really being well understood as helpful and being done. Very specialized and expensive yet potentially also overtreatment!
+
+
+
+
+
+
+

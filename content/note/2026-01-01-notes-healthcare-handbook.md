@@ -499,7 +499,9 @@ p100, pollution -> asthma
 food deserts, medical deserts, 
 
 
-
+  crazy chart!
+https://www.healthaffairs.org/
+doi/10.1377/hlthaff.2018.05187
 
 
 

@@ -476,6 +476,32 @@ also mentioned, going to ED for a cold , or any non urgent thing. Expensive , av
 Related but not mentioned:
 I realize part of this is there arr people , tens of millions of people, who dont have access to insurance but cannot be refused by ED for when a condition that could have been caught early, gets to be an actual emergency.
 
+## expensive longterm chronic conditions 
+p98, diabetes, cancer, emphysema, asthma, heart disease, 
+
+expensive life long treatments 🤔. The system , is it prefering to hold out on cures so we keep paying for longterm treatments? 
+
+Diabetes prevalence, from 1% 1960, to 10.5% 2020, wow! Annual medical expenditures can be an additional $9,601, on insulin and other meds.
+
+Hmm wonder how much is Ozempic, Wegowy these days. Wow and diabetes is 3.4% of all health spending!?! 
+
+ 61. Kamal R, Kurani N, Ramirez
+M, Gonzales S. How have diabetes costs and outcomes changed over time in the U.S.?
+Peterson-KFF Health System Tracker. Published November 15, 2019. https:/ www.healthsystem-
+tracker.org/chart-collection/ diabetes-care-u-s-changed-time/#item-usdiabetes diabetes-medications-were-second-among-conditions-for-drug-spending-in-2018
+
+
+### end of life care
+13% to 25% of Medicare spend, is for last year of life, p99.
+
+### social determinants of health sdoh
+p100, pollution -> asthma
+food deserts, medical deserts, 
+
+
+
+
+
 
 
 

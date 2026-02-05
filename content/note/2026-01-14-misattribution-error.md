@@ -39,15 +39,21 @@ I think Scrum says more or less, lets cut up the work into pieces first, and eac
 
 But by solving ambiguity, Scrum introduces problem of boredom, reduces collaboration, and perhaps people still end up getting creative along the edges in their spare time so Scrum only papers over the problem but it still exists in reality.
 
-Extreme programming perhaps acknowledges that pair programming feels great but it says, only one person is at the keyboard at a time. And maybe at that point its just not worth splitting hairs on the team effort because it would just get way too blurry.
+Extreme programming (XP) perhaps acknowledges that pair programming feels great but it says, only one person is at the keyboard at a time. And maybe at that point its just not worth splitting hairs on the team effort because it would just get way too blurry.
 
 But your resume/CV still begs of you for the part that you did precisely, so what then? Our brag-documents and CVs sort of are forcing functions to constantly hunt for opportunities for emphasizing the self, putting the "individual" back in "individual contributor". 
+
+### From Daniil's list
+> "If it's not wrytten down, it didnt happen"
+Well stated!
 
 # References
 1. https://en.wikipedia.org/wiki/Fundamental_attribution_error#:~:text=In%20social%20psychology%2C%20the%20fundamental%20attribution%20error,an%20error%20because%20it%20misinterprets%20their%20effects.
 2.  Hanlon's razor
 3.  https://en.wikipedia.org/wiki/False_attribution#:~:text=False%20attribution%20may%20refer%20to:%20*%20Misattribution,fabricated%20source%20in%20support%20of%20an%20argument. 
 4. Choice-ology, https://www.schwab.com/learn/story/teamwork-that-works-what-great-teams-have-common
+
+5. Daniil , https://substack.com/@daniilshykhov/note/c-210265558?r=d7b46&utm_medium=ios&utm_source=notes-share-action
 
 
 

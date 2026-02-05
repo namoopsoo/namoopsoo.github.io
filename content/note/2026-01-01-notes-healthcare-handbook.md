@@ -504,6 +504,17 @@ https://www.healthaffairs.org/
 doi/10.1377/hlthaff.2018.05187
 
 
+## health care productivity has gone down
+p102 . productivity being "output" here like, "number of patients treated per day", though i dont understand if "treated" means "helped" of just "seen and swindled" 😅.
+
+but if it went down because more individual attention is given yhen that would be good I suppose.
+
+interesting price trendd chart!
+
+ ....   2019. https:// www.mercatus.org/system/files/
+helland-tabarrok why-are-the-prices-so-damn-high. v2.pdf)
 
 
+
+ 
 

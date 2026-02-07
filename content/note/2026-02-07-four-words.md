@@ -24,6 +24,6 @@ so maybe that is what I should setup on Cloudflare DNS if possible?
 1. https://www.hey.com/forwarding/
 2. https://en.wikipedia.org/wiki/Authenticated_Received_Chain
 
-
+3. https://community.cloudflare.com/t/email-routing-where-sender-has-strict-dmarc-lands-in-spam/348211
 
 

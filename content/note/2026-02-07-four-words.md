@@ -15,5 +15,15 @@ SPF
 DMARC
 
 
+## hey.com uses ARC
+For its own forwarding, [1], hey.com says they use ARC [2], 
+
+so maybe that is what I should setup on Cloudflare DNS if possible?
+
+# References 
+1. https://www.hey.com/forwarding/
+2. https://en.wikipedia.org/wiki/Authenticated_Received_Chain
+
+
 
 

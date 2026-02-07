@@ -2,8 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://michal.piekarczyk.xyz/note/2026-02-06-more-is-less/</loc>
+    <lastmod>2026-02-07T16:07:19-05:00</lastmod>
+  </url><url>
     <loc>https://michal.piekarczyk.xyz/note/2026-02-01--iteration-planning/</loc>
-    <lastmod>2026-02-01T21:37:05-05:00</lastmod>
+    <lastmod>2026-02-07T15:36:11-05:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/note/2026-01-31-lessons-steve/</loc>
     <lastmod>2026-02-02T09:27:51-05:00</lastmod>
@@ -855,7 +858,7 @@
     <lastmod>2024-08-25T20:40:54-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/about/</loc>
-    <lastmod>2025-07-27T16:08:49-04:00</lastmod>
+    <lastmod>2026-02-07T15:36:11-05:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/bragdoc/</loc>
     <lastmod>2026-01-31T22:13:39-05:00</lastmod>

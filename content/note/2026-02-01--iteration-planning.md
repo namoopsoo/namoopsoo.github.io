@@ -37,3 +37,4 @@ I should re-read the article but I don't think I noted discussion of how to do t
 1. https://www.nutrient.io/blog/what-ive-learned-about-product-iteration-planning-while-building-sdks/ , Joanna Ciesielska-Cysek . 
 
 
+

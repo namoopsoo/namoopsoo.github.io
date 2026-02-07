@@ -11,5 +11,5 @@ And I also like to [write jokes](https://michal.piekarczyk.xyz/gotjokes/joke/lan
 
 Sometimes [make](https://michal.piekarczyk.xyz/manhattan/) some [games](https://michal.piekarczyk.xyz/red-hat/)
 ### To Reach out,
-you can send a mail to my first name dot my last name at gmail.com.
+you can send a mail to michal[@]piekarczyk.xyz 
 

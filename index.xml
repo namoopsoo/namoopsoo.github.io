@@ -8,6 +8,13 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Notes on feast for spark</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-02-08-feast/</link>
+      <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-02-08-feast/</guid>
+      <description>Looking into feast, the open source feature store, and whether there is support for using feast as an interface around parquet and or delta tables, with use in a pyspark batch inference databricks environment. I see that parquet is mentioned in the quickstart2, using parquet as the offline component and using sqlite as the online store component. The offline store component is described as intended for training. Maybe it can be useful for a batch inference case too?</description>
+    </item>
+    <item>
       <title>The Good the bad and the ugly of AI benefit shortfalls</title>
       <link>https://michal.piekarczyk.xyz/note/2026-02-07-sloppy-seconds/</link>
       <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>

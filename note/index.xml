@@ -8,15 +8,6 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Looking Forwards</title>
-      <link>https://michal.piekarczyk.xyz/note/2026-02-07-forwards/</link>
-      <pubDate>Sat, 07 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://michal.piekarczyk.xyz/note/2026-02-07-forwards/</guid>
-      <description>Email forwarding mystery solved Feeling several facepalms now that my michal@piekarczyk.xyz email finally forwards to my hey.com email inbox. After several sessions of tweaking, the answer was low tech!
-Registrar forwarding Originally, I setup mail forwarding on my domain registrar. Only $5 a year, okay why not. After proving to my registrar I owned my hey email, I was all set, but tests yielded silence.
-I spent several chat sessions with a support engineer at my registrar.</description>
-    </item>
-    <item>
       <title>More Is Less</title>
       <link>https://michal.piekarczyk.xyz/note/2026-02-06-more-is-less/</link>
       <pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate>

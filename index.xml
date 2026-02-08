@@ -8,6 +8,13 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>The Good the bad and the ugly of AI benefit shortfalls</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-02-07-sloppy-seconds/</link>
+      <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-02-07-sloppy-seconds/</guid>
+      <description>I&amp;rsquo;m reading AI Snake Oil, and the authors intro by saying they will focus on the examples of AI that harm and they will not include the ones that benefit society. But it is not straightforward to create a list of the good examples. I think one of their examples in the good column was autocorrect. But auto orrect is a good example of where you can&amp;rsquo;t just sprinkle AI on a problem to solve it.</description>
+    </item>
+    <item>
       <title>Looking Forwards</title>
       <link>https://michal.piekarczyk.xyz/post/2026-02-07-forwards/</link>
       <pubDate>Sat, 07 Feb 2026 00:00:00 +0000</pubDate>

@@ -34,5 +34,5 @@ The reason I opened up this page was to note [1] this interesting example in The
 4. link to typewise autocorrect research paper
 5. https://michal.piekarczyk.xyz/note/2026-01-25-hook-up-cloudflare-rag-search/
 
-
+6. https://www.wired.com/story/real-estate-is-entering-its-ai-slop-era/
 

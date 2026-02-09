@@ -22,7 +22,9 @@ I think one of the examples in the good column, is search, especially local corp
 ## Real estate listing furnishing AI
 The reason I opened up this page was to note [1] this interesting example in The Atlantic about how the current state of using gen AI to auto furnish --*autocorrect 😉?*--an empty unit is creating some weird disappointmentsh from potential clients who were not aware that AI was used to furnish the listing in question . 
 
+But I do get that this is at least half unfair to say since fake or not, you can simply ask if the apartment or home you are renting or buying comes  pre furnished or not , so there is no fraud here.
 
+So this comes down to, something like , is there any deceptive advertising? Will you look like a clothing model seen in an ad if you buy the clothes in the ad, is one analogy.
 
 # references
 1. https://www.theatlantic.com/app/webview/685871/?app-privacy=apple-att&articleAudioPlaying=false&color-scheme=auto&fontScale=1#:~:text=house%20in%20a,feel%20let%20down.%E2%80%9D 

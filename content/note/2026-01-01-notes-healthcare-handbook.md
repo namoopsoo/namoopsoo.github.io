@@ -515,6 +515,16 @@ interesting price trendd chart!
 helland-tabarrok why-are-the-prices-so-damn-high. v2.pdf)
 
 
+In any case this Baumol effect, says drop in physician productivity is causing the prices to rise . 
 
+But what is causing this drop in number of patient interactions?
+
+Another view p103, Alex Tabarrok, economist, is that theres a linear relationship between GDP per capita and health expenditure per capita.
+
+Hezlth cost is probably all of these things, authors summarize. 
+
+Sounds like prices are a weird dance between a lot of players, sort of reacting to each other, and with many degrees of freedom since no regulation for private.
+
+Reminds me effect observed , that in 2008-2016 perhaps, the govt fought to increase government loans available to students. It happened, but the also the price of college merely corrected upwards too as if responding to   students   able to pay more.
  
 

@@ -527,4 +527,5 @@ Sounds like prices are a weird dance between a lot of players, sort of reacting 
 
 Reminds me effect observed , that in 2008-2016 perhaps, the govt fought to increase government loans available to students. It happened, but the also the price of college merely corrected upwards too as if responding to   students   able to pay more.
  
-
+## quality and delivery
+p109, interplay of quality, technology, delivery and reimbursement. 

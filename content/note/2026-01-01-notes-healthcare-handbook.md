@@ -540,6 +540,11 @@ Was it first report to claim medical error related deaths?
 
 Remind me, I was watching HBO Pitt, season 2, recent episode, discussed MERS, which I believe is a bacterial infection more common to spread in hospitals. 
 
+My question , since Electronic Health Records mentioned, is  HIPAA basically being abused for anticompetetive reasons to prevent medical errors from surfacing, but more so, preventing cost transparency, medical pre authorization transparency,  etc?
+
+
+p110: various categories of medical errors are listed, defined by AHRQ. https://psnet.ahrq.gov
+
 
 
 

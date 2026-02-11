@@ -529,3 +529,18 @@ Reminds me effect observed , that in 2008-2016 perhaps, the govt fought to incre
  
 ## quality and delivery
 p109, interplay of quality, technology, delivery and reimbursement. 
+
+p110, medical quality tracking is born? 1999 report from the Institute of Medicine (IOM) "To Err Is Human: Building a Safer Health System".
+
+with a quote, 
+>  *"errors are common, they are costly, systems-related problems cause errors, errors can be prevented, and safety can be improved."*
+
+Was it first report to claim medical error related deaths? 
+  46,000 to 98,000 annually, in US? 
+
+Remind me, I was watching HBO Pitt, season 2, recent episode, discussed MERS, which I believe is a bacterial infection more common to spread in hospitals. 
+
+
+
+
+

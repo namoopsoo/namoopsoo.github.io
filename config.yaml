@@ -92,6 +92,10 @@ menu:
       name: notes
       url: /note/
       weight: 30
+    - identifier: paper-notes
+      name: paper-notes
+      url: /paper-notes/
+      weight: 120
     - identifier: Search
       name: search
       url: search/

@@ -8,6 +8,14 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Whose Responsibility is Tech Debt</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-02-11-tech-debt-whose-job/</link>
+      <pubDate>Wed, 11 Feb 2026 19:56:26 -0500</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-02-11-tech-debt-whose-job/</guid>
+      <description>Starting a small note here, around discussions myself and others have been having on my team about whether addressing tech debt should be prioritized explicitly or is it something you just address like you might with local refactors with the so-called boy-scout-rule [1].
+Realizing after having several converstions about this lately that there are many diverging opinions on this. I have some teammates who see this as the responsibility of the product team, and others who will tackle it head on like an obstacle in their way of the main task at hand.</description>
+    </item>
+    <item>
       <title>Notes on feast for spark</title>
       <link>https://michal.piekarczyk.xyz/note/2026-02-08-feast/</link>
       <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>

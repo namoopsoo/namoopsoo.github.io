@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Paper-Notes on michal piekarczyk | end to end combat</title>
+    <link>https://michal.piekarczyk.xyz/paper-notes/</link>
+    <description>Recent content in Paper-Notes on michal piekarczyk | end to end combat</description>
+    <generator>Hugo -- 0.128.0</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 11 Feb 2026 19:54:25 -0500</lastBuildDate>
+    <atom:link href="https://michal.piekarczyk.xyz/paper-notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>baumol paper</title>
+      <link>https://michal.piekarczyk.xyz/paper-notes/2026-02-07--baumol/</link>
+      <pubDate>Sat, 07 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/paper-notes/2026-02-07--baumol/</guid>
+      <description>Why I&amp;rsquo;m reading this Encountered through healthcare handbook book.
+conclusion/abstract what I learned motivation of this paper claimed contributions how are claims substantiated References https://www.mercatus.org/system/files/helland-tabarrok_why-are-the-prices-so-damn-high_v2.pdf </description>
+    </item>
+  </channel>
+</rss>

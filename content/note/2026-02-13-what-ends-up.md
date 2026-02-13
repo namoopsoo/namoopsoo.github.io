@@ -1,0 +1,43 @@
+---
+date: 2026-02-13
+title: What ends up happening 
+---
+
+One reason why plans, I notice for myself, don't survive, is when there are multiple people waiting on me and also if I have multiple opportunities I have noticed. And also all of this competes with all of the things I have theoretically planned to do in a given day or week or sprint.
+
+Add to this of course, every task is a singularity.
+
+### Black hole Not  onion
+Realizing the onion analogy fails. People say, tasks with unknowns are like onions. You peel the first layer, but there are more and more layers. But that doesn't work because an onion still has a known size which doesn't cjange.
+
+A black hole on the other hand, is not as heavy as   it seems from the outside. At least, in the sense, its diameter is much smaller than its original star precursor. 
+
+However it also sucks you in and you cant leave for seferal hundred billion years until it evaporates! So maybe we need to keep shopping for analogies 😆.
+
+## what ends up happening 
+My colleague was recently telling me about this software, called Rally, where, overhead is also accounted for. So you acknowledge 20% of your time can end up going to coordination and planning/refining, logistics, etc.
+
+So the hard part is, I suppose choosing: do you disappoint people who asked you for help, do you miss opportunities to make an impact that you did not anticipate, or do you ignore what you intended to do before all the new information arrived?
+
+What ends up happening if you dont decide is, the universe decides.
+
+## Opportunities: Clarification 
+these can be collaboration opportunities, where you want to help someone, but they dont know you have an idea to help them. So there is this heavy reward potential that sits on your head. You know you can help. You visualized it instantaneously. Now you see the execution will take time ana you see this will cause you to not do what you intended to do before the opportunity arose! Tbis is a heavy burden , especially if the payout looks great 🤩.
+
+
+
+
+## Maybe a better way
+
+Saying no is hard, so instead you might say, "not right now but maybe". After all were all dealing with the same pressures.
+
+Peraps yes there are many options thqt arrived but usually they are known at least by middday, and opportunities perhaps have bigger windows than you think.
+
+Also, most opportunities have a discounted payout --a benefit shortfall.
+
+So maybe you simply choose and write down your choices as the time block planner style and then just roll with it and stop listening for new opportunities or new requests for help .     
+
+Heads down and execute. And yea, maybe then if you have a settled approximatipn, you can better set expectations for those who sought out your help.
+
+You will disappoint people , thats crushing but inevitable. Opportunities will be lost. But maybe collapsing the day's wave functions, at least visually, in your minds eye or on paper, can help you execute more peacefully calmly!
+

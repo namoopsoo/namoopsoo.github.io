@@ -8,6 +8,15 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>What ends up happening</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-02-13-what-ends-up/</link>
+      <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-02-13-what-ends-up/</guid>
+      <description>One reason why plans, I notice for myself, don&amp;rsquo;t survive, is when there are multiple people waiting on me and also if I have multiple opportunities I have noticed. And also all of this competes with all of the things I have theoretically planned to do in a given day or week or sprint.
+Add to this of course, every task is a singularity.
+Black hole Not onion Realizing the onion analogy fails.</description>
+    </item>
+    <item>
       <title>Whose Responsibility is Tech Debt</title>
       <link>https://michal.piekarczyk.xyz/note/2026-02-11-tech-debt-whose-job/</link>
       <pubDate>Wed, 11 Feb 2026 19:56:26 -0500</pubDate>

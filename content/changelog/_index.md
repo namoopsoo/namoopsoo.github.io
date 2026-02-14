@@ -228,6 +228,10 @@ All notable changes to this "human experiment" will be documented in this file.
 - Switched from gmail.com to hey.com for my main email home.
 - TMI, but, 😅. Switched from standard nail clippers for toenails to the "toe bro" tool, for dealing with ingrown toenails (2021-08-17).
 
+## 2021-06
+
+### First
+- First time I shelled out over $1k, on emergency tax advice, w.r.t. the phantom AMT tax trap (2021-06-03).
 
 ## 2021-05
 ### Changed
@@ -347,6 +351,9 @@ All notable changes to this "human experiment" will be documented in this file.
 first pro soccer game. Liberty, 2025
 
 Post shoe goo photos for duc shoe and also air mattress!
+
+deeplearning.ai Andrew Ng and other courses ! 
+
 
 
 ### changed my mind / learned 

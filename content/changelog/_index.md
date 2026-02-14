@@ -36,6 +36,7 @@ All notable changes to this "human experiment" will be documented in this file.
 
 ### Stopped
 - Stopped daily Carb Manager logging during travel to India but also did not resume after returning. Discussed why [here](https://michal.piekarczyk.xyz/post/2025-12-10-not-tracking/) (2025-12-08) .
+- Stopped my dadjests.com . And this was my last godaddy domain (2025-12-07).
 
 ### Returned
 - Resumed office commutes after 4 years! Because my company now has a proper office with coffee and water that doesnt require notification (2025-12-07).
@@ -48,8 +49,9 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Broke
 - Leaned on and broke a table of my moms, 😅, though to be fair, we were both criticizing, the manufacturers crappy construction choices from the beginning (2025-11-01).
 
-## Logged 
+### Logged 
 - First time I think I saw a raptor [doing their bird grooming](https://vimeo.com/1133482427) (2025-11-02)
+- Received warranty-based Vornado whole room heater replacement after the heat on the previous one stopped working. Process took from emailing to help@vornado.com on 2025-11-17, just 11 days (2025-12-28).
 
 ## 2025-10
 ### Updated
@@ -262,6 +264,11 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Logged
 - Had the privilege to attend a friend's wedding and give a speech and really appreciated the opportunity because I logged it as a 4 minute mini stand up routine celebrating my friend and showing me it is something I really enjoy doing (2017-09-25).
 
+## 2024-12
+
+### Started
+- Setup dadjests.com on godaddy (2014-12-07).
+
 ## 2014-10
 ### Built
 - [Built](/post/2014-10-26-chair/) a better cardboard chair, after first attempt back in ~1999.
@@ -302,14 +309,14 @@ All notable changes to this "human experiment" will be documented in this file.
 - first ipad,
 - first iphone
 - first palm pilot? (tungsten second?)
-- first skateboard, and stopped it
+- first skateboard, and stopped it, from letgo.com i think 
 - started using  CarbManager
 -  driving licenss 
 - zipcar membership (DC)
 - nightguard, 2022?,3?,4?
 - First Clojure code in production?
 - First meetup.com attended?
-- First git repo? (2011?)
+- First github repo? (2011?)
 - First code written? (javascript in, hmm, 1997 ishh? some webpage for boyscouts something? I wanted to make a funny animation, and was really into this tutorial by )
 - hung up that whiteboard, first time?
 - hung up cool painting Gabe found outside, in Bushwick apartment 
@@ -319,7 +326,7 @@ All notable changes to this "human experiment" will be documented in this file.
 - stopped Zero App
 - Started Carb Manager, stopped Noom,...
 - first time requested, downloaded data from Amazon for GDPR link.
-- skateboard, from letgo.com
+
 - logi ergonomic mouse
 - bustelo to lavazza? kamira?
 - switched from pandas to polars some time in 2024 .

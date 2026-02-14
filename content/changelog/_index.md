@@ -8,7 +8,7 @@ All notable changes to this "human experiment" will be documented in this file.
 ## 2026-02
 ### Firsts
 - Together with the rest of NYC, experienced the longest subzero stretch of days, jan 24 to ~feb9, around 16 days so possibly longest since either 1961 or [1881](https://m.economictimes.com/news/international/us/nyc-faces-longest-deep-freeze-in-65-years-heres-the-exact-date-temperatures-finally-rise/articleshow/127861963.cms), (2026-02-09).
-
+- First time I [setup](https://michal.piekarczyk.xyz/post/2026-02-07-forwards/) an email within a personal domain (2025-02-07).
 
 ## 2026-01
 ### Firsts
@@ -18,9 +18,11 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Changed
 - This month, I've done more bed sleep initiations as opposed to couch sleep initiations in a long time (years?). Having a couch guest has really helped here 😅.
 - Not sure if this will stick, but I started a github markdown strategy for birds eye tracking of my projects, whereas trello was only really good for tactical work (2026-01-31).
+- Migrated my DNS 
 
 ### Logged
 - Certainly not first, but logged several sub zero runs this month.
+- Hooked up cloudflare AI rag-search into my [hugo site](https://michal.piekarczyk.xyz/note/2026-01-25-hook-up-cloudflare-rag-search/) (2026-01-25).
 
 ## 2025-12
 ### Changed
@@ -181,9 +183,13 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Changed 
 - Switched to refillable deodorant, from [getfussy.com](https://getfussy.com), as opposed to the disposable kind.
 
+### Finished
+- Wrote about [here](https://michal.piekarczyk.xyz/post/2023-09-10-summary-learning-how-to-learn-coursera/) my summary from learning how to learn (2023-09-10).
+
 ## 2023-07
 ### Started
 - First Tesla driving (and renting) [experience](https://world.hey.com/michal.piekarczyk/first-hertz-tesla-rental-experience-a31c123d).
+- Started Learning How to Learn Coursera.org course with Barbara Oakley (2023-07-05).
 
 ## 2023-01
 ### Changed

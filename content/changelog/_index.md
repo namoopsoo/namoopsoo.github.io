@@ -160,6 +160,8 @@ All notable changes to this "human experiment" will be documented in this file.
 ## 2024-06
 ### Logged
 - First time seeing the Coney Island Mermaid Parade (2024-06-24).
+### Started
+- Started using Trello (2024-06-16).
 
 ## 2024-02
 ### Changed

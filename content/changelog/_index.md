@@ -19,6 +19,9 @@ All notable changes to this "human experiment" will be documented in this file.
 - This month, I've done more bed sleep initiations as opposed to couch sleep initiations in a long time (years?). Having a couch guest has really helped here 😅.
 - Not sure if this will stick, but I started a github markdown strategy for birds eye tracking of my projects, whereas trello was only really good for tactical work (2026-01-31).
 
+### Logged
+- Certainly not first, but logged several sub zero runs this month.
+
 ## 2025-12
 ### Changed
 - First time, tried making chicken soup by first roasting the chicken (450F 30min) before putting it into the soup. (2025-12-10).
@@ -28,7 +31,7 @@ All notable changes to this "human experiment" will be documented in this file.
 - First time on a wild jeep safari (2025-12-01).
 - Fourth December I made the bigos, our family Xmas dish. (2025-12-22). 
 - Played table top monopoly first time in wow many many years . (2025-12-26).
-- Pull ups, push ups in the snow. Sort of memorable 😆. First time using the outdoor equipment in my neighborhood park gym, after it snowed. 22F, but no wind and luckily the actual equipment did not have snow on it (2025-12-27).
+- Pull ups, push ups in the snow. Sort of memorable 😆. First time using the outdoor equipment in my neighborhood park gym, after it snowed. 22F, but no wind and luckily the actual equipment did not have snow on it, just on ground everywhere (2025-12-27).
 - Hosted a different friend of friend from Costa Rica . (2025-12-31).
 
 ### Stopped
@@ -76,6 +79,9 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Deployed
 - Successfully vibe code iterated, a [hugo google sheet powered](https://michal.piekarczyk.xyz/post/2025-09-28-sheet-charts/) timeseries chart, to encourage myself to build better habits (2025-09-28).
 
+### Started
+- Started tiny experiments [audio book](https://www.libro.fm/audiobooks/9798217011834-tiny-experiments), (2025-09-05).
+
 ## 2025-08
 ### Logged
 - First time went to a roller skating [rink](https://www.xanadu.nyc/). Very different from rollerblading I recall from childhood haha!
@@ -90,13 +96,18 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Started
 - Started using Stage Manager on Apple macos. (2025-08-27)
 - Park next to me got renovated and has a pull up bar now so I started using a normal size pull up bar again finally after a long time.
+- 
 ## 2025-07
 ### Started
 - Started this personal changelog!
 - First post intended at Substack, [this one](https://michalpiekarczyk.substack.com/p/2025-06-26-medical-anecdote)
-- Meditations, Marcus Aurelius.
+- Meditations, Marcus Aurelius, started.
 - First time used [sklearn-onnx](https://onnx.ai/sklearn-onnx/) to convert an older version scikit-learn pipeline to onnx and verified that it produces the same scores within a very high precision.
 - First time visiting [MoMa PS1](https://www.momaps1.org), which was for their  27th season summer music series called Warm Up.
+- Started Dopamine Nation [workbook](https://www.libro.fm/audiobooks/9780593948842-the-official-dopamine-nation-workbook) (2025-07-12).
+
+### Changed
+- Switched from audible to [libro.fm](https://www.libro.fm/) for new audio books at least (2025-07-12).
 
 ## 2025-06
 ### Started

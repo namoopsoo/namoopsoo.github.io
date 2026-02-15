@@ -545,6 +545,42 @@ My question , since Electronic Health Records mentioned, is  HIPAA basically bei
 
 p110: various categories of medical errors are listed, defined by AHRQ. https://psnet.ahrq.gov
 
+### Triple Aim
+p112, from Institute for Healthcare Improvement, three aims are , the patient experience, the actual health outcomes, but also the cost.
+
+Menyion of the swiss cheese model of medical errors, of compounding risks. Meaning, how to prevent errors yes, but mitigate when not if they happen.
+
+### Donabedian triad
+p113, a way to evaluate a system by proxy measures because health outcomes can take a really long time sometimes , to measure.
+
+This suggests outcomes, process, and structure. 
+
+Sounds like the input and output.
+
+Process measures, sounds like intermediate outcomes, like how fast were patients seen, maybe, if a lot of medical care is about following protocols and lists of guidelines, you might compare care given to what guidelines recommended. 
+
+Sounds also like, in "The Price We Pay", looking at treatment comparing to distribution of everyone. Their example I recall was centimeters of melanoma biopsy and or removal too.
+
+But sounds like measuring this stuff is super tricky. What if you measure everything but not whether someone washed their hands thoroughly that one time?  
+
+Structure, sounds like, staffing and resources available and the finances around this. Interesting, so might eventually see an ROI?
+
+### Reporting
+p114. Ahh interesting. There will always be errors so relative silence probably means underreporting?
+
+Root Cause Analysis. And hmm maybe literally post mortems? Five whys.
+
+Example in book, CLABSI, 
+cenrral line associated bloodstream infection .
+
+Sounds like lean methodology used in some places.
+
+But unlike in othe sectors, hmm, health care is not blameless right? Because litigation and malpractice insurance are a thing. 
+Proxy measures like always are just that so cant know which ones are important easily.
+
+Sensing potential for measuring what is easier to measure, (p116), which, reminds me of McNamara_fallacy , https://en.wikipedia.org/wiki/McNamara_fallacy .
+
+Yea, but also the checklist idea. 
 
 
 

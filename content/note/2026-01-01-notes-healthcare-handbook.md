@@ -582,6 +582,14 @@ Sensing potential for measuring what is easier to measure, (p116), which, remind
 
 Yea, but also the checklist idea. 
 
+### Quality standards bodies
+p116, Interestingly it sounds like CMS adapts some of its standards. In particular, they can borrow them from the National Committee for Quality Assurance. They produce a dataset called the Healthcare Effectiveness Data and Information Set. ( https://www.ahrq.gov/learning-health-systems/about.html ) 
 
+Also reading https://www.ahrq.gov/sites/default/files/wysiwyg/lhs/lhs_case_studies_hca.pdf, a case study on HCA, a private entity that is applying this LHS approach, transforming themselves into a "learning health system", collecting not just EHR data, but data on any process as well, like they gave an example of a test being ordered, say, whereas originally just the test results would have been part of the EHR, the activity of ordering that test is separately logged.
 
+p116, noting that in 2018, CMS finished  spending $1.3 billion over a decade on developing 788 new measures, but there are questions, about how do we know that all of this tracking activity is contributing to actual better patient outcomes (and other aspects of quality too like patient experience, and without increased staff burnout say).
+
+A reference pointing out that 7 out of 33 metrics on CMS are about "patient experience", https://www.cms.gov/medicare/medicare-fee-for-service-payment/sharedsavingsprogram/downloads/aco-shared-savings-program-quality-measures.pdf
+
+This table is kind of confusing though, why does it have literally just 33 metrics? I thought there were hundreds??
 

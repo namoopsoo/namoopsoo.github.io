@@ -2,6 +2,12 @@
 title: "Coldest"
 date: 2026-02-15T13:07:28-05:00
 draft: false
+
+# optional thumbnail
+images:
+  - "https://s3.amazonaws.com/my-blog-content/2026-02-14-coldest/IMG_9715_preview.jpeg"
+cover:
+  image: "https://s3.amazonaws.com/my-blog-content/2026-02-14-coldest/IMG_9715_preview.jpeg"
 ---
 
 Recently, myself and the rest of NYC went through a cold spell and news outlets reported<sup>[2](#references)</sup> the 13 day stretch of sub-zero weather, ending Feb 6th, was not longer than a 16 stretch in 1881. And this was shorter than a 1963 stretch, but tying a 2018-01-13 streak.
@@ -99,3 +105,4 @@ I was kind of shocked to see that you have to show the coldest 20 spans of the *
 
 
 <sup>[xxx](#references)</sup>
+

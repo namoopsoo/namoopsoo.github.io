@@ -591,5 +591,7 @@ p116, noting that in 2018, CMS finished  spending $1.3 billion over a decade on 
 
 A reference pointing out that 7 out of 33 metrics on CMS are about "patient experience", https://www.cms.gov/medicare/medicare-fee-for-service-payment/sharedsavingsprogram/downloads/aco-shared-savings-program-quality-measures.pdf
 
-This table is kind of confusing though, why does it have literally just 33 metrics? I thought there were hundreds??
+(*screenshot from above link:*)
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2026-01-01-notes-healthcare-handbook/image_1771250584782_0.png" width="50%">}}
 
+This table is kind of confusing though, why does it have literally just 33 metrics? I thought there were hundreds??

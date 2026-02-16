@@ -27,7 +27,7 @@ Reading many examples, including a "next music hit" predictor that failed to sep
 ## lack of AI product audits
 p24 hiring: 
 Pymetrics, HireVue, in the dog house: no public audits for "does it work?" only for "are the models biased w.r.t. demographics. 
-
+  
 p25
 Sounds like FTC has stepped up in 2023, noticing unjustified claims on AI products. Cool, that is their wheelhouse.
 
@@ -40,6 +40,12 @@ But wouldn't it at this point be more fair to say clearly any technology can be 
 
 And going even deeper, the fact that university retention rates get tracked like this might not be great either and end up creating the perverse incentives we see.
 
+## Misleading predictive power
+p44 Crazy example of a model helping to predict complications risk after having pneumonia, in releasing patients after treatment. The authors worked with other researchers and noticed that although the model, was predictive, it was also associating asthma with a lower risk of complication. And they discovered the reason was the training data was not representative of a typical population. In fact, patients with asthma, part of this dataset, had received additional ICU care, reducing their risk for complications.  I suppose we still don't really know what was it about their increased care helped actually lower their risk to below the non-asthma population, but perhaps their stay was even extended so they had longer observation time to understand and treat any additional problems prior to their release. 
+
+In any case, that was a dramatic example, which could have been prevented by inspecting drift of feature distributions of the training data and fresh data. And that would have thrown this model right out.
+
+I wonder how often are the examples in this book about skewed training data. And just after writing that, I noticed the next example was another such bad training data example. This was a model predicting hypertension. However, I'm reading that having existing drug treatment for hypertension ended up being a strong model input and the evaluation set used was with people already being treated. And so it sounds like yet again, there would be a big distribution difference if you were to compare with live data, because clearly not everyone is already being treated for hypertension. If anything you might want to see how this model performs on evaluation data made up of people who have not been treated yet, to evaluate its performance strictly for new cases.
 
 
 # references

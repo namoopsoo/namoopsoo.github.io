@@ -595,3 +595,37 @@ A reference pointing out that 7 out of 33 metrics on CMS are about "patient expe
 {{< figure src="https://s3.amazonaws.com/my-blog-content/2026-01-01-notes-healthcare-handbook/image_1771250584782_0.png" width="50%">}}
 
 This table is kind of confusing though, why does it have literally just 33 metrics? I thought there were hundreds??
+
+
+## Adverse Drug Events and medication errors
+p117, estimated associated with 7,000 deaths a year??! wow
+
+Oh interesting, switching away from handwritten scriprs helped.
+
+And, hmm "med rec", medication reconciliation, hrlping awareness on drug interactions, especially, hmm, between, different lists a patient might have, w.r.t. different facilities they go to.
+
+Hmm but how does this work, I always wondered how freely doss EHR information flow between  your different providers. Why do they constantly ask you for your medical history as if they cannot conceivably get it from your past providers?!? Hope this book explains that! When you see a new provider you are always rushed to remember your history but that is a crazy ask. 
+
+Authors write that "med reconciliation " doesnt always happen yet and studies still discover big descrepencies .
+
+## Nosocomial infections
+p117, infections at a hospital
+
+hmm, risk factors , higher for already being sick, but hmm also IV lines, catheters, hmm, CLABSIs, mentioned a few pages ezrlier. 
+
+Oh cool, I didnt realize these are preventable w.r.t. errors, and that using checklists has helped, to improve HAIs, health care associated infections.
+Due to, Laurance J. Peter Pronovost: champion of checklists in critical care. Lancet, https://
+www.sciencedirect.com/ science/article/pii/S0140673609614392
+
+I wonder if this is related to the Checklist Manifesto book, from Atul Gawande, which I remember was given to everyone at my company in 2015, that was a fond memory. 
+
+p118, sounds like nevertheless, HAI reduced into 2010s, but still number here , $40billion cost total, hmm ouch. Long way to go!!
+
+Reading, Medicare, uses stick approach, to not reimburse after HAI for certain procedures, ok. I hope there is not a weird self under-reporting consequence then? Sounds really tricky to get reliable data and prevent a conflict of interest here!
+
+  
+
+
+
+  
+

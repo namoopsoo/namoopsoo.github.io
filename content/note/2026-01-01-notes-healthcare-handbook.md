@@ -624,7 +624,14 @@ p118, sounds like nevertheless, HAI reduced into 2010s, but still number here , 
 Reading, Medicare, uses stick approach, to not reimburse after HAI for certain procedures, ok. I hope there is not a weird self under-reporting consequence then? Sounds really tricky to get reliable data and prevent a conflict of interest here!
 
   
+## handoffs
+p118 lots of handoffs for people in hispital . hmm but why is this any different from fact that you have many providers in your life in the grand scheme of things.
 
+although i get that not everyone has a chronic condition. 
+
+SBAR, IPASS, hand off standards. cool.
+
+think im starting to see why residents are asked to work crazy hours, maybe to reduce hand off related errors? If we fix this we could reduce fatigue related errors???? 😲
 
 
   

@@ -633,6 +633,33 @@ SBAR, IPASS, hand off standards. cool.
 
 think im starting to see why residents are asked to work crazy hours, maybe to reduce hand off related errors? If we fix this we could reduce fatigue related errors???? 😲
 
+https://www.psgh.com/
+news/i-pass-and-sbar-handoff-tools-have-proven-benefits/
+
+## chronic conditions 
+p119, saying we know what are the causes of  hypertension (aka high blood pressure  ). I didnt know we know, I thought we only knew the risk factors. 
+
+This is being discussed next to preventative care because apparently high blood pressure doesn't have a particular symptom and so checking if you have this would be really good preventative care.
+
+Contributing factors, diet, exercise, smoking, alcohol, sleep, stress, and indirectly, access to medicine to control it, genetics and age.
+
+Hmm well [3] seems to say being over 55 is a risk factor, hmm but has that been true, when controlling for all of the other factors like other disease that might be more common after your 55?
+
+
+(I recall I had a note about p42 about lack of incentives for insurers to pay for preventative care since insurance has   churn which outweighs the benefit . What about bad karma 😆?)  
+
+
+
+
+
+# References
+1. Healthcare Handbook, 3rd edition.
+2. ... 
+3. https://my.clevelandclinic.org/health/diseases/4314-hypertension-high-blood-pressure
+
+
+
+
 
   
 

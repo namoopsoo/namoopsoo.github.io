@@ -32,6 +32,9 @@ I think Burkeman's insights run deep and I don't remember them all but his point
 
 But another point of view, coming from Newel of Knowledge, is that many of us are bad at setting boundaries<sup>[3](#references)</sup>. This hooks into burnout heavy!
 
+## Intake Overwhelm 
+Some parts of the day can be very bursty and decision fatigue bends you to just solve new problems immediately rather than defer them more naturally. And delegating could have also been an option, but you dont want to break your colleagues' focus. But often, five minutes turns into fifteen and fifteen into thirty. And now context switching back to your previous work is a new burden.
+
 ## Maybe a better way
 Saying no is hard, so instead you might say, "not right now but maybe". After all were all dealing with the same pressures.
 
@@ -44,6 +47,13 @@ So maybe you simply choose and write down your choices as the time block planner
 Heads down and execute. And yea, maybe then if you have a settled approximation, you can better set expectations for those who sought out your help.
 
 You will disappoint people, thats crushing but inevitable. Opportunities will be lost. But maybe collapsing the day's wave functions, at least visually, in your minds eye or on paper, can help you execute more peacefully calmly!
+
+## Defer with deferrence 
+As David Allen originally pointed out, you need a system you can trust to defer or postpone, especially if someone else is counting on that thing. But I think we can agree that David Allen's context did nor include Slack and he did not work in a triage war room. 
+
+But sometimes a low tech whiteboard or paper  can still be helpful. Even in HBO's The Pitt, in all the chaos of their triage, they use a central "board" for status. As long as it is out of your head , in a place you trust.
+
+The deference part: maybe you can still respectfully ask someone to remind you again next time. This puts the ball back in their court and keeps you focusing.
 
 # References
 1. https://www.oliverburkeman.com/fourthousandweeks

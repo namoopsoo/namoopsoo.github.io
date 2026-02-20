@@ -1,22 +1,28 @@
+# namoopsoo.github.io
 
+This repository contains the source for my public blog/site.
 
-### Quickly convert blog post images to S3 artifacts
-This code expects `S3_DEPLOY_BUCKET` is defined.
+## Tech stack
 
-## Examples
+- [Hugo](https://gohugo.io/) for static site generation
+- Theme content and custom layouts in this repository
 
-### upload images to s3 and append html links to them to an existing .md file
+## Local development
+
 ```sh
-python quick_blog_post.py \
-    --append-only \
-    --existing-file "/path/to/content/file.md" \
-    --images "/full/path/to/image.png,/full/path/to/another_image.png" \
+hugo server -D
 ```
 
-### convert local relative image links to s3 links and upload the images
+Then open `http://localhost:1313`.
+
+## Build
+
 ```sh
-python quick_blog_post.py \
-    --convert-images-to-s3-assets \
-    --existing-file "/path/to/content/file.md" \
-    --local-asset-dir "/path/to/local/asset/dir"
+hugo
 ```
+
+The generated site output is written to `public/`.
+
+## Maintainer notes
+
+Operational scripts and personal workflow notes have been moved out of this README into `MAINTAINER_NOTES.md`.

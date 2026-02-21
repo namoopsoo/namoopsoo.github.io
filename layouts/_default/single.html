@@ -14,9 +14,6 @@
           */}}
         {{with .CurrentSection.Title }}{{. | upper }}{{end}}
       </aside>
-      {{ if partialExists "social-share.html" }}
-      {{ partial "social-share.html" . }}
-      {{ end }}
       <h1 class="f1 athelas mt3 mb1">
         {{- .Title -}}
       </h1>

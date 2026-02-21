@@ -48,6 +48,19 @@ In any case, that was a dramatic example, which could have been prevented by ins
 I wonder how often are the examples in this book about skewed training data. And just after writing that, I noticed the next example was another such bad training data example. This was a model predicting hypertension. However, I'm reading that having existing drug treatment for hypertension ended up being a strong model input and the evaluation set used was with people already being treated. And so it sounds like yet again, there would be a big distribution difference if you were to compare with live data, because clearly not everyone is already being treated for hypertension. If anything you might want to see how this model performs on evaluation data made up of people who have not been treated yet, to evaluate its performance strictly for new cases.
 
 
+
+## gamable systems
+p47, people research, showing like with resume keyword stuffing of the past, video interview analysis are similarly gamable. they tested glasses, backgrounds , etc, and unclear what sample size and stats were but they say these appeared to influence outcomes.
+
+## Netherlands, welfare fraud detection
+p49 the authors given an example where the Dutch government deployed an algorithm to detect welfare fraud, but apparently some nationalities were associated in the output with higher fraud predictions.
+
+at this point, it's pretty common to use things like statistical parody, and other more ground truth based methods to see very simple is the proportion of positive outcomes matching the proportion of positive in the ground truth demographics, and this is called bias analysis. I am not seeing that the authors of this book referred to that, but I wonder if that is a good enough tool to make sure at the very least that your model is not biased.
+
+also, the welfare detection fraud model that they mentioned was deployed in 2013 and I wonder when was the GDPR regulation produced which allowed or whether it made it required for many algorithms to explain their outcomes which would make it more straightforward for people to challenge the result of models.
+
+But wow, sohnds like the prime minister resigned so likely proper bias assessments were not performed?
+
 # references
 
 1. https://press.princeton.edu/books/hardcover/9780691249131/ai-snake-oil#preview

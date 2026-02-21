@@ -30,10 +30,15 @@ There is this Oliver Burkeman'ism, in his Time Management For Mortals<sup>[1](#r
 
 I think Burkeman's insights run deep and I don't remember them all but his point I believe was in the book title! We escape, often, because we fear death! If we postpone the plan we made, then maybe this is cheating time itself. 
 
-But another point of view, coming from Newel of Knowledge, is that many of us are bad at setting boundaries<sup>[3](#references)</sup>. This hooks into burnout heavy!
+But another point of view, coming from Newel of Knowledge, is that many of us are bad at setting boundaries<sup>[3](#references)</sup>. This hooks into burnout heavy! In fact a colleague recently pointed me to a page from Atul Gawande's Checklist Manifesto about selflessness. He indicated that my often putting others' needs before my own is a kind of virtue. I am definitely flattered here, and although I do get a lot of satisfaction from helping out my colleagues, I suspect I owe my behavior more to a lack of strong boundary-setting skills and less to my values.
 
 ## Intake Overwhelm 
-Some parts of the day can be very bursty and decision fatigue bends you to just solve new problems immediately rather than defer them more naturally. And delegating could have also been an option, but you dont want to break your colleagues' focus. But often, five minutes turns into fifteen and fifteen into thirty. And now context switching back to your previous work is a new burden.
+Some parts of the day can be very bursty and decision fatigue bends you to just solve new problems immediately rather than defer them more naturally. And delegating could also be an option, but you may wish to avoid breaking your colleagues' focus. Though often, five minutes turns into fifteen and fifteen into thirty. And now context switching back to your previous work is a new burden.
+
+## The buzz factor and Shiny syndrome
+Explain also, the paradox that creating a to-do list item deflates your interest in it. Like my former colleague used to always say, *"well we had a meeting about it, so it feels like we solved the problem, and now no one cares"*. Part of my super-power I believe, is recognizing the flame of an opportunity at your fingertips. I understand that a lot of people lose this spark, but I say you should fan the flame.
+
+
 
 ## Maybe a better way
 Saying no is hard, so instead you might say, "not right now but maybe". After all were all dealing with the same pressures.

@@ -38,4 +38,10 @@ This site includes optional support for [Giscus](https://giscus.app/) comments o
    - set `repo`, `repoid`, and `categoryid`
    - optionally adjust mapping/theme/language options
 
-When enabled, the comment widget is rendered below post content.
+Add the shortcode where you want comments rendered (typically at the end of a post):
+
+```md
+{{</* giscus */>}}
+```
+
+When enabled and configured, this shortcode renders the Giscus comment widget.

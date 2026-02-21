@@ -41,3 +41,19 @@ unsafe = true
   site_logo = ""
   description = "The last theme you'll ever need. Maybe."
   custom_css = ["css/custom_code_style.css"]
+
+  [params.giscus]
+    enabled = false
+    repo = "" # e.g. "owner/repo"
+    repoid = "" # from giscus app
+    category = "Announcements"
+    categoryid = "" # from giscus app
+    mapping = "pathname"
+    strict = "0"
+    reactionsenabled = "1"
+    emitmetadata = "0"
+    inputposition = "bottom"
+    theme = "preferred_color_scheme"
+    lang = "en"
+    loading = "lazy"
+

@@ -1,6 +1,8 @@
 baseURL: "https://michal.piekarczyk.xyz/"
 title: "michal piekarczyk | end to end combat"
-paginate: 5
+pagination:
+  pagerSize: 10
+
 theme: PaperMod
 
 enableRobotsTXT: true

@@ -3,6 +3,18 @@ title: Careerlog
 robots: noindex, nofollow
 --- 
 
+## Built infrastructure to serve my company’s first ML underwriting model in 2015, using Redis + Django to deliver real-time predictions., (2015)
+When I joined my first ML startup in 2015, we barely had any customer data—so our early system relied entirely on heuristics. By the time we landed our first paying customers, I volunteered to take a stab at training our first real model from the new data we’d started collecting.
+
+Coming out of school, I knew ML theory but not practice. I reached for Weka (which I’d used academically), unaware that scikit-learn was already the industry standard. My results were underwhelming compared to those of a newly hired Data Scientist, who had prior experience and quickly outperformed me. Looking back, it was a humbling and pivotal moment: my academic background didn’t directly translate into production-ready applied ML.
+
+I learned scikit-learn from him, and with the data we had—default customer data plus our first provider—I trained my first Random Forest model. While my colleague’s model ultimately won on AUC and was chosen for deployment, I contributed by building the infrastructure to host it.
+
+I used Redis to cache the model, integrated it into our Django web server, and wrote the glue code to call `predict_proba` on new prospective customer data. This supported underwriting decisions in real time. To manage multiple models, I keyed them by retailer, allowing us to segment and transition more deliberately as we added new versions.
+
+Though humbling, it was a defining career moment: a hands-on education in the difference between academic ML and applied ML, and my first experience building real infrastructure to bring a model into production.
+
+
 ## Built an end-to-end bike-share destination prediction pipeline with feature engineering, SageMaker training, and geospatial preprocessing, blending hobby and learning to explore model performance and evaluation., (2017)
 As a side project combining my biking hobby with data science, I worked on predicting Citibike rider destinations from trip and user attributes. My idea was to model a rider’s likely endpoint based on start time, location, and demographics — effectively, a small urban mobility prediction problem.
 
@@ -15,33 +27,6 @@ The project turned into a sandbox for modeling experimentation. I explored one-h
 I eventually Dockerized and deployed the model using AWS SageMaker, gaining hands-on experience with reproducible training environments, hyperparameter tuning jobs, and model serving endpoints. A later debugging adventure taught me that missing geolocation data (and a lapsed Google API key!) could tank performance — an invaluable “garbage in, garbage out” lesson.
 
 Overall, this project connected data science theory with real, messy data and real-world systems. It sharpened my understanding of geospatial features, temporal modeling, and production ML workflows, and it ultimately convinced my colleagues that I was serious about machine learning — leading to my formal move into our company’s data science team soon after.
-
-
-## Rebooted earlier Citibike destination-prediction project with XGBoost, custom K-area metric, and SageMaker-hosted demo site—combining model experimentation with hands-on MLOps deployment., (2020-10-20, [link](https://michal.piekarczyk.xyz/project/2020-10-20-bike-share-learn-reboot/))
-... 
-Several years after my first Citibike destination-prediction experiment, I revisited the idea—this time applying everything I’d learned since, both in modeling and deployment. The goal remained the same: given a rider’s start time and location, predict the neighborhood where their trip would end.
-
-This version used XGBoost rather than scikit-learn Random Forest,  along with new temporal and categorical features and a complete hyperparameter-tuning workflow. I explored both the functional API (xgboost.train) and the scikit-learn-style API (XGBClassifier().fit), discovering that the former exploited parallelism much better—4 minutes vs 49 minutes wall time for the same result. I also learned that, at the time, neither API fully supported batch or incremental training, which was something I’d hoped to test for online-learning scenarios.
-
-Feature engineering included weekday flags and time-of-day bucketing (five coarse periods instead of 24 hourly bins). EDA confirmed clear differences between weekday and weekend behavior—two commute-time peaks during the week versus one broader weekend curve—and the new weekday feature turned out to be the model’s most predictive input.
-
-To evaluate performance, I devised a new metric called “K-area”, inspired by top-K accuracy, which I had used in the previous project. Instead of just measuring the proportion of correct top-1 predictions, it averaged cumulative accuracies across ranks, giving a more nuanced sense of how close predictions were to the right neighborhood. Looking back, it was effectively a uniform-weighted version of MRR (Mean Reciprocal Rank).
-
-I ran over a thousand model variations, tracking metrics per epoch and across parameter combinations, and used the results to analyze performance curves. To make the work more tangible, I built a small demo site: a web page with a map plotting predicted destinations, backed by a SageMaker “bring-your-own-Docker” endpoint and a Google Static Maps API overlay.
-
-In the end, this reboot blended machine-learning experimentation and production engineering—a full MLE + MLOps loop in miniature. The project deepened my intuition for feature importance, evaluation metrics, and the practical trade-offs of serving real models online.
-
-
-## Built infrastructure to serve my company’s first ML underwriting model in 2015, using Redis + Django to deliver real-time predictions., (2015)
-When I joined my first ML startup in 2015, we barely had any customer data—so our early system relied entirely on heuristics. By the time we landed our first paying customers, I volunteered to take a stab at training our first real model from the new data we’d started collecting.
-
-Coming out of school, I knew ML theory but not practice. I reached for Weka (which I’d used academically), unaware that scikit-learn was already the industry standard. My results were underwhelming compared to those of a newly hired Data Scientist, who had prior experience and quickly outperformed me. Looking back, it was a humbling and pivotal moment: my academic background didn’t directly translate into production-ready applied ML.
-
-I learned scikit-learn from him, and with the data we had—default customer data plus our first provider—I trained my first Random Forest model. While my colleague’s model ultimately won on AUC and was chosen for deployment, I contributed by building the infrastructure to host it.
-
-I used Redis to cache the model, integrated it into our Django web server, and wrote the glue code to call `predict_proba` on new prospective customer data. This supported underwriting decisions in real time. To manage multiple models, I keyed them by retailer, allowing us to segment and transition more deliberately as we added new versions.
-
-Though humbling, it was a defining career moment: a hands-on education in the difference between academic ML and applied ML, and my first experience building real infrastructure to bring a model into production.
 
 
 ## Transformed Twilio from a messaging provider into a data source, analyzing prepaid vs. VOIP numbers and deploying a non-fixed-VOIP feature as a business rule to reduce default risk., (2017)
@@ -123,6 +108,26 @@ The value of this approach did show up: the monitor flagged a significant drift 
 This gave us an earlier warning system for data quality issues, reinforcing the importance of feature-level monitoring alongside model-level metrics.
 
 
+## Tackled my first Kaggle project on aviation physiology with TensorFlow LSTMs, learning hard lessons in 3D time series data, scaling, and deep learning practice through months of weekend experiments., (2019, [link](https://michal.piekarczyk.xyz/project/2020-04-05-aviation-kaggle-low-level/))
+My first (and only so far) Kaggle project was the Aviation Safety physiology classification challenge, which asked whether pilot state could be inferred from respiration, ECG, GSR, and EEG time-series data. I used it as an opportunity to dive into TensorFlow and LSTMs.
+
+One of my early realizations was just how different time series data is: moving from 2D to 3D meant the 1.1 GB dataset could balloon to 256 GB if I wasn’t careful with sequence windows. This forced me to learn much more about NumPy’s reshaping tricks, h5py for chunked data, and how to avoid crashes during training. I also discovered that LSTMs are extremely sensitive to unscaled inputs—only after applying scaling did my logloss improve.
+
+Along the way, I sharpened my tooling habits:
+
+- Visualization: raw Matplotlib plots helped me track logloss and inspect time series.
+
+- Workflow hygiene: I got disciplined with Jupyter Notebook experiments to avoid mixing datasets or models across days.
+
+- Data balancing: because the dataset was so skewed, I compared balanced weights vs balanced training sets, eventually preferring balanced datasets to simplify preprocessing.
+
+- Messy data reality: despite expectations of “clean Kaggle data,” I discovered the time series wasn’t even sorted by time—a frustrating but instructive experience.
+
+I invested nearly half a year of weekends, often slotting in training runs before bed, before going on runs, or even while waiting at the Boston Amtrak terminal (where I once almost missed a bus while mulling over logits vs softmax probabilities!). I also had fun moments along the way, like reading Yann LeCun’s warning about large minibatches and immediately tweaking my SGD batch size, or realizing at a family birthday party that I finally understood the idea of neural network “capacity.”
+
+Most competitors used gradient boosting (LightGBM/XGBoost), but I stuck with my LSTM path—it was less about leaderboard placement and more about learning deeply. While the final score wasn’t strong, the project gave me my first real immersion in deep learning practice: scaling, batching, managing experiments, wrangling messy time-series data, and living with the grind of trial and error.
+
+
 ## Optimized live underwriting pipeline by pruning features and rewriting feature engineering code, reducing latency by ~2.5s while maintaining accuracy to support a key retail partner., (2019-04-26)
 Our live underwriting model pipeline had become too slow, exceeding 10 seconds in some cases, which was hurting conversion rates and jeopardizing relationships with major retail partners. The challenge was to speed up predictions without sacrificing accuracy.
 
@@ -155,6 +160,21 @@ The result was a runtime reduction from over six hours to under an hour. I also 
 This project both improved underwriting decisions for returning customers and laid a foundation for more disciplined model versioning. It also taught me to combine SQL tuning, data normalization, and batch strategy in practical ways to achieve substantial performance gains.
 
 
+## Rebooted earlier Citibike destination-prediction project with XGBoost, custom K-area metric, and SageMaker-hosted demo site—combining model experimentation with hands-on MLOps deployment., (2020-10-20, [link](https://michal.piekarczyk.xyz/project/2020-10-20-bike-share-learn-reboot/))
+... 
+Several years after my first Citibike destination-prediction experiment, I revisited the idea—this time applying everything I’d learned since, both in modeling and deployment. The goal remained the same: given a rider’s start time and location, predict the neighborhood where their trip would end.
+
+This version used XGBoost rather than scikit-learn Random Forest,  along with new temporal and categorical features and a complete hyperparameter-tuning workflow. I explored both the functional API (xgboost.train) and the scikit-learn-style API (XGBClassifier().fit), discovering that the former exploited parallelism much better—4 minutes vs 49 minutes wall time for the same result. I also learned that, at the time, neither API fully supported batch or incremental training, which was something I’d hoped to test for online-learning scenarios.
+
+Feature engineering included weekday flags and time-of-day bucketing (five coarse periods instead of 24 hourly bins). EDA confirmed clear differences between weekday and weekend behavior—two commute-time peaks during the week versus one broader weekend curve—and the new weekday feature turned out to be the model’s most predictive input.
+
+To evaluate performance, I devised a new metric called “K-area”, inspired by top-K accuracy, which I had used in the previous project. Instead of just measuring the proportion of correct top-1 predictions, it averaged cumulative accuracies across ranks, giving a more nuanced sense of how close predictions were to the right neighborhood. Looking back, it was effectively a uniform-weighted version of MRR (Mean Reciprocal Rank).
+
+I ran over a thousand model variations, tracking metrics per epoch and across parameter combinations, and used the results to analyze performance curves. To make the work more tangible, I built a small demo site: a web page with a map plotting predicted destinations, backed by a SageMaker “bring-your-own-Docker” endpoint and a Google Static Maps API overlay.
+
+In the end, this reboot blended machine-learning experimentation and production engineering—a full MLE + MLOps loop in miniature. The project deepened my intuition for feature importance, evaluation metrics, and the practical trade-offs of serving real models online.
+
+
 ## Rebuilt underwriting pipeline with AWS Step Functions + Lambda for disaster recovery, reducing legacy Django dependencies and improving resilience, explainability, and auditability., (2021?)
 Following a double hit—a pre-Thanksgiving AWS outage and an information security incident—we prioritized strengthening the resilience of our underwriting infrastructure. At the same time, stricter PCI compliance and lingering reliance on a legacy Python 2 Django monolith pushed us to decouple risk-related flows from the broader customer experience. Cleaner separation meant better explainability, simpler auditing, and reduced operational risk.
 
@@ -163,54 +183,6 @@ To achieve this, I redesigned the pipeline using AWS Step Functions State Machin
 We rolled out the new system incrementally in canary style, starting with smaller retailers and later migrating larger partners once stability was proven. A highlight of this architecture was its replay capability: we could feed past payloads through the pipeline to validate new rules or architecture changes. I worked closely with a colleague to test rule modifications, comparing before-and-after outputs meticulously to ensure no unintended changes in business logic.
 
 The result was a serverless underwriting pipeline that improved disaster recovery, reduced reliance on legacy systems, and simplified future development. It provided not only technical resilience but also operational clarity, positioning the platform for safer iteration and long-term maintainability.
-
-
-## Tackled my first Kaggle project on aviation physiology with TensorFlow LSTMs, learning hard lessons in 3D time series data, scaling, and deep learning practice through months of weekend experiments., (2019, [link](https://michal.piekarczyk.xyz/project/2020-04-05-aviation-kaggle-low-level/))
-My first (and only so far) Kaggle project was the Aviation Safety physiology classification challenge, which asked whether pilot state could be inferred from respiration, ECG, GSR, and EEG time-series data. I used it as an opportunity to dive into TensorFlow and LSTMs.
-
-One of my early realizations was just how different time series data is: moving from 2D to 3D meant the 1.1 GB dataset could balloon to 256 GB if I wasn’t careful with sequence windows. This forced me to learn much more about NumPy’s reshaping tricks, h5py for chunked data, and how to avoid crashes during training. I also discovered that LSTMs are extremely sensitive to unscaled inputs—only after applying scaling did my logloss improve.
-
-Along the way, I sharpened my tooling habits:
-
-- Visualization: raw Matplotlib plots helped me track logloss and inspect time series.
-
-- Workflow hygiene: I got disciplined with Jupyter Notebook experiments to avoid mixing datasets or models across days.
-
-- Data balancing: because the dataset was so skewed, I compared balanced weights vs balanced training sets, eventually preferring balanced datasets to simplify preprocessing.
-
-- Messy data reality: despite expectations of “clean Kaggle data,” I discovered the time series wasn’t even sorted by time—a frustrating but instructive experience.
-
-I invested nearly half a year of weekends, often slotting in training runs before bed, before going on runs, or even while waiting at the Boston Amtrak terminal (where I once almost missed a bus while mulling over logits vs softmax probabilities!). I also had fun moments along the way, like reading Yann LeCun’s warning about large minibatches and immediately tweaking my SGD batch size, or realizing at a family birthday party that I finally understood the idea of neural network “capacity.”
-
-Most competitors used gradient boosting (LightGBM/XGBoost), but I stuck with my LSTM path—it was less about leaderboard placement and more about learning deeply. While the final score wasn’t strong, the project gave me my first real immersion in deep learning practice: scaling, batching, managing experiments, wrangling messy time-series data, and living with the grind of trial and error.
-
-
-## Resolved an out-of-memory issue during Databricks runtime upgrade by replacing a costly nested one-hot encoding loop with a streamlined manual transformation., (2022)
-As part of upgrading our hosted model repositories to the Databricks 10.4 general release runtime—both to access new optimizations and because earlier runtimes were approaching end-of-support—I encountered an out-of-memory error in the feature engineering step of one repository.
-
-The root cause was a combination of Databricks’ native OneHotEncoder and a custom double-nested for loop that iterated over hundreds of columns and their values to produce additional one-hot encodings. In this model’s case, the final feature set had already been selected, leaving only about 15 relevant columns. I opted to bypass the nested loop entirely and manually code the one-hot transformations for this small set.
-
-While I initially considered switching to Spark’s built-in one-hot encoder, the existing code relied on a custom naming convention for new columns, which made a direct swap impractical. By unrolling the loop and explicitly writing the transformations, I eliminated the driver-side processing bottleneck, removed the memory issue, and enabled the model pipeline to run successfully on the newer Databricks runtime.
-
-
-## Resolved a production pipeline failure in a 6-model chain caused by a dependency CVE and undeployed code changes, restoring all jobs through targeted fixes and coordinated rollbacks., (2023)
-While on on-call support, I handled a production failure in a six-model repository chain. The issue began when the first model in the chain failed during its scoring step due to a high-severity CVE in the shared protobuf dependency between TensorFlow and MLflow. Installing the package crashed, and the immediate fix was to unpin the problematic version, allowing a secure, compatible version to be chosen. This worked in staging, and I deployed the fix to production.
-
-However, once deployed, the downstream model (“model-2”) failed because it could not find an expected output path (old-path). Investigation revealed that on 2022-11-01, pull requests had been merged for all six models to standardize artifact output locations from old-path to new-path—but these changes had never been deployed to Databricks. The dependency fix PR effectively made “model-1” the first in the chain to write to the new path, while the remaining models still ran pre-November 2022 code expecting the old path.
-
-To address this, I deployed the long-stalled November 2022 changes for the other five models. This led to a new failure in “model-2”: a Unable to infer schema for parquet error, indicating the expected artifact directory existed but was empty. It became clear the undeployed November 2022 code had never been properly tested, and the lack of an end-to-end integration test for the full chain had hidden this bug.
-
-Given the proximity to the next scheduled run, I rolled back all six models to their pre-November 2022 state, keeping only the protobuf dependency fix in “model-1.” This restored successful execution for all pipelines in production on 2023-01-10, with all score outputs materializing correctly.
-
-The incident highlighted several systemic gaps:
-
-No reliable end-to-end integration testing for the full 6-model chain.
-
-No automated mechanism to detect merged code that was never deployed to Databricks.
-
-Long-running model repos that aren’t exercised often enough to catch latent issues.
-
-Dependence on volatile datasets in feature engineering, which could benefit from frozen dataset snapshots to isolate code change impacts during integration tests.
 
 
 ## Introduced an explicit-parameter execution approach with dbutils.notebook.run in Databricks notebooks, replacing the long-standing %run global pattern and significantly reducing variable errors and wasted debugging time instead producing clear, isolated job outputs., (2022)
@@ -270,6 +242,34 @@ With Databricks Repos, we can now mirror a Git repo directly into Databricks, al
 This shift not only removed duplicated test code but also made the deployment process simpler, more intuitive, and more maintainable. While there’s still room to expand the “Databricks Repos” approach to other parts of the platform, all model repository integration tests now use this new pattern.
 
 
+## Resolved an out-of-memory issue during Databricks runtime upgrade by replacing a costly nested one-hot encoding loop with a streamlined manual transformation., (2022)
+As part of upgrading our hosted model repositories to the Databricks 10.4 general release runtime—both to access new optimizations and because earlier runtimes were approaching end-of-support—I encountered an out-of-memory error in the feature engineering step of one repository.
+
+The root cause was a combination of Databricks’ native OneHotEncoder and a custom double-nested for loop that iterated over hundreds of columns and their values to produce additional one-hot encodings. In this model’s case, the final feature set had already been selected, leaving only about 15 relevant columns. I opted to bypass the nested loop entirely and manually code the one-hot transformations for this small set.
+
+While I initially considered switching to Spark’s built-in one-hot encoder, the existing code relied on a custom naming convention for new columns, which made a direct swap impractical. By unrolling the loop and explicitly writing the transformations, I eliminated the driver-side processing bottleneck, removed the memory issue, and enabled the model pipeline to run successfully on the newer Databricks runtime.
+
+
+## Resolved a production pipeline failure in a 6-model chain caused by a dependency CVE and undeployed code changes, restoring all jobs through targeted fixes and coordinated rollbacks., (2023)
+While on on-call support, I handled a production failure in a six-model repository chain. The issue began when the first model in the chain failed during its scoring step due to a high-severity CVE in the shared protobuf dependency between TensorFlow and MLflow. Installing the package crashed, and the immediate fix was to unpin the problematic version, allowing a secure, compatible version to be chosen. This worked in staging, and I deployed the fix to production.
+
+However, once deployed, the downstream model (“model-2”) failed because it could not find an expected output path (old-path). Investigation revealed that on 2022-11-01, pull requests had been merged for all six models to standardize artifact output locations from old-path to new-path—but these changes had never been deployed to Databricks. The dependency fix PR effectively made “model-1” the first in the chain to write to the new path, while the remaining models still ran pre-November 2022 code expecting the old path.
+
+To address this, I deployed the long-stalled November 2022 changes for the other five models. This led to a new failure in “model-2”: a Unable to infer schema for parquet error, indicating the expected artifact directory existed but was empty. It became clear the undeployed November 2022 code had never been properly tested, and the lack of an end-to-end integration test for the full chain had hidden this bug.
+
+Given the proximity to the next scheduled run, I rolled back all six models to their pre-November 2022 state, keeping only the protobuf dependency fix in “model-1.” This restored successful execution for all pipelines in production on 2023-01-10, with all score outputs materializing correctly.
+
+The incident highlighted several systemic gaps:
+
+No reliable end-to-end integration testing for the full 6-model chain.
+
+No automated mechanism to detect merged code that was never deployed to Databricks.
+
+Long-running model repos that aren’t exercised often enough to catch latent issues.
+
+Dependence on volatile datasets in feature engineering, which could benefit from frozen dataset snapshots to isolate code change impacts during integration tests.
+
+
 ## Contributed preprocessing, prompt engineering, and system integration to a team hackathon project on health plan documents, while also delivering an early fallback RAG-style demo., (2023)
 During a 2.5-day internal hackathon, I joined a small team focused on applying LangChain and GPT to health insurance plan documents. These documents are highly tabular and difficult to parse, so on the first day I experimented with manually restructuring raw PDF text into contextual sentences. While time constraints kept me from automating this fully, it helped hedge against LangChain’s default handling of dense table dumps and may have improved the clarity of responses.
 
@@ -278,60 +278,6 @@ At the same time, I explored prompt engineering around empathy, since health pla
 To ensure we’d have something working by the deadline, I also built a fallback demo loop: directly injecting parsed plan text into LangChain prompts for basic question answering. Meanwhile, teammates created separate Gradio apps—one for Q&A over embeddings stored on Hugging Face, and another for speech-to-speech interaction. I played a key role in integrating these efforts, gluing the two systems together into a unified demo that allowed both chat and audio-based Q&A over plan documents.
 
 Although we didn’t measure accuracy improvements from my early sentence wrangling, from what I saw it was anecdotally clear to me that existing PDF-to-text tools lost the original context with table-heavy documents, so  I am curious to better measure this impact in the future.
-
-
-## Advanced our Databricks modularization effort by maturing a shared Python package, adding testing, and pitching adoption as an internal OKR to reduce duplication and troubleshooting overhead., (2024-???)
-As our Databricks-based ML platform grew, each model repository bundled not only feature engineering and scoring notebooks but also duplicated support code—installing packages, creating MLflow experiments, authenticating, configuring pipeline parameters, defining ingress data sources, and managing deployment YAML. This copy-paste approach meant every update required manually propagating changes from a template repo into many others, which was unsustainable.
-
-Following a successful mini hackathon where colleagues began packaging common utilities into a shared Python library, I joined the effort to bring it to a higher level of maturity. My contributions included expanding test coverage, transitioning existing tests to pytest, and improving resilience as the shared code evolved. I also wrote a clear, compelling README to document usage and encourage adoption.
-
-To build momentum, I collaborated with a colleague to pitch the initiative as a bottom-up internal OKR. We emphasized how modularizing platform utilities would simplify user-facing code, reduce repeated effort, and lower troubleshooting time. By formalizing the vision and contributing maturity work, I helped establish the foundation for shared abstractions to replace repeated notebook boilerplate.
-
-
-## Standardized integration test code by introducing our shared internal Python library, replacing scattered custom logic with a uniform platform package., (2024-08-23)
-Our ML platform’s integration tests had accumulated scattered custom Python code across different repositories, which made them inconsistent and harder to maintain. After we introduced a centralized internal platform library, I refactored the test code to use this package. This reduced duplication, brought consistency to how tests were written, and ensured they followed shared best practices—making the framework easier to maintain and extend.
-
-
-## Integrated Sphinx-generated docs into our Hugo wiki, creating an accessible workflow for publishing ML platform library documentation., (2024-?)
-..
-Inspired by a colleague experimenting with Sphinx to generate documentation for one of our core ML platform libraries, I explored how we could make that documentation more easily accessible to our internal users. Since our internal wiki is built with Hugo, I tested whether the HTML output from a Sphinx build could be served directly in the wiki’s static section. The experiment worked seamlessly.
-
-Building on this, I documented a clear process for running Sphinx builds and publishing their output into the Hugo wiki, making it quick and repeatable for others. This allowed our team to maintain high-quality, automatically generated reference material within the same platform our users already relied on for guidance.
-
-After publishing the first iteration of the Sphinx-based docs, I began sharing them with users, who responded positively. The impact was that for the first time, we had a more structured and accessible way to point our internal community toward up-to-date documentation for our Databricks ML platform package—improving discoverability, reducing friction, and helping data scientists ramp up more quickly.
-
-
-## Improved CI/CD for our new shared Databricks utility package by unifying test/deploy steps and parameterizing test clusters for concurrent development by multiple people., (2024-?)
-A colleague had a great idea to consolidate our commonly used, user-facing utility code—previously copy-pasted across projects—into a new shared Python package, with a Twine pipeline to build and deploy it to our internal package repository. I saw an opportunity to build on his work by strengthening and generalizing the CI/CD pipeline he created.
-
-Originally, the CI and CD steps were not fully aligned. Certain parts of deployment could fail because they weren’t being accurately tested in CI. I refactored the pipeline to make CI and CD more consistent, ensuring the same validations applied across both. This reduced the risk of runtime deployment failures and gave the team more confidence in the release process.
-
-Another issue I addressed was scalability for multiple contributors. Early on, only a few people worked on the package, but I noticed a clash when a colleague and I ran feature branches against the same shared test cluster. To solve this, I parameterized the CI test code so that each feature branch would spin up its own isolated test cluster. 
-
-Also, crucially, I parameterized the .whl file being created and the init script installing the .whl file as well.
-
-This eliminated collisions and made it possible for several developers to contribute in parallel without stepping on each other’s work.
-
-
-The result was a more resilient, reliable, and developer-friendly CI/CD process, which enabled the team to iterate faster on our new shared Databricks utility package. By stabilizing the pipeline and supporting concurrent development, I helped establish a foundation for this package to become a central, reusable resource across our ML platform.
-
-
-## Introduced modular Python coding in Databricks 11.3 by enabling multi-file module imports and updating deployment pipelines to support plain files, moving beyond %run globals., (2024-01-23)
-With the release of Databricks 11.3, our ML Platform gained a new capability: workspaces could now host not just notebooks, but also plain Python files. This opened the door to more modular, Pythonic development practices. Previously, our notebook code often relied on %run statements to pull in helper functions, which polluted the global namespace and discouraged clean module design.
-
-I took the initiative to explore how far the new functionality could go. While Databricks’ documentation only described the simplest case—a single .py file—I tested whether it would support more complex structures. I confirmed that nested directories of Python files with __init__.py could indeed be imported as full Python modules, enabling us to organize code more professionally.
-
-To prove the approach, I introduced this modular style into one of our model repositories, replacing %run calls in a feature engineering notebook with imports from a local module. To make the pattern sustainable, I extended our Azure DevOps deployment pipeline to automatically detect such modules in Git repositories and recursively push them into Databricks workspaces using the newly available Databricks SDK. This was a significant improvement over the old Databricks CLI, which had no support for plain files.
-
-After successfully applying this pattern to a few additional repositories, I shared the results with colleagues. Interest grew quickly, and others began to adopt the approach. The impact was a meaningful cultural and technical shift: our team could now move away from hidden global-variable hacks and toward cleaner, modular, and maintainable code.
-
-
-## Introduced workspace file access in Databricks 11.x to unify redundant JSON and notebook configs, reducing duplication and black-box %run dependencies., (2024-?)
-On our Databricks-centered ML platform, we version control ML pipeline notebooks and JSON settings in Azure Git. For years, a redundancy existed: each repository included a JSON settings file (with cluster runtime versions, integration test parameters, etc.) and a Databricks configuration notebook (defining blob ADLS storage paths and other setup details). The overlap was awkward, as both JSON and notebooks contained key metadata, forcing duplication and reliance on %run calls to bring in opaque configuration code.
-
-With the release of Databricks 11.x, which added Pythonic access to workspace-resident arbitrary files (not just notebooks), I created our first wrapper to directly load repository JSON into notebooks. This marked the first step toward reconciling the two configuration styles. By doing so, we began reducing both duplication across ML pipeline repos and the dependency on %run-based configuration notebooks, which couldn’t be linted and were difficult to maintain.
-
-Although the full migration required incremental effort across many repositories, this initial wrapper established the conceptual shift: moving from redundant, black-box configs toward a single, maintainable, lintable source of truth for pipeline metadata.
 
 
 ## Eliminated template sprawl in our ML deployment system by centralizing and parameterizing ADF logic across staging, prod, and feature variants, from 16 templates to 1., (2023-03-20)
@@ -345,6 +291,28 @@ I formalized the code to run in Databricks and scheduled it with Azure Data Fact
 The system supports configurable sample sizes (e.g. 10k vs. 100k rows) to compare sensitivity, and it parameterizes the drift algorithms used. For numerical features, we run PSI and the Kolmogorov–Smirnov test; for categorical features, we use Cramer’s V and Earth Mover’s Distance. Across ~18k features, the output is a ranked list of those most likely to be drifting.
 
 While the internal marketing needed to promote user adoption has not yet happened, the job has been running in production for about a year, generating monthly drift reports. So at least the first step has been achieved: creating a systematic, repeatable way to detect and rank feature drift, giving us better situational awareness of the stability of our feature store.
+
+
+## Designed and deployed a pgvector + PostGIS–based semantic search for restaurant dishes with geospatial filtering and optimized embedding storage, achieving 20× storage savings through selective embedding strategies., (2024)
+I had the task of  building out semantic search on top of a restaurant dish corpus so that a user at a given location can free form type some kind of food and they can see the restaurants that match nearby, based on the specific dishes that matched the query at those restaurants. The first iteration of this task, was a pgvector implementation, with embeddings at the level of menu-subsets of dishes that each restaurant has, meaning that each restaurant has several menu-subsets where each subset can have 10 to 20 dishes, say, and these dishes were concatenated into blobs and those were embedded.  The end user accessible API took a latitude, longitude as well as a free form query. And the result was a ranked list of dishes and the restaurants they are available at, constrained by the location identified by the location given.
+
+This project had many components, but began with taking an off the shelf embedding model, embedding a corpus of menu data into postgresql pgvector, along with a table of locations of restaurants and their postgis locations. A postgresql query was constructed, first with the relevant postgis subset as a CTE, since that was faster and then calculating the cosine similarity of the menu blobs with the target query and ranking that.
+
+Then on the fly, embedding for individual menu items were calculated for the subset, in software. The reason here was that the pgvector data was actually really huge and by only storing the menu sections embedded, there was a 20x savings and the runtime embedding of the small under 100 typically subset was still reasonably fast and can be done as a second API call after a initial list of restaurants is populated for the user first.
+
+
+## Introduced modular Python coding in Databricks 11.3 by enabling multi-file module imports and updating deployment pipelines to support plain files, moving beyond %run globals., (2024-01-23)
+With the release of Databricks 11.3, our ML Platform gained a new capability: workspaces could now host not just notebooks, but also plain Python files. This opened the door to more modular, Pythonic development practices. Previously, our notebook code often relied on %run statements to pull in helper functions, which polluted the global namespace and discouraged clean module design.
+
+I took the initiative to explore how far the new functionality could go. While Databricks’ documentation only described the simplest case—a single .py file—I tested whether it would support more complex structures. I confirmed that nested directories of Python files with __init__.py could indeed be imported as full Python modules, enabling us to organize code more professionally.
+
+To prove the approach, I introduced this modular style into one of our model repositories, replacing %run calls in a feature engineering notebook with imports from a local module. To make the pattern sustainable, I extended our Azure DevOps deployment pipeline to automatically detect such modules in Git repositories and recursively push them into Databricks workspaces using the newly available Databricks SDK. This was a significant improvement over the old Databricks CLI, which had no support for plain files.
+
+After successfully applying this pattern to a few additional repositories, I shared the results with colleagues. Interest grew quickly, and others began to adopt the approach. The impact was a meaningful cultural and technical shift: our team could now move away from hidden global-variable hacks and toward cleaner, modular, and maintainable code.
+
+
+## Standardized integration test code by introducing our shared internal Python library, replacing scattered custom logic with a uniform platform package., (2024-08-23)
+Our ML platform’s integration tests had accumulated scattered custom Python code across different repositories, which made them inconsistent and harder to maintain. After we introduced a centralized internal platform library, I refactored the test code to use this package. This reduced duplication, brought consistency to how tests were written, and ensured they followed shared best practices—making the framework easier to maintain and extend.
 
 
 ## Explored adjacent ML platform technologies (Kubernetes, Dask, Polars, distributed vs. GPU learning) to broaden perspective beyond Databricks, and shared findings in an internal tech talk and blog post., (2024-09-05)
@@ -371,19 +339,48 @@ To improve traceability in our databricks ML platform, I added the Git commit ha
 This small change has a big impact: it eliminates ambiguity about which code version is being executed. During both testing and production troubleshooting, the team can now reliably confirm the exact commit tied to a given library build. This makes debugging faster, improves confidence in deployments, and reduces the risk of running code that isn’t clearly identified.
 
 
-## Designed and deployed a pgvector + PostGIS–based semantic search for restaurant dishes with geospatial filtering and optimized embedding storage, achieving 20× storage savings through selective embedding strategies., (2024)
-I had the task of  building out semantic search on top of a restaurant dish corpus so that a user at a given location can free form type some kind of food and they can see the restaurants that match nearby, based on the specific dishes that matched the query at those restaurants. The first iteration of this task, was a pgvector implementation, with embeddings at the level of menu-subsets of dishes that each restaurant has, meaning that each restaurant has several menu-subsets where each subset can have 10 to 20 dishes, say, and these dishes were concatenated into blobs and those were embedded.  The end user accessible API took a latitude, longitude as well as a free form query. And the result was a ranked list of dishes and the restaurants they are available at, constrained by the location identified by the location given.
+## Integrated Sphinx-generated docs into our Hugo wiki, creating an accessible workflow for publishing ML platform library documentation., (2024-?)
+..
+Inspired by a colleague experimenting with Sphinx to generate documentation for one of our core ML platform libraries, I explored how we could make that documentation more easily accessible to our internal users. Since our internal wiki is built with Hugo, I tested whether the HTML output from a Sphinx build could be served directly in the wiki’s static section. The experiment worked seamlessly.
 
-This project had many components, but began with taking an off the shelf embedding model, embedding a corpus of menu data into postgresql pgvector, along with a table of locations of restaurants and their postgis locations. A postgresql query was constructed, first with the relevant postgis subset as a CTE, since that was faster and then calculating the cosine similarity of the menu blobs with the target query and ranking that.
+Building on this, I documented a clear process for running Sphinx builds and publishing their output into the Hugo wiki, making it quick and repeatable for others. This allowed our team to maintain high-quality, automatically generated reference material within the same platform our users already relied on for guidance.
 
-Then on the fly, embedding for individual menu items were calculated for the subset, in software. The reason here was that the pgvector data was actually really huge and by only storing the menu sections embedded, there was a 20x savings and the runtime embedding of the small under 100 typically subset was still reasonably fast and can be done as a second API call after a initial list of restaurants is populated for the user first.
+After publishing the first iteration of the Sphinx-based docs, I began sharing them with users, who responded positively. The impact was that for the first time, we had a more structured and accessible way to point our internal community toward up-to-date documentation for our Databricks ML platform package—improving discoverability, reducing friction, and helping data scientists ramp up more quickly.
+
+
+## Improved CI/CD for our new shared Databricks utility package by unifying test/deploy steps and parameterizing test clusters for concurrent development by multiple people., (2024-?)
+A colleague had a great idea to consolidate our commonly used, user-facing utility code—previously copy-pasted across projects—into a new shared Python package, with a Twine pipeline to build and deploy it to our internal package repository. I saw an opportunity to build on his work by strengthening and generalizing the CI/CD pipeline he created.
+
+Originally, the CI and CD steps were not fully aligned. Certain parts of deployment could fail because they weren’t being accurately tested in CI. I refactored the pipeline to make CI and CD more consistent, ensuring the same validations applied across both. This reduced the risk of runtime deployment failures and gave the team more confidence in the release process.
+
+Another issue I addressed was scalability for multiple contributors. Early on, only a few people worked on the package, but I noticed a clash when a colleague and I ran feature branches against the same shared test cluster. To solve this, I parameterized the CI test code so that each feature branch would spin up its own isolated test cluster. 
+
+Also, crucially, I parameterized the .whl file being created and the init script installing the .whl file as well.
+
+This eliminated collisions and made it possible for several developers to contribute in parallel without stepping on each other’s work.
+
+
+The result was a more resilient, reliable, and developer-friendly CI/CD process, which enabled the team to iterate faster on our new shared Databricks utility package. By stabilizing the pipeline and supporting concurrent development, I helped establish a foundation for this package to become a central, reusable resource across our ML platform.
+
+
+## Introduced workspace file access in Databricks 11.x to unify redundant JSON and notebook configs, reducing duplication and black-box %run dependencies., (2024-?)
+On our Databricks-centered ML platform, we version control ML pipeline notebooks and JSON settings in Azure Git. For years, a redundancy existed: each repository included a JSON settings file (with cluster runtime versions, integration test parameters, etc.) and a Databricks configuration notebook (defining blob ADLS storage paths and other setup details). The overlap was awkward, as both JSON and notebooks contained key metadata, forcing duplication and reliance on %run calls to bring in opaque configuration code.
+
+With the release of Databricks 11.x, which added Pythonic access to workspace-resident arbitrary files (not just notebooks), I created our first wrapper to directly load repository JSON into notebooks. This marked the first step toward reconciling the two configuration styles. By doing so, we began reducing both duplication across ML pipeline repos and the dependency on %run-based configuration notebooks, which couldn’t be linted and were difficult to maintain.
+
+Although the full migration required incremental effort across many repositories, this initial wrapper established the conceptual shift: moving from redundant, black-box configs toward a single, maintainable, lintable source of truth for pipeline metadata.
+
+
+## Advanced our Databricks modularization effort by maturing a shared Python package, adding testing, and pitching adoption as an internal OKR to reduce duplication and troubleshooting overhead., (2024-???)
+As our Databricks-based ML platform grew, each model repository bundled not only feature engineering and scoring notebooks but also duplicated support code—installing packages, creating MLflow experiments, authenticating, configuring pipeline parameters, defining ingress data sources, and managing deployment YAML. This copy-paste approach meant every update required manually propagating changes from a template repo into many others, which was unsustainable.
+
+Following a successful mini hackathon where colleagues began packaging common utilities into a shared Python library, I joined the effort to bring it to a higher level of maturity. My contributions included expanding test coverage, transitioning existing tests to pytest, and improving resilience as the shared code evolved. I also wrote a clear, compelling README to document usage and encourage adoption.
+
+To build momentum, I collaborated with a colleague to pitch the initiative as a bottom-up internal OKR. We emphasized how modularizing platform utilities would simplify user-facing code, reduce repeated effort, and lower troubleshooting time. By formalizing the vision and contributing maturity work, I helped establish the foundation for shared abstractions to replace repeated notebook boilerplate.
 
 
 ## Developed a golden dataset and search evaluation suite to validate embedding models for semantic dish search, enabling a cost-saving model switch., (2025-01-11)
 during the process of delivering a semantic search capability around a restaurant dish corpus, I took a detour to evaluate a 3rd party hosted solution, typesense, and I took this opportunity to develop a golden dataset for the search problem because my particular open source embedding model was not available on typesense, and I needed a good way of objectively comparing models. I ended up writing helper code to make it easier to build such a dataset and I built out evaluation code using the two tried and true algorithms, Mean Average Precision (MAP) and Mean Reciprocal Rank (MRR). Ultimately I was able to show that embedding model available on typesense that I was targetting was at least as good as the other one I was using and this was really impotant because it was a 768 as opposed to a 384 dimension model meaning I had evidence that half the cost was good enough for at least an equivalent result. And this gave motivation to continue building a larger golden dataset to get even more confidence about the choice.
-
-## Enhanced semantic search validation by doubling dataset size and adding Precision@10, confirming the hosted model’s slight edge over baseline., (2025-02-01)
-continuing the effort to help validate typesense embedding models as an alternative, I roughly doubled my golden evaluation dataset and introduced another strong evaluation metric, Precision@K=10 , into my existing suite of MAP and MRR. And good news is that now with more a larger evaluation dataset I could see that the new candidate embedding model was actually slightly outperforming the previous one. I am aware however that although these are strong industry standard information retrieval metrics, they are still proxies to business metrics which I do not have and would only be available through true customer facing a/b testing which I do not have yet but I felt the need to at least an initial method of evaluation before we can start testing with actual customers.
 
 ## Fixed a silent %run early-exit bug so both internal models correctly publish top-driver explanations for audits., (2025-01-28)
 During a routine model update, I discovered a silent bug in a predictive pipeline that caused it to exit early before publishing the second half of its top-driver explanations. The pipeline contained two internal models, but due to this early exit, only one model’s row-level explanatory outputs were being produced.
@@ -413,6 +410,9 @@ To fix this, I updated the discovery process to also include repositories listed
 As a result, our local MLP CLI–based code search now covers the full set of platform repositories more reliably, reducing blind spots during debugging and development and making cross-repo investigation more dependable.
 
 
+## Enhanced semantic search validation by doubling dataset size and adding Precision@10, confirming the hosted model’s slight edge over baseline., (2025-02-01)
+continuing the effort to help validate typesense embedding models as an alternative, I roughly doubled my golden evaluation dataset and introduced another strong evaluation metric, Precision@K=10 , into my existing suite of MAP and MRR. And good news is that now with more a larger evaluation dataset I could see that the new candidate embedding model was actually slightly outperforming the previous one. I am aware however that although these are strong industry standard information retrieval metrics, they are still proxies to business metrics which I do not have and would only be available through true customer facing a/b testing which I do not have yet but I felt the need to at least an initial method of evaluation before we can start testing with actual customers.
+
 ## Introduced reusable methods for row- and column-level comparison of large DataFrames to debug integration test failures., (2025-02-06)
 While investigating a puzzling top-driver integration test mismatch, I went deep into comparing very large DataFrames produced before and after a Databricks upgrade. 
 
@@ -435,6 +435,14 @@ I produced a small, focused pull request that set the pattern for future upgrade
 While upgrading, I investigated and resolved a subtle Spark behavior change: StringType began stringifying as StringType() instead of StringType, causing string columns to be misidentified and preprocessing to silently fail. Identifying and fixing this issue prevented downstream data corruption and helped ensure the reliability of future upgrades.
 
 
+## Automated metadata sync from Databricks registry to Git, reducing bulky PRs to minimal, targeted changes., (2025-03-01)
+This was a small but necessary task: synchronizing metadata from our Databricks Central Model Registry (CMR) into Git version control. Over time, some metadata updates had been made directly in CMR without being reflected in Git, leaving us with drift between the two.
+
+Rather than manually reconciling dozens of differences, I wrote a script to compare CMR metadata with our Git-based JSON settings and automatically generate pull requests. At first, the pull requests were unwieldy because they rewrote the full settings.json files, making it difficult to review changes. To improve this, I refined the script to edit only the specific fields that had changed, producing cleaner, more focused pull requests.
+
+The outcome was a faster, less error-prone way to keep CMR and Git in sync, saving time on a tedious maintenance task while making version control history more meaningful.
+
+
 ## One-line fix, six-month mystery: restored Git commit tagging in our ML deployment flow with a tiny tweak to the pipeline., (2025-03-07)
 Our ML platform uses a shared deployment pipeline that injects the current Git commit hash into Databricks notebooks during deployment, enabling version traceability for production ML pipelines. This mechanism had been broken for over six months due to an incorrect Azure DevOps pipeline replacement function, but the failure went largely unnoticed because deployments continued to succeed without the metadata.
 
@@ -454,6 +462,19 @@ By preferring explicit absence over incorrect data, this improvement surfaced ca
 ## .., (2025-03-25)
 ..
 
+## Established a repeatable path for reviving defunct ML models by retraining a legacy heart failure model with 99.9% fidelity and shipping it back to production., (2025-04-01)
+A legacy production model predicting heart failure progression was at risk of becoming defunct due to outdated package dependencies. Although such cases are typically handed back to the original author, I took ownership of restoring the model on the ML platform.
+
+I located the original training data and code, refactored the workflow to remove exploratory logic, and rewrote it as a clean, reproducible training pipeline using modern dependencies. I validated the new model by comparing inference outputs against the original production model, demonstrating 99.9% equivalence. After reviewing the results with the original model author and receiving their endorsement, I deployed the retrained model to production without overwriting existing assets.
+
+Along the way, I explored upgrading the original scikit-learn ensemble using LightGBM, CatBoost, and XGBoost in place, but determined this path was not viable with current dependencies. Instead, retraining proved to be the most reliable approach given the available artifacts.
+
+This work provided the first concrete example on the platform that legacy models can be safely retrained and validated rather than retired, creating a precedent and reference for future model recovery efforts.
+
+
+## .., (2025-04-08)
+..
+
 ## Made a critical infra package versioned, dependency-safe, and documented, reducing risk around breaking changes in production pipelines., (2025-04-09)
 I addressed long-standing technical debt in an internal infrastructure package that had no versioning and no declared dependencies. As a result, any production process using it had to manually install dependencies and could not pin a specific version, making deployments fragile and increasing the risk of unintended breaking changes.
 
@@ -464,19 +485,6 @@ In addition, the repository defined multiple production pipelines that were undo
 
 ## Added histogram overlays by cohort to model integration tests, providing clearer visual evidence for troubleshooting score deviations., (2025-04-16)
 To improve our model integration tests, I added histogram overlays that show output score distributions separately for each cohort. Previously, we only inspected delta difference distributions, which sometimes made it difficult to judge the scale or significance of deviations. In one case, I found that differences within a narrow score band were not obvious in the existing view, but overlaying the distributions made the impact clear. By incorporating this visualization into our standard tests, I created a more effective way for the team to diagnose whether observed differences were meaningful, improving confidence in code changes.
-
-
-## .., (2025-04-08)
-..
-
-## Established a repeatable path for reviving defunct ML models by retraining a legacy heart failure model with 99.9% fidelity and shipping it back to production., (2025-04-01)
-A legacy production model predicting heart failure progression was at risk of becoming defunct due to outdated package dependencies. Although such cases are typically handed back to the original author, I took ownership of restoring the model on the ML platform.
-
-I located the original training data and code, refactored the workflow to remove exploratory logic, and rewrote it as a clean, reproducible training pipeline using modern dependencies. I validated the new model by comparing inference outputs against the original production model, demonstrating 99.9% equivalence. After reviewing the results with the original model author and receiving their endorsement, I deployed the retrained model to production without overwriting existing assets.
-
-Along the way, I explored upgrading the original scikit-learn ensemble using LightGBM, CatBoost, and XGBoost in place, but determined this path was not viable with current dependencies. Instead, retraining proved to be the most reliable approach given the available artifacts.
-
-This work provided the first concrete example on the platform that legacy models can be safely retrained and validated rather than retired, creating a precedent and reference for future model recovery efforts.
 
 
 ## Improved model repo integration tests by introducing top-driver recall as a clearer metric and fixing a join bug that masked missing feature drivers., (2025-05-13)
@@ -495,31 +503,12 @@ Our team had been struggling with slow and inconsistent pull request reviews. Dr
 Adoption was gradual, but through repeated discussion and example-setting, the team began to converge on this approach. Over time, this improved reviewability and reduced friction in the code review process, helping unblock development work more quickly.
 
 
-## Automated ML platform repo search setup with a Bash script and screencast for the wiki, eliminating manual credential updates and data fetch steps., (2025-06-01)
-In our Git-based ML platform, new repositories are frequently added and removed, making it valuable to search them directly via the file system. Previously, setting up for such searches required a manual series of steps: updating temporary Git and Databricks credentials, and fetching the latest intake CSV containing new business data. I created a Bash script to automate these steps, guiding the user through the setup without needing to remember specific commands, thereby reducing cognitive load and startup time. The script syncs all relevant repositories for immediate use, and I recorded a video screencast to walk through the setup process for easier onboarding.
-
-
 ## Simplified Databricks package cache updates by replacing a convoluted streaming/event-hub setup with a clear client–server design and a scheduled Azure DevOps pipeline., (2025-05-29)
 Previously, adding new Python packages to our Databricks package cache relied on a convoluted two-part system: a continuously running streaming notebook listening to Event Hub messages, and a client-side Python wrapper that both pip installed packages locally and triggered the server-side notebook to install them again and cache the wheel files in ADLS. Both client and server code were complex and hard to follow. I refactored the client–server logic for clarity, replaced the Event Hub–driven streaming notebook with a simpler message-passing mechanism using timestamp-named files, and moved the server-side cache updater into an Azure DevOps pipeline running every six hours. This made the workflow easier to maintain and made the constantly running notebook redundant. And there is opportunity to stop it in the future.
 
 
-## Automated metadata sync from Databricks registry to Git, reducing bulky PRs to minimal, targeted changes., (2025-03-01)
-This was a small but necessary task: synchronizing metadata from our Databricks Central Model Registry (CMR) into Git version control. Over time, some metadata updates had been made directly in CMR without being reflected in Git, leaving us with drift between the two.
-
-Rather than manually reconciling dozens of differences, I wrote a script to compare CMR metadata with our Git-based JSON settings and automatically generate pull requests. At first, the pull requests were unwieldy because they rewrote the full settings.json files, making it difficult to review changes. To improve this, I refined the script to edit only the specific fields that had changed, producing cleaner, more focused pull requests.
-
-The outcome was a faster, less error-prone way to keep CMR and Git in sync, saving time on a tedious maintenance task while making version control history more meaningful.
-
-
-## Future-proofed a production ML pipeline by replacing CVE-flagged legacy scikit-learn with ONNX, modularizing shared inference logic, and validating output scores to high precision., (2025-08-20)
-I had a usecase where i had a multi notebook databricks ADF pipeline, where the scikitlearn used was an older version which was flagged by our pypi proxy with a medium CVE  but using a newer version 1.5.0 broke the model because of non backwards compatibility, so instead I used skl2onnx to convert the pipeline to onnx a object designed with backwards compatibility in mind , and then I updated the inference notebooks, also modularizing the parts loading the model and using it for scoring since it is used by both the scoring and top driver databricks notebooks, and I compared the spark dataframe score and top driver  results to previous  reference stable runs and got the same results proving my updates are non destructive. I also made updates to the feature engineering for reprodicibility, adding a new output copy because the previous scoring notebook logic  unfortunately over writes the feature engineering with additional data. So now i made the scoring notebook to read the new feature engineering separate output copy so that it can be rerun reproducibly and deterministically. 
-And in order to test run the full pipeline, i adopted the new run databricks multi task job connecting my new notebooks, executing from git source directly, showing it is possible to step away from data factory orchestration where code is possible to be tampered with and into  run from source where tampering is not possible.
-
-
-## Resolved a flagged dependency vulnerability by removing an unused TensorFlow/Keras dependency and safely updating Transformers., (2025-09-24)
-I investigated a reported vulnerability in a predictive model repository related to TensorFlow, Keras, and Transformers dependencies. Although the issue initially appeared complex, I determined that TensorFlow was not actually used by the model and that Keras was being pulled in unnecessarily as a transitive dependency.
-
-By removing the unused TensorFlow/Keras dependency and updating Transformers, I resolved the vulnerability with minimal code changes and no functional impact to the model.
+## Automated ML platform repo search setup with a Bash script and screencast for the wiki, eliminating manual credential updates and data fetch steps., (2025-06-01)
+In our Git-based ML platform, new repositories are frequently added and removed, making it valuable to search them directly via the file system. Previously, setting up for such searches required a manual series of steps: updating temporary Git and Databricks credentials, and fetching the latest intake CSV containing new business data. I created a Bash script to automate these steps, guiding the user through the setup without needing to remember specific commands, thereby reducing cognitive load and startup time. The script syncs all relevant repositories for immediate use, and I recorded a video screencast to walk through the setup process for easier onboarding.
 
 
 ## Added a lightweight helper to automatically detect the active Databricks workspace (staging vs. production) via hostname, enabling safer environment-specific behavior without parameter drift., (2025-08-14)
@@ -528,6 +517,11 @@ Our Databricks platform runs separate staging and production workspaces, which h
 To simplify this, I added a small but powerful helper that inspects the Databricks workspace hostname to determine the current environment. This provided a consistent, self-contained way to conditionally enable or disable functionality without modifying runtime arguments.
 
 Initially, I used it to suppress time-consuming staging-only logging. Shortly after, a teammate used it to gate their experimental feature, preventing it from accidentally going live in production. The function quickly became one of those quietly indispensable utilities—simple, reliable, and broadly useful.
+
+
+## Future-proofed a production ML pipeline by replacing CVE-flagged legacy scikit-learn with ONNX, modularizing shared inference logic, and validating output scores to high precision., (2025-08-20)
+I had a usecase where i had a multi notebook databricks ADF pipeline, where the scikitlearn used was an older version which was flagged by our pypi proxy with a medium CVE  but using a newer version 1.5.0 broke the model because of non backwards compatibility, so instead I used skl2onnx to convert the pipeline to onnx a object designed with backwards compatibility in mind , and then I updated the inference notebooks, also modularizing the parts loading the model and using it for scoring since it is used by both the scoring and top driver databricks notebooks, and I compared the spark dataframe score and top driver  results to previous  reference stable runs and got the same results proving my updates are non destructive. I also made updates to the feature engineering for reprodicibility, adding a new output copy because the previous scoring notebook logic  unfortunately over writes the feature engineering with additional data. So now i made the scoring notebook to read the new feature engineering separate output copy so that it can be rerun reproducibly and deterministically. 
+And in order to test run the full pipeline, i adopted the new run databricks multi task job connecting my new notebooks, executing from git source directly, showing it is possible to step away from data factory orchestration where code is possible to be tampered with and into  run from source where tampering is not possible.
 
 
 ## Refactored a legacy ML platform package deployment into a single, simplified Azure DevOps pipeline, reducing tech debt and preventing staging environment conflicts., (2025-09-05)
@@ -556,6 +550,12 @@ In parallel, I had previously experimented with the Databricks SDK for an unrela
 This approach addresses two problems at once: it provides a workaround for limited SRE access to run details, and it mitigates the fact that Databricks job run retention is fixed and not configurable. While the current implementation is intentionally scoped as a proof of concept, it demonstrates a feasible path toward regularly exporting runs via automation.
 
 I shared the idea with a small group of colleagues, including SRE-adjacent teammates, and the feedback so far has been positive. The next step, if prioritized, would be productionizing and scheduling the export process to make run history consistently available for debugging and auditing.
+
+
+## Resolved a flagged dependency vulnerability by removing an unused TensorFlow/Keras dependency and safely updating Transformers., (2025-09-24)
+I investigated a reported vulnerability in a predictive model repository related to TensorFlow, Keras, and Transformers dependencies. Although the issue initially appeared complex, I determined that TensorFlow was not actually used by the model and that Keras was being pulled in unnecessarily as a transitive dependency.
+
+By removing the unused TensorFlow/Keras dependency and updating Transformers, I resolved the vulnerability with minimal code changes and no functional impact to the model.
 
 
 ## Introduced a shared always-on Databricks dev cluster to eliminate startup delays for quick Python experiments and smoke tests., (2025-09-24)

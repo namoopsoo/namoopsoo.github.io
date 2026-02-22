@@ -175,6 +175,13 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Started
 - Started using Trello (2024-06-16).
 
+## 2024-03
+### Changed
+- Switched from [orgroam](https://www.orgroam.com/) to logseq on my work laptop, using [this converter I wrote](http://github.com/namoopsoo/orgroam2logseq) (2024-03-06).
+
+### Firsts
+- Published my first golang [orgroam2logseq](https://pkg.go.dev/github.com/namoopsoo/orgroam2logseq), (2024-03-11).
+
 ## 2024-02
 ### Changed
 - Switched from built in Apple iphone keyboard to typewise.app. (2024-02-19)
@@ -323,7 +330,6 @@ All notable changes to this "human experiment" will be documented in this file.
 - emacs (evil mode), ~2021?
 - logseq
 - Tokyo 
-- Golang, and Golang package, to switch back to logseq
 - first ipad,
 - first iphone
 - first palm pilot? (tungsten second?)

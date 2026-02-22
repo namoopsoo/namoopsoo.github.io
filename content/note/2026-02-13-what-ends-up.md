@@ -22,8 +22,8 @@ So the hard part is, I suppose choosing: do you disappoint people who asked you 
 
 What ends up happening if you don't decide is, the universe decides.
 
-## Opportunities: Clarification 
-these can be collaboration opportunities, where you want to help someone, but they don't know you have an idea to help them. So there is this heavy reward potential that sits on your head. You know you can help. You visualized it instantaneously. Now you see the execution will take time ana you see this will cause you to not do what you intended to do before the opportunity arose! This is a heavy burden , especially if the payout looks great 🤩.
+## The Pain of Opportunity Cost
+Collaboration opportunities, where you want to help someone, might start out being obvious only to you. A heavy reward potential sits in your head. You know you can help. You visualized it instantaneously. Now you see the execution will take time and you see this will cause you to not do what you intended to do before the opportunity arose! This is a heavy burden, especially if the payout looks great 🤩.
 
 ## Procrastination and Boundaries
 There is this Oliver Burkeman'ism, in his Time Management For Mortals<sup>[1](#references)</sup>, of *"clearing the decks"*, which per my memory he means, say, *"ok I'll start working on my intention, I just have to check my email"* or the more modern version, *"I should see if there is something urgent on slack"*. In this simplest form, this looks like the escapist form of procrastination and less the creative procrastination that strikes Tim Urban's<sup>[2](#references)</sup> monkey mind. (Shiny syndrome?).
@@ -56,9 +56,9 @@ You will disappoint people, thats crushing but inevitable. Opportunities will be
 ## Defer with deferrence 
 As David Allen originally pointed out, you need a system you can trust to defer or postpone, especially if someone else is counting on that thing. But I think we can agree that David Allen's context did nor include Slack and he did not work in a triage war room. 
 
-But sometimes a low tech whiteboard or paper  can still be helpful. Even in HBO's The Pitt, in all the chaos of their triage, they use a central "board" for status. As long as it is out of your head , in a place you trust.
+But sometimes a low tech whiteboard or paper  can still be helpful. Even in HBO's The Pitt, in all the chaos of their triage, they use a central "board" for status. As long as it is out of your head , in a place you trust, you are not distracted by it.
 
-The deference part: maybe you can still respectfully ask someone to remind you again next time. This puts the ball back in their court and keeps you focusing.
+The deference part: maybe you can still respectfully ask someone to remind you again next time. This puts the ball back in their court and keeps you focusing on what you originally intended.
 
 # References
 1. https://www.oliverburkeman.com/fourthousandweeks

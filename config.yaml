@@ -39,7 +39,19 @@ params:
   UseHugoToc: true
   disableSpecial1stPost: false
   disableScrollToTop: false
-  comments: false
+  comments: true
+  giscus:
+    repo: namoopsoo/namoopsoo.github.io
+    repoId: R_kgDOH6TH1A
+    category: General
+    categoryId: DIC_kwDOH6TH1M4Cf6Vh
+    mapping: pathname
+    strict: "0"
+    reactionsEnabled: "1"
+    emitMetadata: "0"
+    inputPosition: top
+    lang: en
+    theme: preferred_color_scheme
   hidemeta: false
   hideSummary: false
   ShowToc: true

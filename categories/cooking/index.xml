@@ -4,7 +4,7 @@
     <title>Cooking on michal piekarczyk | end to end combat</title>
     <link>https://michal.piekarczyk.xyz/categories/cooking/</link>
     <description>Recent content in Cooking on michal piekarczyk | end to end combat</description>
-    <generator>Hugo -- 0.128.0</generator>
+    <generator>Hugo -- 0.145.0</generator>
     <language>en</language>
     <lastBuildDate>Sun, 26 Feb 2023 18:33:54 -0500</lastBuildDate>
     <atom:link href="https://michal.piekarczyk.xyz/categories/cooking/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,8 @@
       <link>https://michal.piekarczyk.xyz/post/2021-01-07-steak-two/</link>
       <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/post/2021-01-07-steak-two/</guid>
-      <description>Two updates to the earlier steak post. Earlier, I was getting a really low temperature on the meat thermometer I was using and I am pretty sure now that was because I was only dipping just the tip as opposed to basically burying the thermometer lengthwise. This time around I seem to be getting the expected temperature, above 130 F and even above 140 F, whereas before this temperature was not registering even though I had validated that it was working on some pie for instance.</description>
+      <description>&lt;!--- &lt;img src=&#34;https://s3.amazonaws.com/my-blog-content/2021-01-07-steak-two/2021-01-07 22.51.40.jpg&#34; width=&#34;25%&#34; style=&#34;transform:rotate(90deg);&#34;&gt;--&gt;
+&lt;p&gt;Two updates to the  &lt;a href=&#34;{% post_url 2020-05-31-steak-puzzle %}&#34;&gt;earlier steak post&lt;/a&gt;. Earlier, I was getting a really low temperature on the meat thermometer I was using and I am pretty sure now that was because I was only dipping just the tip as opposed to basically burying the thermometer lengthwise. This time around I seem to be getting the expected temperature, above 130 F and even above 140 F, whereas before this temperature was not registering even though I had validated that it was working on some pie for instance.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -4,7 +4,7 @@
     <title>Langchain on michal piekarczyk | end to end combat</title>
     <link>https://michal.piekarczyk.xyz/tags/langchain/</link>
     <description>Recent content in Langchain on michal piekarczyk | end to end combat</description>
-    <generator>Hugo -- 0.128.0</generator>
+    <generator>Hugo -- 0.145.0</generator>
     <language>en</language>
     <lastBuildDate>Sat, 20 May 2023 15:25:24 -0400</lastBuildDate>
     <atom:link href="https://michal.piekarczyk.xyz/tags/langchain/index.xml" rel="self" type="application/rss+xml" />
@@ -13,17 +13,84 @@
       <link>https://michal.piekarczyk.xyz/post/2023-02-18-first-stab-langchain-interview-me/</link>
       <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/post/2023-02-18-first-stab-langchain-interview-me/</guid>
-      <description>Premise Ok, got this half baked idea , combine my #brag-document with the available [[langchain]] QA chains into a proof of concept maybe I can call [[langchain interview me 2023-feb]]
-So I&amp;rsquo;m going to throw a bunch of my source material together, language based, accessible as plain text doc, and then I will run the Link examples that provide references, citations,
-Ok, so for accumulating my information, import yaml import tempfile from pathlib import Path from datetime import datetime import pytz def utc_now(): return datetime.</description>
+      <description>&lt;h3 id=&#34;premise&#34;&gt;Premise&lt;/h3&gt;
+&lt;p&gt;Ok, got this half baked idea , combine my #brag-document with the available [[langchain]] QA chains into a proof of concept maybe I can call [[langchain interview me 2023-feb]]&lt;/p&gt;
+&lt;p&gt;So I&amp;rsquo;m going to throw a bunch of my source material together, language based, accessible as plain text doc, and then I will run the  &lt;a href=&#34;https://langchain.readthedocs.io/en/latest/modules/chains/combine_docs_examples/qa_with_sources.html&#34;&gt;Link&lt;/a&gt; examples that provide references, citations,&lt;/p&gt;
+&lt;h3 id=&#34;ok-so-for-accumulating-my-information&#34;&gt;Ok, so for accumulating my information,&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; yaml
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; tempfile
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; pathlib &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; Path
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; datetime &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; datetime
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pytz
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;utc_now&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; datetime&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;utcnow()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;replace(tzinfo&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;pytz&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;UTC)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;utc_ts&lt;/span&gt;(dt):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; dt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;strftime(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%Y-%m-&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%d&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;T%H%M%S&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;read_yaml&lt;/span&gt;(loc):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; open(loc) &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; fd:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; yaml&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;safe_load(fd)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; pathlib &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; Path
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; os
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;repos_dir &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Path(os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;getenv(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;REPOS_DIR&amp;#34;&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; repos_dir&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;is_dir()      
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;experience_loc &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; repos_dir &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;my-challenges-and-accomplishments/experience.yaml&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;experiences_dict &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; read_yaml(experience_loc)[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Descriptions&amp;#34;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sections &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; project, detail &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; experiences_dict&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;items():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    section &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; detail&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;company&amp;#34;&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        company &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; detail&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;company&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        section &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;When I worked at &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;company&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;, &amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                  &lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;there was a project in &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;detail[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;year&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;, &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;project&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;.&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; detail&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;project&amp;#34;&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        project &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; detail&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;project&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        section &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;In &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;detail[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;year&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;, I had a side project, &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;project&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;. &amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    section &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;. &amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join([x &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; detail&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;one-liners&amp;#34;&lt;/span&gt;, [])])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    section &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;. &amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join([x &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; detail&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;stories&amp;#34;&lt;/span&gt;, [])])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sections&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(section)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;workdir &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; repos_dir &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;2023-interview-me&amp;#34;&lt;/span&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;path &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; workdir &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;utc_ts(utc_now())&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;-the-story-blurb.txt&amp;#34;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;path&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;write_text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n\n\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join(sections))
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;ok-let-me-run-now-some-of-the-basic-question-answer-chains&#34;&gt;Ok let me run now some of the basic question answer chains&lt;/h3&gt;
+&lt;p&gt;Use my environment from before,&lt;/p&gt;</description>
     </item>
     <item>
       <title>Quick lang chain test drive</title>
       <link>https://michal.piekarczyk.xyz/post/2023-01-29-lang-chain-quick-look/</link>
       <pubDate>Sun, 29 Jan 2023 21:02:57 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/post/2023-01-29-lang-chain-quick-look/</guid>
-      <description>Okay let me try that lang chain demo 19:23 ok yea looking at https://beta.openai.com/account/api-keys I did not have an api key yet, so lets try that out. how can one use https://github.com/hwchase17/langchain for [[question-answer-task]] over documentation ? https://langchain.readthedocs.io/en/latest/use_cases/question_answering.html 19:33 wow really cool so https://langchain.readthedocs.io/en/latest/use_cases/question_answering.html#adding-in-sources this says this can provide the sources used in answering a question ! nice 19:37 ok so first per https://langchain.readthedocs.io/en/latest/getting_started/getting_started.html here, installing this stuff,
-creating a new environment on my laptop pip install langchain pip install openai pip install faiss-cpu # adding this here after the fact after getting below error 20:11 got one error, ValueError: Could not import faiss python package.</description>
+      <description>&lt;h1 id=&#34;okay-let-me-try-that-lang-chain-demo&#34;&gt;Okay let me try that lang chain demo&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;19:23 ok yea looking at &lt;a href=&#34;https://beta.openai.com/account/api-keys&#34;&gt;https://beta.openai.com/account/api-keys&lt;/a&gt; I did not have an api key yet, so lets try that out.&lt;/li&gt;
+&lt;li&gt;how can one use &lt;a href=&#34;https://github.com/hwchase17/langchain&#34;&gt;https://github.com/hwchase17/langchain&lt;/a&gt;  for [[question-answer-task]] over documentation ?
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://langchain.readthedocs.io/en/latest/use_cases/question_answering.html&#34;&gt;https://langchain.readthedocs.io/en/latest/use_cases/question_answering.html&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;19:33 wow really cool so &lt;a href=&#34;https://langchain.readthedocs.io/en/latest/use_cases/question_answering.html#adding-in-sources&#34;&gt;https://langchain.readthedocs.io/en/latest/use_cases/question_answering.html#adding-in-sources&lt;/a&gt; this says this can provide the sources used in answering a question ! nice&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;1937-ok-so-first-per&#34;&gt;19:37 ok so first per&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://langchain.readthedocs.io/en/latest/getting_started/getting_started.html&#34;&gt;https://langchain.readthedocs.io/en/latest/getting_started/getting_started.html&lt;/a&gt; here, installing this stuff,&lt;/p&gt;
+&lt;h4 id=&#34;creating-a-new-environment-on-my-laptop&#34;&gt;creating a new environment on my laptop&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pip install langchain
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pip install openai
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pip install faiss&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;cpu &lt;span style=&#34;color:#75715e&#34;&gt;# adding this here after the fact after getting below error &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;2011-got-one-error&#34;&gt;20:11 got one error,&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;ValueError&lt;/span&gt;: Could &lt;span style=&#34;color:#f92672&#34;&gt;not&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; faiss python package&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt; Please it install it &lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;`&lt;/span&gt;pip install faiss&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;or&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;`&lt;/span&gt;pip install faiss&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;cpu&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;`&lt;/span&gt; (depending on Python version)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;ok-let-me-query&#34;&gt;Ok let me query&lt;/h3&gt;
+&lt;p&gt;the [[New yorker]] #article I added . I recently read [[The American Beast New Yorker]] this article by [[person Jill Lepore]] about the #report that was commissioned about the #[[January 6th Insurrection]] . I used my #iphone #scan-to-text feature to pull in the first page and a half to a text file, &lt;code&gt;article.txt&lt;/code&gt; to try this out . Let&amp;rsquo;s see how this works.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

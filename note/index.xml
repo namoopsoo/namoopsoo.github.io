@@ -4,7 +4,7 @@
     <title>Notes on michal piekarczyk | end to end combat</title>
     <link>https://michal.piekarczyk.xyz/note/</link>
     <description>Recent content in Notes on michal piekarczyk | end to end combat</description>
-    <generator>Hugo -- 0.128.0</generator>
+    <generator>Hugo -- 0.145.0</generator>
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -12,98 +12,106 @@
       <link>https://michal.piekarczyk.xyz/note/2026-02-13-what-ends-up/</link>
       <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2026-02-13-what-ends-up/</guid>
-      <description>We want to follow the optimal path of the day, not the one using yesterday&amp;rsquo;s information One reason why plans, I notice for myself, don&amp;rsquo;t survive, is when there are multiple people waiting on me and also if I have multiple opportunities I have noticed. And also all of this competes with all of the things I have theoretically planned to do in a given day or week or sprint.</description>
+      <description>&lt;h1 id=&#34;we-want-to-follow-the-optimal-path-of-the-day-not-the-one-using-yesterdays-information&#34;&gt;We want to follow the optimal path of the day, not the one using yesterday&amp;rsquo;s information&lt;/h1&gt;
+&lt;p&gt;One reason why plans, I notice for myself, don&amp;rsquo;t survive, is when there are multiple people waiting on me and also if I have multiple opportunities I have noticed. And also all of this competes with all of the things I have theoretically planned to do in a given day or week or sprint.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Whose Responsibility is Tech Debt</title>
       <link>https://michal.piekarczyk.xyz/note/2026-02-11-tech-debt-whose-job/</link>
       <pubDate>Wed, 11 Feb 2026 19:56:26 -0500</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2026-02-11-tech-debt-whose-job/</guid>
-      <description>Starting a small note here, around discussions myself and others have been having on my team about whether addressing tech debt should be prioritized explicitly or is it something you just address like you might with local refactors with the so-called boy-scout-rule [1].
-Realizing after having several converstions about this lately that there are many diverging opinions on this. I have some teammates who see this as the responsibility of the product team, and others who will tackle it head on like an obstacle in their way of the main task at hand.</description>
+      <description>&lt;p&gt;Starting a small note here, around discussions myself and others have been having on my team about whether addressing tech debt should be prioritized explicitly or is it something you just address like you might with local refactors with the so-called boy-scout-rule [1].&lt;/p&gt;
+&lt;p&gt;Realizing after having several converstions about this lately that there are many diverging opinions on this. I have some teammates who see this as the responsibility of the product team, and others who will tackle it head on like an obstacle in their way of the main task at hand. And a more nuanced middle-ground of colleague who is a fan of The Goal, is that you should not have tech debt in the first place if you &amp;ldquo;pay it down&amp;rdquo; in stride as part of your role of implementing whatever the company envisions.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Notes on feast for spark</title>
       <link>https://michal.piekarczyk.xyz/note/2026-02-08-feast/</link>
       <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2026-02-08-feast/</guid>
-      <description>Looking into feast, the open source feature store, and whether there is support for using feast as an interface around parquet and or delta tables, with use in a pyspark batch inference databricks environment. I see that parquet is mentioned in the quickstart2, using parquet as the offline component and using sqlite as the online store component. The offline store component is described as intended for training. Maybe it can be useful for a batch inference case too?</description>
+      <description>&lt;p&gt;Looking into feast, the open source feature store, and whether there is support for using feast as an interface around parquet and or delta tables, with use in a pyspark batch inference databricks environment. I see that parquet is mentioned in the quickstart&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;, using parquet as the offline component and using sqlite as the online store component. The offline store component is described as intended for training. Maybe it can be useful for a batch inference case too?&lt;/p&gt;</description>
     </item>
     <item>
       <title>The Good the bad and the ugly of AI benefit shortfalls</title>
       <link>https://michal.piekarczyk.xyz/note/2026-02-07-sloppy-seconds/</link>
       <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2026-02-07-sloppy-seconds/</guid>
-      <description>I&amp;rsquo;m reading AI Snake Oil, and the authors intro by saying they will focus on the examples of AI that harm and they will not include the ones that benefit society. But it is not straightforward to create a list of the good examples. I think one of their examples in the good column was autocorrect. But auto orrect is a good example of where you can&amp;rsquo;t just sprinkle AI on a problem to solve it.</description>
+      <description>&lt;p&gt;I&amp;rsquo;m reading AI Snake Oil, and the authors intro by saying they will focus on the examples of AI that harm and they will not include the ones that benefit society. But it is not straightforward to create a list of the good examples. I think one of their examples in the good column was autocorrect. But auto orrect is a good example of where you can&amp;rsquo;t just sprinkle AI on a problem to solve it. You need to put a lot of effort to get the UX right.&lt;/p&gt;</description>
     </item>
     <item>
       <title>More Is Less</title>
       <link>https://michal.piekarczyk.xyz/note/2026-02-06-more-is-less/</link>
       <pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2026-02-06-more-is-less/</guid>
-      <description>Listening Nate B Jones here1 to the end. Thought I heard him refer to productivity gains. Had to rewind that to hear it again.
-every single agent you can run in parallel, multiplies your productivity.
-But does that translate to value?
-Recently, I&amp;rsquo;ve been reading the Healthcare Handbook2, where I (re)learned that &amp;ldquo;productivity&amp;rdquo; has a specific meaning to labor economists. Productivity is your output given your input. HH authors further cite this piece4.</description>
+      <description>&lt;p&gt;Listening Nate B Jones here&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; to the end. Thought I heard him refer to productivity gains. Had to rewind that to hear it again.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;every single agent you can run in parallel, multiplies your productivity.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;But does that translate to value?&lt;/p&gt;
+&lt;p&gt;Recently, I&amp;rsquo;ve been reading the Healthcare Handbook&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;, where I (re)learned that &amp;ldquo;productivity&amp;rdquo; has a specific meaning to labor economists. Productivity is your output given your input. HH authors further cite this piece&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;. But informally, &amp;ldquo;productivity&amp;rdquo; is just, &amp;ldquo;hey I got more stuff done&amp;rdquo;, &amp;ldquo;I checked off more to-do list items!&amp;rdquo;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Iteration Planning</title>
       <link>https://michal.piekarczyk.xyz/note/2026-02-01--iteration-planning/</link>
       <pubDate>Sun, 01 Feb 2026 21:18:39 -0500</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2026-02-01--iteration-planning/</guid>
-      <description>Notes, reading this article. Has some zingers in here , hah!
-The iron cross, maybe without one leg? You can’t cheat the scope–time–quality triangle. If we try to fix time and scope, quality takes the hit. In a developer-facing product, degraded quality means support escalations, technical debt, and broken trust. Like any debt, technical debt must be paid back, and its interest compounds over time.
-I have heard many variations of this.</description>
+      <description>&lt;p&gt;Notes, reading this article. Has some zingers in here , hah!&lt;/p&gt;
+&lt;h2 id=&#34;the-iron-cross-maybe-without-one-leg&#34;&gt;The iron cross, maybe without one leg?&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;You can’t cheat the scope–time–quality triangle. If we try to fix time and scope, quality takes the hit. In a developer-facing product, degraded quality means support escalations, technical debt, and broken &lt;strong&gt;trust&lt;/strong&gt;. Like any debt, technical debt must be paid back, and its interest compounds over time.&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;I have heard many variations of this. The one I like, maybe most, forget precisely where heard it maybe Shane de la Moore, is to not even consider quality as a degree of freedom, just consider that a non-negotiable.&lt;/p&gt;</description>
     </item>
     <item>
       <title>do you have a flag?</title>
       <link>https://michal.piekarczyk.xyz/note/2026-01-31-lessons-steve/</link>
       <pubDate>Sat, 31 Jan 2026 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2026-01-31-lessons-steve/</guid>
-      <description>no flag no country Steve Huyhn (aka A Life Engineered ), discusses here , https://youtu.be/oLzj67H-OHo , a few career concepts he says he had to unlearn.
-One being about hoping if he does good work, it will surely get noticed.
-But he points out thats highly unlikely to happen.
-His alternative is to get better at self promoting, starting gently if youre not a natural braggart, highlighting the work of others and then slipping in alongside something you did too, in some email say or chat message.</description>
+      <description>&lt;h1 id=&#34;no-flag-no-country&#34;&gt;no flag no country&lt;/h1&gt;
+&lt;p&gt;Steve Huyhn (aka A Life Engineered ), discusses here   ,  &lt;a href=&#34;https://youtu.be/oLzj67H-OHo&#34;&gt;https://youtu.be/oLzj67H-OHo&lt;/a&gt; , a few career concepts he says he had to unlearn.&lt;/p&gt;
+&lt;p&gt;One being about hoping if he does good work, it will surely get noticed.&lt;/p&gt;
+&lt;p&gt;But he points out thats highly unlikely to happen.&lt;/p&gt;
+&lt;p&gt;His alternative is to get better at self promoting, starting gently if youre not a natural braggart, highlighting the work of others and then slipping in alongside something you did too, in some email say or chat message.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hook Up Cloudflare Rag Search</title>
       <link>https://michal.piekarczyk.xyz/note/2026-01-25-hook-up-cloudflare-rag-search/</link>
       <pubDate>Sat, 31 Jan 2026 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2026-01-25-hook-up-cloudflare-rag-search/</guid>
-      <description>Here are some of my notes on adding Cloudflare AI search as the endpoint for my hugo site&amp;rsquo;s search.
-Summary The other weekend, I randomly looked into some minimal ways to set up RAG search on my hugo site. A year prior, I had tried out3 TypeSense as a hosted vector embedding store for a several million row many gigabyte dataset but a hugo text site is pretty small so I was wondering what the price might be for this.</description>
+      <description>&lt;p&gt;Here are some of my notes on adding Cloudflare AI search as the endpoint for my hugo site&amp;rsquo;s search.&lt;/p&gt;
+&lt;h1 id=&#34;summary&#34;&gt;Summary&lt;/h1&gt;
+&lt;p&gt;The other weekend, I randomly looked into some minimal ways to set up RAG search on my hugo site. A year prior, I had tried out&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; TypeSense as a hosted vector embedding store for a several million row many gigabyte dataset but a hugo text site is pretty small so I was wondering what the price might be for this. Cloudflare AI Search came up, incidentally as not only a vector store alternative but a self contained store with indexing and a small RAG layer on top.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Why do anything</title>
       <link>https://michal.piekarczyk.xyz/note/2026-01-24--dont-want-do/</link>
       <pubDate>Sat, 24 Jan 2026 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2026-01-24--dont-want-do/</guid>
-      <description>My friend asks me, in reference to a Goggins interview, what do I think about doing things you don&amp;rsquo;t want to do? Let me write out my thoughts here since I have been thinking on this topic for a long time!
-There are many ways of thinking about this topic and depending on which frame of reference you are wearing at any one time, you will form a totally different point of view.</description>
+      <description>&lt;p&gt;My friend asks me, in reference to a Goggins interview, what do I think about doing things you don&amp;rsquo;t want to do? Let me write out my thoughts here since I have been thinking on this topic for a long time!&lt;/p&gt;
+&lt;p&gt;There are many ways of thinking about this topic and depending on which frame of reference you are wearing at any one time, you will form a totally different point of view.&lt;/p&gt;</description>
     </item>
     <item>
       <title>how-to-make-cake</title>
       <link>https://michal.piekarczyk.xyz/note/2026-01-19-how-to-make-cake/</link>
       <pubDate>Mon, 19 Jan 2026 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2026-01-19-how-to-make-cake/</guid>
-      <description>Started reading, preview, AI Snake Oil. Reading retelling of what a developer Thomad Ptacek received from ChatGPT about how a biblical verse would explain removing a peanut buttee sandwich from a VCR.
-The below makes me think of the Russel Peters standup routine where he demonstrates how a particular man would stereotype explain how to bake a cake.
-&amp;ldquo;Fear not, my child, for I shall guide thy hand and show thee the way.</description>
+      <description>&lt;p&gt;Started reading, preview, AI Snake Oil. Reading retelling of what a developer Thomad Ptacek received from ChatGPT about how a biblical verse would explain removing a peanut buttee sandwich from a VCR.&lt;/p&gt;
+&lt;p&gt;The below  makes me think of the Russel Peters standup routine where he demonstrates how a particular man would stereotype explain how to bake a cake.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Fear not, my child, for I shall guide thy hand and show thee the way. Take thy butter knife, and carefully insert it between the sandwich and the VCR, and gently pry them apart. And with patience and perseverance, the sandwich shall be removed, and thy VCR
+shall be saved.&amp;rdquo;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Armpits of Giants: A Fundamental Mis-Attribution Error</title>
       <link>https://michal.piekarczyk.xyz/note/2026-01-14-misattribution-error/</link>
       <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2026-01-14-misattribution-error/</guid>
-      <description>It doesn&amp;rsquo;t feel great when you get a feeling those closest to you are not giving you credit for your ideas but maybe that is usually not the whole picture.
-There is Fundamental Attribution Error1, where one attributes behavior to character traits that are perhaps more easily explained by circumstances. This is similar to Hanlon&amp;rsquo;s Razor2 as far as attribution errors go. But what if there is a different kind of attribution error, a mis-attribution error?</description>
+      <description>&lt;p&gt;It doesn&amp;rsquo;t feel great when you get a feeling those closest to you are not giving you credit for your ideas but maybe that is usually not the whole picture.&lt;/p&gt;
+&lt;p&gt;There is Fundamental Attribution Error&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, where one attributes behavior to character traits that are perhaps more easily explained by circumstances. This is similar to Hanlon&amp;rsquo;s Razor&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; as far as attribution errors go. But what if there is a different kind of attribution error, a mis-attribution error?&lt;/p&gt;</description>
     </item>
     <item>
       <title>One Level of Abstraction at a Time</title>
       <link>https://michal.piekarczyk.xyz/note/2026-01-10-dont-go-insane/</link>
       <pubDate>Sun, 11 Jan 2026 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2026-01-10-dont-go-insane/</guid>
-      <description>Sometimes the experience of overwhelm looks like bouncing between, actively being in the weeds doing a thing, but suddenly, thinking, &amp;ldquo;hmm is this the right thing to be doing? Maybe I should do more big picture thinking&amp;rdquo;, and then doing some big picture thinking, but getting kind of caught up in some details of a priority that comes up, and thinking, &amp;ldquo;oh wow this looks important, I should probably stop planning and thinking and just do this thing now because all this strategic thinking just feels like a waste of time&amp;rdquo; .</description>
+      <description>&lt;p&gt;Sometimes the experience of overwhelm looks like bouncing between, actively being in the weeds doing a thing, but suddenly, thinking, &amp;ldquo;hmm is this the right thing to be doing? Maybe I should do more big picture thinking&amp;rdquo;, and then doing some big picture thinking, but getting kind of caught up in some details of a priority that comes up, and thinking, &amp;ldquo;oh wow this looks important, I should probably stop planning and thinking and just do this thing now because all this strategic thinking just feels like a waste of time&amp;rdquo; . 😂&lt;/p&gt;</description>
     </item>
     <item>
       <title>Use Your Elbows</title>
@@ -117,78 +125,131 @@ There is Fundamental Attribution Error1, where one attributes behavior to charac
       <link>https://michal.piekarczyk.xyz/note/2026-01-10-hide-distracting-items/</link>
       <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2026-01-10-hide-distracting-items/</guid>
-      <description>Wow, today I was learning about the timeline of Microsoft adding Linux support on Windows, reading this article1, on my phone, but I got distracted. I was trying to long-press one of the links in the article, but this news website, bless their hearts, is click harvesting, so was preventing my long-click trying to take a peak at a link prior to clicking it&amp;ndash;since don&amp;rsquo;t click on shift is just 101 against phishing.</description>
+      <description>&lt;p&gt;Wow, today I was learning about the timeline of Microsoft adding Linux support on Windows, reading this article&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, on my phone, but I got distracted. I was trying to long-press one of the links in the article, but this news website, bless their hearts, is click harvesting, so was  preventing my long-click trying to take a peak at a link prior to clicking it&amp;ndash;&lt;em&gt;since don&amp;rsquo;t click on shift is just 101 against phishing&lt;/em&gt;. Anyway, got a tip from ChatGPT to try &amp;ldquo;Reader Mode&amp;rdquo;, in my Safari app. Somehow that option was gone for this website. I also tried &amp;ldquo;Request Desktop Website&amp;rdquo;, but that didn&amp;rsquo;t change the long-click-hijacking. But I stumbled upon another interesting Safari capability.&lt;/p&gt;</description>
     </item>
     <item>
       <title>continuity camera</title>
       <link>https://michal.piekarczyk.xyz/note/2026-01-03--continuity-camera/</link>
       <pubDate>Sat, 03 Jan 2026 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2026-01-03--continuity-camera/</guid>
-      <description>Whaaatt??? 🤯 I discovered today, thanks to a conversation with ChatGPT , Apple MacOS&amp;rsquo;s Continuity Camera , for batch scanning of documents.
-Had wasted so much time trying to use the Dropbox app for scanning, because I had always been trying to rename and scan at the same time. And finding the right folder and typing in the iphone keyboard, all those things are painfully slow. Dropbox has still not added the simplest of conveniences into their UI of , being able to search for some folder or file, go to it, and then from there be able to go to the parent folder.</description>
+      <description>&lt;p&gt;Whaaatt??? 🤯 I discovered today, thanks to a conversation with ChatGPT , Apple MacOS&amp;rsquo;s Continuity Camera , for batch scanning of documents.&lt;/p&gt;
+&lt;p&gt;Had wasted so much time trying to use the Dropbox app for scanning, because I had always been trying to rename and scan at the same time. And finding the right folder and typing in the iphone keyboard, all those things are painfully slow. Dropbox has still not added the simplest of conveniences into their UI of , being able to search for some folder or file, go to it, and then from there be able to go to the parent folder.&lt;/p&gt;</description>
     </item>
     <item>
       <title>notes-healthcare-handbook</title>
       <link>https://michal.piekarczyk.xyz/note/2026-01-01-notes-healthcare-handbook/</link>
       <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2026-01-01-notes-healthcare-handbook/</guid>
-      <description>surprise billing p39, (and chapter 6 too), reading a note about a 2015 study that found, 30% of plans on federal marketplqce, wow, without any emergency physician coverage?!
-so all those would be out of network.
-cost sharing p40, cost sharing like HDHP, intended to reduce cost by getting people to shop around more. RAND, findings, less money spent but not by shopping around but by getting less care .</description>
+      <description>&lt;h2 id=&#34;surprise-billing&#34;&gt;surprise billing&lt;/h2&gt;
+&lt;p&gt;p39, (and chapter 6 too), reading a note about a 2015 study that found, 30% of plans on federal marketplqce, wow, without any emergency physician coverage?!&lt;/p&gt;
+&lt;p&gt;so all those would be out of network.&lt;/p&gt;
+&lt;h2 id=&#34;cost-sharing&#34;&gt;cost sharing&lt;/h2&gt;
+&lt;p&gt;p40, cost sharing like HDHP, intended to reduce cost by getting people to shop around more. RAND, findings, less money spent but not by shopping around but by getting less care .&lt;/p&gt;
+&lt;h2 id=&#34;managed-care&#34;&gt;managed care&lt;/h2&gt;
+&lt;p&gt;p41, referrals and prior authorizations, to pay less for services as a respknse to more services and higher costs in 1970s and 1980s?? HMOs. And Medicare Advantage.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Recruiting Is Not a Science</title>
       <link>https://michal.piekarczyk.xyz/note/2025-12-27-recruiting-is-not-a-science/</link>
       <pubDate>Sat, 27 Dec 2025 14:50:19 -0500</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2025-12-27-recruiting-is-not-a-science/</guid>
-      <description>The chaos of hiring is perpetually on most peoples minds these days, at least in my sampling of the conversations I engage in. One topic that comes up a lot is job post ghosting. No need to mention AI. Oops just did 😅.
-👻 job post ghosting: an applicant does not hear back from an entity behind an application they submitted, for an extended period of time.
-The entity where an application is submitted may as well be a coin in a fountain or a letter in an ocean bottle or some other kind of void.</description>
+      <description>&lt;p&gt;The chaos of hiring is perpetually on most peoples minds these days, at least in my sampling of the conversations I engage in. One topic that comes up a lot is job post ghosting. No need to mention AI. Oops just did 😅.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;👻 &lt;strong&gt;job post ghosting&lt;/strong&gt;: &lt;em&gt;an applicant does not hear back from an entity behind an application they submitted, for an extended period of time.&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;The entity where an application is submitted may as well be a coin in a fountain or a letter in an ocean bottle or some other kind of void.&lt;/p&gt;</description>
     </item>
     <item>
       <title>on the flip side</title>
       <link>https://michal.piekarczyk.xyz/note/2025-12-27-flip-side/</link>
       <pubDate>Sat, 27 Dec 2025 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2025-12-27-flip-side/</guid>
-      <description>When do you do the work.
-Examples,
-Andrew Wiles Fermat&amp;rsquo;s Last Theorem Chris Lattner, LLVM, SWift and Mojo
-And in Slow Productivity, Cal also describes McPhee, as a freelance writer , who on the surface may look like someone who spent 2 years writing some article here and there but really Cal notes in a footnote on p 216 that McPhee still needed to keep a day job teaching at Princeton and needed royalties from books that were successful, because the articles he quote unquote took his time on werent really profitable.</description>
+      <description>&lt;p&gt;When do you do the work.&lt;/p&gt;
+&lt;p&gt;Examples,&lt;/p&gt;
+&lt;p&gt;Andrew Wiles Fermat&amp;rsquo;s Last Theorem
+Chris Lattner, LLVM, SWift and Mojo&lt;/p&gt;
+&lt;p&gt;And in Slow Productivity, Cal also describes McPhee, as a freelance writer , who on the surface may look like someone who spent 2 years writing some article here and there but really Cal notes in a footnote on p 216 that McPhee still needed to keep a day job teaching at Princeton and needed royalties from books that were successful, because the articles he quote unquote took his time on werent really profitable.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Slow Productivity book notes</title>
       <link>https://michal.piekarczyk.xyz/note/2025-11-29-slow-productivity-notes/</link>
       <pubDate>Sat, 29 Nov 2025 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2025-11-29-slow-productivity-notes/</guid>
-      <description>Notes Collecting some notes, reading Slow Productivity1 as I&amp;rsquo;m iterating on this2 post which is related.
-Disconnection From the Familiar The p160 - 163, daily rituals, going to some other other place , as a escape place to focus.
-I have stumbled upon this phenomenon too. Traveling has been a favorite way to collect my thoughts not otherwise accessible. Bonus relaxed low stakes environment.
-trail of broken urls Reading, p181, about this Jarvis, this quote resonates,</description>
+      <description>&lt;h1 id=&#34;notes&#34;&gt;Notes&lt;/h1&gt;
+&lt;p&gt;Collecting some notes, reading Slow Productivity&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; as I&amp;rsquo;m  iterating on this&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; post which is related.&lt;/p&gt;
+&lt;h2 id=&#34;disconnection-from-the-familiar&#34;&gt;Disconnection From the Familiar&lt;/h2&gt;
+&lt;p&gt;The p160 - 163, daily rituals, going to some other other place , as a escape place to focus.&lt;/p&gt;
+&lt;p&gt;I have stumbled upon this phenomenon too. Traveling has been a favorite way to collect my thoughts not otherwise accessible. Bonus relaxed low stakes environment.&lt;/p&gt;
+&lt;h2 id=&#34;trail-of-broken-urls&#34;&gt;trail of broken urls&lt;/h2&gt;
+&lt;p&gt;Reading, p181, about this Jarvis, this quote resonates,&lt;/p&gt;</description>
     </item>
     <item>
       <title>Gap Analysis</title>
       <link>https://michal.piekarczyk.xyz/note/2025-11-09-gap-analysis/</link>
       <pubDate>Sun, 09 Nov 2025 16:39:09 -0500</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2025-11-09-gap-analysis/</guid>
-      <description>You don&amp;rsquo;t know what you don&amp;rsquo;t know. Filled in some gaps today. I don&amp;rsquo;t know if these particular gaps were used by pests found intruding into the home, but per my reading, these are typical likely entry ways, so going to attempt to rule these out for later.</description>
+      <description>&lt;p&gt;You don&amp;rsquo;t know what you don&amp;rsquo;t know. Filled in some gaps today. I don&amp;rsquo;t know if these particular gaps were used by pests found intruding into the home, but per my reading, these are typical likely entry ways, so going to attempt to rule these out for later.&lt;/p&gt;
+&lt;!-- Write your intro paragraph here. --&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://s3.amazonaws.com/my-blog-content/2025-11-09-gap-analysis/IMG_8213.jpeg&#34; width=&#34;50%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://s3.amazonaws.com/my-blog-content/2025-11-09-gap-analysis/IMG_8214.jpeg&#34; width=&#34;50%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://s3.amazonaws.com/my-blog-content/2025-11-09-gap-analysis/IMG_8215.jpeg&#34; width=&#34;50%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://s3.amazonaws.com/my-blog-content/2025-11-09-gap-analysis/IMG_8216.jpeg&#34; width=&#34;50%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://s3.amazonaws.com/my-blog-content/2025-11-09-gap-analysis/IMG_8217.jpeg&#34; width=&#34;50%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://s3.amazonaws.com/my-blog-content/2025-11-09-gap-analysis/IMG_8219.jpeg&#34; width=&#34;50%&#34;/&gt; 
+&lt;/figure&gt;
+&lt;/p&gt;</description>
     </item>
     <item>
       <title>What are the important problems to solve these days?</title>
       <link>https://michal.piekarczyk.xyz/note/2025-11-01-problem-spaces/</link>
       <pubDate>Sat, 01 Nov 2025 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2025-11-01-problem-spaces/</guid>
-      <description>Housing scarcity VC funds are buying up private properties, taking housing off the market, driving up housing costs through additional scarcity and pushing more people to renting.
-Also, shared algorithms for rent pricing are a proxy for collusion, possibly inadvertent, but raising prices.
-Loneliness Health insurance disconnect We have new transparency laws passed but perhaps people dont know about them yet.
-Not yet transitioned to vqlue based cqre, so many providers are incentivized to paper patients with mountqins of itemization paper cuts.</description>
+      <description>&lt;h2 id=&#34;housing-scarcity&#34;&gt;Housing scarcity&lt;/h2&gt;
+&lt;p&gt;VC funds are &lt;a href=&#34;https://www.reddit.com/r/pcmasterrace/comments/1px9xwx/private_equity_is_killing_private_ownership_first/&#34;&gt;buying&lt;/a&gt; up private properties, taking housing off the market, driving up housing costs through additional scarcity and pushing more people to renting.&lt;/p&gt;
+&lt;p&gt;Also, shared algorithms for rent pricing are a proxy for collusion, possibly inadvertent, but raising prices.&lt;/p&gt;
+&lt;h2 id=&#34;loneliness&#34;&gt;Loneliness&lt;/h2&gt;
+&lt;h2 id=&#34;health-insurance-disconnect&#34;&gt;Health insurance disconnect&lt;/h2&gt;
+&lt;p&gt;We have new transparency laws passed but perhaps people dont know about them yet.&lt;/p&gt;
+&lt;p&gt;Not yet transitioned to vqlue based cqre, so many providers are incentivized to paper patients with mountqins of itemization paper cuts. Value based care would open up pay for outcomes.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Fix a chipped pint glass</title>
       <link>https://michal.piekarczyk.xyz/note/2025-09-28-fix-chipped-pint-glass/</link>
       <pubDate>Sun, 28 Sep 2025 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2025-09-28-fix-chipped-pint-glass/</guid>
-      <description>Used sand paper , grade 80 , to get the following
-before after </description>
+      <description>&lt;p&gt;Used sand paper , grade 80 , to get the following&lt;/p&gt;
+&lt;h2 id=&#34;before&#34;&gt;before&lt;/h2&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://s3.amazonaws.com/my-blog-content/2025-09-28-fix-chipped-pint-glass/IMG_7717.jpeg&#34; width=&#34;50%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://s3.amazonaws.com/my-blog-content/2025-09-28-fix-chipped-pint-glass/IMG_7716.jpeg&#34; width=&#34;50%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://s3.amazonaws.com/my-blog-content/2025-09-28-fix-chipped-pint-glass/IMG_7718.jpeg&#34; width=&#34;50%&#34;/&gt; 
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;after&#34;&gt;after&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://s3.amazonaws.com/my-blog-content/2025-09-28-fix-chipped-pint-glass/IMG_7719.jpeg&#34; width=&#34;50%&#34;/&gt; 
+&lt;/figure&gt;</description>
     </item>
   </channel>
 </rss>

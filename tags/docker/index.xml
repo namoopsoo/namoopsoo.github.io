@@ -4,7 +4,7 @@
     <title>Docker on michal piekarczyk | end to end combat</title>
     <link>https://michal.piekarczyk.xyz/tags/docker/</link>
     <description>Recent content in Docker on michal piekarczyk | end to end combat</description>
-    <generator>Hugo -- 0.128.0</generator>
+    <generator>Hugo -- 0.145.0</generator>
     <language>en</language>
     <lastBuildDate>Sun, 26 Feb 2023 18:33:54 -0500</lastBuildDate>
     <atom:link href="https://michal.piekarczyk.xyz/tags/docker/index.xml" rel="self" type="application/rss+xml" />
@@ -13,9 +13,10 @@
       <link>https://michal.piekarczyk.xyz/post/2022-11-12-food-not-food/</link>
       <pubDate>Sat, 12 Nov 2022 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/post/2022-11-12-food-not-food/</guid>
-      <description>I have this on-going effort to be able to more easily show off my photos in the context of conversations. (I have a repo here, https://github.com/namoopsoo/manage-my-photos related to my glue code.)
-But I want a nice photo stream and my food diary is not part of that at all haha. So after manually moving food photos out, ultimately I stumbled upon Daniel Bourke&amp;rsquo;s Food Not Food repo, https://github.com/mrdbourke/food-not-food .
-This was great I thought but I had some challenges getting this code off the ground, so here are my notes where ultimately I forked this, https://github.</description>
+      <description>&lt;p&gt;I have this on-going effort to be able to more easily show off my photos in the context of conversations. (I have a repo here, &lt;a href=&#34;https://github.com/namoopsoo/manage-my-photos&#34;&gt;https://github.com/namoopsoo/manage-my-photos&lt;/a&gt; related to my glue code.)&lt;/p&gt;
+&lt;p&gt;But I want a nice photo stream and my food diary is not part of that at all haha. So after manually moving food photos out, ultimately I stumbled upon  Daniel Bourke&amp;rsquo;s Food Not Food repo, &lt;a href=&#34;https://github.com/mrdbourke/food-not-food&#34;&gt;https://github.com/mrdbourke/food-not-food&lt;/a&gt; .&lt;/p&gt;
+&lt;p&gt;This was great I thought but I had some challenges getting this code off the ground, so here are my notes where ultimately I forked this,
+&lt;a href=&#34;https://github.com/namoopsoo/food-not-food&#34;&gt;https://github.com/namoopsoo/food-not-food&lt;/a&gt; and added a &lt;code&gt;Dockerfile&lt;/code&gt; to make this easier. Also putting this into docker eventually helped me to batch process photos as well. I can link to a separate post on that as well.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

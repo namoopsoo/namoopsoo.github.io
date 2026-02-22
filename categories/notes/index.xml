@@ -4,7 +4,7 @@
     <title>Notes on michal piekarczyk | end to end combat</title>
     <link>https://michal.piekarczyk.xyz/categories/notes/</link>
     <description>Recent content in Notes on michal piekarczyk | end to end combat</description>
-    <generator>Hugo -- 0.128.0</generator>
+    <generator>Hugo -- 0.145.0</generator>
     <language>en</language>
     <lastBuildDate>Sun, 26 Feb 2023 18:33:54 -0500</lastBuildDate>
     <atom:link href="https://michal.piekarczyk.xyz/categories/notes/index.xml" rel="self" type="application/rss+xml" />
@@ -20,11 +20,81 @@
       <link>https://michal.piekarczyk.xyz/post/2020-12-09-dropbox-api-hmm/</link>
       <pubDate>Wed, 09 Dec 2020 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/post/2020-12-09-dropbox-api-hmm/</guid>
-      <description>For my EasyBlogPosting project.. Testing out the Dropbox API..
-2020-12-09 trying this out Per here &amp;hellip; pip install dropbox Went w/ that Getting Started page Through that page, I created a new test app for myself.
-Using the API explorer &amp;hellip; I hit Get Token ..
-https://www.dropbox.com/oauth2/authorize?response_type=token&amp;amp;client_id=xxxxxxxxx&amp;amp;redirect_uri=https%3A%2F%2Fdropbox.github.io%2Fdropbox-api-v2-explorer%2F&amp;amp;state=file_requests_list!39%2B%2Bxxxxxxxx&amp;amp;token_access_type=online&amp;amp;
-That generated a token and I used https://dropbox.github.io/dropbox-api-v2-explorer/#files_list_folder and I was able to see actual folders in my account. That&amp;rsquo;s cool except I thought I had chosen something like &amp;lsquo;single folder access&amp;rsquo; so I&amp;rsquo;m slightly confused why I can see the other folders.</description>
+      <description>&lt;h3 id=&#34;for-my-easyblogposting-project&#34;&gt;For my EasyBlogPosting project..&lt;/h3&gt;
+&lt;p&gt;Testing out the Dropbox API..&lt;/p&gt;
+&lt;h3 id=&#34;2020-12-09&#34;&gt;2020-12-09&lt;/h3&gt;
+&lt;h4 id=&#34;trying-this-out&#34;&gt;trying this out&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Per &lt;a href=&#34;https://www.dropbox.com/developers/reference/getting-started&#34;&gt;here&lt;/a&gt; &amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pip install dropbox
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;went-w-that-getting-started-page&#34;&gt;Went w/ that Getting Started page&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Through that page, I created a new test app for myself.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Using the API explorer &amp;hellip; I hit Get Token ..&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.dropbox.com/oauth2/authorize?response_type=token&amp;amp;client_id=xxxxxxxxx&amp;amp;redirect_uri=https%3A%2F%2Fdropbox.github.io%2Fdropbox-api-v2-explorer%2F&amp;amp;state=file_requests_list!39%2B%2Bxxxxxxxx&amp;amp;token_access_type=online&amp;amp;&#34;&gt;https://www.dropbox.com/oauth2/authorize?response_type=token&amp;amp;client_id=xxxxxxxxx&amp;amp;redirect_uri=https%3A%2F%2Fdropbox.github.io%2Fdropbox-api-v2-explorer%2F&amp;amp;state=file_requests_list!39%2B%2Bxxxxxxxx&amp;amp;token_access_type=online&amp;amp;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;That generated a token and I used &lt;a href=&#34;https://dropbox.github.io/dropbox-api-v2-explorer/#files_list_folder&#34;&gt;https://dropbox.github.io/dropbox-api-v2-explorer/#files_list_folder&lt;/a&gt; and I was able to see actual folders in my account.&lt;/li&gt;
+&lt;li&gt;That&amp;rsquo;s cool except I thought I had chosen  something like &amp;lsquo;single folder access&amp;rsquo; so I&amp;rsquo;m slightly confused why I can see the other folders.&lt;/li&gt;
+&lt;li&gt;Maybe the generated token in the API explorer is separate and meant for testing. Hopefully it&amp;rsquo;s short lived.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2020-12-13&#34;&gt;2020-12-13&lt;/h3&gt;
+&lt;h4 id=&#34;oh-my-special-app-folder-was-created-w-the-acess-token&#34;&gt;oh my special app folder was created w/ the acess token&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;As soon as on my &lt;a href=&#34;https://www.dropbox.com/developers/apps/info/blahblahblah&#34;&gt;app page&lt;/a&gt; I hit &amp;ldquo;Generate access token&amp;rdquo; , my special App folder was created.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; dropbox
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; os
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Initializing Dropbox API...&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dbx &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; dropbox&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Dropbox(os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;getenv(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;DBX_ACCESS_TOKEN&amp;#39;&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;result &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; dbx&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;files_list_folder(path&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;BadInputError: BadInputError(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;xxxxxxxxxxx&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Error in call to API function &amp;#34;files/list_folder&amp;#34;: Your app is not permitted to access this endpoint because it does not have the required scope &lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;files.metadata.read&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;. The owner of the app can enable the scope for the app using the Permissions tab on the App Console.&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Ah ok so I went to the Permissions tab, checked that  &amp;lsquo;files.metadata.read&amp;rsquo; box and tried again.&lt;/li&gt;
+&lt;li&gt;Now seeing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AuthError: AuthError(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;xxxxxxxxxxx&amp;#39;&lt;/span&gt;, AuthError(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;missing_scope&amp;#39;&lt;/span&gt;, TokenScopeError(required_scope&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;files.metadata.read&amp;#39;&lt;/span&gt;)))
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Ah according to &lt;a href=&#34;https://stackoverflow.com/a/64201654&#34;&gt;stackoverflow&lt;/a&gt; , the scope cannot be retroactively granted to a token created before the scope was granted.&lt;/li&gt;
+&lt;li&gt;Ok &amp;hellip; trying to re-create a new token&amp;hellip;&lt;/li&gt;
+&lt;li&gt;Ok recreated. Retried. Worked!&lt;/li&gt;
+&lt;li&gt;How to read?&lt;/li&gt;
+&lt;li&gt;What&amp;rsquo;s the difference between the two &lt;code&gt;files/download&lt;/code&gt; , &lt;code&gt;files/export&lt;/code&gt;  ( &lt;code&gt;files/get_preview&lt;/code&gt; )&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Initializing Dropbox API...&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dbx &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; dropbox&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Dropbox(os&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;getenv(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;DBX_ACCESS_TOKEN&amp;#39;&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;meta, response &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; dbx&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;files_download(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/blarg.txt&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# In [22]: response.text                                                                                                                        &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Out[22]: &amp;#39;foo blarg\n&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;github-interaction&#34;&gt;Github interaction&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Hmm I was going down the path of building an AWS Batch container to commit to my git repo&lt;/li&gt;
+&lt;li&gt;But hmmm I encountered that there may be a &lt;a href=&#34;https://docs.github.com/en/free-pro-team@latest/rest&#34;&gt;Github API&lt;/a&gt; which I can perhaps use??? And a &lt;a href=&#34;https://codesnippet.io/github-api-tutorial/&#34;&gt;nice tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Cool, so &lt;code&gt;https://api.github.com/users/namoopsoo/repos&lt;/code&gt; , repos are here.&lt;/li&gt;
+&lt;li&gt;However &lt;a href=&#34;https://docs.github.com/en/free-pro-team@latest/rest/overview/other-authentication-methods&#34;&gt;the oauth flow&lt;/a&gt;  , looks kind of involved for a quick script&lt;/li&gt;
+&lt;li&gt;But ah that&amp;rsquo;s right you can create a token for your account from here,  &lt;a href=&#34;https://github.com/settings/tokens/new&#34;&gt;Github settings&lt;/a&gt; .&lt;/li&gt;
+&lt;li&gt;Ok cool I was able to perform a simple curl w/ the personal token I created for myself &amp;hellip;  ( per &lt;a href=&#34;https://docs.github.com/en/free-pro-team@latest/rest/overview/other-authentication-methods&#34;&gt;docs&lt;/a&gt; )&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ curl -v -H &amp;#34;Authorization: token ${GITHUB_TOKEN}&amp;#34; https://api.github.com/users/namoopsoo/repos
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;ok-but-can-your-write-using-this-api-is-the-big-question&#34;&gt;ok but can your write using this API is the big question..&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Hmm according to &lt;a href=&#34;https://docs.github.com/en/free-pro-team@latest/rest/reference/git#commits&#34;&gt;here&lt;/a&gt; you can commit.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;post /repos/{owner}/{repo}/git/commits
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;But not seeing how to include the actual diffs in there. Maybe a &lt;a href=&#34;https://docs.github.com/en/free-pro-team@latest/rest/reference/git#blobs&#34;&gt;blob?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Ok according to &lt;a href=&#34;http://www.levibotelho.com/development/commit-a-file-with-the-github-api/&#34;&gt;this nice article&lt;/a&gt;  , indeed the blob endpoint is for files! hmm&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;step-1-get-a-reference-like-here&#34;&gt;step 1, get a reference.. like &lt;a href=&#34;https://developer.github.com/v3/git/refs/#get-a-reference&#34;&gt;here&lt;/a&gt;&lt;/h5&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;curl -v -H &amp;#34;Authorization: token ${GITHUB_TOKEN}&amp;#34;   https://api.github.com/repos/namoopsoo/namoopsoo.github.io/git/ref/heads/master
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Nice excellent, &amp;hellip;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -4,7 +4,7 @@
     <title>Spark on michal piekarczyk | end to end combat</title>
     <link>https://michal.piekarczyk.xyz/tags/spark/</link>
     <description>Recent content in Spark on michal piekarczyk | end to end combat</description>
-    <generator>Hugo -- 0.128.0</generator>
+    <generator>Hugo -- 0.145.0</generator>
     <language>en</language>
     <lastBuildDate>Sun, 26 Feb 2023 18:33:54 -0500</lastBuildDate>
     <atom:link href="https://michal.piekarczyk.xyz/tags/spark/index.xml" rel="self" type="application/rss+xml" />
@@ -13,16 +13,204 @@
       <link>https://michal.piekarczyk.xyz/post/2021-03-20-databricks/</link>
       <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/post/2021-03-20-databricks/</guid>
-      <description>https://databricks.com/try-databricks
-2021-03-21 Running A quick start notebook Based on the notes here, it is pretty easy to create an auto-scaling cluster. Not sure yet what events prompt the cluster to get more workers. But I would be curious to try a job that uses fewer workers and more workers, to see how the outcomes compare. I also like ethat this notebook supports SQL and also python , using what looks like first line as %python to indicate the language.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://databricks.com/try-databricks&#34;&gt;https://databricks.com/try-databricks&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2021-03-21&#34;&gt;2021-03-21&lt;/h3&gt;
+&lt;h4 id=&#34;running-a-quick-start-notebook&#34;&gt;Running A quick start notebook&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Based on the notes here, it is pretty easy to create an auto-scaling cluster.&lt;/li&gt;
+&lt;li&gt;Not sure yet what events prompt the cluster to get more workers.&lt;/li&gt;
+&lt;li&gt;But I would be curious to try a job that uses fewer workers and more workers, to see how the outcomes compare.&lt;/li&gt;
+&lt;li&gt;I also like ethat this notebook supports &lt;code&gt;SQL&lt;/code&gt; and also &lt;code&gt;python&lt;/code&gt; , using what looks like first line as &lt;code&gt;%python&lt;/code&gt; to indicate the language.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;is-this-spark-sql-or-sql-&#34;&gt;Is this spark sql or sql ?&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;From the quick start notebook&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;CREATE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;TABLE&lt;/span&gt; diamonds
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;USING&lt;/span&gt; csv
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;OPTIONS&lt;/span&gt; (path &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/databricks-datasets/Rdatasets/data-001/csv/ggplot2/diamonds.csv&amp;#34;&lt;/span&gt;, header &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;2021-04-03&#34;&gt;2021-04-03&lt;/h3&gt;
+&lt;h4 id=&#34;revisit-my-earlier-problem&#34;&gt;Revisit my earlier problem&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://michal.piekarczyk.xyz/2021/01/23/spark-weekend.html#2021-01-31&#34;&gt;Last time&lt;/a&gt; , I found this &lt;a href=&#34;https://data.cdc.gov/Case-Surveillance/COVID-19-Case-Surveillance-Public-Use-Data/vbim-akqf&#34;&gt;CDC dataset&lt;/a&gt; called &amp;ldquo;COVID-19_Case_Surveillance_Public_Use_Data.csv&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;My basic initial question I would like to answer is &amp;ldquo;how do the symptomatic rates compare by age bin&amp;rdquo;, since this dataset has an &lt;code&gt;onset_dt&lt;/code&gt; column, which is eithr blank if no symptoms and has a date if symptoms.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;more-dataset-metadata&#34;&gt;More dataset metadata..&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;22.5 M rows&lt;/li&gt;
+&lt;li&gt;each row is a de-identified patient&lt;/li&gt;
+&lt;li&gt;created: &lt;code&gt;2020-05-15&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;updated &lt;code&gt;2021-03-31&lt;/code&gt; (not sure what was being updated though)&lt;/li&gt;
+&lt;li&gt;Temporal Applicability: 	&lt;code&gt;2020-01-01/2021-03-16&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Update Frequency:	Monthly&lt;/li&gt;
+&lt;li&gt;columns&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Column Name&lt;/th&gt;
+          &lt;th&gt;Description&lt;/th&gt;
+          &lt;th&gt;Type&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;cdc_case_earliest_dt&lt;/td&gt;
+          &lt;td&gt;Calculated date&amp;ndash;the earliest available date for the record, taken from either the available set of clinical dates (date related to the illness or specimen collection) or the calculated date representing initial date case was received by CDC. This variable is optimized for completeness and may change for a given record from time to time as new information is submitted about a case.&lt;/td&gt;
+          &lt;td&gt;Date &amp;amp; Time&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;cdc_report_dt&lt;/td&gt;
+          &lt;td&gt;Calculated date representing initial date case was reported to CDC. Depreciated; CDC recommends researchers use cdc_case_earliest_dt in time series and other time-based analyses.&lt;/td&gt;
+          &lt;td&gt;Date &amp;amp; Time&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;pos_spec_dt&lt;/td&gt;
+          &lt;td&gt;Date of first positive specimen collection&lt;/td&gt;
+          &lt;td&gt;Date &amp;amp; Time&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;onset_dt&lt;/td&gt;
+          &lt;td&gt;Symptom onset date, if symptomatic&lt;/td&gt;
+          &lt;td&gt;Date &amp;amp; Time&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;current_status&lt;/td&gt;
+          &lt;td&gt;Case Status: Laboratory-confirmed case; Probable case&lt;/td&gt;
+          &lt;td&gt;Plain Text&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;sex&lt;/td&gt;
+          &lt;td&gt;Sex: Male; Female; Unknown; Other&lt;/td&gt;
+          &lt;td&gt;Plain Text&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;age_group&lt;/td&gt;
+          &lt;td&gt;Age Group: 0 - 9 Years; 10 - 19 Years; 20 - 39 Years; 40 - 49 Years; 50 - 59 Years; 60 - 69 Years; 70 - 79 Years; 80 + Years&lt;/td&gt;
+          &lt;td&gt;Plain Text&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;race_ethnicity_combined&lt;/td&gt;
+          &lt;td&gt;Race and ethnicity (combined): Hispanic/Latino; American Indian / Alaska Native, Non-Hispanic; Asian, Non-Hispanic; Black, Non-Hispanic; Native Hawaiian / Other Pacific Islander, Non-Hispanic; White, Non-Hispanic; Multiple/Other, Non-Hispanic&lt;/td&gt;
+          &lt;td&gt;Plain Text&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;hosp_yn&lt;/td&gt;
+          &lt;td&gt;Hospitalization status&lt;/td&gt;
+          &lt;td&gt;Plain Text&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;icu_yn&lt;/td&gt;
+          &lt;td&gt;ICU admission status&lt;/td&gt;
+          &lt;td&gt;Plain Text&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;death_yn&lt;/td&gt;
+          &lt;td&gt;Death status&lt;/td&gt;
+          &lt;td&gt;Plain Text&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;medcond_yn&lt;/td&gt;
+          &lt;td&gt;Presence of underlying comorbidity or disease&lt;/td&gt;
+          &lt;td&gt;Plain Text&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;get-data-in-there&#34;&gt;Get data in there&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Per the Databricks web console I can specify an S3 bucket and create a table from my file like that&lt;/li&gt;
+&lt;li&gt;And they refer to &amp;ldquo;DBFS&amp;rdquo; as &amp;ldquo;Databricks File System&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;from the example you can load from the File Store like&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sparkDF &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; spark&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;csv(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/FileStore/tables/state_income-9f7c5.csv&amp;#39;&lt;/span&gt;, header&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;, inferSchema&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# then you can create a temp table from that df&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sparkDF&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;createOrReplaceTempView(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;temp_table_name&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;THere was also an interesting note in the help notebook about permanent tables available across cluster restarts&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Since this table is registered as a temp view, it will only be available to this notebook. If you&amp;#39;d like other users to be able to query this table, you can also create a table from the DataFrame.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Once saved, this table will persist across cluster restarts as well as allow various users across different notebooks to query this data.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# To do so, choose your table name and uncomment the bottom line.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;permanent_table_name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;{{table_name}}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# df.write.format(&amp;#34;{{table_import_type}}&amp;#34;).saveAsTable(permanent_table_name)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;I am looking for how to do this w/ s3&amp;hellip;&lt;/li&gt;
+&lt;li&gt;Ah according to &lt;a href=&#34;https://docs.databricks.com/data/data-sources/aws/amazon-s3.html&#34;&gt;docs&lt;/a&gt;  you mount s3 files as regular files then proceed as usual&lt;/li&gt;
+&lt;li&gt;ok will try that &amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;aws_bucket_name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;my-databricks-assets-alpha&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;s3fn &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;s3://my-databricks-assets-alpha/cdc-dataset/COVID-19_Case_Surveillance_Public_Use_Data.csv&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;s3fn &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;s3://my-databricks-assets-alpha/cdc-dataset/COVID-19_Case_Surveillance_Public_Use_Data.head1000.csv&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mount_name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;blah&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dbutils&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fs&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;mount(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;s3a://&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; aws_bucket_name, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/mnt/&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; mount_name)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;display(dbutils&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fs&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ls(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/mnt/&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; mount_name))
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Funny thing I was trying to run this cell in the databricks notebook but it would not run and no error was given. But the reason I am pretty sure is that no cluster was attached to the notebook.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Spark Weekend</title>
       <link>https://michal.piekarczyk.xyz/post/2021-01-23-spark-weekend/</link>
       <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/post/2021-01-23-spark-weekend/</guid>
-      <description>Trying out Spark this weekend These are just my casual notes from doing that, updating them as I go along.
-Following this post to get kubernetes running in Docker for mac Per this post , I just ticked the &amp;ldquo;Enable Kubernetes&amp;rdquo; option in the docker settings. Kubernetes is taking quite a while to start up though . several minutes. kind of weird? Download spark image From here 2021-01-24 ok backup my docker images Per notes , I backed up local docker images, Like this&amp;hellip; docker save citibike-learn:0.</description>
+      <description>&lt;h3 id=&#34;trying-out-spark-this-weekend&#34;&gt;Trying out Spark this weekend&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;These are just my casual notes from doing that, updating them as I go along.&lt;/em&gt;&lt;/p&gt;
+&lt;h4 id=&#34;following-this-post-to-get-kubernetes-running-in-docker-for-mac&#34;&gt;Following this post to get kubernetes running in Docker for mac&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Per &lt;a href=&#34;https://medium.com/faun/apache-spark-on-kubernetes-docker-for-mac-2501cc72e659&#34;&gt;this post&lt;/a&gt; , I just ticked the  &amp;ldquo;Enable Kubernetes&amp;rdquo; option in the docker settings.&lt;/li&gt;
+&lt;li&gt;Kubernetes is taking quite a while to start up though . several minutes. kind of weird?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;download-spark-image&#34;&gt;Download spark image&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;From &lt;a href=&#34;https://spark.apache.org/downloads.html&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2021-01-24&#34;&gt;2021-01-24&lt;/h3&gt;
+&lt;h4 id=&#34;ok-backup-my-docker-images&#34;&gt;ok backup my docker images&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Per &lt;a href=&#34;https://corgibytes.com/blog/2019/05/13/docker-for-mac-safely-reset-from-factory-defaults/&#34;&gt;notes&lt;/a&gt; , I backed up local docker images,&lt;/li&gt;
+&lt;li&gt;Like this&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker save citibike-learn:0.9
+# image:citibike-learn, tag:latest, image-id:1ff5cd891f00
+# image:citibike-learn, tag:0.9, imageid:c8d430e84654
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Then I did the factory reset.&lt;/li&gt;
+&lt;li&gt;And Enabled Kubernetes and wow! Nice finally got the green light.&lt;/li&gt;
+&lt;li&gt;And restoring with &lt;code&gt;docker load&lt;/code&gt; like this&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker load -i  citibike-learn-0.9.tar
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;ok-now-i-can-continue-trying-to-get-spark-setup&#34;&gt;Ok now I can continue trying to get spark setup..&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Per the &lt;a href=&#34;https://medium.com/faun/apache-spark-on-kubernetes-docker-for-mac-2501cc72e659&#34;&gt;post&lt;/a&gt; , I grabbed spark albeit &lt;code&gt;3.0.1&lt;/code&gt; , instead of &lt;code&gt;2.x&lt;/code&gt; ( from &lt;a href=&#34;https://www.apache.org/dyn/closer.lua/spark/spark-3.0.1/spark-3.0.1-bin-hadoop3.2.tgz&#34;&gt;here&lt;/a&gt; )  , because according to the &lt;a href=&#34;https://databricks.com/blog/2020/06/18/introducing-apache-spark-3-0-now-available-in-databricks-runtime-7-0.html&#34;&gt;release notes&lt;/a&gt; , 3.0 and 2.x are sounding very compatible.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;./bin/docker-image-tool.sh -t spark-docker build
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&amp;hellip; following along&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl create serviceaccount spark
+# serviceaccount/spark created
+
+kubectl create clusterrolebinding spark-role --clusterrole=edit  --serviceaccount=default:spark --namespace=default
+# clusterrolebinding.rbac.authorization.k8s.io/spark-role created
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;And submitting an example job&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;bin/spark-submit  \
+    --master k8s://https://localhost:6443  \
+    --deploy-mode cluster  \
+    --conf spark.executor.instances=1  \
+    --conf spark.kubernetes.authenticate.driver.serviceAccountName=spark  \
+    --conf spark.kubernetes.container.image=spark:spark-docker  \
+    --class org.apache.spark.examples.SparkPi  \
+    --name spark-pi  \
+    local:///opt/spark/examples/jars/spark-examples_2.12-3.0.1.jar
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Taking &lt;code&gt;4 minutes&lt;/code&gt; so far. Not sure how long this is meant to take haha.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -10,6 +10,10 @@ All notable changes to this "human experiment" will be documented in this file.
 - Together with the rest of NYC, experienced the longest subzero stretch of days, jan 24 to ~feb9, around 16 days so possibly longest since either 1961 or [1881](https://m.economictimes.com/news/international/us/nyc-faces-longest-deep-freeze-in-65-years-heres-the-exact-date-temperatures-finally-rise/articleshow/127861963.cms), (2026-02-09).
 - First time I [setup](https://michal.piekarczyk.xyz/post/2026-02-07-forwards/) an email within a personal domain (2025-02-07).
 - First time I added a setup script within chatgpt.com/codex such that actually codex can run tests, in this case, test hugo updates as opposed to me erroring out when testing locally. Taking myself out of the loop for certain cases. Really cool! (2026-02-21).
+- Above was also first time my codex task had internet access, though only to install hugo (2026-02-21).
+
+### Added
+- Added [Giscus](https://giscus.app) to the posts on my blog (2026-02-21).
 
 ### Changed
 - Updated my hugo from 0.125.6 to 0.145.0, (possibly related to chatgpt.com/codex often creating updates per my tasks that do not run on my local)  (2026-02-21).

@@ -649,8 +649,17 @@ Hmm well [3] seems to say being over 55 is a risk factor, hmm but has that been 
 (I recall I had a note about p42 about lack of incentives for insurers to pay for preventative care since insurance has   churn which outweighs the benefit . What about bad karma 😆?)  
 
 
+## disparities by area
+p121, New Orleans example, where localized life expectancy statistics hide behind averages. So New Orleans average of about 77, tracks national average, but 55 for French Quarter, 
 
+https://www.rwif.org/en/library/infographics/new-orleans-map.html
 
+Data is by parishes,  this term, defined here as, neighborhoods, hoghly segrerated by race and income. 
+
+p122, story of Kaiser Permanente, cutting hypertension  gap in outcomes ,  between Black and White populations, in half. 
+
+## EHR EMR pitfalls
+p123, oh wow, crazy, i didnt realize, EHR was purely a federal government thing, in Veterans Affairs since 1990s, and only after, 2009, Health Information Technology for Economic and Clinical Health HITECH Act, percentage of hospitals using EHR surged from 10% to 97% in just 5 years. Wow!!
 
 # References
 1. Healthcare Handbook, 3rd edition.

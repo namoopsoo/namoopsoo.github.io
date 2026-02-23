@@ -95,6 +95,9 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Started
 - Started tiny experiments [audio book](https://www.libro.fm/audiobooks/9798217011834-tiny-experiments), (2025-09-05).
 
+### Stopped
+- Stopped the strawberry.me , at least for now (2025-09-24). 
+
 ## 2025-08
 ### Logged
 - First time went to a roller skating [rink](https://www.xanadu.nyc/). Very different from rollerblading I recall from childhood haha!
@@ -109,7 +112,8 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Started
 - Started using Stage Manager on Apple macos. (2025-08-27)
 - Park next to me got renovated and has a pull up bar now so I started using a normal size pull up bar again finally after a long time.
-- 
+- Trying out strawberry.me coaching, (2026-08-05).
+
 ## 2025-07
 ### Started
 - Started this personal changelog!

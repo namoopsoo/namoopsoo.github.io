@@ -4,7 +4,7 @@ robots: noindex, nofollow
 --- 
 
 ## Built infrastructure to serve my company’s first ML underwriting model in 2015, using Redis + Django to deliver real-time predictions., (2015)
-When I joined my first ML startup in 2015, we barely had any customer data—so our early system relied entirely on heuristics. By the time we landed our first paying customers, I volunteered to take a stab at training our first real model from the new data we’d started collecting.
+When I joined my first ML startup in 2015, we barely had any customer data—so our early system relied entirely on heuristics. By the time we landed our first paying customer, I volunteered to take a stab at training our first real model from the new data we’d started collecting.
 
 Coming out of school, I knew ML theory but not practice. I reached for Weka (which I’d used academically), unaware that scikit-learn was already the industry standard. My results were underwhelming compared to those of a newly hired Data Scientist, who had prior experience and quickly outperformed me. Looking back, it was a humbling and pivotal moment: my academic background didn’t directly translate into production-ready applied ML.
 
@@ -632,3 +632,11 @@ As a side project, I upgraded the default search on my personal Hugo-based stati
 Over the course of two Saturdays, I migrated my site’s DNS to Cloudflare, indexed my content using their out-of-the-box embedding model, and set up vector search using their documented workflow. I then updated the site’s JavaScript to query the new Cloudflare endpoint, integrating it cleanly into Hugo’s existing frontend.
 
 The result was a working semantic search experience with minimal custom infrastructure, and a satisfying example of how managed vector search can be added incrementally to a static site. I documented the setup and tradeoffs in a short write-up for future reference.
+
+
+## Extended internal Databricks wrapper to generate Git-based workflow DAGs with validation, cluster inheritance, and docs., (2026-02-10)
+Within our ML platform, we maintain a lightweight internal package that simplifies common Databricks workflows for data science users. As an incremental enhancement to our existing quickstart tooling, I added support for creating Git-based Databricks Workflow DAGs, complementing the earlier notebook-only approach that relied on workspace notebooks.
+
+The update allows users to easily include notebooks stored in Git repositories when defining new workflow DAG YAML files. I extended the tooling to validate that referenced notebooks exist, automatically attach the cluster used by the control notebook, and generate clearer dependency documentation between workflow steps. The implementation integrates with the Databricks SDK to create, update, and run jobs directly from YAML definitions.
+
+I presented the change at a community meeting and documented the workflow so that data scientists could adopt Git-backed pipelines more easily. The broader goal was to make native Databricks workflow capabilities more accessible while reducing setup friction for platform users.

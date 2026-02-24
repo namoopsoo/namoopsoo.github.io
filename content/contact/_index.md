@@ -1,1 +1,1 @@
-Feel free to drop me a line [here](michal@piekarczyk.xyz).
+Feel free to drop me a line [here](mailto:michal@piekarczyk.xyz).

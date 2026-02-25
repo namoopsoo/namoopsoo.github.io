@@ -661,6 +661,31 @@ p122, story of Kaiser Permanente, cutting hypertension  gap in outcomes ,  betwe
 ## EHR EMR pitfalls
 p123, oh wow, crazy, i didnt realize, EHR was purely a federal government thing, in Veterans Affairs since 1990s, and only after, 2009, Health Information Technology for Economic and Clinical Health HITECH Act, percentage of hospitals using EHR surged from 10% to 97% in just 5 years. Wow!!
 
+
+Epic, Cerner, Meditech, Allscripts, four companies.
+
+
+
+
+https://www.beckershospitalreview.com/
+ehrs/ehr-market-share-2021-10-things-to-know-about-major-players-epic-cerner-meditech-allscripts.html
+
+p124, information blocking banned.
+https://www.healthit.gov/curesrule
+
+
+p125 Ahhh, finally the explanation about why health records are difficult to connect if you change providers, because indeed, they are not centralized, and patients have to sign a release form for access to each place information. requesting has to happen, it is not automatic.
+
+Im reading EHR by fax, huhh?
+
+a Health Information Exchange, HIE, helps to make the transfers , and there are more than 100 of them?? Huh so they are separate from Epic etc?
+
+oh but Strategic Health Information Exchange Collaborative is a 90% umbrella? https://strategichie.com 
+
+
+
+
+
 # References
 1. Healthcare Handbook, 3rd edition.
 2. ... 

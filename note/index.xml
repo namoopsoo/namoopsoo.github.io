@@ -9,10 +9,10 @@
     <atom:link href="https://michal.piekarczyk.xyz/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Boundary Detection</title>
-      <link>https://michal.piekarczyk.xyz/note/2025-02-27-boundary-detection/</link>
+      <link>https://michal.piekarczyk.xyz/note/2026-02-27-boundary-detection/</link>
       <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://michal.piekarczyk.xyz/note/2025-02-27-boundary-detection/</guid>
-      <description>&lt;p&gt;Follow up to [1], expanding, on the overwhelm of intake you end up with if there are too many voices competing for your time.&lt;/p&gt;
+      <guid>https://michal.piekarczyk.xyz/note/2026-02-27-boundary-detection/</guid>
+      <description>&lt;p&gt;Follow up to here&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, expanding, on the overwhelm of intake you end up with if there are too many voices competing for your time.&lt;/p&gt;
 &lt;p&gt;I want to sharpen what appears to be happening. Yes, your colleagues are asking for help and you dont want to deny them. Yes some production system is breaking, someone else is addressing it, but you have an inkling as to why and you want to save them time on triage. Yes, your colleagues are asking for their pull requests to be reviewed and yes there are also all the other things you said yes to presumably at the start of the sprint. And yes you just attended  a meeting reminding you that the next PI planning is just a few weeks away and you should spend some time on refining proposals.&lt;/p&gt;</description>
     </item>
     <item>

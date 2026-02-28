@@ -4,7 +4,7 @@ date: 2026-02-27
 ---
 
 
-Follow up to [1], expanding, on the overwhelm of intake you end up with if there are too many voices competing for your time. 
+Follow up to here<sup>[1](#references)</sup>, expanding, on the overwhelm of intake you end up with if there are too many voices competing for your time. 
 
 I want to sharpen what appears to be happening. Yes, your colleagues are asking for help and you dont want to deny them. Yes some production system is breaking, someone else is addressing it, but you have an inkling as to why and you want to save them time on triage. Yes, your colleagues are asking for their pull requests to be reviewed and yes there are also all the other things you said yes to presumably at the start of the sprint. And yes you just attended  a meeting reminding you that the next PI planning is just a few weeks away and you should spend some time on refining proposals.
 
@@ -23,4 +23,4 @@ But what would the best outcome look like? Maybe visualization of this can help 
 # References 
 
 [1] https://michal.piekarczyk.xyz/note/2026-02-13-what-ends-up/
-[2] 		https://www.youtube.com/watch?v=iN8lxhAkIuA, Newel of Knowledge on boundaries
+[2] https://www.youtube.com/watch?v=iN8lxhAkIuA, Newel of Knowledge on boundaries

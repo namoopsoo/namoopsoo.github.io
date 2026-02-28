@@ -22,5 +22,5 @@ But what would the best outcome look like? Maybe visualization of this can help 
 
 # References 
 
-[1] https://michal.piekarczyk.xyz/note/2026-02-13-what-ends-up/
-[2] https://www.youtube.com/watch?v=iN8lxhAkIuA, Newel of Knowledge on boundaries
+1. https://michal.piekarczyk.xyz/note/2026-02-13-what-ends-up/
+2. https://www.youtube.com/watch?v=iN8lxhAkIuA, Newel of Knowledge on boundaries

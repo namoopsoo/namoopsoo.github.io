@@ -5,6 +5,11 @@ robots: noindex, nofollow
 
 All notable changes to this "human experiment" will be documented in this file.
 
+## 2026-03
+### Firsts
+- First time tried `git apply` , and `ugrep` , noted both  [here](https://michal.piekarczyk.xyz/note/2026-03-01-immich-video-update/) (2026-03-01).
+ 
+
 ## 2026-02
 ### Firsts
 - Together with the rest of NYC, experienced the longest subzero stretch of days, jan 24 to ~feb9, around 16 days so possibly longest since either 1961 or [1881](https://m.economictimes.com/news/international/us/nyc-faces-longest-deep-freeze-in-65-years-heres-the-exact-date-temperatures-finally-rise/articleshow/127861963.cms), (2026-02-09).

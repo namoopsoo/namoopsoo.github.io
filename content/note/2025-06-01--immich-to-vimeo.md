@@ -1,14 +1,14 @@
 ---
 title: "Immich to Vimeo"
 # slug: "2025-06-01--immich-to-vimeo"
-date: 2026-03-01T14:43:17-05:00
+date: 2025-06-01
 # draft: true
 
 # optional thumbnail
-images:
-  - "THUMBNAIL_PLACEHOLDER"
-cover:
-  image: "THUMBNAIL_PLACEHOLDER"
+# images:
+#  - "THUMBNAIL_PLACEHOLDER"
+#cover:
+#  image: "THUMBNAIL_PLACEHOLDER"
 ---
 
 <!-- Write your intro paragraph here. -->

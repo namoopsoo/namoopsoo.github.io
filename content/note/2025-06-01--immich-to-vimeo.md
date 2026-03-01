@@ -22,3 +22,7 @@ which just requires a `VIMEO_TOKEN` defined as an env variable
 ```sh
 python vimeo/upload.py --local-path /path/to/file.mov
 ```
+
+
+# References
+1. https://developer.vimeo.com/api/reference/videos#upload_video

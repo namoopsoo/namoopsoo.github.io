@@ -477,6 +477,18 @@ The drops were only about maybe 11€ so I did not file a claim. That would have
 &lt;p&gt;It seems a lot of the original folks from the original Agile Manifesto  are speaking up about how &amp;ldquo;the industry &amp;quot; got it all wrong. Dave Thomas emphasizes, it&amp;rsquo;s a adjective not a noun. Martin Fowler, emphasizes that SAFE is Shitty Agile for Enterprises. I came across a presentation from Robert Martin introing his book Clean Agile recently too.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Immich to Vimeo</title>
+      <link>https://michal.piekarczyk.xyz/note/2025-06-01--immich-to-vimeo/</link>
+      <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2025-06-01--immich-to-vimeo/</guid>
+      <description>&lt;!-- Write your intro paragraph here. --&gt;
+&lt;p&gt;Into my immich journey I tried out a way to upload videos to vimeo straight from immich, with the vimeo REST API.&lt;/p&gt;
+&lt;p&gt;Added a small upload script here, &lt;a href=&#34;https://github.com/namoopsoo/manage-my-photos/blob/main/vimeo/upload.py&#34;&gt;https://github.com/namoopsoo/manage-my-photos/blob/main/vimeo/upload.py&lt;/a&gt; ,&lt;/p&gt;
+&lt;p&gt;which just requires a &lt;code&gt;VIMEO_TOKEN&lt;/code&gt; defined as an env variable&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python vimeo/upload.py --local-path /path/to/file.mov
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    <item>
       <title>super scripts</title>
       <link>https://michal.piekarczyk.xyz/post/2025-05-31-super-script-refs/</link>
       <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>

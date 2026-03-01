@@ -259,5 +259,17 @@ Chris Lattner, LLVM, SWift and Mojo&lt;/p&gt;
     &lt;img loading=&#34;lazy&#34; src=&#34;https://s3.amazonaws.com/my-blog-content/2025-09-28-fix-chipped-pint-glass/IMG_7719.jpeg&#34; width=&#34;50%&#34;/&gt; 
 &lt;/figure&gt;</description>
     </item>
+    <item>
+      <title>Immich to Vimeo</title>
+      <link>https://michal.piekarczyk.xyz/note/2025-06-01--immich-to-vimeo/</link>
+      <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2025-06-01--immich-to-vimeo/</guid>
+      <description>&lt;!-- Write your intro paragraph here. --&gt;
+&lt;p&gt;Into my immich journey I tried out a way to upload videos to vimeo straight from immich, with the vimeo REST API.&lt;/p&gt;
+&lt;p&gt;Added a small upload script here, &lt;a href=&#34;https://github.com/namoopsoo/manage-my-photos/blob/main/vimeo/upload.py&#34;&gt;https://github.com/namoopsoo/manage-my-photos/blob/main/vimeo/upload.py&lt;/a&gt; ,&lt;/p&gt;
+&lt;p&gt;which just requires a &lt;code&gt;VIMEO_TOKEN&lt;/code&gt; defined as an env variable&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python vimeo/upload.py --local-path /path/to/file.mov
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
   </channel>
 </rss>

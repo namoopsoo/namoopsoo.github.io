@@ -35,7 +35,6 @@ And this brought me to my exact notes from haha, 10 months ago, where I created 
 
 Anywyay, looking forward more time saved by ugrep!
 
-{{< figure src="https://s3.amazonaws.com/my-blog-content/2026-03-01-immich-video-update/image_1772400772117_0.png" width="50%">}}
 
 # References
 1. https://github.com/namoopsoo/manage-my-photos/blob/main/vimeo/upload.py

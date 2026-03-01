@@ -67,3 +67,7 @@ def make_response(data):
 
 Definitely skipped a lot of details here! But will update more here later.
 
+The code is here, https://github.com/namoopsoo/manage-my-photos/tree/main/labler , the `labler` section.
+
+The big picture of this was , https://michal.piekarczyk.xyz/project/2023-photo-unchaos/ 
+

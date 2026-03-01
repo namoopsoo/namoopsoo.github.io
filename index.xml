@@ -8,12 +8,36 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Immich to vimeo Update</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-03-01-immich-video-update/</link>
+      <pubDate>Sun, 01 Mar 2026 16:17:52 -0500</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-03-01-immich-video-update/</guid>
+      <description>&lt;p&gt;I was trying to use chat gpt codex to save myself a few minutes, to add two new vimeo rest api parameters, &lt;code&gt;name&lt;/code&gt; and &lt;code&gt;description&lt;/code&gt; , to my upload script I mentioned earlier&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. I encountered a &lt;code&gt;500&lt;/code&gt; and so I could not create a PR.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://s3.amazonaws.com/my-blog-content/2026-03-01-immich-video-update/image_1772400657943_0.png&#34; width=&#34;50%&#34;/&gt; 
+&lt;/figure&gt;
+
+however the cool thing is that I learned about the &lt;code&gt;git apply&lt;/code&gt; capability, which somehow I did not realize existed .&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://s3.amazonaws.com/my-blog-content/2026-03-01-immich-video-update/image_1772400772117_0.png&#34; width=&#34;50%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;But it worked seamlessly, with just taking the patch and &lt;code&gt;git apply codex.patch&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Boundary Detection</title>
       <link>https://michal.piekarczyk.xyz/note/2026-02-27-boundary-detection/</link>
       <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2026-02-27-boundary-detection/</guid>
       <description>&lt;p&gt;Follow up to here&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, expanding, on the overwhelm of intake you end up with if there are too many voices competing for your time.&lt;/p&gt;
 &lt;p&gt;I want to sharpen what appears to be happening. Yes, your colleagues are asking for help and you dont want to deny them. Yes some production system is breaking, someone else is addressing it, but you have an inkling as to why and you want to save them time on triage. Yes, your colleagues are asking for their pull requests to be reviewed and yes there are also all the other things you said yes to presumably at the start of the sprint. And yes you just attended  a meeting reminding you that the next PI planning is just a few weeks away and you should spend some time on refining proposals.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2026 02 24  Optimizer Pushdown</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-02-24--optimizer-pushdown/</link>
+      <pubDate>Wed, 25 Feb 2026 09:38:28 -0500</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-02-24--optimizer-pushdown/</guid>
+      <description>&lt;!-- Write your intro paragraph here. --&gt;</description>
     </item>
     <item>
       <title>Coldest</title>
@@ -486,7 +510,10 @@ The drops were only about maybe 11€ so I did not file a claim. That would have
 &lt;p&gt;Added a small upload script here, &lt;a href=&#34;https://github.com/namoopsoo/manage-my-photos/blob/main/vimeo/upload.py&#34;&gt;https://github.com/namoopsoo/manage-my-photos/blob/main/vimeo/upload.py&lt;/a&gt; ,&lt;/p&gt;
 &lt;p&gt;which just requires a &lt;code&gt;VIMEO_TOKEN&lt;/code&gt; defined as an env variable&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python vimeo/upload.py --local-path /path/to/file.mov
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;references&#34;&gt;References&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.vimeo.com/api/reference/videos#upload_video&#34;&gt;https://developer.vimeo.com/api/reference/videos#upload_video&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
     <item>
       <title>super scripts</title>

@@ -8,6 +8,15 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>humidifier debugging first try</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-03-02-humidifier-debugging/</link>
+      <pubDate>Mon, 02 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-03-02-humidifier-debugging/</guid>
+      <description>&lt;p&gt;Just had some first try humidifier debugging results! Daily yay!&lt;/p&gt;
+&lt;p&gt;Hah, debugging stories like this that I have, rarely get resolved quickly. My vornado fan heater that downgraded into just a fan had an issue where I found a workaround that ultimately stopped helping and lucklily the staff at Vornado sent me a replacement so I guess I was under warranty.&lt;/p&gt;
+&lt;p&gt;But for my Honeywell humidifier, I had a pretty lucky result just now. I usually fill the tank in the evening, for a mist to counter the evening dryness from the winter indoor weather. But this morning the tank was full and the orange panic light was on. This light only comes on when the water runs out. So that was weird.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Immich to vimeo Update</title>
       <link>https://michal.piekarczyk.xyz/note/2026-03-01-immich-video-update/</link>
       <pubDate>Sun, 01 Mar 2026 16:17:52 -0500</pubDate>

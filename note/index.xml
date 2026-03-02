@@ -298,5 +298,22 @@ Chris Lattner, LLVM, SWift and Mojo&lt;/p&gt;
 &lt;li&gt;&lt;a href=&#34;https://developer.vimeo.com/api/reference/videos#upload_video&#34;&gt;https://developer.vimeo.com/api/reference/videos#upload_video&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;</description>
     </item>
+    <item>
+      <title>Genius Makers book notes</title>
+      <link>https://michal.piekarczyk.xyz/note/2024-12-20-genius-makers-notes/</link>
+      <pubDate>Fri, 20 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2024-12-20-genius-makers-notes/</guid>
+      <description>&lt;h1 id=&#34;summary&#34;&gt;Summary&lt;/h1&gt;
+&lt;p&gt;todo&lt;/p&gt;
+&lt;h1 id=&#34;raw-notes&#34;&gt;Raw notes&lt;/h1&gt;
+&lt;p&gt;2024-12 genius makers book&lt;/p&gt;
+&lt;p&gt;P33
+Hinton not interested in mathematics, including in linear algebra. He would just get help from others to help solving the differential equations&lt;/p&gt;
+&lt;p&gt;First chapter of the book is about how connectionism was apparently disproven by Marvin Minsky.
+But Hinton was nit convinced.&lt;/p&gt;
+&lt;p&gt;Hearing initial issue was, they only tried singlw layer networks. Huh why.&lt;/p&gt;
+&lt;p&gt;P37, back prop. Rumelhart&lt;/p&gt;
+&lt;p&gt;P39 Boltzmann Machine&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

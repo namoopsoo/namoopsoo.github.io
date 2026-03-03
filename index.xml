@@ -8,6 +8,19 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>going the manhattan distance</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-03-03-manhattan-distance/</link>
+      <pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-03-03-manhattan-distance/</guid>
+      <description>&lt;p&gt;Reading the on bullshit paper. author saying in old days craftsmen did not &amp;ldquo;cut corners&amp;rdquo;. looking this up , think that was literally about the road you took, per reading [2]. paved road vs over fields.&lt;/p&gt;
+&lt;p&gt;but hmm, shortcuts are kind of organic rosds not necessarily sloppy. like, we have, planned vs actually useful question here ?&lt;/p&gt;
+&lt;h1 id=&#34;references&#34;&gt;references&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;on bullshit&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://english.stackexchange.com/questions/124338/ddg#124380&#34;&gt;http://english.stackexchange.com/questions/124338/ddg#124380&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
       <title>humidifier debugging first try</title>
       <link>https://michal.piekarczyk.xyz/note/2026-03-02-humidifier-debugging/</link>
       <pubDate>Mon, 02 Mar 2026 00:00:00 +0000</pubDate>

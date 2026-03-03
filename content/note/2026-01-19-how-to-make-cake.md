@@ -66,5 +66,7 @@ But wow, sohnds like the prime minister resigned so likely proper bias assessmen
 1. https://press.princeton.edu/books/hardcover/9780691249131/ai-snake-oil#preview
 2. Russel Peters routine
 3. https://vimeo.com/785843804
+4. aueomation bias, noted elsewhere, https://youtu.be/P5HxTdkitmA , Julian Whatley 
+
 
 

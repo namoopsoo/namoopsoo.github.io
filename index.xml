@@ -8,6 +8,15 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>prompt-driven-development</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-03-04-prompt-driven-development/</link>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-03-04-prompt-driven-development/</guid>
+      <description>&lt;p&gt;lack of clarity what to do next? write it out as if you were to prompt a LLM tool like ChatGPT , but instead the prompt is for you .&lt;/p&gt;
+&lt;p&gt;Prompting seems to have rewired my brain  , over the past three years, to focus into words, into highly descriptive narrative, what I want , knowing my words need to be free of noise.&lt;/p&gt;
+&lt;p&gt;This is to the point now Ill often start writing a prompt in a Chat window or a message to a friend or colleague at work, and Ill stop, realize that writing helped me organize my thoughts and I no longer need to even ask the question.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>going the manhattan distance</title>
       <link>https://michal.piekarczyk.xyz/note/2026-03-03-manhattan-distance/</link>
       <pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate>

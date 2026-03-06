@@ -67,6 +67,10 @@ But wow, sohnds like the prime minister resigned so likely proper bias assessmen
 2. Russel Peters routine
 3. https://vimeo.com/785843804
 4. aueomation bias, noted elsewhere, https://youtu.be/P5HxTdkitmA , Julian Whatley 
+5. expert advice, as general adviCe, https://youtu.be/o2S2w9RiNtI , Julian Whatley 
+
+
+
 
 
 

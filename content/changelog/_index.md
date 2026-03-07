@@ -179,6 +179,9 @@ All notable changes to this "human experiment" will be documented in this file.
 ### First
 - First successful cold plunge, learning how to stay 5+ minutes in 60 F ( TODO doubple check temp), at Standard Spa Miami Beach.
 
+### Wrote
+- Wrote this [post](https://michal.piekarczyk.xyz/post/2024-07-20-streamlit-is-lit/) on this earlier RAG streamlit experience I had been meaning to showcase for a while (2024-07-20).
+
 ## 2024-06
 ### Logged
 - First time seeing the Coney Island Mermaid Parade (2024-06-24).
@@ -195,6 +198,10 @@ All notable changes to this "human experiment" will be documented in this file.
 ## 2024-02
 ### Changed
 - Switched from built in Apple iphone keyboard to typewise.app. (2024-02-19)
+
+## 2023-12
+### Started
+- My first streamlit.io  [side project](https://github.com/namoopsoo/restaurant-menu-entities/)  (2023-12-17).
 
 ## 2023-11
 

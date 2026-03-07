@@ -270,7 +270,7 @@ Long-running model repos that aren’t exercised often enough to catch latent is
 Dependence on volatile datasets in feature engineering, which could benefit from frozen dataset snapshots to isolate code change impacts during integration tests.
 
 
-## Contributed preprocessing, prompt engineering, and system integration to a team hackathon project on health plan documents, while also delivering an early fallback RAG-style demo., (2023)
+## Contributed preprocessing, prompt engineering, and system integration to a team hackathon project on health plan documents, while also delivering an early fallback RAG-style demo., (2023-02-15)
 During a 2.5-day internal hackathon, I joined a small team focused on applying LangChain and GPT to health insurance plan documents. These documents are highly tabular and difficult to parse, so on the first day I experimented with manually restructuring raw PDF text into contextual sentences. While time constraints kept me from automating this fully, it helped hedge against LangChain’s default handling of dense table dumps and may have improved the clarity of responses.
 
 At the same time, I explored prompt engineering around empathy, since health plan Q&A could benefit from a friendlier tone. With minimal changes, I was able to shift answers toward warmer, more approachable responses, even experimenting with light backstories for context.
@@ -282,6 +282,14 @@ Although we didn’t measure accuracy improvements from my early sentence wrangl
 
 ## Eliminated template sprawl in our ML deployment system by centralizing and parameterizing ADF logic across staging, prod, and feature variants, from 16 templates to 1., (2023-03-20)
 within our ML platform, we were supporting the onboarding deployment and running of 100 plus git repo based models and in our deploy design, we had a large amount of duplication. we had the same Azure DataFActory ADF arm template duplicated with respect to the existance or non existance of a databricks notebook used for measuring feature importance , and also w.r.t. a notebook used to save output data in a certain way . And this was bifurcated yet again w.r.t. staging and production, so there were therefore a total of 2x2x2 = 8 copies of essentially the same arm template with small tweaks. And on top of that, I was about to introduce another bifurcation w.r.t. a databricks notebook used to build ground truth data. So instead I took this opportunity, to actually pay down the tech debt and I parameterized all the arm templates so instead of 2x2x2x2 = 16 copies there was now only 1. On top of that, another area of duplication was that the json templates  for the different variations of arm templates parameters existed in all of the 100+ model repositories. And I removed this so the logic was now getting handled in our centralization repository instead. So therefore now both the deployment centralization code and the model repository code was simpler and leaner.
+
+## Used ChatGPT to kickstart a local Flask image-labeling app, iterated on API/CORS issues, and built a client that runs on laptop and iPad., (2023-05-04, [link](https://michal.piekarczyk.xyz/post/2023-05-14-chat-gpt-flask-kickstart/))
+As a side exploration, I used ChatGPT to kickstart a simple Flask web app that serves a REST API for image labeling. My goal was to get a minimal Python app.py that could return image filenames from a folder via GET and accept user-submitted choices via POST, paired with a single-page HTML front end that interacts with the API.
+
+ChatGPT generated a functional skeleton for the server and client, but when I started testing it locally, I ran into practical issues. For example, part of the generated HTML was truncated due to response size limits, and my browser blocked requests due to missing CORS headers. This reminded me that even simple client–server work can be thorny without the right middleware — so I appended flask-cors and enabled CORS cleanly rather than hacking around browser errors.
+
+Over a couple of weekends, I got the prototype running on my laptop and accessible from my iPad, which was a fun little milestone. The experience forced me to think through REST endpoint behavior, local CORS configurations, and practical debugging of API–UI integration. I’ve posted the code and screens for future reference, and plan to flesh out the outline into a more complete write-up later.
+
 
 ## Productionized feature drift monitoring across ~18k features with scheduled Databricks/ADF jobs, CI smoke tests, and multiple drift algorithms, providing monthly situational awareness of drifting features., (2023?)
 Building on a colleague’s earlier proof-of-concept with the Deepchecks library, I implemented a production-ready feature drift monitoring system for our ML platform. The goal was to provide recurring visibility into how clinical and other features in our feature store change over time, since drift can indicate data quality issues or modeling risks.
@@ -309,6 +317,18 @@ I took the initiative to explore how far the new functionality could go. While D
 To prove the approach, I introduced this modular style into one of our model repositories, replacing %run calls in a feature engineering notebook with imports from a local module. To make the pattern sustainable, I extended our Azure DevOps deployment pipeline to automatically detect such modules in Git repositories and recursively push them into Databricks workspaces using the newly available Databricks SDK. This was a significant improvement over the old Databricks CLI, which had no support for plain files.
 
 After successfully applying this pattern to a few additional repositories, I shared the results with colleagues. Interest grew quickly, and others began to adopt the approach. The impact was a meaningful cultural and technical shift: our team could now move away from hidden global-variable hacks and toward cleaner, modular, and maintainable code.
+
+
+## Published a semantic dish search demo combining vector search with BART topic detection and NER, backed by a Postgres vector store and documented via a Streamlit/Hugging Face prototype., (2024-07-20, [link](https://michal.piekarczyk.xyz/post/2024-07-20-streamlit-is-lit/))
+I published a blog post describing a semantic search demo for restaurant dishes that I originally prototyped in Streamlit on Hugging Face Spaces. Since keeping the live demo running was relatively expensive, I instead recorded a short video walkthrough and documented the architecture and results in the post.
+
+The system combines several NLP components. First, a BART entailment model (facebook/bart-large-mnli) evaluates whether a query appears to be on-topic before running the search. While this signal is currently displayed as diagnostic information, it was designed with the idea that it could later be used for routing decisions.
+
+If the query is relevant, the system performs vector similarity search over embedded restaurant dish data. The original prototype used the all-MiniLM-L12-v2 sentence transformer model, but in this iteration I experimented with Cohere embeddings via LangChain. I also moved the vector store from an in-memory index to PostgreSQL with vector support, demonstrating how the same concept could scale beyond a small demo dataset.
+
+The interface allows users to type a dish name and retrieve nearby matching dishes, enriched with restaurant location metadata. For additional exploration, I also integrated a named entity recognition model (bert-large-cased-conll03) to highlight location entities in the query text.
+
+The project itself originated as a small prototype inspired by a friend’s interest in restaurant discovery. Early versions used the historical NYPL menu dataset, but I later switched to a much larger Uber Eats Kaggle dataset to make the search results more realistic. The blog post captures the architecture, experiments, and lessons learned from iterating on the demo.
 
 
 ## Standardized integration test code by introducing our shared internal Python library, replacing scattered custom logic with a uniform platform package., (2024-08-23)

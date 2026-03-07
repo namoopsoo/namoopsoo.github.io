@@ -70,6 +70,17 @@ p64 interesting trend, weather forecqst accuracy 6 day today, as accurate as 5 d
 
 p66 their opinion that spam classifiers are in the "good ML" category, attributing to mountains of data. 
 
+p67 but highly specific outcomes about people, are less reliable. Depends on the example. Depends on how chaotic the system. 
+
+Generalization being made is, macro is more reliable than macro. But hmm I  dont think thats always true. They cite p68, earthquakes yes, we know a lot about prevalence geographically . ( Recalling Nate Silvers book points to earthquake prevalence following power laws) . 
+
+But we didnt do a good job of predicting the 2000 dot com bubble, the 2008 mortgage crisis  , the 2019 COVID19 pandemic of course, and people are having a hard time agreeing when will the gen AI bubble  burst (2026 probably ).
+
+Im reminded by the Nassim Taleb graphic of a Turkey forecasting everything is great, right before ThanksGiving! 
+
+
+
+  
 
 # references
 

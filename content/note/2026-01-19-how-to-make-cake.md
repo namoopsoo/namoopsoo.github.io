@@ -61,6 +61,11 @@ also, the welfare detection fraud model that they mentioned was deployed in 2013
 
 But wow, sohnds like the prime minister resigned so likely proper bias assessments were not performed?
 
+
+## End od Experts
+Noticing interesting parallel between Julian Whatley's "end of experts" [5] and the "AI Snake Oil" book's disappointment in predictive models , in that both  offer generalized "advice" .  Classical ML goal is literally to generalize well. It is good in principle, to reduce error overall but yes by definition predictions attempt to   avoid using features that are too tailored. Rule of thumb preferred.
+
+
 # references
 
 1. https://press.princeton.edu/books/hardcover/9780691249131/ai-snake-oil#preview

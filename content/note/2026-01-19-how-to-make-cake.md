@@ -65,6 +65,11 @@ But wow, sohnds like the prime minister resigned so likely proper bias assessmen
 ## End od Experts
 Noticing interesting parallel between Julian Whatley's "end of experts" [5] and the "AI Snake Oil" book's disappointment in predictive models , in that both  offer generalized "advice" .  Classical ML goal is literally to generalize well. It is good in principle, to reduce error overall but yes by definition predictions attempt to   avoid using features that are too tailored. Rule of thumb preferred.
 
+## limits of prediction
+p64 interesting trend, weather forecqst accuracy 6 day today, as accurate as 5 day a decade ago, so 1 day a decade. Using simulations. 
+
+p66 their opinion that spam classifiers are in the "good ML" category, attributing to mountains of data. 
+
 
 # references
 

@@ -56,11 +56,17 @@ You will disappoint people, thats crushing but inevitable. Opportunities will be
 ## Defer with deferrence 
 As David Allen originally pointed out, you need a system you can trust to defer or postpone, especially if someone else is counting on that thing. But I think we can agree that David Allen's context did nor include Slack and he did not work in a triage war room. 
 
-But sometimes a low tech whiteboard or paper  can still be helpful. Even in HBO's The Pitt, in all the chaos of their triage, they use a central "board" for status. As long as it is out of your head , in a place you trust, you are not distracted by it.
+But sometimes a low tech whiteboard or paper  can still be helpful. Even in HBO's The Pitt<sup>[4](#references)</sup>, in all the chaos of their triage, they use a central "board" for status. As long as it is out of your head , in a place you trust, you are not distracted by it.
 
 The deference part: maybe you can still respectfully ask someone to remind you again next time. This puts the ball back in their court and keeps you focusing on what you originally intended.
+
+## "Slow is smooth. Smooth is fast."
+Another thing I borrow from show, The Pitt<sup>[4](#references)</sup>, is this quote. This was a referenced during each of the last two seasons, I believe, during some of the busiest hours of the Jack Baueresque show. Per my memory the quote was introduced by Dr Jack Abbott, who is a war veteran and reading online, this quote does appear on military articles.
+
+To me, this is significant because no matter how fast everything around you is happening, if you don't approach it calmly, you will make mistakes. And carefully executed actions, played in sequence, should take less time than having to correct those errors.
 
 # References
 1. https://www.oliverburkeman.com/fourthousandweeks
 2. https://www.youtube.com/watch?v=arj7oStGLkU , Tim Urban , " Inside the Mind of a Master Procrastinator | Tim Urban | TED"
 3. https://www.youtube.com/watch?v=iN8lxhAkIuA, Newel of Knowledge on boundaries
+4. HBO's The Pitt

@@ -16,7 +16,9 @@ One of the parts I reallt enjoyed, visiting tokyo, was that although there were 
 
 Manhattan grids are mostly just overwhelmingly loud. Though it does have Broadway which is famously a preserved path from before cars existed and a few Mayors have given back  some parts of Broadway to the pedestrians -- who still fight with cyclists , naturally xD--, so there are perhaps some inklings of what calm might look like some day.
 
+Central Park I believe was a huge eminent domain project, but  the people who lost property rights are all long gone .
 
+So is Manhattan organic or corporate. Is it a conversation with the people or a hostile takeover. Haha I guess well see.
 
 
 

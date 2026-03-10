@@ -8,6 +8,14 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Spark small file problem</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-03-09-spark-small-file-problem/</link>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-03-09-spark-small-file-problem/</guid>
+      <description>&lt;p&gt;Making a mental note, today I encountered what is referred to as the spark small file problem [1]. Well, though I did not realize it initially anyway.&lt;/p&gt;
+&lt;p&gt;I was running a pretty complicated feature engineering notebook, trying to reproduce the results of a colleague. I set up a databricks workflow DAG on a recent evening, looking forward to seeing what happened a following morning. The result surprised me. I woke up to a job that ran for 13 hours and crashed with a shuffle flavored error.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Reverse Mick Jagger</title>
       <link>https://michal.piekarczyk.xyz/note/2026-03-08-reverse-mick-jagger/</link>
       <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>

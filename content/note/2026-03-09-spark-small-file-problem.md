@@ -31,5 +31,27 @@ Our of curiosity, I just decided to look at some of the various source datasets 
 
 In any case, I saw there was only one series, though I saw this one series had 2850 parquet files. That looked quite odd, because I am more used to seeing sizes under 500.  They were all around ~19MB or so. I looked around and indeed [1] this was a small file problem. A sort of a death by a thousand paper cuts.
 
+Apparently this can create additional overhead that affects performance. Actually I encountered this issue in AWS land with hive and Athena a long while back, w.r.t. what happens if you try to partition your data too deeply. I was interested in taking full advantage of Athena partitioning, along year, month, and I was applying some categories to kinds of real time traffic being logged. But I was reading that it is not a good idea to partition too deeply and so I backed off on that. 
+
+In any case bacck to parquet, so I decided to read the parquet folder plainly, 
+
+```python
+blah_df = spark.read.parquet("path/to/folder").limit(100).display()
+```
+but amazingly even just this took `6 minutes` to run! 
+
+As a quick experiment, I coalesced this into 1/10th of the partitions, 
+
+```python
+blah_df.coalesce(285).write("path/to/fewer")
+reread_df = spark.read.parquet("path/to/fewer")
+reread_df.limit(100).display()
+```
+and indeed lo and behold, this took just `5 seconds`! 
+
+I was rerunning the full pipeline with more memory as well and that completed in just over an hour,  in the meantime, but now that I saw this other good result, I am also rerunning the pipeline with the original memory footprint, to see what happens.
+
+
+
 # References
 1. https://docs.azure.cn/en-us/databricks/optimizations/spark-ui-guide/slow-spark-stage-low-io#reading-a-lot-of-small-files

@@ -8,6 +8,14 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Crowded Wisdom</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-03-10-crowded-wisdom/</link>
+      <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-03-10-crowded-wisdom/</guid>
+      <description>&lt;p&gt;At a recent team meeting , we discussed the merits of voting on story pointing efforts for story cards. Already yawning! A colleague shared a recent study looking back on jarring counting, and the Wisdom of the Crowds phenomenon. You know, the one where a bunch of people stare at an ox and  influence each others votes about how the ox is heavier than it really is.&lt;/p&gt;
+&lt;p&gt;At least thats what this royal society paper studied. That if you are given information about your peers assessmwnts of the ox&amp;rsquo;s weight, you are more likely to discount smaller guesses than larger ones. And they captured a correction factor , which might be handy the next time you are in a situation where you and other people around you are counting gumballs in a jar or group shaming chunky four legged herbivores.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Spark small file problem</title>
       <link>https://michal.piekarczyk.xyz/note/2026-03-09-spark-small-file-problem/</link>
       <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>

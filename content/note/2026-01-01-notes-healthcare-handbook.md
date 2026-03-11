@@ -682,7 +682,19 @@ a Health Information Exchange, HIE, helps to make the transfers , and there are 
 
 oh but Strategic Health Information Exchange Collaborative is a 90% umbrella? https://strategichie.com 
 
+p126 dang sounds like there is "sludge" all around here. Vendors of the EHR want to make it hard for health provider systems to switch, and they want to hoard all the nice priprietary data. And those health providers want to be patients' AOL too, make it hard to switch.  Its all about that lockin! 
 
+Vendors will try to charge fees for attempts to move data around . 
+Sounds like the Cures Act, was an attempt to penalize these shenanigans. 
+
+Reading about Fast healthcare Interoperability Resources FIRE, described on https://www.healthit.gov 
+
+Sort of the whole HIPAA thing is used as an excusr for lockin you traditionally see in the rest of big tech. 
+
+Although, it does make sense that  maybe the health portals did not design them with intent to make it easy to fetch your records as the first use case. I suppose they were primarily for clinicians. Actually these kinds of systems can bloat quickly . Not for lack of trying. There is not much incentive to make a good UI / UX  since you want to put money towards the health outcomes theoretically and patient portals are probably an afterthought. 
+
+
+    
 
 
 

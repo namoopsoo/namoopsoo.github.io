@@ -65,6 +65,13 @@ But still, why the error? Looking at Spark UI, there were lots of these failures
 
 An idea from a copilot GPT  was that timeouts led to executor deaths and so I should try a spark config that says to persist shuffle data beyond executor death and one to increase timeouts. Reasoning was that, if a executor did a lot of work but took too long , lets increase the default timeout and keep shuffle data so the work doesnt need to be redone.
 
+```sh
+# Spark config
+spark.dynamicAllocation.shuffleTracking.enabled true 
+spark.network.timeout 800s 
+spark.executor.heartbeatlnterval 60s
+```
+
 I tried this but it didnt work. So I looked at the Spark UI again. I dont know I was just trying to see does Spark UI show me the actual reason for the executor deaths? I hovered over them and wow major facepalm moment !🤦‍♂️🤦‍♂️🤦‍♂️ The reason was spot preemption! I looked at my cluster and indeed somehow my cluster was accidentally set to allow "spot instances". I don't even remember doing this  . I have been bitten by spot instances in the past too actually, also not knowing why the option was ticked. 
 
 In any case wow, after getting rid of the spot instance option in my autoscaling setting, I tried again and of course no more preemptions and no more executor deaths and no more task failures!!

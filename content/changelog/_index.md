@@ -8,7 +8,7 @@ All notable changes to this "human experiment" will be documented in this file.
 ## 2026-03
 ### Firsts
 - First time tried `git apply` , and `ugrep` , noted both  [here](https://michal.piekarczyk.xyz/note/2026-03-01-immich-video-update/) (2026-03-01).
- 
+- First time trying out Anthropic's claud.ai, to see how it compares with chatgpt (2026-03-15). 
 
 ## 2026-02
 ### Firsts

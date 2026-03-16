@@ -319,3 +319,6 @@ x. https://en.wikipedia.org/wiki/McNamara_fallacy
 22. bullshit jobs article, book
 
 23. https://www.nutrient.io/blog/what-ive-learned-about-product-iteration-planning-while-building-sdks/ prioritization article
+24. Google SWE book, leadership https://abseil.io/resources/swe-book/html/ch05.html 
+
+

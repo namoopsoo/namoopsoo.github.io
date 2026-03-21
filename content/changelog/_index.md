@@ -9,6 +9,8 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Firsts
 - First time tried `git apply` , and `ugrep` , noted both  [here](https://michal.piekarczyk.xyz/note/2026-03-01-immich-video-update/) (2026-03-01).
 - First time trying out Anthropic's claud.ai, to see how it compares with chatgpt (2026-03-15). 
+### Changed
+- Using grayscale phone. Will it stick? (2026-03-20).
 
 ## 2026-02
 ### Firsts

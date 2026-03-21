@@ -8,7 +8,10 @@ All notable changes to this "human experiment" will be documented in this file.
 ## 2026-03
 ### Firsts
 - First time tried `git apply` , and `ugrep` , noted both  [here](https://michal.piekarczyk.xyz/note/2026-03-01-immich-video-update/) (2026-03-01).
-- First time trying out Anthropic's claud.ai, to see how it compares with chatgpt (2026-03-15). 
+- First time trying out Anthropic's claude.ai, to see how it compares with chatgpt (2026-03-15). 
+- First time trying out [stability.ai API](https://michal.piekarczyk.xyz/note/2026-01-25-hook-up-cloudflare-rag-search/)  since claude.ai doesn't support text to image out of the box like ChatGPT. (2026-03-21).
+- First `.webp` format blogpost cover [image](https://michal.piekarczyk.xyz/note/2026-01-25-hook-up-cloudflare-rag-search/), related to above haha, since stability.ai uses it. Everything along the hugo and s3 stack worked seamlessly on the first try wow  (2026-03-21).
+
 ### Changed
 - Using grayscale phone. Will it stick? (2026-03-20).
 

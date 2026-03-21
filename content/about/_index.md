@@ -2,7 +2,7 @@
 title: About
 ---
 
-Hi my name is Michal Piekarczyk and I am a builder. Especially with data! [Here](https://github.com/namoopsoo/learn-citibike) is my effort to predict bike share rider destinations. [Here](https://github.com/namoopsoo/aviation-pilot-physiology-hmm) I used TensorFlow with physiological time series data to predict a pilot's state of awareness (thanks Kaggle!). [Here](https://github.com/namoopsoo/time-parser) I built a serverless nosql service to collect and describe where my time goes.
+I am a builder. Especially with data! [Here](https://github.com/namoopsoo/learn-citibike) is my effort to predict bike share rider destinations. [Here](https://github.com/namoopsoo/aviation-pilot-physiology-hmm) I used TensorFlow with physiological time series data to predict a pilot's state of awareness (thanks Kaggle!). [Here](https://github.com/namoopsoo/time-parser) I built a serverless nosql service to collect and describe where my time goes.
 
 In my day job, I empower reproducible data science on the ml platform team at [Humana](https://en.wikipedia.org/wiki/Humana). Before that I was building out data science underwriting at [Katapult.com](https://katapult.com).
 

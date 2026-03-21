@@ -2,6 +2,12 @@
 title: "Hook Up Cloudflare Rag Search"
 date: 2026-01-31
 draft: false
+
+# optional thumbnail
+images:
+  - "https://s3.amazonaws.com/my-blog-content/2026-01-25-hook-up-cloudflare-rag-search/lighthouse.webp"
+cover:
+  image: "https://s3.amazonaws.com/my-blog-content/2026-01-25-hook-up-cloudflare-rag-search/lighthouse.webp"
 ---
 
 Here are some of my notes on adding Cloudflare AI search as the endpoint for my hugo site's search.

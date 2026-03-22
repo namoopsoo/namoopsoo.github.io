@@ -204,6 +204,10 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Changed
 - Switched from built in Apple iphone keyboard to typewise.app. (2024-02-19)
 
+## 2024-01
+### Started
+- Started going through Jan Dufek's [mini lessons](https://www.youtube.com/watch?v=p9EHmdtaBBA) on the Monte Carlo method and simulations (2024-01-23).
+
 ## 2023-12
 ### Started
 - My first streamlit.io  [side project](https://github.com/namoopsoo/restaurant-menu-entities/)  (2023-12-17).

@@ -8,6 +8,23 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Random Colloquialism</title>
+      <link>https://michal.piekarczyk.xyz/note/2024-06-22-random-colloquialism/</link>
+      <pubDate>Sun, 22 Mar 2026 18:23:55 -0400</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2024-06-22-random-colloquialism/</guid>
+      <description>&lt;p&gt;Originally posting&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, here are some thoughts from reading this article&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;, on random variables on how they are not.&lt;/p&gt;
+&lt;p&gt;The author addresses this quote ,&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Why random variables are neither random nor variables&amp;rdquo;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Summarizing, the author would prefer I think &amp;ldquo;random variables&amp;rdquo; were renamed as&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;probabilistically deterministic functions&amp;rdquo;.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;or maybe more verbosely,&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;probabilistically deterministic functions mapping uncertainty to known possible outcomes&amp;rdquo;.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;The argument being, that, &amp;ldquo;random variables&amp;rdquo; are not variables because they are not single numbers but  really intended to describe how a probabilistic distribution , say, maps to outcomes. I like that the author refers to these outcomes as &amp;ldquo;shadow numbers&amp;rdquo; 🙂.  (And by extension I like the point that, just semantically, a number, &amp;ldquo;14&amp;rdquo; , is not random even if it was generated through a quantum event, because by definition the mapping function is what is random and not the numbers they produce).&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Grass is Greener</title>
       <link>https://michal.piekarczyk.xyz/note/2026-03-20-grass-is-greener/</link>
       <pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate>

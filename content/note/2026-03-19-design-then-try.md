@@ -23,8 +23,10 @@ But also this connects to how do reasoning models make choices and do they reall
 
 Recently I took a timed code test and although  I was spending a bit of time lately, trying to get myself to slow down and plan out these kinds of self contained code challenges, when it became real and on the record, my prep went out the window. Of course it didnt help that I had a camera pointed at my face haha. 
 
+My sympathetic nervous system I think in retrospect, was calling the shots, which meant  very little in the way of building a model around my problem definition on the screen. And my brain did instead sort of the greedy style of trying to hack towards a solution on the web terminal without deep thought. I think if I learned anything about this kind of thing, it is that it takes a few times to be calmer in high stakes environments . And you can get used to it. I have done this before of course but just not recently haha so I guess I got too comfortable! Looking forward to practicing calming down and ducking the adrenaline in the future !
 
-# references
+
+# References
 
 1. Gayle,  "Cracking the Coding Interview"
 2. https://michal.piekarczyk.xyz/note/2026-03-04-prompt-driven-development/

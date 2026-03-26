@@ -17,10 +17,14 @@ proofs were really important.
 
 These days, we use a lot of data to substitute . This should probably go into the mercenary science blog post haha.
 
-but also this connects to how do reasoning models make choices and do they really reason . the earlier reasoning models, try many things and take the average or the max. but they try them. But interestingly we might ask whats going on in your head when you think about a problem. youre still burning calories. you often cant resist putting stuff on paper. or a whiteboard. or discussing with a colleague. And of course most computers get damaged by water, but we know showers are where great epiphanies come about. Or baths, in Archimedes world if I have my Greek philosophy right!
+But also this connects to how do reasoning models make choices and do they really reason . the earlier reasoning models, try many things and take the average or the max. but they try them. But interestingly we might ask whats going on in your head when you think about a problem. youre still burning calories. you often cant resist putting stuff on paper. or a whiteboard. or discussing with a colleague. And of course most computers get damaged by water, but we know showers are where great epiphanies come about. Or baths, in Archimedes world if I have my Greek philosophy right!
+
+## Planning is harder in the heat of the moment
+
+Recently I took a timed code test and although  I was spending a bit of time lately, trying to get myself to slow down and plan out these kinds of self contained code challenges, when it became real and on the record, my prep went out the window. Of course it didnt help that I had a camera pointed at my face haha. 
 
 
 # references
 
 1. Gayle,  "Cracking the Coding Interview"
-
+2. https://michal.piekarczyk.xyz/note/2026-03-04-prompt-driven-development/

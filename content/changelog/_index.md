@@ -15,6 +15,9 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Changed
 - Using grayscale phone. Will it stick? (2026-03-20).
 
+### Logged
+- 5.5 mile hike of the loop around the Bradley Hubbard Reservoir , intersecting Lamentation Mountain and Chauncey Peak , in Connecticuit (2026-03-28).
+
 ## 2026-02
 ### Firsts
 - Together with the rest of NYC, experienced the longest subzero stretch of days, jan 24 to ~feb9, around 16 days so possibly longest since either 1961 or [1881](https://m.economictimes.com/news/international/us/nyc-faces-longest-deep-freeze-in-65-years-heres-the-exact-date-temperatures-finally-rise/articleshow/127861963.cms), (2026-02-09).

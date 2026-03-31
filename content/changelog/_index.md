@@ -14,6 +14,7 @@ All notable changes to this "human experiment" will be documented in this file.
 
 ### Changed
 - Using grayscale phone. Will it stick? (2026-03-20).
+- Switched from default macos terminal to iterm2 at least to try it (2026-03-29).
 
 ### Logged
 - 5.5 mile hike of the loop around the Bradley Hubbard Reservoir , intersecting Lamentation Mountain and Chauncey Peak , in Connecticuit (2026-03-28).

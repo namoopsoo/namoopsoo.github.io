@@ -5,6 +5,11 @@ robots: noindex, nofollow
 
 All notable changes to this "human experiment" will be documented in this file.
 
+
+## 2026-04
+### Firsts
+- First time trying out [restic](https://restic.readthedocs.io/) for backups, (2026-04-04).
+
 ## 2026-03
 ### Firsts
 - First time tried `git apply` , and `ugrep` , noted both  [here](https://michal.piekarczyk.xyz/note/2026-03-01-immich-video-update/) (2026-03-01).

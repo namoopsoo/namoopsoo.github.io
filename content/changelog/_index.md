@@ -213,6 +213,9 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Firsts
 - Published my first golang [orgroam2logseq](https://pkg.go.dev/github.com/namoopsoo/orgroam2logseq), (2024-03-11).
 
+### Logged
+- Used shoe goo to fix air mattress leak . It worked! its a raft with sheets ! (2024-03-07).
+
 ## 2024-02
 ### Changed
 - Switched from built in Apple iphone keyboard to typewise.app. (2024-02-19)

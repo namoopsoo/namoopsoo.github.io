@@ -795,12 +795,11 @@ oh yeah and I think Andrew Huberman caused this &amp;ldquo;non-sleep deep rest&a
 today I switched to just setting up a local index using chroma DB. and this ended up being extremely fast because I am not having to redo the embedding.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>model-metric-updates</title>
+      <title>Model Metric Updates</title>
       <link>https://michal.piekarczyk.xyz/post/2025-02-01--model-metric-updates/</link>
       <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/post/2025-02-01--model-metric-updates/</guid>
-      <description>&lt;p&gt;&lt;em&gt;DRAFT&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;This is as an update to an earlier post&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, in which the goal is to increase the size of a golden dataset in order to help compare the query performance between two embedding models, &lt;code&gt;all-MiniLM-L12-v2&lt;/code&gt; and &lt;code&gt;all-mpnet-base-v2&lt;/code&gt; and the comparison is important because they are &lt;code&gt;384&lt;/code&gt; and &lt;code&gt;768&lt;/code&gt; dimensions respectively, meaning that the second one has twice the storage costs as the other and live postgresql storage is expensive not just for its storage but also for the storage of the hnsw indexes involved 😅.&lt;/p&gt;</description>
+      <description>&lt;p&gt;This is as an update to an earlier post&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, in which the goal is to increase the size of a golden dataset in order to help compare the query performance between two embedding models, &lt;code&gt;all-MiniLM-L12-v2&lt;/code&gt; and &lt;code&gt;all-mpnet-base-v2&lt;/code&gt; and the comparison is important because they are &lt;code&gt;384&lt;/code&gt; and &lt;code&gt;768&lt;/code&gt; dimensions respectively, meaning that the second one has twice the storage costs as the other and live postgresql storage is expensive not just for its storage but also for the storage of the HNSW indexes involved 😅.&lt;/p&gt;</description>
     </item>
     <item>
       <title>fun pool embedding bug</title>

@@ -12,7 +12,7 @@
       <link>https://michal.piekarczyk.xyz/note/2026-04-12-ugrep-mini-mystery/</link>
       <pubDate>Sun, 12 Apr 2026 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2026-04-12-ugrep-mini-mystery/</guid>
-      <description>&lt;p&gt;I recently&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; discovered &lt;code&gt;ugrep&lt;/code&gt;, and I have benefited a lot in using this to search my logseq journals. But recently I noticed I was getting less results and also confirmed some misses. My specific strange issue was that if I pointed directly to my miss, &lt;code&gt;ug&lt;/code&gt; found it but not otherwise. I was consulting with microsoft copilot about this mystery.&lt;/p&gt;
+      <description>&lt;p&gt;I recently&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; discovered &lt;code&gt;ugrep&lt;/code&gt;, and I have benefited a lot in using this to search my logseq journals. But recently I noticed I was getting fewer results and also confirmed some misses. My specific strange issue was that if I pointed directly to my miss, &lt;code&gt;ug&lt;/code&gt; found it but not otherwise. I was consulting with microsoft copilot about this mystery.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;running into a weird ugrep issue where, &lt;code&gt;ug -%% &#39;some blah&#39; /some/foo/path&lt;/code&gt; , comes up dry , but if I am specific &lt;code&gt;ug -%% &#39;some blah&#39; /some/foo/path/more/specific/file.py&lt;/code&gt; , then I get results. Is there some index that needs to be poked for rebuilding?&lt;/p&gt;</description>
     </item>

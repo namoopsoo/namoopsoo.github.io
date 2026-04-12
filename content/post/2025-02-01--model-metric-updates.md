@@ -1,11 +1,9 @@
 ---
 date: 2025-02-01
-title: model-metric-updates
+title: Model Metric Updates
 ---
 
-*DRAFT*
-
-This is as an update to an earlier post<sup>[1](#references)</sup>, in which the goal is to increase the size of a golden dataset in order to help compare the query performance between two embedding models, `all-MiniLM-L12-v2` and `all-mpnet-base-v2` and the comparison is important because they are `384` and `768` dimensions respectively, meaning that the second one has twice the storage costs as the other and live postgresql storage is expensive not just for its storage but also for the storage of the hnsw indexes involved 😅. 
+This is as an update to an earlier post<sup>[1](#references)</sup>, in which the goal is to increase the size of a golden dataset in order to help compare the query performance between two embedding models, `all-MiniLM-L12-v2` and `all-mpnet-base-v2` and the comparison is important because they are `384` and `768` dimensions respectively, meaning that the second one has twice the storage costs as the other and live postgresql storage is expensive not just for its storage but also for the storage of the HNSW indexes involved 😅. 
 
 TLDR, with additional data and additional metrics, the objective evidence continues to support that the lower dimension model is actually better and so the justification exists not to spend the extra money. And this is also interesting empirical evidence that a larger model means it will be better for your specific use case.
 

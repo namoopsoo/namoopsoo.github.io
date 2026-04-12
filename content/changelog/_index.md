@@ -188,6 +188,10 @@ All notable changes to this "human experiment" will be documented in this file.
 - First davidprotein.com order (2024-11-17).
 - First time I [reported](https://portal.311.nyc.gov/sr-details/?srnum=311-20692687) a leaky fire hydrant, to 311, since also, living through first time of major drought warnings in NYC. (*My request was closed 10 days later as no issue found so perhaps someone wrenched it shut by the time inspectors arrived*) (2024-11-04). 
 
+## 2024-10
+### Logged
+- Wrote [here](https://michal.piekarczyk.xyz/post/2024-10-25-stray-game-review/) a review about playing the xbox game, Stray, (2025-10-25).
+
 ## 2024-09
 ### Logged
 - First [escape room](https://theescapegame.com/brooklyn/) experience. Have to thank my mom for organizing this !  (2025-09-24).

@@ -13,7 +13,7 @@ Even on Xbox One S, the experience was really high quality, saying that only bec
 
 The scenery and artwork is beautiful. I wonder how  many hundreds of hours were put into designing the detail of the spaces and also the characters you interact with. 
 
-I wonder if this game was inspired by Norco , from the unique choice characters voices that are not human English but sounds with cadence and variability, unique to different characters, but gibberish. Also unique to Stray,   robot voices   are kind of like static , and it makes sense because the story is about an underground robot civilization that has survived humans after an indeterminate length of time of possibly hundreds of years, and they happen to still communicate physically in their robot society, but much differently than their human forebears. 
+I wonder if this game was inspired by Norco<sup>[3](#references)</sup>, from the unique choice characters voices that are not human English but sounds with cadence and variability, unique to different characters, but gibberish. Also unique to Stray,   robot voices   are kind of like static , and it makes sense because the story is about an underground robot civilization that has survived humans after an indeterminate length of time of possibly hundreds of years, and they happen to still communicate physically in their robot society, but much differently than their human forebears. 
 
 Their language, is also written, and we can see the written form resembles Japanese katakana somewhat, but it is different and unique , perhaps more modern looking. 
 
@@ -58,8 +58,7 @@ I think the point, in a somber way is that humanity may go away , and the robots
 
 also aware of other reviews too.. 
 
-https://www.polygon.com/reviews/23268326/stray-review-cat-game-ps4-ps5-windows-pc-cyberpunk
-
-
-https://hk-devblog.com/2016/03/13/thank-meow-all/
-
+# References
+1. https://www.polygon.com/reviews/23268326/stray-review-cat-game-ps4-ps5-windows-pc-cyberpunk
+2. https://hk-devblog.com/2016/03/13/thank-meow-all/
+3. https://en.wikipedia.org/wiki/Norco_(video_game)

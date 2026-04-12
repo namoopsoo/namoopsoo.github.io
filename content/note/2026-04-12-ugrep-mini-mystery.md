@@ -25,6 +25,8 @@ I am logging this as another example where GPT on copilot was not seeing the obv
 ### Chat GPT got it out of the box
 However, I also tried Chat GPT, and there I got the right answer right away actually.
 
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2026-04-12-ugrep-mini-mystery/Pasted Graphic.png" width="50%">}}
+
 ### Copilot got it with deep thinking selected
 
 {{< figure src="https://s3.amazonaws.com/my-blog-content/2026-04-12-ugrep-mini-mystery/Recommended practical alias.jpeg" width="50%">}}
@@ -33,5 +35,4 @@ However, I also tried Chat GPT, and there I got the right answer right away actu
 
 # References
 1. https://michal.piekarczyk.xyz/note/2026-03-01-immich-video-update/#ugrep-ug
-
 

@@ -204,6 +204,9 @@ All notable changes to this "human experiment" will be documented in this file.
 ### First
 - First successful cold plunge, learning how to stay 5+ minutes in 60 F ( TODO doubple check temp), at Standard Spa Miami Beach.
 
+### Logged
+- Experienced crazy humbling waves of Long Branch NJ (2024-07-07).
+
 ### Wrote
 - Wrote this [post](https://michal.piekarczyk.xyz/post/2024-07-20-streamlit-is-lit/) on this earlier RAG streamlit experience I had been meaning to showcase for a while (2024-07-20).
 

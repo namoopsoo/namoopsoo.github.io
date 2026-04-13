@@ -48,7 +48,7 @@ But your resume/CV still begs of you for the part that you did precisely, so wha
 Well stated!
 
 ## Erdos problem solutions "discovered"
-Seeing video [6], from Mo Bitar aboht how apparently 5 out of 6 Erdos problems "solved" by LLMs were just problems found before but their solutions were published but maybe in a messy way. Mo talks about how LLMs are really good at this thing of mining and searching. I agree Im excited about using LLMs for cleaning up our collective human autistic nightmare of not forgetting anything. The internet remembers everything but yet you cant find anything, well until now.
+Seeing video [6], from Mo Bitar discussing [7], about how apparently 5 out of 6 Erdos problems "solved" by LLMs were just problems found before but their solutions were published but maybe in a messy way. Mo talks about how LLMs are really good at this thing of mining and searching. I agree Im excited about using LLMs for cleaning up our collective human autistic nightmare of not forgetting anything. The internet remembers everything but yet you cant find anything, well until now.
 
 This is right up the ally of misattribution error if we mistakenly misattribute credit to an LLM in solving an Erdos problem by sort of ehhem plagiarising the solution, doing a lookup.
 
@@ -66,4 +66,4 @@ Maybe we can  call this an evolution to data mining and information retrieval, m
 5. Daniil , https://substack.com/@daniilshykhov/note/c-210265558?r=d7b46&utm_medium=ios&utm_source=notes-share-action
 
 6. Mo Bitar, https://youtu.be/47VWW7K058k
-
+7. "Amateur mathematicians solve long-standing maths problems with AI" , Alex Wilkins, new scientist 

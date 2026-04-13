@@ -47,6 +47,16 @@ But your resume/CV still begs of you for the part that you did precisely, so wha
 > "If it's not wrytten down, it didnt happen"
 Well stated!
 
+## Erdos problem solutions "discovered"
+Seeing video [6], from Mo Bitar aboht how apparently 5 out of 6 Erdos problems "solved" by LLMs were just problems found before but their solutions were published but maybe in a messy way. Mo talks about how LLMs are really good at this thing of mining and searching. I agree Im excited about using LLMs for cleaning up our collective human autistic nightmare of not forgetting anything. The internet remembers everything but yet you cant find anything, well until now.
+
+This is right up the ally of misattribution error if we mistakenly misattribute credit to an LLM in solving an Erdos problem by sort of ehhem plagiarising the solution, doing a lookup.
+
+Finding diamonds in the dust is of course extremely helpful!
+
+Maybe we can  call this an evolution to data mining and information retrieval, maybe it is knowledge retrieval , or knowledge discovery from Law might be repurposed also.
+
+
 # References
 1. https://en.wikipedia.org/wiki/Fundamental_attribution_error#:~:text=In%20social%20psychology%2C%20the%20fundamental%20attribution%20error,an%20error%20because%20it%20misinterprets%20their%20effects.
 2.  Hanlon's razor
@@ -55,5 +65,5 @@ Well stated!
 
 5. Daniil , https://substack.com/@daniilshykhov/note/c-210265558?r=d7b46&utm_medium=ios&utm_source=notes-share-action
 
-
+6. Mo Bitar, https://youtu.be/47VWW7K058k
 

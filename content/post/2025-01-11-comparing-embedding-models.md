@@ -57,3 +57,7 @@ Interestingly, I had run an initial calculation of MAP and MRR, with slightly wo
 # References
 1. https://en.wikipedia.org/wiki/Evaluation_measures_(information_retrieval)#Mean_average_precision
 2. https://en.wikipedia.org/wiki/Mean_reciprocal_rank
+
+3. Follow up article  to this one, here https://michal.piekarczyk.xyz/post/2025-02-01--model-metric-updates/
+
+

@@ -367,8 +367,8 @@ oh yeah and I think Andrew Huberman caused this &amp;ldquo;non-sleep deep rest&a
       <link>https://michal.piekarczyk.xyz/post/2025-02-01-speedup-building-ground-truth-dataset-with-chromadb/</link>
       <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/post/2025-02-01-speedup-building-ground-truth-dataset-with-chromadb/</guid>
-      <description>&lt;p&gt;Initially, thinking that I wanted to create this grand truth data set quickly, a started out by having a four loop and sampling data from my giant data set of documents, looking for matches to input queries, but this ended up being pretty slow and tedious.
-today I switched to just setting up a local index using chroma DB. and this ended up being extremely fast because I am not having to redo the embedding.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Initially, thinking that I wanted to create this grand truth data set quickly, a started out by having a for loop and sampling data from my giant data set of documents, looking for matches to input queries, but this ended up being pretty slow and tedious.
+Today I switched to just setting up a local index using chroma DB. and this ended up being extremely fast because I am not having to redo the embedding.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Model Metric Updates</title>

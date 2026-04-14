@@ -50,3 +50,7 @@ I should also discuss the use of onnx  to reproduce the  `all-MiniLM-L12-v2` mod
 # References 
 
 1. [previous post](https://michal.piekarczyk.xyz/post/2025-01-11-comparing-embedding-models/#so-what-are-map-and-mrr)
+
+
+2. fun embedding bug, https://michal.piekarczyk.xyz/post/2025-01-27-nice-embedding-pooling-bug.md
+

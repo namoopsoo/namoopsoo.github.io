@@ -11,7 +11,7 @@ TLDR, with additional data and additional metrics, the objective evidence contin
 ## Summary
 For the two models, and the three metrics we have, 
 
-
+```
 ┌───────────────────┬────────────┬──────────┬──────────┬────────┐
 │ model_name        ┆ dimensions ┆ map      ┆ mrr      ┆ p@k=10 │
 │ ---               ┆ ---        ┆ ---      ┆ ---      ┆ ---    │
@@ -20,7 +20,7 @@ For the two models, and the three metrics we have,
 │ all-MiniLM-L12-v2 ┆ 384        ┆ 0.715203 ┆ 0.925    ┆ 0.65   │
 │ all-mpnet-base-v2 ┆ 768        ┆ 0.664065 ┆ 0.920833 ┆ 0.5875 │
 └───────────────────┴────────────┴──────────┴──────────┴────────┘
-
+```
 
 ## More about the MAP, MRR and Precision@K=10
 I describe MAP and MRR in the last post<sup>[1](#references)</sup>. And Precision@K=10 is to say, that if the first 10 search results are probably going to be first ones someone looks at and likely the only ones someone looks at, then why not create a metric that judges only on the proportion of hits out of 10, ignoring all the later results 11, 12 and so on?

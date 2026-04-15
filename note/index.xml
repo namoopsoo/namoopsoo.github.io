@@ -8,6 +8,14 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>leaky capabilities</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-04-15-leaky-mythos/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-04-15-leaky-mythos/</guid>
+      <description>&lt;p&gt;Mini reaction on people saying Mythos can find bugs in decade old code. I think similarly I was reading Mythos or maybe a different model is solving Erdos problems previously unsolved, yet it turned out they were solved but just lost into the internet and the model in question sort of performed a lookup as with stack overflow answers.&lt;/p&gt;
+&lt;p&gt;Especially if folks are saying, Mythos is finding bugs in really old  software, that begs the question are old bugs being resurfaced , recycled as novel.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>No, you grep !</title>
       <link>https://michal.piekarczyk.xyz/note/2026-04-12-ugrep-mini-mystery/</link>
       <pubDate>Sun, 12 Apr 2026 00:00:00 +0000</pubDate>

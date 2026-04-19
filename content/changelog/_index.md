@@ -10,6 +10,10 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Firsts
 - First time trying out [restic](https://restic.readthedocs.io/) for backups, (2026-04-04).
 - Pet snail Berry, banana unlock (2026-04-11).
+- First time doing a puzzle that has a secret hidden middle you do after doing the main puzzle (2026-04-18).
+- First time eating a dish prepared by my niece (scrambled eggs)  (2026-04-19).
+
+
 
 ### Changed
 - This time ZipCar app did not ask to take exterior interior photos , weird. On either start or end of trip. But lots of trash in the zip car at the start haha so I emailed them photos of drinks in cup holders. Well other people left their fanct usb C cable thqt I guess they couldnt use since the Kia did not support USB C (2026-04-05).

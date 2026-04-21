@@ -1,7 +1,7 @@
 ---
 date: 2026-04-20
 title: A Phone Call
-draft: true
+draft: false
 ---
 
 Today I scratched an itch I have had for many years.
@@ -21,12 +21,19 @@ Well the itch I scratched is not writing the app but finding the song! After 8 y
 
 And I looked on band camp also yet I cant find them. But doing an online search reveals they do indeed have a subdomain. [1]
 
-I was able to find the track! 
+I was able to find the track! Also gave a listen to Labi Siffre original [3]. Wow haha so different. Hot Sugar , Nick Koenig, did quite the transformatioj from Labi's maybe tenor or barritone to a bass voice perhaps.
+
+Lyrics are very beautiful either way.
+
+Maybe now Ill have more inspiration to stop procrastinating! 
  
 
 
 # references
 1. https://hotsugar.bandcamp.com/
+2. https://genius.com/Labi-siffre-bless-the-telephone-lyrics
+3. https://youtu.be/mW5EjjYCnP4 
+
 
 
 

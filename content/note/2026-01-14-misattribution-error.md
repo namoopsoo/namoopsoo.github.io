@@ -67,3 +67,7 @@ Maybe we can  call this an evolution to data mining and information retrieval, m
 
 6. Mo Bitar, https://youtu.be/47VWW7K058k
 7. "Amateur mathematicians solve long-standing maths problems with AI" , Alex Wilkins, new scientist 
+8. "Who Came Up With That?", https://www.theatlantic.com/app/webview/686923/?app-privacy=apple-att&articleAudioPlaying=false&color-scheme=auto&fontScale=1#:~:text=Who%20Came%20Up%20With%20That?
+
+
+

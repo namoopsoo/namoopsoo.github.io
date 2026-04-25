@@ -4,9 +4,15 @@ date: 2026-04-24
 draft: true
 ---
 
-Maybe "old fashioned " is still just "how the world works", so cheapest  bid always wins , so I wonder what is "the optimal strategy "?
+Every once in a while Ill work with old fashionsd project managers, in data/software projects, who pair deliverables  with deadlines, instead of working iteratively in an "agile" way. But I realize that as much as PI Planning is a kind of waterfall plan rebranded, it is likely the perfect answer to the real world where "old fashioned " is still just "how the world works". 
 
-Every contract will always be renegotiated w.r.t. the iron cross, that is, more time or less scope or lower quality. (Unless of course you already built the solution and no time required for updates)
+So the cheapest  bid always wins , so I wonder what is "the optimal strategy "?
+
+Per my observations so far, on this planet, every and any project will  always be renegotiated w.r.t. the iron triangle, that is, with more time , less scope, lower quality or more resources. (Unless of course you already built the solution and no time required for updates).
+
+Why does this happen. The agile manifesto was a response to this. Many people have written about this over the last two plus decades and No Estimates describes this reasonably.  Projects will always have unknowns and gotchas that cannot be predicted in advance. Unknown requirements and unknown dependencies. Simply put, the devil is in the details. And actually doing the project is the time you would need to produce an air tight estimate. 
+
+ 
 
 
 So which is better : 

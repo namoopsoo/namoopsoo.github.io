@@ -8,6 +8,15 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>simple loses often but wins sometimes</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-04-24-keep-it-simple/</link>
+      <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-04-24-keep-it-simple/</guid>
+      <description>&lt;p&gt;Every once in a while Ill work with old fashionsd project managers, in data/software projects, who pair deliverables  with deadlines, instead of working iteratively in an &amp;ldquo;agile&amp;rdquo; way. But I realize that as much as PI Planning is a kind of rebranded waterfall plan , it is likely a good  answer to the real world where &amp;ldquo;old fashioned &amp;quot; is still just &amp;ldquo;how the world works&amp;rdquo;.&lt;/p&gt;
+&lt;h2 id=&#34;what-happens&#34;&gt;What happens&lt;/h2&gt;
+&lt;p&gt;Per my observations so far, on this planet, every and any project will  always be renegotiated w.r.t. the iron triangle, that is, with more time , less scope, lower quality or more resources. (Unless of course you already built the solution and no time required for updates).&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>inter vs intra group variations</title>
       <link>https://michal.piekarczyk.xyz/note/2026-04-21-inter-intra-group-variations/</link>
       <pubDate>Tue, 21 Apr 2026 00:00:00 +0000</pubDate>

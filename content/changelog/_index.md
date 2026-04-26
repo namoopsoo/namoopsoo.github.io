@@ -188,6 +188,10 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Logged 
 - Sleeping Giant State Park, hike with Connecticut friends (2025-03-08).
 
+## 2025-01
+### First
+- First wide toe non-workout walking shoe,  Xero Glenn walking shoe ,  (2025-01-28).
+
 ## 2024-11
 ### Completed 
 - Finished a full year of getting daily morning outdoor sunlight (Thanks [Andrew Huberman](https://ai.hubermanlab.com/s/43X8TsN1)).
@@ -202,7 +206,7 @@ All notable changes to this "human experiment" will be documented in this file.
 
 ## 2024-09
 ### Logged
-- First [escape room](https://theescapegame.com/brooklyn/) experience. Have to thank my mom for organizing this !  (2025-09-24).
+- First [escape room](https://theescapegame.com/brooklyn/) experience. Have to thank my mom for organizing this !  (2024-09-24).
 - Woodstock VA, perhaps furthest west I have been in Virginia so far (2024-09-17).
 
 ## 2024-07
@@ -275,6 +279,10 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Changed
 - Switched from LastPass to [BitWarden](https://bitwarden.com/) for personal password management.
 
+## 2022-12
+### Changed
+- Switched from gas to electric Smeg tea kettle, because of corrosion (2022-12-04).
+
 ## 2022-11
 ### Started
 - First split keyboard, the Moonlander from ZSA Technologies, 
@@ -283,6 +291,11 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Switched
 - Changed to separate REI separate cycling rain jacket, because the onesie was just not simple to use haha; ultra-yellow (2022-10-22).
 
+## 2022-09
+
+### Firsts
+- uplift standing desk converter (2022-09-18).
+
 ## 2022-08
 ### Stopped
 - Perhaps TMI, but stopped using shampoo. Just use water now for hair.
@@ -290,6 +303,10 @@ All notable changes to this "human experiment" will be documented in this file.
 ## 2022-07
 ### Changed
 - Switched from [Roam Research](https://roamresearch.com/) to [logseq](https://logseq.com) (2022-07-18)
+
+## 2022-05
+### Changed
+- Switched bike helmet, to TripleEight-helmet, because I thought I lost my other one, (2022-05-03).
 
 ## 2022-04
 ### Started
@@ -303,6 +320,7 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Logged
 - First time attempted to [replace](https://michal.piekarczyk.xyz/post/2022-01-29-floss-your-battery/) laptop macbook batteries. Laptop Worked for a few days before batteries ballooned then I went to Mikey's hookup for help haha, to replace using official and not knock-off batteries.
 - north face steep patrol winter gloves, for that cold weather biking (2022-01-14).
+- bikeiowa.com cycling  poagies (2022-01-18).
 
 ## 2021-09
 ### Completed
@@ -337,6 +355,9 @@ All notable changes to this "human experiment" will be documented in this file.
 ## 2020-12
 ### Changed
 - Updated from earlier Kindle to Kindle Oasis (2020-12-01).
+
+### Firsts
+- First ipad; ipad air, 4th gen., along with apple pencil, 2nd gen. (2020-12-08).
 
 ## 2020-11
 ### Created
@@ -455,7 +476,6 @@ All notable changes to this "human experiment" will be documented in this file.
 - bustelo to lavazza? kamira?
 - switched from pandas to polars some time in 2024 .
 - tushy bidet 2020-11 ?
-- apple pencil , ipad ?
 - pixel blue light glasses 
 - dyson air purifier ; and also when it died ; but it died first filter function and then heat function too. two deaths.
 

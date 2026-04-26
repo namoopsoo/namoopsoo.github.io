@@ -313,6 +313,9 @@ All notable changes to this "human experiment" will be documented in this file.
 ### First
 - First time I shelled out over $1k, on emergency tax advice, w.r.t. the phantom AMT tax trap (2021-06-03).
 
+### Changed
+- Switched to Apple airpods from the Edifier TWS5 (2021-06-14).
+
 ## 2021-05
 ### Changed
 - Switched from github pages with Jekyll to [Hugo](https://gohugo.io/), noted the change [here](https://michal.piekarczyk.xyz/post/2021-05-16-hugo-notes/)
@@ -341,6 +344,16 @@ All notable changes to this "human experiment" will be documented in this file.
 ## 2020-06
 ### Started
 - Switched to hover.com and registered this domain, michal.piekarczyk.xyz , [almost thought](/post/2021-02-02-whois/) I forgot to use WHOIS anonimization !
+
+## 2020-05
+
+### Started
+- First proper whiteboard in my home office (2020-05-03).
+
+## 2020-02
+
+### Started
+- Edifier TWS5, I suppose my first bluetooth ear phones, switching from wired headphones (2020-02-12).  
 
 ## 2018-11
 ### Started
@@ -407,7 +420,6 @@ All notable changes to this "human experiment" will be documented in this file.
 - First meetup.com attended?
 - First github repo? (2011?)
 - First code written? (javascript in, hmm, 1997 ishh? some webpage for boyscouts something? I wanted to make a funny animation, and was really into this tutorial by )
-- hung up that whiteboard, first time?
 - hung up cool painting Gabe found outside, in Bushwick apartment 
 - first fast over 2 days, ( fish from can as fast breaker)
 - also first transpacific fast to japan.
@@ -419,11 +431,8 @@ All notable changes to this "human experiment" will be documented in this file.
 - logi ergonomic mouse
 - bustelo to lavazza? kamira?
 - switched from pandas to polars some time in 2024 .
-- first publish a Golang app
 - tushy bidet 2020-11 ?
-- apple air pods, 
 - apple pencil , ipad ?
-- away luggage 
 - pixel blue light glasses 
 - dyson air purifier ; and also when it died ; but it died first filter function and then heat function too. two deaths.
 

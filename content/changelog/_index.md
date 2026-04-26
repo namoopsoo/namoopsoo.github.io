@@ -279,6 +279,10 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Started
 - First split keyboard, the Moonlander from ZSA Technologies, 
 
+## 2022-10
+### Switched
+- Changed to separate REI separate cycling rain jacket, because the onesie was just not simple to use haha; ultra-yellow (2022-10-22).
+
 ## 2022-08
 ### Stopped
 - Perhaps TMI, but stopped using shampoo. Just use water now for hair.
@@ -298,6 +302,7 @@ All notable changes to this "human experiment" will be documented in this file.
 
 ### Logged
 - First time attempted to [replace](https://michal.piekarczyk.xyz/post/2022-01-29-floss-your-battery/) laptop macbook batteries. Laptop Worked for a few days before batteries ballooned then I went to Mikey's hookup for help haha, to replace using official and not knock-off batteries.
+- north face steep patrol winter gloves, for that cold weather biking (2022-01-14).
 
 ## 2021-09
 ### Completed
@@ -341,6 +346,11 @@ All notable changes to this "human experiment" will be documented in this file.
 - TMI! I know, but, started that bidet life with https://hellotushy.com
 - Started uploading to https://vimeo.com (2020-11-07)
 
+## 2020-07
+
+### Started
+- My first standalone webcam, from logitech C930e , because covid and because I have a separate monitor now too  (2020-07-02).
+
 ## 2020-06
 ### Started
 - Switched to hover.com and registered this domain, michal.piekarczyk.xyz , [almost thought](/post/2021-02-02-whois/) I forgot to use WHOIS anonimization !
@@ -355,9 +365,22 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Started
 - Edifier TWS5, I suppose my first bluetooth ear phones, switching from wired headphones (2020-02-12).  
 
+## 2019-10
+
+### Switched
+- Switched to iphone Xs (2019-10-05). 
+
+### First
+- First onesie biking raincoat or rain suit from Raynsie (2019-10-20).  
+
 ## 2018-11
 ### Started
 - Switched to "away" luggage, "The Bigger Carry-On, Asphalt", for $245 (awaytravel.com)  (2018-11-04).
+
+## 2018-07
+
+### Firsts
+- Dell monitor, Dell Ultra HD 4k Monitor P2715Q 27-Inch Screen LED-Lit Monitor (2018-07-02).
 
 ## 2017-12
 ### Started

@@ -10,7 +10,7 @@ Every once in a while Ill work with old fashionsd project managers, in data/soft
 ## What happens
 Per my observations so far, on this planet, every and any project will  always be renegotiated w.r.t. the iron triangle, that is, with more time , less scope, lower quality or more resources. (Unless of course you already built the solution and no time required for updates).
 
-Why does this happen. The agile manifesto was a response to this. Many people have written about this over the last two plus decades and No Estimates describes this reasonably.  Projects will always have unknowns and gotchas that cannot be predicted in advance. Unknown requirements and unknown dependencies. Simply put, the devil is in the details. And actually doing the project is the time you would need to produce an air tight estimate. 
+Why does this happen. The agile manifesto was a response to this. Many people have written about this over the last two plus decades and No Estimates<sup>[1](#references)</sup> describes this reasonably.  Projects will always have unknowns and gotchas that cannot be predicted in advance. Unknown requirements and unknown dependencies. Simply put, the devil is in the details. And actually doing the project is the time you would need to produce an air tight estimate. 
 
  
 ## So if the cheapest  bid always wins , then what is "the optimal strategy "?
@@ -30,7 +30,7 @@ And that's why PI Planning can look good here, because it gives both sides somet
 
 It is still not purely iterative like an agile shop, but in  PI Planning, you offer timelines which PMs can write down in their notebooks but you also write out a sort of loose statement of work paired with assumptions and risks, that might help you when you have to ultimately renegotiate your position multiple times during the project lifetime .
 
-And as is emphasized in No Estimates, renegotiating , cutting down, the scope, is likely going to be the best tool at your disposal along the way.
+And as is emphasized in No Estimates<sup>[1](#references)</sup>, renegotiating , cutting down, the scope, is likely going to be the best tool at your disposal along the way.
 
 So then timelines become your friend, if both parties can wink nod and agree  to play the renegotiation dance along the way.
 
@@ -40,3 +40,8 @@ This is simple: you cant see unknowns  and acknowledging them would put a PM at 
 The customer  needs someone fully on their side in spirit.
 
 And we have various biases that blind us from uncertainties, which allow us to --*evolutionarily?*-- function in an otherwise chaotic world.
+
+# References
+1. No Estimates, book
+2. https://michal.piekarczyk.xyz/post/2025-11-07-planning-a-forecast/
+3. https://michal.piekarczyk.xyz/post/2025-10-21-kanban-cage/

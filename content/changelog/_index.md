@@ -6,14 +6,15 @@ robots: noindex, nofollow
 All notable changes to this "human experiment" will be documented in this file.
 
 
+## 2026-05
+
 ## 2026-04
 ### Firsts
 - First time trying out [restic](https://restic.readthedocs.io/) for backups, (2026-04-04).
 - Pet snail Berry, banana unlock (2026-04-11).
 - First time doing a puzzle that has a secret hidden middle you do after doing the main puzzle (2026-04-18).
 - First time eating a dish prepared by my niece (scrambled eggs)  (2026-04-19).
-
-
+- First time buying a product from my niece, a crochet frog! (2026-04-18).
 
 ### Changed
 - This time ZipCar app did not ask to take exterior interior photos , weird. On either start or end of trip. But lots of trash in the zip car at the start haha so I emailed them photos of drinks in cup holders. Well other people left their fanct usb C cable thqt I guess they couldnt use since the Kia did not support USB C (2026-04-05).
@@ -112,7 +113,7 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Logged
 - Not a big deal but, pushed my 1600m into a 3200m, for first time in a while today, with a not entirely embarassing 7:32min/mi pace (2025-09-02).
 - My NYC apartment building got a compost bin, so I started composting. tiny wins ftw (2025-09-13)
-- First [crochet](https://world.hey.com/michal.piekarczyk/crochet-dna-40269b95) attempt (2025-09-21)).
+- First [crochet](https://world.hey.com/michal.piekarczyk/crochet-dna-40269b95) attempt (2025-09-21).
 - First time using a rev balance board at my brothers(2025-09-21) .
 - First time using sandpaper to [fix](https://michal.piekarczyk.xyz/post/2025-09-28-fix-chipped-pint-glass/) chipped broken pint glass (2025-09-28).
 - First time I followed through on a travel insurance policy claim and actually managed to get a [successful outcome!](https://michal.piekarczyk.xyz/post/2025-09-28-travel-guard/) (2025-09-28).

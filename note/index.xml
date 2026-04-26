@@ -8,6 +8,14 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>N of 1</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-04-26-n-of-1/</link>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-04-26-n-of-1/</guid>
+      <description>&lt;p&gt;Seedling of a thought, inspired by the AI Snake Oil Book [1], the Andy Galpin interview with Dr Herman Pontzer I noted [2]  as well as some recent conversations , as well as the Mercenary post from earlier, there is an N of 1 idea brewing in my mind.&lt;/p&gt;
+&lt;p&gt;The majority of per person data science is not highly accurate but it is good enough for aggregate population level stats. Maybe we can get the aggregate lift here, which is related to lift of a better model say but not quite the same thing. It would be more like an aggregate financial benefit like population level insurance risk mitigation, say. A dollar lift perhaps.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>simple loses often but wins sometimes</title>
       <link>https://michal.piekarczyk.xyz/note/2026-04-24-keep-it-simple/</link>
       <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>

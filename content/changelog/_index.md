@@ -276,6 +276,10 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Logged
 - Today, totally by a UPS shipping anomaly I received a `PTZOptics Move 4K SDI/HDMI/USB/IP PTZ Camera with 30x Optical Zoom (Gray) (PT30X-4K-GY-G3) + PTZOptics PT-Joy-G4 Joystick Controller`  intended for kellards.com . $3k worth of electronics but I managed to communicate with them by email and was able to ship this back to the intended recipient (2023-04-15).
 
+## 2023-03
+### Changed
+- Switched my logseq git to git lfs (2023-03-12).
+
 ## 2023-01
 ### Changed
 - Switched from LastPass to [BitWarden](https://bitwarden.com/) for personal password management.

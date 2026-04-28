@@ -18,7 +18,7 @@ To this extent I realize I use a lot of terms from these kinds of action and foc
 
 The "journey" has a destination. 
 
-In the chaos we wrangle the uncomfortable uncertainty and that is a skill that should stay in demand as long as Murphy and Newton predicted .
+In the chaos we wrangle the uncomfortable uncertainty and that is a skill that should stay in demand for as long as Murphy and Newton predicted .
 
 # references 
 1. https://michal.piekarczyk.xyz/note/2026-02-13-what-ends-up/

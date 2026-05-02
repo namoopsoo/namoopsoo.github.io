@@ -1,17 +1,17 @@
 ---
-title: "ODSC Closing Notes"
+title: "ODSC Notes"
 # slug: "2026-05-01-odsc-closing-notes"
 date: 2026-05-02T15:40:26-04:00
-draft: true
+draft: false
 
 # optional thumbnail
 images:
-  - "THUMBNAIL_PLACEHOLDER"
+  - "https://s3.amazonaws.com/my-blog-content/2026-05-01-odsc-closing-notes/boston-IMG_0977.HEIC"
 cover:
-  image: "THUMBNAIL_PLACEHOLDER"
+  image: "https://s3.amazonaws.com/my-blog-content/2026-05-01-odsc-closing-notes/boston-IMG_0977.HEIC"
 ---
 
-I just finished a trip to the ODSC conference in Boston, leaving without really understanding where we are on the hype cycle of Agentic AI . But on the flight back, I read on article where Rogé Karma was walking back the stance he had about the Al bubble given new revenue data. The conference gave me a lot of confidence that regardless of what benefit agent Al will ultimately have, there was now no doubt that companies and individuals who do not upskill will fill behind in one way or another. But the article put down some numbers about the new revenue that Anthropic, open Al cursor and the  data center companies they rely on, Microsoft, Google, Amazon, Core weave, were now recently experiencing, taking them perhaps, out of bubble territory.
+I just finished a trip to attend the ODSC conference in Boston, leaving without really understanding where we are on the hype cycle of Agentic AI . But on the flight back, I read on article where Rogé Karma was walking back the stance he had about the Al bubble given new revenue data. The conference gave me a lot of confidence that regardless of what benefit agent Al will ultimately have, there was now no doubt that companies and individuals who do not upskill will fill behind in one way or another. But the article put down some numbers about the new revenue that Anthropic, open Al cursor and the  data center companies they rely on, Microsoft, Google, Amazon, Core weave, were now recently experiencing, taking them perhaps, out of bubble territory.
 
 At the conference, one of the first talks I went to was about private LLMs, and during this talk the speaker said that the adoption of AI found a cheat code, agentic AI. He pointed out that although, the cost chasm was showing only 15% chat style adoption, when tools now added agents interfaces into themselves into the existing, mediums people already use, then adoption magically went to 100%.
 
@@ -41,6 +41,8 @@ I hear Steinberger's take, more than anything as, that agentic programming is th
 
 Perhaps we can acknowledge though that there are still then two kinds of work in the themes of explore and exploit: spikes that are open ended that produce research artifacts and repetitive tasks that are more well defined because you have done them many times already. And agentic work can perhaps make the first kind easier to bound box.
 
+## 
+The first talk I attended
 
 
 # References
@@ -53,3 +55,5 @@ Perhaps we can acknowledge though that there are still then two kinds of work in
 9. https://youtu.be/8lF7HmQ_RgY&t=4180
 
 <sup>[x](#references)</sup> 
+
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2026-05-01-odsc-closing-notes/boston-IMG_0977.HEIC" width="50%">}}

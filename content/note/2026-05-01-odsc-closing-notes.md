@@ -11,9 +11,11 @@ cover:
   image: "https://s3.amazonaws.com/my-blog-content/2026-05-01-odsc-closing-notes/boston-IMG_0977.jpg"
 ---
 
-I just finished a trip to attend the ODSC conference in Boston, leaving without really understanding where we are on the hype cycle of Agentic AI . But on the flight back, I read on article where Rogé Karma was walking back the stance he had about the Al bubble given new revenue data. The conference gave me a lot of confidence that regardless of what benefit agent Al will ultimately have, there was now no doubt that companies and individuals who do not upskill will fill behind in one way or another. But the article put down some numbers about the new revenue that Anthropic, open Al cursor and the  data center companies they rely on, Microsoft, Google, Amazon, Core weave, were now recently experiencing, taking them perhaps, out of bubble territory.
 
-At the conference, one of the first talks I went to was about private LLMs, and during this talk the speaker said that the adoption of AI found a cheat code, agentic AI. He pointed out that although, the cost chasm was showing only 15% chat style adoption, when tools now added agents interfaces into themselves into the existing, mediums people already use, then adoption magically went to 100%.
+
+I just finished a trip to attend the ODSC conference in Boston, leaving without really understanding where we are on the hype cycle of Agentic AI . But on the flight back, I read on article<sup>[2](#references)</sup>  where Rogé Karma was walking back the stance he had about the AI bubble given new revenue data. The conference gave me a lot of confidence that regardless of what benefit agent AI will ultimately have, there was now no doubt that companies and individuals who do not upskill will fill behind in one way or another. But the article put down some numbers about the new revenue that Anthropic, open Al cursor and the  data center companies they rely on, Microsoft, Google, Amazon, Core weave, were now recently experiencing, taking them perhaps, out of bubble territory.
+
+At the conference, one of the first talks I went to was about private LLMs, and during this talk the speaker<sup>[1](#references)</sup> said that the adoption of AI found a cheat code, agentic AI. He pointed out that although, the cost chasm was showing only 15% chat style adoption, when tools now added agents interfaces into themselves into the existing, mediums people already use, then adoption magically went to 100%.
 
 Perhaps unironically, as I was at my gate  waiting for departure, I also saw a post from a friend about https://copy.fail, the newly discovered Linux privilege escalation vulnerability, where a user mode process can su to root. So I keep this in mind while I learn about people excitedly giving anthropic access to rumage around executing on their lap tops. 
 
@@ -46,6 +48,8 @@ The first talk I attended was practical. It reminded me of a more fleshed out mo
 
 
 # References
+1. Ivan @ datasaur.ai
+2. https://www.theatlantic.com/app/webview/687022/
 4. https://www.theatlantic.com/app/webview/687022/?app-privacy=apple-att&articleAudioPlaying=false&color-scheme=auto&fontScale=1#:~:text=As%20a%20group,the%20field%20unique.
 5. https://newsletter.semianalysis.com/p/claude-code-is-the-inflection-point
 6. agile manifesto

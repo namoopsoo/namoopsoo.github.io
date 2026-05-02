@@ -6,9 +6,9 @@ draft: false
 
 # optional thumbnail
 images:
-  - "https://s3.amazonaws.com/my-blog-content/2026-05-01-odsc-closing-notes/boston-IMG_0977.HEIC"
+  - "https://s3.amazonaws.com/my-blog-content/2026-05-01-odsc-closing-notes/boston-IMG_0977.jpg"
 cover:
-  image: "https://s3.amazonaws.com/my-blog-content/2026-05-01-odsc-closing-notes/boston-IMG_0977.HEIC"
+  image: "https://s3.amazonaws.com/my-blog-content/2026-05-01-odsc-closing-notes/boston-IMG_0977.jpg"
 ---
 
 I just finished a trip to attend the ODSC conference in Boston, leaving without really understanding where we are on the hype cycle of Agentic AI . But on the flight back, I read on article where Rogé Karma was walking back the stance he had about the Al bubble given new revenue data. The conference gave me a lot of confidence that regardless of what benefit agent Al will ultimately have, there was now no doubt that companies and individuals who do not upskill will fill behind in one way or another. But the article put down some numbers about the new revenue that Anthropic, open Al cursor and the  data center companies they rely on, Microsoft, Google, Amazon, Core weave, were now recently experiencing, taking them perhaps, out of bubble territory.
@@ -41,8 +41,8 @@ I hear Steinberger's take, more than anything as, that agentic programming is th
 
 Perhaps we can acknowledge though that there are still then two kinds of work in the themes of explore and exploit: spikes that are open ended that produce research artifacts and repetitive tasks that are more well defined because you have done them many times already. And agentic work can perhaps make the first kind easier to bound box.
 
-## 
-The first talk I attended
+## An Internet for AI Agents
+The first talk I attended was practical. It reminded me of a more fleshed out moltbook.com. Ramesh Raskar laid out a vision<sup>[10](#references)</sup> for how agents can communicate in the future. He pointed out that currently agents are clients and they do not have URI endpoints. And NANDA proposes a DNS for agents among other aspects. 
 
 
 # References
@@ -54,6 +54,8 @@ The first talk I attended
 
 9. https://youtu.be/8lF7HmQ_RgY&t=4180
 
+10. Ramesh Raskar, https://nanda.media.mit.edu
+
 <sup>[x](#references)</sup> 
 
-{{< figure src="https://s3.amazonaws.com/my-blog-content/2026-05-01-odsc-closing-notes/boston-IMG_0977.HEIC" width="50%">}}
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2026-05-01-odsc-closing-notes/boston-IMG_0977.jpg" width="50%">}}

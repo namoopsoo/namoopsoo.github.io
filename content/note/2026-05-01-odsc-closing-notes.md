@@ -21,7 +21,7 @@ Perhaps unironically, as I was at my gate  waiting for departure, I also saw a p
 
 Back to the speaker's presentation, his point was that indeed the risk of opening up your company to   Anthropic or other companies, giving them a front row seat to your company's data, can be avoided with the open weight models that are now becoming as good as their SaaS counterparts, and with the per token cost coming up, along with surge pricing, also perhaps even a cost benefit too.
 
-Between talks, I spoke with colleagues about the future of code. One was inspired by  a conversation I had with one speaker on static analysis potentially making a come back. Or at least his research team was identifying that there was a gap in code evaluation, bug evaluation in particular. He noted that even Mythos --*which he said he did not have access to*--, would not find  all the bugs, but for the sake of reliability, we do need to find all the bugs. So after his talk, I asked him what was his vision? I said, hey, python was so popular for data science, because it was so effortless to start learning, but also come with ease to create   bugs that static type  and  memory safe languages do not run into like Golang of rust.
+Between talks, I spoke with colleagues about the future of code. One was inspired by  a conversation I had with one speaker on program static analysis<sup>[11](#references)</sup>, Armando Solar-Lezama, potentially making a come back. Or at least his research team was identifying that there was a gap in code evaluation, bug evaluation in particular. He noted that even Mythos --*which he said he did not have access to*--, would not find  all the bugs, but for the sake of reliability, we do need to find all the bugs. So after his talk, I asked him what was his vision? I wondered, hey, python was so popular for data science, because it was so effortless to start learning, but also come with ease to create bugs that static type  and  memory safe languages do not run into like Golang. And it sounded like yes he sees there is definitely now more room for strongly typed memory safe languages like Rust, though that will still not be enough to make sure new code that is generated is reliable. I think one of my take aways from his talk was that the code generation is producing an unprecedented volume of code that needs to be reviewed and we desparately need better ways of vetting it for reliability. And hopefully code gen now frees us up to focus on bringing back precisely that kind of code analysis that was very popular in the early 2000s but then faded away. 
 
 
 One colleague I spoke with was in the audience for this talk as well . They had transitioned to our ml platform team from date science and, self analyzed that their coding skills were not so great, however, they have been leaning into code gen since it was starting to be a thing a few years ago, and so they have not developed past their plateau, however at this point, and perhaps with this conference in particular, they are not yet convinced there is a benefit to get good at writing code.
@@ -59,7 +59,10 @@ The first talk I attended was practical. It reminded me of a more fleshed out mo
 9. https://youtu.be/8lF7HmQ_RgY&t=4180
 
 10. Ramesh Raskar, https://nanda.media.mit.edu
+11. Armando Solar-Lezama, "Open Challenges for the Next Generation of Programming Agents" , https://x.com/_odsc/status/2047815353967780118 
+
 
 <sup>[x](#references)</sup> 
+
 
 {{< figure src="https://s3.amazonaws.com/my-blog-content/2026-05-01-odsc-closing-notes/boston-IMG_0977.jpg" width="50%">}}

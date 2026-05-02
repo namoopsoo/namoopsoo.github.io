@@ -29,17 +29,26 @@ Roge Karma points out<sup>[4](#references)</sup> in his article, citing a SemiAn
 
 During the conference, I was chatting with another colleague who was excitedly plotting how she can carve out some EDA time soon--Exploratory Data Analysis time--with an unstructured dataset she has been sitting on, using some new techniques the conference inspired her to try. She believes she would need at least a good 6 months, of, finding time in the cracks of her day job, to determine if there is enough there there in her dataset, before even proposing an improvement that her customer can consider. 
 
-In an interview with Peter Steinberger--creator of OpenClaw, an open source agent--, I listened to, he described his niche as  "difficult but not too interesting". This is precisely the opposite of low hanging fruit, the problems that are right there in front of you, easy to understand, easy to describe quick wins. He underlined 
+In an interview<sup>[9](#references)</sup> with Peter Steinberger--creator of OpenClaw, an open source agent--, I listened to, he described his niche as  "difficult but not too interesting". This is precisely the opposite of low hanging fruit, the problems that are right there in front of you, easy to understand, easy to describe quick wins. He responds to people who attempt to preplan a backlog of units of work, orchestrating a team of agents to coordinate and execute on the plan:
 
-> "I don't believe this works. Like, this is the waterfall model of software building. This we learned long ago that this doesn't work. Like, yes, people work differently and maybe it does work for some. I just don't see how this could work for me. Like, I have to start with an idea and often I purposefully under-prompt the agent so it would do something that would give me new ideas... And then I iterate and shape the project."
+> *"I don't believe this works. Like, this is the waterfall model of software building. This we learned long ago that this doesn't work. Like, yes, people work differently and maybe it does work for some. I just don't see how this could work for me. Like, I have to start with an idea and often I purposefully under-prompt the agent so it would do something that would give me new ideas. You like maybe like 80% of the things I assumed were like crap, but like there were like two things like, 'oh, I didn't think about that way.'*
 
-# references
+> *"And then I iterate and shape the project. And I have to click it. I have to, like, I have to feel it. I feel, to make good software, you know one thing those things often lack is taste. I have to feel like, how does this feature feel? And the beauty now is that features are so easy, I can just, like, throw it away or, like, re-prompt it. My building model is usually very much forward. It's very rarely that I actually revert and have to go back. It's just, like, 'okay, no, then let's change this. No, let's do this.' It's like it's like shaping. I love how this, like, you start with a rock and then you, like, chisel away at it and, like, pick different areas, and then slowly like this statue emerges out of out of marble. That's how I see, that's how I see building something."*
+
+That is a reflection on the creative process. I think if anyone would, Steinberger would be a good judge of how agentic programming can massively speed up your experimentation loop, but it nevertheless is a loop you cannot reduce into a clearly defined deterministic sequence of units you can assign over to your army of agents.
+
+I hear Steinberger's take, more than anything as, that agentic programming is the final nail in the coffin of using product planned roadmaps to derisk quarter long software development efforts. 
+
+Perhaps we can acknowledge though that there are still then two kinds of work in the themes of explore and exploit: spikes that are open ended that produce research artifacts and repetitive tasks that are more well defined because you have done them many times already. And agentic work can perhaps make the first kind easier to bound box.
+
+
+
+# References
 4. https://www.theatlantic.com/app/webview/687022/?app-privacy=apple-att&articleAudioPlaying=false&color-scheme=auto&fontScale=1#:~:text=As%20a%20group,the%20field%20unique.
 5. https://newsletter.semianalysis.com/p/claude-code-is-the-inflection-point
 6. agile manifesto
 7. https://multithreaded.stitchfix.com/blog/2019/03/11/FullStackDS-Generalists/
 8. https://hbr.org/2019/03/why-data-science-teams-need-generalists-not-specialists
-
 
 9. https://youtu.be/8lF7HmQ_RgY&t=4180
 

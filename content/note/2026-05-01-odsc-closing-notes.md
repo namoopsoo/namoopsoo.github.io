@@ -1,7 +1,7 @@
 ---
 title: "ODSC Notes"
 # slug: "2026-05-01-odsc-closing-notes"
-date: 2026-05-02T15:40:26-04:00
+date: 2026-05-01
 draft: false
 
 # optional thumbnail

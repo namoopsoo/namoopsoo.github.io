@@ -1,6 +1,6 @@
 ---
 date: 2026-05-02
-title: write do learn oops do
+title: From the Trenches
 ---
 
 Riffing off of , https://michal.piekarczyk.xyz/note/2026-03-04-prompt-driven-development/ , and the famous Do Learn Show Loop , and also the ODSC conference I just attended and also squarely on a few topics Nate B Jones has been covrring lately on career visibility  , much extending what I think Steve Huynh has introduced me to with his brag docs a few years ago, because work iterates and becauase everyone loves a story, especially interviewers, we should extend the STAR and brag doc styles to be more punctuated, more colorful, still as accurate as possible.

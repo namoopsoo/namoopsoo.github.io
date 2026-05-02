@@ -8,6 +8,13 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>ODSC Notes</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-05-01-odsc-closing-notes/</link>
+      <pubDate>Sat, 02 May 2026 15:40:26 -0400</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-05-01-odsc-closing-notes/</guid>
+      <description>&lt;p&gt;I just finished a trip to attend the ODSC conference in Boston, leaving without really understanding where we are on the hype cycle of Agentic AI . But on the flight back, I read on article where Rogé Karma was walking back the stance he had about the Al bubble given new revenue data. The conference gave me a lot of confidence that regardless of what benefit agent Al will ultimately have, there was now no doubt that companies and individuals who do not upskill will fill behind in one way or another. But the article put down some numbers about the new revenue that Anthropic, open Al cursor and the  data center companies they rely on, Microsoft, Google, Amazon, Core weave, were now recently experiencing, taking them perhaps, out of bubble territory.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Rain Gaps</title>
       <link>https://michal.piekarczyk.xyz/note/2026-04-30-rain-gaps/</link>
       <pubDate>Thu, 30 Apr 2026 00:00:00 +0000</pubDate>

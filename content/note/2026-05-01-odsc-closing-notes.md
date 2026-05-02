@@ -19,7 +19,7 @@ Perhaps unironically, as I was at my gate  waiting for departure, I also saw a p
 
 Back to the speaker's presentation, his point was that indeed the risk of opening up your company to   Anthropic or other companies, giving them a front row seat to your company's data, can be avoided with the open weight models that are now becoming as good as their SaaS counterparts, and with the per token cost coming up, along with surge pricing, also perhaps even a cost benefit too.
 
-Beetween talks, I spoke with colleagues about the future of code. One was inspired by  a conversation I had with one speaker on static analysis potentially making a come back. Or at least his research team was identifying that there was a gap in code evaluation, bug evaluation in particular. He noted that even Mythos --*which he said he did not have access to*--, would not find  all the bugs, but for the sake of reliability, we do need to find all the bugs. So after his talk, I asked him what was his vision? I said, hey, python was so popular for data science, because it was so effortless to start learning, but also come with ease to create   bugs that static type  and  memory safe languages do not run into like Golang of rust.
+Between talks, I spoke with colleagues about the future of code. One was inspired by  a conversation I had with one speaker on static analysis potentially making a come back. Or at least his research team was identifying that there was a gap in code evaluation, bug evaluation in particular. He noted that even Mythos --*which he said he did not have access to*--, would not find  all the bugs, but for the sake of reliability, we do need to find all the bugs. So after his talk, I asked him what was his vision? I said, hey, python was so popular for data science, because it was so effortless to start learning, but also come with ease to create   bugs that static type  and  memory safe languages do not run into like Golang of rust.
 
 
 One colleague I spoke with was in the audience for this talk as well . They had transitioned to our ml platform team from date science and, self analyzed that their coding skills were not so great, however, they have been leaning into code gen since it was starting to be a thing a few years ago, and so they have not developed past their plateau, however at this point, and perhaps with this conference in particular, they are not yet convinced there is a benefit to get good at writing code.
@@ -29,7 +29,9 @@ Roge Karma points out<sup>[4](#references)</sup> in his article, citing a SemiAn
 
 During the conference, I was chatting with another colleague who was excitedly plotting how she can carve out some EDA time soon--Exploratory Data Analysis time--with an unstructured dataset she has been sitting on, using some new techniques the conference inspired her to try. She believes she would need at least a good 6 months, of, finding time in the cracks of her day job, to determine if there is enough there there in her dataset, before even proposing an improvement that her customer can consider. 
 
-In an interview with Peter Steinberger--creator of OpenClaw, an open source agent--, I listened to, he described his niche as  "difficult but not too interesting". This is precisely the opposite of low hanging fruit. 
+In an interview with Peter Steinberger--creator of OpenClaw, an open source agent--, I listened to, he described his niche as  "difficult but not too interesting". This is precisely the opposite of low hanging fruit, the problems that are right there in front of you, easy to understand, easy to describe quick wins. He underlined 
+
+> "I don't believe this works. Like, this is the waterfall model of software building. This we learned long ago that this doesn't work. Like, yes, people work differently and maybe it does work for some. I just don't see how this could work for me. Like, I have to start with an idea and often I purposefully under-prompt the agent so it would do something that would give me new ideas... And then I iterate and shape the project."
 
 # references
 4. https://www.theatlantic.com/app/webview/687022/?app-privacy=apple-att&articleAudioPlaying=false&color-scheme=auto&fontScale=1#:~:text=As%20a%20group,the%20field%20unique.
@@ -39,6 +41,6 @@ In an interview with Peter Steinberger--creator of OpenClaw, an open source agen
 8. https://hbr.org/2019/03/why-data-science-teams-need-generalists-not-specialists
 
 
-
+9. https://youtu.be/8lF7HmQ_RgY&t=4180
 
 <sup>[x](#references)</sup> 

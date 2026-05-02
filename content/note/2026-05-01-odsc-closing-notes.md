@@ -24,8 +24,21 @@ Beetween talks, I spoke with colleagues about the future of code. One was inspir
 
 One colleague I spoke with was in the audience for this talk as well . They had transitioned to our ml platform team from date science and, self analyzed that their coding skills were not so great, however, they have been leaning into code gen since it was starting to be a thing a few years ago, and so they have not developed past their plateau, however at this point, and perhaps with this conference in particular, they are not yet convinced there is a benefit to get good at writing code.
 
-Roge Karma points out<sup>[4](#references)</sup> in his article, citing a SemiAnalysis piece, deconstructing knowledge work as bights of Read, Think, Write, Verify, 
+Roge Karma points out<sup>[4](#references)</sup> in his article, citing a SemiAnalysis piece<sup>[5](#references)</sup>, deconstructing knowledge work as chunks of Read, Think, Write and Verify. And that makes it a good candidate for building blocks in agentic flows, that can be learned, as long as the criteria are well defined. I pick things up I put things down. In other words, can knowledge work be cut up into units of work that are commoditized. I would flag here that this sounds remarkably similar to the vision of the waterfall software planning model that the agile manifesto<sup>[6](#references)</sup> of 2001 responded too, as well as the Data Science as Pin Factory article<sup>[7,8](#references)</sup> from 2019 written in response to the desire to assembly-line-ify data science. The agile software movement pointed out that software projects are messy and customers cannot accurately describe what they want. And Eric Colson extended this to the messiness of extracting signal from data. In fact his description of the ideal data science pin factory echoes that SemiAnalysis article:
+> “one person sources the data, another models it, a third implements it, a fourth measures it”
 
+During the conference, I was chatting with another colleague who was excitedly plotting how she can carve out some EDA time soon--Exploratory Data Analysis time--with an unstructured dataset she has been sitting on, using some new techniques the conference inspired her to try. She believes she would need at least a good 6 months, of, finding time in the cracks of her day job, to determine if there is enough there there in her dataset, before even proposing an improvement that her customer can consider. 
+
+In an interview with Peter Steinberger--creator of OpenClaw, an open source agent--, I listened to, he described his niche as  "difficult but not too interesting". This is precisely the opposite of low hanging fruit. 
 
 # references
 4. https://www.theatlantic.com/app/webview/687022/?app-privacy=apple-att&articleAudioPlaying=false&color-scheme=auto&fontScale=1#:~:text=As%20a%20group,the%20field%20unique.
+5. https://newsletter.semianalysis.com/p/claude-code-is-the-inflection-point
+6. agile manifesto
+7. https://multithreaded.stitchfix.com/blog/2019/03/11/FullStackDS-Generalists/
+8. https://hbr.org/2019/03/why-data-science-teams-need-generalists-not-specialists
+
+
+
+
+<sup>[x](#references)</sup> 

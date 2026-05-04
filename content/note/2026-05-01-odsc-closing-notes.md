@@ -79,7 +79,8 @@ Does the Vibe era create an incentive to keep everything at a shallow level?
 
 The ultimate generalist jack of all trades?
 
-
+## Precision
+one of the things Armando said that also stuck, about stochastic nature of code. So hmm were producing all these fun bags of code but wouldnt it be nice if we can be more preciss about vibing, yea sure spec driven development. Oh wait thats what code code was. Deterministic. Nice.
 
 # References
 1. Ivan @ datasaur.ai

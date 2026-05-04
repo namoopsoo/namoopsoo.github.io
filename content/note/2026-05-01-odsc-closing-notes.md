@@ -58,6 +58,28 @@ This along with Sara Zanzoterra session on RAG to Agents as well.
 ## Back to why planning is hard
 Sfould refer back to also Cal Newport multi step automation article<sup>[13](#references)</sup> . Yea . Agent Harnesses and verifiability for each step. 
 
+## Vibing  Abstractions 
+Abstractions and modularity are a  useful  principle in software, helping to know the right level of information at any point in time. These days if you want to deploy a website, you dont need to know that the internet is built on TCP/IP, OSPF/RIP/BGP, HTTP, SSL/TLS, DNS and the rest of the alphabet  ocean of protocols. 
+
+#### What would Rich Hickey say here w.r.t. Simple Made Easy and locality of knowledge?
+I would wager he would identify Vibe Coding as the ultimate Easy Button , leading to all kinds of    under-the-hood complexities , which allow you to go fast initially, but then slow down dramatically as your tech debt accumulates.
+
+#### slow is smooth smooth is fast
+I suspect you can incorporate LLMs into your workflow , jumping up and down to the right level of abstraction as needed, without pretending to be Neo from The Matrix , downloading experience. 
+
+## The bitter lesson for software science? 
+But ML says hand wiring neural nets  is a kind of artisanal joinery which will never outperform an algorithm like SGD . So is all software engineering just going to software science? 
+
+
+
+## jack of all trades?
+So then what should you know? People talk about T shaped or π shaped knowledge, where you have broad knowledge in many diverse realms and more specialized knowledge in one or two areas.
+
+Does the Vibe era create an incentive to keep everything at a shallow level?
+
+The ultimate generalist jack of all trades?
+
+
 
 # References
 1. Ivan @ datasaur.ai
@@ -74,6 +96,9 @@ Sfould refer back to also Cal Newport multi step automation article<sup>[13](#re
 11. Armando Solar-Lezama, "Open Challenges for the Next Generation of Programming Agents" , https://x.com/_odsc/status/2047815353967780118 
 12. Shell Game podcast, season 2
 13. Cal Newport 2026 Feb New Yorker article about automation
+
+14. Rich Hickey  , "Simple Made Easy" 
+
 
 <sup>[x](#references)</sup> 
 

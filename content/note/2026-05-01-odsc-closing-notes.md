@@ -55,6 +55,10 @@ Cool workshop of mcp-toolbox . This session by Wenxin Du helped make a few conce
 
 This along with Sara Zanzoterra session on RAG to Agents as well.
 
+## Back to why planning is hard
+Sfould refer back to also Cal Newport multi step automation article<sup>[13](#references)</sup> . Yea . Agent Harnesses and verifiability for each step. 
+
+
 # References
 1. Ivan @ datasaur.ai
 2. https://www.theatlantic.com/app/webview/687022/
@@ -69,6 +73,7 @@ This along with Sara Zanzoterra session on RAG to Agents as well.
 10. Ramesh Raskar, https://nanda.media.mit.edu
 11. Armando Solar-Lezama, "Open Challenges for the Next Generation of Programming Agents" , https://x.com/_odsc/status/2047815353967780118 
 12. Shell Game podcast, season 2
+13. Cal Newport 2026 Feb New Yorker article about automation
 
 <sup>[x](#references)</sup> 
 

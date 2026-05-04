@@ -8,6 +8,14 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>To do or not to do</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-05-04-do-not-to-do/</link>
+      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-05-04-do-not-to-do/</guid>
+      <description>&lt;p&gt;Drowning in information. Is this a low hanging fruit for LLMs that is close to being solved?&lt;/p&gt;
+&lt;p&gt;When I first encountered How to Take Smart Notes [3], offering up Luhmann&amp;rsquo;s lost art of the slip box, I thought this was the way. Luhmann  created notes on primary sources he read like books or papers, but added links to them from topics as  the connections seemed to make sense. He did it all on index cards filed in drawers that were hyperlynked manually but this made him a prolific writer still.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>From the Trenches</title>
       <link>https://michal.piekarczyk.xyz/note/2026-05-02-say-intent/</link>
       <pubDate>Sat, 02 May 2026 00:00:00 +0000</pubDate>

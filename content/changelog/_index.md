@@ -7,6 +7,8 @@ All notable changes to this "human experiment" will be documented in this file.
 
 
 ## 2026-05
+### Logged
+- Hanging out in Brighton Beach for a friends birthday, wow these moments with nature are so rare, got to appreciate them (2026-05-03).
 
 ## 2026-04
 ### Firsts

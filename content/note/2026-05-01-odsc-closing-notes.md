@@ -68,9 +68,12 @@ This along with Sara Zanzoterra session on RAG to Agents as well.
 
 10. Ramesh Raskar, https://nanda.media.mit.edu
 11. Armando Solar-Lezama, "Open Challenges for the Next Generation of Programming Agents" , https://x.com/_odsc/status/2047815353967780118 
-
+12. Shell Game podcast, season 2
 
 <sup>[x](#references)</sup> 
 
 
-{{< figure src="https://s3.amazonaws.com/my-blog-content/2026-05-01-odsc-closing-notes/boston-IMG_0977.jpg" width="50%">}}
+ 
+
+
+

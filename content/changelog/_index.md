@@ -14,7 +14,7 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Firsts
 - First time trying out [restic](https://restic.readthedocs.io/) for backups, (2026-04-04).
 - Pet snail Berry, banana unlock (2026-04-11).
-- First time doing a puzzle that has a secret hidden middle you do after doing the main puzzle (2026-04-18).
+- First time doing a [puzzle](https://michal.piekarczyk.xyz/note/2026-04-19-try-planning-a-puzzle/) that has a secret hidden middle you do after doing the main puzzle (2026-04-18).
 - First time eating a dish prepared by my niece (scrambled eggs)  (2026-04-19).
 - First time buying a product from my niece, a crochet frog! (2026-04-18).
 - First time pedal fell off during citibike ride, but at least it was during my trip to the airport (2026-04-28).

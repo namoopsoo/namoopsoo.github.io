@@ -23,6 +23,7 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Logged
 - Guess I have a gopher [neighbor](https://vimeo.com/1182484375) (2026-04-12).
 - saw half of moulin rouge on Broadway, with Megan Thee Stallion (2026-04-23).
+- Attended ODSC.ai/east in Boston, writing about it [here](https://michal.piekarczyk.xyz/note/2026-05-01-odsc-closing-notes/) (2026-04-29).
 
 ## 2026-03
 ### Firsts

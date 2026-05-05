@@ -100,6 +100,7 @@ one of the things Armando said that also stuck, about stochastic nature of code.
 
 14. Rich Hickey  , "Simple Made Easy" 
 
+15. adversarial coding https://github.com/sepiariver/GAN-coding
 
 <sup>[x](#references)</sup> 
 

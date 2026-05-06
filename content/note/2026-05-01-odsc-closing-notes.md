@@ -83,7 +83,7 @@ The other analogy is that of someone who leans into tech team  management. In th
 
 To be fair of course znyone who plays an IC role , is still only hands on with a subset of technology and that subset also shifts as tech itself drifts. 
 
-So the open question then is code gen merely anothe such shift in kind.
+So the open question then is code gen merely anothe such shift in kind. Just shifting execution to a  different lqyer of abstraction, as with compilers say.
 
 ## Precision
 one of the things Armando said that also stuck, about stochastic nature of code. So hmm were producing all these fun bags of code but wouldnt it be nice if we can be more preciss about vibing, yea sure spec driven development. Oh wait thats what code code was. Deterministic. Nice.

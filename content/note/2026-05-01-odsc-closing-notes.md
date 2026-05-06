@@ -91,6 +91,9 @@ Deterministic or non deterministic?
 
 Makes me consider when corporations started to outsource work internationally in the 2010s. Teams spread across the US are with close time zones but across continents, the overlap is less and coordination tax goes up. But with Agentic outsourcing, there is no time zone difference. 
 
+## Block box ? Explainable?
+we have been using deep learning blqck box models a-la-the bitter lesson for a while now, agreeing an algorithm can create a better model than by hand tuned feature engineering. And we have acceptef the black box nature therefore. As long as SHAPley can at least explain/interpret. Same for compiled code. How about code code? It is technically still readable. There is theoretically no reason why code code at least can be readable and minimal without being minified.
+
 ## Precision
 one of the things Armando said that also stuck, about stochastic nature of code. So hmm were producing all these fun bags of code but wouldnt it be nice if we can be more preciss about vibing, yea sure spec driven development. Oh wait thats what code code was. Deterministic. Nice.
 

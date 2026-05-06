@@ -87,6 +87,8 @@ So the open question then is code gen merely anothe such shift in kind. Just shi
 
 Or infrastructure as a service with terraform or aws cdk say. You now dont need to setup your own racks of servers and networks. You just provision compute .  Maybe the answer is about compression. it it lossy or lossless?
 
+Deterministic or non deterministic? 
+
 
 ## Precision
 one of the things Armando said that also stuck, about stochastic nature of code. So hmm were producing all these fun bags of code but wouldnt it be nice if we can be more preciss about vibing, yea sure spec driven development. Oh wait thats what code code was. Deterministic. Nice.

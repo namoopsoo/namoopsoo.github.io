@@ -77,10 +77,18 @@ So then what should you know? People talk about T shaped or π shaped knowledge,
 
 Does the Vibe era create an incentive to keep everything at a shallow level?
 
-The ultimate generalist jack of all trades?
+The ultimate generalist jack of all trades? 
+
+The other analogy is that of someone who leans into tech team  management. In that role you shift your time from designing and executing on technical projects, to coordinating projects that a tech team is working on, tracking projects, finding and measuring gaps in execution, coordinating with adjacent teams and with executives. You can share your experience as an IC to level up your IC colleagues and you may try to keep your skills fresh from time to time, rolling up your sleeves, but ypur brain will  proportionally emphasize your glue skills, and your execution muscle memory will become shallow. 
+
+To be fair of course znyone who plays an IC role , is still only hands on with a subset of technology and that subset also shifts as tech itself drifts. 
+
+So the open question then is code gen merely anothe such shift in kind.
 
 ## Precision
 one of the things Armando said that also stuck, about stochastic nature of code. So hmm were producing all these fun bags of code but wouldnt it be nice if we can be more preciss about vibing, yea sure spec driven development. Oh wait thats what code code was. Deterministic. Nice.
+
+## 
 
 # References
 1. Ivan @ datasaur.ai

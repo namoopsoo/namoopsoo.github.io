@@ -100,6 +100,9 @@ one of the things Armando said that also stuck, about stochastic nature of code.
 ## Mythos and tge Halting Problem 
 On security now[16] , interesting comparison of Mythos to Y2K. However, host calls code as math, yet, my response would be thst we have such a thing as the halting problem, where we know we cannot predict statically if a program will finish and so by extension, likely we cannot prove bugs are true or actionable statically (my hypothesis ).  
 
+## Worse Than No Code
+UML? No Code? That was crap. Here is no code take two.
+
 # References
 1. Ivan @ datasaur.ai
 2. https://www.theatlantic.com/app/webview/687022/

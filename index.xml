@@ -171,6 +171,16 @@
 &lt;p&gt;I am wondering about will Gayle write about when is a good time to transition from thinking about and designing a solution to a problem, and writing some code to test things out. i Think this interview style does actually relate to what lately i think about that design skills are really important to save time. But also, to be specific sometimes you can write some quick code that can really be faster than white boarding. but agree that your compute in your head can save you lots of time from going down the wrong path just by your intuition and not because you have actually worked out why.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>spotting the difference</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-03-11-spotting-the-difference/</link>
+      <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-03-11-spotting-the-difference/</guid>
+      <description>&lt;p&gt;I had a crazy issue where a databricks job was taking over 13  hours and failing which had tzken just over 1 hour previously on another  workspace.&lt;/p&gt;
+&lt;p&gt;Turned out after a bit of staring at logs I had a face palming moment because yet again I got bit by spot instances/spot workers.&lt;/p&gt;
+&lt;p&gt;I found in my logs Spark UI these weird errors, &amp;ldquo;Executor 1 removed&amp;rdquo;
+&amp;ldquo;Executor 2 removed&amp;rdquo; ,..  thinking memory issues or asymmetric shuffle issues but then hovered my mouse and saw&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Crowded Wisdom</title>
       <link>https://michal.piekarczyk.xyz/note/2026-03-10-crowded-wisdom/</link>
       <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>

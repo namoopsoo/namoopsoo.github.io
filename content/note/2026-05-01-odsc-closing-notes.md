@@ -105,6 +105,12 @@ On security now[16] , interesting comparison of Mythos to Y2K. However, host cal
 ## Worse Than No Code
 UML? No Code? That was crap. Here is no code take two.
 
+Actually, vibe coded projects, have precursors, similar in incomprehensibility and or black-box-ness. That is, closed-source or DRM projects.
+
+I believe Armando also made a perl joke during his talk as well; vibe code or code gen as write only code, is not only buggy but also high entropy, low signal to noise. Though verifiable. DRM, closed source, already has threatened open source , with Https://malus.sh , a la Evil Corp, potentially as a joke but mayve not.
+
+But neural code next.js cloudflare vnext is alrwady an example. [21] [22]
+
 ## Hiring advice 
 The last talk I attended, by Arturo Natella [17] was about how most job postings cause the right people to self filter in their ambiguity. Lines like "Other duties" are read like "we havent figured out this role yet" . And that often there is a skill wall a "Big List" you are not actually interviewed against. This was less about AI than AI hiring because he was showing a few real job descriptions and then how he would change them. He called this 
 "Key Performance Objectives" or KPOs, like an analog to KPIs. 
@@ -131,8 +137,10 @@ The last talk I attended, by Arturo Natella [17] was about how most job postings
 
 17. Arturo Natella https://www.goamaru.com
 
-
 18. https://developers.cloudflare.com/changelog/post/2026-04-20-kimi-k2-6-workers-ai/
+
+21. Https://malus.sh
+22. https://youtu.be/ateDMU5EGeg , Mo Bitar on next.js and cloudflare 
 
 <sup>[x](#references)</sup> 
 

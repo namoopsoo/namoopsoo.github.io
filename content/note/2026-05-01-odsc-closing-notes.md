@@ -97,7 +97,8 @@ we have been using deep learning blqck box models a-la-the bitter lesson for a w
 ## Precision
 one of the things Armando said that also stuck, about stochastic nature of code. So hmm were producing all these fun bags of code but wouldnt it be nice if we can be more preciss about vibing, yea sure spec driven development. Oh wait thats what code code was. Deterministic. Nice.
 
-
+## Mythos and tge Halting Problem 
+On security now[16] , interesting comparison of Mythos to Y2K. However, host calls code as math, yet, my response would be thst we have such a thing as the halting problem, where we know we cannot predict statically if a program will finish and so by extension, likely we cannot prove bugs are true or actionable statically (my hypothesis ).  
 
 # References
 1. Ivan @ datasaur.ai

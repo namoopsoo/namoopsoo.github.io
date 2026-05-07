@@ -23,6 +23,8 @@ Perhaps unironically, as I was at my gate  waiting for departure, I also saw a p
 
 Back to the speaker's presentation, his point was that indeed the risk of opening up your company to   Anthropic or other companies, giving them a front row seat to your company's data, can be avoided with the open weight models that are now becoming as good as their SaaS counterparts, and with the per token cost coming up, along with surge pricing, also perhaps even a cost benefit too.
 
+Datasaur is not the only company discussing open wwight models. In parallel, Cloudflqre had Agents Week and released serving Kimi K2.6 on WorkersAI. [18].
+
 Between talks, I spoke with colleagues about the future of code. One was inspired by  a conversation I had with one speaker on program static analysis<sup>[11](#references)</sup>, Armando Solar-Lezama, potentially making a come back. Or at least his research team was identifying that there was a gap in code evaluation, bug evaluation in particular. He noted that even Mythos --*which he said he did not have access to*--, would not find  all the bugs, but for the sake of reliability, we do need to find all the bugs. So after his talk, I asked him what was his vision? I wondered, hey, python was so popular for data science, because it was so effortless to start learning, but also come with ease to create bugs that static type  and  memory safe languages do not run into like Golang. And it sounded like yes he sees there is definitely now more room for strongly typed memory safe languages like Rust, though that will still not be enough to make sure new code that is generated is reliable. I think one of my take aways from his talk was that the code generation is producing an unprecedented volume of code that needs to be reviewed and we desparately need better ways of vetting it for reliability. And hopefully code gen now frees us up to focus on bringing back precisely that kind of code analysis that was very popular in the early 2000s but then faded away. 
 
 
@@ -128,6 +130,9 @@ The last talk I attended, by Arturo Natella [17] was about how most job postings
 16. security now, mythos, https://podcasts.apple.com/us/podcast/security-now-audio/id79016499
 
 17. Arturo Natella https://www.goamaru.com
+
+
+18. https://developers.cloudflare.com/changelog/post/2026-04-20-kimi-k2-6-workers-ai/
 
 <sup>[x](#references)</sup> 
 

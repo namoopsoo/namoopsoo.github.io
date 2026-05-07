@@ -103,6 +103,9 @@ On security now[16] , interesting comparison of Mythos to Y2K. However, host cal
 ## Worse Than No Code
 UML? No Code? That was crap. Here is no code take two.
 
+## Hiring advice 
+The last talk I attended, by Arturo Natella [17] was about how most job postings cause the right people to self filter in their ambiguity. Lines like "Other duties" are read like "we havent figured out this role yet" . And that often there is a skill wall a "Big List" you are not actually interviewed against. This was less about AI than AI hiring because he was showing a few real job descriptions and then how he would change them. He called this 
+"Key Performance Objectives" or KPOs, like an analog to KPIs. 
 # References
 1. Ivan @ datasaur.ai
 2. https://www.theatlantic.com/app/webview/687022/
@@ -124,7 +127,7 @@ UML? No Code? That was crap. Here is no code take two.
 15. adversarial coding https://github.com/sepiariver/GAN-coding
 16. security now, mythos, https://podcasts.apple.com/us/podcast/security-now-audio/id79016499
 
-
+17. Arturo Natella https://www.goamaru.com
 
 <sup>[x](#references)</sup> 
 

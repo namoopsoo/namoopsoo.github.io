@@ -52,6 +52,12 @@ Perhaps we can acknowledge though that there are still then two kinds of work in
 ## An Internet for AI Agents
 The first talk I attended was practical. It reminded me of a more fleshed out moltbook.com. Ramesh Raskar laid out a vision<sup>[10](#references)</sup> for how agents can communicate in the future. He pointed out that currently agents are clients and they do not have URI endpoints. And NANDA proposes a DNS for agents among other aspects. 
 
+He also made an intriguing prediction, that in the future, he expects every person will have multiple agents working on their behalf, in agent marketplaces. He had presented this vision for residents of India first, since in India, everyone now already has an Aadhaar card a new identity infrastructure. And a proposal can be for agents to asynchronously in a decentralized way work on the ONDC and UPI. So this makes India very unique. Your agent can represent you in case people want to ask you questions and perform tasks on your behalf. But also he sees a kind of democratization. The agent is called a doot, which is a local word, meaning a messenger. This reminds me of the Shell Game season 1<sup>[12](#references)</sup> actually, where the host attempted to give his agent access to everything about him and used more or less RAG and some agentic loops to handle various tasks for himself. 
+
+I think Ramesh's vision assumes a lot, including the lynchpin that everyone will be an entrepreneur. 
+
+I like the part about freeing up ourselves to not deal with busy work. But yea I have my doubts about everyone managing their own agents. But intriguing nonetheless.
+
 ## MCP Travel agency workshop
 Cool workshop of mcp-toolbox . This session by Wenxin Du helped make a few concepts on building agent apps click for me.
 
@@ -99,7 +105,7 @@ we have been using deep learning blqck box models a-la-the bitter lesson for a w
 ## Precision
 one of the things Armando said that also stuck, about stochastic nature of code. So hmm were producing all these fun bags of code but wouldnt it be nice if we can be more preciss about vibing, yea sure spec driven development. Oh wait thats what code code was. Deterministic. Nice.
 
-## Mythos and tge Halting Problem 
+## Mythos and the Halting Problem 
 On security now[16] , interesting comparison of Mythos to Y2K. However, host calls code as math, yet, my response would be thst we have such a thing as the halting problem, where we know we cannot predict statically if a program will finish and so by extension, likely we cannot prove bugs are true or actionable statically (my hypothesis ).  
 
 ## Worse Than No Code
@@ -127,7 +133,7 @@ The last talk I attended, by Arturo Natella [17] was about how most job postings
 
 10. Ramesh Raskar, https://nanda.media.mit.edu
 11. Armando Solar-Lezama, "Open Challenges for the Next Generation of Programming Agents" , https://x.com/_odsc/status/2047815353967780118 
-12. Shell Game podcast, season 2
+12. Shell Game podcast, season 1
 13. Cal Newport 2026 Feb New Yorker article about automation
 
 14. Rich Hickey  , "Simple Made Easy" 
@@ -138,7 +144,7 @@ The last talk I attended, by Arturo Natella [17] was about how most job postings
 17. Arturo Natella https://www.goamaru.com
 
 18. https://developers.cloudflare.com/changelog/post/2026-04-20-kimi-k2-6-workers-ai/
-
+19. https://www.youtube.com/watch?v=Yxlb0-zTURo , RAmesh Raskar 
 21. Https://malus.sh
 22. https://youtu.be/ateDMU5EGeg , Mo Bitar on next.js and cloudflare 
 

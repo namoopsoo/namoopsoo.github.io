@@ -10,6 +10,9 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Logged
 - Hanging out in Brighton Beach for a friends birthday, wow these moments with nature are so rare, got to appreciate them (2026-05-03).
 
+### Milestoned
+- Made a major update to https://github.com/namoopsoo/logseq_utils for getting those apple notes exports actually migrated into logseq markdown (2026-05-09).
+
 ## 2026-04
 ### Firsts
 - First time trying out [restic](https://restic.readthedocs.io/) for backups, (2026-04-04).

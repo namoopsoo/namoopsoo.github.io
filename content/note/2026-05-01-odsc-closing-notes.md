@@ -117,6 +117,8 @@ I believe Armando also made a perl joke during his talk as well; vibe code or co
 
 But neural code next.js cloudflare vnext is alrwady an example. [21] [22]. Thoggh, to Mo Bitar point on  nature vibe coding hands, with DNA being the neural code, and life being the unit test suite  , yes but the robotics analogy is apt w.r.t. RL, since evolution has no simulation. And thqts why it takes millions of years to add a opposable thumb. RL , interacting with the real worl, is the tricky part
 
+A consultant. 
+
 ## Hiring advice 
 The last talk I attended, by Arturo Natella [17] was about how most job postings cause the right people to self filter in their ambiguity. Lines like "Other duties" are read like "we havent figured out this role yet" . And that often there is a skill wall a "Big List" you are not actually interviewed against. This was less about AI than AI hiring because he was showing a few real job descriptions and then how he would change them. He called this 
 "Key Performance Objectives" or KPOs, like an analog to KPIs. 

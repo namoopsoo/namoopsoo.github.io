@@ -8,6 +8,20 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Git Lfs Poke</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-05-09-git-lfs-poke/</link>
+      <pubDate>Sat, 09 May 2026 12:50:14 -0400</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-05-09-git-lfs-poke/</guid>
+      <description>&lt;p&gt;While I was reviewing my git lfs based logseq markdown backup, I noticed a git lfs inconsistency.&lt;/p&gt;
+&lt;p&gt;So&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git lfs fsck
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;reported 339 .PNG files as &lt;code&gt;pointer: unexpectedGitObject: &amp;quot;assets/IMG_4942.PNG&amp;quot; (treeish 53f01b6616262c6e9bcb6eabb3cc11cb298fab1c) should have been a pointer but was not&lt;/code&gt;, even though when I looked at my &lt;code&gt;.gitattributes&lt;/code&gt; I did see &lt;code&gt;*.PNG filter=lfs diff=lfs merge=lfs -text&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The numbers suggested my .PNG however was not on my git-lfs.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ git lfs ls-files |wc -l 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1715&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;and&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>optionity and constraints</title>
       <link>https://michal.piekarczyk.xyz/note/2026-05-05-options-and-constraints/</link>
       <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>

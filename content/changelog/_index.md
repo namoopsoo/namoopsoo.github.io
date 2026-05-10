@@ -11,7 +11,7 @@ All notable changes to this "human experiment" will be documented in this file.
 - Hanging out in Brighton Beach for a friends birthday, wow these moments with nature are so rare, got to appreciate them (2026-05-03).
 
 ### Milestoned
-- Made a major update to https://github.com/namoopsoo/logseq_utils for getting those apple notes exports actually migrated into logseq markdown (2026-05-09).
+- Made a major [update to logseq_utils](https://github.com/namoopsoo/logseq_utils/blob/main/CHANGELOG.md#2026-05-09) for getting those apple notes exports actually migrated into logseq markdown (2026-05-09).
 
 ## 2026-04
 ### Firsts

@@ -54,7 +54,7 @@ All notable changes to this "human experiment" will be documented in this file.
 
 ### Added
 - Added [Giscus](https://giscus.app) to the posts on my blog (2026-02-21).
-- Added a guthub action automation for creating PRs to inject new updates into my brag doc (2026-02-22).
+- Added a guthub action automation for creating PRs to inject new updates into my brag doc, ".github/workflows/generate-and-pr.yml" (2026-02-22).
 
 ### Changed
 - Updated my hugo from 0.125.6 to 0.145.0, (possibly related to chatgpt.com/codex often creating updates per my tasks that do not run on my local)  (2026-02-21).

@@ -22,4 +22,7 @@ Will post the code here too later.
 
 # References
 1. https://www.bike.nyc/wp-content/uploads/2025/04/2025-Tour-Map.png
-2. https://ridewithgps.com/routes/46474401
+2. gpx data here, https://ridewithgps.com/routes/46474401
+
+3. did not find gpx data here though, https://www.nycbikemaps.com/maps/five-boro-bike-tour-map/interactive-5-boro-bike-tour-map/
+

@@ -5,10 +5,7 @@ date: 2026-05-09T12:50:14-04:00
 # draft: true
 
 # optional thumbnail
-images:
-  - "THUMBNAIL_PLACEHOLDER"
-cover:
-  image: "THUMBNAIL_PLACEHOLDER"
+
 ---
 
 While I was reviewing my git lfs based logseq markdown backup, I noticed a git lfs inconsistency. 

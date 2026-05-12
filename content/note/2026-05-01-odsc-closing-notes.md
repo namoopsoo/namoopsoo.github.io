@@ -122,6 +122,7 @@ A consultant.
 ## Hiring advice 
 The last talk I attended, by Arturo Natella [17] was about how most job postings cause the right people to self filter in their ambiguity. Lines like "Other duties" are read like "we havent figured out this role yet" . And that often there is a skill wall a "Big List" you are not actually interviewed against. This was less about AI than AI hiring because he was showing a few real job descriptions and then how he would change them. He called this 
 "Key Performance Objectives" or KPOs, like an analog to KPIs. 
+
 # References
 1. Ivan @ datasaur.ai
 2. https://www.theatlantic.com/app/webview/687022/
@@ -149,6 +150,9 @@ The last talk I attended, by Arturo Natella [17] was about how most job postings
 19. https://www.youtube.com/watch?v=Yxlb0-zTURo , RAmesh Raskar 
 21. Https://malus.sh
 22. https://youtu.be/ateDMU5EGeg , Mo Bitar on next.js and cloudflare 
+23. Two Bubbles, the token costs and tokrn inflation Anthropic April 2026 https://open.substack.com/pub/techtrenches/p/the-ai-industrial-transformation?r=d7b46&utm_medium=ios
+
+
 
 <sup>[x](#references)</sup> 
 

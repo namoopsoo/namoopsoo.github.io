@@ -86,7 +86,11 @@ Hes like yea theres AI  job washing, that there are Amazon layoffs he pointed to
 But he also noted neverthelesse you  need to read the room. If your company is not doubling down and not helping you reinvent yourself , they will fall behind and take you with them. And reinventing is how he lived his whole life, flipping his career between tech and finance and then finance to data science and then investing. Pivot I guess I realize  was the word perhaps he did not use but sounds right here. 
 
 ## And the Productivity Paradox
-And Dawn Choo gave a talk about how you appear to be more productive with new tools and therefore you thought that gives you more breathing room. But instead you find more on your plate. She notes instead you are on the wrong part of the pyramid and should use the new AI space everyobe is uncertain about to gain more influende to do less work. (Her substack article on this topic too [25]).
+And Dawn Choo gave a talk about how you appear to be more productive with new tools and therefore you thought that gives you more breathing room. But instead you find more on your plate. She notes instead you are on the wrong part of the pyramid and should use the new AI space everyobe is uncertain about to gain more influende to do less work. Rading Her substack article on this topic too [25], reminds me the why. Because yes everyone is trying to catch up and especially knowledge gaps that  leadership has at your company and you can help be the translation layer which data science has always played anyway as she underlines. 
+
+As well as the same non deterministic probabilistic output I hweard others point out too. Sort of a contradiction. That now you can dump out a loe of plumbing code but it can be subtly wrong so now you have to fix it. The "eval gap" she identifies. 
+
+Since I do see this bug introduction duscussion all throughout this conference I dont know why people arent giving the alternative, dont use this to generate your code necessarily since that is riddled with subtle bugs. Use it to speed up the reviews say instead . ( some companies like Code Rabbit do offer this actually ).
 
 ## jack of all trades?
 So then what should you know? People talk about T shaped or π shaped knowledge, where you have broad knowledge in many diverse realms and more specialized knowledge in one or two areas.

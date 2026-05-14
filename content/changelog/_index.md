@@ -14,6 +14,8 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Milestoned
 - Made a major [update to logseq_utils](https://github.com/namoopsoo/logseq_utils/blob/main/CHANGELOG.md#2026-05-09) for getting those apple notes exports actually migrated into logseq markdown (2026-05-09).
 
+### First
+- Random, first time cutting a heel shoe with sheers because shoe was stuck on a foot , becaust it was a zip up and the zipper became defective! Glad I had surgical cast sheers! (2026-05-11).
 ## 2026-04
 ### Firsts
 - First time trying out [restic](https://restic.readthedocs.io/) for backups, (2026-04-04).

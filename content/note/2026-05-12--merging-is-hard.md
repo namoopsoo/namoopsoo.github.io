@@ -13,7 +13,11 @@ But also mind melds are beautiful when they happen. This is not q compromise but
 
 Even when we disregard that code gen is only useful if the time it takes you to create the spec and overhead of fixing tge bugs, is less than just doing it yourself , you get the code dysphoria, too. code bugs of code you dont recognize. you dont idenyify with this code. it is alien.
 
-TBC
+
+# Infinite forks in that non deterministic monkeys on typewriters world
+So many paths though we must Always Be Constraining, to get some traction on a problem.
+
+# TBC..
 
 
 

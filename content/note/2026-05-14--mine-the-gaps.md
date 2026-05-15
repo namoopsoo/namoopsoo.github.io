@@ -1,7 +1,7 @@
 ---
 title: Perception Gaps
 date: 2026-05-14
-draft: true
+draft: false
 ---
 
 Why are  the AI capabilities discussions  so polarizing? People either see current AI as a net negative or net positive. But the gap is a chasm. Well ok maybe there are people who are uncertain too. Okay maybe it is task specific. But the edges are quite extremely different! Why?

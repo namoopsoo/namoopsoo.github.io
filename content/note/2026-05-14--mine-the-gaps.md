@@ -4,8 +4,9 @@ date: 2026-05-14
 draft: true
 ---
 
+Why are  the AI capabilities discussions  so polarizing? People either see current AI as a net negative or net positive. But the gap is a chasm. Well ok maybe there are people who are uncertain too. Okay maybe it is task specific. But the edges are quite extremely different! Why?
 
-So the AI capabilities discussion seems to be polarizing? People either see current AI as a net negative or net positive. But the gap is a chasm. Well ok maybe there are people who are uncertain too. Okay maybe it is task specific. 
+I suspect the split aligns, along whether believe in planning. 
 
 On the one hand, yes there are many AI aided workflows that produce very stable reliable outcomes. And that side is growing. But some people see the billion dollar single person start up around the corner.
 

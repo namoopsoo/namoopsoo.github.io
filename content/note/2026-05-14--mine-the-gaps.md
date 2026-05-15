@@ -9,6 +9,7 @@ So the AI capabilities discussion seems to be polarizing? People either see curr
 
 On the one hand, yes there are many AI aided workflows that produce very stable reliable outcomes. And that side is growing. But some people see the billion dollar single person start up around the corner.
 
+# Some capabilities 
 RAG search is great. Its a great pattern that can be a good boost beyond just BM25. Plus yoou can better contextualize the result in English, say.
 
 Then you can also use this concept for routing questions, tie them to tasks or skills, and boom you have an agent. The possibilities here can be endless perhaps. A solid genefal purpose paradigm shift to building software. You still need to build the skills. If you want them to be reliable and deterministic you should hand code them. 
@@ -21,8 +22,7 @@ Code Gen? Here is our datacenter of geniuses? Or not. This feels very hit or mis
 
 Parallelizing everything with an army of agents? Maybe if the same task, like map reduce. But tasks with unknowns, this seeems to break down withoue humans in the loop.  
 
-# Bottleneck 
-
+# Reality is the Bottleneck 
 I am sure someone has already written abouy this in complexity theory, or chaos theory, but I think humans are at a theoretical upper bound for intelligence and impqct as constrained by the real world. Got reminded of this through the recursive self improvement topic [2] Carl discusses.
 
 Back to the addage that information is not enough for success else everyone would be a six pack ab wielding millionaire, reality is the bottleneck. Definijg intelligence is squishy but I threw in impact there too becauss no matter how good a model is , your brain or a statistical model, it will be wrong. 
@@ -31,10 +31,16 @@ Back to the addage that information is not enough for success else everyone woul
 
 There are not enough atoms in the universe to build compute to predict the correct path through q complex problem. And  path is the operative word here. Reasoning models have a very strange name because they dont think they do. They one shot write plans then run them. They will course correct too of cours but they are doing it in reality not in a self contained logic center. 
 
+They should really be called while -looped models, though code-harnessed , another recent term, is   more fitting.  
 
+# P vs NP Problem 
+Everything may change if the P vs NP Problem is solved. If a problem can be easily verified, is there a way to solve it in general?
+
+As an aside , LLMs feign solving P vs NP because they clearly produce answers in linear time, a consistent token rate. And thqts why jokingly Yann Lecun has called LLMs as giant lookup tables. But yes the look up table cheat code is a cheat code .
 
 1. https://open.substack.com/pub/matthewpikar/p/stop-adopting-ai-start-transforming?r=d7b46&utm_medium=ios
 
 2. https://youtu.be/AkadGXzDqBw Carl on recursive self improvement 
+3. https://michal.piekarczyk.xyz/note/2026-05-01-odsc-closing-notes/
 
-
+4. https://en.wikipedia.org/wiki/P_versus_NP_problem

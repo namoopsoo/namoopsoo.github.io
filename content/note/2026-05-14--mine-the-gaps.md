@@ -44,3 +44,6 @@ As an aside , LLMs feign solving P vs NP because they clearly produce answers in
 3. https://michal.piekarczyk.xyz/note/2026-05-01-odsc-closing-notes/
 
 4. https://en.wikipedia.org/wiki/P_versus_NP_problem
+5. halting problem
+
+6. no free lunch

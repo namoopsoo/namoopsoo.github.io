@@ -26,13 +26,19 @@ Parallelizing everything with an army of agents? Maybe if the same task, like ma
 # Reality is the Bottleneck 
 I am sure someone has already written abouy this in complexity theory, or chaos theory, but I think humans are at a theoretical upper bound for intelligence and impqct as constrained by the real world. Got reminded of this through the recursive self improvement topic [2] Carl discusses.
 
-Back to the addage that information is not enough for success else everyone would be a six pack ab wielding millionaire, reality is the bottleneck. Definijg intelligence is squishy but I threw in impact there too becauss no matter how good a model is , your brain or a statistical model, it will be wrong. 
+Back to the addage that information is not enough for success else everyone would be a six pack ab wielding millionaire, reality is the bottleneck. Defining  intelligence is squishy but I threw in impact there too becauss no matter how good a model is , your brain or a statistical model, it will be wrong. 
 
 > All models are wrong. Some are useful.
 
-There are not enough atoms in the universe to build compute to predict the correct path through q complex problem. And  path is the operative word here. Reasoning models have a very strange name because they dont think they do. They one shot write plans then run them. They will course correct too of cours but they are doing it in reality not in a self contained logic center. 
+### Not really reasoning 
+There are not enough atoms in the universe to build compute to predict the correct path through a complex problem. And  path is the operative word here. Reasoning models have a very strange name because they dont "think", they do.  They one shot write plans then run them<sup>[7](#references)</sup>. They will course correct too of cours but they are doing it in reality not in a self contained logic center. 
 
 They should really be called while -looped models, though code-harnessed , another recent term, is   more fitting.  
+
+### The Age of Reason
+What is a better definition of reasoning? It is using logic and thought experiments and armchair testing ideas. It is thinking out loud. Actually that's probably why reasoning models got their name. Because of the chain of thought. And maybe I should go back to the previous paragraph and distinguish between an active agentic,--*touch and smell the world*--,   and chain of thought. 
+
+So thinking out loud helps people I think in a different way than  the mimickry of what we see in LLM use. We have seen CoT not nedessarily having a benefit<sup>[8,9](#references)</sup>. 
 
 # P vs NP Problem 
 Everything may change if the P vs NP Problem is solved. If a problem can be easily verified, is there a way to solve it in general?
@@ -43,8 +49,13 @@ As an aside , LLMs feign solving P vs NP because they clearly produce answers in
 
 2. https://youtu.be/AkadGXzDqBw Carl on recursive self improvement 
 3. https://michal.piekarczyk.xyz/note/2026-05-01-odsc-closing-notes/
-
 4. https://en.wikipedia.org/wiki/P_versus_NP_problem
 5. halting problem
-
 6. no free lunch
+7. https://michal.piekarczyk.xyz/note/2026-03-04-prompt-driven-development/#reasoning
+
+8. https://arxiv.org/pdf/2504.00294v1 inference time scaling
+
+9. https://youtu.be/ShusuVq32hc , George Montañez , on reasoning 
+
+

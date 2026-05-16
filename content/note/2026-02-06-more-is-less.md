@@ -35,3 +35,7 @@ Maybe Mike Judge was right about Idiocracy, as being where we are heading, even 
 4.  https://www.mercatus.org/system/files/helland-tabarrok_why-are-the-prices-so-damn-high_v2.pdf
 5. https://www.congress.gov/crs-product/IF10557 , productivity
 6. Idiocracy
+7. K shaped economy, https://youtu.be/t4OEweAn0pw 
+
+
+

@@ -167,7 +167,7 @@ The last talk I attended, by Arturo Natella [17] was about how most job postings
 25. Dawn Choo , https://open.substack.com/pub/askdatadawn/p/the-data-career-is-evolving?r=d7b46&utm_medium=ios
 
 26. OpenCode founder on productivity with AI code tools, https://blog.codacy.com/the-creator-of-opencode-thinks-youre-fooling-yourself-about-ai-productivity
-
+27. interesting augmentation radiology example, 11:03 , https://youtu.be/eSABedBwZjQ 
 
 
 <sup>[x](#references)</sup> 

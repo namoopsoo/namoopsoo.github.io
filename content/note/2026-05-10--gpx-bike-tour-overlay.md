@@ -15,7 +15,6 @@ I had a bike commute where I happened to join the 2026 May 3rd 5 borough bike to
 
 The below is an overlay output from a vibe coded ChatGPT session, extracting the overlay data using gpx from my strava data and gpx from the bike tour that looks like is here<sup>[2](#references)</sup>. So in my mind it felt like 5 miles. And looks like it was about 5.92 miles.
 
-{{< figure src="https://s3.amazonaws.com/my-blog-content/2026-05-10--gpx-bike-tour-overlay/overlay-strava-5boro-bike-tour.png" width="50%">}}
 
 
 # Build the overlap
@@ -70,8 +69,7 @@ plot_overlay(
 
 
 
-    
-![png](2026-05-10--gpx-bike-tour-overlay_files/2026-05-10--gpx-bike-tour-overlay_6_1.png)
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2026-05-10--gpx-bike-tour-overlay/overlay-strava-5boro-bike-tour.png" width="50%">}}
     
 
 
@@ -84,8 +82,3 @@ This blogpost was built, by running the ipynb notebook here<sup>[4](#references)
 3. did not find gpx data here though, https://www.nycbikemaps.com/maps/five-boro-bike-tour-map/interactive-5-boro-bike-tour-map/
 4. https://github.com/namoopsoo/gpx-stuff
 5. https://support.ridewithgps.com/hc/en-us/articles/13004717775515-Send-to-Device-on-Mobile#export-to-share:~:text=their%20Files%20app.-,Export%20to%20Share,-Once%20you%27ve%20exported
-
-
-```python
-
-```

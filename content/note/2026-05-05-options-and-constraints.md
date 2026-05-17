@@ -1,6 +1,6 @@
 ---
 date: 2026-05-05
-title: optionity and constraints
+title: Iptionality and Constraints
 ---
 # Settling on Procrastination 
 Having options and constraints is   good in moderation. Sort of a twist on explore and exploit here.

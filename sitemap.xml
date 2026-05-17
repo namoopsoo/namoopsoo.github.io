@@ -3,16 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://michal.piekarczyk.xyz/note/2026-05-17--hat-pocket/</loc>
-    <lastmod>2026-05-17T13:32:56-04:00</lastmod>
+    <lastmod>2026-05-17T14:18:29-04:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/tags/jokes/</loc>
+    <lastmod>2026-05-17T14:18:29-04:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/tags/</loc>
+    <lastmod>2026-05-17T14:18:29-04:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/tags/text-to-image/</loc>
+    <lastmod>2026-05-17T14:18:29-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/note/2026-05-16-interesting-benefit-ai/</loc>
     <lastmod>2026-05-16T19:55:00-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/note/2026-05-14--mine-the-gaps/</loc>
-    <lastmod>2026-05-15T09:21:05-04:00</lastmod>
+    <lastmod>2026-05-17T14:18:29-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/note/2026-05-12--merging-is-hard/</loc>
-    <lastmod>2026-05-17T11:13:32-04:00</lastmod>
+    <lastmod>2026-05-17T14:18:29-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/note/2026-05-10--gpx-bike-tour-overlay/</loc>
     <lastmod>2026-05-10T12:17:49-04:00</lastmod>
@@ -135,7 +144,7 @@
     <lastmod>2026-02-07T15:36:11-05:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/note/2026-01-31-lessons-steve/</loc>
-    <lastmod>2026-02-02T09:27:51-05:00</lastmod>
+    <lastmod>2026-05-17T14:18:29-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/note/2026-01-25-hook-up-cloudflare-rag-search/</loc>
     <lastmod>2026-03-21T11:14:27-04:00</lastmod>
@@ -398,9 +407,6 @@
     <loc>https://michal.piekarczyk.xyz/tags/philosophy/</loc>
     <lastmod>2023-06-10T11:54:41-04:00</lastmod>
   </url><url>
-    <loc>https://michal.piekarczyk.xyz/tags/</loc>
-    <lastmod>2023-06-10T11:54:41-04:00</lastmod>
-  </url><url>
     <loc>https://michal.piekarczyk.xyz/tags/vimeo/</loc>
     <lastmod>2023-06-10T11:54:41-04:00</lastmod>
   </url><url>
@@ -453,9 +459,6 @@
     <lastmod>2025-08-16T22:15:13-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/post/2023-02-18-fact-checking-dark-humor/</loc>
-    <lastmod>2023-02-26T18:33:54-05:00</lastmod>
-  </url><url>
-    <loc>https://michal.piekarczyk.xyz/tags/jokes/</loc>
     <lastmod>2023-02-26T18:33:54-05:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/tags/langchain/</loc>

@@ -31,7 +31,7 @@ The panes, arranged, are like this ,&lt;/p&gt;</description>
       <link>https://michal.piekarczyk.xyz/note/2026-05-14--mine-the-gaps/</link>
       <pubDate>Thu, 14 May 2026 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2026-05-14--mine-the-gaps/</guid>
-      <description>&lt;p&gt;Why are  the AI capabilities discussions  so polarizing? People either see current AI as a net negative or net positive. But the gap is a chasm. Well ok maybe there are people who are uncertain too. Okay maybe it is task specific. But the edges are quite extremely different! Why?&lt;/p&gt;
+      <description>&lt;p&gt;Why are  the AI capabilities discussions  so polarizing? People either see current AI as a net negative or net positive. But the gap is a chasm. Well ok maybe there are people who are uncertain too. Okay maybe it is task specific. But the edges are extremes. Why?&lt;/p&gt;
 &lt;p&gt;I suspect the split aligns, along whether believe in planning.&lt;/p&gt;
 &lt;p&gt;On the one hand, yes there are many AI aided workflows that produce very stable reliable outcomes. And that side is growing. But some people see the billion dollar single person start up around the corner.&lt;/p&gt;</description>
     </item>
@@ -423,15 +423,14 @@ however the cool thing is that I learned about the &lt;code&gt;git apply&lt;/cod
 &lt;p&gt;I have heard many variations of this. The one I like, maybe most, forget precisely where heard it maybe Shane de la Moore, is to not even consider quality as a degree of freedom, just consider that a non-negotiable.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>do you have a flag?</title>
+      <title>Do you have a flag?</title>
       <link>https://michal.piekarczyk.xyz/note/2026-01-31-lessons-steve/</link>
       <pubDate>Sat, 31 Jan 2026 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2026-01-31-lessons-steve/</guid>
-      <description>&lt;h1 id=&#34;no-flag-no-country&#34;&gt;no flag no country&lt;/h1&gt;
-&lt;p&gt;Steve Huyhn (aka A Life Engineered ), discusses here   ,  &lt;a href=&#34;https://youtu.be/oLzj67H-OHo&#34;&gt;https://youtu.be/oLzj67H-OHo&lt;/a&gt; , a few career concepts he says he had to unlearn.&lt;/p&gt;
-&lt;p&gt;One being about hoping if he does good work, it will surely get noticed.&lt;/p&gt;
-&lt;p&gt;But he points out thats highly unlikely to happen.&lt;/p&gt;
-&lt;p&gt;His alternative is to get better at self promoting, starting gently if youre not a natural braggart, highlighting the work of others and then slipping in alongside something you did too, in some email say or chat message.&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;no-flag-no-country&#34;&gt;No flag no country&lt;/h1&gt;
+&lt;p&gt;Steve Huynh (aka A Life Engineered ), discusses&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, a few career concepts he says he had to unlearn about self promotion. I generally follow his sentiment, but I would diverge slightly too.&lt;/p&gt;
+&lt;p&gt;Steve talks about how early in his career, he hoped if he did good work, it will surely get noticed.  But he points out that&amp;rsquo;s highly unlikely to happen.&lt;/p&gt;
+&lt;p&gt;His alternative is to get better at self promoting, starting gently if you&amp;rsquo;re not a natural braggart, highlighting the work of others and then slipping in alongside something you did too, in some email say or chat message.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hook Up Cloudflare Rag Search</title>

@@ -54,14 +54,6 @@ Everything is super real looking , but lets add in some small &amp;ldquo;bark&am
       <description>&lt;p&gt;Thinking this brilliant Balaji Srinivasan ism is that merging is hard . I think he meqnt it broadly, including with a merge in traffic patterns and companies and ideas. I wonder if he had code in mind. Linus Torvalds decided to build a version control system that made it easier to fork and code but if not used cautiously, you will spend an afternoon resolving merge conflicts. Maybe blindly merging and letting tests save you is like trusting an LLM tool to write code for you? But kind of that&amp;rsquo;s the thing, trusting an LLM&amp;rsquo;s diff is accepting a merge in a way and merging is hard.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Gpx Bike Tour Overlay</title>
-      <link>https://michal.piekarczyk.xyz/note/2026-05-10--gpx-bike-tour-overlay/</link>
-      <pubDate>Sun, 10 May 2026 12:04:02 -0400</pubDate>
-      <guid>https://michal.piekarczyk.xyz/note/2026-05-10--gpx-bike-tour-overlay/</guid>
-      <description>&lt;p&gt;I had a bike commute where I happened to join the 2026 May 3rd 5 borough bike tour&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. I was curious how much overlap I had.&lt;/p&gt;
-&lt;p&gt;The below is an overlay output from a vibe coded ChatGPT session, extracting the overlay data using gpx from my strava data and gpx from the bike tour that looks like is here&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;. So in my mind it felt like 5 miles. And looks like it was about 5.92 miles.&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>Git Lfs Poke</title>
       <link>https://michal.piekarczyk.xyz/note/2026-05-09-git-lfs-poke/</link>
       <pubDate>Sat, 09 May 2026 12:50:14 -0400</pubDate>

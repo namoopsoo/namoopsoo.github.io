@@ -66,6 +66,28 @@ Cool workshop of mcp-toolbox . This session by Wenxin Du helped make a few conce
 
 This along with Sara Zanzoterra session on RAG to Agents as well.
 
+## But then I did some more research on MCP 
+
+This field is clearly being heavily discussed this year. I was trying to track down one article on MCP's demise I had lost the link to and found a lot of activity on this topic!
+
+| Date           | Title                                                                             | Author                                      | Link                                                                                                                                        |
+| -------------- | --------------------------------------------------------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2026-04-21     | “MCP is dead, long live CLI”                                                      | Michiel Horstman                            | [medium.com](https://michielh.medium.com/mcp-is-dead-long-live-cli-0fdeba7e7fbf)                                                            |
+| 2026-04-21     | “MCP Is Not Dead, It Is Becoming Plumbing”                                        | Predict Publication                         | [medium.com](https://medium.com/predict/mcp-is-not-dead-it-is-becoming-plumbing-0d954794f13a)                                               |
+| 2026-04-09     | “The Resurgence of CLI in the Era of AI Agents: Why MCP Is Dead, CLI Is Immortal” | Johnny Chan                                 | [medium.com](https://tsjohnnychan.medium.com/the-resurgence-of-cli-in-the-era-of-ai-agents-why-mcp-is-dead-cli-is-immortal-b90786d99e65)    |
+| 2026-04-06     | “MCP is Dead”                                                                     | Nick Babich                                 | [medium.com](https://uxplanet.org/mcp-is-dead-cf16b667ba6d)                                                                                 |
+| 2026-03-21     | “MCP is dead or MCP vs Skills — revisited”                                        | Alon Nisser                                 | [medium.com](https://medium.com/%40alonisser/mcp-is-dead-or-mcp-vs-skills-revisited-daaa51b9a519)                                           |
+| 2026-03-17     | “MCP Isn’t dead. You’re just using it wrong.”                                     | Theo McCabe                                 | [medium.com](https://medium.com/%40tedisaacs/mcp-isnt-dead-you-re-just-using-it-wrong-cc4f6a162c8f)                                         |
+| 2026-03-16     | “MCP Isn't Dead. But It's Not the Default Answer Anymore.”                        | Micheal Lanham                              | [medium.com](https://medium.com/%40Micheal-Lanham/mcp-isnt-dead-but-it-s-not-the-default-answer-anymore-8b88f4ce3224)                       |
+| 2026-03-15     | “MCP is dead; long live MCP”                                                      | Hacker News discussion                      | [news.ycombinator.com](https://news.ycombinator.com/item?id=47380270)                                                                       |
+| 2026-03-14     | “Is MCP Dead? I Don't Know, But Protocol Will Live Forever”                       | Changshan                                   | [medium.com](https://medium.com/%40changshan/is-mcp-dead-i-dont-know-but-protocol-will-live-forever-9e3cd79c9079)                           |
+| 2026 (unknown) | “MCP Is Broken and Anthropic Just Admitted It”                                    | cdcore                                      | [medium.com](https://medium.com/%40cdcore/mcp-is-broken-and-anthropic-just-admitted-it-7eeb8ee41933)                                        |
+| 2026 (unknown) | “MCP Is Dead & Here's What's Actually Killing It”                                 | Towards Artificial Intelligence publication | [medium.com](https://medium.com/towards-artificial-intelligence/mcp-is-dead-ece45c1f80bb)                                                   |
+| 2025-10-08     | “Is MCP the Wrong Abstraction? (Is that True or Another Clickbait Hype)”          | Level Up / GitConnected publication         | [medium.com](https://levelup.gitconnected.com/is-mcp-the-wrong-abstraction-is-that-true-or-another-clickbait-hype-88a4376dc935)             |
+| 2025-06-12     | “Building AI Agents That Actually Do Things: The MCP Revolution”                  | Micheal Lanham                              | [medium.com](https://medium.com/%40Micheal-Lanham/building-ai-agents-that-actually-do-things-the-mcp-revolution-01404de84464)               |
+| 2025 (unknown) | “The Great AI Protocol War: How MCP and A2A Are Reshaping the Agent Landscape”    | Micheal Lanham                              | [medium.com](https://medium.com/%40Micheal-Lanham/the-great-ai-protocol-war-how-mcp-and-a2a-are-reshaping-the-agent-landscape-c602a8dde9ca) |
+
+
 ## Back to why planning is hard
 Sfould refer back to also Cal Newport multi step automation article<sup>[13](#references)</sup> . Yea . Agent Harnesses and verifiability for each step. 
 

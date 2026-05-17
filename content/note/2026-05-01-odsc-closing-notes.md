@@ -100,6 +100,17 @@ I would wager he would identify Vibe Coding as the ultimate Easy Button , leadin
 #### slow is smooth smooth is fast
 I suspect you can incorporate LLMs into your workflow , jumping up and down to the right level of abstraction as needed, without pretending to be Neo from The Matrix , downloading experience. 
 
+#### What do you need to know
+Hearing also 
+here<sup>[29](#references)</sup> , similarly , "oh I learned DSA in school but rarely used it on the job". And arguments about how, well just because it is not being used doesn't mean it was not part of the journey, the learning journey. These are kind of the intangible effects I have heard a lot of other people go into as well. 
+
+I might have written this elsewhere already, but going super deep on whatever it is that you do instead of shallow, is perhaps more important than what it is . Because there are so many topics and so many technologies you start and change. But also people say there are those fundamentals.  And skill transfer. 
+
+This connects to the no code topic too.
+
+#### The enjoyment aspect
+Can shallow work also can pick away at your soul or your ego? There will be many opinions on whether enjoying what one does is a form of entitlement and that some would say work is called work for a reason of course. However, if you do get a chance to go deep on what you do, it can lead to mastery and that is a big aspect of fulfillment. And technology has changed an endless number of times over the millenia. People have been developing their craft and constantly reinventing themselves over and over again. I come back here also to this book, Range, that is also on this topic. 
+
 ## The bitter lesson for software science? 
 But ML says hand wiring neural nets  is a kind of artisanal joinery which will never outperform an algorithm like SGD . So is all software engineering just going to software science? 
 
@@ -111,7 +122,7 @@ Hes like yea theres AI  job washing, that there are Amazon layoffs he pointed to
 But he also noted neverthelesse you  need to read the room. If your company is not doubling down and not helping you reinvent yourself , they will fall behind and take you with them. And reinventing is how he lived his whole life, flipping his career between tech and finance and then finance to data science and then investing. Pivot I guess I realize  was the word perhaps he did not use but sounds right here. 
 
 ## And the Productivity Paradox
-And Dawn Choo gave a talk about how you appear to be more productive with new tools and therefore you thought that gives you more breathing room. But instead you find more on your plate. She notes instead you are on the wrong part of the pyramid and should use the new AI space everyobe is uncertain about to gain more influende to do less work. Rading Her substack article on this topic too [25], reminds me the why. Because yes everyone is trying to catch up and especially knowledge gaps that  leadership has at your company and you can help be the translation layer which data science has always played anyway as she underlines. 
+And Dawn Choo gave a talk about how you appear to be more productive with new tools and therefore you thought that gives you more breathing room. But instead you find more on your plate. She notes instead you are on the wrong part of the pyramid and should use the new AI space everyobe is uncertain about to gain more influence to do less work. Reading Her substack article on this topic too [25], reminds me the why. Because yes everyone is trying to catch up and especially knowledge gaps that  leadership has at your company and you can help be the translation layer which data science has always played anyway as she underlines. 
 
 As well as the same non deterministic probabilistic output I hweard others point out too. Sort of a contradiction. That now you can dump out a loe of plumbing code but it can be subtly wrong so now you have to fix it. The "eval gap" she identifies. 
 
@@ -126,9 +137,9 @@ The ultimate generalist jack of all trades?
 
 The other analogy is that of someone who leans into tech team  management. In that role you shift your time from designing and executing on technical projects, to coordinating projects that a tech team is working on, tracking projects, finding and measuring gaps in execution, coordinating with adjacent teams and with executives. You can share your experience as an IC to level up your IC colleagues and you may try to keep your skills fresh from time to time, rolling up your sleeves, but ypur brain will  proportionally emphasize your glue skills, and your execution muscle memory will become shallow. 
 
-To be fair of course znyone who plays an IC role , is still only hands on with a subset of technology and that subset also shifts as tech itself drifts. 
+To be fair of course anyone who plays an IC role , is still only hands on with a subset of technology and that subset also shifts as tech itself drifts. 
 
-So the open question then is code gen merely anothe such shift in kind. Just shifting execution to a  different lqyer of abstraction, as with compilers say.
+So the open question then is code gen merely another such shift in kind. Just shifting execution to a  different layer of abstraction, as with compilers say.
 
 Or infrastructure as a service with terraform or aws cdk say. You now dont need to setup your own racks of servers and networks. You just provision compute .  Maybe the answer is about compression. it it lossy or lossless?
 
@@ -150,9 +161,9 @@ UML? No Code? That was crap. Here is no code take two.
 
 Actually, vibe coded projects, have precursors, similar in incomprehensibility and or black-box-ness. That is, closed-source or DRM projects.
 
-I believe Armando also made a perl joke during his talk as well; vibe code or code gen as write only code, is not only buggy but also high entropy, low signal to noise. Though verifiable. DRM, closed source, already has threatened open source , with Https://malus.sh , a la Evil Corp, potentially as a joke but mayve not.
+I believe Armando also made a perl joke during his talk as well; vibe code or code gen as write only code, is not only buggy but also high entropy, low signal to noise. Though verifiable. DRM, closed source, already has threatened open source , with Https://malus.sh , a la Evil Corp, potentially as a joke but maybe not.
 
-But neural code next.js cloudflare vnext is alrwady an example. [21] [22]. Thoggh, to Mo Bitar point on  nature vibe coding hands, with DNA being the neural code, and life being the unit test suite  , yes but the robotics analogy is apt w.r.t. RL, since evolution has no simulation. And thqts why it takes millions of years to add a opposable thumb. RL , interacting with the real worl, is the tricky part
+But neural code next.js cloudflare vnext is already an example. [21] [22]. Though, to Mo Bitar point on  nature vibe coding hands, with DNA being the neural code, and life being the unit test suite  , yes but the robotics analogy is apt w.r.t. RL, since evolution has no simulation. And thats why it takes millions of years to add a opposable thumb. RL , interacting with the real worl, is the tricky part
 
 A consultant. 
 
@@ -195,10 +206,9 @@ The last talk I attended, by Arturo Natella [17] was about how most job postings
 27. interesting augmentation radiology example, 11:03 , https://youtu.be/eSABedBwZjQ 
 
 28. https://uxplanet.org/mcp-is-dead-cf16b667ba6d 
+29.  "I don't like Programming" | Prime Reacts, https://youtube.com/watch?v=r6EXZcTJyaA
+
+30. Book, Range
+
 <sup>[x](#references)</sup> 
-
-
- 
-
-
 

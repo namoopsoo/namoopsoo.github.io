@@ -5,7 +5,7 @@ title: Merging is hard
 
 Thinking this brilliant Balaji Srinivasan ism is that merging is hard . I think he meqnt it broadly, including with a merge in traffic patterns and companies and ideas. I wonder if he had code in mind. Linus Torvalds decided to build a version control system that made it easier to fork and code but if not used cautiously, you will spend an afternoon resolving merge conflicts. Maybe blindly merging and letting tests save you is like trusting an LLM tool to write code for you? But kind of that's the thing, trusting an LLM's diff is accepting a merge in a way and merging is hard.   
 
-There is this concept that all compromises suck and you can end up in a upside down U shaped hell , when you over-compromise,--*an intersection in set theory if you will*--, or a set theory Union a upper case U , with no compromise, just live as neighboring ideas in peace, perfectly ambivalent . 
+There is this concept that all compromises suck and you can end up in a upside down U shaped hell , when you over-compromise,--*an intersection  ∩ in set theory if you will*--, or a set theory Union a upper case U ,  ∪ , with no compromise, just live as neighboring ideas in peace, perfectly ambivalent . My musing is, with ∩, everyone is stuck at the top of a mountain , where it is quite crowded and unstable. And with ∪, there is enough space for everyone but no one touches no one talks so it is mutually exclusively lonely.
 
 Idea mergers are hard because they require trade offs. Maybe thats why in capitalism, there are so many startup idea forks. 
 
@@ -33,5 +33,7 @@ A similar use case is porting legacy code, from one language to another say. Or 
 1. https://blog.codacy.com/the-creator-of-opencode-thinks-youre-fooling-yourself-about-ai-productivity
 
 2. https://youtube.com/watch?v=Mue4f3WcsmI 
+3. https://en.wikipedia.org/wiki/Intersection
+4. https://www.reddit.com/r/learnmath/comments/1b0njvg/why_is_the_set_intersection_symbol_an_upside_down/
 
 

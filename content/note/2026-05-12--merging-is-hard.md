@@ -17,8 +17,17 @@ Even when we disregard that code gen is only useful if the time it takes you to 
 # Infinite forks in that non deterministic monkeys on typewriters world
 So many paths though we must Always Be Constraining, to get some traction on a problem.
 
+
+# ...
+## the mundanity vs the novelty
+I like the point of view [2] here, use LLMs for the  mundane not the novel. His statement was about slop and the lower quality that is slowing teams down who  suffer from the new bugs and reduced quality. But I suspect he would agree with the new effect of now people only having a shallow understanding of the code. Abstraction is of course a part of code but writing underneath the abstraction gives you depth of understanding. It is like the difference between writing then synthesizing , vs writing a prompt or conversing with a coding agent and receiving an artifact no one looks at. The act of learning and gaining experience is perhaps mysterious but when it comes easy and you didnt roll up your sleeves, there is no scar tissue, it is just passive knowledge. 
+
 # TBC..
 
 
 
 1. https://blog.codacy.com/the-creator-of-opencode-thinks-youre-fooling-yourself-about-ai-productivity
+
+2. https://youtube.com/watch?v=Mue4f3WcsmI 
+
+

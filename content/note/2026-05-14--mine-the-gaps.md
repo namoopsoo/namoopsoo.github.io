@@ -24,7 +24,9 @@ Code Gen? Here is our datacenter of geniuses? Or not. This feels very hit or mis
 Parallelizing everything with an army of agents? Maybe if the same task, like map reduce. But tasks with unknowns, this seems to break down without humans in the loop.  
 
 ## Nod to the mundane
-I discussed the mundane here<sup>[11](#references)</sup>. To sharpen this up, you might say there are a set of tasks like repetitive work and also they are laborious and the benefit in doing the manual labor if there were a better alternative is unclear. I remember there were a few times in my life, in high school and in college, where I would do research in a library by looking up materials using a computer terminal, and then physically walking to the various books from my results on the shelves and flipping through them, to judge their relevance. Apparently the physical *wandering in a circle* is the embedded in the original Latin `-circare`<sup>[12](#references)</sup>.
+I discussed the mundane here<sup>[11](#references)</sup>. To sharpen this up, you might say there are a set of tasks like repetitive work and also they are laborious and the benefit in doing the manual labor if there were a better alternative is unclear. I remember there were a few times in my life, in high school and in college, where I would do research in a library by looking up materials using a computer terminal, and then physically walking to the various books from my results on the shelves and flipping through them, to judge their relevance. Apparently the physical *wandering in a circle* is embedded in the original Latin `-circare`<sup>[12](#references)</sup> meaning. Is there a benefit to the fiber, the slow pace of research? Search is so much faster we dropped the *"re-"*! I wouldn't necessarily want to go back to that kind of pace, but it definitely feels more rewarding to find the thing you were looking for if you had to physically walk to it took more time among the false positives.
+
+I also tend to think through the transition from spiral bound maps and Map Quest down to Google-mapping your way to a destination. When I was young, I used to often be a car navigator during family trips before learning to drive. I would follow along on the map, flipping pages as needed, to make sure we took the right turns, well unless they were left turns of course. There was some missing of exits on highways and even some talking to strangers when even maps were not clear enough. Today I admit I use GPS navigation for nearly all trips. If I'm driving alone, I enjoy how the road lets me completely empty my mind. Instead of focusing on not missing a turn, say, I get to just handle the steering wheel and really feel just basal reflexes in complete silence. Now when driving becomes illegal because manual driving is seen as wreckless, that will be quite a sad day.
 
 # Reality is the Bottleneck 
 I am sure someone has already written about this in complexity theory, or chaos theory, but I think humans are at a theoretical upper bound for intelligence and impact as constrained by the real world. Got reminded of this through the recursive self improvement topic [2] Carl discusses.
@@ -47,6 +49,8 @@ So thinking out loud helps people I think in a different way than  the mimickry 
 Everything may change if the P vs NP Problem is solved. If a problem can be easily verified, is there a way to solve it in general?
 
 As an aside , LLMs feign solving P vs NP because they clearly produce answers in linear time, a consistent token rate. And that's why jokingly Yann Lecun has compared LLMs to giant lookup tables. But yes the look up table cheat code is a cheat code to P vs NP.
+
+# References
 
 1. https://open.substack.com/pub/matthewpikar/p/stop-adopting-ai-start-transforming?r=d7b46&utm_medium=ios
 

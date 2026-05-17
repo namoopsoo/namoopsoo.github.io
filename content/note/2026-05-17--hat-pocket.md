@@ -3,7 +3,9 @@ title: "Hat Pocket"
 # slug: "2026-05-17--hat-pocket"
 date: 2026-05-17T13:04:04-04:00
 # draft: true
-
+tags:
+  - jokes
+  - text-to-image
 # optional thumbnail
 images:
   - "https://s3.amazonaws.com/my-blog-content/2026-05-17--hat-pocket/May 17-2026--01_07_18 PM.png"

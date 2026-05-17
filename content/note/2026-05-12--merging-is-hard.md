@@ -20,21 +20,16 @@ So many paths though we must Always Be Constraining, to get some traction on a p
 
 
 # ...
-## the mundanity vs the novelty
+## The mundanity vs the novelty
 I like the point of view [2] here, use LLMs for the  mundane not the novel. His statement was about slop and the lower quality that is slowing teams down who  suffer from the new bugs and reduced quality. But I suspect he would agree with the new effect of now people only having a shallow understanding of the code. Abstraction is of course a part of code but writing underneath the abstraction gives you depth of understanding. It is like the difference between writing then synthesizing , vs writing a prompt or conversing with a coding agent and receiving an artifact no one looks at. The act of learning and gaining experience is perhaps mysterious but when it comes easy and you didnt roll up your sleeves, there is no scar tissue, it is just passive knowledge. 
 
-For the mundane, there are so many greatbplaces Code Gen can shine here. Migrations. Can be well defined and you often need to do the same thing over and over again. Like a function signature update    in your code, that happens in many places. Or youre using an sdk that has  moved modules around forcing you to follow along if you want to take advantage of the new version (scikit learn has rearranged imputation I recall off the top of my head). 
+For the mundane, there are so many great places Code Gen can shine here. Migrations. Can be well defined and you often need to do the same thing over and over again. Like a function signature update    in your code, that happens in many places. Or youre using an sdk that has  moved modules around forcing you to follow along if you want to take advantage of the new version (sci-kit learn has rearranged imputation I recall off the top of my head). 
 
 A similar use case is porting legacy code, from one language to another say. Or a distillation in the same language.   
 
 # TBC..
 
-
-
 1. https://blog.codacy.com/the-creator-of-opencode-thinks-youre-fooling-yourself-about-ai-productivity
-
 2. https://youtube.com/watch?v=Mue4f3WcsmI 
 3. https://en.wikipedia.org/wiki/Intersection
 4. https://www.reddit.com/r/learnmath/comments/1b0njvg/why_is_the_set_intersection_symbol_an_upside_down/
-
-

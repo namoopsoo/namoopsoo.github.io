@@ -169,7 +169,7 @@ The last talk I attended, by Arturo Natella [17] was about how most job postings
 26. OpenCode founder on productivity with AI code tools, https://blog.codacy.com/the-creator-of-opencode-thinks-youre-fooling-yourself-about-ai-productivity
 27. interesting augmentation radiology example, 11:03 , https://youtu.be/eSABedBwZjQ 
 
-
+28. https://uxplanet.org/mcp-is-dead-cf16b667ba6d 
 <sup>[x](#references)</sup> 
 
 

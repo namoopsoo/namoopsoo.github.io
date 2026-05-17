@@ -28,7 +28,7 @@
       <link>https://michal.piekarczyk.xyz/note/2026-05-12--merging-is-hard/</link>
       <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2026-05-12--merging-is-hard/</guid>
-      <description>&lt;p&gt;Thinking this brilliant Balaji Srinivasan ism is that merging is hard . I think he meqnt it broadly, including with a merge in traffic patterns and companies and ideas. I wonder if he had code in mind. Linus Torvalds decided to build a version control system that made it easier to fork and code but if not used cautiously, you will spend an afternoon rebasing. Maybe blindly merging and letting tests save you is like trusting an LLM tool to write code for you? But kind of that&amp;rsquo;s the thing, trusting an LLM&amp;rsquo;s diff is accepting a merge in a way and merging is hard.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Thinking this brilliant Balaji Srinivasan ism is that merging is hard . I think he meqnt it broadly, including with a merge in traffic patterns and companies and ideas. I wonder if he had code in mind. Linus Torvalds decided to build a version control system that made it easier to fork and code but if not used cautiously, you will spend an afternoon resolving merge conflicts. Maybe blindly merging and letting tests save you is like trusting an LLM tool to write code for you? But kind of that&amp;rsquo;s the thing, trusting an LLM&amp;rsquo;s diff is accepting a merge in a way and merging is hard.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Gpx Bike Tour Overlay</title>

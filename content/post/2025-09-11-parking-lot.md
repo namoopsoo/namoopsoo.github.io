@@ -1,5 +1,5 @@
 ---
-title: "2025 09 11 Parking Lot"
+title: "Parking Lot"
 # slug: "2025-09-11-parking-log"
 date: 2025-09-11
 # draft: true
@@ -9,6 +9,10 @@ images:
   - "https://s3.amazonaws.com/my-blog-content/2025-09-11-parking-log/image_1760829837192_0.png" 
 cover:
   image: "https://s3.amazonaws.com/my-blog-content/2025-09-11-parking-log/image_1760829837192_0.png" 
+
+tags:
+  - jokes
+  - text-to-image
 ---
 At my work, our team meets daily to discuss our goings on but I think the part I think everyone gets the most utility from is the affectionately named parking lot, where we talk through issues that are blocking people in their efforts and the team does ad hoc resolution sessions.
 

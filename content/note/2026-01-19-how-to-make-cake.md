@@ -79,7 +79,8 @@ But we didnt do a good job of predicting the 2000 dot com bubble, the 2008 mortg
 Im reminded by the Nassim Taleb graphic of a Turkey forecasting everything is great, right before ThanksGiving! 
 
 
-
+# Risk though
+The AI Snake Oil discusses one side of predictions and risk management and market making [6] is the flip side. I think Ray Dalio would take the other side as well along with Lloyd Blankfein I suspect . 
   
 
 # references
@@ -90,6 +91,8 @@ Im reminded by the Nassim Taleb graphic of a Turkey forecasting everything is gr
 4. aueomation bias, noted elsewhere, https://youtu.be/P5HxTdkitmA , Julian Whatley 
 5. expert advice, as general adviCe, https://youtu.be/o2S2w9RiNtI , Julian Whatley 
 
+
+6. risk management point of view, Lloyd Blankfein, and market making, inteeurview Sam Harris episode, 473 Making Sense
 
 
 

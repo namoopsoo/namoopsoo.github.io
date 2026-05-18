@@ -165,7 +165,9 @@ I believe Armando also made a perl joke during his talk as well; vibe code or co
 
 But neural code next.js cloudflare vnext is already an example. [21] [22]. Though, to Mo Bitar point on  nature vibe coding hands, with DNA being the neural code, and life being the unit test suite  , yes but the robotics analogy is apt w.r.t. RL, since evolution has no simulation. And thats why it takes millions of years to add a opposable thumb. RL , interacting with the real worl, is the tricky part
 
-A consultant. 
+A consultant. Create a passable demo then say bye. 
+
+Why is this relevant? Building greenfield is easy. Changing is hard. All the no code low code projects Ive worked on have this theme in common. The initial abstraction works during the demo. But then you want to add more data, change your data model, add another integration. All that is now gated behind your no code solution. Code code is powerful and infinitely extensible, and simply doesnt have this lock in problem. This is discussed in [29] too.
 
 ## Hiring advice 
 The last talk I attended, by Arturo Natella [17] was about how most job postings cause the right people to self filter in their ambiguity. Lines like "Other duties" are read like "we havent figured out this role yet" . And that often there is a skill wall a "Big List" you are not actually interviewed against. This was less about AI than AI hiring because he was showing a few real job descriptions and then how he would change them. He called this 

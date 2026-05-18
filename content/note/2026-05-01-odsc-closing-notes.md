@@ -64,7 +64,13 @@ I like the part about freeing up ourselves to not deal with busy work. But yea I
 ## MCP Travel agency workshop
 Cool workshop of mcp-toolbox . This session by Wenxin Du helped make a few concepts on building agent apps click for me.
 
+A take away though is, you can build out skills for an agent to, say translate natural language to sql, which was the first iteration during the workshop, but that was acknowledged as too risky, since there is a risk of someone running all kinds of unsafe queries on your database. So then through several iterations in the workshop, RBAC was added so agents powers are limited, and only to the access intended for the specific person who the agent is interacting with. And the natural language to SQL was also made more restricted, as well. So then you kind of end up with something that is quite similar to wht we had before, which was sql prepared statements. So mcp-toolbox also uses its own flavor of parameterized restricted prepared statements. [31]. So are we sort of back where we have started? 
+
+
+
 This along with Sara Zanzoterra session on RAG to Agents as well.
+
+
 
 ## But then I did some more research on MCP 
 
@@ -211,6 +217,6 @@ The last talk I attended, by Arturo Natella [17] was about how most job postings
 29.  "I don't like Programming" | Prime Reacts, https://youtube.com/watch?v=r6EXZcTJyaA
 
 30. Book, Range
-
+31. https://mcp-toolbox.dev/documentation/configuration/tools/
 <sup>[x](#references)</sup> 
 

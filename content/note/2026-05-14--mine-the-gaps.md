@@ -28,6 +28,13 @@ I discussed the mundane here<sup>[11](#references)</sup>. To sharpen this up, yo
 
 I also tend to think through the transition from spiral bound maps and Map Quest down to Google-mapping your way to a destination. When I was young, I used to often be a car navigator during family trips before learning to drive. I would follow along on the map, flipping pages as needed, to make sure we took the right turns, well unless they were left turns of course. There was some missing of exits on highways and even some talking to strangers when even maps were not clear enough. Today I admit I use GPS navigation for nearly all trips. If I'm driving alone, I enjoy how the road lets me completely empty my mind. Instead of focusing on not missing a turn, say, I get to just handle the steering wheel and really feel just basal reflexes in complete silence. Now when driving becomes illegal because manual driving is seen as wreckless, that will be quite a sad day.
 
+## The Brain Drain has already hit us before?
+Maybe we have been fighting brain drain aka skill shift, since frameworks and tools were a thing? You no longer need heavy math skills or software skills to build ML systems. (A coworker mentioned the bootcamp effect).  Some have said other than frameworks tue skills have more focus on domain knowledge, yet  deep learning has taken that away too, with the bitter lesson. 
+
+Maybe systems thinking is the only thing tuats left? Clean modular design? Simplicty, entropy management? 
+
+
+
 # Reality is the Bottleneck 
 I am sure someone has already written about this in complexity theory, or chaos theory, but I think humans are at a theoretical upper bound for intelligence and impact as constrained by the real world. Got reminded of this through the recursive self improvement topic [2] Carl discusses.
 

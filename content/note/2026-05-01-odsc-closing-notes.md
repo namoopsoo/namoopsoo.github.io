@@ -179,6 +179,10 @@ Why is this relevant? Building greenfield is easy. Changing is hard. All the no 
 The last talk I attended, by Arturo Natella [17] was about how most job postings cause the right people to self filter in their ambiguity. Lines like "Other duties" are read like "we havent figured out this role yet" . And that often there is a skill wall a "Big List" you are not actually interviewed against. This was less about AI than AI hiring because he was showing a few real job descriptions and then how he would change them. He called this 
 "Key Performance Objectives" or KPOs, like an analog to KPIs. 
 
+# The Tool Promise 
+
+Will we then just rely on tools getting better<sup>[33](#references)</sup> like this 2025-12 moment? It will work soon it will be real good?
+
 # References
 1. Ivan @ datasaur.ai
 2. https://www.theatlantic.com/app/webview/687022/
@@ -218,5 +222,12 @@ The last talk I attended, by Arturo Natella [17] was about how most job postings
 
 30. Book, Range
 31. https://mcp-toolbox.dev/documentation/configuration/tools/
+
+32. The one shotting interview idea, Mo Bitar on Andrej , https://youtu.be/ZugX7a99dLk?t=308 
+33. Andrej, ok, https://youtu.be/96jN2OCOfLs 
+
+
+
+
 <sup>[x](#references)</sup> 
 

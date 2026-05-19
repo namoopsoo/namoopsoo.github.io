@@ -179,9 +179,9 @@ Why is this relevant? Building greenfield is easy. Changing is hard. All the no 
 The last talk I attended, by Arturo Natella [17] was about how most job postings cause the right people to self filter in their ambiguity. Lines like "Other duties" are read like "we havent figured out this role yet" . And that often there is a skill wall a "Big List" you are not actually interviewed against. This was less about AI than AI hiring because he was showing a few real job descriptions and then how he would change them. He called this 
 "Key Performance Objectives" or KPOs, like an analog to KPIs. 
 
-# The Tool Promise 
+# The Tool Promise / Hope
 
-Will we then just rely on tools getting better<sup>[33](#references)</sup> like this 2025-12 moment? It will work soon it will be real good?
+Will we then just rely on tools getting better<sup>[33](#references)</sup> like this 2025-12 moment Andrej Karpathy descrubes where suddenly Claude output has been less buggy for him? It will work soon it will be real good? He mentions we went from resolving counting r's in strawberry with perhaps a hack (?) to other jagged edges aroun what code gen models with agentic harnesses had been tuned for with RL. And essentially his take is agentic engineering is taking the jagged results and making them high quality while benefiting from the speed/productivity boost. 
 
 # References
 1. Ivan @ datasaur.ai

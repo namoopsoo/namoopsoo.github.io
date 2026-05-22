@@ -183,6 +183,13 @@ The last talk I attended, by Arturo Natella [17] was about how most job postings
 
 Will we then just rely on tools getting better<sup>[33](#references)</sup> like this 2025-12 moment Andrej Karpathy descrubes where suddenly Claude output has been less buggy for him? It will work soon it will be real good? He mentions we went from resolving counting r's in strawberry with perhaps a hack (?) to other jagged edges aroun what code gen models with agentic harnesses had been tuned for with RL. And essentially his take is agentic engineering is taking the jagged results and making them high quality while benefiting from the speed/productivity boost. 
 
+## Throughput thoughts 
+
+The log linear scaling laws were real. And I think prompt complexity to correctness throughput is likely also going to pop out as a real result. Riffing off Mo Bitar's<sup>[34](#references)</sup> note on a tweet result to this effect. And this seems to align with the pattern I was dicussing from Peter Steinberger's<sup>[9](#references)</sup>  experience too. He seemed to have landed on a kind of sweet spot for throughput of how much you specify, in a prompt, with the expectation of how correct the output will be.
+
+
+
+
 # References
 1. Ivan @ datasaur.ai
 2. https://www.theatlantic.com/app/webview/687022/
@@ -192,7 +199,7 @@ Will we then just rely on tools getting better<sup>[33](#references)</sup> like 
 7. https://multithreaded.stitchfix.com/blog/2019/03/11/FullStackDS-Generalists/
 8. https://hbr.org/2019/03/why-data-science-teams-need-generalists-not-specialists
 
-9. https://youtu.be/8lF7HmQ_RgY&t=4180
+9. https://youtu.be/8lF7HmQ_RgY&t=4180 , Peter Steinberger 
 
 10. Ramesh Raskar, https://nanda.media.mit.edu
 11. Armando Solar-Lezama, "Open Challenges for the Next Generation of Programming Agents" , https://x.com/_odsc/status/2047815353967780118 
@@ -225,7 +232,7 @@ Will we then just rely on tools getting better<sup>[33](#references)</sup> like 
 
 32. The one shotting interview idea, Mo Bitar on Andrej , https://youtu.be/ZugX7a99dLk?t=308 
 33. Andrej, ok, https://youtu.be/96jN2OCOfLs 
-
+34. https://youtu.be/SKTsNV41DYg
 
 
 

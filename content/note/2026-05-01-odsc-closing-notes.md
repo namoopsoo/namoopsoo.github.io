@@ -187,6 +187,7 @@ Will we then just rely on tools getting better<sup>[33](#references)</sup> like 
 
 The log linear scaling laws were real. And I think prompt complexity to correctness throughput is likely also going to pop out as a real result. Riffing off Mo Bitar's<sup>[34](#references)</sup> note on a tweet result to this effect. And this seems to align with the pattern I was dicussing from Peter Steinberger's<sup>[9](#references)</sup>  experience too. He seemed to have landed on a kind of sweet spot for throughput of how much you specify, in a prompt, with the expectation of how correct the output will be.
 
+A line from Mo around 7:15<sup>[34](#references)</sup> or so was ringing true for me, that he would be uncomfortable shipping the code given its quality, well after actually looking at it, as opposed to just observing whether it passed tests. I suspect that feeling of retch is proportional to how close you feel to your customer. If you are in a very large company, you might feel more comfortable passing that code along but if you are in a smaller company, you have a higher sense of obligation to the quality.
 
 
 

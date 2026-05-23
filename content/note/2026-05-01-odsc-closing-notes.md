@@ -39,12 +39,14 @@ One colleague I spoke with was in the audience for this talk as well . They had 
 
 Personally, I'm of the thought that most code I have generated, has had a low signal to slop ratio. Or at least it was too low for my slop tolerance. And so I have been so far finding<sup>[36](#references)</sup>, the main benefit in one off POCs or where I intentionally was building a non-production capability that I otherwise would not have had the time for.  But I don't see myself using code gen in place of real learning opportunities . And building without understanding what I'm building never came naturally to me. Or at least there's a goldilocks sweet spot of understanding where I like to hang out.
 
+# Intentions chunked
 Roge Karma points out<sup>[4](#references)</sup> in his article, citing a SemiAnalysis piece<sup>[5](#references)</sup>, deconstructing knowledge work as chunks of Read, Think, Write and Verify. And that makes it a good candidate for building blocks in agentic flows, that can be learned, as long as the criteria are well defined. I pick things up I put things down. In other words, can knowledge work be cut up into units of work that are commoditized. I would flag here that this sounds remarkably similar to the vision of the waterfall software planning model that the agile manifesto<sup>[6](#references)</sup> of 2001 responded too, as well as the Data Science as Pin Factory article<sup>[7,8](#references)</sup> from 2019 written in response to the desire to assembly-line-ify data science. The agile software movement pointed out that software projects are messy and customers cannot accurately describe what they want. And Eric Colson extended this to the messiness of extracting signal from data. In fact his description of the ideal data science pin factory echoes that SemiAnalysis article:
 > “one person sources the data, another models it, a third implements it, a fourth measures it”
 
 During the conference, I was chatting with another colleague who was excitedly plotting how she can carve out some EDA time soon--Exploratory Data Analysis time--with an unstructured dataset she has been sitting on, using some new techniques the conference inspired her to try. She believes she would need at least a good 6 months, of, finding time in the cracks of her day job, to determine if there is enough there there in her dataset, before even proposing an improvement that her customer can consider. 
 
-In an interview<sup>[9](#references)</sup> with Peter Steinberger--creator of OpenClaw, an open source agent--, I listened to, he described his niche as  "difficult but not too interesting". This is precisely the opposite of low hanging fruit, the problems that are right there in front of you, easy to understand, easy to describe quick wins. He responds to people who attempt to preplan a backlog of units of work, orchestrating a team of agents to coordinate and execute on the plan:
+In an interview<sup>[9](#references)</sup> with Peter Steinberger--creator of OpenClaw, an open source agent--, I listened to a few months back, he described his niche as  "difficult but not too interesting". This is precisely the opposite of low hanging fruit, the problems that are right there in front of you, easy to understand, easy to describe quick wins like the SemiAnalysis Read-Think-Write-Verify chunks. Or at least they are of much higher frequency and smaller scale than weeks or months. Peter responds to people who attempt to preplan a backlog of units of work, orchestrating a team of agents to coordinate and execute on the plan:
+
 
 > *"I don't believe this works. Like, this is the waterfall model of software building. This we learned long ago that this doesn't work. Like, yes, people work differently and maybe it does work for some. I just don't see how this could work for me. Like, I have to start with an idea and often I purposefully under-prompt the agent so it would do something that would give me new ideas. You like maybe like 80% of the things I assumed were like crap, but like there were like two things like, 'oh, I didn't think about that way.'*
 
@@ -52,27 +54,24 @@ In an interview<sup>[9](#references)</sup> with Peter Steinberger--creator of Op
 
 That is a reflection on the creative process. I think if anyone would, Steinberger would be a good judge of how agentic programming can massively speed up your experimentation loop, but it nevertheless is a loop you cannot reduce into a clearly defined deterministic sequence of units you can assign over to your army of agents.
 
+#### Good bye project planning
 I hear Steinberger's take, more than anything as, that agentic programming is the final nail in the coffin of using product planned roadmaps to derisk quarter long software development efforts. 
 
 Perhaps we can acknowledge though that there are still then two kinds of work in the themes of explore and exploit: spikes that are open ended that produce research artifacts and repetitive tasks that are more well defined because you have done them many times already. And agentic work can perhaps make the first kind easier to bound box.
 
-## An Internet for AI Agents
+# An Internet for AI Agents
 The first talk I attended was practical. It reminded me of a more fleshed out moltbook.com. Ramesh Raskar laid out a vision<sup>[10](#references)</sup> for how agents can communicate in the future. He pointed out that currently agents are clients and they do not have URI endpoints. And NANDA proposes a DNS for agents among other aspects. 
 
-He also made an intriguing prediction, that in the future, he expects every person will have multiple agents working on their behalf, in agent marketplaces. He had presented this vision for residents of India first, since in India, everyone now already has an Aadhaar card a new identity infrastructure. And a proposal can be for agents to asynchronously in a decentralized way work on the ONDC and UPI. So this makes India very unique. Your agent can represent you in case people want to ask you questions and perform tasks on your behalf. But also he sees a kind of democratization. The agent is called a doot, which is a local word, meaning a messenger. This reminds me of the Shell Game season 1<sup>[12](#references)</sup> actually, where the host attempted to give his agent access to everything about him and used more or less RAG and some agentic loops to handle various tasks for himself. 
+He also made an intriguing prediction, that in the future, he expects every person will have multiple agents working on their behalf, in agent marketplaces. He had presented this vision for residents of India first, since in India, everyone now already has an Aadhaar card a new identity infrastructure, for a while now. And a proposal can be for agents to asynchronously in a decentralized way work on the ONDC and UPI. So this makes India very unique. Your agent can represent you in case people want to ask you questions and perform tasks on your behalf. But also he sees a kind of democratization. The agent is called a doot, which is a local word, meaning a messenger. This reminds me of the Shell Game season 1<sup>[12](#references)</sup> actually, where the host attempted to give his agent access to everything about him and used more or less RAG and some agentic loops to handle various tasks for himself. 
 
 I think Ramesh's vision assumes a lot, including the lynchpin that everyone will be an entrepreneur. 
 
 I like the part about freeing up ourselves to not deal with busy work. But yea I have my doubts about everyone managing their own agents. But intriguing nonetheless.
 
-## MCP Travel agency workshop
-Cool workshop of mcp-toolbox . This session by Wenxin Du helped make a few concepts on building agent apps click for me.
+# MCP Travel agency workshop
+I also attended a workshop of `mcp-toolbox`, a Google library to get started faster building out your own MCP server. This session by Wenxin Du helped make a few concepts on building agent apps click for me.
 
-A take away though is, you can build out skills for an agent to, say translate natural language to sql, which was the first iteration during the workshop, but that was acknowledged as too risky, since there is a risk of someone running all kinds of unsafe queries on your database. So then through several iterations in the workshop, RBAC was added so agents powers are limited, and only to the access intended for the specific person who the agent is interacting with. And the natural language to SQL was also made more restricted, as well. So then you kind of end up with something that is quite similar to wht we had before, which was sql prepared statements. So mcp-toolbox also uses its own flavor of parameterized restricted prepared statements. [31]. So are we sort of back where we have started? 
-
-
-
-This along with Sara Zanzoterra session on RAG to Agents as well.
+A take away though is, you can build out skills for an agent to, say translate natural language to sql, which was the first iteration during the workshop of the travel agency example, but that was acknowledged as too risky, since there is a risk of someone running all kinds of unsafe queries on your database. So then through several iterations in the workshop, RBAC was added so agents powers are limited, and only to the access intended for the specific person who the agent is interacting with. And the natural language to SQL was also made more restricted, as well. So then you kind of end up with something that is quite similar to what we had before MCP, which was SQL prepared statements. So mcp-toolbox also uses its own flavor of parameterized restricted prepared statements<sup>[31](#references)</sup>. So are we sort of back where we have started? 
 
 
 
@@ -194,6 +193,8 @@ The log linear scaling laws were real. And I think prompt complexity to correctn
 A line from Mo around 7:15<sup>[34](#references)</sup> or so was ringing true for me, that he would be uncomfortable shipping the code given its quality, well after actually looking at it, as opposed to just observing whether it passed tests. I suspect that feeling of retch is proportional to how close you feel to your customer. If you are in a very large company, you might feel more comfortable passing that code along but if you are in a smaller company, you have a higher sense of obligation to the quality.
 
 
+# More than RAG
+Another practical talk I appreciated, was a session by Sara Zanzoterra on going from RAG to Agents.
 
 # References
 1. Ivan @ datasaur.ai

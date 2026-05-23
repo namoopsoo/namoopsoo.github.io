@@ -139,7 +139,7 @@ As well as the same non deterministic probabilistic output I hweard others point
 
 Since I do see this bug introduction duscussion all throughout this conference I dont know why people arent giving the alternative, dont use this to generate your code necessarily since that is riddled with subtle bugs. Use it to speed up the reviews say instead . ( some companies like Code Rabbit do offer this actually ).
 
-## jack of all trades?
+# A jack of all trades?
 So then what should you know? People talk about T shaped or π shaped knowledge, where you have broad knowledge in many diverse realms and more specialized knowledge in one or two areas.
 
 Does the Vibe era create an incentive to keep everything at a shallow level?
@@ -158,14 +158,14 @@ Deterministic or non deterministic?
 
 Makes me consider when corporations started to outsource work internationally in the 2010s. Teams spread across the US are with close time zones but across continents, the overlap is less and coordination tax goes up. But with Agentic outsourcing, there is no time zone difference. 
 
-## Block box ? Explainable?
-we have been using deep learning blqck box models a-la-the bitter lesson for a while now, agreeing an algorithm can create a better model than by hand tuned feature engineering. And we have acceptef the black box nature therefore. As long as SHAPley can at least explain/interpret. Same for compiled code. How about code code? It is technically still readable. There is theoretically no reason why code code at least can be readable and minimal without being minified.
+## Black box ? Explainable?
+we have been using deep learning black box models a-la-the bitter lesson for a while now, agreeing an algorithm can create a better model than by hand tuned feature engineering. And we have accepted the black box nature therefore. As long as SHAPley can at least explain/interpret. Same for compiled code. How about code code? It is technically still readable. There is theoretically no reason why code code at least can be readable and minimal without being minified.
 
 ## Precision
-one of the things Armando said that also stuck, about stochastic nature of code. So hmm were producing all these fun bags of code but wouldnt it be nice if we can be more preciss about vibing, yea sure spec driven development. Oh wait thats what code code was. Deterministic. Nice.
+one of the things Armando said that also stuck, about stochastic nature of code. So hmm were producing all these fun bags of code but wouldn't it be nice if we can be more preciss about vibing, yea sure spec driven development. Oh wait thats what code code was. Deterministic. Nice.
 
 ## Mythos and the Halting Problem 
-On security now[16] , interesting comparison of Mythos to Y2K. However, host calls code as math, yet, my response would be thst we have such a thing as the halting problem, where we know we cannot predict statically if a program will finish and so by extension, likely we cannot prove bugs are true or actionable statically (my hypothesis ).  
+On security now[16] , interesting comparison of Mythos to Y2K. However, host calls code as math, yet, my response would be that we have such a thing as the halting problem, where we know we cannot predict statically if a program will finish and so by extension, likely we cannot prove bugs are true or actionable statically (my hypothesis ).  
 
 ## Worse Than No Code
 UML? No Code? That was crap. Here is no code take two.

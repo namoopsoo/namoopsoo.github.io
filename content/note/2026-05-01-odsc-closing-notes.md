@@ -117,6 +117,13 @@ I might have written this elsewhere already, but going super deep on whatever it
 
 This connects to the no code topic too.
 
+#### Large Code bases though?
+
+Other than abstraction i realize another argument to not understand the code is obviously these days code bases arr super large anyway and no onr person understands it anyway. But the point is i think you can zoom in as needed and then learn.
+
+And maybe another use of an LLM can be code understanding . At a moment notice. But the thing to understand again is you only have that ability, leverage your years of experience writing code. That's when  code  can be    FOIAble . You have to knos whzt questions to ask. 
+
+
 #### The enjoyment aspect
 Can shallow work also can pick away at your soul or your ego? There will be many opinions on whether enjoying what one does is a form of entitlement and that some would say work is called work for a reason of course. However, if you do get a chance to go deep on what you do, it can lead to mastery and that is a big aspect of fulfillment. And technology has changed an endless number of times over the millenia. People have been developing their craft and constantly reinventing themselves over and over again. I come back here also to this book, Range, that is also on this topic. 
 

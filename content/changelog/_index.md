@@ -16,6 +16,10 @@ All notable changes to this "human experiment" will be documented in this file.
 
 ### First
 - Random, first time cutting a heel shoe with sheers because shoe was stuck on a foot , becaust it was a zip up and the zipper became defective! Glad I had surgical cast sheers! (2026-05-11).
+
+### Changed
+- Introduced a local hdd into my restic backup pattern (2026-05-23).
+ 
 ## 2026-04
 ### Firsts
 - First time trying out [restic](https://restic.readthedocs.io/) for backups, (2026-04-04).

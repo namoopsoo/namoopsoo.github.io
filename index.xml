@@ -8,6 +8,20 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Macos X86 Transformers Qwen3</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-05-23--macos-x86-transformers-qwen3/</link>
+      <pubDate>Sat, 23 May 2026 18:44:38 -0400</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-05-23--macos-x86-transformers-qwen3/</guid>
+      <description>&lt;p&gt;Quick note here for posterity. I wanted to setup a chromadb with maybe something similar to the &lt;code&gt;@cf/qwen/qwen3-embedding-0.6b&lt;/code&gt; that I&amp;rsquo;m using on cloudflare out of the box.&lt;/p&gt;
+&lt;p&gt;I setup a new &lt;code&gt;uv venv --python 3.13&lt;/code&gt; and tried to pull in &lt;code&gt;uv pip install sentence-transformers chromadb markdown-it-py&lt;/code&gt; and then I wanted to , try qwen3&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; from hugging face,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; sentence_transformers &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; SentenceTransformer
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Load the model&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;model &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SentenceTransformer(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Qwen/Qwen3-Embedding-0.6B&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;however I ran into several installation roadblocks. Anyway without getting into all the hurdles, ultimately I realized per reading the torch docs&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;  and the versions of torch available&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;, that my &lt;code&gt;x86&lt;/code&gt; mac torch support stopped at &lt;code&gt;torch&amp;lt;2.3&lt;/code&gt;. And after it was only arm64, if I wanted to just grab the wheel file directly. And the torch website recommended python 3.10 . And well, that torch 2.2.2 requires &lt;code&gt;numpy&amp;lt;2&lt;/code&gt;. And the last twist was that huggingface started listing the qwen3 architecture only by &lt;code&gt;transformers&amp;gt;=4.51.0&lt;/code&gt;, which can also be seen on their model card&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; .&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Hat Pocket</title>
       <link>https://michal.piekarczyk.xyz/note/2026-05-17--hat-pocket/</link>
       <pubDate>Sun, 17 May 2026 13:04:04 -0400</pubDate>

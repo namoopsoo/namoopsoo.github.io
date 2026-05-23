@@ -13,12 +13,14 @@ cover:
 
 
 
-I just finished a trip to attend the ODSC conference in Boston, leaving without really understanding where we are on the hype cycle of Agentic AI . But on the flight back, I read on article<sup>[2](#references)</sup>  where Rogé Karma was walking back the stance he had about the AI bubble given new revenue data. The conference gave me a lot of confidence that regardless of what benefit agent AI will ultimately have, there was now no doubt that companies and individuals who do not upskill will fall behind in one way or another. But the article put down some numbers about the new revenue that Anthropic, open AI cursor and the  data center companies they rely on, Microsoft, Google, Amazon, Core weave, were now recently experiencing, taking them perhaps, out of bubble territory.
+I just finished a trip to attend the ODSC conference in Boston, leaving without really understanding where we are on the hype cycle of Agentic AI . I attended hoping to sample from the unknown like you usually do at big conferences, but there was no aha moment. I don't think our industry is ready for ah ana moment yet.
 
-Ok but jumping back, so what did I learn at the conference before getting back on that return flight?
+On the flight back, I read on article<sup>[2](#references)</sup>  where Rogé Karma was walking back a stance he had about the AI bubble given new revenue data he was observing. The conference gave me a lot of confidence that regardless of what benefit agent AI will ultimately have, there was now no doubt that companies and individuals who do not upskill will fall behind in one way or another. But the article put down some numbers about the new revenue that Anthropic, open AI cursor and the  data center companies they rely on, Microsoft, Google, Amazon, Core weave, were now recently experiencing, taking them perhaps, out of bubble territory.
 
-# At the Conference
-At the conference, one of the first talks I went to was about private LLMs, and during this talk the speaker<sup>[1](#references)</sup> said that the adoption of AI found a cheat code, agentic AI. He pointed out that, in  crossing the chasm terms,  stats were showing only 15% of knowledge workers adopted chat organixally, but  when tools now added agents interfaces into themselves into the existing mediums people already use, like the ubiquitous Microsoft Copilot which is in the Windows taskbar, in all Office applications , in the Edge browser sidebar, so then adoption magically went to 100%. 
+I thought back to my notes from a talk that was challenging the big lab model narrative.
+
+# Private LLMs
+One of the first talks I went to was about private LLMs, and during this talk the speaker<sup>[1](#references)</sup> said that the adoption of AI found a cheat code, agentic AI. He pointed out that, in  crossing the chasm terms,  stats were showing only 15% of knowledge workers adopted chat organically, but  when tools now added agents into the interfaces into themselves into the existing mediums people already use, like the ubiquitous Microsoft Copilot which is in the Windows taskbar, in all Office applications , in the Edge browser sidebar, then adoption magically went to 100%. This was the cheat code to side step conversion.
 
 He called this the "opt out" vs "opt in" strategy. I asked, since his talk's focus was about encrouching LLM cost , wouldnt it be better to allow organic adoption to continue to play out? He countered that sometimes you dont know what you're missing and this shift is a useful nudge. In hindsight I would call this the 401k opt out trick many economists have recommended. I wonder what those economists would say about this LLM approach.
 

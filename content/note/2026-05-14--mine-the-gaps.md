@@ -19,6 +19,8 @@ Code stack trace debugging .  This one can be hit or miss depending on if the mo
 
 Learning. Yes can really help.
 
+Proof of concepts (POCs) and demos, to inspire you and them.
+
 Code Gen? Here is our datacenter of geniuses? Or not. This feels very hit or miss!
 
 Parallelizing everything with an army of agents? Maybe if the same task, like map reduce. But tasks with unknowns, this seems to break down without humans in the loop.  

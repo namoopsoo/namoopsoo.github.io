@@ -37,7 +37,7 @@ Between talks, I spoke with colleagues about the future of code. One was inspire
 
 One colleague I spoke with was in the audience for this talk as well . They had transitioned to our ml platform team from date science and, self analyzed that their coding skills did not have time to catch up because AI coding  arrived just in time and they have been leaning into code gen since it was starting to be a thing a few years ago, and so they have chosen to hold off on moving past a current coding plateau. At this point, they observe, and perhaps with this conference in particular, they are not yet convinced there is a benefit to get better at writing code. That this skill is less in demand now. 
 
-Personally, I'm of the thought that most code I have generated, has had a low signal to slop ratio. And so I found the main benefit in one off POCs or where I intentionally was building a non-production capability that I otherwise would not have had the time for.  But I don't see myself using code gen in place of real learning opportunities . And building without understanding what I'm building never came naturally to me. Or at least there's a goldilocks sweet spot of understanding where I like to hang out.
+Personally, I'm of the thought that most code I have generated, has had a low signal to slop ratio. Or at least it was too low for my slop tolerance. And so I have been so far finding<sup>[36](#references)</sup>, the main benefit in one off POCs or where I intentionally was building a non-production capability that I otherwise would not have had the time for.  But I don't see myself using code gen in place of real learning opportunities . And building without understanding what I'm building never came naturally to me. Or at least there's a goldilocks sweet spot of understanding where I like to hang out.
 
 Roge Karma points out<sup>[4](#references)</sup> in his article, citing a SemiAnalysis piece<sup>[5](#references)</sup>, deconstructing knowledge work as chunks of Read, Think, Write and Verify. And that makes it a good candidate for building blocks in agentic flows, that can be learned, as long as the criteria are well defined. I pick things up I put things down. In other words, can knowledge work be cut up into units of work that are commoditized. I would flag here that this sounds remarkably similar to the vision of the waterfall software planning model that the agile manifesto<sup>[6](#references)</sup> of 2001 responded too, as well as the Data Science as Pin Factory article<sup>[7,8](#references)</sup> from 2019 written in response to the desire to assembly-line-ify data science. The agile software movement pointed out that software projects are messy and customers cannot accurately describe what they want. And Eric Colson extended this to the messiness of extracting signal from data. In fact his description of the ideal data science pin factory echoes that SemiAnalysis article:
 > “one person sources the data, another models it, a third implements it, a fourth measures it”
@@ -240,6 +240,8 @@ A line from Mo around 7:15<sup>[34](#references)</sup> or so was ringing true fo
 34. https://youtu.be/SKTsNV41DYg
 
 35. Cory Doctorow,  https://youtu.be/r_ktaPutkjM
+
+36. benefits ,  http://michal.piekarczyk.xyz/note/2026-05-14--mine-the-gaps/ 
 
 <sup>[x](#references)</sup> 
 

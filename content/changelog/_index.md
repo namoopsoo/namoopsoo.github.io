@@ -19,6 +19,7 @@ All notable changes to this "human experiment" will be documented in this file.
 
 ### Changed
 - Introduced a local hdd into my restic backup pattern (2026-05-23).
+- Switched iphone immich to use tailscale instead of public internet plus private firewall rules (2026-05-24).
  
 ## 2026-04
 ### Firsts

@@ -57,15 +57,18 @@ however, the `--delete` only seems to work with what gets uploaded and not on du
 
 ### Excerpt from osxphotos
 
-From [3], osxphotos very thoughtfully and probably painstakingly describe,  the below. I really really really wanted this to work, but I kept on discovering I had photos that I saw in my photos library that did not get exported through osxphotos. After more research I settled on Apple photos just being incredibly unreliable from third party access like per osxphotos. The locked in Apple ecosystem  is one of the reasons why I was so desparate to get away. I really apprecite what the authors here tried to do but Apple either changed something or I wasn't patient enough, but I begrudgingly went back to using the Apple UI Photos interface for exporting. Because that appeared to be the only way to reliably summon all the photos that got stuck in icloud land.
+From [3], osxphotos very thoughtfully and probably painstakingly describe,  the below. 
 
-> osxphotos works by copying photos out of the Photos library folder to export them. You may see osxphotos report that one or more photos are missing and thus could not be exported. One possible reason for this is that you are using iCloud to synch your Photos library and Photos either hasn't yet synched the cloud library to the local Mac or you have Photos configured to "Optimize Mac Storage" in Photos Preferences. Another reason is that even if you have Photos configured to download originals to the Mac, Photos does not always download photos from shared albums or original screenshots to the Mac.
 
-> If you encounter missing photos you can tell osxphotos to download the missing photos from iCloud using the --download-missing option. --download-missing uses AppleScript to communicate with Photos and tell it to download the missing photos. Photos' AppleScript interface is somewhat buggy and you may find that Photos crashes. In this case, osxphotos will attempt to restart Photos to resume the download process. There's also an experimental --use-photokit option that will communicate with Photos using a different "PhotoKit" interface. This option must be used together with --download-missing:
+> *osxphotos works by copying photos out of the Photos library folder to export them. You may see osxphotos report that one or more photos are missing and thus could not be exported. One possible reason for this is that you are using iCloud to synch your Photos library and Photos either hasn't yet synched the cloud library to the local Mac or you have Photos configured to "Optimize Mac Storage" in Photos Preferences. Another reason is that even if you have Photos configured to download originals to the Mac, Photos does not always download photos from shared albums or original screenshots to the Mac.*
+
+> *If you encounter missing photos you can tell osxphotos to download the missing photos from iCloud using the --download-missing option. --download-missing uses AppleScript to communicate with Photos and tell it to download the missing photos. Photos' AppleScript interface is somewhat buggy and you may find that Photos crashes. In this case, osxphotos will attempt to restart Photos to resume the download process. There's also an experimental --use-photokit option that will communicate with Photos using a different "PhotoKit" interface. This option must be used together with --download-missing:*
 
 > `osxphotos export /path/to/export --download-missing`
 
 > `osxphotos export /path/to/export --download-missing --use-photokit`
+
+I really really really wanted this to work, but I kept on discovering I had photos that I saw in my photos library that did not get exported through osxphotos. After more research I settled on Apple photos just being incredibly unreliable from third party access like per osxphotos. The locked in Apple ecosystem  is one of the reasons why I was so desparate to get away. I really apprecite what the authors here tried to do but Apple either changed something or I wasn't patient enough, but I begrudgingly went back to using the Apple UI Photos interface for exporting. Because that appeared to be the only way to reliably summon all the photos that got stuck in icloud land.
 
 # References
 1. https://immich.app/docs/features/command-line-interface/#installation-npm

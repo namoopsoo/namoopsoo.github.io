@@ -253,5 +253,7 @@ Another practical talk I appreciated, was a session by Sara Zanzoterra on going 
 
 36. benefits ,  http://michal.piekarczyk.xyz/note/2026-05-14--mine-the-gaps/ 
 
+37. constraints, not just tests, https://www.augmentcode.com/guides/harness-engineering-ai-coding-agents
+
 <sup>[x](#references)</sup> 
 

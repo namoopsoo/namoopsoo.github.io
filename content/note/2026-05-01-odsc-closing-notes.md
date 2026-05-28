@@ -19,7 +19,7 @@ On the flight back, I read on article<sup>[2](#references)</sup>  where Rogé Ka
 
 I thought back to my notes from a talk that was challenging the big lab model narrative.
 
-# Private LLMs
+## Private LLMs
 One of the first talks I went to was about private LLMs, and during this talk the speaker from Datasaur.ai<sup>[1](#references)</sup> said that the adoption of AI found a cheat code, agentic AI. He pointed out that, in  crossing the chasm terms,  stats were showing only 15% of knowledge workers adopted chat organically, but  when tools now added agents into the interfaces into themselves into the existing mediums people already use, like the ubiquitous Microsoft Copilot which is in the Windows taskbar, in all Office applications , in the Edge browser sidebar, then adoption magically went to 100%. This was the cheat code to side step conversion.
 
 He called this the "opt out" vs "opt in" strategy. I asked, since his talk's focus was about encroaching LLM cost, wouldn't it be better to allow organic adoption to continue to play out instead? He countered that sometimes you don't know what you're missing and this shift is a useful nudge. In hindsight I would call this the 401k opt out trick many economists have recommended. I wonder what those economists would say about this LLM approach.
@@ -31,7 +31,7 @@ Back to the speaker's presentation, his point was that indeed the risk of openin
 
 Datasaur.ai<sup>[1](#references)</sup> is not the only company discussing open weight models. In parallel, Cloudflare had Agents Week and released serving Kimi K2.6 on WorkersAI<sup>[18](#references)</sup>.
 
-# The future of code
+## The future of code
 Between talks, I spoke with colleagues about the future of code. One was inspired by  a conversation I had with one speaker on program static analysis<sup>[11](#references)</sup>, Armando Solar-Lezama, potentially making a come back. Or at least his research team was identifying that there was a gap in code evaluation, bug evaluation in particular. He noted that even Mythos--*which he said he did not have access to*--, would not find  all the bugs, but for the sake of reliability, we do need to find all the bugs, *or at least all the extra ones that code gen is contributing*. So after his talk, I asked him what was his vision? I wondered, hey, python was so popular for data science, because it was so effortless to start learning, but also come with ease to create bugs that static type  and  memory safe languages do not run into like Golang. And it sounded like yes he sees there is definitely now more room for strongly typed memory safe languages like Rust, though that will still not be enough to make sure new code that is generated is reliable. I think one of my take-aways from his talk was that the code generation is producing an unprecedented volume of code that needs to be reviewed and we desperately need better ways of vetting it for reliability. And hopefully code gen now frees us up to focus on bringing back precisely that kind of code analysis that was very popular in the early 2000s but then faded away. 
 
 
@@ -39,7 +39,7 @@ One colleague I spoke with was in the audience for this talk as well . They had 
 
 Personally, I'm of the thought that most code I have generated, has had a low signal to slop ratio. Or at least it was too low for my slop tolerance. And so I have been so far finding<sup>[36](#references)</sup>, the main benefit in one off POCs or where I intentionally was building a non-production capability that I otherwise would not have had the time for.  But I don't see myself using code gen in place of real learning opportunities . And building without understanding what I'm building never came naturally to me. Or at least there's a goldilocks sweet spot of understanding where I like to hang out.
 
-# Intentions chunked
+## Intentions chunked
 Roge Karma points out<sup>[4](#references)</sup> in his article, citing a SemiAnalysis piece<sup>[5](#references)</sup>, deconstructing knowledge work as chunks of Read, Think, Write and Verify. And that makes it a good candidate for building blocks in agentic flows, that can be learned, as long as the criteria are well defined. I pick things up I put things down. In other words, can knowledge work be cut up into units of work that are commoditized. I would flag here that this sounds remarkably similar to the vision of the waterfall software planning model that the agile manifesto<sup>[6](#references)</sup> of 2001 responded too, as well as the Data Science as Pin Factory article<sup>[7,8](#references)</sup> from 2019 written in response to the desire to assembly-line-ify data science. The agile software movement pointed out that software projects are messy and customers cannot accurately describe what they want. And Eric Colson extended this to the messiness of extracting signal from data. In fact his description of the ideal data science pin factory echoes that SemiAnalysis article:
 > “one person sources the data, another models it, a third implements it, a fourth measures it”
 
@@ -59,7 +59,7 @@ I hear Steinberger's take, more than anything as, that agentic programming is th
 
 Perhaps we can acknowledge though that there are still then two kinds of work in the themes of explore and exploit: spikes that are open ended that produce research artifacts and repetitive tasks that are more well defined because you have done them many times already. And agentic work can perhaps make the first kind easier to bound box.
 
-# An Internet for AI Agents
+## An Internet for AI Agents
 The first talk I attended was practical. It reminded me of a more fleshed out moltbook.com. Ramesh Raskar laid out a vision<sup>[10](#references)</sup> for how agents can communicate in the future. He pointed out that currently agents are clients and they do not have URI endpoints. And NANDA proposes a DNS for agents among other aspects. 
 
 He also made an intriguing prediction, that in the future, he expects every person will have multiple agents working on their behalf, in agent marketplaces. He had presented this vision for residents of India first, since in India, everyone now already has an Aadhaar card a new identity infrastructure, for a while now. And a proposal can be for agents to asynchronously in a decentralized way work on the ONDC and UPI. So this makes India very unique. Your agent can represent you in case people want to ask you questions and perform tasks on your behalf. But also he sees a kind of democratization. The agent is called a doot, which is a local word, meaning a messenger. This reminds me of the Shell Game season 1<sup>[12](#references)</sup> actually, where the host attempted to give his agent access to everything about him and used more or less RAG and some agentic loops to handle various tasks for himself. 
@@ -68,14 +68,14 @@ I think Ramesh's vision assumes a lot, including the lynchpin that everyone will
 
 I like the part about freeing up ourselves to not deal with busy work. But yea I have my doubts about everyone managing their own agents. But intriguing nonetheless.
 
-# MCP Travel agency workshop
+## MCP Travel agency workshop
 I also attended a workshop of `mcp-toolbox`, a Google library to get started faster building out your own MCP server. This session by Wenxin Du helped make a few concepts on building agent apps click for me.
 
 A take away though is, you can build out skills for an agent to, say translate natural language to sql, which was the first iteration during the workshop of the travel agency example, but that was acknowledged as too risky, since there is a risk of someone running all kinds of unsafe queries on your database. So then through several iterations in the workshop, RBAC was added so agents powers are limited, and only to the access intended for the specific person who the agent is interacting with. And the natural language to SQL was also made more restricted, as well. So then you kind of end up with something that is quite similar to what we had before MCP, which was SQL prepared statements. So mcp-toolbox also uses its own flavor of parameterized restricted prepared statements<sup>[31](#references)</sup>. So are we sort of back where we have started? 
 
 
 
-## But then I did some more research on MCP 
+### But then I did some more research on MCP 
 
 This field is clearly being heavily discussed this year. I was trying to track down one article on MCP's demise I had lost the link to and found a lot of activity on this topic!
 
@@ -97,6 +97,8 @@ This field is clearly being heavily discussed this year. I was trying to track d
 | 2025 (unknown) | “The Great AI Protocol War: How MCP and A2A Are Reshaping the Agent Landscape”    | Micheal Lanham                              | [medium.com](https://medium.com/%40Micheal-Lanham/the-great-ai-protocol-war-how-mcp-and-a2a-are-reshaping-the-agent-landscape-c602a8dde9ca) |
 
 The interesting rift with the "MCP is dead" rift is that altbough MCP is a good protocol for an agent to discover what tools are avqilable in an environment and then to help route to them, and authenticate if and how  a user is allowtd to use them , this is feeling like reinventing the wheel if this is a coding environment, because the tools are already pretty established for code. And on a local laptop its already just you and your permissions so authentication is not a mystery. And crucially, embeddings are not great at being exact with code boundaries  , whereas ast was made for this. Embeddings can help find general areas relevant for code modification, but they struggle with fine grain edit points. shell tools like grep  and find are more granulzr and then abstract syntax trees can help with precision too.
+
+Kind of how a decade ago similarly you would say sure you could use keyword search to find and replace specific code, when using vim motions or `sed`, but you would make your edits more precise by using regex. That was the state of the art back then. Today, we have similar choices.
 
 
 ## Back to why planning is hard
@@ -148,7 +150,7 @@ As well as the same non deterministic probabilistic output I hweard others point
 
 Since I do see this bug introduction duscussion all throughout this conference I dont know why people arent giving the alternative, dont use this to generate your code necessarily since that is riddled with subtle bugs. Use it to speed up the reviews say instead . ( some companies like Code Rabbit do offer this actually ).
 
-# A jack of all trades?
+## A jack of all trades?
 So then what should you know? People talk about T shaped or π shaped knowledge, where you have broad knowledge in many diverse realms and more specialized knowledge in one or two areas.
 
 Does the Vibe era create an incentive to keep everything at a shallow level?
@@ -193,7 +195,7 @@ Why is this relevant? Building greenfield is easy. Changing is hard. All the no 
 The last talk I attended, by Arturo Natella [17] was about how most job postings cause the right people to self filter in their ambiguity. Lines like "Other duties" are read like "we havent figured out this role yet" . And that often there is a skill wall a "Big List" you are not actually interviewed against. This was less about AI than AI hiring because he was showing a few real job descriptions and then how he would change them. He called this 
 "Key Performance Objectives" or KPOs, like an analog to KPIs. 
 
-# The Tool Promise / Hope
+## The Tool Promise / Hope
 
 Will we then just rely on tools getting better<sup>[33](#references)</sup> like this 2025-12 moment Andrej Karpathy descrubes where suddenly Claude output has been less buggy for him? It will work soon it will be real good? He mentions we went from resolving counting r's in strawberry with perhaps a hack (?) to other jagged edges aroun what code gen models with agentic harnesses had been tuned for with RL. And essentially his take is agentic engineering is taking the jagged results and making them high quality while benefiting from the speed/productivity boost. 
 
@@ -204,10 +206,10 @@ The log linear scaling laws were real. And I think prompt complexity to correctn
 A line from Mo around 7:15<sup>[34](#references)</sup> or so was ringing true for me, that he would be uncomfortable shipping the code given its quality, well after actually looking at it, as opposed to just observing whether it passed tests. I suspect that feeling of retch is proportional to how close you feel to your customer. If you are in a very large company, you might feel more comfortable passing that code along but if you are in a smaller company, you have a higher sense of obligation to the quality.
 
 
-# More than RAG
+## More than RAG
 Another practical talk I appreciated, was a session by Sara Zanzoterra on going from RAG to Agents.
 
-# References
+## References
 1. Ivan @ datasaur.ai
 2. https://www.theatlantic.com/app/webview/687022/
 4. https://www.theatlantic.com/app/webview/687022/?app-privacy=apple-att&articleAudioPlaying=false&color-scheme=auto&fontScale=1#:~:text=As%20a%20group,the%20field%20unique.

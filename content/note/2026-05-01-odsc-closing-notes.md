@@ -96,6 +96,8 @@ This field is clearly being heavily discussed this year. I was trying to track d
 | 2025-06-12     | “Building AI Agents That Actually Do Things: The MCP Revolution”                  | Micheal Lanham                              | [medium.com](https://medium.com/%40Micheal-Lanham/building-ai-agents-that-actually-do-things-the-mcp-revolution-01404de84464)               |
 | 2025 (unknown) | “The Great AI Protocol War: How MCP and A2A Are Reshaping the Agent Landscape”    | Micheal Lanham                              | [medium.com](https://medium.com/%40Micheal-Lanham/the-great-ai-protocol-war-how-mcp-and-a2a-are-reshaping-the-agent-landscape-c602a8dde9ca) |
 
+The interesting rift with the "MCP is dead" rift is that altbough MCP is a good protocol for an agent to discover what tools are avqilable in an environment and then to help route to them, and authenticate if and how  a user is allowtd to use them , this is feeling like reinventing the wheel if this is a coding environment, because the tools are already pretty established for code. And on a local laptop its already just you and your permissions so authentication is not a mystery. And crucially, embeddings are not great at being exact with code boundaries  , whereas ast was made for this. Embeddings can help find general areas relevant for code modification, but they struggle with fine grain edit points. shell tools like grep  and find are more granulzr and then abstract syntax trees can help with precision too.
+
 
 ## Back to why planning is hard
 Sfould refer back to also Cal Newport multi step automation article<sup>[13](#references)</sup> . Yea . Agent Harnesses and verifiability for each step. 

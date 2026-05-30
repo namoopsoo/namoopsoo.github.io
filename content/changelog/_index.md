@@ -10,6 +10,7 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Logged
 - Hanging out in Brighton Beach for a friends birthday, wow these moments with nature are so rare, got to appreciate them (2026-05-03).
 - Unintentionally participated in about [5.92 miles](https://michal.piekarczyk.xyz/note/2026-05-10--gpx-bike-tour-overlay/) of the [2026 5Borough Bike Tour](https://www.bike.nyc/events/td-five-boro-bike-tour/) because it happened to be directly on my commute from Astoria through into Brooklyn 😆 (2026-05-03).
+- Tried a mimick of Amazon go store at LGA called WHSmith. They got my order right. But took 14 minutes to process  , so would not doubt that har har, this is supervised by remote staff monitoring the CCTV. (2026-05-29).
 
 ### Milestoned
 - Made a major [update to logseq_utils](https://github.com/namoopsoo/logseq_utils/blob/main/CHANGELOG.md#2026-05-09) for getting those apple notes exports actually migrated into logseq markdown (2026-05-09).

@@ -151,7 +151,7 @@ As well as the same non deterministic probabilistic output I hweard others point
 Since I do see this bug introduction duscussion all throughout this conference I dont know why people arent giving the alternative, dont use this to generate your code necessarily since that is riddled with subtle bugs. Use it to speed up the reviews say instead . ( some companies like Code Rabbit do offer this actually ).
 
 ## A jack of all trades?
-So then what should you know? People talk about T shaped or π shaped knowledge, where you have broad knowledge in many diverse realms and more specialized knowledge in one or two areas.
+So then what should you know? People talk about T shaped or TT  shaped knowledge, where you have broad knowledge in many diverse realms and more specialized knowledge in one or two areas.
 
 Does the Vibe era create an incentive to keep everything at a shallow level?
 

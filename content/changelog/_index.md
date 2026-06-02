@@ -17,6 +17,7 @@ All notable changes to this "human experiment" will be documented in this file.
 
 ### First
 - Random, first time cutting a heel shoe with sheers because shoe was stuck on a foot , becaust it was a zip up and the zipper became defective! Glad I had surgical cast sheers! (2026-05-11).
+- First time I created a group selfie with text to image, after having forgotten to take that selfie because group got too absorbrd to remember (using DALL-E via ChatGPT) (2026-05-31).
 
 ### Changed
 - Introduced a local hdd into my restic backup pattern (2026-05-23).

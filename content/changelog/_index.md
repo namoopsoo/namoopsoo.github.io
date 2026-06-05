@@ -469,7 +469,9 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Logged
 - First trip to UK, started a study abroad at U of Sheffield
 
-
+## 2004-01
+### First
+- Perhaps first or one of first closed course Dodge test drives. Will attempt to determine the cars from the engine sounds in some videos. (2004-01-07). 
 
 ## Undated
 

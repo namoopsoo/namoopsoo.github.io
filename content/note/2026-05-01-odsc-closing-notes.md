@@ -208,6 +208,12 @@ A line from Mo around 7:15<sup>[34](#references)</sup> or so was ringing true fo
 ## More than RAG
 Another practical talk I appreciated, was a session by Sara Zanzoterra on going from RAG to Agents.
 
+## A kind of foregone conclusion
+
+The feeling I had leaving the conference wqs one of a foregone conclusion of the code gen path we were on. What no turning back now? This sentiment is echoed by Mo Bitar too<sup>[40](#references)</sup>. I don't know what will happen, I don't think anyone can really presume to know. But the conference at least felt less than neutral. Maybe was it a safe bet for them to make, perhaps by editorial  choices of who spoke.
+
+I'm glad I have spent some time to at least get other perspectives. I get the point about hedging, you  should hedge and test drive the latest and greatest. But that also means  hedge against abundance as well. As I'm writing this, the industry has now gone from several months of token maxxing to now getting more conservative. Tokens will get  cheaper of course but pure abundance is an illusion anyway. Whatever you do, I tjink you need to do it deeply.  Maybe multi task mastery of agents does become the new thing, that remains to be seen. Karpathy has dubbed it the end of vibe and start of agentic engineering right? Looking forward to seeing how it plays out, but without too many handicaps to my mind. It is a terrible thing to waste as they say .
+
 ## References
 1. Ivan @ datasaur.ai
 2. https://www.theatlantic.com/app/webview/687022/
@@ -259,5 +265,12 @@ Another practical talk I appreciated, was a session by Sara Zanzoterra on going 
 37. constraints, not just tests, https://www.augmentcode.com/guides/harness-engineering-ai-coding-agents
 38. agentic coding with Pi, but slow the eff down https://www.youtube.com/watch?v=RjfbvDXpFls
 39. https://en.wikipedia.org/wiki/Crossing_the_Chasm
+
+40. https://youtu.be/-cc9OsZLKFo?t=165 , Mo Bitar, on the presumed choice of the trajectory of code gen. Like a foregone conclusion
+
+
+
 <sup>[x](#references)</sup> 
+
+
 

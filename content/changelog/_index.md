@@ -6,6 +6,10 @@ robots: noindex, nofollow
 All notable changes to this "human experiment" will be documented in this file.
 
 
+## 2026-06
+### First
+- Maybe first , suede shoe [restaining](https://s3.amazonaws.com/my-blog-content/2026-06-03--suede/shoe-IMG_1579.jpg) (2026-06-03).
+
 ## 2026-05
 ### Logged
 - Hanging out in Brighton Beach for a friends birthday, wow these moments with nature are so rare, got to appreciate them (2026-05-03).

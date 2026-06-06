@@ -19,7 +19,9 @@ Others also (grill me?) go the route of get more detailed with the prose. And ot
 So a few approaches  . Ah maybe I did touch on this in another blog post wrt the similarities to halting problem. And to the no free lunch theorem . Right. I think essentially unless you can "distill" fully , a problem domain, cheating at being "declarative", you will be iterative. Smoke and mirrors fade away. You are no longer doing engineering and we are bqck to science qnr trial and error. A Software Science if you will. Quite soft . maybe lower your voice. How about Whisper Science. Whispware Science? Whisperware ?
 
  
+But what are tests that are provided through the spec ? Thats what you can call the training data. Cool, but we want to generalize, so whats the test data?
 
+Hmm maybe that could be an interesting idea, you leave some tests out ? Test for generalization that way?
 
 
 

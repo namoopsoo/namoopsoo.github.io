@@ -23,5 +23,11 @@ But what are tests that are provided through the spec ? Thats what you can call 
 
 Hmm maybe that could be an interesting idea, you leave some tests out ? Test for generalization that way?
 
+Why not one shot the work  ? Sure YOLO , Im feeling lucky, do it live. Hold out generalizability is 
+ a false sense of a guard rail right? Though in god we trust all else bring dqta. Where did thqt go?
+
+I totally agree, like Richard Hickey said in that Simple Made Easy talk, your guard rails are not where your bugs lie, the ones you dojt know about cannot be predicted and tested for by definition. (Not to mention real life kicks your butt too). 
+
+
 
 

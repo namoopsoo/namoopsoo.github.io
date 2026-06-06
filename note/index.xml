@@ -8,6 +8,13 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Whisperware</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-05-31--engineering-science/</link>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-05-31--engineering-science/</guid>
+      <description>&lt;p&gt;Trying to see have I wfitten about this before, but weve had data scuence for a while , where given domain knowledge, programming knowledge, and some maths, you can iterate towards data science (just kiddijg thats a blog). You can iterate towards a model that fits your data and generalizes modestly on unseen data. Then we entered  ML  engineering, where  you lean into the formal aspects of rigorous testing and more into the repeatable, so less trial and error perhaps.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Macos X86 Transformers Qwen3</title>
       <link>https://michal.piekarczyk.xyz/note/2026-05-23--macos-x86-transformers-qwen3/</link>
       <pubDate>Sat, 23 May 2026 18:44:38 -0400</pubDate>

@@ -9,6 +9,7 @@ All notable changes to this "human experiment" will be documented in this file.
 ## 2026-06
 ### First
 - Maybe first , suede shoe [restaining](https://s3.amazonaws.com/my-blog-content/2026-06-03--suede/shoe-IMG_1579.jpg) (2026-06-03).
+- First time integrating `fzf` into bash search , Control-R . Wow (2026-06-06).
 
 ### Logged
 - Saving a mauviel pot with baking soda from oatmeal burning [yet again](https://michal.piekarczyk.xyz/note/2026-06-03--save-pot/) (2026-06-03).

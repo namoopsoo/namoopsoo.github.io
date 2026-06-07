@@ -8,17 +8,6 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Planes on a plane</title>
-      <link>https://michal.piekarczyk.xyz/note/2026-05-31--planing/</link>
-      <pubDate>Sun, 07 Jun 2026 15:13:38 -0400</pubDate>
-      <guid>https://michal.piekarczyk.xyz/note/2026-05-31--planing/</guid>
-      <description>&lt;p&gt;Planing on a plane.&lt;/p&gt;
-&lt;p&gt;Used ChatGPT&amp;rsquo;s DALL-E here.&lt;/p&gt;
-&lt;h3 id=&#34;prompt&#34;&gt;prompt&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;Lets make a fun hyper realistic image with a normal looking scene in an airplane of 737 size , where we see all typical activities, of a plane in flight, but also to make it funny, instead of several rows on one side , is a wood worker, &amp;ldquo;planing&amp;rdquo; some wood with typical woodshop vibes. The woodworker , a woman, just happens to be there , no one is concerned, everything is Normal&lt;/em&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>Reverse search and Atuin</title>
       <link>https://michal.piekarczyk.xyz/note/2026-06-06--install-atuin/</link>
       <pubDate>Sat, 06 Jun 2026 00:00:00 +0000</pubDate>
@@ -41,6 +30,17 @@
       <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
       <guid>https://michal.piekarczyk.xyz/note/2026-05-31--engineering-science/</guid>
       <description>&lt;p&gt;Trying to see have I wfitten about this before, but weve had data scuence for a while , where given domain knowledge, programming knowledge, and some maths, you can iterate towards data science (just kiddijg thats a blog). You can iterate towards a model that fits your data and generalizes modestly on unseen data. Then we entered  ML  engineering, where  you lean into the formal aspects of rigorous testing and more into the repeatable, so less trial and error perhaps.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Planes on a plane</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-05-31--planing/</link>
+      <pubDate>Sun, 31 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-05-31--planing/</guid>
+      <description>&lt;p&gt;Planing on a plane.&lt;/p&gt;
+&lt;p&gt;Used ChatGPT&amp;rsquo;s DALL-E here.&lt;/p&gt;
+&lt;h3 id=&#34;prompt&#34;&gt;prompt&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Lets make a fun hyper realistic image with a normal looking scene in an airplane of 737 size , where we see all typical activities, of a plane in flight, but also to make it funny, instead of several rows on one side , is a wood worker, &amp;ldquo;planing&amp;rdquo; some wood with typical woodshop vibes. The woodworker , a woman, just happens to be there , no one is concerned, everything is Normal&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Macos X86 Transformers Qwen3</title>

@@ -1,8 +1,8 @@
 ---
-title: "Fun Delays"
+title: "Quantifying Delays"
 # slug: "2026-06-03--fun-delays"
 date: 2026-06-03T23:12:20-04:00
-draft: true
+draft: false
 
 # optional thumbnail
 #images:

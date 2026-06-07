@@ -8,10 +8,21 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Planes on a plane</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-05-31--planing/</link>
+      <pubDate>Sun, 07 Jun 2026 15:13:38 -0400</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-05-31--planing/</guid>
+      <description>&lt;p&gt;Planing on a plane.&lt;/p&gt;
+&lt;p&gt;Used ChatGPT&amp;rsquo;s DALL-E here.&lt;/p&gt;
+&lt;h3 id=&#34;prompt&#34;&gt;prompt&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Lets make a fun hyper realistic image with a normal looking scene in an airplane of 737 size , where we see all typical activities, of a plane in flight, but also to make it funny, instead of several rows on one side , is a wood worker, &amp;ldquo;planing&amp;rdquo; some wood with typical woodshop vibes. The woodworker , a woman, just happens to be there , no one is concerned, everything is Normal&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Reverse search and Atuin</title>
-      <link>https://michal.piekarczyk.xyz/note/2026-06-06--install-auin/</link>
+      <link>https://michal.piekarczyk.xyz/note/2026-06-06--install-atuin/</link>
       <pubDate>Sat, 06 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://michal.piekarczyk.xyz/note/2026-06-06--install-auin/</guid>
+      <guid>https://michal.piekarczyk.xyz/note/2026-06-06--install-atuin/</guid>
       <description>&lt;p&gt;I was interested in improving my reverse search &lt;code&gt;Control R&lt;/code&gt; experience on my shell because many of my previous commands are not easily searchable or they disappear too fast.&lt;/p&gt;
 &lt;p&gt;Initially I just wanted to figure out if you can use fzf for the reverse-search, but ChatGPT made me aware of atuin too. This sounded super fancy and the atuin&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;  idea of using a local sqlite db for a command cache looked interesting, so I tried to &lt;code&gt;brew install atuin&lt;/code&gt; first.&lt;/p&gt;</description>
     </item>

@@ -2,8 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://michal.piekarczyk.xyz/note/2026-06-06--install-auin/</loc>
-    <lastmod>2026-06-07T14:42:15-04:00</lastmod>
+    <loc>https://michal.piekarczyk.xyz/note/2026-05-31--planing/</loc>
+    <lastmod>2026-06-07T15:33:05-04:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/tags/</loc>
+    <lastmod>2026-06-07T15:33:05-04:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/tags/text-to-image/</loc>
+    <lastmod>2026-06-07T15:33:05-04:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/note/2026-06-06--install-atuin/</loc>
+    <lastmod>2026-06-07T15:33:05-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/note/2026-06-04--aa-email-extract/</loc>
     <lastmod>2026-06-07T14:36:03-04:00</lastmod>
@@ -18,12 +27,6 @@
     <lastmod>2026-05-17T14:18:29-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/tags/jokes/</loc>
-    <lastmod>2026-05-17T15:06:17-04:00</lastmod>
-  </url><url>
-    <loc>https://michal.piekarczyk.xyz/tags/</loc>
-    <lastmod>2026-05-17T15:06:17-04:00</lastmod>
-  </url><url>
-    <loc>https://michal.piekarczyk.xyz/tags/text-to-image/</loc>
     <lastmod>2026-05-17T15:06:17-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/note/2026-05-16-interesting-benefit-ai/</loc>

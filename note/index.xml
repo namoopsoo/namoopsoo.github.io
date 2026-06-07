@@ -8,6 +8,14 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Reverse search and Atuin</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-06-06--install-auin/</link>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-06-06--install-auin/</guid>
+      <description>&lt;p&gt;I was interested in improving my reverse search &lt;code&gt;Control R&lt;/code&gt; experience on my shell because many of my previous commands are not easily searchable or they disappear too fast.&lt;/p&gt;
+&lt;p&gt;Initially I just wanted to figure out if you can use fzf for the reverse-search, but ChatGPT made me aware of atuin too. This sounded super fancy and the atuin&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;  idea of using a local sqlite db for a command cache looked interesting, so I tried to &lt;code&gt;brew install atuin&lt;/code&gt; first.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Quantifying Delays</title>
       <link>https://michal.piekarczyk.xyz/note/2026-06-04--aa-email-extract/</link>
       <pubDate>Wed, 03 Jun 2026 23:12:20 -0400</pubDate>

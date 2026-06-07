@@ -17,7 +17,7 @@ Initially I just wanted to figure out if you can use fzf for the reverse-search,
 
 ## I have an intel x86 mac, so home brew installing atuin took over 7 hours. 
 
-I had some spare time, so I did see that indeed, the releases<sup>[3](#references)</sup> only have x86_64 releases for linux and windows, but not for macos.
+I had some spare time, so I did see that indeed, the releases<sup>[2](#references)</sup> only have x86_64 releases for linux and windows, but not for macos.
 
 Looks like this took a long time in particular, because atuin is built in rust and also incidentally the rust toolchain to build atuin was needed, including llvm which itself took over 5 hours to build.
 

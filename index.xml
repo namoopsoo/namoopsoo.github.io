@@ -8,6 +8,15 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Quantifying Delays</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-06-04--aa-email-extract/</link>
+      <pubDate>Wed, 03 Jun 2026 23:12:20 -0400</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-06-04--aa-email-extract/</guid>
+      <description>&lt;p&gt;I was worried I would lose the american airlines app notifications but luckily the email notifications persisted.&lt;/p&gt;
+&lt;p&gt;So here is some of my data, extracted from emails from aa.com&lt;/p&gt;
+&lt;p&gt;I should  organize this better, but basically I wanted to use some data to tell the story of a recent trip I was taking from NY to Arizona. I left a very engaging group discussion at work because I planned a tight bike ride home to wrap up a quick exit to the airport in time to board my plane.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Whisperware</title>
       <link>https://michal.piekarczyk.xyz/note/2026-05-31--engineering-science/</link>
       <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>

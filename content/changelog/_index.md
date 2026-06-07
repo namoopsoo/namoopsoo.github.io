@@ -24,8 +24,8 @@ All notable changes to this "human experiment" will be documented in this file.
 - Made a major [update to logseq_utils](https://github.com/namoopsoo/logseq_utils/blob/main/CHANGELOG.md#2026-05-09) for getting those apple notes exports actually migrated into logseq markdown (2026-05-09).
 
 ### First
-- Random, first time cutting a heel shoe with sheers because shoe was stuck on a foot , becaust it was a zip up and the zipper became defective! Glad I had surgical cast sheers! (2026-05-11).
-- First time I created a group selfie with text to image, after having forgotten to take that selfie because group got too absorbrd to remember (using DALL-E via ChatGPT) (2026-05-31).
+- Random, first time cutting a heel shoe with sheers because shoe was stuck on a foot , because it was a zip up and the zipper became defective! Glad I had surgical cast sheers! (2026-05-11).
+- First time I created a group selfie with text to image, after having forgotten to take that selfie because group got too absorbed to remember (using DALL-E via ChatGPT) (2026-05-31).
 
 ### Changed
 - Introduced a local hdd into my restic backup pattern (2026-05-23).
@@ -42,6 +42,7 @@ All notable changes to this "human experiment" will be documented in this file.
 
 ### Changed
 - This time ZipCar app did not ask to take exterior interior photos , weird. On either start or end of trip. But lots of trash in the zip car at the start haha so I emailed them photos of drinks in cup holders. Well other people left their fanct usb C cable thqt I guess they couldnt use since the Kia did not support USB C (2026-04-05).
+- Switched from control-p aka ctrl-p on vim, to [fzf](https://github.com/junegunn/fzf.vim) (2026-04-11).
 
 ### Logged
 - Guess I have a gopher [neighbor](https://vimeo.com/1182484375) (2026-04-12).

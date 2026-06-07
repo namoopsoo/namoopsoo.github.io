@@ -5,10 +5,10 @@ date: 2026-06-06
 # draft: true
 
 # optional thumbnail
-images:
-  - "THUMBNAIL_PLACEHOLDER"
-cover:
-  image: "THUMBNAIL_PLACEHOLDER"
+#images:
+#  - "THUMBNAIL_PLACEHOLDER"
+#cover:
+#  image: "THUMBNAIL_PLACEHOLDER"
 ---
 
 I was interested in improving my reverse search `Control R` experience on my shell because many of my previous commands are not easily searchable or they disappear too fast. 

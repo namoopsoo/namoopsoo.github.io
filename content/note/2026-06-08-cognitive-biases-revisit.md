@@ -5,9 +5,7 @@ draft: true
 ---
 
 
-Ok well anyway, im trying to understand if any economists or philosophers have tried to answer that questions.
-
-Ancient or recent.
+Ok well anyway, im still trying to understand if so many  economists and   philosophers have tried to answer the forecasting question,   why does society still persist for certainty.
 
 Daniel Kahneman description of the planning fallacy , appears to be one of the places this is discussed.
 
@@ -28,3 +26,12 @@ and now, of course, with the advent of artificial intelligence being involved in
 so it’s only gonna get worse .
 
 and so I wonder who is the modern Daniel Koeneman since DanielKahneman  has passed away , to address this issue? And yes I suspect Cal Newport touches the subuect.
+
+
+## Modern Kahneman successors?
+
+1. Bent Flyvbjerg
+2. Nassim Nicholas Taleb
+3. Henry Mintzberg
+
+

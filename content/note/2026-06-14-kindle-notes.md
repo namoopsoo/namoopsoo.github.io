@@ -5,10 +5,10 @@ date: 2026-06-14T11:53:51-04:00
 # draft: true
 
 # optional thumbnail
-images:
-  - "THUMBNAIL_PLACEHOLDER"
-cover:
-  image: "THUMBNAIL_PLACEHOLDER"
+#images:
+#  - "THUMBNAIL_PLACEHOLDER"
+#cover:
+#  image: "THUMBNAIL_PLACEHOLDER"
 ---
 
 <!-- Write your intro paragraph here. -->

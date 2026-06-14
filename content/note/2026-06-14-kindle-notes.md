@@ -20,7 +20,7 @@ I tried out this<sup>[1](#references)</sup> cool tool for extracting amazon kind
 However, when I compared my nearly 2 megabyte dump from read.amazon , with my `My Clippings.txt` at just under 1 megabyte, I realized, right, I have switched kindles in the past and so the 2 megabyte one has more notes. I found 18 books in my clippings and 57 in my historical file. So that sort of adds up.
 
 ## clippings directly 
-
+Counted unique books from notes
 ```python
 import re
 from pathlib import Path
@@ -33,6 +33,15 @@ def extract_book(s):
 
 books = [extract_book(x) for x in notes if extract_book(x) is not None]
 len(notes), len(books), len(set(books))
+```
+
+notes structured 
+```python
+
+def extract_entry(s):
+    entry = s.strip().strip("\ufeff")
+    m = re.match(r"^(?P<title>.*)[(](?P<author>.*)[)]\n- Your (?P<type>Highlight|Note) on page (?P<page>\d+) [|] Location (?P<location>\d+) [|] Added on (?P<timestamp>.*)\n\n(?P<content>.*)", entry)
+    return m.groupdict()
 ```
 
 ##  References

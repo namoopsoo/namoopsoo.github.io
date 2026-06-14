@@ -52,6 +52,8 @@ elaborate scene setting that we expect in a true dialogue, but we do find in a n
 
 ```
 so I thought ahh ok the title can also have a parenthesis, "Meditations (Modern Library)", but no haha that was not the problem in my regex. The problem was my page regex, `(?P<page>\d+)` did not capture roman numerals. Of course the only uncaptured notes in my kindle notes with roman numeral pages were for a Roman author 😂.
+ 
+Okay I burned about an hour and twenty minutes on the above regex to extract my notes from my kindle clippings. Yes I could have either downloaded a package, or used Chat GPT to cook up the regex, but then I wouldn't have had that funny Roman author Roman numerals anecdote!
 
 ##  References
 1. https://github.com/prime-radiant-inc/kindle-highlight-exporter , https://highlights.primeradiant.com/

@@ -13,7 +13,7 @@ All notable changes to this "human experiment" will be documented in this file.
 
 ### Logged
 - Saving a mauviel pot with baking soda from oatmeal burning [yet again](https://michal.piekarczyk.xyz/note/2026-06-03--save-pot/) (2026-06-03).
-- Saw broadway show, The Giant, about Roald Dahl, wow, big fan of main actor that was great (2026-06-13).
+- Saw broadway show, The Giant, about Roald Dahl, wow, big fan of main actor that was great, John Lithgow (2026-06-13).
 - Finally linked my macbook as a linked Signal app. Trying to reduce the typing on them small phone screens, like can already do with imessage (2026-06-13).
 - 
 

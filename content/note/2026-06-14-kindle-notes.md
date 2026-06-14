@@ -40,7 +40,7 @@ notes structured
 
 def extract_entry(s):
     entry = s.strip().strip("\ufeff")
-    m = re.match(r"^(?P<title>.*)[(](?P<author>.*)[)]\n- Your (?P<type>Highlight|Note) on page (?P<page>\d+) [|] Location (?P<location>\d+) [|] Added on (?P<timestamp>.*)\n\n(?P<content>.*)", entry)
+    m = re.match(r"^(?P<title>.*)[(](?P<author>.*)[)]\n- Your (?P<type>Highlight|Note|Bookmark) on (page (?P<page>\d+) [|] )?Location (?P<location>\d+(-\d+)?) [|] Added on (?P<timestamp>.*)(\n\n)?(?P<content>.*)", entry)
     return m.groupdict()
 ```
 

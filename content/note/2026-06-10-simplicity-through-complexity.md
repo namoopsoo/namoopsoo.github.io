@@ -1,7 +1,7 @@
 ---
 title: "Simplicity Through Complexity"
 # slug: "2026-06-10-simplicity-through-complexity"
-date: 2026-06-14T16:53:35-04:00
+date: 2026-06-10
 # draft: true
 
 # optional thumbnail

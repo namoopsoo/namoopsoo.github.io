@@ -43,6 +43,15 @@ def extract_entry(s):
     m = re.match(r"^(?P<title>.*)[(](?P<author>.*)[)]\n- Your (?P<type>Highlight|Note|Bookmark) on (page (?P<page>[\dlvixcd]+) [|] )?Location (?P<location>\d+(-\d+)?) [|] Added on (?P<timestamp>[^\n]+)(\n\n)?(?P<content>.*)", entry, re.DOTALL)
     return m.groupdict() if m else {"raw": entry}
 ```
+Kind of a funny side note haha my regex above was failing for some of my notes, in particular like, 
+```
+Meditations (Modern Library) (Aurelius, Marcus)
+- Your Highlight on page xlviii | Location 632-635 | Added on Thursday, November 27, 2025 8:48:32 PM
+
+elaborate scene setting that we expect in a true dialogue, but we do find in a number of entries a kind of internal debate in which the questions or objections of an imaginary interlocutor are answered by a second, calmer voice which corrects or rebukes its errors. The first voice seems to represent Marcus’s weaker, human side; the second is the voice of philosophy.
+
+```
+so I thought ahh ok the title can also have a parenthesis, "Meditations (Modern Library)", but no haha that was not the problem in my regex. The problem was my page regex, `(?P<page>\d+)` did not capture roman numerals. Of course the only uncaptured notes in my kindle notes with roman numeral pages were for a Roman author 😂.
 
 ##  References
 1. https://github.com/prime-radiant-inc/kindle-highlight-exporter , https://highlights.primeradiant.com/

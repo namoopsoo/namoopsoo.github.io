@@ -1,7 +1,7 @@
 ---
 title: "Augmenting Intelligence as a Drug"
 # slug: "2026-06-11--augmenting-intelligence--the-a-drug"
-date: 2026-06-14T15:18:44-04:00
+date: 2026-06-11
 # draft: true
 
 # optional thumbnail

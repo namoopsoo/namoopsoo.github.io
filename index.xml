@@ -8,6 +8,14 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>2026 06 14 Kindle Notes</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-06-14-kindle-notes/</link>
+      <pubDate>Sun, 14 Jun 2026 11:53:51 -0400</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-06-14-kindle-notes/</guid>
+      <description>&lt;!-- Write your intro paragraph here. --&gt;
+&lt;p&gt;I tried out this&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; cool tool for extracting amazon kindle notes. It is way better than emailing myself a pdf of notes like I had done in the past. Then I had some script I lost for converting from pdf to markdown. This project just pulls directly from amazon&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;   which I didn&amp;rsquo;t even know was a place your notes go! I used this bookmarklet tool from Prime Radiant Inc and pulled my notes, but then I tried looking at my kindle Clippings file directly also, which looks like is even easier.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>multiple perspectives</title>
       <link>https://michal.piekarczyk.xyz/note/2026-06-08-perspectives/</link>
       <pubDate>Mon, 08 Jun 2026 00:00:00 +0000</pubDate>

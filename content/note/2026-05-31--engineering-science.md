@@ -33,3 +33,14 @@ I totally agree, like Richard Hickey said in that Simple Made Easy talk, your gu
 One small update here I mentioned earlier above that with Whisperware  you have code that is readable, but is it though? there has been a growing number of people who call the new code that is generated more like neural code because you cannot really understand what is going on. sometimes it's more like the RLVR will control for a code that is working but not yet for code that has a nice mouth feel.
 
 maybe there is room to optimize also for readability. That may be measured using something like cycloMatic complexity.
+
+### Why is readability important? 
+Because 80/20 rule, you dont need to look at the code, well, until you do. Discussion of this also here, [1], [2].
+
+## references 
+1. https://youtu.be/dicToifZBxw?t=950 Mo Bitar 
+2. https://x.com/mitchellh/status/2066657032938442833 , Mitchell Hashimoto 
+
+
+
+

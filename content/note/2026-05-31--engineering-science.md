@@ -4,7 +4,7 @@ title: Whisperware
 date: 2026-06-01
 ---
 
-Trying to see have I wfitten about this before, but weve had data scuence for a while , where given domain knowledge, programming knowledge, and some maths, you can iterate towards data science (just kiddijg thats a blog). You can iterate towards a model that fits your data and generalizes modestly on unseen data. Then we entered  ML  engineering, where  you lean into the formal aspects of rigorous testing and more into the repeatable, so less trial and error perhaps. 
+Trying to see have I written about this before, but weve had data scuence for a while , where given domain knowledge, programming knowledge, and some maths, you can iterate towards data science (just kidding that's a blog). You can iterate towards a model that fits your data and generalizes modestly on unseen data. Then we entered  ML  engineering, where  you lean into the formal aspects of rigorous testing and more into the repeatable, so less trial and error perhaps. 
 
 In both of the above cases it is data in , code out. This was meant figuritively, as runnable code but not readable code. You cant read a billions of neural net weights any more than you can read a binary compiled program.
 

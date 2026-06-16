@@ -26,8 +26,10 @@ Hmm maybe that could be an interesting idea, you leave some tests out ? Test for
 Why not one shot the work  ? Sure YOLO , Im feeling lucky, do it live. Hold out generalizability is 
  a false sense of a guard rail right? Though in god we trust all else bring dqta. Where did thqt go?
 
-I totally agree, like Richard Hickey said in that Simple Made Easy talk, your guard rails are not where your bugs lie, the ones you dojt know about cannot be predicted and tested for by definition. (Not to mention real life kicks your butt too). 
+I totally agree, like Richard Hickey said in that Simple Made Easy talk, your guard rails are not where your bugs lie, the ones you dont know about cannot be predicted and tested for by definition. (this is the metaphor where you see a person looking for their car keys next to the street left because that is where they are able to look because there is light) (Not to mention real life kicks your butt too). 
 
 
+## Code Mouth Feel: Readability?
+One small update here I mentioned earlier above that with Whisperware  you have code that is readable, but is it though? there has been a growing number of people who call the new code that is generated more like neural code because you cannot really understand what is going on. sometimes it's more like the RLVR will control for a code that is working but not yet for code that has a nice mouth feel.
 
-
+maybe there is room to optimize also for readability. That may be measured using something like cycloMatic complexity.

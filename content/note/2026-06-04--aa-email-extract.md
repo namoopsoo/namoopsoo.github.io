@@ -16,7 +16,7 @@ I was worried I would lose the american airlines app notifications but luckily t
 
 So here is some of my data, extracted from emails from aa.com 
 
-I should  organize this better, but basically I wanted to use some data to tell the story of a recent trip I was taking from NY to Arizona. I left a very engaging group discussion at work because I planned a tight bike ride home to wrap up a quick exit to the airport in time to board my plane.
+ I wanted to use some data to tell the story of a recent trip I was taking from NY to Arizona. I left a very engaging group discussion at work because I planned a tight bike ride home to wrap up a quick exit to the airport in time to board my plane.
 
 But then my flight was delayed several times through the end of the evening. Finally at around 11:40pm, the passengers, including a whole school trip full of high schoolers waiting in the airport, and myself, were told to come back at 5am for a 6am flight.
 

@@ -24,6 +24,21 @@ When I got home, preparing to sleep for barely 2 hours, I got an alert on my AA 
 
 The flight was essentially boarding while I was brushing my teeth.
 
+```
+announcement time  ─────►
+
+7:02 PM departure     ●
+8:07 PM departure          ●
+8:30 PM departure             ●
+9:45 PM departure                    ●
+10:15 PM departure                     ●
+10:40 PM departure                        ●
+11:15 PM departure                           ●
+6:00 AM departure                                   ●
+8:00 AM departure                                         ●
+9:45 AM departure                                              ●
+```
+
 I was kind of over it, ready to just give up, but I had already planned a Lyft morning pickup, so I showered and got outside to take my scheduled ride. On the ride to the airport I was able to use the chat interface on my AA app to state my situation and given 4 options I was able to rebook to a new flight. Kind of cool actually. However I could not download a boarding pass. So at the airport, at the AA counter, I learned from a staff member helping me, that I was indeed rebooked, but my new flights were not completely getting cleaned up, updated. 
 
 So this was my first experience using agentic AI to get my flight rebooked but haha the production data was buggy and required a human staff member to wrestle at the AA terminal for I would say about 15 minutes to straighten it out.

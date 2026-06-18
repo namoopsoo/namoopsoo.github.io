@@ -18,7 +18,7 @@ Joining as 2nd Engineering hire, then moving to the data science team. Built and
 
 Refactored underwriting into a separate API consumed by the application, containerized systems for reproducibility, split parts of the pipeline into independently deployable services, replicated infrastructure across availability zones after holiday retail outages, and introduced data drift detection and monitoring.
 
-Wore multiple hats, from retraining core models when major business changes arose to simplifying models and code paths when operational speed and reliability became the priority.
+Wore multiple hats, from retraining a core model when major business changes arose to simplifying models and code paths when operational speed and reliability became the priority.
 
 ## VP and Software Lead, Cortix Systems Inc, 2011 - 2014
 Lead system and software engineer responsible for taking initial search engine for data company concept into a Python code base (with a demo helping us secure a \$720,000 contract) and iterating it through several subsequent stages of customer validation.

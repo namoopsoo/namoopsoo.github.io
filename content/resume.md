@@ -5,7 +5,7 @@ title:
 
 Extended career log: https://michal.piekarczyk.xyz/bragdoc/
 
-## Senior ML Cognitive Engineer, humana.com, 2021-Present
+## Senior ML Platform Engineer (*internal title: Senior Cognitive Machine Learning Professional*), humana.com, 2021-Present
 Member of the 10 person ML Platform team supporting dozens of databricks predictive model use cases. Support data scientists, from onboarding, vetting for reproducibility, model bias, code readability, stability, monitorability, memory footprint and speed, also through production issue as they arise during on call rotations.
 
 Spend half the time on improving the platform to make that onboarding simpler.

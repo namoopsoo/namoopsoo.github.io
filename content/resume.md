@@ -11,7 +11,7 @@ Member of a 10 person ML Platform team supporting dozens of Databricks predictiv
 Spend roughly half my time improving the platform to make onboarding and operating models simpler.
 
 ## Engineer, part time, enjoyapp.io, 2024
-Built out restaurant dish data model. And built out first and second approaches to cosine similarity plus geolocation dish search.
+Built the restaurant dish data model and successive generations of semantic dish search combining vector similarity and geospatial ranking. Evaluated embedding models, developed search quality benchmarks, and iterated on retrieval approaches across PostgreSQL/pgvector and hosted search infrastructure.
 
 ## Senior Data Scientist, katapult.com, 2014 - 2021
 Joining as 2nd Engineering hire, then moving to the data science team. Built and upgraded ML infrastructure, through various growth phases of the company. 

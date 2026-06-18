@@ -24,9 +24,8 @@ Joining as 2nd Engineering hire, then moving to the data science team. Built and
 Lead system and software engineer responsible for taking initial search engine for data company concept into a Python code base (with a demo helping us secure a \$720,000 contract) and iterating it through several subsequent stages of customer validation.
 
 
-## student, NYU Polytechnic School of Engineering, 2003 - 2008
-* Bachelor of Science magna cum laude in Computer Engineering
-* Master of Science in Electrical Engineering
+## Student, NYU Polytechnic School of Engineering, 2003 - 2008
+Earning Bachelor of Science magna cum laude in Computer Engineering, as well as  Master of Science in Electrical Engineering.
 
-## study abroad student, University of Sheffield, UK, Spring 2005
+## Study abroad student, University of Sheffield, UK, Spring 2005
 Global Engineering Education Exchange (Study Abroad Program)

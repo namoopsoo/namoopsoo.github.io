@@ -16,7 +16,9 @@ Built out restaurant dish data model. And built out first and second approaches 
 ## Senior Data Scientist, katapult.com, 2014 - 2021
 Joining as 2nd Engineering hire, then moving to the data science team. Built and upgraded ML infrastructure, through various growth phases of the company. 
 
-Refactoring, splitting off the underwriting into a separate API the tech side calls, containerizing for reproducibility, micro-service-chunking different parts of the pipeline for safer canary deploying, and replicating across availability zones after experiencing holiday retail outages, adding and detecting data drift . Wearing multiple hats, from  retraining our core model, when major changes arose, to gutting our models and code when speed was required.
+Refactored underwriting into a separate API consumed by the application, containerized systems for reproducibility, split parts of the pipeline into independently deployable services, replicated infrastructure across availability zones after holiday retail outages, and introduced data drift detection and monitoring.
+
+Wore multiple hats, from retraining core models when major business changes arose to simplifying models and code paths when operational speed and reliability became the priority.
 
 ## VP and Software Lead, Cortix Systems Inc, 2011 - 2014
 Lead system and software engineer responsible for taking initial search engine for data company concept into a Python code base (with a demo helping us secure a \$720,000 contract) and iterating it through several subsequent stages of customer validation.

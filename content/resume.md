@@ -1,63 +1,32 @@
 ---
 layout: default
-title: Michal Piekarczyk
+title: 
 ---
 
-### Michal Piekarczyk
+Extended career log: https://michal.piekarczyk.xyz/bragdoc/
 
-### Professional Experience
+## Senior ML Cognitive Engineer, humana.com, 2021-Present
+Member of the 10 person ML Platform team supporting dozens of databricks predictive model use cases. Support data scientists, from onboarding, vetting for reproducibility, model bias, code readability, stability, monitorability, memory footprint and speed.
 
-#### Data Scientist at Katapult, New York, NY (Sep 2014 - Present)
-_Data Scientist since 2017 and 2nd software engineering hire since 2014_
-* Collaborating with a colleague, rebuilt, feature engineered, iterated, tuned and productionized our underwriting model with **XGboost + ScikitLearn + SageMaker** to help our main business function when on short notice our main data provider deprecated their data products.
-* Created a **Data Drift Monitor** to more quickly catch the need to refit our model.
-* Decoupled and parallelized our underwriting *data pipeline* into a separate **AWS Lambda API Gateway** stack to help our team deploy faster and with more confidence.
-* **Dockerized** our production underwriting stack and split from the main company **git repo** to give us the flexibility to deploy both scikit learn and XGBoost models with **AWS SageMaker**. This update has now been validated over many months of iterations and model deployments.
-*  Optimized and re-engineered a colleague's SQL based logistic regression model, to let us make better underwriting decisions on returning customers. Built a python + Docker + AWS Batch SQL pipeline, optimizing from a 6+ hour under an hour runtime so it can run daily. And added the ability to update and version to make iteration easier.
-* Sped up our live underwriting model data pipeline by cutting less important features to save 1.5 sec, while maintaining model accuracy, to help keep our biggest retailer,
-* Also re-wrote our *feature engineering* code almost from scratch to cut another 2 sec.
-* Parallelized our costly data provider pulls in **Clojure**, **Docker**, **MongoDB** and **AWS ECS** to cut 2 more seconds.
-* Overhauled our anti-fraud code, responding to new data requirements, to help onboard our biggest retailer.
-* Introduced velocity checks to save thousands of dollars in redundant data costs.
-* Removed our data blind spots by logging to **AWS Athena** in critical areas, helping us with countless data investigations and business questions.
+Spend half the time on improving the platform to make that onboarding simpler.
 
-#### VP and Software Lead at Cortix Systems Inc, Alexandria, VA (Feb 2011 - Jul 2014)
-_Lead system and software engineer responsible for taking initial search engine for data company concept into a Python code base (with a demo helping us secure a \$720,000 contract) and iterating it through several subsequent stages of customer validation._
-* Architected the API for how our system consumes new data sources.
-* Led the design, implementation, parallelization, and testing of **NLP** processing algorithms weighing aspects about data and user decisions, to make predictions about new data introduced into the system.
-* Iterated through several versions of our query interpretation system, with partial text matching and allowing us to support both free-form and unambiguous query language.
-* Formalized our system's resource model and web API with RESTful HTTP.
+And spend the third half on production issues as they arise.
 
-### Projects
-
-#### A look into physiological time series data (Kaggle) (<a href="https://michal.piekarczyk.xyz/project/2020-04-05-aviation-kaggle-low-level/">Portfolio</a>/<a href="https://github.com/namoopsoo/aviation-pilot-physiology-hmm">Github</a>)
-* Iterated **Tensor Flow** **LSTM** based models to predict physiological states.
-* Built datasets in chunks with **numpy** and **h5py** for online learning, reliable memory consumption and parallel prediction
-* Used **matplotlib** to plot validation learning curves for a better understanding of progress in model iteration.
-
-#### Bike share destination prediction (<a href="https://michal.piekarczyk.xyz/project/2016-12-18-citibike-project/">Portfolio</a>/<a href="https://github.com/namoopsoo/learn-citibike">Github</a>)
-* Iterated a **scikit learn** classification problem over many data normalization, feature engineering and model evaluation steps.
-* Feature engineered additional geolocation data with **Google's Geocoding API**.
-* Built a **redis** backend to track the performance of different models and hyper parameters for easier ranking.
-* Dockerized and deployed the model with AWS SageMaker, Lambda and API Gateway, Docker, XGBoost and Python.
-
-#### Clojure 168 hours time parser (<a href="https://michal.piekarczyk.xyz/project/time-parser/time-parser-project/">Portfolio</a>/<a href="https://github.com/namoopsoo/time-parser">Github</a>)
-* Built an AWS Lambda API Gateway and **DynamoDB** backed micro service to log and summarize time data.
-
-### Skills
-* Python (pandas, numpy, matplotlib, scikitlearn, jupyter)
-* Machine Learning (XGboost, TensorFlow)
-* PostgreSQL, Docker
-* Clojure, JavaScript
+## Engineer, part time, enjoyapp.io, 2024
+Built out restaurant  dish data model.
+And built out first and second approaches to  cosine similarity plus geolocation dish search.
 
 
-### Education
+## Senior Data Scientist, katapult.com, 2014 - 2021
+Joining as 2nd Engineering hire, then moving to the data science team. Built and upgraded ML infrastructure, through various growth phases of the company. 
 
-#### NYU Polytechnic School of Engineering (Sep 2003 - May 2008)
-_Honors College Brooklyn, NY_
+## VP and Software Lead, Cortix Systems Inc, 2011 - 2014
+Lead system and software engineer responsible for taking initial search engine for data company concept into a Python code base (with a demo helping us secure a \$720,000 contract) and iterating it through several subsequent stages of customer validation.
+
+
+## student, NYU Polytechnic School of Engineering, 2003 - 2008
 * Bachelor of Science magna cum laude in Computer Engineering
 * Master of Science in Electrical Engineering
 
-#### University of Sheffield  (Spring 2005)
-_Sheffield, UK_
+## study abroad student, University of Sheffield, UK, Spring 2005
 Global Engineering Education Exchange (Study Abroad Program)

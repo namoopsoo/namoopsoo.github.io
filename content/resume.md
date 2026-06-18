@@ -6,19 +6,17 @@ title:
 Extended career log: https://michal.piekarczyk.xyz/bragdoc/
 
 ## Senior ML Platform Engineer (*internal title: Senior Cognitive Machine Learning Professional*), humana.com, 2021-Present
-Member of the 10 person ML Platform team supporting dozens of databricks predictive model use cases. Support data scientists, from onboarding, vetting for reproducibility, model bias, code readability, stability, monitorability, memory footprint and speed, also through production issue as they arise during on call rotations.
+Member of a 10 person ML Platform team supporting dozens of Databricks predictive model use cases. Partner with data scientists from onboarding through production, reviewing models for reproducibility, bias, readability, stability, observability, memory footprint, and performance, and helping resolve production issues during on-call rotations.
 
-Spend half the time on improving the platform to make that onboarding simpler.
-
-
+Spend roughly half my time improving the platform to make onboarding and operating models simpler.
 
 ## Engineer, part time, enjoyapp.io, 2024
-Built out restaurant  dish data model.
-And built out first and second approaches to  cosine similarity plus geolocation dish search.
-
+Built out restaurant dish data model. And built out first and second approaches to cosine similarity plus geolocation dish search.
 
 ## Senior Data Scientist, katapult.com, 2014 - 2021
 Joining as 2nd Engineering hire, then moving to the data science team. Built and upgraded ML infrastructure, through various growth phases of the company. 
+
+Refactoring, splitting off the underwriting into a separate API the tech side calls, containerizing for reproducibility, micro-service-chunking different parts of the pipeline for safer canary deploying, and replicating across availability zones after experiencing holiday retail outages, adding and detecting data drift . Wearing multiple hats, from  retraining our core model, when major changes arose, to gutting our models and code when speed was required.
 
 ## VP and Software Lead, Cortix Systems Inc, 2011 - 2014
 Lead system and software engineer responsible for taking initial search engine for data company concept into a Python code base (with a demo helping us secure a \$720,000 contract) and iterating it through several subsequent stages of customer validation.

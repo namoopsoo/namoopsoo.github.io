@@ -10,12 +10,15 @@ All notable changes to this "human experiment" will be documented in this file.
 ### First
 - Maybe first , suede shoe [restaining](https://s3.amazonaws.com/my-blog-content/2026-06-03--suede/shoe-IMG_1579.jpg) (2026-06-03).
 - First time integrating `fzf` into bash search , Control-R . Wow (2026-06-06).
+- No big deal  but first time paying at a restaurant, through a [bilt.com](https://www.bilt.com) nfc card (2026-06-17).
 
 ### Logged
 - Saving a mauviel pot with baking soda from oatmeal burning [yet again](https://michal.piekarczyk.xyz/note/2026-06-03--save-pot/) (2026-06-03).
 - Saw broadway show, The Giant, about Roald Dahl, wow, big fan of main actor that was great, John Lithgow (2026-06-13).
 - Finally linked my macbook as a linked Signal app. Trying to reduce the typing on them small phone screens, like can already do with imessage (2026-06-13).
-- 
+
+### Changed
+- Curbing my morning telephone use even more, by way of Dr. Trisha Patricha, (2026-06-12).
 
 ## 2026-05
 ### Logged

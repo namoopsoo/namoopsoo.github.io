@@ -7650,9 +7650,8 @@ $
       <guid>https://michal.piekarczyk.xyz/resume/</guid>
       <description>&lt;p&gt;Extended career log: &lt;a href=&#34;https://michal.piekarczyk.xyz/bragdoc/&#34;&gt;https://michal.piekarczyk.xyz/bragdoc/&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;senior-ml-cognitive-engineer-humanacom-2021-present&#34;&gt;Senior ML Cognitive Engineer, humana.com, 2021-Present&lt;/h2&gt;
-&lt;p&gt;Member of the 10 person ML Platform team supporting dozens of databricks predictive model use cases. Support data scientists, from onboarding, vetting for reproducibility, model bias, code readability, stability, monitorability, memory footprint and speed.&lt;/p&gt;
+&lt;p&gt;Member of the 10 person ML Platform team supporting dozens of databricks predictive model use cases. Support data scientists, from onboarding, vetting for reproducibility, model bias, code readability, stability, monitorability, memory footprint and speed, also through production issue as they arise during on call rotations.&lt;/p&gt;
 &lt;p&gt;Spend half the time on improving the platform to make that onboarding simpler.&lt;/p&gt;
-&lt;p&gt;And spend the third half on production issues as they arise.&lt;/p&gt;
 &lt;h2 id=&#34;engineer-part-time-enjoyappio-2024&#34;&gt;Engineer, part time, enjoyapp.io, 2024&lt;/h2&gt;
 &lt;p&gt;Built out restaurant  dish data model.
 And built out first and second approaches to  cosine similarity plus geolocation dish search.&lt;/p&gt;</description>

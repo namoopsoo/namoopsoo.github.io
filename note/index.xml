@@ -8,6 +8,13 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Without a Paddle</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-06-19-without-a-paddle/</link>
+      <pubDate>Fri, 19 Jun 2026 16:40:44 -0400</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-06-19-without-a-paddle/</guid>
+      <description>&lt;p&gt;I have been using apple macos transcription on my handwritten notes every once in a while, where you manually select text from some png or pdf and copy paste, into a text document, but it is pretty awful. Is bad because it misses many of the bounding boxes and even then makes so many transcription errors, that I might as well just transcribe it myself. And so ultimately I was wondering if a hugging face model is better at the transcription. I learned about &lt;a href=&#34;https://huggingface.co/PaddlePaddle/PaddleOCR-VL-1.5&#34;&gt;https://huggingface.co/PaddlePaddle/PaddleOCR-VL-1.5&lt;/a&gt; from chatgpt.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>2026 06 14 Kindle Notes</title>
       <link>https://michal.piekarczyk.xyz/note/2026-06-14-kindle-notes/</link>
       <pubDate>Sun, 14 Jun 2026 11:53:51 -0400</pubDate>

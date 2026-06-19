@@ -276,7 +276,7 @@ In the David Epstein book Range, he contrasts problems which are static vs those
 I was in a grungy Virginia hotel room during the 2024 Olympics in France. Everyone talks about the ecoli water in the Sein but in that hotel room I remember watching the sprint climbing events. Everypne climbs sort of the same style and importantly exactly the same course. And milliseconds are what separate gold from silver. There is zero risk of death. 
 
 
-# Summary of my points
+## Summary of my points
 
 - As the Martin Fowler blog puts it, a team Backlog is a mix of product and engineering priorities. Product looks at the user perspective, and Engineering looks at stability, reliability, maintainability and all the other -ilities. 
 - All the team members will wear the Product and Engineering hats , some might lean one way more than the other. 
@@ -286,8 +286,11 @@ I was in a grungy Virginia hotel room during the 2024 Olympics in France. Everyo
 - The process of PI planning is a negotiation, where all parties state their positions and bid for the time of the individual contributors 
 - At the end of the day , there is room to be excited about what the team is up to and can unify behind.
 
+## From 2026-06-17
+Having done a few more of these pi plannings, I have some more data. The last last one, had a small hackathon component, per the idea from our scrum master. However, the winning pitches already had a lot of spike work done off the books and so they were delivered 
 
-# References
+
+## References
 1. Getting Things Done, David Allen
 2. Slow Productivity
 3. Martin Fowler's blog https://martinfowler.com/articles/bottlenecks-of-scaleups/03-product-v-engineering.html
@@ -321,4 +324,4 @@ x. https://en.wikipedia.org/wiki/McNamara_fallacy
 23. https://www.nutrient.io/blog/what-ive-learned-about-product-iteration-planning-while-building-sdks/ prioritization article
 24. Google SWE book, leadership https://abseil.io/resources/swe-book/html/ch05.html 
 
-
+25. https://basecamp.com/hill-charts

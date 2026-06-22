@@ -6,9 +6,9 @@ date: 2026-06-21T20:16:54-04:00
 
 # optional thumbnail
 images:
-  - "THUMBNAIL_PLACEHOLDER"
+  - "https://s3.amazonaws.com/my-blog-content/2026-06-21-logseq-search/f1c78184-6824-46aa-a54b-a9efaaaba948.png"
 cover:
-  image: "THUMBNAIL_PLACEHOLDER"
+  image: "https://s3.amazonaws.com/my-blog-content/2026-06-21-logseq-search/f1c78184-6824-46aa-a54b-a9efaaaba948.png"
 ---
 
 <!-- Write your intro paragraph here. -->
@@ -27,3 +27,5 @@ With regard to the observation of tiny chunks floating at the top, let me add a 
 4. https://logseq.com/
 5. https://tailscale.com/
 6. https://michal.piekarczyk.xyz/note/2026-01-25-hook-up-cloudflare-rag-search/
+
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2026-06-21-logseq-search/f1c78184-6824-46aa-a54b-a9efaaaba948.png" width="50%">}}

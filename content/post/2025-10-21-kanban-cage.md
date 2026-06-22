@@ -287,8 +287,14 @@ I was in a grungy Virginia hotel room during the 2024 Olympics in France. Everyo
 - At the end of the day , there is room to be excited about what the team is up to and can unify behind.
 
 ## From 2026-06-17
-Having done a few more of these pi plannings, I have some more data. The last last one, had a small hackathon component, per the idea from our scrum master. However, the winning pitches already had a lot of spike work done off the books and so they were delivered 
+Having done a few more of these pi plannings, I have some more data. The last last one, had a small hackathon component, per the idea from our scrum master. However, the winning pitches were already mainly de-risked, with spike work done off the books up front and so they were pitched with only the final execution remaining. This is like the downward part of the basecamp hill chart<sup>[25](#references)</sup>. 
 
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2025-10-21-kanban-cage/image_1781904678907_0.png" width="50%">}}
+And that is really disappointing because the whole point of planning work is to plan work. But over the past several pi's I've participated in, it is clear that is not the intention, since the work that really matters needs to be done outside of the official channels.
+
+Also discussed with the pitch winner, and even after she laid out the remaining work, she still intuitively low-balled the effort strategically to increase the chances of winning.
+
+This all business of how do you spike your work to be able to pitch it officially is much like chicken and egg but where your product arm does their best to chuck the eggs at the wall. In the end it just smells like sulfary egg but we are still expected to get the chicken clucking.
 
 ## References
 1. Getting Things Done, David Allen

@@ -8,6 +8,14 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Logseq Search</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-06-21-logseq-search/</link>
+      <pubDate>Sun, 21 Jun 2026 20:16:54 -0400</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-06-21-logseq-search/</guid>
+      <description>&lt;!-- Write your intro paragraph here. --&gt;
+&lt;p&gt;Just hit a mini milestone today w.r.t. a small project I have been working on, to implement cosine similarity search on my logseq&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;  notes. I have embedded a few months worth of my notes with &lt;code&gt;Qwen/Qwen3-Embedding-0.6B&lt;/code&gt;&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; into chromadb and I have a small flask fastapi server&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;2,3&lt;/a&gt;&lt;/sup&gt;  around this, for querying. I have chunked up my notes before embedding them and therefore results show those chunks. I am serving this on ec2 using tailscale&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;, so I can even hit the endpoint from my phone without really exposing it publicly.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Without a Paddle</title>
       <link>https://michal.piekarczyk.xyz/note/2026-06-19-without-a-paddle/</link>
       <pubDate>Fri, 19 Jun 2026 16:40:44 -0400</pubDate>

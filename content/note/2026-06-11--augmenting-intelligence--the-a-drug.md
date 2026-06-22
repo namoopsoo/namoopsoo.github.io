@@ -29,3 +29,13 @@ Maybe instead of going cold turkey, we can settle on less refined highs that are
 
 ## Original prompt for the image
 > Lets create a funny hyperrealistic visual. Someone is on the floor of their kitchen half dressed just waking up from sleeping, next to their fridge. There is a rqcoon eating out of the trash, so theres trash strewn about.. Lots of coffee cups and random beer bottles. And laptops and a whiteboard randomly is also in this kitchen, saying , agentic engineering and lots of random scribbles . Refrigerator has interesting tech stuff on it. The person is of diverse backgrounds
+
+
+
+## Others identify the drug
+Updating here, reading the post [1] from Steve Yegge, "a new drug, and we don’t understand all of its effects yet. But one of them is massive fatigue, every day". 
+
+
+## References
+1. https://steve-yegge.medium.com/the-ai-vampire-eda6e4f07163
+

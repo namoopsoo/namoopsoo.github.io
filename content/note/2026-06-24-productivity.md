@@ -10,7 +10,8 @@ Our management refuses to clarify why they have not championed UX.
 
 I had pitched a UX improvement last quarted . nopw no one cares. My colleague built a POC to measure time to deploy. no one cares.
 
-The 
+so what is it that our leadership team are prioritizing instead ? The vision that they have sold, is lets make our product conform to company standards of security. but literally as I am writing this, my colleague who is trying to wrap up his own support is announcing that he cannot deploy a production fix.
+and the reason why is because we are  quote unquote, conform to companies standards of package management. these standards have been breaking our ability to deploy for the last month and a half. The reason why is that? They have decided to react very aggressively, to some of the recent supply-chain attacks, by throwing out the entire model of using the severity of a package as a way to trust it. instead, they have decided to stop downloading new packages altogether and instead allowing packages that are new in a sort of a trickle. but in the process, they have inadvertently broken the deployment for lots of different teams, that's because deployment were using new packages, but because  they also managed to remove lots of packages that were already part of our company loczl package repositories. so to me, this is proof that they don't actually know what they are doing.
 
 
 

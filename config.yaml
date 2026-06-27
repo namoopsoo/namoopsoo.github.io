@@ -106,9 +106,9 @@ menu:
       name: notes
       url: /note/
       weight: 30
-    - identifier: paper-notes
-      name: paper-notes
-      url: /paper-notes/
+    - identifier: gooses
+      name: silly-geese
+      url: /goose/
       weight: 120
     - identifier: Search
       name: search

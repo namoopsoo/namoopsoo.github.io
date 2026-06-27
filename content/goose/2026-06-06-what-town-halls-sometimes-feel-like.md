@@ -1,7 +1,7 @@
 ---
-title: "2026 06 06 What Town Halls Sometimes Feel Like"
+title: "What Town Halls Sometimes Feel Like"
 # slug: "2026-06-06-what-town-halls-sometimes-feel-like"
-date: 2026-06-27T12:33:56-04:00
+date: 2026-06-06
 # draft: true
 
 # optional thumbnail

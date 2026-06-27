@@ -2,20 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://michal.piekarczyk.xyz/goose/2026-06-27-detective-hat/</loc>
-    <lastmod>2026-06-27T12:30:42-04:00</lastmod>
-  </url><url>
-    <loc>https://michal.piekarczyk.xyz/goose/</loc>
-    <lastmod>2026-06-27T12:48:44-04:00</lastmod>
+    <loc>https://michal.piekarczyk.xyz/goose/2026-06-27-dominating-the-court/</loc>
+    <lastmod>2026-06-27T13:14:26-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/tags/jokes/</loc>
-    <lastmod>2026-06-27T12:48:44-04:00</lastmod>
+    <lastmod>2026-06-27T13:14:26-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/tags/</loc>
-    <lastmod>2026-06-27T12:48:44-04:00</lastmod>
+    <lastmod>2026-06-27T13:14:26-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/tags/text-to-image/</loc>
-    <lastmod>2026-06-27T12:48:44-04:00</lastmod>
+    <lastmod>2026-06-27T13:14:26-04:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/goose/2026-06-27-detective-hat/</loc>
+    <lastmod>2026-06-27T12:30:42-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/note/2026-06-21-logseq-search/</loc>
     <lastmod>2026-06-21T20:47:46-04:00</lastmod>
@@ -58,6 +58,9 @@
   </url><url>
     <loc>https://michal.piekarczyk.xyz/note/2026-05-23--macos-x86-transformers-qwen3/</loc>
     <lastmod>2026-05-23T18:59:58-04:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/goose/2026-05-17--hat-pocket/</loc>
+    <lastmod>2026-06-27T13:14:26-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/note/2026-05-17--hat-pocket/</loc>
     <lastmod>2026-05-17T14:18:29-04:00</lastmod>
@@ -1084,6 +1087,9 @@
   </url><url>
     <loc>https://michal.piekarczyk.xyz/project/</loc>
     <lastmod>2023-02-26T18:33:54-05:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/goose/</loc>
+    <lastmod>2026-06-27T13:14:26-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/foo/</loc>
     <lastmod>2023-02-26T18:33:54-05:00</lastmod>

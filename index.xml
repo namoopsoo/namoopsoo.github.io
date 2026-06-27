@@ -8,6 +8,16 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Dominating the Court</title>
+      <link>https://michal.piekarczyk.xyz/goose/2026-06-27-dominating-the-court/</link>
+      <pubDate>Sat, 27 Jun 2026 12:16:53 -0400</pubDate>
+      <guid>https://michal.piekarczyk.xyz/goose/2026-06-27-dominating-the-court/</guid>
+      <description>&lt;h2 id=&#34;original-prompt&#34;&gt;original prompt&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Fun hyper realistic  image of a judge looking person with fake white wig and classic robe, doing a single handed jump shot in basketball , kind of like in style of this photo&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;I provided a photo of someone in the middle of doing a finger roll, which is good because jump shots are further away from the basket unlike finger rolls. Anyway learned a new term!&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Detective Hat</title>
       <link>https://michal.piekarczyk.xyz/goose/2026-06-27-detective-hat/</link>
       <pubDate>Sat, 27 Jun 2026 11:43:46 -0400</pubDate>
@@ -142,6 +152,18 @@ Strauss Zelnick saying, from his game company perspective, hits are always novel
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Load the model&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;model &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SentenceTransformer(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Qwen/Qwen3-Embedding-0.6B&amp;#34;&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;however I ran into several installation roadblocks. Anyway without getting into all the hurdles, ultimately I realized per reading the torch docs&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;  and the versions of torch available&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;, that my &lt;code&gt;x86&lt;/code&gt; mac torch support stopped at &lt;code&gt;torch&amp;lt;2.3&lt;/code&gt;. And after it was only arm64, if I wanted to just grab the wheel file directly. And the torch website recommended python 3.10 . And well, that torch 2.2.2 requires &lt;code&gt;numpy&amp;lt;2&lt;/code&gt;. And the last twist was that huggingface started listing the qwen3 architecture only by &lt;code&gt;transformers&amp;gt;=4.51.0&lt;/code&gt;, which can also be seen on their model card&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; .&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hat Pocket</title>
+      <link>https://michal.piekarczyk.xyz/goose/2026-05-17--hat-pocket/</link>
+      <pubDate>Sun, 17 May 2026 13:04:04 -0400</pubDate>
+      <guid>https://michal.piekarczyk.xyz/goose/2026-05-17--hat-pocket/</guid>
+      <description>&lt;h2 id=&#34;note-on-creating-this-image&#34;&gt;Note on creating this image&lt;/h2&gt;
+&lt;h3 id=&#34;original-prompt-to-chat-gpt&#34;&gt;Original prompt to Chat GPT&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Realistic Image of someone in shorts pulling a pocket out, inverting it, revealing a small hole the pocket lining has. They are of the facial expression sort of like &amp;ldquo;hide the pain harry&amp;rdquo;. They are holding a slightly screen cracked telephone in their other hand. This image has a second vertical pane as well, on the right. This pane is further split into top and bottom, the same person shows they are putting now their phone into a thin hat, and their mood is like neutralish. Now the last bottom pane here, we see them half way, putting their thin hat, that visibly has the geometry of a phone rectangle , into their pocket. Now their facial expression is &amp;ldquo;clever&amp;rdquo; .
+And there is also a thin frame at the top where a title reads &amp;ldquo;Hat Pocket&amp;rdquo;
+The panes, arranged, are like this ,&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hat Pocket</title>

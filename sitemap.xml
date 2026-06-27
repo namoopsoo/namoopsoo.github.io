@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://michal.piekarczyk.xyz/goose/2026-06-06-what-town-halls-sometimes-feel-like/</loc>
+    <lastmod>2026-06-27T12:47:45-04:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/goose/</loc>
+    <lastmod>2026-06-27T12:47:45-04:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/tags/jokes/</loc>
+    <lastmod>2026-06-27T12:47:45-04:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/tags/</loc>
+    <lastmod>2026-06-27T12:47:45-04:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/tags/text-to-image/</loc>
+    <lastmod>2026-06-27T12:47:45-04:00</lastmod>
+  </url><url>
+    <loc>https://michal.piekarczyk.xyz/goose/2026-06-27-detective-hat/</loc>
+    <lastmod>2026-06-27T12:30:42-04:00</lastmod>
+  </url><url>
     <loc>https://michal.piekarczyk.xyz/note/2026-06-21-logseq-search/</loc>
     <lastmod>2026-06-21T20:47:46-04:00</lastmod>
   </url><url>
@@ -12,12 +30,6 @@
     <lastmod>2026-06-14T15:44:33-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/note/2026-06-11--augmenting-intelligence--the-a-drug/</loc>
-    <lastmod>2026-06-22T09:01:57-04:00</lastmod>
-  </url><url>
-    <loc>https://michal.piekarczyk.xyz/tags/</loc>
-    <lastmod>2026-06-22T09:01:57-04:00</lastmod>
-  </url><url>
-    <loc>https://michal.piekarczyk.xyz/tags/text-to-image/</loc>
     <lastmod>2026-06-22T09:01:57-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/note/2026-06-10-simplicity-through-complexity/</loc>
@@ -41,17 +53,14 @@
     <loc>https://michal.piekarczyk.xyz/note/2026-05-31-grackle/</loc>
     <lastmod>2026-06-09T09:15:17-04:00</lastmod>
   </url><url>
-    <loc>https://michal.piekarczyk.xyz/note/2026-05-31--planing/</loc>
-    <lastmod>2026-06-07T16:16:33-04:00</lastmod>
+    <loc>https://michal.piekarczyk.xyz/goose/2026-05-31--planing/</loc>
+    <lastmod>2026-06-27T12:30:42-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/note/2026-05-23--macos-x86-transformers-qwen3/</loc>
     <lastmod>2026-05-23T18:59:58-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/note/2026-05-17--hat-pocket/</loc>
     <lastmod>2026-05-17T14:18:29-04:00</lastmod>
-  </url><url>
-    <loc>https://michal.piekarczyk.xyz/tags/jokes/</loc>
-    <lastmod>2026-05-17T15:06:17-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/note/2026-05-16-interesting-benefit-ai/</loc>
     <lastmod>2026-05-16T19:55:00-04:00</lastmod>
@@ -266,8 +275,8 @@
     <loc>https://michal.piekarczyk.xyz/post/2025-09-20--agi-or-/</loc>
     <lastmod>2025-10-18T16:44:26-04:00</lastmod>
   </url><url>
-    <loc>https://michal.piekarczyk.xyz/post/2025-09-11-parking-lot/</loc>
-    <lastmod>2026-05-17T15:06:17-04:00</lastmod>
+    <loc>https://michal.piekarczyk.xyz/goose/2025-09-11-parking-lot/</loc>
+    <lastmod>2026-06-27T12:47:45-04:00</lastmod>
   </url><url>
     <loc>https://michal.piekarczyk.xyz/post/2025-08-17-apple-notes-weird-math/</loc>
     <lastmod>2025-08-17T10:58:37-04:00</lastmod>

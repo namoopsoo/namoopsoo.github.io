@@ -8,6 +8,18 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Cool Markdown Image hack</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-06-28--markdown-image/</link>
+      <pubDate>Sun, 28 Jun 2026 14:29:58 -0400</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-06-28--markdown-image/</guid>
+      <description>&lt;!-- Write your intro paragraph here. --&gt;
+&lt;p&gt;if an image in logseq has the form&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;!&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;image.png&lt;span style=&#34;color:#f92672&#34;&gt;](&lt;/span&gt;../assets/some image with spaces.png&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;that displays fine on logseq but does not display on github. On github, without changing the filename you can however replace spaces with &lt;code&gt;%20&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;!&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;image.png&lt;span style=&#34;color:#f92672&#34;&gt;](&lt;/span&gt;../assets/some%20image%20with%20spaces.png&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;but that doesn&amp;rsquo;t work on logseq.  However interestingly, though according to this &lt;a href=&#34;https://talk.commonmark.org/t/whitespace-in-image-paths/1121&#34;&gt;link&lt;/a&gt; I found per a google search, common mark supports one alternative that works in both logseq and github markdown !&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Dominating the Court</title>
       <link>https://michal.piekarczyk.xyz/goose/2026-06-27-dominating-the-court/</link>
       <pubDate>Sat, 27 Jun 2026 12:16:53 -0400</pubDate>

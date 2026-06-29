@@ -14,7 +14,6 @@ cover:
 Replying to a coworker's comments about code generation, how it is a necessary trade off between delegation and abdication.
 
 
-
 I like that he uses the phrase, for abdicating vs. delegating, that "prompts with explicit intent, drastically improve claud code's  chances at producing quality code," emphasis on "chances".
 This is to me  why it's not quite assembly since, compilation is deterministic. More on that later, but begs do question, are you in control?
 
@@ -32,7 +31,8 @@ But to the point of defending the "fun part" a bit . Maybe call it the enjoyable
 But going back to not looking at your code, but only when you already know what to expect? Are people really going follow this rule? It can be really tempting to just get the answer really quick because it feels like a nice dopamine hit. Many people self report to not looking at the code anymore. But maybe there is happy medium, enforcable by code harnesses, where you really pair program 50/50, to avoid atrophy to your knowledge? We will have to wrestle with this and people just starting out learning might find it really hard to learn to code from scratch.
 
 
-Subtopics also:
+### Subtopics also
+*Didnt cover yet*
 - abstractions and modules are close to what I think code gen might bring us to. 
 - Hasn't it all been done before? Why isn't software a "solved problem"? We keep doing it again and again. Is it becausee the devil is in the details?
 - compression and gpt as a search engine 

@@ -6,8 +6,17 @@
     <description>Recent content in Text-to-Image on michal piekarczyk | end to end combat</description>
     <generator>Hugo -- 0.145.0</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 04 Jul 2026 11:27:08 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jul 2026 13:24:40 -0400</lastBuildDate>
     <atom:link href="https://michal.piekarczyk.xyz/tags/text-to-image/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo Diagnostics</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-07-04--hugo-diagnostics/</link>
+      <pubDate>Sat, 04 Jul 2026 13:04:56 -0400</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-07-04--hugo-diagnostics/</guid>
+      <description>&lt;!-- Write your intro paragraph here. --&gt;
+&lt;h1 id=&#34;hugo-suddenly-serving-only-404s-locally-while-github-pages-worked&#34;&gt;Hugo suddenly serving only 404s locally while GitHub Pages worked&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Trying something new here. I have in this post, asked Chat GPT to turn a full troubleshooting thread into a blog post. I did not edit it&amp;ndash;maybe except a tiny one&amp;ndash;, because my goal was to document this particular weird problem without really spending time on writing a blogpost. Actually I think the result is pretty good, sticking very nicely to reality. It is not in my voice or my style, but that&amp;rsquo;s ok, I literally just wanted to document the thing and move on.&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Feeling Loopy</title>
       <link>https://michal.piekarczyk.xyz/note/2026-07-04-ralph/</link>

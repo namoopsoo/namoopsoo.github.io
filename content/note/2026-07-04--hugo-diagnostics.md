@@ -4,11 +4,14 @@ title: "Hugo Diagnostics"
 date: 2026-07-04T13:04:56-04:00
 # draft: true
 
+tags:
+  - text-to-image
+
 # optional thumbnail
 images:
-  - "THUMBNAIL_PLACEHOLDER"
+  - "https://s3.amazonaws.com/my-blog-content/2026-07-04--hugo-diagnostics/victor-hugo-067330a8-07d6-4f48-9d49-d8630f17f636.png"
 cover:
-  image: "THUMBNAIL_PLACEHOLDER"
+  image: "https://s3.amazonaws.com/my-blog-content/2026-07-04--hugo-diagnostics/victor-hugo-067330a8-07d6-4f48-9d49-d8630f17f636.png"
 ---
 
 <!-- Write your intro paragraph here. -->

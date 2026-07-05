@@ -59,3 +59,8 @@ shards = Counter(
 shards.most_common(10)
 ```
 getting, `[(1, 46), (2, 46), (3, 46), (4, 46), (5, 46), (6, 45), (7, 45), (0, 45)]`.
+
+
+## Gut check 
+So did I save time? Not sure yet haha. My document space is just files where the date `yyyy_mm_dd.md` is the path. What would I have done? Yea I would have also probably produced a day related number before passing it to the modulo `% 8`. And I would have tested it right away. So in this ecase I'm not sure if I saved time by outsourcing this code gen. But for sure I may have not had the thought to spot check the skew of this func and then I would have just had crappy asymmetric job spread and I would have noticed this later. So haha I will keep messing around with this of course. And I will keep trying to consider the net benefits. 
+

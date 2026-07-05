@@ -22,7 +22,7 @@ So leads ought to have full chunked context. Well, unless Rain Man is on your te
 
 When most people try to put too much context into their minds, they actually burn out locally--*well I am projecting from personal experience haha but I think I can extrapolate here*. But focusing on one specific task at a time, people can do great things. And it takes executive function to find the thing to do and then do it and then zoom back out and find the next thing.
 
-Executive function is like the human equivalent of the coding agent harness.
+Executive function is like the human equivalent of the coding agent harness. And maintaining the bare minimum context necessary is the key to not burning out as a person, when executing. And setting up that bare minimum context is also essential to getting the most out of an agentic interaction. The goldilocks zone for a good outcome.
 
 So yea, no one really has the full literal picture. Funny enough, birds have the birds eye view, yet systems engineering does not appear to be part of their daily activities. Well, actually maybe you might say as nest builders, they do need a partial systems approach. But anyway, humans have a different perspective. You can have a zoomed out birds eye view but  not by putting everything into your mental context but by compartmentalyzing concepts.  Good Abstractions . Good modular .
 

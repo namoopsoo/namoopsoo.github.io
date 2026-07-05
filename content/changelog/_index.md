@@ -6,6 +6,10 @@ robots: noindex, nofollow
 All notable changes to this "human experiment" will be documented in this file.
 
 
+## 2026-07
+### First
+- First time trying out a code harness, open code, against my openai subscription (2026-07-05).
+
 ## 2026-06
 ### First
 - Maybe first , suede shoe [restaining](https://s3.amazonaws.com/my-blog-content/2026-06-03--suede/shoe-IMG_1579.jpg) (2026-06-03).

@@ -8,6 +8,27 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Shard Spread Bug</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-07-05--shard-spread-bug/</link>
+      <pubDate>Sun, 05 Jul 2026 16:54:19 -0400</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-07-05--shard-spread-bug/</guid>
+      <description>&lt;!-- Write your intro paragraph here. --&gt;
+&lt;p&gt;I have been pairing with codex to add parallelization to my logseq semantic search kubernetes batch job. Codex authored this function for checking if a shard environmental variable, &lt;code&gt;SHARD_INDEX&lt;/code&gt;, should process a particular journal date among the set of journal dates to be processed. Paraphrasing the func, to just the basic hash algo,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;index_from_date&lt;/span&gt;(date_str, shard_count):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    digest &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; hashlib&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sha256(date_str&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;encode(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;utf-8&amp;#34;&lt;/span&gt;))&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;digest()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; int&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;from_bytes(digest[:&lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;], &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;big&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; shard_count
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I wanted to test out of curiosity the distribution, and found it was wow pretty skewed, non uniform,&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Big Picture</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-07-03--big-picture/</link>
+      <pubDate>Sat, 04 Jul 2026 13:56:37 -0400</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-07-03--big-picture/</guid>
+      <description>&lt;!-- Write your intro paragraph here. --&gt;
+&lt;h2 id=&#34;placeholder&#34;&gt;PLACEHOLDER&lt;/h2&gt;
+&lt;p&gt;Want to add a placeholder to this comment I started drafting on this video&lt;sup&gt;&lt;a href=&#34;#references&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; suggesting that the inability to hold the full context of a code base is the core limitation to agentic software engineering. I don&amp;rsquo;t think people have that either but we do just fine. I scrolled through the ffirst half of the comments and I couldn&amp;rsquo;t find the challenge that is on my mind here. But there was at least one commenter who pointed out, paraphrasing, &lt;em&gt;that only leads on a team really have the context and most people are going to be just like LLMs, working with limited information&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Hugo Diagnostics</title>
       <link>https://michal.piekarczyk.xyz/note/2026-07-04--hugo-diagnostics/</link>
       <pubDate>Sat, 04 Jul 2026 13:04:56 -0400</pubDate>

@@ -8,6 +8,15 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>More Opencode Oops</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-07-11--more-opencode-oops/</link>
+      <pubDate>Sat, 11 Jul 2026 15:25:39 -0400</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-07-11--more-opencode-oops/</guid>
+      <description>&lt;!-- Write your intro paragraph here. --&gt;
+&lt;p&gt;I&amp;rsquo;m sure recommendations from a coding harness will vary in quality with the parameters of the model and the context available, but if these are not quite right, there will likely always be some room for error.&lt;/p&gt;
+&lt;p&gt;Several interesting issues today with my semantic notes search project. I was using opencode with GPT 5.5 Fast recently and I ended up with pod memory monitoring that was not taking advantage of kubernetes capabilities and a parallelism split that did not align with my cluster node cardinality.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Shard Spread Bug</title>
       <link>https://michal.piekarczyk.xyz/note/2026-07-05--shard-spread-bug/</link>
       <pubDate>Sun, 05 Jul 2026 16:54:19 -0400</pubDate>

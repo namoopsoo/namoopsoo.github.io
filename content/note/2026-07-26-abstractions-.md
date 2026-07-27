@@ -39,9 +39,14 @@ So in this case actually, i will walk back slightly in that if the spec you writ
 Because i think one of the benefits to all of this that i have been Observing as a persobal benefit is writing techie technically.
 
 
+## technical manager head start
+## staff engineer head start
 
+## systems engineering head start
+if you work on problems where you rarely code except to improve tooling, you may not understand what all the productivity gain buzz is about . 
 
-
+## Data science head start 
+you are already used to black boxes. one more for the pipelines and go full Bitter Lesson? 
 
 
 
@@ -55,6 +60,8 @@ Because i think one of the benefits to all of this that i have been Observing as
 6. https://michal.piekarczyk.xyz/note/2026-02-07-sloppy-seconds/
 7. https://michal.piekarczyk.xyz/note/2026-05-16-interesting-benefit-ai/
 
-
+8. https://michal.piekarczyk.xyz/note/2026-07-04-ralph/
+9. https://michal.piekarczyk.xyz/note/2026-06-11--augmenting-intelligence--the-a-drug/
+10. https://michal.piekarczyk.xyz/note/2026-06-08-perspectives/
 
 

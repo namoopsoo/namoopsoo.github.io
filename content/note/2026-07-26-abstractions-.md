@@ -15,3 +15,15 @@ But often with agents engineering, code Gen, we delve into, bleed into the leaky
 
 ## this is more like no code
 For anyone who has had the displeasure of working with a visual or WYSIWYG code abstraction engine, you have seen this before. There is also UML i hear is same. 
+
+## Really bad GUIs. 
+For people who have not used no code, then most still have used unintuitive user interfaces.
+No matter how well you learn the interface , likely you will be screwed when it changes ever so slightly. And you have to remor your mental model, your ontology, yet again.
+
+i find myself using search on iphone settings because i can just never remember where settings are that i need. 
+
+Natural language to code is essentially off kind of search.
+
+
+
+

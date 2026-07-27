@@ -24,6 +24,31 @@ i find myself using search on iphone settings because i can just never remember 
 
 Natural language to code is essentially off kind of search.
 
+## Friction
+
+As lars says colling out the friction, when you solve problems yourself in o global problem space, you get to keep that that effort transfers to other problems in that Domain.
+But when you get good at prompting, at vibing , spec driven development or agentic engineering whatever they ore calling it these days, there is no real skill transfer.
+
+## people skills without the people
+
+
+Ultimately the anology that travels best here is then the only other thing we use natural language
+For, which is talking to other people. it   might be delegating, or  pair programming.
+
+So in this case actually, i will walk back slightly in that if the spec you write makes you better at describing problems, then actually that is great,
+Because i think one of the benefits to all of this that i have been Observing as a persobal benefit is writing techie technically.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

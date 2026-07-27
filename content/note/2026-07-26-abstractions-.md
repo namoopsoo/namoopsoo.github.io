@@ -50,7 +50,10 @@ Because i think one of the benefits to all of this that i have been Observing as
 2. https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic#and-less-hands-on-practice
 3. Theo 
 
-
+4. https://michal.piekarczyk.xyz/note/2026-06-28--musings-delegation-abdication/
+5. https://michal.piekarczyk.xyz/note/2026-05-12--merging-is-hard/
+6. https://michal.piekarczyk.xyz/note/2026-02-07-sloppy-seconds/
+7. https://michal.piekarczyk.xyz/note/2026-05-16-interesting-benefit-ai/
 
 
 

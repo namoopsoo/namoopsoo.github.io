@@ -45,7 +45,10 @@ Because i think one of the benefits to all of this that i have been Observing as
 
 
 
-
+## references
+1. lars 
+2. https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic#and-less-hands-on-practice
+3. Theo 
 
 
 

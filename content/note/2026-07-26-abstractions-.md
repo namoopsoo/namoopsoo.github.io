@@ -49,14 +49,32 @@ if you work on problems where you rarely code except to improve tooling, you may
 you are already used to black boxes. one more for the pipelines and go full Bitter Lesson? 
 
 
+This might be the most interesting analogy. Dato science has turned awy from handwriting features, notably,  there are no more expert systems, there no more visual image recognition feature writing. Dato science operates more like r kitchen sink these days, as of when we were blessed with high compute, how you leave feature selection up to the model, either forcing a logistic regression to be very picky with L1 norm regularization, or you let xy boost figure out how to choose features based on information gain, bagging boosting. 
+
+But this kind of dato science is fundamentally hot dog not hoo hot dog data science. An imag classifier is a single function.it is very precise. An rl, reinforcement learning system in say games, will say, precisely, okay, we preplaying a game of go, what is the next best move?
+
+A recommendation engine, the bread and butter of netflix or facebook or instagram or tiktok, just try to predict e botto show you to maximize engagement.
+
+Google maps, a very beautifu and innovative product, will figure out what is the best path to take toget-from point A to point B.
+
+A search enging ewill map a search query to the get of of documents that minimize the error, maximize recal, maximize ton the topk precision,
+
+Iom currently writing this with an Apple Pencil, it's backed hand writing recognition.
+
+All of the systems, built on large data sets do very specific things very well.
+
+Agentic systems ore trying to lo open ended things. Not surprisingly, wrt code, gen, the early benchmarks thot do extremely well one the ones that do leet code problems, very well defined.
+
+we also have early SWE benchmarks too. these will probably get more comprehensive. over time. 
+
 
 ## references
-1. lars 
+1. lars , https://larsfaye.com/articles/agentic-coding-is-a-trap
 2. https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic#and-less-hands-on-practice
-3. Theo 
+3. Theo , https://1minutesignal.com/signal/dangers-of-agentic-coding-atrophy 
 
 4. https://michal.piekarczyk.xyz/note/2026-06-28--musings-delegation-abdication/
-5. https://michal.piekarczyk.xyz/note/2026-05-12--merging-is-hard/
+5. https://michal.piekarczyk.xyz/note/2026-05-12--merging-is-hard/ B
 6. https://michal.piekarczyk.xyz/note/2026-02-07-sloppy-seconds/
 7. https://michal.piekarczyk.xyz/note/2026-05-16-interesting-benefit-ai/
 

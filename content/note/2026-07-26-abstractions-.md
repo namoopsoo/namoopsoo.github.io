@@ -91,4 +91,4 @@ Another analogy i like is wood chopping, soon axe us a chainsaw. Yes you can cut
 9. https://michal.piekarczyk.xyz/note/2026-06-11--augmenting-intelligence--the-a-drug/
 10. https://michal.piekarczyk.xyz/note/2026-06-08-perspectives/
 
-
+11. https://geohot.github.io/blog/jekyll/update/2026/05/24/the-eternal-sloptember.html

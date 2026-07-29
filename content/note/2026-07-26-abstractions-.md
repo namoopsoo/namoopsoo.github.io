@@ -68,9 +68,18 @@ Agentic systems ore trying to lo open ended things. Not surprisingly, wrt code, 
 we also have early SWE benchmarks too. these will probably get more comprehensive. over time. 
 
 
+## so where does the energy g?
+
+7am still shopping around for an analogy that fits, for agentic coding harnesses. Horse vs car? Manual vs automatic transmission? I like this one, because you communicate the dilemd that the harnesses can speed you up in some ways, or make your life   easier but  you still get to your destination  in the same amount of time. Lars also wrote, "The productivity gains from these models are real, and so is the friction and understanding that come from engaging with the work on a tangible and frequent basis." [1]. 
+
+7 om able to capture the benefit in ad hos scripts, that help me do research  Or analytics, i wouldnt had time for before. Of i con make propotypes of ideas that help me demonstrate value of something up front, like a potential. 
+
+Another analogy i like is wood chopping, soon axe us a chainsaw. Yes you can cut wood faster, but you ore building something, preparing the wood is not the bottle neck. Maybe you extend this to a robotic mid that can pre-fob all of the house. But now you have all those prefabricated components and some of them dont fit othe design has changed and you dont heed them anymore softwas s waste of materials-oops.
+
+
 ## references
 1. lars , https://larsfaye.com/articles/agentic-coding-is-a-trap
-2. https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic#and-less-hands-on-practice
+2. https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic#and-less-hands-on-practice 
 3. Theo , https://1minutesignal.com/signal/dangers-of-agentic-coding-atrophy 
 
 4. https://michal.piekarczyk.xyz/note/2026-06-28--musings-delegation-abdication/

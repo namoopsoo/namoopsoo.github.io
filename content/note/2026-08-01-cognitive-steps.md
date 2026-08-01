@@ -9,6 +9,9 @@ images:
   - "https://s3.amazonaws.com/my-blog-content/2026-08-01-cognitive-steps/45d29e99-0edd-44aa-a6fd-d88b1baf069c.png"
 cover:
   image: "https://s3.amazonaws.com/my-blog-content/2026-08-01-cognitive-steps/45d29e99-0edd-44aa-a6fd-d88b1baf069c.png"
+
+tags:
+  - text-to-image
 ---
 
 <!-- Write your intro paragraph here. -->
@@ -24,6 +27,8 @@ My coworker was drowning in the septic-tank-backfilling, tribal-knowledge-gate-k
 ## Alternative 
 As the phrase goes, if you get asked something once or twice, answer, but the third time, you should blog-post it or document it. Reduce the friction for obtaining the knowledge. So I think the same goes for knowledge behind a token-pay-wall. Pull that fish-slot-machine to obtain that knowledge fish once or twice, but then, bake it into your documentation. And by being the one writing said documentation, you also are part of the learn loop too.
 
+## Fingerpainting your thinking
+The second order effect to good documentation or local-retrievable knowledge, here is building skills yourself that you get to keep and reuse.  Without learning from what you are doing, taking home skills you can apply next time, you are just fingerpainting code. You may as well be getting all messy holding crayons with you whole fist, waiting for mommy and daddy to put your crayon code up on the fridge. 
 
 ## References 
 1. Jez Humble, Continuous Delivery
@@ -31,3 +36,4 @@ As the phrase goes, if you get asked something once or twice, answer, but the th
 3.  Everything Everywhere All at Once
 4. Shane De La Moore, on refactoring (TODO find youtube link)
 {{< figure src="https://s3.amazonaws.com/my-blog-content/2026-08-01-cognitive-steps/45d29e99-0edd-44aa-a6fd-d88b1baf069c.png" width="50%">}}
+5. Learning how to learn, Barbara Oakley

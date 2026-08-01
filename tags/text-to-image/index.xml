@@ -6,8 +6,16 @@
     <description>Recent content in Text-to-Image on michal piekarczyk | end to end combat</description>
     <generator>Hugo -- 0.145.0</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 07 Jul 2026 09:24:45 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 01 Aug 2026 15:20:12 -0400</lastBuildDate>
     <atom:link href="https://michal.piekarczyk.xyz/tags/text-to-image/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cognitive Steps</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-08-01-cognitive-steps/</link>
+      <pubDate>Sat, 01 Aug 2026 13:45:00 -0400</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-08-01-cognitive-steps/</guid>
+      <description>&lt;!-- Write your intro paragraph here. --&gt;
+&lt;p&gt;I had a coworker who left our team less than a year in because we would not cut down our development loops. By development loop, here I mean, if you want to write some new feature in a code base, can you test it locally, deploy it somewhere, test it closer to its real running conditions, and then make it live. But you typically need to do this many times, REPL style, because typically cannot predict statically if some patch has the intended outcome. So that&amp;rsquo;s why it&amp;rsquo;s a loop. This is also the itch of the Continuous Delivery [1] author, Jez Humble. I recall when my coworker was there, most of our code base was scattered across code islands, water gapped, through ship captains who could island hop you from one island to another. Testing was often impossible because of various databricks dependencies. Deploying to staging was sludgy, you know, slow and kludgy; you had to know about undocumented steps. Jiggle the keys in your ignition to start your car just right without shearing them off, after hearing your starter struggle-rattling. She&amp;rsquo;s still seaworthy, after a few attempts, you hear the car starts. My coworker&amp;rsquo;s frustration came to a head when he started his first and possibly last support rotation. When things failed and he found much of the team was perfectly fine with the inadequate pace to Jez-Humble a patch to a bug through to production, that led him to discuss this with the team. He had a few good approaches to help get some of our systems to be more, turnkey. But there was too much resistance to change and he left. Maybe I am more masochistic when it comes to tolerating slow and painful change.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Hugo Diagnostics</title>
       <link>https://michal.piekarczyk.xyz/note/2026-07-04--hugo-diagnostics/</link>

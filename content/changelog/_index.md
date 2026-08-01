@@ -6,9 +6,15 @@ robots: noindex, nofollow
 All notable changes to this "human experiment" will be documented in this file.
 
 
+## 2026-08
+
 ## 2026-07
 ### First
 - First time trying out a code harness, open code, against my openai subscription (2026-07-05).
+
+### Logged
+- World cup final at liberty science center (2026-07-xx)
+- de-cinnamoned my digital food scale. Wow looks like new! (2026-07-26).
 
 ## 2026-06
 ### First

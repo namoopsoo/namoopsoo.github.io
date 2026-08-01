@@ -6,9 +6,9 @@ date: 2026-08-01T13:45:00-04:00
 
 # optional thumbnail
 images:
-  - "THUMBNAIL_PLACEHOLDER"
+  - "https://s3.amazonaws.com/my-blog-content/2026-08-01-cognitive-steps/45d29e99-0edd-44aa-a6fd-d88b1baf069c.png"
 cover:
-  image: "THUMBNAIL_PLACEHOLDER"
+  image: "https://s3.amazonaws.com/my-blog-content/2026-08-01-cognitive-steps/45d29e99-0edd-44aa-a6fd-d88b1baf069c.png"
 ---
 
 <!-- Write your intro paragraph here. -->
@@ -30,3 +30,4 @@ As the phrase goes, if you get asked something once or twice, answer, but the th
 2. Will Larson, https://lethain.com/limiting-wip/
 3.  Everything Everywhere All at Once
 4. Shane De La Moore, on refactoring (TODO find youtube link)
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2026-08-01-cognitive-steps/45d29e99-0edd-44aa-a6fd-d88b1baf069c.png" width="50%">}}

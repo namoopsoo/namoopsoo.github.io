@@ -30,10 +30,13 @@ As the phrase goes, if you get asked something once or twice, answer, but the th
 ## Fingerpainting your thinking
 The second order effect to good documentation or local-retrievable knowledge, here is building skills yourself that you get to keep and reuse.  Without learning from what you are doing, taking home skills you can apply next time, you are just fingerpainting code. You may as well be getting all messy holding crayons with you whole fist, waiting for mommy and daddy to put your crayon code up on the fridge. 
 
+## Simple Made Easy
+Ultimately this all very easily follows Richard Hickey's prescient 2011 Simple Made Easy talk [6]. He noticed the industry tends to favor the easy over the practical. Here, easy means "quick" and "effortless" because it is at your fingertips, read as "short term quick fix". And this is in contrast to a stable solution that has not been half-assed; it is "simple" as in "beautiful". Asking an agent coding harness to solve your problems for you feels great. It's easy! Well more likely it is deceptively easy because you don't know how many times it takes to hit that slopt machine to get your outcome. Whereas also with organic problem solving, you also don't know how many attempts it will take you to find the working solution, you refine as you go along. You learn from your mistakes and sharpen your saw to solve the problem faster next time.
+
 ## References 
 1. Jez Humble, Continuous Delivery
 2. Will Larson, https://lethain.com/limiting-wip/
 3.  Everything Everywhere All at Once
 4. Shane De La Moore, on refactoring (TODO find youtube link)
-{{< figure src="https://s3.amazonaws.com/my-blog-content/2026-08-01-cognitive-steps/45d29e99-0edd-44aa-a6fd-d88b1baf069c.png" width="50%">}}
 5. Learning how to learn, Barbara Oakley
+6. Richard Hickey, Simple Made Easy

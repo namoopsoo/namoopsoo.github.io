@@ -33,6 +33,21 @@ The second order effect to good documentation or local-retrievable knowledge, he
 ## Simple Made Easy
 Ultimately this all very easily follows Richard Hickey's prescient 2011 Simple Made Easy talk [6]. He noticed the industry tends to favor the easy over the practical. Here, easy means "quick" and "effortless" because it is at your fingertips, read as "short term quick fix". And this is in contrast to a stable solution that has not been half-assed; it is "simple" as in "beautiful". Asking an agent coding harness to solve your problems for you feels great. It's easy! Well more likely it is deceptively easy because you don't know how many times it takes to hit that slopt machine to get your outcome. Whereas also with organic problem solving, you also don't know how many attempts it will take you to find the working solution, you refine as you go along. You learn from your mistakes and sharpen your saw to solve the problem faster next time.
 
+## Why I originally started writing this blog post
+I was trying to write a different blog post, and I wanted to attach some images. But my images were in heic and I had to go look up how it was that I had converted my heic to jpeg before. I looked this up in my logseq notes, which are kind of the unstructured interstitial spot for passer-by note taking of the essential and non-essential. I have no problem with doing that same kind of ad hoc search or even just looking up how to convert heic to jpeg each time too. You can call it the stack overflow approach too. If I do that enough times, though, hand writing, massaging, before applying that, I can, 
+
+```sh
+for foo in *.heic ; do 
+  echo "okay, $foo"
+  sips -s format jpeg "$foo" --out "${foo%.heic}jpeg"
+done
+```
+And I might become aware whether knowing this useful. For now I'm not yet sure whether it is useful to have muscle memory around knowing how to use `sips`. Maybe not. An earlier weekend, instead I actually did this kind of conversion with opencode as an intermediary step, as part of aslo addint the converted filenames into a markdown file. Because this was in an opencode docker container, it was linux so it wasn't even  `sips` because in linux, opencode chose to use imagemagick for the conversion instead.
+
+But I have acretively learned a lot of bash however, over the decades. And there are constantly a few small things I learn and reinforce when I do sense it will come in handy after reaching for it enough times.
+
+
+
 ## References 
 1. Jez Humble, Continuous Delivery
 2. Will Larson, https://lethain.com/limiting-wip/

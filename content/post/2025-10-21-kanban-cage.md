@@ -301,6 +301,8 @@ Reading [26] nikhil suresh's blogpost, mentioning the phoenix project, a book i 
 
 So PI planning from S.A.F.e. desires to take teams that practice agility, the art of adapting to change, hook them up into a kanban constraint centipede , painfully procrustean as the Greek myth goes, totally missing the point that visibility is about surfacing problems so they can be addressed when they arise, not attempting to confine unknowns under the guise of "release trains". 
 
+But likely none of this is intentional as This American Life notes [27] in how GM GeneralnMotors managers failed to generalize what Toyota did at Fremont plant.
+
 ## References
 1. Getting Things Done, David Allen
 2. Slow Productivity
@@ -329,4 +331,4 @@ x. https://en.wikipedia.org/wiki/McNamara_fallacy
 24. Google SWE book, leadership https://abseil.io/resources/swe-book/html/ch05.html 
 25. https://basecamp.com/hill-charts
 26. https://ludic.mataroa.blog/blog/the-failed-commodification-of-technical-work/
-
+27. https://www.thisamericanlife.org/403/transcript NUMMI 

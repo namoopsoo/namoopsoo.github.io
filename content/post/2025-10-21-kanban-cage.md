@@ -296,18 +296,18 @@ Also discussed with the pitch winner, and even after she laid out the remaining 
 
 This all business of how do you spike your work to be able to pitch it officially is much like chicken and egg but where your product arm does their best to chuck the eggs at the wall. In the end it just smells like sulfary egg but we are still expected to get the chicken clucking.
 
+## from 2026-08-07
+Reading [26] nikhil suresh's blogpost, mentioning the phoenix project, a book i have read, putting a lot of the principles of the toyota way, which is kanban, one makes me miss the beautiful , dea of everyone coming together to solve a systemic problem, but two, als realizing theat while safe is shitty agile for enterprises, there is some wordplay hiding ground the corner here too. Yes "kanban cage ", the title of this article too, but ill keep a look out.
+
 ## References
 1. Getting Things Done, David Allen
 2. Slow Productivity
 3. Martin Fowler's blog https://martinfowler.com/articles/bottlenecks-of-scaleups/03-product-v-engineering.html
 4. https://youtu.be/jHRsBDC5E9Q , Yuval Yeret and Ryan Ripley, "Breaking the SAFe™: Deconstructing PI Planning"
-
 5. Extreme Gohorse
 6.  Cal Newport and Adam Grant, https://link.chtbl.com/4HaHYkSm
-
 7. https://michal.piekarczyk.xyz/post/2025-06-04-fragile/ 
 x. https://en.wikipedia.org/wiki/McNamara_fallacy
-
 8. https://www.seangoedecke.com/how-to-ship/
 9. .... north star concept
 10. why can't ai manage my email , Cal Newport , New Yorker
@@ -315,19 +315,16 @@ x. https://en.wikipedia.org/wiki/McNamara_fallacy
 12. learning how to learn , https://www.coursera.org/learn/learning-how-to-learn 
 13. https://www.thoughtworks.com/en-us/radar/techniques/safe
 14. https://www.thoughtworks.com/insights/blog/digital-transformation/how-value-slices-can-fix-your-digital-transformation
-
 15. top down and bottom up OKRs, 
 16. other meaning of topdown, https://open.spotify.com/track/17MK2u7iHFpNb3tPuJnUdw?si=P0q6ooVVTBiRYMAyT9L9ng from Channel Tres
 17. Thinking Fast and Slow
 18. https://en.wikipedia.org/wiki/Planning_fallacy
 19. https://michal.piekarczyk.xyz/post/2025-06-04-fragile/ , discussing Robert  "Uncle Bob" Martin Clean Agile 
-
 20. https://www.sciencedirect.com/science/article/abs/pii/S0191886906002194?via%3Dihub , "On the distinction between yuppies and hippies: Individual differences in prediction biases for planning future tasks"
 21. https://en.wikipedia.org/wiki/Show,_don%27t_tell
-
 22. bullshit jobs article, book
-
 23. https://www.nutrient.io/blog/what-ive-learned-about-product-iteration-planning-while-building-sdks/ prioritization article
 24. Google SWE book, leadership https://abseil.io/resources/swe-book/html/ch05.html 
-
 25. https://basecamp.com/hill-charts
+26. https://ludic.mataroa.blog/blog/the-failed-commodification-of-technical-work/
+

@@ -299,6 +299,8 @@ This all business of how do you spike your work to be able to pitch it officiall
 ## from 2026-08-07
 Reading [26] nikhil suresh's blogpost, mentioning the phoenix project, a book i have read, putting a lot of the principles of the toyota way, which is kanban, one makes me miss the beautiful , dea of everyone coming together to solve a systemic problem, but two, als realizing theat while safe is shitty agile for enterprises, there is some wordplay hiding ground the corner here too. Yes "kanban cage ", the title of this article too, but ill keep a look out.
 
+So PI planning from S.A.F.e. desires to take teams that practice agility, the art of adapting to change, hook them up into a kanban constraint centipede , painfully procrustean as the Greek myth goes, totally missing the point that visibility is about surfacing problems so they can be addressed when they arise, not attempting to confine unknowns under the guise of "release trains". 
+
 ## References
 1. Getting Things Done, David Allen
 2. Slow Productivity

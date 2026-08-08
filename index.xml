@@ -8,6 +8,14 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>2 Weeks of Claude Lift Coding at Work</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-08-08--2-weeks-claude-at-work/</link>
+      <pubDate>Sat, 08 Aug 2026 12:20:54 -0400</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-08-08--2-weeks-claude-at-work/</guid>
+      <description>&lt;!-- Write your intro paragraph here. --&gt;
+&lt;p&gt;I have had access to claude at work now for maybe two weeks now.  Incidentally, I had already been using open code at home for a few weeks now at this point, so I&amp;rsquo;m wary of slot machining. I notice myself leaning into lift coding. So in data science speak, lift is the benefit above a baseline. So this can be using claude to rewrite a small piece of code based on a colleague&amp;rsquo;s PR feedback almost on the spot as opposed to perhaps waiting for some down time when I might get around to it. And I was iterating on a function, replacing it with a new one, and I found myself using claude to update the unit tests. That was really nice. Maybe I would have put off writing the unit test until later.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Cognitive Steps</title>
       <link>https://michal.piekarczyk.xyz/note/2026-08-01-cognitive-steps/</link>
       <pubDate>Sat, 01 Aug 2026 13:45:00 -0400</pubDate>

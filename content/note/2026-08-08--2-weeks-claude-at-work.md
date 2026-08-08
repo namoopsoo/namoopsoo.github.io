@@ -1,5 +1,5 @@
 ---
-title: "2 Weeks Claude at Work"
+title: "2 Weeks of Claude Lift Coding at Work"
 # slug: "2026-08-08--2-weeks-claude-at-work"
 date: 2026-08-08T12:20:54-04:00
 # draft: true

@@ -1,14 +1,14 @@
 ---
-title: "2026 08 08  2 Weeks Claude at Work"
+title: "2 Weeks Claude at Work"
 # slug: "2026-08-08--2-weeks-claude-at-work"
 date: 2026-08-08T12:20:54-04:00
 # draft: true
 
 # optional thumbnail
-images:
-  - "THUMBNAIL_PLACEHOLDER"
-cover:
-  image: "THUMBNAIL_PLACEHOLDER"
+# images:
+#   - "THUMBNAIL_PLACEHOLDER"
+# cover:
+#   image: "THUMBNAIL_PLACEHOLDER"
 ---
 
 <!-- Write your intro paragraph here. -->
@@ -20,6 +20,7 @@ Lift tasks I am observing in myself, are often mini side quests I would have nev
 
 Side note, in an ideal world, a package proxy UI and API should agree with each other and with opencve [1], nist nvd [2] and osv [3].
 
+I also had a self review task due, where I ended up creating a script for pulling in my code pull requests I could use as the work history and a web ui I could use to help me more easily filter and annotate the more relevant work. The self review stuff can be a bit of a slog and a kind ui can be the spoonful of sugar to make the medicine go down.
 
 - Logging maybe 2nd week now of access to claude code at work. Finding myself using claude for super specific diffs and unit tests here and there, but mostly for mini scripts or web UIs I would not have built, like a CVE scraper or a self-performance-review annotation web gui (2026-08-07).
 

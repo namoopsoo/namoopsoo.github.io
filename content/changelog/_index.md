@@ -10,7 +10,7 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Logged
 - Assembled a new reptizoo 18x18 terrarium and its special time varying humidifier. Looking forward to moving our pet snail over to see how they like it! (2026-08-02).
 - Yea just one of those days doing a calculated bike ride dry to trader joes then return biking getting totally completely drenched in a crazy thunderstorm (2026-08-07).
-- Logging maybe 2nd week now of access to claude code at work. Finding myself using claude for super specific diffs and unit tests here and there, but mostly for mini scripts or web UIs I would not have built, like a CVE scraper or a self-performance-review annotation web gui (2026-08-07).
+- Logging maybe [2nd week now of access to claude code](https://michal.piekarczyk.xyz/note/2026-08-08--2-weeks-claude-at-work/) at work. Finding myself using claude for super specific diffs and unit tests here and there, but mostly for mini scripts or web UIs I would not have built, like a CVE scraper or a self-performance-review annotation web gui (2026-08-07).
 
 ## 2026-07
 ### First

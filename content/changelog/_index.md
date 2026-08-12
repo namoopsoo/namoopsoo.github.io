@@ -11,7 +11,7 @@ All notable changes to this "human experiment" will be documented in this file.
 - Assembled a new reptizoo 18x18 terrarium and its special time varying humidifier. Looking forward to moving our pet snail over to see how they like it! (2026-08-02).
 - Yea just one of those days doing a calculated bike ride dry to trader joes then return biking getting totally completely drenched in a crazy thunderstorm (2026-08-07).
 - Logging maybe [2nd week now of access to claude code](https://michal.piekarczyk.xyz/note/2026-08-08--2-weeks-claude-at-work/) at work. Finding myself using claude for super specific diffs and unit tests here and there, but mostly for mini scripts or web UIs I would not have built, like a CVE scraper or a self-performance-review annotation web gui (2026-08-07).
-
+- humidifier showerhead powerwash 2026-08-12.
 ## 2026-07
 ### First
 - First time trying out a code harness, open code, against my openai subscription (2026-07-05).

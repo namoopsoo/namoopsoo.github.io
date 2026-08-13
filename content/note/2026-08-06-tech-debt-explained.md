@@ -23,6 +23,18 @@ But I get it. The commodification is the dream. [5] how con i predict software p
 
 Thats where the tech debt comes in. Or rather when it goes away. You get predictobility when you dont have ten bugs you have to work around to get anything done. ( maybe a different blog post but companies that fail to understand this instead double down in the other direction with compliance and change management, which slowss things down even further. ) 
 
+## an invisible force
+The colendar as the lash, as ali Abdaal has put it, is his way of scheduling his day to do what his planning self felt he ought. If you write it down you feel compelled towards doing it. Most strongly this works with meetings. Useless or not, if your team is meeting, the FOMO brings you there. A JIRA board similarly performs a kind of Parkinsons Law. 
+
+> “Work expands so as to fill the time available for its completion.”
+
+So a kind of corollary here iș "What isn’t allocated gets crowded out."
+
+## Fighting with air
+Maybe add slackm some padding to your kanban cage? Also hopefully Tanya Reilly has good thoughts here too. We know that gardening takes time. Planting seeds takes care, watering the plants is especially critical early in life 
+
+
+
 
 # References 
 1. https://abseil.io/resources/swe-book/html/ch09.html

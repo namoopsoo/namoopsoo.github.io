@@ -33,7 +33,7 @@ So a kind of corollary here iș "What isn’t allocated gets crowded out."
 ## Fighting with air
 Maybe add slackm some padding to your kanban cage? Also hopefully Tanya Reilly has good thoughts here too. We know that gardening takes time. Planting seeds takes care, watering the plants is especially critical early in life 
 
-
+Also here, several adages come to mind. If you dont have aplon, others will plan your time for you. And that plan will be made especially by those people who firmly believe that if you dont have a plan for where you are going, then you will get there. 
 
 
 # References 

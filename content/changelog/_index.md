@@ -18,6 +18,9 @@ All notable changes to this "human experiment" will be documented in this file.
 - Havent done my Central Park citibike no hander loop in a while until today (2026-08-09).
 - One more no hander loop (2026-08-14).
 
+### Learned
+- got some topsoil dirt from home depot, learning that hmm, there is indoor and outdoor dirt, and all the indoor dirt is fertilized. Endeded up with that outdoor unfertilized dirt since its for a snail terrarium ( 2026-08-15).
+
 ## 2026-07
 ### First
 - First time trying out a code harness, open code, against my openai subscription (2026-07-05).

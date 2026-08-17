@@ -14,7 +14,7 @@ All notable changes to this "human experiment" will be documented in this file.
 - Ragtime, Lincoln Center Theatre (2026-08-09).
 - humidifier showerhead powerwash 2026-08-12.
 
-## Unhandled
+### Unhandled
 - Havent done my Central Park citibike no hander loop in a while until today (2026-08-09).
 - One more no hander loop (2026-08-14).
 

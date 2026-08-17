@@ -21,6 +21,7 @@ All notable changes to this "human experiment" will be documented in this file.
 ## 2026-07
 ### First
 - First time trying out a code harness, open code, against my openai subscription (2026-07-05).
+- first time i tried the google drive rclone connection aport from aws S3 and dropbox in the post, specifically aiming at a possible tiller backup (2026-08-15).
 
 ### Logged
 - World cup final at liberty science center (2026-07-xx)

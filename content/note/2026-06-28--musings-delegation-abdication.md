@@ -46,3 +46,4 @@ But going back to not looking at your code, but only when you already know what 
 3. https://blog.codacy.com/the-creator-of-opencode-thinks-youre-fooling-yourself-about-ai-productivity
 4. https://michal.piekarczyk.xyz/note/2026-06-28--a-code-gen-complexity-example/
 5. https://youtu.be/1VqKUrxR2C8?t=2736 , Rad Daax on productivity gains
+6. Rise of Expert Beginner, https://daedtech.com/how-developers-stop-learning-rise-of-the-expert-beginner/

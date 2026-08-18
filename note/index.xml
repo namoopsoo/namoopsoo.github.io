@@ -8,6 +8,15 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>expert beginner redux</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-08-17-shallow/</link>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-08-17-shallow/</guid>
+      <description>&lt;p&gt;placeholder drafting.
+Realizing, i have discussed the topic of llm short cuts many times, but have not mentioned how prescient the 2012 article from erik dietrich on this was. on the rise of the expert beginner  , wrt using llms and them holding you back stunting your deep learning.&lt;/p&gt;
+&lt;p&gt;And similarly, people code agentic harnessing their way to freedom maybe similarly as erik&amp;rsquo;s bowling onology, will not know how stunted they are the more proliphic the harnesses become.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Tasks vs Asks</title>
       <link>https://michal.piekarczyk.xyz/note/2026-08-15--swarms/</link>
       <pubDate>Sat, 15 Aug 2026 12:13:49 -0400</pubDate>

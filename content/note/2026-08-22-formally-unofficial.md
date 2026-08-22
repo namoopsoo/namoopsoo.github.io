@@ -12,7 +12,7 @@ date: 2026-08-22T12:58:05-04:00
 ---
 
 <!-- Write your intro paragraph here. -->
-Exploring Kelley's benevolent noncompliance, has been more formally studied as goal displacement, exploration vs exploitation, but also creative deviance. Kelley's take is about how organizations are kind of like functioning alcoholics, formal and goal-oriented looking on the outside, but held together by unsanctioned thankless sustainment and stewardship of the few.
+Exploring Kelley's benevolent noncompliance [1], has been more formally studied as goal displacement [10], exploration vs exploitation, but also creative deviance. Kelley's take is about how organizations are kind of like functioning alcoholics, formal and goal-oriented looking on the outside, but held together by unsanctioned thankless sustainment and stewardship of the few.
 
 This paper [2] formally explores this topic--no pun intended 😆--and my initial thought is that cultivating deviant creativity is a kind of artform. Helicopter management can likely only will it into wilting.
 
@@ -55,7 +55,7 @@ Also very much Peter Steinberger quote too, about boring and hard , like a sweet
 This topic is about your beating heart and fanning your flame. I realize I end up writing on this topic every once in a while to help me remember why do the meaningful even when others try to bring you down.
 
 ## References
-1. https://youtu.be/zLZwpH5lCD4 
+1. https://andrewkelley.me/post/dont-take-black-pill.html ,  https://youtu.be/zLZwpH5lCD4 
 2. bootlegging, Or creative deviance , https://pubsonline.informs.org/doi/10.1287/orsc.2013.0856 
 3. https://www.joelonsoftware.com/2006/09/07/a-field-guide-to-developers-2/
 4. Lex Fridman interview(s) with Stephen Wolfram
@@ -63,5 +63,5 @@ This topic is about your beating heart and fanning your flame. I realize I end u
 6. https://paulgraham.com/greatwork.html , 2023 
 7. Buckminster Fuller, letter, 1970,  https://en.wikiquote.org/wiki/Buckminster_Fuller?utm_source=chatgpt.com#:~:text=edit-,The%20Things%20to%20do%20are%3A%20the%20things%20that%20need%20doing%2C%20that,letter%20as%20to%20whether%20Fuller%20was%20a%20%22doer%22%20or%20a%20%22thinker%22.,-We%20must%20do
 8. Peter Steinberger interview on Pragmattic Programmer, my citation, https://michal.piekarczyk.xyz/note/2026-05-01-odsc-closing-notes/#:~:text=%E2%80%9Cdifficult%20but%20not%20too%20interesting%E2%80%9D. 
-9. https://youtu.be/8lF7HmQ_RgY&t=4180 
-
+9. Peter Steinberger interview on Pragmattic Programmer, https://youtu.be/8lF7HmQ_RgY&t=4180 
+10. Goal Displacement, sounds interesting, but pay-walled, https://onlinelibrary.wiley.com/doi/10.1111/0033-3352.00075 

@@ -22,11 +22,11 @@ Kelley points out Michael Scott as a deleterious boss, but I kind of also rememb
 
 I am still making my way through [2] so I might revise this, but I am finding maybe an analogy could be sort of "looking the other way" when the the secret innovation slips out. There is a sort of trust that folks in an org need, like a psychological safety, that when they ultimately reveal the fruits of their bootlegging, they are not retaliated against for not following protocols.
 
-Trust is a two way street of course, and that relies on the quote in Joel's article that is in [3], 
+People say trust is a two way street, but instead I think this relies on the quote in Joel's article that is in [3], 
 
 > “Smart, and Gets Things Done.”
 
-which I think [2] also empirically measures, is a kind of non-negotiable.
+which I think [2] also empirically measures, is a kind of non-negotiable. So it is more like trust is really a one way thing. And in the other direction, there is credibility through consistent results.
 
 ## Play
 So [2] points to play quite a lot. 

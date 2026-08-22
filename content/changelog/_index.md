@@ -12,8 +12,8 @@ All notable changes to this "human experiment" will be documented in this file.
 - Yea just one of those days doing a calculated bike ride dry to trader joes then return biking getting totally completely drenched in a crazy thunderstorm (2026-08-07).
 - Logging maybe [2nd week now of access to claude code](https://michal.piekarczyk.xyz/note/2026-08-08--2-weeks-claude-at-work/) at work. Finding myself using claude for super specific diffs and unit tests here and there, but mostly for mini scripts or web UIs I would not have built, like a CVE scraper or a self-performance-review annotation web gui (2026-08-07).
 - Ragtime, Lincoln Center Theatre (2026-08-09).
-- humidifier showerhead powerwash 2026-08-12.
 - Yea I guess spoonfed study guy is right, limitation is often in your mind. Just nearly doubled my longest plank, at 15:20 (2026-08-22).
+- humidifier showerhead powerwash (2026-08-12).
 
 ### Unhandled
 - Havent done my Central Park citibike no hander loop in a while until today (2026-08-09).
@@ -21,6 +21,12 @@ All notable changes to this "human experiment" will be documented in this file.
 
 ### Learned
 - got some topsoil dirt from home depot, learning that hmm, there is indoor and outdoor dirt, and all the indoor dirt is fertilized. Endeded up with that outdoor unfertilized dirt since its for a snail terrarium ( 2026-08-15).
+
+### Changed
+- Started using new kamira espresso technique idea I borrowed, heat up first before adding water (2026-08-10).
+
+### First
+- Finally got a hygrometer for terrarium use, actually analog one from petco (2026-08-15).
 
 ## 2026-07
 ### First

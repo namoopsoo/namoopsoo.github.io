@@ -13,6 +13,7 @@ All notable changes to this "human experiment" will be documented in this file.
 - Logging maybe [2nd week now of access to claude code](https://michal.piekarczyk.xyz/note/2026-08-08--2-weeks-claude-at-work/) at work. Finding myself using claude for super specific diffs and unit tests here and there, but mostly for mini scripts or web UIs I would not have built, like a CVE scraper or a self-performance-review annotation web gui (2026-08-07).
 - Ragtime, Lincoln Center Theatre (2026-08-09).
 - humidifier showerhead powerwash 2026-08-12.
+- Yea I guess spoonfed study guy is right, limitation is often in your mind. Just nearly doubled my longest plank, at 15:20 (2026-08-22).
 
 ### Unhandled
 - Havent done my Central Park citibike no hander loop in a while until today (2026-08-09).

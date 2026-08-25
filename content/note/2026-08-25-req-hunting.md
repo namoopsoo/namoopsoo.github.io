@@ -26,3 +26,9 @@ In the middle, I think we have people who have tried agentic engineering and rea
 
 So in the end it should be asked, I wonder does Matt Pocock discuss how much time has he saved? Does he declare himself a 100x or 1000x engineer like Steve Yegge or is he more measured like Dax raad, who I think basically says you can be a 1.5x or 2x engineer, and reinvest the benefits into a clean refactored code base and good documentation and more Time to deeply understand the problem space and morrr deeply think on  the design you are shaping , which doesn’t necessarily translate into more productivity but just leveraging agentic engineering to get higher quality that you had before and possibly reinvest some of that into less stress for yourself (which Steve Yegge also says actually) . 
 
+## references
+1. https://github.com/mattpocock/skills
+2. https://youtube-distilled.com/watch/-QFHIoCo-Ko
+
+
+

@@ -29,6 +29,7 @@ So in the end it should be asked, I wonder does Matt Pocock discuss how much tim
 ## references
 1. https://github.com/mattpocock/skills
 2. https://youtube-distilled.com/watch/-QFHIoCo-Ko
+3. https://github.com/war851/SDLC/blob/main/_foundation/transcripts/2026-06-30-full-walkthrough-workflow-for-ai-coding-matt-pocock/transcript.txt
 
 
 

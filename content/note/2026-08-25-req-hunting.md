@@ -34,9 +34,18 @@ This point kind of combines a few of the above points. This is like an analogy I
 ## And?
 Im not sure if  Matt Pocock discusses how much time has he saved with his skills. I wonder if  he talks about productivity in multiplier language  like Steve Yegge. I appreciate how Dax is more measured , I think basically saying you can be a 1.5x or 2x engineer, and reinvest the benefits into a clean refactored code base and good documentation and more Time to deeply understand the problem space and more deeply think on  the design you are shaping , which doesn’t necessarily translate into more productivity but just leveraging agentic engineering to get higher quality that you had before and possibly reinvest some of that into less stress for yourself (which Steve Yegge also says actually) . 
 
-## references
+## I forgot to talk about Matt's skills 
+I think I originally started writing this because the youtube algorithm showed me Matt's video about his wayfinder skill [7]. I was inspired by his framing fog of the of war. 7 have not tried any of his skill files yet, but I suspect his grill me concept is close to what you get from pair programming or poormans pair programming otherwise known as duck programming. 
+
+## Also, Dexter Horthy's take
+Todo, [6], Dexter discusses new thought on Research plan implement, and he also opines productivity gains, can be modest, like 2-3x. 
+
+## References
 1. https://github.com/mattpocock/skills
 2. https://youtube-distilled.com/watch/-QFHIoCo-Ko
 3. https://github.com/war851/SDLC/blob/main/_foundation/transcripts/2026-06-30-full-walkthrough-workflow-for-ai-coding-matt-pocock/transcript.txt
 4. https://michal.piekarczyk.xyz/note/2026-08-15--swarms/
 5. https://michal.piekarczyk.xyz/note/2026-07-04-ralph/
+6. Dexter Horthy, on, Research plan implement, https://youtu.be/YwZR6tc7qYg
+7. Matt Pocock on wayfinder skill, https://youtu.be/F3lL98Pj90o 
+

@@ -14,7 +14,7 @@ On the other extreme, is total purism. Dont use any A. I. for writing code. Or a
 In the middle, I think we have people who have tried agentic engineering and realize, as Matt  Pocock and others have laid out, reality presents    a lot of challenges you cant escape.
 
 ## Agentic Challenges
-My framing of what agentic engineering cannot magically solve , at least for now.
+My framing of what agentic engineering cannot magically solve , at least for now, borrowing from [1] and other places.
 
 (1) You don’t know what you want. You learn what is needed as you build it. Requirements aren’t gathered, they are hunted. 
 

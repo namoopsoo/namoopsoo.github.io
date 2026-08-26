@@ -5,7 +5,7 @@ draft: false
 ---
 
 
-Maybe Matt Pocock [1] , (along with Dax Raad and Peter Steinberger), is someone who sits kind of in the middle of the debate about just how much more productive coding agents can make you wrt  the software development lifecycle.
+I suspect Matt Pocock [1] , (along with Dax Raad and Peter Steinberger), is someone who sits kind of in the middle of the debate about just how much more productive coding agents can make you wrt  the software development lifecycle.
 
 On one extreme is Steve yegge who is kind of declaring orchestration is here, and you need not, ever look at code again, just express your intent and the swarms[4] will manifest it. Or something [5]. Chaos theory be damned. 100x to 1000x productivity is claimed. (Holding my breath?) There are many others in this camp. I would like to understand them better. 
 

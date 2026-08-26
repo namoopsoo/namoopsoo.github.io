@@ -8,6 +8,14 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Requirement Hunting</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-08-25-req-hunting/</link>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-08-25-req-hunting/</guid>
+      <description>&lt;p&gt;Maybe Matt Pocock [1] , (along with Dax Raad and Peter Steinberger), is someone who sits kind of in the middle of the debate about just how much more productive coding agents can make you wrt  the software development lifecycle.&lt;/p&gt;
+&lt;p&gt;On one extreme is Steve yegge who is kind of declaring orchestration is here, and you need not, ever look at code again, just express your intent and the swarms[4] will manifest it. Or something [5]. Chaos theory be damned. 100x to 1000x productivity is claimed. (Holding my breath?) There are many others in this camp. I would like to understand them better.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Formally Unofficial</title>
       <link>https://michal.piekarczyk.xyz/note/2026-08-22-formally-unofficial/</link>
       <pubDate>Sat, 22 Aug 2026 12:58:05 -0400</pubDate>

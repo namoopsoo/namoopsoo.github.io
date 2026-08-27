@@ -8,6 +8,16 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Life Unboxing</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-08-27--unboxing/</link>
+      <pubDate>Thu, 27 Aug 2026 09:25:41 -0400</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-08-27--unboxing/</guid>
+      <description>&lt;!-- Write your intro paragraph here. --&gt;
+&lt;p&gt;A friend sent a Nicholas Taleb quote, that got me thinking,&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;They are born, then put in a box; they go home to live in a box; they study by ticking boxes; they go to what is called &amp;ldquo;work&amp;rdquo; in a box, where they sit in their cubicle box; they drive to the grocery store in a box to buy food in a box; they go to the gym in a box to sit in a box; they talk about thinking &amp;ldquo;outside the box&amp;rdquo;; and when they die they are put in a box. All boxes, Euclidian, geometrically smooth boxes.&amp;rdquo;&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Requirement Hunting</title>
       <link>https://michal.piekarczyk.xyz/note/2026-08-25-req-hunting/</link>
       <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>

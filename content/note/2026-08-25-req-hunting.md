@@ -51,3 +51,5 @@ Todo, [6], Dexter discusses new thought on Research plan implement, and he also 
 6. Dexter Horthy, on, Research plan implement, https://youtu.be/YwZR6tc7qYg
 7. Matt Pocock on wayfinder skill, https://youtu.be/F3lL98Pj90o 
 8. https://en.wikipedia.org/wiki/Rubber_duck_debugging
+9. David Hanemeier Hanson hot take, https://youtu.be/NYFGCESmikA 
+

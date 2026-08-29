@@ -1,6 +1,11 @@
 ---
 date: 2026-08-29
 title: Smart and gets things done
+
+images:
+  - "https://s3.amazonaws.com/my-blog-content/2026-08-29-smart-and-gets-things-done/317f0f2f-1a6a-4cfe-a5ee-fe19f2da2af1.png"
+cover:
+  image: "https://s3.amazonaws.com/my-blog-content/2026-08-29-smart-and-gets-things-done/317f0f2f-1a6a-4cfe-a5ee-fe19f2da2af1.png"
 ---
 
 Joel spolsky's book , [1], his blog, his phrase, is specifically two parts. Intriguingly, just like with students and with large language models, we are more obsessed with the first.
@@ -36,6 +41,3 @@ Well he kind of said that 😆 about fighters but I think his world model genera
 10. https://www.samharris.org/podcasts/making-sense-episodes/486-luck-all-the-way-down
 11. https://michal.piekarczyk.xyz/note/2026-08-22-formally-unofficial/
 12. No Estimates
-
-
-

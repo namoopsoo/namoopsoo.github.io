@@ -1,9 +1,9 @@
 ---
 date: 2026-01-19
-title: how-to-make-cake
+title: How to make cake
 ---
 
-Started reading, preview, AI Snake Oil. Reading retelling of what a developer Thomad Ptacek received from ChatGPT about how a biblical verse would explain removing a peanut buttee sandwich from a VCR.
+Started reading, preview, AI Snake Oil. Reading retelling of what a developer Thomas Ptacek received from ChatGPT about how a biblical verse would explain removing a peanut butter sandwich from a VCR.
 
 The below  makes me think of the Russel Peters standup routine where he demonstrates how a particular man would stereotype explain how to bake a cake. 
 
@@ -19,12 +19,12 @@ Also what comes to mind was this bus I noticed, during covid times,
 {{< vimeo 785843804 >}}
 
 
-## crisis of replicability
+## Crisis of replicability
 p 23 Preach! Several examples of flaws in ML models and attempts to address them in research falling on deaf ears. hmm "self-correction" is the preference? 
 
 Reading many examples, including a "next music hit" predictor that failed to separate train test split validation. And a "has covid" predictor where positive and negative examples were split evenly as children and adults so models just learned "is child" insteaf of "has covid". Wow
 
-## lack of AI product audits
+## Lack of AI product audits
 p24 hiring: 
 Pymetrics, HireVue, in the dog house: no public audits for "does it work?" only for "are the models biased w.r.t. demographics. 
   
@@ -49,7 +49,7 @@ I wonder how often are the examples in this book about skewed training data. And
 
 
 
-## gamable systems
+## Gamable systems
 p47, people research, showing like with resume keyword stuffing of the past, video interview analysis are similarly gamable. they tested glasses, backgrounds , etc, and unclear what sample size and stats were but they say these appeared to influence outcomes.
 
 ## Netherlands, welfare fraud detection
@@ -65,7 +65,7 @@ But wow, sohnds like the prime minister resigned so likely proper bias assessmen
 ## End od Experts
 Noticing interesting parallel between Julian Whatley's "end of experts" [5] and the "AI Snake Oil" book's disappointment in predictive models , in that both  offer generalized "advice" .  Classical ML goal is literally to generalize well. It is good in principle, to reduce error overall but yes by definition predictions attempt to   avoid using features that are too tailored. Rule of thumb preferred.
 
-## limits of prediction
+## Limits of prediction
 p64 interesting trend, weather forecqst accuracy 6 day today, as accurate as 5 day a decade ago, so 1 day a decade. Using simulations. 
 
 p66 their opinion that spam classifiers are in the "good ML" category, attributing to mountains of data. 
@@ -79,22 +79,21 @@ But we didnt do a good job of predicting the 2000 dot com bubble, the 2008 mortg
 Im reminded by the Nassim Taleb graphic of a Turkey forecasting everything is great, right before ThanksGiving! 
 
 
-# Risk though
+## Risk though
 The AI Snake Oil discusses one side of predictions and risk management and market making [6] is the flip side. I think Ray Dalio would take the other side as well along with Lloyd Blankfein I suspect . 
+
+
+## Note from 2026-08-29
+Reading Nassim Taleb describe [7] a point about his [8] book Black Swan that he writes about how economists and social scientists are doing some funky maths. This makes me wonder does Ai Snake Oil cite Black Swan? I kind of feel silly for failing to consider the large body of pseudo work that has existed prior to modeling quackery. The book is named "snake oil" after medicine from a hundred years ago after all!
   
 
-# references
+## References
 
 1. https://press.princeton.edu/books/hardcover/9780691249131/ai-snake-oil#preview
 2. Russel Peters routine
 3. https://vimeo.com/785843804
 4. aueomation bias, noted elsewhere, https://youtu.be/P5HxTdkitmA , Julian Whatley 
 5. expert advice, as general adviCe, https://youtu.be/o2S2w9RiNtI , Julian Whatley 
-
-
-6. risk management point of view, Lloyd Blankfein, and market making, inteeurview Sam Harris episode, 473 Making Sense
-
-
-
-
-
+6. risk management point of view, Lloyd Blankfein, and market making, interview Sam Harris episode, 473 Making Sense
+7. Nassim Taleb, https://nntaleb.medium.com/commencement-address-american-university-in-beirut-2016-a5c6d57984b
+8. Black Swan

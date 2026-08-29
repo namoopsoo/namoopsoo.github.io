@@ -53,3 +53,6 @@ Todo, [6], Dexter discusses new thought on Research plan implement, and he also 
 8. https://en.wikipedia.org/wiki/Rubber_duck_debugging
 9. David Hanemeier Hanson hot take, https://youtu.be/NYFGCESmikA 
 
+10. Nate B Jones, on prompt0, doing your thinking before prompting  , https://promptkit.natebjones.com/20260225_hfy_promptkit_1?utm_source=chatgpt.com
+
+

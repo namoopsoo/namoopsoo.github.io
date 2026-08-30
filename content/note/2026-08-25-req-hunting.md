@@ -42,6 +42,16 @@ And i want to learn a bit more about his way finder concept, because i suspect t
 ## Also, Dexter Horthy's take
 Todo, [6], Dexter discusses new thought on Research plan implement, and he also opines productivity gains, can be modest, like 2-3x. 
 
+## And DHH take 
+I think DHH take [9] is intriguing. Well any try it was really making lex Fridman laugh out loud quite a lot. Like when DHH said that okay right now the cloude output is so good now, you can trust it and lex says okay so   you just say "i want the code to be secure "and that's all need? DHH saysyes. And lex chuckles. This is a important question because DHH has been developing omarchy, on arch linux fork, with a friend and he hasnt looked at the code. DHH opinion is that these days programming knowledge is a handicap rather than an advantage. Although he does also recount a story of how they at Base Camp recently let loose their product developers on the code to sort of do more releases without the typical product plus programmer combo and after that there was a bit of o mess they needed to clean up. And he also said he is aware if you set the agents go for too long without checking, you get, 01:02:00 ball of mud code.  
+
+So i think DHH raises a lot of good points, but he is still on the fence about the extent of the correctness of the output. But for sure he agrees that planning is bullshit. And in fact he finds the exact same parallels of agentic planning to the  ambitions of software project management that i have been writing about this year. That is refreshing to see!   And he also sees  the  rise of agile in 2000s, as the same parallel to instead the only way he uses agentic harnesses, which is again, like Peter Steinberger, that you can only do this iteratively. Kind of paraphrasing , "No one knows what they want until they play with it. In process of using you discover what you wqnt, whats important, not important " (00:58:00). Completely agree there, but the nuonce is that DHH has also stopped reading the code and he sees the iteration purely as a user experience testing thing. Like Peter too i think. 
+
+And for that last point, thats i think the main difference of opinion, where say Dexter Horthy had that talk [6] literally to walk back earlier statement about only reading plans. He flipped saying no no no please read  the code, the plans are useless. However he also had a new interesting approach as well, kind of alternative to RPI.
+
+
+
+
 ## References
 1. https://github.com/mattpocock/skills
 2. https://youtube-distilled.com/watch/-QFHIoCo-Ko
@@ -51,7 +61,8 @@ Todo, [6], Dexter discusses new thought on Research plan implement, and he also 
 6. Dexter Horthy, on, Research plan implement, https://youtu.be/YwZR6tc7qYg
 7. Matt Pocock on wayfinder skill, https://youtu.be/F3lL98Pj90o 
 8. https://en.wikipedia.org/wiki/Rubber_duck_debugging
-9. David Hanemeier Hanson hot take, https://youtu.be/NYFGCESmikA 
+ 
+9. David Heinemeier Hansson hot take, Lex interview, https://youtu.be/NYFGCESmikA 
 
 10. Nate B Jones, on prompt0, doing your thinking before prompting  , https://promptkit.natebjones.com/20260225_hfy_promptkit_1?utm_source=chatgpt.com
 

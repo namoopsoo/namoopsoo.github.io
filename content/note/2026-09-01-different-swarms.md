@@ -19,20 +19,17 @@ But there is a better way?!
 ## Goldilocks
 So I think in [1], i realize DHH points to several very some uses for swarms.  One case he describes his passion to optimize e the initial install time for Omarchy , from ISO. And he describes what i can only call a kind of hyperporometer optimization focused on reducing that 1008 time. So he has several different ideas for how to do this, one is messing with the files  that need to be uncompressed ond another is doing work while the user is T thinking or reading text. I think there were other ideas too so now he has agents trying to solve the some problem (time reduction), with the some final verifiable outcome. So now parallelization makes perfect sense.
 
-In fact he described several other scenarios that very similarly cut up the space, that are kind of like map reduce problems. I realize I described this concept too earlier .
+In fact he described several other scenarios that very similarly cut up the space, that are kind of like map reduce problems. Also I realize I described this concept too earlier , here [3].
 
+- Swarm QA   (2:25:39-2:26:00).
+- Divide and conquer pull request review (35:13-35:35).
+- Use different frontier models to verify each others work, (2:38:14-2:38:35).
+- Swarm debugging, (2:25:01-2:25:48).
 
-
-
-  
-
-
-
-
-
-
+DHH also mentions perhaps a dream of distributed project management  (2:42:38-2:43:21), so I guess well see what happens but the use cases are limited. Actually, now that i think about it, attacking, reproducing, fixing bugs in a issues list might be a good case actually. 
 
 
 ## References
 1. David Heinemeier Hansson hot take, Lex interview, https://youtu.be/NYFGCESmikA
 2. https://michal.piekarczyk.xyz/note/2026-08-25-req-hunting/
+3. https://michal.piekarczyk.xyz/note/2026-08-15--swarms/

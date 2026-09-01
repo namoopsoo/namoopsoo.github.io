@@ -8,6 +8,15 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Swarm use cases</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-09-01-different-swarms/</link>
+      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-09-01-different-swarms/</guid>
+      <description>&lt;p&gt;Going back to [1], from writing [2], i think in the conversation between DHH and Lex Fridman, they identify a sweet spot for swarms.&lt;/p&gt;
+&lt;h2 id=&#34;safe-side&#34;&gt;Safe side&lt;/h2&gt;
+&lt;p&gt;So never using parallel agents, on the one hand, is playing it safe. You work iteratively with one agent on the task at hand. The premise is you likely dont know exactly ehat you want or necessarily what you need, at least when youre in the fog of war. For sure you have your own plan for your project, half in your head, half in  markdown and a third half you discussed with others and proceeded to forget 😭. But this is just a plan for your sanity, and would be useless to give to your agent because that would be a fool&amp;rsquo;s errand. And any way, you are still multitasking, becouse you ore still juggling many commitments, but you are not using multiple harnesses within the scope of any one of them.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Smart and gets things done</title>
       <link>https://michal.piekarczyk.xyz/note/2026-08-29-smart-and-gets-things-done/</link>
       <pubDate>Sat, 29 Aug 2026 00:00:00 +0000</pubDate>

@@ -5,6 +5,10 @@ robots: noindex, nofollow
 
 All notable changes to this "human experiment" will be documented in this file.
 
+## 2026-09
+
+### Logged
+- Leaky dishwasher battle for sleep (2026-09-01).
 
 ## 2026-08
 ### Logged

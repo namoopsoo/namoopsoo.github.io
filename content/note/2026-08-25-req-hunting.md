@@ -65,5 +65,5 @@ And for that last point, thats i think the main difference of opinion, where say
 9. David Heinemeier Hansson hot take, Lex interview, https://youtu.be/NYFGCESmikA 
 
 10. Nate B Jones, on prompt0, doing your thinking before prompting  , https://promptkit.natebjones.com/20260225_hfy_promptkit_1?utm_source=chatgpt.com
-
+11. Lars Faye , "agentic coding is a trap", https://youtu.be/0Kas27lxen4
 

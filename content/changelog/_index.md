@@ -25,6 +25,7 @@ All notable changes to this "human experiment" will be documented in this file.
 
 ### Learned
 - got some topsoil dirt from home depot, learning that hmm, there is indoor and outdoor dirt, and all the indoor dirt is fertilized. Endeded up with that outdoor unfertilized dirt since its for a snail terrarium ( 2026-08-15).
+- Learned a random tool, so poppler, pdftoppm, can convert a pdf's pages into pngs. Handy wrt follow up to the batch continuity scanning (2026-08-30).
 
 ### Changed
 - Started using new kamira espresso technique idea I borrowed, heat up first before adding water (2026-08-10).

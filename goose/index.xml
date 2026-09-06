@@ -8,6 +8,30 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/goose/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Free Hugs</title>
+      <link>https://michal.piekarczyk.xyz/goose/2026-08-28--free-hugs/</link>
+      <pubDate>Sun, 06 Sep 2026 14:12:50 -0400</pubDate>
+      <guid>https://michal.piekarczyk.xyz/goose/2026-08-28--free-hugs/</guid>
+      <description>&lt;p&gt;Hoping hugging face will be okay!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Possessive Lawn</title>
+      <link>https://michal.piekarczyk.xyz/goose/2026-09-04--possessive-lawn/</link>
+      <pubDate>Sun, 06 Sep 2026 14:02:12 -0400</pubDate>
+      <guid>https://michal.piekarczyk.xyz/goose/2026-09-04--possessive-lawn/</guid>
+      <description>&lt;h1 id=&#34;and-this-was-the-before-hehe&#34;&gt;And this was the before hehe&lt;/h1&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://s3.amazonaws.com/my-blog-content/2026-09-04--possessive-lawn/A52FBEEF-D1BA-43DA-A32A-4645506EB777.jpeg&#34; width=&#34;70%&#34;/&gt; 
+&lt;/figure&gt;</description>
+    </item>
+    <item>
+      <title>Pterosaur Origami</title>
+      <link>https://michal.piekarczyk.xyz/goose/2026-09-04-hatzegopteryx-origami/</link>
+      <pubDate>Sat, 05 Sep 2026 13:38:20 -0400</pubDate>
+      <guid>https://michal.piekarczyk.xyz/goose/2026-09-04-hatzegopteryx-origami/</guid>
+      <description>&lt;!-- Write your intro paragraph here. --&gt;</description>
+    </item>
+    <item>
       <title>Dominating the Court</title>
       <link>https://michal.piekarczyk.xyz/goose/2026-06-27-dominating-the-court/</link>
       <pubDate>Sat, 27 Jun 2026 12:16:53 -0400</pubDate>
@@ -67,13 +91,6 @@ The panes, arranged, are like this ,&lt;/p&gt;</description>
       <guid>https://michal.piekarczyk.xyz/goose/2025-09-11-parking-lot/</guid>
       <description>&lt;p&gt;At my work, our team meets daily to discuss our goings on but I think the part I think everyone gets the most utility from is the affectionately named parking lot, where we talk through issues that are blocking people in their efforts and the team does ad hoc resolution sessions.&lt;/p&gt;
 &lt;p&gt;I still recall when a colleague had introduced this practice to our team a while back, as a modification to the typical standup. I think her idea was from the fact that during the de rigueur stand up three question updates, people would get caught up in discussions and it felt quite rushed. But by deferring these to the end, the feeling of the rush went away because everyone had a chance to say their piece.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>https://michal.piekarczyk.xyz/goose/2026-09-04-hatzegopteryx-origami/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://michal.piekarczyk.xyz/goose/2026-09-04-hatzegopteryx-origami/</guid>
-      <description>&lt;p&gt;mmkay&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

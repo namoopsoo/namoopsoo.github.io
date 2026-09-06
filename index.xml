@@ -8,6 +8,30 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Free Hugs</title>
+      <link>https://michal.piekarczyk.xyz/goose/2026-08-28--free-hugs/</link>
+      <pubDate>Sun, 06 Sep 2026 14:12:50 -0400</pubDate>
+      <guid>https://michal.piekarczyk.xyz/goose/2026-08-28--free-hugs/</guid>
+      <description>&lt;p&gt;Hoping hugging face will be okay!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Possessive Lawn</title>
+      <link>https://michal.piekarczyk.xyz/goose/2026-09-04--possessive-lawn/</link>
+      <pubDate>Sun, 06 Sep 2026 14:02:12 -0400</pubDate>
+      <guid>https://michal.piekarczyk.xyz/goose/2026-09-04--possessive-lawn/</guid>
+      <description>&lt;h1 id=&#34;and-this-was-the-before-hehe&#34;&gt;And this was the before hehe&lt;/h1&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://s3.amazonaws.com/my-blog-content/2026-09-04--possessive-lawn/A52FBEEF-D1BA-43DA-A32A-4645506EB777.jpeg&#34; width=&#34;70%&#34;/&gt; 
+&lt;/figure&gt;</description>
+    </item>
+    <item>
+      <title>Pterosaur Origami</title>
+      <link>https://michal.piekarczyk.xyz/goose/2026-09-04-hatzegopteryx-origami/</link>
+      <pubDate>Sat, 05 Sep 2026 13:38:20 -0400</pubDate>
+      <guid>https://michal.piekarczyk.xyz/goose/2026-09-04-hatzegopteryx-origami/</guid>
+      <description>&lt;!-- Write your intro paragraph here. --&gt;</description>
+    </item>
+    <item>
       <title>Swarm use cases</title>
       <link>https://michal.piekarczyk.xyz/note/2026-09-01-different-swarms/</link>
       <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
@@ -4324,13 +4348,6 @@ sys	0m0.232s
       <description>&lt;p&gt;okay&lt;/p&gt;
 &lt;h2 id=&#34;question&#34;&gt;Question&lt;/h2&gt;
 &lt;p&gt;There is a queue of N cars waiting at the filling station. 3 fuel dispensers, x, y, z. When a car arrives at front of the queue, driver can choose to go to any dispenser not occupied. If all unoccupied dispensers have less than required by the driver he has to wait. if more than one dispenser has the required liter, the driver chooses the one labeled with the smallest letter.Calculate max amount of waiting time.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>https://michal.piekarczyk.xyz/goose/2026-09-04-hatzegopteryx-origami/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://michal.piekarczyk.xyz/goose/2026-09-04-hatzegopteryx-origami/</guid>
-      <description>&lt;p&gt;mmkay&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>

@@ -9,6 +9,11 @@ All notable changes to this "human experiment" will be documented in this file.
 
 ### Logged
 - Leaky dishwasher battle for sleep (2026-09-01).
+- Damn, discovered terrarium mold a few days ago and today found it is not just on edges, so began to cut it away (2026-09-05).
+
+### Firsts
+- First time I tried the predictive index, intriguing, https://www.predictiveindex.com/ (2026-09-01)
+
 
 ## 2026-08
 ### Logged

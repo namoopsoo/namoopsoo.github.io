@@ -12,10 +12,10 @@ Floor in kitchen started getting swollen. Hmm maybe it's the humidity. So i turn
 I try to switch off what i had been told a while back if the repartment
 Shut off value but it is not budging. And i don't want to break it with too much strength i know that another plumbing emergency is possible if i cause the main shot off value is leaking. it is now pretty 1ote, i have made some dinner and i om looking of this another light, fresh eyes. I send o photo to chatgpt of the main shut off valves. Well there ore two because one is cold one is hot. Not sure why but task about what water golf te the dishwasher and chatgpt stys typically hot. O oksy the cold was fight but i try the hot and that actually closes easily! However the leak continues- now there e fore ord only now vi om thinking wait maybe there is a shutoff for the dish washer closer under the sink. I have actually installed, fixed messed with dishwasher water connections sin the past but for some reason idid not remember it. Any way now iamlooking and i can see the not water connection going through from the dishwasher into the space under the sink. Wow! So yea the person who told me about the sport ment main shut off value basically didnt know shot what they were talking about.
 
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2026-09-01-dish-washer-leak/IMG_3059.jpeg" width="50%">}}
 
-
-
+{{< figure src="https://s3.amazonaws.com/my-blog-content/2026-09-01-dish-washer-leak/Screenshot 2026-09-01 at 3.42.23 PM.png" width="50%">}}
 
 
 ## references
-1.  https://vimeo.com/1223188520 
+1.  https://vimeo.com/1223188520

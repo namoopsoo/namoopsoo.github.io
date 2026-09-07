@@ -35,7 +35,10 @@ But maybe Oliver suggests we do that to ourselves.
 ### Distractions
 Nir Eyal wrote a whole book on the topic, Indistractable [9], of what gets in our way. Often it is us. We get in our way. We try to escape the uncomfortable. In my notes [10], I also riffed on the role play and fun here. Very relevant. 
 
-### Operationalize it?
+### Aside: The work behind the work 
+There is an entire separate dimension to all of this, which is that there is a  throughput paradox, that in order for the visible work you do in a company to be smooth and unencumbered, you need to have a clean work surface. Often you move fast on work products and you use acredit card to make it happen and then you need to pay off the so called technical debt but often the people who are in charge of the optics, the "schedule", will continue pushing the work into your team's conveyor belt. They cannot take the risk to justify tackling tech debt as work product (aka productivity) and so it is up to individual contributors to  do this behind the scenes.
+
+### How to Operationalize it?
 Here below is maybe how to actually slow down and take it in, without taking fke time off ? 😂
 
 ## A Possible enjoy mindset recipe
@@ -79,3 +82,6 @@ Your daily frog . Your daily highlight must be first.
 
 9. Nir Eyal, Indistractable 
 10. https://michal.piekarczyk.xyz/post/2023-04-01--indistractable-book-summary/
+
+11. https://michal.piekarczyk.xyz/note/2026-08-22-formally-unofficial/
+

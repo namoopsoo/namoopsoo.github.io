@@ -16,9 +16,9 @@ Often on these secret days I like to just take a moment to think , to pause, and
 ### Natural Pace
 As i'm writing this, I realize this sounds like the "working at o natural pace" concept from cal newport's slow productivity [4] which i was reading late lost year.
 
+But if there was one take away on this question i had from reading his book, its that you indeed have to fake your way through. He tells Andrew Wiles story, of holding off on sevrral years of boring research so that he could then focus on proving Fermats Last Theorem , whilst titrating the pocketed boring stuff so his masters can leave him alone.
 
-
-
+### After hours anti pattern
 I have for a long time had the habit of waiting for the day to calm down before I find my relaxed pace. Similarly I stopped taking lunch breaks a long time ago because one hour is not enough time to disengage. 
 
 ### Operationalize it?
@@ -53,7 +53,11 @@ Your daily frog . Your daily highlight must be first.
 
 
 ## references 
-1. burkeman
+1. burkeman thousand hours 
 2. also George spoonfed study guy. selves into systsms to prefent procrastination. 
 3. meditations 
 4. slow productivity
+5. burkeman thousand hours, sam harris interview 
+6. ali abdaal, daily frog
+
+

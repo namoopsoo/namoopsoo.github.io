@@ -43,17 +43,31 @@ Here below is maybe how to actually slow down and take it in, without taking fke
 
 ## A Possible enjoy mindset recipe
 
-### The night before
-- (1) focus on the good stuff, looking forward to. Kind of like a metta meditation around the stuff i am looking forward to , a given next day or given next week. 
-- (2) in particular how good it would feel to accomplish it. Intrinsic, extrinsic . Eyes on the prize . video tape in  our mind. The Michael Phelps technique .
+### Weekend before
+One interesting idea about avoiding the dread of Smondays is start lightly visualizing the week ahead.
 
-- (3) the intrusive thoughts will try to invade. wave to them . no thanks. waste of energy. 
+Not to plan the week but to think what could be a nice unordered set of items to act on.
+
+Look at both official and bootleg [11] in progress projects. 
+
+### The night before
+- *(1) focus on the good stuff, looking forward to.*
+Kind of like a metta meditation around the stuff i am looking forward to , a given next day or given next week. 
+- *(2) In particular how good it would feel to accomplish it.*
+Intrinsic, extrinsic . Eyes on the prize . video tape in  our mind. The Michael Phelps technique .
+
+- *(3) the intrusive thoughts will try to invade.*
+wave to them . no thanks. waste of energy. 
 
 Marcus Aurelius talks of this in Meditations [3] so it is age old wisdom.
 Especially about not engaging with other people in your mind. No need to replay or ruminate on past events. Stick with IRL.
 
 ### The Day of
-- (0) apply anti pressure against deck clearing impulses  . Oliver Burkeman in his Hours book describes this antipattern well [1]
+- *(-1) Eyes on that prize: Today's intent*
+One of the reasons its easier to bend towards other people's designs on your time is when you don't have your idea clarified. 
+
+- *(0) apply anti pressure against deck clearing impulses.*
+Oliver Burkeman in his Hours book describes this antipattern well [1]
 
 There will be fires. people will nag you. Also your friendly co workers will ping you .
 
@@ -65,23 +79,23 @@ Dont give in.
 
 Your daily frog . Your daily highlight must be first.
 
-- (1) strategize on the time for protecting your natural pace time.
+- *(1) strategize on the time for protecting your natural pace time.*
  Maybe we can access this time any  time at will. Just need the mental fortitude. Might practice starting earlier in the morning though. 
+
 
 
 ## references 
 1. burkeman thousand hours 
 2. also George spoonfed study guy. selves into systsms to prefent procrastination. 
-3. meditations 
+3. meditations , Marcus Aurelius 
 4. slow productivity
 5. burkeman thousand hours, sam harris interview 
 6. ali abdaal, daily frog
-
 7. https://michal.piekarczyk.xyz/post/2025-10-21-kanban-cage/
 8. https://en.wikipedia.org/wiki/Chinese_water_torture
-
 9. Nir Eyal, Indistractable 
 10. https://michal.piekarczyk.xyz/post/2023-04-01--indistractable-book-summary/
-
 11. https://michal.piekarczyk.xyz/note/2026-08-22-formally-unofficial/
+12. https://michal.piekarczyk.xyz/note/2026-09-04-win-win/
+23. hammock driven development 
 

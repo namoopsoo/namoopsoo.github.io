@@ -83,6 +83,13 @@ Your daily frog . Your daily highlight must be first.
  Maybe we can access this time any  time at will. Just need the mental fortitude. Might practice starting earlier in the morning though. 
 
 
+### Using the natural pace time
+hammocks? [13] 
+strategy?
+
+### Influx of opportunities 
+[14] 
+
 
 ## references 
 1. burkeman thousand hours 
@@ -98,4 +105,5 @@ Your daily frog . Your daily highlight must be first.
 11. https://michal.piekarczyk.xyz/note/2026-08-22-formally-unofficial/
 12. https://michal.piekarczyk.xyz/note/2026-09-04-win-win/
 23. hammock driven development 
-
+14. https://michal.piekarczyk.xyz/note/2026-02-13-what-ends-up/
+15. https://michal.piekarczyk.xyz/note/2026-04-30-rain-gaps/

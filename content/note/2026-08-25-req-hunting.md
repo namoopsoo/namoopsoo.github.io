@@ -50,7 +50,17 @@ So i think DHH raises a lot of good points, but he is still on the fence about t
 And for that last point, thats i think the main difference of opinion, where say Dexter Horthy had that talk [6] literally to walk back earlier statement about only reading plans. He flipped saying no no no please read  the code, the plans are useless. However he also had a new interesting approach as well, kind of alternative to RPI.
 
 
+## 2026-09-09 one more thought
 
+Ok so theres diversity of opinion but i think there are enough really well put together solid arguments defending the unknown , that you simply dont know what you are building until you are building it. 
+
+And heck even if you did know at one point, this is a moving target . And like Dexter observes well, it is context engineering, the stuff you happen to know, that is really really hard  . Its not efen a soup where you eventually get the ingredients right. 
+
+Because even after one       projects uncertainty more or less settles down, you can execute and ship it, but in the mean time, youre constantly flooded with information and for the next project the context curatation game begins all over again. What do we know? What is now stale? Etc etc.
+
+honestly if it were literally just DHH, that would be enough for me , since he is good at being a power user, with decades of experience, now embracing product engineering almost exclusively and he still cannot just pre prompt everything. 
+
+So thats it, there isn’t enough agreement on what the multiplier is for your productivity boost, so we can ignore that for now, but this new style of engineering, is still at the core of it,  complexity engineering, uncertainty engineering, entropy engineering, all of these things. The planning possee can go back to warming their benches 😆. Not much has changed in this new world at the end of the day. Maybe the tooling gives you some additional breathing room.  But its still just tooling, not AGI, not magic, not alchemy.
 
 ## References
 1. https://github.com/mattpocock/skills

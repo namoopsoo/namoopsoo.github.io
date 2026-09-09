@@ -235,6 +235,13 @@
 &lt;p&gt;Several interesting issues today with my semantic notes search project. I was using opencode with GPT 5.5 Fast recently and I ended up with pod memory monitoring that was not taking advantage of kubernetes capabilities and a parallelism split that did not align with my cluster node cardinality.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Leadership Vacuum</title>
+      <link>https://michal.piekarczyk.xyz/goose/2026-07-08--leadership-vacuum/</link>
+      <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/goose/2026-07-08--leadership-vacuum/</guid>
+      <description>&lt;!-- Write your intro paragraph here. --&gt;</description>
+    </item>
+    <item>
       <title>Shard Spread Bug</title>
       <link>https://michal.piekarczyk.xyz/note/2026-07-05--shard-spread-bug/</link>
       <pubDate>Sun, 05 Jul 2026 16:54:19 -0400</pubDate>

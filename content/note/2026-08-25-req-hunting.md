@@ -67,3 +67,7 @@ And for that last point, thats i think the main difference of opinion, where say
 10. Nate B Jones, on prompt0, doing your thinking before prompting  , https://promptkit.natebjones.com/20260225_hfy_promptkit_1?utm_source=chatgpt.com
 11. Lars Faye , "agentic coding is a trap", https://youtu.be/0Kas27lxen4
 
+12. Armin Ronacher , https://www.youtube.com/watch?v=_Zcw_sVF6hU
+
+13. oh cool other person is attempting to weigh these points of view as well! ,  https://github.com/shanraisshan/agentic-engineering 
+

@@ -14,3 +14,10 @@ I find myself --like many others Im sure-- deciding less, by outsourcing them to
 
 Winston lived (lives?) in a fictional woprld where writing is banned. Orwell 's contemporary Ray Bradbury  wrote Fahrenheit 451 a very similar book about books being outlawed , but I realize also that often writing is thinkijg  .
 
+But a tangent, I realize as Ive been writing more both not only longform for fun, but  shortform because as of the covid pandemic, everything is chat, is my conversational speech suffering? 
+
+Just like social media has been chipping away at our attention spans way before LLMs, shortform chat over slack or teams has been perhaps slowing down our speed of speech? Maybe. Just writing out loud 😆.
+
+
+
+

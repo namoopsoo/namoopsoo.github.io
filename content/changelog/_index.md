@@ -11,6 +11,7 @@ All notable changes to this "human experiment" will be documented in this file.
 - Leaky dishwasher battle for sleep (2026-09-01).
 - Damn, discovered terrarium mold a few days ago and today found it is not just on edges, so began to cut it away (2026-09-05).
 - buckled kitchen floor, wet from dishwasher leak, replaced with a temporary pine, (2026-09-16),
+- Used the nyc compost app again after long time, after our building stopped collecting composting perhaps temporarily (2026-09-23).
 
 ### Firsts
 - First time I tried the predictive index, intriguing, https://www.predictiveindex.com/ (2026-09-01)

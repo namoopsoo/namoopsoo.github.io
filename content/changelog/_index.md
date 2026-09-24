@@ -10,9 +10,14 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Logged
 - Leaky dishwasher battle for sleep (2026-09-01).
 - Damn, discovered terrarium mold a few days ago and today found it is not just on edges, so began to cut it away (2026-09-05).
+- buckled kitchen floor, wet from dishwasher leak, replaced with a temporary pine, (2026-09-16),
 
 ### Firsts
 - First time I tried the predictive index, intriguing, https://www.predictiveindex.com/ (2026-09-01)
+- first time i tfied opening a door with ButterflyMX (2026-09-23).
+
+### Changed
+- Released our grove pet snail into a habitat of many other grove snails, since it has now been nearly two months since their snail friend, our other pet snail, who they were quite tight with, passed away and they appeared to be quite inactive since then .    (2026-09-20).
 
 
 ## 2026-08

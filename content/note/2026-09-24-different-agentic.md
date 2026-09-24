@@ -10,4 +10,4 @@ There is this song, by this dutch band, the passenger,  where in the music video
 
 Maybe the ending, well I one of the endings to the stanley parable is less subtle.it is the one where the narrator soys you is finally yet to be free but the thing, you now lose control of the character.
 
-Funny recent example of life happening to you, is this dishwasher leak in my appartment. This anecdote reminds me that hindsight is 20/20. (aside, shall we just call this the 20/20 rule, as an ode to Paretto's 80/20?). 
+Funny recent example of life happening to you, is this dishwasher leak in my apartment. This anecdote reminds me that hindsight is 20/20. (aside, shall we just call this the 20/20 rule, as an ode to Paretto's 80/20?). 

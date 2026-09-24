@@ -23,6 +23,9 @@ But although being reactive wrt risk in an apartment building might make sense, 
 
 I suppose both of these are inwardly agentic and both manifest desirable outcomes. And to be clear, the parallels to be drawn to agentic engineering [9] are manifold!
 
+## But the Avalanche
+The volume of what may be on your plate feels like a denial of service attack. Often the feeling is you can only but make a few dents in the many piles of obligations in front of you. The solace is that many of the important things don't come with step by step instructions and they are long term efforts without instant gratification at every strike of your mallet.
+
 ## References
 1. make way for the passenger, https://youtu.be/r5ldSm2qVAA
 2. https://michal.piekarczyk.xyz/note/2026-09-01-dish-washer-leak/

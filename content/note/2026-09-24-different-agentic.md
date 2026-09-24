@@ -1,6 +1,6 @@
 ---
 date: 2026-09-24
-title: Be agentic (no not that way)
+title: OG Agentic
 # title: Agile Inuendo
 draft: true
 ---
@@ -15,10 +15,11 @@ On the other hand, Cate expounds that there is an alternative to letting life ha
 
 This theme also much reminds me of one of the endings in the game, The Stanley Parable, though perhaps less subtle. The Stanley Parable,  can be played through with many different paths, depending on what arbitrary decisions you the cubicle bound knowledge worker Stanley takes, as the narrator so clearly indicates as you make them. (I once used twine to form my own take of the multipath theme [5]). Many of the endings leave you wanting more, but there is one ending that leaves you unburdened yet powerless. You  find yourself finally breaking out of the office building, into a green field of grass. The Narrator narrates that Stanley can now finally write his own story, and become happy. But ironically, you discover your keyboard controls  have stopped working. And then just as with any other ending, you loop right back to the beginning, staring at your 1990s style CRT display. This is called the freedom ending [6]. 
 
-I come to this topic and Cate's book from a practical place. How can you reliably control your narrative and not just be that data mercenary or other mercenary, trading time for money.
+I come to this topic and Cate's book from a practical place. How can you reliably control your narrative and not just be that data mercenary [7] or other mercenary, trading time for money? 
 
-Funny recent example of life happening to you, is this dishwasher leak [2] in my apartment. This anecdote reminds me that hindsight is 20/20, but I do wonder that proactively inspecting dishwashers in my building could have saved the owner some cash.  (aside, shall we just call this the 20/20 rule, as an ode to Pareto's 80/20?). As of today, the floor damage is on its way to being repaired. But I have other neighbors whose dishwashers have caused havoc too.
+Funny recent example of life happening to you, is this dishwasher leak [2] in my apartment. This anecdote reminds me that hindsight is 20/20, but I do wonder that proactively inspecting dishwashers in my building could have saved the owner some cash.  (aside, shall we just call this the 20/20 rule, as an ode to Pareto's 80/20?). As of today, the floor damage is on its way to being repaired. But, I have other neighbors whose dishwashers have caused havoc to their floors too. After the first such case, an investigation could theoretically have been done, to replace leak prone components of residents dishwashers. That would be the proactive thing to do, but it's more likely that the timeline of dish washer failure has very wide error bars. When you look at its unpredictability, its low prevalence and the multitude of failure modes in an apartment building overall, the proactive strategy is borderline OCD. So being reactive here makes more sense.
 
+But although being reactive wrt risk in an apartment building might make sense, what about your life? There has been a related input over output trend marked by Ali Abdaal's Feel Good Productivity. I described [8] Ali has an alternative to SMART goals. Actually I wrote about CLEAR, but maybe it was actually NICE goals that he wrote about. So as opposed to SMART goals (Specific, Measurable, Achievable, Relevant, Time-bound) , NICE goals are (Near-Term Input-Based Controllable Energizing). To me the distinction is most importantly that one has you looking down, using your  compass to navigate, constantly comparing against a fixed heading, whereas behavior control is adaptable, having you looking in front of you, not with your eyes on a prize.
 
 ## References
 1. make way for the passenger, https://youtu.be/r5ldSm2qVAA
@@ -27,3 +28,5 @@ Funny recent example of life happening to you, is this dishwasher leak [2] in my
 4.  Cate Hall, You Can Just Do Things
 5. https://michal.piekarczyk.xyz/red-hat/
 6. https://thestanleyparable.fandom.com/wiki/Freedom_Ending
+7. https://michal.piekarczyk.xyz/post/2025-10-13-mercenaries/
+8.  https://michal.piekarczyk.xyz/post/2025-06-29--purpose/#what-would-ali-abdaal-do

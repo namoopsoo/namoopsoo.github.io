@@ -2,7 +2,7 @@
 date: 2026-09-24
 title: OG Agentic
 # title: Agile Inuendo
-draft: true
+draft: false
 ---
 
 I have been getting into Cate Hall's book [4], You Can Just Do Things, and I appreciate the discussion on agentic foundation, but it's just that she means the other agentic than the agentic engineering everyone else is talking about these days.. For Cate, being agentic is from the human perspective about your agency.
@@ -19,7 +19,9 @@ I come to this topic and Cate's book from a practical place. How can you reliabl
 
 Funny recent example of life happening to you, is this dishwasher leak [2] in my apartment. This anecdote reminds me that hindsight is 20/20, but I do wonder that proactively inspecting dishwashers in my building could have saved the owner some cash.  (aside, shall we just call this the 20/20 rule, as an ode to Pareto's 80/20?). As of today, the floor damage is on its way to being repaired. But, I have other neighbors whose dishwashers have caused havoc to their floors too. After the first such case, an investigation could theoretically have been done, to replace leak prone components of residents dishwashers. That would be the proactive thing to do, but it's more likely that the timeline of dish washer failure has very wide error bars. When you look at its unpredictability, its low prevalence and the multitude of failure modes in an apartment building overall, the proactive strategy is borderline OCD. So being reactive here makes more sense.
 
-But although being reactive wrt risk in an apartment building might make sense, what about your life? There has been a related input over output trend marked by Ali Abdaal's Feel Good Productivity. I described [8] Ali has an alternative to SMART goals. Actually I wrote about CLEAR, but maybe it was actually NICE goals that he wrote about. So as opposed to SMART goals (Specific, Measurable, Achievable, Relevant, Time-bound) , NICE goals are (Near-Term Input-Based Controllable Energizing). To me the distinction is most importantly that one has you looking down, using your  compass to navigate, constantly comparing against a fixed heading, whereas behavior control is adaptable, having you looking in front of you, not with your eyes on a prize.
+But although being reactive wrt risk in an apartment building might make sense, what about your life? There has been a related input over output trend marked by Ali Abdaal's Feel Good Productivity. I described [8] Ali has an alternative to SMART goals. Actually I wrote about CLEAR, but maybe it was actually NICE goals that he wrote about. So as opposed to SMART goals (Specific, Measurable, Achievable, Relevant, Time-bound), NICE goals are (Near-Term Input-Based Controllable Energizing). To me the distinction is most importantly that one has you looking down, using your  compass to navigate, constantly comparing against a fixed heading, whereas behavior control is adaptable, having you looking in front of you, adjusting (responding) to your environment, not necessarily gluing your eyes to a prize.
+
+I suppose both of these are inwardly agentic and both manifest desirable outcomes. And to be clear, the parallels to be drawn to agentic engineering [9] are manifold!
 
 ## References
 1. make way for the passenger, https://youtu.be/r5ldSm2qVAA
@@ -30,3 +32,4 @@ But although being reactive wrt risk in an apartment building might make sense, 
 6. https://thestanleyparable.fandom.com/wiki/Freedom_Ending
 7. https://michal.piekarczyk.xyz/post/2025-10-13-mercenaries/
 8.  https://michal.piekarczyk.xyz/post/2025-06-29--purpose/#what-would-ali-abdaal-do
+9. https://michal.piekarczyk.xyz/note/2026-08-25-req-hunting/

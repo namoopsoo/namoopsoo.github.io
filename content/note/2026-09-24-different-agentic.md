@@ -15,7 +15,7 @@ On the other hand, Cate expounds that there is an alternative to letting life ha
 
 This theme also much reminds me of one of the endings in the game, The Stanley Parable, though perhaps less subtle. The Stanley Parable,  can be played through with many different paths, depending on what arbitrary decisions you the cubicle bound knowledge worker Stanley takes, as the narrator so clearly indicates as you make them. (I once used twine to form my own take of the multipath theme [5]). Many of the endings leave you wanting more, but there is one ending that leaves you unburdened yet powerless. You  find yourself finally breaking out of the office building, into a green field of grass. The Narrator narrates that Stanley can now finally write his own story, and become happy. But ironically, you discover your keyboard controls  have stopped working. And then just as with any other ending, you loop right back to the beginning, staring at your 1990s style CRT display. This is called the freedom ending [6]. 
 
-
+I come to this topic and Cate's book from a practical place. How can you reliably control your narrative and not just be that data mercenary or other mercenary, trading time for money.
 
 Funny recent example of life happening to you, is this dishwasher leak [2] in my apartment. This anecdote reminds me that hindsight is 20/20, but I do wonder that proactively inspecting dishwashers in my building could have saved the owner some cash.  (aside, shall we just call this the 20/20 rule, as an ode to Pareto's 80/20?). As of today, the floor damage is on its way to being repaired. But I have other neighbors whose dishwashers have caused havoc too.
 

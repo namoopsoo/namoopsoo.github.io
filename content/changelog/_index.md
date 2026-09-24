@@ -287,12 +287,15 @@ All notable changes to this "human experiment" will be documented in this file.
 
 ## 2024-09
 ### Logged
-- First [escape room](https://theescapegame.com/brooklyn/) experience. Have to thank my mom for organizing this !  (2024-09-24).
 - Woodstock VA, perhaps furthest west I have been in Virginia so far (2024-09-17).
+
+### Firsts
+- First time trying Google Illuminate, for making podcasts out of arxiv papers (2024-09-16).
+- First [escape room](https://theescapegame.com/brooklyn/) experience. Have to thank my mom for organizing this !  (2024-09-24).
 
 ## 2024-07
 ### First
-- First successful cold plunge, learning how to stay 5+ minutes in 60 F ( TODO doubple check temp), at Standard Spa Miami Beach.
+- First successful cold plunge, learning how to stay 5+ minutes in 60 F ( TODO double check temp), at Standard Spa Miami Beach.
 
 ### Logged
 - Experienced crazy humbling waves of Long Branch NJ (2024-07-07).

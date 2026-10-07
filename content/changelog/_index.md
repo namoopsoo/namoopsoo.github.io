@@ -4,6 +4,11 @@ robots: noindex, nofollow
 --- 
 
 All notable changes to this "human experiment" will be documented in this file.
+## 2026-10
+
+### Changed
+- Begin switch from logseq to Obsidian (2026-10-06).
+- Switched to handmydown Fellowes shredder. Other broken for a while sadly (2026-10-04).
 
 ## 2026-09
 

@@ -2,6 +2,12 @@
 title: Append Only
 date: 2026-10-10
 type: blog-post
+
+# optional thumbnail
+images:
+  - "https://s3.amazonaws.com/my-blog-content/2026-10-10-feeling-unmoored-append-only/2026-10-10-ice-climber.png"
+cover:
+  image: "https://s3.amazonaws.com/my-blog-content/2026-10-10-feeling-unmoored-append-only/2026-10-10-ice-climber.png"
 ---
 
 Maybe the overwhelm is just a symptom of the constant pounding of the modern deluge of the infinite or maybe I have a restless mind. 

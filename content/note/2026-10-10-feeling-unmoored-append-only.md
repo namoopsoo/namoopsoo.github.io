@@ -14,9 +14,13 @@ I have written often about a kind of daily battle with opportunity cost [2], the
 
 Haha it is even hard to hold on to the right analogy. Seafaring felt right, with its use of anchors and all, but I can't help also think of crampons and ice axes. You are only getting a good foot hold with one leg so that you can safely raise the other.
 
-### The what, when and why sound tricky: lack of trust
-This might be my pitfall, but I often feel pretty overwhelmed and end up not feeling comfortable setting aside intents or time blocks for anything because there just always feels like there are too many things and I don't want to plan the time in advance, because I was  disappointed historically when something else got in the way steam rolling my intent. 
+## Protec 
+Meme culture has misspelled protect as protec, but this is therefore *meme*-orable. Cal Newport recently also noted [7] the benefit of protecting at least 20 minutes of his daily time, for tasks not projects. So yes sweat the small stuff. To me this is also the Jeff Bezos paper-cuts. The long-haul stuff [4] can wear you out, so you can really benefit from paying attention to the smaller things to *maintain stability* as a friend of mine likes to say. Stereotypically this is like making your bed [8], but it is really more about all of the small stuff that nags at you. Like I keep putting off fixing my leaky shower head, but I know I will feel so much better once I get to this.
 
+## Trust and Accretion
+And I think if I can trust myself to do the little things, then maybe my brain will trust that I don't need to clear the decks -- *as Oliver Burkeman puts it* -- and I can feel comfortable accreting to the big stuff. And in order to know what the big stuff is, you do need to moor it, preferably in markdown. And look at it again and again. Preferably once a week. And edit it, don't just append to it. Be okay with crossing stuff out and rephrasing what you wrote. This is your base and it belongs to you. 
+
+Overwhelm is a heavy feeling to get stuck under and I think it doesn't really go away. You have to keep proving to your mind that you got this no matter how many times you managed to get it done before. But it really helps to consistently remember how freaking amazing it feels to build on top of something you have started, getting to see it grow, shaping it as you go along.
 
 ## References
 1. https://michal.piekarczyk.xyz/note/2026-01-10-dont-go-insane/
@@ -25,3 +29,5 @@ This might be my pitfall, but I often feel pretty overwhelmed and end up not fee
 4. https://michal.piekarczyk.xyz/post/2025-05-31-trials-of-error/
 5. https://michal.piekarczyk.xyz/post/2023-04-01--indistractable-book-summary/
 6. https://michal.piekarczyk.xyz/post/2025-06-29--purpose/
+7. https://youtu.be/BUjf7Tv8GDE
+8. https://www.youtube.com/watch?v=1Rod-4vZ28Q

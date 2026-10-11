@@ -8,6 +8,15 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Append Only</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-10-10-feeling-unmoored-append-only/</link>
+      <pubDate>Sat, 10 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-10-10-feeling-unmoored-append-only/</guid>
+      <description>&lt;p&gt;Maybe the overwhelm is just a symptom of the constant pounding of the modern deluge of the infinite or maybe I have a restless mind.&lt;/p&gt;
+&lt;h2 id=&#34;append-only&#34;&gt;Append-only&lt;/h2&gt;
+&lt;p&gt;Append-only is a style of a data store where instead of editing anything, you only add a carriage return and write some more. This is useful for software systems that need an audit trail, such as a financial ledger, but I find it can lead to a perpetual unmooring if used for your life.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>OG Agentic</title>
       <link>https://michal.piekarczyk.xyz/note/2026-09-24-different-agentic/</link>
       <pubDate>Thu, 24 Sep 2026 00:00:00 +0000</pubDate>

@@ -3,11 +3,11 @@ type: blogpost
 date: 2026-10-07
 title: Book Summary, Leadership and Self-Deception
 
-
 images:
-  - xxx
+  - "https://s3.amazonaws.com/my-blog-content/2026-10-07-LSD-book-notes/a178c50f-82dc-4b90-9fed-fbe6a389cbb5.png"
 cover:
-  image: xxx
+  image: "https://s3.amazonaws.com/my-blog-content/2026-10-07-LSD-book-notes/a178c50f-82dc-4b90-9fed-fbe6a389cbb5.png"
+  caption: "This book to me gives a modern echo to the emperor's new clothes."
 ---
 
 I was reading the LSD book, aka, Leadership and Self deception, and started writing a mini summary.

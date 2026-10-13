@@ -8,6 +8,13 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Productivity gains musings</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-10-12-thinking-on-ai-productivity-blogpost/</link>
+      <pubDate>Mon, 12 Oct 2026 21:00:00 -0400</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-10-12-thinking-on-ai-productivity-blogpost/</guid>
+      <description>&lt;p&gt;It has been a few months now since I started using agentic tools for projects and I was curious to dip into what is being said on the topic of productivity gains lately. I&amp;rsquo;ve written about productivity and productivity gains many times pretty casually, and checking out what Yegor Denisov-Blanch has to say on the matter [1,2], I find that measurement is also equally casual, at least from the 2025-Dec to 2026-Jan point of view. His research involves measuring gains using objective judges, while accounting for rework, but it sounds like it is still not feasible to disentangle other confounding factors when trhying to attribute changes in economic value to pure AI tooling.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Append Only</title>
       <link>https://michal.piekarczyk.xyz/note/2026-10-10-feeling-unmoored-append-only/</link>
       <pubDate>Sat, 10 Oct 2026 00:00:00 +0000</pubDate>

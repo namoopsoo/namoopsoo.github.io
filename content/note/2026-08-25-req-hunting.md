@@ -62,6 +62,9 @@ honestly if it were literally just DHH, that would be enough for me , since he i
 
 So thats it, there isn’t enough agreement on what the multiplier is for your productivity boost, so we can ignore that for now, but this new style of engineering, is still at the core of it,  complexity engineering, uncertainty engineering, entropy engineering, all of these things. The planning possee can go back to warming their benches 😆. Not much has changed in this new world at the end of the day. Maybe the tooling gives you some additional breathing room.  But its still just tooling, not AGI, not magic, not alchemy.
 
+## 2026-10-17 Carlos Kelkboom
+Another interesting interview, he focuses here on the learning frame vs "this is your job" frame. [14].
+
 ## References
 1. https://github.com/mattpocock/skills
 2. https://youtube-distilled.com/watch/-QFHIoCo-Ko
@@ -80,4 +83,9 @@ So thats it, there isn’t enough agreement on what the multiplier is for your p
 12. Armin Ronacher , https://www.youtube.com/watch?v=_Zcw_sVF6hU
 
 13. oh cool other person is attempting to weigh these points of view as well! ,  https://github.com/shanraisshan/agentic-engineering 
+
+14. Carlos Kelkboom , https://youtu.be/mkN4uRZYPfs  
+
+
+
 

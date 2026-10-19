@@ -8,6 +8,20 @@
     <language>en</language>
     <atom:link href="https://michal.piekarczyk.xyz/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Code Read Burnout Thing?</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-10-14-thought-on-the-code-read-burnout/</link>
+      <pubDate>Wed, 14 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-10-14-thought-on-the-code-read-burnout/</guid>
+      <description>&lt;!-- 
+splitting , original [[2026-06-19 medium article code read burnout ]]
+--&gt;
+&lt;p&gt;I was reading [5], this kind of click-baity article, &amp;ldquo;My Best Senior Engineer Quit Last Month. Her Exit Interview Was Scheduled for Forty Minutes. The Last Five Changed How I Run My Team.&amp;rdquo; But found myself with a few thoughts, so writing them here.&lt;/p&gt;
+&lt;h2 id=&#34;on-production-fires&#34;&gt;On production fires&lt;/h2&gt;
+&lt;p&gt;The author asked the question,&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If AI wrote every line of code you produced tomorrow, would you still be the person people call when production is on fire?&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Productivity gains musings</title>
       <link>https://michal.piekarczyk.xyz/note/2026-10-12-thinking-on-ai-productivity-blogpost/</link>
       <pubDate>Mon, 12 Oct 2026 21:00:00 -0400</pubDate>

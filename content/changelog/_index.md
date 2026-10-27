@@ -16,6 +16,8 @@ All notable changes to this "human experiment" will be documented in this file.
 - First time I went over kindle highlight limit. Noticed when pulling clippings for writing summary, https://michal.piekarczyk.xyz/note/2026-10-07-lsd-book-notes/   (2026-10-07).
 - Bought kale first time in a while, and we found caterpillar in kale   , so new addition to terrarium . (2026-10-18).
 
+### Broke
+- apple pencil tip breaks from floor drop. though had it many years and survived many drops (2026-10-26).
 
 ## 2026-09
 

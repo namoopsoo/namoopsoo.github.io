@@ -5,6 +5,13 @@ robots: noindex, nofollow
 
 All notable changes to this "human experiment" will be documented in this file.
 
+## 2026-11
+### First
+- Well first in a long time, did a ~40 min car trip wituout GPS help, just using muhh brains (2026-11-01). 
+
+### Change
+- Tried making flax-chia-bread with olive oil instead of coconut oil just to try it. Was still room temperature stable amazingly. (2026-11-02).
+
 ## 2026-10
 
 ### Changed

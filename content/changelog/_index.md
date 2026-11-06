@@ -12,6 +12,9 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Change
 - Tried making flax-chia-bread with olive oil instead of coconut oil just to try it. Was still room temperature stable amazingly. (2026-11-02).
 
+### Logged 
+- Left my bag with wallet on citibike basket this morning because i was in a rush for an appointment and it was raining so I laid eVerything flat to protect against the rain. Luckily I remembered, sprted back and safely reclaimed the payload! (2026-11-06).
+
 ## 2026-10
 
 ### Changed

@@ -25,6 +25,7 @@ All notable changes to this "human experiment" will be documented in this file.
 ### Firsts
 - First time I went over kindle highlight limit. Noticed when pulling clippings for writing summary, https://michal.piekarczyk.xyz/note/2026-10-07-lsd-book-notes/   (2026-10-07).
 - Bought kale first time in a while, and we found caterpillar in kale   , so new addition to terrarium . (2026-10-18).
+- First try of rhythm lab (2026-10-24).
 - First time at a toastmasters. Pretty dope (2026-10-28).
 
 ### Broke

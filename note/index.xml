@@ -38,6 +38,20 @@ splitting , original [[2026-06-19 medium article code read burnout ]]
 &lt;p&gt;Append-only is a style of a data store where instead of editing anything, you only add a carriage return and write some more. This is useful for software systems that need an audit trail, such as a financial ledger, but I find it can lead to a perpetual unmooring if used for your life.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Generalize some logseq to obsidian migration learnings</title>
+      <link>https://michal.piekarczyk.xyz/note/2026-10-10-logseq-to-obsidian-blogpost-generalize-learnings/</link>
+      <pubDate>Sat, 10 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://michal.piekarczyk.xyz/note/2026-10-10-logseq-to-obsidian-blogpost-generalize-learnings/</guid>
+      <description>&lt;p&gt;Generalizing  some of the steps, I took, when migrating my logseq markdown for obsidian.&lt;/p&gt;
+&lt;p&gt;Two main steps here were just about the fact that logseq treats &lt;code&gt;#foo-tag&lt;/code&gt; , &lt;code&gt;[[foo-tag]]&lt;/code&gt; , and &lt;code&gt;#[[foo-tag]]&lt;/code&gt; interchangeably, but i wanted to take advantage of Obsidian&amp;rsquo;s use of tagging, so I wanted to convert all of my cases to just the square bracketed nodes.&lt;/p&gt;
+&lt;h2 id=&#34;tags-to-nodes&#34;&gt;tags to nodes&lt;/h2&gt;
+&lt;h3 id=&#34;first-ran-this-sed-script--for-the-simpler-bracketed-tags-like-foo-node&#34;&gt;First ran this sed script , for the simpler bracketed tags like &lt;code&gt;#[[foo node]]&lt;/code&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;find pages journals -type f -name &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;*.md&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;  -exec sed -i.bak &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;s/#\[\[/[[/g&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;{}&lt;/span&gt; +
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;and-for-the-unbracketed-tags-used-python&#34;&gt;and for the unbracketed tags, used python&lt;/h3&gt;
+&lt;p&gt;this took 37 minutes on my markdown files&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Book Summary, Leadership and Self-Deception</title>
       <link>https://michal.piekarczyk.xyz/note/2026-10-07-lsd-book-notes/</link>
       <pubDate>Wed, 07 Oct 2026 00:00:00 +0000</pubDate>
